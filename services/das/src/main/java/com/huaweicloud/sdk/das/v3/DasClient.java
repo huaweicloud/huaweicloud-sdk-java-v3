@@ -78,6 +78,38 @@ public class DasClient {
     }
 
     /**
+     * 删除共享链接
+     *
+     * 删除共享链接，
+     * 用于用户删除共享链接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CancelShareConnectionsRequest 请求对象
+     * @return CancelShareConnectionsResponse
+     */
+    public CancelShareConnectionsResponse cancelShareConnections(CancelShareConnectionsRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.cancelShareConnections);
+    }
+
+    /**
+     * 删除共享链接
+     *
+     * 删除共享链接，
+     * 用于用户删除共享链接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CancelShareConnectionsRequest 请求对象
+     * @return SyncInvoker<CancelShareConnectionsRequest, CancelShareConnectionsResponse>
+     */
+    public SyncInvoker<CancelShareConnectionsRequest, CancelShareConnectionsResponse> cancelShareConnectionsInvoker(
+        CancelShareConnectionsRequest request) {
+        return new SyncInvoker<CancelShareConnectionsRequest, CancelShareConnectionsResponse>(request,
+            DasMeta.cancelShareConnections, hcClient);
+    }
+
+    /**
      * 设置SQL限流开关状态
      *
      * 设置SQL限流开关状态。目前仅支持MySQL数据库。
@@ -137,6 +169,38 @@ public class DasClient {
         ChangeSqlSwitchRequest request) {
         return new SyncInvoker<ChangeSqlSwitchRequest, ChangeSqlSwitchResponse>(request, DasMeta.changeSqlSwitch,
             hcClient);
+    }
+
+    /**
+     * 设置共享链接
+     *
+     * 设置共享链接，
+     * 用于用户添加共享链接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateShareConnectionsRequest 请求对象
+     * @return CreateShareConnectionsResponse
+     */
+    public CreateShareConnectionsResponse createShareConnections(CreateShareConnectionsRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.createShareConnections);
+    }
+
+    /**
+     * 设置共享链接
+     *
+     * 设置共享链接，
+     * 用于用户添加共享链接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateShareConnectionsRequest 请求对象
+     * @return SyncInvoker<CreateShareConnectionsRequest, CreateShareConnectionsResponse>
+     */
+    public SyncInvoker<CreateShareConnectionsRequest, CreateShareConnectionsResponse> createShareConnectionsInvoker(
+        CreateShareConnectionsRequest request) {
+        return new SyncInvoker<CreateShareConnectionsRequest, CreateShareConnectionsResponse>(request,
+            DasMeta.createShareConnections, hcClient);
     }
 
     /**

@@ -10,6 +10,37 @@ import com.huaweicloud.sdk.core.http.LocationType;
 @SuppressWarnings("unchecked")
 public class CbrMeta {
 
+    public static final HttpRequestDef<AddAgentPathRequest, AddAgentPathResponse> addAgentPath = genForaddAgentPath();
+
+    private static HttpRequestDef<AddAgentPathRequest, AddAgentPathResponse> genForaddAgentPath() {
+        // basic
+        HttpRequestDef.Builder<AddAgentPathRequest, AddAgentPathResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddAgentPathRequest.class, AddAgentPathResponse.class)
+                .withName("AddAgentPath")
+                .withUri("/v3/{project_id}/agents/{agent_id}/add-path")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("agent_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddAgentPathRequest::getAgentId, (req, v) -> {
+                req.setAgentId(v);
+            }));
+        builder.<AgentAddPathReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AgentAddPathReq.class),
+            f -> f.withMarshaller(AddAgentPathRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<AddMemberRequest, AddMemberResponse> addMember = genForaddMember();
 
     private static HttpRequestDef<AddMemberRequest, AddMemberResponse> genForaddMember() {
@@ -485,6 +516,51 @@ public class CbrMeta {
             TypeCasts.uncheckedConversion(BackupSyncReq.class),
             f -> f.withMarshaller(ImportBackupRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAgentRequest, ListAgentResponse> listAgent = genForlistAgent();
+
+    private static HttpRequestDef<ListAgentRequest, ListAgentResponse> genForlistAgent() {
+        // basic
+        HttpRequestDef.Builder<ListAgentRequest, ListAgentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAgentRequest.class, ListAgentResponse.class)
+                .withName("ListAgent")
+                .withUri("/v3/{project_id}/agents")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAgentRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAgentRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAgentRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            }));
+        builder.<String>withRequestField("agent_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAgentRequest::getAgentId, (req, v) -> {
+                req.setAgentId(v);
             }));
 
         // response
@@ -1002,6 +1078,63 @@ public class CbrMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RegisterAgentRequest, RegisterAgentResponse> registerAgent =
+        genForregisterAgent();
+
+    private static HttpRequestDef<RegisterAgentRequest, RegisterAgentResponse> genForregisterAgent() {
+        // basic
+        HttpRequestDef.Builder<RegisterAgentRequest, RegisterAgentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RegisterAgentRequest.class, RegisterAgentResponse.class)
+                .withName("RegisterAgent")
+                .withUri("/v3/{project_id}/agents")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<AgentRegisterReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AgentRegisterReq.class),
+            f -> f.withMarshaller(RegisterAgentRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RemoveAgentPathRequest, RemoveAgentPathResponse> removeAgentPath =
+        genForremoveAgentPath();
+
+    private static HttpRequestDef<RemoveAgentPathRequest, RemoveAgentPathResponse> genForremoveAgentPath() {
+        // basic
+        HttpRequestDef.Builder<RemoveAgentPathRequest, RemoveAgentPathResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RemoveAgentPathRequest.class, RemoveAgentPathResponse.class)
+                .withName("RemoveAgentPath")
+                .withUri("/v3/{project_id}/agents/{agent_id}/remove-path")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("agent_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RemoveAgentPathRequest::getAgentId, (req, v) -> {
+                req.setAgentId(v);
+            }));
+        builder.<AgentRemovePathReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AgentRemovePathReq.class),
+            f -> f.withMarshaller(RemoveAgentPathRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RemoveVaultResourceRequest, RemoveVaultResourceResponse> removeVaultResource =
         genForremoveVaultResource();
 
@@ -1059,6 +1192,30 @@ public class CbrMeta {
             TypeCasts.uncheckedConversion(BackupRestoreReq.class),
             f -> f.withMarshaller(RestoreBackupRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAgentRequest, ShowAgentResponse> showAgent = genForshowAgent();
+
+    private static HttpRequestDef<ShowAgentRequest, ShowAgentResponse> genForshowAgent() {
+        // basic
+        HttpRequestDef.Builder<ShowAgentRequest, ShowAgentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAgentRequest.class, ShowAgentResponse.class)
+                .withName("ShowAgent")
+                .withUri("/v3/{project_id}/agents/{agent_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("agent_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAgentRequest::getAgentId, (req, v) -> {
+                req.setAgentId(v);
             }));
 
         // response
@@ -1416,6 +1573,62 @@ public class CbrMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowVaultTagRequest::getVaultId, (req, v) -> {
                 req.setVaultId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UnregisterAgentRequest, UnregisterAgentResponse> unregisterAgent =
+        genForunregisterAgent();
+
+    private static HttpRequestDef<UnregisterAgentRequest, UnregisterAgentResponse> genForunregisterAgent() {
+        // basic
+        HttpRequestDef.Builder<UnregisterAgentRequest, UnregisterAgentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, UnregisterAgentRequest.class, UnregisterAgentResponse.class)
+                .withName("UnregisterAgent")
+                .withUri("/v3/{project_id}/agents/{agent_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("agent_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UnregisterAgentRequest::getAgentId, (req, v) -> {
+                req.setAgentId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAgentRequest, UpdateAgentResponse> updateAgent = genForupdateAgent();
+
+    private static HttpRequestDef<UpdateAgentRequest, UpdateAgentResponse> genForupdateAgent() {
+        // basic
+        HttpRequestDef.Builder<UpdateAgentRequest, UpdateAgentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateAgentRequest.class, UpdateAgentResponse.class)
+                .withName("UpdateAgent")
+                .withUri("/v3/{project_id}/agents/{agent_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("agent_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAgentRequest::getAgentId, (req, v) -> {
+                req.setAgentId(v);
+            }));
+        builder.<AgentUpdateReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AgentUpdateReq.class),
+            f -> f.withMarshaller(UpdateAgentRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

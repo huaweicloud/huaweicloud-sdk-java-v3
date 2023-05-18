@@ -17,11 +17,6 @@ public class ListPipelinesRequest {
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Language")
-
-    private String xLanguage;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private ListPipelineQuery body;
@@ -41,25 +36,6 @@ public class ListPipelinesRequest {
 
     public void setProjectId(String projectId) {
         this.projectId = projectId;
-    }
-
-    public ListPipelinesRequest withXLanguage(String xLanguage) {
-        this.xLanguage = xLanguage;
-        return this;
-    }
-
-    /**
-     * 语言类型 中文:zh-cn 英文:en-us，默认en-us
-     * @return xLanguage
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Language")
-    public String getXLanguage() {
-        return xLanguage;
-    }
-
-    public void setXLanguage(String xLanguage) {
-        this.xLanguage = xLanguage;
     }
 
     public ListPipelinesRequest withBody(ListPipelineQuery body) {
@@ -98,13 +74,12 @@ public class ListPipelinesRequest {
         }
         ListPipelinesRequest listPipelinesRequest = (ListPipelinesRequest) o;
         return Objects.equals(this.projectId, listPipelinesRequest.projectId)
-            && Objects.equals(this.xLanguage, listPipelinesRequest.xLanguage)
             && Objects.equals(this.body, listPipelinesRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(projectId, xLanguage, body);
+        return Objects.hash(projectId, body);
     }
 
     @Override
@@ -112,7 +87,6 @@ public class ListPipelinesRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListPipelinesRequest {\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
-        sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

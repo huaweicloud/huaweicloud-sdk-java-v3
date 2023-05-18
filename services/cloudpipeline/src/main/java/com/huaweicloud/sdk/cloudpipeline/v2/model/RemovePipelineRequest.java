@@ -11,33 +11,9 @@ import java.util.Objects;
 public class RemovePipelineRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Language")
-
-    private String xLanguage;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pipeline_id")
 
     private String pipelineId;
-
-    public RemovePipelineRequest withXLanguage(String xLanguage) {
-        this.xLanguage = xLanguage;
-        return this;
-    }
-
-    /**
-     * 语言类型 中文:zh-cn 英文:en-us，默认en-us
-     * @return xLanguage
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Language")
-    public String getXLanguage() {
-        return xLanguage;
-    }
-
-    public void setXLanguage(String xLanguage) {
-        this.xLanguage = xLanguage;
-    }
 
     public RemovePipelineRequest withPipelineId(String pipelineId) {
         this.pipelineId = pipelineId;
@@ -65,20 +41,18 @@ public class RemovePipelineRequest {
             return false;
         }
         RemovePipelineRequest removePipelineRequest = (RemovePipelineRequest) o;
-        return Objects.equals(this.xLanguage, removePipelineRequest.xLanguage)
-            && Objects.equals(this.pipelineId, removePipelineRequest.pipelineId);
+        return Objects.equals(this.pipelineId, removePipelineRequest.pipelineId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, pipelineId);
+        return Objects.hash(pipelineId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class RemovePipelineRequest {\n");
-        sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    pipelineId: ").append(toIndentedString(pipelineId)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -34,6 +34,12 @@ public class CloudDeployRegion {
     public static final Region LA_NORTH_2 =
         new Region("la-north-2", "https://clouddeploy.la-north-2.myhuaweicloud.com");
 
+    public static final Region CN_SOUTH_2 =
+        new Region("cn-south-2", "https://clouddeploy.cn-south-2.myhuaweicloud.com");
+
+    public static final Region CN_SOUTHWEST_2 =
+        new Region("cn-southwest-2", "https://clouddeploy.cn-southwest-2.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("CLOUDDEPLOY");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -48,6 +54,8 @@ public class CloudDeployRegion {
         map.put("cn-north-4", CN_NORTH_4);
         map.put("sa-brazil-1", SA_BRAZIL_1);
         map.put("la-north-2", LA_NORTH_2);
+        map.put("cn-south-2", CN_SOUTH_2);
+        map.put("cn-southwest-2", CN_SOUTHWEST_2);
         return Collections.unmodifiableMap(map);
     }
 

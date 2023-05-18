@@ -34,13 +34,6 @@ public class CloudPipelineMeta {
             f -> f.withMarshaller(BatchShowPipelinesLatestStatusRequest::getProjectId, (req, v) -> {
                 req.setProjectId(v);
             }));
-        builder.<String>withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchShowPipelinesLatestStatusRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
         builder.<List<String>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -81,13 +74,6 @@ public class CloudPipelineMeta {
             f -> f.withMarshaller(BatchShowPipelinesStatusRequest::getPipelineIds, (req, v) -> {
                 req.setPipelineIds(v);
             }));
-        builder.<String>withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchShowPipelinesStatusRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
 
         // response
         builder.<List<PipelineExecuteStates>>withResponseField("body",
@@ -114,13 +100,6 @@ public class CloudPipelineMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreatePipelineByTemplateRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
         builder.<TemplateCddl>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -170,13 +149,6 @@ public class CloudPipelineMeta {
             f -> f.withMarshaller(CreatePipelineByTemplateIdRequest::getComponentId, (req, v) -> {
                 req.setComponentId(v);
             }));
-        builder.<String>withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreatePipelineByTemplateIdRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
         builder.<PipelineByTemplateDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -216,13 +188,6 @@ public class CloudPipelineMeta {
             f -> f.withMarshaller(DeletePipelineRequest::getPipelineId, (req, v) -> {
                 req.setPipelineId(v);
             }));
-        builder.<String>withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePipelineRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
 
         // response
 
@@ -255,13 +220,6 @@ public class CloudPipelineMeta {
             f -> f.withMarshaller(ListPipelineRunsRequest::getPipelineId, (req, v) -> {
                 req.setPipelineId(v);
             }));
-        builder.<String>withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPipelineRunsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
         builder.<ListPipelineRunsQuery>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -287,13 +245,6 @@ public class CloudPipelineMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPipelineSimpleInfoRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
         builder.<ListPipelineSimpleInfoRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -326,13 +277,6 @@ public class CloudPipelineMeta {
             f -> f.withMarshaller(ListPipelineTemplatesRequest::getTenantId, (req, v) -> {
                 req.setTenantId(v);
             }));
-        builder.<String>withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPipelineTemplatesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
         builder.<ListPipelineTemplatesQuery>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -364,13 +308,6 @@ public class CloudPipelineMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPipelinesRequest::getProjectId, (req, v) -> {
                 req.setProjectId(v);
-            }));
-        builder.<String>withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPipelinesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
             }));
         builder.<ListPipelineQuery>withRequestField("body",
             LocationType.Body,
@@ -431,13 +368,6 @@ public class CloudPipelineMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListPipleineBuildResultRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            }));
-        builder.<String>withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPipleineBuildResultRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
             }));
 
         // response
@@ -506,13 +436,6 @@ public class CloudPipelineMeta {
             f -> f.withMarshaller(ListTemplatesRequest::getAsc, (req, v) -> {
                 req.setAsc(v);
             }));
-        builder.<String>withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTemplatesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
 
         // response
 
@@ -537,13 +460,6 @@ public class CloudPipelineMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(RemovePipelineRequest::getPipelineId, (req, v) -> {
                 req.setPipelineId(v);
-            }));
-        builder.<String>withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RemovePipelineRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
             }));
 
         // response
@@ -576,13 +492,6 @@ public class CloudPipelineMeta {
             f -> f.withMarshaller(RunPipelineRequest::getPipelineId, (req, v) -> {
                 req.setPipelineId(v);
             }));
-        builder.<String>withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RunPipelineRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
         builder.<RunPipelineDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -614,13 +523,6 @@ public class CloudPipelineMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowInstanceStatusRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
-            }));
-        builder.<String>withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceStatusRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
             }));
 
         // response
@@ -660,13 +562,6 @@ public class CloudPipelineMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowPipelineRunDetailRequest::getPipelineRunId, (req, v) -> {
                 req.setPipelineRunId(v);
-            }));
-        builder.<String>withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPipelineRunDetailRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
             }));
 
         // response
@@ -735,13 +630,6 @@ public class CloudPipelineMeta {
             f -> f.withMarshaller(ShowPipleineStatusRequest::getBuildId, (req, v) -> {
                 req.setBuildId(v);
             }));
-        builder.<String>withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPipleineStatusRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
 
         // response
 
@@ -781,13 +669,6 @@ public class CloudPipelineMeta {
             f -> f.withMarshaller(ShowTemplateDetailRequest::getSource, (req, v) -> {
                 req.setSource(v);
             }));
-        builder.<String>withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTemplateDetailRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
 
         // response
 
@@ -812,13 +693,6 @@ public class CloudPipelineMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(StartNewPipelineRequest::getPipelineId, (req, v) -> {
                 req.setPipelineId(v);
-            }));
-        builder.<String>withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartNewPipelineRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
             }));
         builder.<StartPipelineParameters>withRequestField("body",
             LocationType.Body,
@@ -859,13 +733,6 @@ public class CloudPipelineMeta {
             f -> f.withMarshaller(StopPipelineNewRequest::getBuildId, (req, v) -> {
                 req.setBuildId(v);
             }));
-        builder.<String>withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopPipelineNewRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
 
         // response
 
@@ -904,13 +771,6 @@ public class CloudPipelineMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(StopPipelineRunRequest::getPipelineRunId, (req, v) -> {
                 req.setPipelineRunId(v);
-            }));
-        builder.<String>withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopPipelineRunRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
             }));
 
         // response

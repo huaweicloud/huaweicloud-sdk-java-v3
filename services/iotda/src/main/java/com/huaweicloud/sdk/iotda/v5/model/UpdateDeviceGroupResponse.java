@@ -31,6 +31,16 @@ public class UpdateDeviceGroupResponse extends SdkResponse {
 
     private String superGroupId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_type")
+
+    private String groupType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dynamic_group_rule")
+
+    private String dynamicGroupRule;
+
     public UpdateDeviceGroupResponse withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -99,6 +109,40 @@ public class UpdateDeviceGroupResponse extends SdkResponse {
         this.superGroupId = superGroupId;
     }
 
+    public UpdateDeviceGroupResponse withGroupType(String groupType) {
+        this.groupType = groupType;
+        return this;
+    }
+
+    /**
+     * 设备组类型，分为动态设备组和静态设备组两种
+     * @return groupType
+     */
+    public String getGroupType() {
+        return groupType;
+    }
+
+    public void setGroupType(String groupType) {
+        this.groupType = groupType;
+    }
+
+    public UpdateDeviceGroupResponse withDynamicGroupRule(String dynamicGroupRule) {
+        this.dynamicGroupRule = dynamicGroupRule;
+        return this;
+    }
+
+    /**
+     * 动态设备组规则
+     * @return dynamicGroupRule
+     */
+    public String getDynamicGroupRule() {
+        return dynamicGroupRule;
+    }
+
+    public void setDynamicGroupRule(String dynamicGroupRule) {
+        this.dynamicGroupRule = dynamicGroupRule;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -111,12 +155,14 @@ public class UpdateDeviceGroupResponse extends SdkResponse {
         return Objects.equals(this.groupId, updateDeviceGroupResponse.groupId)
             && Objects.equals(this.name, updateDeviceGroupResponse.name)
             && Objects.equals(this.description, updateDeviceGroupResponse.description)
-            && Objects.equals(this.superGroupId, updateDeviceGroupResponse.superGroupId);
+            && Objects.equals(this.superGroupId, updateDeviceGroupResponse.superGroupId)
+            && Objects.equals(this.groupType, updateDeviceGroupResponse.groupType)
+            && Objects.equals(this.dynamicGroupRule, updateDeviceGroupResponse.dynamicGroupRule);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(groupId, name, description, superGroupId);
+        return Objects.hash(groupId, name, description, superGroupId, groupType, dynamicGroupRule);
     }
 
     @Override
@@ -127,6 +173,8 @@ public class UpdateDeviceGroupResponse extends SdkResponse {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    superGroupId: ").append(toIndentedString(superGroupId)).append("\n");
+        sb.append("    groupType: ").append(toIndentedString(groupType)).append("\n");
+        sb.append("    dynamicGroupRule: ").append(toIndentedString(dynamicGroupRule)).append("\n");
         sb.append("}");
         return sb.toString();
     }

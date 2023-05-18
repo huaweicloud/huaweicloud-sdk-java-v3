@@ -36,6 +36,11 @@ public class UpdateTaskStatusRequestBody {
 
     private Integer status;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
     public UpdateTaskStatusRequestBody withClusterId(Integer clusterId) {
         this.clusterId = clusterId;
         return this;
@@ -136,6 +141,23 @@ public class UpdateTaskStatusRequestBody {
         this.status = status;
     }
 
+    public UpdateTaskStatusRequestBody withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目id
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -149,12 +171,13 @@ public class UpdateTaskStatusRequestBody {
             && Objects.equals(this.clusterType, updateTaskStatusRequestBody.clusterType)
             && Objects.equals(this.withoutPackage, updateTaskStatusRequestBody.withoutPackage)
             && Objects.equals(this.networkInfo, updateTaskStatusRequestBody.networkInfo)
-            && Objects.equals(this.status, updateTaskStatusRequestBody.status);
+            && Objects.equals(this.status, updateTaskStatusRequestBody.status)
+            && Objects.equals(this.enterpriseProjectId, updateTaskStatusRequestBody.enterpriseProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId, clusterType, withoutPackage, networkInfo, status);
+        return Objects.hash(clusterId, clusterType, withoutPackage, networkInfo, status, enterpriseProjectId);
     }
 
     @Override
@@ -166,6 +189,7 @@ public class UpdateTaskStatusRequestBody {
         sb.append("    withoutPackage: ").append(toIndentedString(withoutPackage)).append("\n");
         sb.append("    networkInfo: ").append(toIndentedString(networkInfo)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

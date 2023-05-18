@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * UA黑白名单设置
+ * UA黑白名单设置。
  */
 public class UserAgentFilter {
 

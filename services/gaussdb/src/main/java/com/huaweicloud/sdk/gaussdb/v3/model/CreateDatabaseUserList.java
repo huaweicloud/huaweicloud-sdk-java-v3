@@ -27,6 +27,12 @@ public class CreateDatabaseUserList  {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="comment")
+    
+
+    private String comment;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="password")
     
 
@@ -64,6 +70,28 @@ public class CreateDatabaseUserList  {
 
     
 
+    public CreateDatabaseUserList withComment(String comment) {
+        this.comment = comment;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 数据库备注,长度不能超过512个字符，不能包含回车和特殊字符!<\"='>&。  该字段只针对新版本的实例生效，必须大于等于指定的内核版本-2.0.13.0，如果不符合内核版本要求，参考升级内核版本升级至最新。
+     * @return comment
+     */
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
+    
+
     public CreateDatabaseUserList withPassword(String password) {
         this.password = password;
         return this;
@@ -73,7 +101,7 @@ public class CreateDatabaseUserList  {
 
 
     /**
-     * 数据库用户密码，非空，至少包含以下字符中的三种：大写字母、小写字母、数字和特殊符号~!@#$%^*-_=+?,()&组成，长度8~32个字符。  建议您输入高强度密码，以提高安全性，防止出现密码被暴力破解等安全风险。
+     * 数据库用户密码，不能同用户名称相同，非空，至少包含以下字符中的三种：大写字母、小写字母、数字和特殊符号~!@#$%^*-_=+?,()&组成，长度8~32个字符。  建议您输入高强度密码，以提高安全性，防止出现密码被暴力破解等安全风险。
      * @return password
      */
     public String getPassword() {
@@ -168,19 +196,21 @@ public class CreateDatabaseUserList  {
         }
         CreateDatabaseUserList createDatabaseUserList = (CreateDatabaseUserList) o;
         return Objects.equals(this.name, createDatabaseUserList.name) &&
+            Objects.equals(this.comment, createDatabaseUserList.comment) &&
             Objects.equals(this.password, createDatabaseUserList.password) &&
             Objects.equals(this.hosts, createDatabaseUserList.hosts) &&
             Objects.equals(this.databases, createDatabaseUserList.databases);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, password, hosts, databases);
+        return Objects.hash(name, comment, password, hosts, databases);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateDatabaseUserList {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    comment: ").append(toIndentedString(comment)).append("\n");
         sb.append("    password: ").append(toIndentedString(password)).append("\n");
         sb.append("    hosts: ").append(toIndentedString(hosts)).append("\n");
         sb.append("    databases: ").append(toIndentedString(databases)).append("\n");

@@ -11,33 +11,9 @@ import java.util.Objects;
 public class ShowInstanceStatusRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Language")
-
-    private String xLanguage;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_id")
 
     private String taskId;
-
-    public ShowInstanceStatusRequest withXLanguage(String xLanguage) {
-        this.xLanguage = xLanguage;
-        return this;
-    }
-
-    /**
-     * 语言类型 中文:zh-cn 英文:en-us，默认en-us
-     * @return xLanguage
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Language")
-    public String getXLanguage() {
-        return xLanguage;
-    }
-
-    public void setXLanguage(String xLanguage) {
-        this.xLanguage = xLanguage;
-    }
 
     public ShowInstanceStatusRequest withTaskId(String taskId) {
         this.taskId = taskId;
@@ -65,20 +41,18 @@ public class ShowInstanceStatusRequest {
             return false;
         }
         ShowInstanceStatusRequest showInstanceStatusRequest = (ShowInstanceStatusRequest) o;
-        return Objects.equals(this.xLanguage, showInstanceStatusRequest.xLanguage)
-            && Objects.equals(this.taskId, showInstanceStatusRequest.taskId);
+        return Objects.equals(this.taskId, showInstanceStatusRequest.taskId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, taskId);
+        return Objects.hash(taskId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowInstanceStatusRequest {\n");
-        sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -53,6 +53,38 @@ public class DasMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CancelShareConnectionsRequest, CancelShareConnectionsResponse> cancelShareConnections =
+        genForcancelShareConnections();
+
+    private static HttpRequestDef<CancelShareConnectionsRequest, CancelShareConnectionsResponse> genForcancelShareConnections() {
+        // basic
+        HttpRequestDef.Builder<CancelShareConnectionsRequest, CancelShareConnectionsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, CancelShareConnectionsRequest.class, CancelShareConnectionsResponse.class)
+            .withName("CancelShareConnections")
+            .withUri("/v3/{project_id}/connections/share")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CancelShareConnectionsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<CancelShareConnectionsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CancelShareConnectionsRequestBody.class),
+            f -> f.withMarshaller(CancelShareConnectionsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ChangeSqlLimitSwitchStatusRequest, ChangeSqlLimitSwitchStatusResponse> changeSqlLimitSwitchStatus =
         genForchangeSqlLimitSwitchStatus();
 
@@ -126,6 +158,38 @@ public class DasMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ChangeSqlSwitchBody.class),
             f -> f.withMarshaller(ChangeSqlSwitchRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateShareConnectionsRequest, CreateShareConnectionsResponse> createShareConnections =
+        genForcreateShareConnections();
+
+    private static HttpRequestDef<CreateShareConnectionsRequest, CreateShareConnectionsResponse> genForcreateShareConnections() {
+        // basic
+        HttpRequestDef.Builder<CreateShareConnectionsRequest, CreateShareConnectionsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateShareConnectionsRequest.class, CreateShareConnectionsResponse.class)
+            .withName("CreateShareConnections")
+            .withUri("/v3/{project_id}/connections/share")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateShareConnectionsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<CreateShareConnectionsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateShareConnectionsRequestBody.class),
+            f -> f.withMarshaller(CreateShareConnectionsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

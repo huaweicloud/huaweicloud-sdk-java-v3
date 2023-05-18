@@ -446,6 +446,38 @@ public class ProjectManMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListTemplatesRequest, ListTemplatesResponse> listTemplates =
+        genForlistTemplates();
+
+    private static HttpRequestDef<ListTemplatesRequest, ListTemplatesResponse> genForlistTemplates() {
+        // basic
+        HttpRequestDef.Builder<ListTemplatesRequest, ListTemplatesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTemplatesRequest.class, ListTemplatesResponse.class)
+                .withName("ListTemplates")
+                .withUri("/v4/projects/{project_id}/templates")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTemplatesRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("tracker_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTemplatesRequest::getTrackerId, (req, v) -> {
+                req.setTrackerId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListWorkitemStatusRecordsV4Request, ListWorkitemStatusRecordsV4Response> listWorkitemStatusRecordsV4 =
         genForlistWorkitemStatusRecordsV4();
 
@@ -2158,6 +2190,30 @@ public class ProjectManMeta {
             f -> f.withMarshaller(ListStatusStatisticResponse::getBody, (response, data) -> {
                 response.setBody(data);
             }).withInnerContainerType(UserStatusStatistic.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SearchIssuesRequest, SearchIssuesResponse> searchIssues = genForsearchIssues();
+
+    private static HttpRequestDef<SearchIssuesRequest, SearchIssuesResponse> genForsearchIssues() {
+        // basic
+        HttpRequestDef.Builder<SearchIssuesRequest, SearchIssuesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SearchIssuesRequest.class, SearchIssuesResponse.class)
+                .withName("SearchIssues")
+                .withUri("/v4/issues")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListWorkTableIssueRequestV4RequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListWorkTableIssueRequestV4RequestBody.class),
+            f -> f.withMarshaller(SearchIssuesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
 
         return builder.build();
     }

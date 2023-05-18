@@ -12,11 +12,6 @@ import java.util.function.Consumer;
 public class StartNewPipelineRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Language")
-
-    private String xLanguage;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pipeline_id")
 
     private String pipelineId;
@@ -25,25 +20,6 @@ public class StartNewPipelineRequest {
     @JsonProperty(value = "body")
 
     private StartPipelineParameters body;
-
-    public StartNewPipelineRequest withXLanguage(String xLanguage) {
-        this.xLanguage = xLanguage;
-        return this;
-    }
-
-    /**
-     * 语言类型 中文:zh-cn 英文:en-us，默认en-us
-     * @return xLanguage
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Language")
-    public String getXLanguage() {
-        return xLanguage;
-    }
-
-    public void setXLanguage(String xLanguage) {
-        this.xLanguage = xLanguage;
-    }
 
     public StartNewPipelineRequest withPipelineId(String pipelineId) {
         this.pipelineId = pipelineId;
@@ -97,21 +73,19 @@ public class StartNewPipelineRequest {
             return false;
         }
         StartNewPipelineRequest startNewPipelineRequest = (StartNewPipelineRequest) o;
-        return Objects.equals(this.xLanguage, startNewPipelineRequest.xLanguage)
-            && Objects.equals(this.pipelineId, startNewPipelineRequest.pipelineId)
+        return Objects.equals(this.pipelineId, startNewPipelineRequest.pipelineId)
             && Objects.equals(this.body, startNewPipelineRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, pipelineId, body);
+        return Objects.hash(pipelineId, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class StartNewPipelineRequest {\n");
-        sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    pipelineId: ").append(toIndentedString(pipelineId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");

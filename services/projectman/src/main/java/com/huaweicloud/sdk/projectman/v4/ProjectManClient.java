@@ -407,6 +407,35 @@ public class ProjectManClient {
     }
 
     /**
+     * 查询项目模板
+     *
+     * 查询项目模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTemplatesRequest 请求对象
+     * @return ListTemplatesResponse
+     */
+    public ListTemplatesResponse listTemplates(ListTemplatesRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.listTemplates);
+    }
+
+    /**
+     * 查询项目模板
+     *
+     * 查询项目模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTemplatesRequest 请求对象
+     * @return SyncInvoker<ListTemplatesRequest, ListTemplatesResponse>
+     */
+    public SyncInvoker<ListTemplatesRequest, ListTemplatesResponse> listTemplatesInvoker(ListTemplatesRequest request) {
+        return new SyncInvoker<ListTemplatesRequest, ListTemplatesResponse>(request, ProjectManMeta.listTemplates,
+            hcClient);
+    }
+
+    /**
      * 查询看板项目下工作项的状态历史记录
      *
      * 分页查询看板项目下工作项的状态历史记录
@@ -1839,6 +1868,35 @@ public class ProjectManClient {
         ListStatusStatisticRequest request) {
         return new SyncInvoker<ListStatusStatisticRequest, ListStatusStatisticResponse>(request,
             ProjectManMeta.listStatusStatistic, hcClient);
+    }
+
+    /**
+     * 高级查询我的待办工作项
+     *
+     * 高级查询我的待办工作项
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SearchIssuesRequest 请求对象
+     * @return SearchIssuesResponse
+     */
+    public SearchIssuesResponse searchIssues(SearchIssuesRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.searchIssues);
+    }
+
+    /**
+     * 高级查询我的待办工作项
+     *
+     * 高级查询我的待办工作项
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SearchIssuesRequest 请求对象
+     * @return SyncInvoker<SearchIssuesRequest, SearchIssuesResponse>
+     */
+    public SyncInvoker<SearchIssuesRequest, SearchIssuesResponse> searchIssuesInvoker(SearchIssuesRequest request) {
+        return new SyncInvoker<SearchIssuesRequest, SearchIssuesResponse>(request, ProjectManMeta.searchIssues,
+            hcClient);
     }
 
     /**

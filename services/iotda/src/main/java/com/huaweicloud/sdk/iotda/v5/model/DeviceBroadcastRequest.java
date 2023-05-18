@@ -25,6 +25,16 @@ public class DeviceBroadcastRequest {
 
     private String message;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ttl")
+
+    private Integer ttl;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "message_id")
+
+    private String messageId;
+
     public DeviceBroadcastRequest withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -65,7 +75,7 @@ public class DeviceBroadcastRequest {
     }
 
     /**
-     * **参数说明**：广播消息的内容，您需要将消息原文转换成二进制数据并进行Base64编码，Base64编码后的长度不超过128KB。
+     * **参数说明**：广播消息的内容，用户需要将消息原文使用Base64编码，Base64编码后的长度不超过128KB。
      * @return message
      */
     public String getMessage() {
@@ -74,6 +84,42 @@ public class DeviceBroadcastRequest {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public DeviceBroadcastRequest withTtl(Integer ttl) {
+        this.ttl = ttl;
+        return this;
+    }
+
+    /**
+     * **参数说明**：广播消息在平台缓存的老化时间，时间单位是分钟，默认值为0；ttl参数数值必须是5的倍数，即以5分钟为粒度；指定为0时表示不缓存消息，最大缓存时间1440分钟，即缓存一天；ttl>0时，一个topic订阅设备数限制为10，如果一个topic订阅设备数超过10，则接口返回错误。
+     * minimum: 0
+     * maximum: 1440
+     * @return ttl
+     */
+    public Integer getTtl() {
+        return ttl;
+    }
+
+    public void setTtl(Integer ttl) {
+        this.ttl = ttl;
+    }
+
+    public DeviceBroadcastRequest withMessageId(String messageId) {
+        this.messageId = messageId;
+        return this;
+    }
+
+    /**
+     * **参数说明**：消息id，由用户生成（推荐使用UUID）。ttl> 0时，平台会缓存消息，需确保message_id是唯一的， 否则接口返回错误。 **取值范围**：长度不超过100，只允许字母、数字、下划线（_）、连接符（-）的组合。
+     * @return messageId
+     */
+    public String getMessageId() {
+        return messageId;
+    }
+
+    public void setMessageId(String messageId) {
+        this.messageId = messageId;
     }
 
     @Override
@@ -87,12 +133,14 @@ public class DeviceBroadcastRequest {
         DeviceBroadcastRequest deviceBroadcastRequest = (DeviceBroadcastRequest) o;
         return Objects.equals(this.appId, deviceBroadcastRequest.appId)
             && Objects.equals(this.topicFullName, deviceBroadcastRequest.topicFullName)
-            && Objects.equals(this.message, deviceBroadcastRequest.message);
+            && Objects.equals(this.message, deviceBroadcastRequest.message)
+            && Objects.equals(this.ttl, deviceBroadcastRequest.ttl)
+            && Objects.equals(this.messageId, deviceBroadcastRequest.messageId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(appId, topicFullName, message);
+        return Objects.hash(appId, topicFullName, message, ttl, messageId);
     }
 
     @Override
@@ -102,6 +150,8 @@ public class DeviceBroadcastRequest {
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
         sb.append("    topicFullName: ").append(toIndentedString(topicFullName)).append("\n");
         sb.append("    message: ").append(toIndentedString(message)).append("\n");
+        sb.append("    ttl: ").append(toIndentedString(ttl)).append("\n");
+        sb.append("    messageId: ").append(toIndentedString(messageId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

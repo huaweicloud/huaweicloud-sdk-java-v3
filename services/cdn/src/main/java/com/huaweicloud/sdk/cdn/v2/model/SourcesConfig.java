@@ -45,6 +45,11 @@ public class SourcesConfig {
 
     private String hostName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "obs_bucket_type")
+
+    private String obsBucketType;
+
     public SourcesConfig withOriginAddr(String originAddr) {
         this.originAddr = originAddr;
         return this;
@@ -164,6 +169,23 @@ public class SourcesConfig {
         this.hostName = hostName;
     }
 
+    public SourcesConfig withObsBucketType(String obsBucketType) {
+        this.obsBucketType = obsBucketType;
+        return this;
+    }
+
+    /**
+     * obs桶源站类型 “private” 私有桶 “public” 公有桶。
+     * @return obsBucketType
+     */
+    public String getObsBucketType() {
+        return obsBucketType;
+    }
+
+    public void setObsBucketType(String obsBucketType) {
+        this.obsBucketType = obsBucketType;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -179,12 +201,14 @@ public class SourcesConfig {
             && Objects.equals(this.obsWebHostingStatus, sourcesConfig.obsWebHostingStatus)
             && Objects.equals(this.httpPort, sourcesConfig.httpPort)
             && Objects.equals(this.httpsPort, sourcesConfig.httpsPort)
-            && Objects.equals(this.hostName, sourcesConfig.hostName);
+            && Objects.equals(this.hostName, sourcesConfig.hostName)
+            && Objects.equals(this.obsBucketType, sourcesConfig.obsBucketType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(originAddr, originType, priority, obsWebHostingStatus, httpPort, httpsPort, hostName);
+        return Objects
+            .hash(originAddr, originType, priority, obsWebHostingStatus, httpPort, httpsPort, hostName, obsBucketType);
     }
 
     @Override
@@ -198,6 +222,7 @@ public class SourcesConfig {
         sb.append("    httpPort: ").append(toIndentedString(httpPort)).append("\n");
         sb.append("    httpsPort: ").append(toIndentedString(httpsPort)).append("\n");
         sb.append("    hostName: ").append(toIndentedString(hostName)).append("\n");
+        sb.append("    obsBucketType: ").append(toIndentedString(obsBucketType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

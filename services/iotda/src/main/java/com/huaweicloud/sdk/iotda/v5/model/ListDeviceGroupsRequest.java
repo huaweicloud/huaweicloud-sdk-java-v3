@@ -40,6 +40,16 @@ public class ListDeviceGroupsRequest {
 
     private String appId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_type")
+
+    private String groupType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
+
     public ListDeviceGroupsRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -146,6 +156,40 @@ public class ListDeviceGroupsRequest {
         this.appId = appId;
     }
 
+    public ListDeviceGroupsRequest withGroupType(String groupType) {
+        this.groupType = groupType;
+        return this;
+    }
+
+    /**
+     * **参数说明**：设备组类型，默认为静态设备组；当设备组类型为动态设备组时，需要填写动态设备组规则
+     * @return groupType
+     */
+    public String getGroupType() {
+        return groupType;
+    }
+
+    public void setGroupType(String groupType) {
+        this.groupType = groupType;
+    }
+
+    public ListDeviceGroupsRequest withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /**
+     * **参数说明**：设备组名称，单个资源空间下不可重复。 **取值范围**：长度不超过64，只允许中文、字母、数字、以及_? '#().,&%@!-等字符的组合。
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -160,12 +204,14 @@ public class ListDeviceGroupsRequest {
             && Objects.equals(this.marker, listDeviceGroupsRequest.marker)
             && Objects.equals(this.offset, listDeviceGroupsRequest.offset)
             && Objects.equals(this.lastModifiedTime, listDeviceGroupsRequest.lastModifiedTime)
-            && Objects.equals(this.appId, listDeviceGroupsRequest.appId);
+            && Objects.equals(this.appId, listDeviceGroupsRequest.appId)
+            && Objects.equals(this.groupType, listDeviceGroupsRequest.groupType)
+            && Objects.equals(this.name, listDeviceGroupsRequest.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, limit, marker, offset, lastModifiedTime, appId);
+        return Objects.hash(instanceId, limit, marker, offset, lastModifiedTime, appId, groupType, name);
     }
 
     @Override
@@ -178,6 +224,8 @@ public class ListDeviceGroupsRequest {
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    lastModifiedTime: ").append(toIndentedString(lastModifiedTime)).append("\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
+        sb.append("    groupType: ").append(toIndentedString(groupType)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("}");
         return sb.toString();
     }

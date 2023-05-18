@@ -33,6 +33,12 @@ public class ListGaussMysqlDatabaseInfo  {
     private String charset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="comment")
+    
+
+    private String comment;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="users")
     
     private List<GaussMySqlDatabaseInfo> users = null;
@@ -77,6 +83,28 @@ public class ListGaussMysqlDatabaseInfo  {
 
     public void setCharset(String charset) {
         this.charset = charset;
+    }
+
+    
+
+    public ListGaussMysqlDatabaseInfo withComment(String comment) {
+        this.comment = comment;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 数据库备注。
+     * @return comment
+     */
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
     }
 
     
@@ -128,11 +156,12 @@ public class ListGaussMysqlDatabaseInfo  {
         ListGaussMysqlDatabaseInfo listGaussMysqlDatabaseInfo = (ListGaussMysqlDatabaseInfo) o;
         return Objects.equals(this.name, listGaussMysqlDatabaseInfo.name) &&
             Objects.equals(this.charset, listGaussMysqlDatabaseInfo.charset) &&
+            Objects.equals(this.comment, listGaussMysqlDatabaseInfo.comment) &&
             Objects.equals(this.users, listGaussMysqlDatabaseInfo.users);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, charset, users);
+        return Objects.hash(name, charset, comment, users);
     }
     @Override
     public String toString() {
@@ -140,6 +169,7 @@ public class ListGaussMysqlDatabaseInfo  {
         sb.append("class ListGaussMysqlDatabaseInfo {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    charset: ").append(toIndentedString(charset)).append("\n");
+        sb.append("    comment: ").append(toIndentedString(comment)).append("\n");
         sb.append("    users: ").append(toIndentedString(users)).append("\n");
         sb.append("}");
         return sb.toString();

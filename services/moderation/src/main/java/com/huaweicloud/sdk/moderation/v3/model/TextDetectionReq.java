@@ -72,7 +72,7 @@ public class TextDetectionReq {
     }
 
     /**
-     * 检测时使用的自定义黑名单词库列表。
+     * 检测时使用的自定义黑名单词库列表。自定义黑词库的创建和使用请参见[配置定义黑名单词库](https://support.huaweicloud.com/api-moderation/moderation_03_0027.html#moderation_03_0027__section12400140132318)。
      * @return glossaryNames
      */
     public List<String> getGlossaryNames() {
@@ -131,7 +131,7 @@ public class TextDetectionReq {
     }
 
     /**
-     * 检测时使用的自定义白名单词库列表。
+     * 检测时使用的自定义白名单词库列表。自定义白词库的创建和使用请参见[配置定义白名单词库](https://support.huaweicloud.com/api-moderation/moderation_03_0027.html#moderation_03_0027__section178844141394)。
      * @return whiteGlossaryNames
      */
     public List<String> getWhiteGlossaryNames() {

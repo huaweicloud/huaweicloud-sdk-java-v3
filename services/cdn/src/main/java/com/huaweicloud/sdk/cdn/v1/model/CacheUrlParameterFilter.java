@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 缓存url参数配置
+ * 缓存url参数配置。
  */
 public class CacheUrlParameterFilter {
 

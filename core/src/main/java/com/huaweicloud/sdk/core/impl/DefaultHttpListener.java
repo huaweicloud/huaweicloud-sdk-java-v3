@@ -138,7 +138,7 @@ public class DefaultHttpListener implements Interceptor {
                 .toString()
                 .startsWith(Constants.MEDIATYPE.TEXT))) {
             respBody = response.body().string();
-            responseBuilder.body(ResponseBody.create(response.body().contentType(), respBody));
+            responseBuilder.body(ResponseBody.create(respBody, response.body().contentType()));
         } else if (Objects.nonNull(response.body()) && Objects.nonNull(response.body().contentType()) && response.body()
             .contentType()
             .toString()

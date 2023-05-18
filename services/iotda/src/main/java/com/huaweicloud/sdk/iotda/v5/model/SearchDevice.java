@@ -71,6 +71,11 @@ public class SearchDevice {
     private String productName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "groups")
+
+    private Object groups;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
     private String status;
@@ -289,6 +294,23 @@ public class SearchDevice {
         this.productName = productName;
     }
 
+    public SearchDevice withGroups(Object groups) {
+        this.groups = groups;
+        return this;
+    }
+
+    /**
+     * 设备组列表。
+     * @return groups
+     */
+    public Object getGroups() {
+        return groups;
+    }
+
+    public void setGroups(Object groups) {
+        this.groups = groups;
+    }
+
     public SearchDevice withStatus(String status) {
         this.status = status;
         return this;
@@ -359,8 +381,8 @@ public class SearchDevice {
             && Objects.equals(this.deviceSdkVersion, searchDevice.deviceSdkVersion)
             && Objects.equals(this.productId, searchDevice.productId)
             && Objects.equals(this.productName, searchDevice.productName)
-            && Objects.equals(this.status, searchDevice.status) && Objects.equals(this.tags, searchDevice.tags)
-            && Objects.equals(this.marker, searchDevice.marker);
+            && Objects.equals(this.groups, searchDevice.groups) && Objects.equals(this.status, searchDevice.status)
+            && Objects.equals(this.tags, searchDevice.tags) && Objects.equals(this.marker, searchDevice.marker);
     }
 
     @Override
@@ -377,6 +399,7 @@ public class SearchDevice {
             deviceSdkVersion,
             productId,
             productName,
+            groups,
             status,
             tags,
             marker);
@@ -398,6 +421,7 @@ public class SearchDevice {
         sb.append("    deviceSdkVersion: ").append(toIndentedString(deviceSdkVersion)).append("\n");
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
         sb.append("    productName: ").append(toIndentedString(productName)).append("\n");
+        sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");

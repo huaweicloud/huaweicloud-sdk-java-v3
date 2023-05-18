@@ -104,6 +104,41 @@ public class Configs {
     private List<OriginRequestUrlRewrite> originRequestUrlRewrite = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "flexible_origin")
+
+    private List<FlexibleOrigins> flexibleOrigin = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "slice_etag_status")
+
+    private String sliceEtagStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "origin_receive_timeout")
+
+    private Integer originReceiveTimeout;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "remote_auth")
+
+    private CommonRemoteAuth remoteAuth;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "websocket")
+
+    private WebSocketSeek websocket;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "video_seek")
+
+    private VideoSeek videoSeek;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "request_limit_rules")
+
+    private List<RequestLimitRules> requestLimitRules = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_code_redirect_rules")
 
     private List<ErrorCodeRedirectRules> errorCodeRedirectRules = null;
@@ -495,7 +530,7 @@ public class Configs {
     }
 
     /**
-     * 状态码缓存时间
+     * 状态码缓存时间。
      * @return errorCodeCache
      */
     public List<ErrorCodeCache> getErrorCodeCache() {
@@ -582,6 +617,184 @@ public class Configs {
         this.originRequestUrlRewrite = originRequestUrlRewrite;
     }
 
+    public Configs withFlexibleOrigin(List<FlexibleOrigins> flexibleOrigin) {
+        this.flexibleOrigin = flexibleOrigin;
+        return this;
+    }
+
+    public Configs addFlexibleOriginItem(FlexibleOrigins flexibleOriginItem) {
+        if (this.flexibleOrigin == null) {
+            this.flexibleOrigin = new ArrayList<>();
+        }
+        this.flexibleOrigin.add(flexibleOriginItem);
+        return this;
+    }
+
+    public Configs withFlexibleOrigin(Consumer<List<FlexibleOrigins>> flexibleOriginSetter) {
+        if (this.flexibleOrigin == null) {
+            this.flexibleOrigin = new ArrayList<>();
+        }
+        flexibleOriginSetter.accept(this.flexibleOrigin);
+        return this;
+    }
+
+    /**
+     * 高级回源，最多配置20条。
+     * @return flexibleOrigin
+     */
+    public List<FlexibleOrigins> getFlexibleOrigin() {
+        return flexibleOrigin;
+    }
+
+    public void setFlexibleOrigin(List<FlexibleOrigins> flexibleOrigin) {
+        this.flexibleOrigin = flexibleOrigin;
+    }
+
+    public Configs withSliceEtagStatus(String sliceEtagStatus) {
+        this.sliceEtagStatus = sliceEtagStatus;
+        return this;
+    }
+
+    /**
+     * 回源是否校验ETag（on：开启，off：关闭）。
+     * @return sliceEtagStatus
+     */
+    public String getSliceEtagStatus() {
+        return sliceEtagStatus;
+    }
+
+    public void setSliceEtagStatus(String sliceEtagStatus) {
+        this.sliceEtagStatus = sliceEtagStatus;
+    }
+
+    public Configs withOriginReceiveTimeout(Integer originReceiveTimeout) {
+        this.originReceiveTimeout = originReceiveTimeout;
+        return this;
+    }
+
+    /**
+     * 回源超时时间，范围:5-60，单位：秒。
+     * @return originReceiveTimeout
+     */
+    public Integer getOriginReceiveTimeout() {
+        return originReceiveTimeout;
+    }
+
+    public void setOriginReceiveTimeout(Integer originReceiveTimeout) {
+        this.originReceiveTimeout = originReceiveTimeout;
+    }
+
+    public Configs withRemoteAuth(CommonRemoteAuth remoteAuth) {
+        this.remoteAuth = remoteAuth;
+        return this;
+    }
+
+    public Configs withRemoteAuth(Consumer<CommonRemoteAuth> remoteAuthSetter) {
+        if (this.remoteAuth == null) {
+            this.remoteAuth = new CommonRemoteAuth();
+            remoteAuthSetter.accept(this.remoteAuth);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get remoteAuth
+     * @return remoteAuth
+     */
+    public CommonRemoteAuth getRemoteAuth() {
+        return remoteAuth;
+    }
+
+    public void setRemoteAuth(CommonRemoteAuth remoteAuth) {
+        this.remoteAuth = remoteAuth;
+    }
+
+    public Configs withWebsocket(WebSocketSeek websocket) {
+        this.websocket = websocket;
+        return this;
+    }
+
+    public Configs withWebsocket(Consumer<WebSocketSeek> websocketSetter) {
+        if (this.websocket == null) {
+            this.websocket = new WebSocketSeek();
+            websocketSetter.accept(this.websocket);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get websocket
+     * @return websocket
+     */
+    public WebSocketSeek getWebsocket() {
+        return websocket;
+    }
+
+    public void setWebsocket(WebSocketSeek websocket) {
+        this.websocket = websocket;
+    }
+
+    public Configs withVideoSeek(VideoSeek videoSeek) {
+        this.videoSeek = videoSeek;
+        return this;
+    }
+
+    public Configs withVideoSeek(Consumer<VideoSeek> videoSeekSetter) {
+        if (this.videoSeek == null) {
+            this.videoSeek = new VideoSeek();
+            videoSeekSetter.accept(this.videoSeek);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get videoSeek
+     * @return videoSeek
+     */
+    public VideoSeek getVideoSeek() {
+        return videoSeek;
+    }
+
+    public void setVideoSeek(VideoSeek videoSeek) {
+        this.videoSeek = videoSeek;
+    }
+
+    public Configs withRequestLimitRules(List<RequestLimitRules> requestLimitRules) {
+        this.requestLimitRules = requestLimitRules;
+        return this;
+    }
+
+    public Configs addRequestLimitRulesItem(RequestLimitRules requestLimitRulesItem) {
+        if (this.requestLimitRules == null) {
+            this.requestLimitRules = new ArrayList<>();
+        }
+        this.requestLimitRules.add(requestLimitRulesItem);
+        return this;
+    }
+
+    public Configs withRequestLimitRules(Consumer<List<RequestLimitRules>> requestLimitRulesSetter) {
+        if (this.requestLimitRules == null) {
+            this.requestLimitRules = new ArrayList<>();
+        }
+        requestLimitRulesSetter.accept(this.requestLimitRules);
+        return this;
+    }
+
+    /**
+     * 请求限速配置。
+     * @return requestLimitRules
+     */
+    public List<RequestLimitRules> getRequestLimitRules() {
+        return requestLimitRules;
+    }
+
+    public void setRequestLimitRules(List<RequestLimitRules> requestLimitRules) {
+        this.requestLimitRules = requestLimitRules;
+    }
+
     public Configs withErrorCodeRedirectRules(List<ErrorCodeRedirectRules> errorCodeRedirectRules) {
         this.errorCodeRedirectRules = errorCodeRedirectRules;
         return this;
@@ -640,6 +853,12 @@ public class Configs {
             && Objects.equals(this.originRangeStatus, configs.originRangeStatus)
             && Objects.equals(this.userAgentFilter, configs.userAgentFilter)
             && Objects.equals(this.originRequestUrlRewrite, configs.originRequestUrlRewrite)
+            && Objects.equals(this.flexibleOrigin, configs.flexibleOrigin)
+            && Objects.equals(this.sliceEtagStatus, configs.sliceEtagStatus)
+            && Objects.equals(this.originReceiveTimeout, configs.originReceiveTimeout)
+            && Objects.equals(this.remoteAuth, configs.remoteAuth) && Objects.equals(this.websocket, configs.websocket)
+            && Objects.equals(this.videoSeek, configs.videoSeek)
+            && Objects.equals(this.requestLimitRules, configs.requestLimitRules)
             && Objects.equals(this.errorCodeRedirectRules, configs.errorCodeRedirectRules);
     }
 
@@ -663,6 +882,13 @@ public class Configs {
             originRangeStatus,
             userAgentFilter,
             originRequestUrlRewrite,
+            flexibleOrigin,
+            sliceEtagStatus,
+            originReceiveTimeout,
+            remoteAuth,
+            websocket,
+            videoSeek,
+            requestLimitRules,
             errorCodeRedirectRules);
     }
 
@@ -688,6 +914,13 @@ public class Configs {
         sb.append("    originRangeStatus: ").append(toIndentedString(originRangeStatus)).append("\n");
         sb.append("    userAgentFilter: ").append(toIndentedString(userAgentFilter)).append("\n");
         sb.append("    originRequestUrlRewrite: ").append(toIndentedString(originRequestUrlRewrite)).append("\n");
+        sb.append("    flexibleOrigin: ").append(toIndentedString(flexibleOrigin)).append("\n");
+        sb.append("    sliceEtagStatus: ").append(toIndentedString(sliceEtagStatus)).append("\n");
+        sb.append("    originReceiveTimeout: ").append(toIndentedString(originReceiveTimeout)).append("\n");
+        sb.append("    remoteAuth: ").append(toIndentedString(remoteAuth)).append("\n");
+        sb.append("    websocket: ").append(toIndentedString(websocket)).append("\n");
+        sb.append("    videoSeek: ").append(toIndentedString(videoSeek)).append("\n");
+        sb.append("    requestLimitRules: ").append(toIndentedString(requestLimitRules)).append("\n");
         sb.append("    errorCodeRedirectRules: ").append(toIndentedString(errorCodeRedirectRules)).append("\n");
         sb.append("}");
         return sb.toString();

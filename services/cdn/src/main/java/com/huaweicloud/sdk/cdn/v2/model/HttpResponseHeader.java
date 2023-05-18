@@ -48,7 +48,7 @@ public class HttpResponseHeader {
     }
 
     /**
-     * 设置HTTP响应头参数的值。自定义HTTP响应头参数长度范围1~256，支持字母、数字和特定字符（.-_*#!%&+|^~'\"/:;,=@?）。
+     * 设置HTTP响应头参数的值。自定义HTTP响应头参数长度范围1~256，支持字母、数字和特定字符（.-_*#!&+|^~'\"/:;,=@?<>）。
      * @return value
      */
     public String getValue() {

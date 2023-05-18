@@ -305,7 +305,7 @@ public class CptsMeta {
         HttpRequestDef.Builder<ShowAgentConfigRequest, ShowAgentConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowAgentConfigRequest.class, ShowAgentConfigResponse.class)
                 .withName("ShowAgentConfig")
-                .withUri("/v1/cpts/{project_id}/stress/agents")
+                .withUri("/v1/{project_id}/stress/agents")
                 .withContentType("application/json");
 
         // requests
@@ -566,10 +566,10 @@ public class CptsMeta {
             f -> f.withMarshaller(UpdateCaseRequest::getTarget, (req, v) -> {
                 req.setTarget(v);
             }));
-        builder.<CaseInfo>withRequestField("body",
+        builder.<CaseInfoDetail>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CaseInfo.class),
+            TypeCasts.uncheckedConversion(CaseInfoDetail.class),
             f -> f.withMarshaller(UpdateCaseRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));

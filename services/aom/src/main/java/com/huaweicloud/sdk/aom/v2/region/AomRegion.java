@@ -48,6 +48,8 @@ public class AomRegion {
             "https://aom.cn-south-2.myhuaweicloud.com");
     public static final Region NA_MEXICO_1 = new Region("na-mexico-1",
             "https://aom.na-mexico-1.myhuaweicloud.com");
+    public static final Region TR_WEST_1 = new Region("tr-west-1",
+            "https://aom.tr-west-1.myhuaweicloud.com");
     
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("AOM");
 
@@ -73,6 +75,7 @@ public class AomRegion {
         map.put("cn-north-9", CN_NORTH_9);
         map.put("cn-south-2", CN_SOUTH_2);
         map.put("na-mexico-1", NA_MEXICO_1);
+        map.put("tr-west-1", TR_WEST_1);
         return Collections.unmodifiableMap(map);
     }
 

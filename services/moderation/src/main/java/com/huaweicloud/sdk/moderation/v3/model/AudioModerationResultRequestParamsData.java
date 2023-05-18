@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * AudioModerationResultRequestParamsData
+ * 创建作业时传的data参数
  */
 public class AudioModerationResultRequestParamsData {
 

@@ -18,6 +18,34 @@ public class CbrClient {
     }
 
     /**
+     * 新增备份路径
+     *
+     * 对客户端新增备份路径，新增的路径不会校验是否存在。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddAgentPathRequest 请求对象
+     * @return AddAgentPathResponse
+     */
+    public AddAgentPathResponse addAgentPath(AddAgentPathRequest request) {
+        return hcClient.syncInvokeHttp(request, CbrMeta.addAgentPath);
+    }
+
+    /**
+     * 新增备份路径
+     *
+     * 对客户端新增备份路径，新增的路径不会校验是否存在。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddAgentPathRequest 请求对象
+     * @return SyncInvoker<AddAgentPathRequest, AddAgentPathResponse>
+     */
+    public SyncInvoker<AddAgentPathRequest, AddAgentPathResponse> addAgentPathInvoker(AddAgentPathRequest request) {
+        return new SyncInvoker<AddAgentPathRequest, AddAgentPathResponse>(request, CbrMeta.addAgentPath, hcClient);
+    }
+
+    /**
      * 添加备份成员
      *
      * 添加备份可共享的成员，只有云服务器备份可以添加备份共享成员，且仅支持在同一区域的不同用户间共享。
@@ -527,6 +555,34 @@ public class CbrClient {
     }
 
     /**
+     * 查询客户端列表
+     *
+     * 查询客户端列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAgentRequest 请求对象
+     * @return ListAgentResponse
+     */
+    public ListAgentResponse listAgent(ListAgentRequest request) {
+        return hcClient.syncInvokeHttp(request, CbrMeta.listAgent);
+    }
+
+    /**
+     * 查询客户端列表
+     *
+     * 查询客户端列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAgentRequest 请求对象
+     * @return SyncInvoker<ListAgentRequest, ListAgentResponse>
+     */
+    public SyncInvoker<ListAgentRequest, ListAgentResponse> listAgentInvoker(ListAgentRequest request) {
+        return new SyncInvoker<ListAgentRequest, ListAgentResponse>(request, CbrMeta.listAgent, hcClient);
+    }
+
+    /**
      * 查询所有备份
      *
      * 查询所有副本
@@ -699,6 +755,64 @@ public class CbrClient {
     }
 
     /**
+     * 注册客户端
+     *
+     * 注册客户端，安装时候由Agent调用，无需手动注册。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RegisterAgentRequest 请求对象
+     * @return RegisterAgentResponse
+     */
+    public RegisterAgentResponse registerAgent(RegisterAgentRequest request) {
+        return hcClient.syncInvokeHttp(request, CbrMeta.registerAgent);
+    }
+
+    /**
+     * 注册客户端
+     *
+     * 注册客户端，安装时候由Agent调用，无需手动注册。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RegisterAgentRequest 请求对象
+     * @return SyncInvoker<RegisterAgentRequest, RegisterAgentResponse>
+     */
+    public SyncInvoker<RegisterAgentRequest, RegisterAgentResponse> registerAgentInvoker(RegisterAgentRequest request) {
+        return new SyncInvoker<RegisterAgentRequest, RegisterAgentResponse>(request, CbrMeta.registerAgent, hcClient);
+    }
+
+    /**
+     * 移除备份路径
+     *
+     * 移除已添加的文件备份路径。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RemoveAgentPathRequest 请求对象
+     * @return RemoveAgentPathResponse
+     */
+    public RemoveAgentPathResponse removeAgentPath(RemoveAgentPathRequest request) {
+        return hcClient.syncInvokeHttp(request, CbrMeta.removeAgentPath);
+    }
+
+    /**
+     * 移除备份路径
+     *
+     * 移除已添加的文件备份路径。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RemoveAgentPathRequest 请求对象
+     * @return SyncInvoker<RemoveAgentPathRequest, RemoveAgentPathResponse>
+     */
+    public SyncInvoker<RemoveAgentPathRequest, RemoveAgentPathResponse> removeAgentPathInvoker(
+        RemoveAgentPathRequest request) {
+        return new SyncInvoker<RemoveAgentPathRequest, RemoveAgentPathResponse>(request, CbrMeta.removeAgentPath,
+            hcClient);
+    }
+
+    /**
      * 移除资源
      *
      * 移除存储库中的资源，若移除资源，将一并删除该资源在保管库中的备份
@@ -754,6 +868,34 @@ public class CbrClient {
      */
     public SyncInvoker<RestoreBackupRequest, RestoreBackupResponse> restoreBackupInvoker(RestoreBackupRequest request) {
         return new SyncInvoker<RestoreBackupRequest, RestoreBackupResponse>(request, CbrMeta.restoreBackup, hcClient);
+    }
+
+    /**
+     * 查询指定客户端
+     *
+     * 查询指定客户端
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAgentRequest 请求对象
+     * @return ShowAgentResponse
+     */
+    public ShowAgentResponse showAgent(ShowAgentRequest request) {
+        return hcClient.syncInvokeHttp(request, CbrMeta.showAgent);
+    }
+
+    /**
+     * 查询指定客户端
+     *
+     * 查询指定客户端
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAgentRequest 请求对象
+     * @return SyncInvoker<ShowAgentRequest, ShowAgentResponse>
+     */
+    public SyncInvoker<ShowAgentRequest, ShowAgentResponse> showAgentInvoker(ShowAgentRequest request) {
+        return new SyncInvoker<ShowAgentRequest, ShowAgentResponse>(request, CbrMeta.showAgent, hcClient);
     }
 
     /**
@@ -1110,6 +1252,64 @@ public class CbrClient {
      */
     public SyncInvoker<ShowVaultTagRequest, ShowVaultTagResponse> showVaultTagInvoker(ShowVaultTagRequest request) {
         return new SyncInvoker<ShowVaultTagRequest, ShowVaultTagResponse>(request, CbrMeta.showVaultTag, hcClient);
+    }
+
+    /**
+     * 移除客户端
+     *
+     * 移除客户端，移除客户端时将会删除该客户端所有备份，请谨慎操作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UnregisterAgentRequest 请求对象
+     * @return UnregisterAgentResponse
+     */
+    public UnregisterAgentResponse unregisterAgent(UnregisterAgentRequest request) {
+        return hcClient.syncInvokeHttp(request, CbrMeta.unregisterAgent);
+    }
+
+    /**
+     * 移除客户端
+     *
+     * 移除客户端，移除客户端时将会删除该客户端所有备份，请谨慎操作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UnregisterAgentRequest 请求对象
+     * @return SyncInvoker<UnregisterAgentRequest, UnregisterAgentResponse>
+     */
+    public SyncInvoker<UnregisterAgentRequest, UnregisterAgentResponse> unregisterAgentInvoker(
+        UnregisterAgentRequest request) {
+        return new SyncInvoker<UnregisterAgentRequest, UnregisterAgentResponse>(request, CbrMeta.unregisterAgent,
+            hcClient);
+    }
+
+    /**
+     * 修改客户端
+     *
+     * 修改客户端状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAgentRequest 请求对象
+     * @return UpdateAgentResponse
+     */
+    public UpdateAgentResponse updateAgent(UpdateAgentRequest request) {
+        return hcClient.syncInvokeHttp(request, CbrMeta.updateAgent);
+    }
+
+    /**
+     * 修改客户端
+     *
+     * 修改客户端状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAgentRequest 请求对象
+     * @return SyncInvoker<UpdateAgentRequest, UpdateAgentResponse>
+     */
+    public SyncInvoker<UpdateAgentRequest, UpdateAgentResponse> updateAgentInvoker(UpdateAgentRequest request) {
+        return new SyncInvoker<UpdateAgentRequest, UpdateAgentResponse>(request, CbrMeta.updateAgent, hcClient);
     }
 
     /**

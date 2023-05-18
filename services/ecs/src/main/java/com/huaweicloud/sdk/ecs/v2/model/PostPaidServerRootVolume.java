@@ -224,6 +224,11 @@ public class PostPaidServerRootVolume {
 
     private PostPaidServerRootVolumeExtendParam extendparam;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "metadata")
+
+    private PostPaidServerRootVolumeMetadata metadata;
+
     public PostPaidServerRootVolume withVolumetype(VolumetypeEnum volumetype) {
         this.volumetype = volumetype;
         return this;
@@ -337,6 +342,32 @@ public class PostPaidServerRootVolume {
         this.extendparam = extendparam;
     }
 
+    public PostPaidServerRootVolume withMetadata(PostPaidServerRootVolumeMetadata metadata) {
+        this.metadata = metadata;
+        return this;
+    }
+
+    public PostPaidServerRootVolume withMetadata(Consumer<PostPaidServerRootVolumeMetadata> metadataSetter) {
+        if (this.metadata == null) {
+            this.metadata = new PostPaidServerRootVolumeMetadata();
+            metadataSetter.accept(this.metadata);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get metadata
+     * @return metadata
+     */
+    public PostPaidServerRootVolumeMetadata getMetadata() {
+        return metadata;
+    }
+
+    public void setMetadata(PostPaidServerRootVolumeMetadata metadata) {
+        this.metadata = metadata;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -351,12 +382,13 @@ public class PostPaidServerRootVolume {
             && Objects.equals(this.hwPassthrough, postPaidServerRootVolume.hwPassthrough)
             && Objects.equals(this.clusterType, postPaidServerRootVolume.clusterType)
             && Objects.equals(this.clusterId, postPaidServerRootVolume.clusterId)
-            && Objects.equals(this.extendparam, postPaidServerRootVolume.extendparam);
+            && Objects.equals(this.extendparam, postPaidServerRootVolume.extendparam)
+            && Objects.equals(this.metadata, postPaidServerRootVolume.metadata);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(volumetype, size, hwPassthrough, clusterType, clusterId, extendparam);
+        return Objects.hash(volumetype, size, hwPassthrough, clusterType, clusterId, extendparam, metadata);
     }
 
     @Override
@@ -369,6 +401,7 @@ public class PostPaidServerRootVolume {
         sb.append("    clusterType: ").append(toIndentedString(clusterType)).append("\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("    extendparam: ").append(toIndentedString(extendparam)).append("\n");
+        sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
         sb.append("}");
         return sb.toString();
     }

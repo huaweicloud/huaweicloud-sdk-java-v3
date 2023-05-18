@@ -22,11 +22,6 @@ public class RunPipelineRequest {
     private String pipelineId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Language")
-
-    private String xLanguage;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private RunPipelineDTO body;
@@ -63,25 +58,6 @@ public class RunPipelineRequest {
 
     public void setPipelineId(String pipelineId) {
         this.pipelineId = pipelineId;
-    }
-
-    public RunPipelineRequest withXLanguage(String xLanguage) {
-        this.xLanguage = xLanguage;
-        return this;
-    }
-
-    /**
-     * 语言类型 中文:zh-cn 英文:en-us，默认en-us
-     * @return xLanguage
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Language")
-    public String getXLanguage() {
-        return xLanguage;
-    }
-
-    public void setXLanguage(String xLanguage) {
-        this.xLanguage = xLanguage;
     }
 
     public RunPipelineRequest withBody(RunPipelineDTO body) {
@@ -121,13 +97,12 @@ public class RunPipelineRequest {
         RunPipelineRequest runPipelineRequest = (RunPipelineRequest) o;
         return Objects.equals(this.projectId, runPipelineRequest.projectId)
             && Objects.equals(this.pipelineId, runPipelineRequest.pipelineId)
-            && Objects.equals(this.xLanguage, runPipelineRequest.xLanguage)
             && Objects.equals(this.body, runPipelineRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(projectId, pipelineId, xLanguage, body);
+        return Objects.hash(projectId, pipelineId, body);
     }
 
     @Override
@@ -136,7 +111,6 @@ public class RunPipelineRequest {
         sb.append("class RunPipelineRequest {\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    pipelineId: ").append(toIndentedString(pipelineId)).append("\n");
-        sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

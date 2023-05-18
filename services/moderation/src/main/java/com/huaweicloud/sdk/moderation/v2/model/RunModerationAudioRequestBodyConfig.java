@@ -16,7 +16,7 @@ import java.util.Objects;
 public class RunModerationAudioRequestBodyConfig {
 
     /**
-     * 支持的语音格式
+     * 支持的语音格式。 枚举值： - pcm16k16bit - pcm8k16bit - ulaw16k8bit - ulaw8k8bit - alaw16k8bit - alaw8k8bit - mp3 - aac - wav - amr - amrwb
      */
     public static final class FormatEnum {
 
@@ -239,7 +239,7 @@ public class RunModerationAudioRequestBodyConfig {
     }
 
     /**
-     * 支持的语音格式
+     * 支持的语音格式。 枚举值： - pcm16k16bit - pcm8k16bit - ulaw16k8bit - ulaw8k8bit - alaw16k8bit - alaw8k8bit - mp3 - aac - wav - amr - amrwb
      * @return format
      */
     public FormatEnum getFormat() {

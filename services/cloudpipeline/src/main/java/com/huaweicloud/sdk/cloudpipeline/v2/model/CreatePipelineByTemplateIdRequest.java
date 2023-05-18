@@ -22,11 +22,6 @@ public class CreatePipelineByTemplateIdRequest {
     private String templateId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Language")
-
-    private String xLanguage;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "component_id")
 
     private String componentId;
@@ -68,25 +63,6 @@ public class CreatePipelineByTemplateIdRequest {
 
     public void setTemplateId(String templateId) {
         this.templateId = templateId;
-    }
-
-    public CreatePipelineByTemplateIdRequest withXLanguage(String xLanguage) {
-        this.xLanguage = xLanguage;
-        return this;
-    }
-
-    /**
-     * 语言类型 中文:zh-cn 英文:en-us，默认en-us
-     * @return xLanguage
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Language")
-    public String getXLanguage() {
-        return xLanguage;
-    }
-
-    public void setXLanguage(String xLanguage) {
-        this.xLanguage = xLanguage;
     }
 
     public CreatePipelineByTemplateIdRequest withComponentId(String componentId) {
@@ -143,14 +119,13 @@ public class CreatePipelineByTemplateIdRequest {
         CreatePipelineByTemplateIdRequest createPipelineByTemplateIdRequest = (CreatePipelineByTemplateIdRequest) o;
         return Objects.equals(this.projectId, createPipelineByTemplateIdRequest.projectId)
             && Objects.equals(this.templateId, createPipelineByTemplateIdRequest.templateId)
-            && Objects.equals(this.xLanguage, createPipelineByTemplateIdRequest.xLanguage)
             && Objects.equals(this.componentId, createPipelineByTemplateIdRequest.componentId)
             && Objects.equals(this.body, createPipelineByTemplateIdRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(projectId, templateId, xLanguage, componentId, body);
+        return Objects.hash(projectId, templateId, componentId, body);
     }
 
     @Override
@@ -159,7 +134,6 @@ public class CreatePipelineByTemplateIdRequest {
         sb.append("class CreatePipelineByTemplateIdRequest {\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    templateId: ").append(toIndentedString(templateId)).append("\n");
-        sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    componentId: ").append(toIndentedString(componentId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");

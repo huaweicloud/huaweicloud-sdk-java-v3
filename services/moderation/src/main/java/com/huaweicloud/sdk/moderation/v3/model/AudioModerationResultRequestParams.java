@@ -39,7 +39,7 @@ public class AudioModerationResultRequestParams {
     }
 
     /**
-     * Get eventType
+     * 创建作业时传的event_type参数
      * @return eventType
      */
     public String getEventType() {
@@ -82,7 +82,7 @@ public class AudioModerationResultRequestParams {
     }
 
     /**
-     * Get callback
+     * 创建作业时传的callback参数
      * @return callback
      */
     public String getCallback() {
@@ -115,7 +115,7 @@ public class AudioModerationResultRequestParams {
     }
 
     /**
-     * Get categories
+     * 创建作业时传的categories参数
      * @return categories
      */
     public List<String> getCategories() {

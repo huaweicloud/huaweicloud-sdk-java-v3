@@ -22,7 +22,7 @@ public class TaskInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "case_list")
 
-    private List<CaseInfo> caseList = null;
+    private List<CaseInfoDetail> caseList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
@@ -88,12 +88,12 @@ public class TaskInfo {
         this.benchConcurrent = benchConcurrent;
     }
 
-    public TaskInfo withCaseList(List<CaseInfo> caseList) {
+    public TaskInfo withCaseList(List<CaseInfoDetail> caseList) {
         this.caseList = caseList;
         return this;
     }
 
-    public TaskInfo addCaseListItem(CaseInfo caseListItem) {
+    public TaskInfo addCaseListItem(CaseInfoDetail caseListItem) {
         if (this.caseList == null) {
             this.caseList = new ArrayList<>();
         }
@@ -101,7 +101,7 @@ public class TaskInfo {
         return this;
     }
 
-    public TaskInfo withCaseList(Consumer<List<CaseInfo>> caseListSetter) {
+    public TaskInfo withCaseList(Consumer<List<CaseInfoDetail>> caseListSetter) {
         if (this.caseList == null) {
             this.caseList = new ArrayList<>();
         }
@@ -113,11 +113,11 @@ public class TaskInfo {
      * case_list
      * @return caseList
      */
-    public List<CaseInfo> getCaseList() {
+    public List<CaseInfoDetail> getCaseList() {
         return caseList;
     }
 
-    public void setCaseList(List<CaseInfo> caseList) {
+    public void setCaseList(List<CaseInfoDetail> caseList) {
         this.caseList = caseList;
     }
 

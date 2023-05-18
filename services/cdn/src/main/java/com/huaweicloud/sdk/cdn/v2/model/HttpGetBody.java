@@ -26,9 +26,19 @@ public class HttpGetBody {
     private String certificateValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "expire_time")
+
+    private Long expireTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "certificate_source")
 
     private Integer certificateSource;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "certificate_type")
+
+    private String certificateType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "http2_status")
@@ -39,6 +49,11 @@ public class HttpGetBody {
     @JsonProperty(value = "tls_version")
 
     private String tlsVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ocsp_stapling_status")
+
+    private String ocspStaplingStatus;
 
     public HttpGetBody withHttpsStatus(String httpsStatus) {
         this.httpsStatus = httpsStatus;
@@ -91,6 +106,23 @@ public class HttpGetBody {
         this.certificateValue = certificateValue;
     }
 
+    public HttpGetBody withExpireTime(Long expireTime) {
+        this.expireTime = expireTime;
+        return this;
+    }
+
+    /**
+     * 证书过期时间,单位：毫秒。
+     * @return expireTime
+     */
+    public Long getExpireTime() {
+        return expireTime;
+    }
+
+    public void setExpireTime(Long expireTime) {
+        this.expireTime = expireTime;
+    }
+
     public HttpGetBody withCertificateSource(Integer certificateSource) {
         this.certificateSource = certificateSource;
         return this;
@@ -106,6 +138,23 @@ public class HttpGetBody {
 
     public void setCertificateSource(Integer certificateSource) {
         this.certificateSource = certificateSource;
+    }
+
+    public HttpGetBody withCertificateType(String certificateType) {
+        this.certificateType = certificateType;
+        return this;
+    }
+
+    /**
+     * 证书类型。server：国际证书；server_sm：国密证书。
+     * @return certificateType
+     */
+    public String getCertificateType() {
+        return certificateType;
+    }
+
+    public void setCertificateType(String certificateType) {
+        this.certificateType = certificateType;
     }
 
     public HttpGetBody withHttp2Status(String http2Status) {
@@ -142,6 +191,23 @@ public class HttpGetBody {
         this.tlsVersion = tlsVersion;
     }
 
+    public HttpGetBody withOcspStaplingStatus(String ocspStaplingStatus) {
+        this.ocspStaplingStatus = ocspStaplingStatus;
+        return this;
+    }
+
+    /**
+     * 是否开启ocsp stapling （on：是，off：否）。
+     * @return ocspStaplingStatus
+     */
+    public String getOcspStaplingStatus() {
+        return ocspStaplingStatus;
+    }
+
+    public void setOcspStaplingStatus(String ocspStaplingStatus) {
+        this.ocspStaplingStatus = ocspStaplingStatus;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -154,14 +220,25 @@ public class HttpGetBody {
         return Objects.equals(this.httpsStatus, httpGetBody.httpsStatus)
             && Objects.equals(this.certificateName, httpGetBody.certificateName)
             && Objects.equals(this.certificateValue, httpGetBody.certificateValue)
+            && Objects.equals(this.expireTime, httpGetBody.expireTime)
             && Objects.equals(this.certificateSource, httpGetBody.certificateSource)
+            && Objects.equals(this.certificateType, httpGetBody.certificateType)
             && Objects.equals(this.http2Status, httpGetBody.http2Status)
-            && Objects.equals(this.tlsVersion, httpGetBody.tlsVersion);
+            && Objects.equals(this.tlsVersion, httpGetBody.tlsVersion)
+            && Objects.equals(this.ocspStaplingStatus, httpGetBody.ocspStaplingStatus);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(httpsStatus, certificateName, certificateValue, certificateSource, http2Status, tlsVersion);
+        return Objects.hash(httpsStatus,
+            certificateName,
+            certificateValue,
+            expireTime,
+            certificateSource,
+            certificateType,
+            http2Status,
+            tlsVersion,
+            ocspStaplingStatus);
     }
 
     @Override
@@ -171,9 +248,12 @@ public class HttpGetBody {
         sb.append("    httpsStatus: ").append(toIndentedString(httpsStatus)).append("\n");
         sb.append("    certificateName: ").append(toIndentedString(certificateName)).append("\n");
         sb.append("    certificateValue: ").append(toIndentedString(certificateValue)).append("\n");
+        sb.append("    expireTime: ").append(toIndentedString(expireTime)).append("\n");
         sb.append("    certificateSource: ").append(toIndentedString(certificateSource)).append("\n");
+        sb.append("    certificateType: ").append(toIndentedString(certificateType)).append("\n");
         sb.append("    http2Status: ").append(toIndentedString(http2Status)).append("\n");
         sb.append("    tlsVersion: ").append(toIndentedString(tlsVersion)).append("\n");
+        sb.append("    ocspStaplingStatus: ").append(toIndentedString(ocspStaplingStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -19,11 +19,6 @@ public class BatchShowPipelinesLatestStatusRequest {
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Language")
-
-    private String xLanguage;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private List<String> body = null;
@@ -43,25 +38,6 @@ public class BatchShowPipelinesLatestStatusRequest {
 
     public void setProjectId(String projectId) {
         this.projectId = projectId;
-    }
-
-    public BatchShowPipelinesLatestStatusRequest withXLanguage(String xLanguage) {
-        this.xLanguage = xLanguage;
-        return this;
-    }
-
-    /**
-     * 语言类型 中文:zh-cn 英文:en-us，默认en-us
-     * @return xLanguage
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Language")
-    public String getXLanguage() {
-        return xLanguage;
-    }
-
-    public void setXLanguage(String xLanguage) {
-        this.xLanguage = xLanguage;
     }
 
     public BatchShowPipelinesLatestStatusRequest withBody(List<String> body) {
@@ -108,13 +84,12 @@ public class BatchShowPipelinesLatestStatusRequest {
         BatchShowPipelinesLatestStatusRequest batchShowPipelinesLatestStatusRequest =
             (BatchShowPipelinesLatestStatusRequest) o;
         return Objects.equals(this.projectId, batchShowPipelinesLatestStatusRequest.projectId)
-            && Objects.equals(this.xLanguage, batchShowPipelinesLatestStatusRequest.xLanguage)
             && Objects.equals(this.body, batchShowPipelinesLatestStatusRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(projectId, xLanguage, body);
+        return Objects.hash(projectId, body);
     }
 
     @Override
@@ -122,7 +97,6 @@ public class BatchShowPipelinesLatestStatusRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class BatchShowPipelinesLatestStatusRequest {\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
-        sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

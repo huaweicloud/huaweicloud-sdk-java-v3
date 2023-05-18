@@ -24,7 +24,7 @@ public class UpdateCaseRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private CaseInfo body;
+    private CaseInfoDetail body;
 
     public UpdateCaseRequest withCaseId(Integer caseId) {
         this.caseId = caseId;
@@ -62,14 +62,14 @@ public class UpdateCaseRequest {
         this.target = target;
     }
 
-    public UpdateCaseRequest withBody(CaseInfo body) {
+    public UpdateCaseRequest withBody(CaseInfoDetail body) {
         this.body = body;
         return this;
     }
 
-    public UpdateCaseRequest withBody(Consumer<CaseInfo> bodySetter) {
+    public UpdateCaseRequest withBody(Consumer<CaseInfoDetail> bodySetter) {
         if (this.body == null) {
-            this.body = new CaseInfo();
+            this.body = new CaseInfoDetail();
             bodySetter.accept(this.body);
         }
 
@@ -80,11 +80,11 @@ public class UpdateCaseRequest {
      * Get body
      * @return body
      */
-    public CaseInfo getBody() {
+    public CaseInfoDetail getBody() {
         return body;
     }
 
-    public void setBody(CaseInfo body) {
+    public void setBody(CaseInfoDetail body) {
         this.body = body;
     }
 

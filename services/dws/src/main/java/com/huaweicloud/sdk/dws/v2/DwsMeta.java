@@ -283,6 +283,52 @@ public class DwsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CheckDisasterNameRequest, CheckDisasterNameResponse> checkDisasterName =
+        genForcheckDisasterName();
+
+    private static HttpRequestDef<CheckDisasterNameRequest, CheckDisasterNameResponse> genForcheckDisasterName() {
+        // basic
+        HttpRequestDef.Builder<CheckDisasterNameRequest, CheckDisasterNameResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, CheckDisasterNameRequest.class, CheckDisasterNameResponse.class)
+                .withName("CheckDisasterName")
+                .withUri("/v2/{project_id}/disaster-recovery/check-name")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("dr_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckDisasterNameRequest::getDrName, (req, v) -> {
+                req.setDrName(v);
+            }));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckDisasterNameRequest::getType, (req, v) -> {
+                req.setType(v);
+            }));
+        builder.<String>withRequestField("standby_region",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckDisasterNameRequest::getStandbyRegion, (req, v) -> {
+                req.setStandbyRegion(v);
+            }));
+        builder.<String>withRequestField("standby_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckDisasterNameRequest::getStandbyProjectId, (req, v) -> {
+                req.setStandbyProjectId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CopySnapshotRequest, CopySnapshotResponse> copySnapshot = genForcopySnapshot();
 
     private static HttpRequestDef<CopySnapshotRequest, CopySnapshotResponse> genForcopySnapshot() {
@@ -1207,6 +1253,90 @@ public class DwsMeta {
             .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAvailableDisasterClustersRequest, ListAvailableDisasterClustersResponse> listAvailableDisasterClusters =
+        genForlistAvailableDisasterClusters();
+
+    private static HttpRequestDef<ListAvailableDisasterClustersRequest, ListAvailableDisasterClustersResponse> genForlistAvailableDisasterClusters() {
+        // basic
+        HttpRequestDef.Builder<ListAvailableDisasterClustersRequest, ListAvailableDisasterClustersResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListAvailableDisasterClustersRequest.class,
+                    ListAvailableDisasterClustersResponse.class)
+                .withName("ListAvailableDisasterClusters")
+                .withUri("/v2/{project_id}/disaster-recovery-clusters")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("primary_cluster_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAvailableDisasterClustersRequest::getPrimaryClusterId, (req, v) -> {
+                req.setPrimaryClusterId(v);
+            }));
+        builder.<String>withRequestField("primary_spec_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAvailableDisasterClustersRequest::getPrimarySpecId, (req, v) -> {
+                req.setPrimarySpecId(v);
+            }));
+        builder.<String>withRequestField("primary_cluster_dn_num",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAvailableDisasterClustersRequest::getPrimaryClusterDnNum, (req, v) -> {
+                req.setPrimaryClusterDnNum(v);
+            }));
+        builder.<String>withRequestField("standby_region",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAvailableDisasterClustersRequest::getStandbyRegion, (req, v) -> {
+                req.setStandbyRegion(v);
+            }));
+        builder.<String>withRequestField("standby_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAvailableDisasterClustersRequest::getStandbyProjectId, (req, v) -> {
+                req.setStandbyProjectId(v);
+            }));
+        builder.<String>withRequestField("standby_az_code",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAvailableDisasterClustersRequest::getStandbyAzCode, (req, v) -> {
+                req.setStandbyAzCode(v);
+            }));
+        builder.<String>withRequestField("dr_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAvailableDisasterClustersRequest::getDrType, (req, v) -> {
+                req.setDrType(v);
+            }));
+        builder.<String>withRequestField("datastore_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAvailableDisasterClustersRequest::getDatastoreType, (req, v) -> {
+                req.setDatastoreType(v);
+            }));
+        builder.<String>withRequestField("datastore_version",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAvailableDisasterClustersRequest::getDatastoreVersion, (req, v) -> {
+                req.setDatastoreVersion(v);
+            }));
 
         // response
 
@@ -2336,6 +2466,31 @@ public class DwsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowDisasterDetailRequest, ShowDisasterDetailResponse> showDisasterDetail =
+        genForshowDisasterDetail();
+
+    private static HttpRequestDef<ShowDisasterDetailRequest, ShowDisasterDetailResponse> genForshowDisasterDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowDisasterDetailRequest, ShowDisasterDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDisasterDetailRequest.class, ShowDisasterDetailResponse.class)
+                .withName("ShowDisasterDetail")
+                .withUri("/v2/{project_id}/disaster-recovery/{disaster_recovery_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("disaster_recovery_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDisasterDetailRequest::getDisasterRecoveryId, (req, v) -> {
+                req.setDisasterRecoveryId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShrinkClusterRequest, ShrinkClusterResponse> shrinkCluster =
         genForshrinkCluster();
 
@@ -2605,6 +2760,38 @@ public class DwsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ReconfigureExtDataSourceActionReq.class),
             f -> f.withMarshaller(UpdateDataSourceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDisasterInfoRequest, UpdateDisasterInfoResponse> updateDisasterInfo =
+        genForupdateDisasterInfo();
+
+    private static HttpRequestDef<UpdateDisasterInfoRequest, UpdateDisasterInfoResponse> genForupdateDisasterInfo() {
+        // basic
+        HttpRequestDef.Builder<UpdateDisasterInfoRequest, UpdateDisasterInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateDisasterInfoRequest.class, UpdateDisasterInfoResponse.class)
+                .withName("UpdateDisasterInfo")
+                .withUri("/v2/{project_id}/disaster-recovery/{disaster_recovery_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("disaster_recovery_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDisasterInfoRequest::getDisasterRecoveryId, (req, v) -> {
+                req.setDisasterRecoveryId(v);
+            }));
+        builder.<UpdateDisasterRecoveryRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateDisasterRecoveryRequest.class),
+            f -> f.withMarshaller(UpdateDisasterInfoRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

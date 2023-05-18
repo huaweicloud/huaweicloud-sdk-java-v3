@@ -9,9 +9,9 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * CaseInfo
+ * CaseInfoDetail
  */
-public class CaseInfo {
+public class CaseInfoDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "case_id")
@@ -63,7 +63,7 @@ public class CaseInfo {
 
     private Integer sort;
 
-    public CaseInfo withCaseId(Integer caseId) {
+    public CaseInfoDetail withCaseId(Integer caseId) {
         this.caseId = caseId;
         return this;
     }
@@ -82,7 +82,7 @@ public class CaseInfo {
         this.caseId = caseId;
     }
 
-    public CaseInfo withName(String name) {
+    public CaseInfoDetail withName(String name) {
         this.name = name;
         return this;
     }
@@ -99,7 +99,7 @@ public class CaseInfo {
         this.name = name;
     }
 
-    public CaseInfo withCaseType(Integer caseType) {
+    public CaseInfoDetail withCaseType(Integer caseType) {
         this.caseType = caseType;
         return this;
     }
@@ -118,12 +118,12 @@ public class CaseInfo {
         this.caseType = caseType;
     }
 
-    public CaseInfo withContents(List<Contents> contents) {
+    public CaseInfoDetail withContents(List<Contents> contents) {
         this.contents = contents;
         return this;
     }
 
-    public CaseInfo addContentsItem(Contents contentsItem) {
+    public CaseInfoDetail addContentsItem(Contents contentsItem) {
         if (this.contents == null) {
             this.contents = new ArrayList<>();
         }
@@ -131,7 +131,7 @@ public class CaseInfo {
         return this;
     }
 
-    public CaseInfo withContents(Consumer<List<Contents>> contentsSetter) {
+    public CaseInfoDetail withContents(Consumer<List<Contents>> contentsSetter) {
         if (this.contents == null) {
             this.contents = new ArrayList<>();
         }
@@ -151,12 +151,12 @@ public class CaseInfo {
         this.contents = contents;
     }
 
-    public CaseInfo withForLoopParams(List<Object> forLoopParams) {
+    public CaseInfoDetail withForLoopParams(List<Object> forLoopParams) {
         this.forLoopParams = forLoopParams;
         return this;
     }
 
-    public CaseInfo addForLoopParamsItem(Object forLoopParamsItem) {
+    public CaseInfoDetail addForLoopParamsItem(Object forLoopParamsItem) {
         if (this.forLoopParams == null) {
             this.forLoopParams = new ArrayList<>();
         }
@@ -164,7 +164,7 @@ public class CaseInfo {
         return this;
     }
 
-    public CaseInfo withForLoopParams(Consumer<List<Object>> forLoopParamsSetter) {
+    public CaseInfoDetail withForLoopParams(Consumer<List<Object>> forLoopParamsSetter) {
         if (this.forLoopParams == null) {
             this.forLoopParams = new ArrayList<>();
         }
@@ -184,12 +184,12 @@ public class CaseInfo {
         this.forLoopParams = forLoopParams;
     }
 
-    public CaseInfo withIncreaseSetting(List<Object> increaseSetting) {
+    public CaseInfoDetail withIncreaseSetting(List<Object> increaseSetting) {
         this.increaseSetting = increaseSetting;
         return this;
     }
 
-    public CaseInfo addIncreaseSettingItem(Object increaseSettingItem) {
+    public CaseInfoDetail addIncreaseSettingItem(Object increaseSettingItem) {
         if (this.increaseSetting == null) {
             this.increaseSetting = new ArrayList<>();
         }
@@ -197,7 +197,7 @@ public class CaseInfo {
         return this;
     }
 
-    public CaseInfo withIncreaseSetting(Consumer<List<Object>> increaseSettingSetter) {
+    public CaseInfoDetail withIncreaseSetting(Consumer<List<Object>> increaseSettingSetter) {
         if (this.increaseSetting == null) {
             this.increaseSetting = new ArrayList<>();
         }
@@ -217,12 +217,12 @@ public class CaseInfo {
         this.increaseSetting = increaseSetting;
     }
 
-    public CaseInfo withStages(List<TestCaseStage> stages) {
+    public CaseInfoDetail withStages(List<TestCaseStage> stages) {
         this.stages = stages;
         return this;
     }
 
-    public CaseInfo addStagesItem(TestCaseStage stagesItem) {
+    public CaseInfoDetail addStagesItem(TestCaseStage stagesItem) {
         if (this.stages == null) {
             this.stages = new ArrayList<>();
         }
@@ -230,7 +230,7 @@ public class CaseInfo {
         return this;
     }
 
-    public CaseInfo withStages(Consumer<List<TestCaseStage>> stagesSetter) {
+    public CaseInfoDetail withStages(Consumer<List<TestCaseStage>> stagesSetter) {
         if (this.stages == null) {
             this.stages = new ArrayList<>();
         }
@@ -250,7 +250,7 @@ public class CaseInfo {
         this.stages = stages;
     }
 
-    public CaseInfo withStatus(Integer status) {
+    public CaseInfoDetail withStatus(Integer status) {
         this.status = status;
         return this;
     }
@@ -269,7 +269,7 @@ public class CaseInfo {
         this.status = status;
     }
 
-    public CaseInfo withTempId(Integer tempId) {
+    public CaseInfoDetail withTempId(Integer tempId) {
         this.tempId = tempId;
         return this;
     }
@@ -288,7 +288,7 @@ public class CaseInfo {
         this.tempId = tempId;
     }
 
-    public CaseInfo withSort(Integer sort) {
+    public CaseInfoDetail withSort(Integer sort) {
         this.sort = sort;
         return this;
     }
@@ -313,13 +313,14 @@ public class CaseInfo {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        CaseInfo caseInfo = (CaseInfo) o;
-        return Objects.equals(this.caseId, caseInfo.caseId) && Objects.equals(this.name, caseInfo.name)
-            && Objects.equals(this.caseType, caseInfo.caseType) && Objects.equals(this.contents, caseInfo.contents)
-            && Objects.equals(this.forLoopParams, caseInfo.forLoopParams)
-            && Objects.equals(this.increaseSetting, caseInfo.increaseSetting)
-            && Objects.equals(this.stages, caseInfo.stages) && Objects.equals(this.status, caseInfo.status)
-            && Objects.equals(this.tempId, caseInfo.tempId) && Objects.equals(this.sort, caseInfo.sort);
+        CaseInfoDetail caseInfoDetail = (CaseInfoDetail) o;
+        return Objects.equals(this.caseId, caseInfoDetail.caseId) && Objects.equals(this.name, caseInfoDetail.name)
+            && Objects.equals(this.caseType, caseInfoDetail.caseType)
+            && Objects.equals(this.contents, caseInfoDetail.contents)
+            && Objects.equals(this.forLoopParams, caseInfoDetail.forLoopParams)
+            && Objects.equals(this.increaseSetting, caseInfoDetail.increaseSetting)
+            && Objects.equals(this.stages, caseInfoDetail.stages) && Objects.equals(this.status, caseInfoDetail.status)
+            && Objects.equals(this.tempId, caseInfoDetail.tempId) && Objects.equals(this.sort, caseInfoDetail.sort);
     }
 
     @Override
@@ -331,7 +332,7 @@ public class CaseInfo {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class CaseInfo {\n");
+        sb.append("class CaseInfoDetail {\n");
         sb.append("    caseId: ").append(toIndentedString(caseId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    caseType: ").append(toIndentedString(caseType)).append("\n");

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * IpFilter
+ * IP黑白名单。
  */
 public class IpFilter {
 

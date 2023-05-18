@@ -22,7 +22,7 @@ public class DeleteEngineResponse extends SdkResponse {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "job_id")
+    @JsonProperty(value = "jobId")
 
     private Integer jobId;
 

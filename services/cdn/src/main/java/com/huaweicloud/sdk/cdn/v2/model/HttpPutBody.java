@@ -36,6 +36,11 @@ public class HttpPutBody {
     private Integer certificateSource;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "certificate_type")
+
+    private String certificateType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "http2_status")
 
     private String http2Status;
@@ -44,6 +49,11 @@ public class HttpPutBody {
     @JsonProperty(value = "tls_version")
 
     private String tlsVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ocsp_stapling_status")
+
+    private String ocspStaplingStatus;
 
     public HttpPutBody withHttpsStatus(String httpsStatus) {
         this.httpsStatus = httpsStatus;
@@ -68,7 +78,7 @@ public class HttpPutBody {
     }
 
     /**
-     * 证书名字。（长度限制为3-32字符）。当证书开启时必传。
+     * 证书名字。（长度限制为3-64字符）。当证书开启时必传。
      * @return certificateName
      */
     public String getCertificateName() {
@@ -130,6 +140,23 @@ public class HttpPutBody {
         this.certificateSource = certificateSource;
     }
 
+    public HttpPutBody withCertificateType(String certificateType) {
+        this.certificateType = certificateType;
+        return this;
+    }
+
+    /**
+     * 证书类型。server：国际证书；server_sm：国密证书。
+     * @return certificateType
+     */
+    public String getCertificateType() {
+        return certificateType;
+    }
+
+    public void setCertificateType(String certificateType) {
+        this.certificateType = certificateType;
+    }
+
     public HttpPutBody withHttp2Status(String http2Status) {
         this.http2Status = http2Status;
         return this;
@@ -164,6 +191,23 @@ public class HttpPutBody {
         this.tlsVersion = tlsVersion;
     }
 
+    public HttpPutBody withOcspStaplingStatus(String ocspStaplingStatus) {
+        this.ocspStaplingStatus = ocspStaplingStatus;
+        return this;
+    }
+
+    /**
+     * 是否开启ocsp stapling （on：是，off：否）。
+     * @return ocspStaplingStatus
+     */
+    public String getOcspStaplingStatus() {
+        return ocspStaplingStatus;
+    }
+
+    public void setOcspStaplingStatus(String ocspStaplingStatus) {
+        this.ocspStaplingStatus = ocspStaplingStatus;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -178,8 +222,10 @@ public class HttpPutBody {
             && Objects.equals(this.certificateValue, httpPutBody.certificateValue)
             && Objects.equals(this.privateKey, httpPutBody.privateKey)
             && Objects.equals(this.certificateSource, httpPutBody.certificateSource)
+            && Objects.equals(this.certificateType, httpPutBody.certificateType)
             && Objects.equals(this.http2Status, httpPutBody.http2Status)
-            && Objects.equals(this.tlsVersion, httpPutBody.tlsVersion);
+            && Objects.equals(this.tlsVersion, httpPutBody.tlsVersion)
+            && Objects.equals(this.ocspStaplingStatus, httpPutBody.ocspStaplingStatus);
     }
 
     @Override
@@ -189,8 +235,10 @@ public class HttpPutBody {
             certificateValue,
             privateKey,
             certificateSource,
+            certificateType,
             http2Status,
-            tlsVersion);
+            tlsVersion,
+            ocspStaplingStatus);
     }
 
     @Override
@@ -202,8 +250,10 @@ public class HttpPutBody {
         sb.append("    certificateValue: ").append(toIndentedString(certificateValue)).append("\n");
         sb.append("    privateKey: ").append(toIndentedString(privateKey)).append("\n");
         sb.append("    certificateSource: ").append(toIndentedString(certificateSource)).append("\n");
+        sb.append("    certificateType: ").append(toIndentedString(certificateType)).append("\n");
         sb.append("    http2Status: ").append(toIndentedString(http2Status)).append("\n");
         sb.append("    tlsVersion: ").append(toIndentedString(tlsVersion)).append("\n");
+        sb.append("    ocspStaplingStatus: ").append(toIndentedString(ocspStaplingStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

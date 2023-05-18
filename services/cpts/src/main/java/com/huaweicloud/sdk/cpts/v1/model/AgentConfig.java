@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.cpts.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 探针配置
@@ -64,6 +67,31 @@ public class AgentConfig {
     @JsonProperty(value = "redis_shadow_type")
 
     private String redisShadowType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "kafka_enable")
+
+    private Boolean kafkaEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "kafka_shadow_topic_prefix")
+
+    private String kafkaShadowTopicPrefix;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "app_log_level")
+
+    private String appLogLevel;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "app_log_path")
+
+    private String appLogPath;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "mock_rule_list")
+
+    private List<MockRuleConfig> mockRuleList = null;
 
     public AgentConfig withAgentId(Integer agentId) {
         this.agentId = agentId;
@@ -254,6 +282,107 @@ public class AgentConfig {
         this.redisShadowType = redisShadowType;
     }
 
+    public AgentConfig withKafkaEnable(Boolean kafkaEnable) {
+        this.kafkaEnable = kafkaEnable;
+        return this;
+    }
+
+    /**
+     * kafka影子规则开关
+     * @return kafkaEnable
+     */
+    public Boolean getKafkaEnable() {
+        return kafkaEnable;
+    }
+
+    public void setKafkaEnable(Boolean kafkaEnable) {
+        this.kafkaEnable = kafkaEnable;
+    }
+
+    public AgentConfig withKafkaShadowTopicPrefix(String kafkaShadowTopicPrefix) {
+        this.kafkaShadowTopicPrefix = kafkaShadowTopicPrefix;
+        return this;
+    }
+
+    /**
+     * kafka影子topic前缀
+     * @return kafkaShadowTopicPrefix
+     */
+    public String getKafkaShadowTopicPrefix() {
+        return kafkaShadowTopicPrefix;
+    }
+
+    public void setKafkaShadowTopicPrefix(String kafkaShadowTopicPrefix) {
+        this.kafkaShadowTopicPrefix = kafkaShadowTopicPrefix;
+    }
+
+    public AgentConfig withAppLogLevel(String appLogLevel) {
+        this.appLogLevel = appLogLevel;
+        return this;
+    }
+
+    /**
+     * 应用日志等级（ALL/TRACE/DEBUG/INFO/WARN/ERROR/OFF）
+     * @return appLogLevel
+     */
+    public String getAppLogLevel() {
+        return appLogLevel;
+    }
+
+    public void setAppLogLevel(String appLogLevel) {
+        this.appLogLevel = appLogLevel;
+    }
+
+    public AgentConfig withAppLogPath(String appLogPath) {
+        this.appLogPath = appLogPath;
+        return this;
+    }
+
+    /**
+     * 应用日志路径
+     * @return appLogPath
+     */
+    public String getAppLogPath() {
+        return appLogPath;
+    }
+
+    public void setAppLogPath(String appLogPath) {
+        this.appLogPath = appLogPath;
+    }
+
+    public AgentConfig withMockRuleList(List<MockRuleConfig> mockRuleList) {
+        this.mockRuleList = mockRuleList;
+        return this;
+    }
+
+    public AgentConfig addMockRuleListItem(MockRuleConfig mockRuleListItem) {
+        if (this.mockRuleList == null) {
+            this.mockRuleList = new ArrayList<>();
+        }
+        this.mockRuleList.add(mockRuleListItem);
+        return this;
+    }
+
+    public AgentConfig withMockRuleList(Consumer<List<MockRuleConfig>> mockRuleListSetter) {
+        if (this.mockRuleList == null) {
+            this.mockRuleList = new ArrayList<>();
+        }
+        mockRuleListSetter.accept(this.mockRuleList);
+        return this;
+    }
+
+    /**
+     * mock规则列表
+     * @return mockRuleList
+     */
+    public List<MockRuleConfig> getMockRuleList() {
+        return mockRuleList;
+    }
+
+    public void setMockRuleList(List<MockRuleConfig> mockRuleList) {
+        this.mockRuleList = mockRuleList;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -271,7 +400,12 @@ public class AgentConfig {
             && Objects.equals(this.redisEnable, agentConfig.redisEnable)
             && Objects.equals(this.redisShadowKeyPrefix, agentConfig.redisShadowKeyPrefix)
             && Objects.equals(this.redisShadowRepository, agentConfig.redisShadowRepository)
-            && Objects.equals(this.redisShadowType, agentConfig.redisShadowType);
+            && Objects.equals(this.redisShadowType, agentConfig.redisShadowType)
+            && Objects.equals(this.kafkaEnable, agentConfig.kafkaEnable)
+            && Objects.equals(this.kafkaShadowTopicPrefix, agentConfig.kafkaShadowTopicPrefix)
+            && Objects.equals(this.appLogLevel, agentConfig.appLogLevel)
+            && Objects.equals(this.appLogPath, agentConfig.appLogPath)
+            && Objects.equals(this.mockRuleList, agentConfig.mockRuleList);
     }
 
     @Override
@@ -286,7 +420,12 @@ public class AgentConfig {
             redisEnable,
             redisShadowKeyPrefix,
             redisShadowRepository,
-            redisShadowType);
+            redisShadowType,
+            kafkaEnable,
+            kafkaShadowTopicPrefix,
+            appLogLevel,
+            appLogPath,
+            mockRuleList);
     }
 
     @Override
@@ -304,6 +443,11 @@ public class AgentConfig {
         sb.append("    redisShadowKeyPrefix: ").append(toIndentedString(redisShadowKeyPrefix)).append("\n");
         sb.append("    redisShadowRepository: ").append(toIndentedString(redisShadowRepository)).append("\n");
         sb.append("    redisShadowType: ").append(toIndentedString(redisShadowType)).append("\n");
+        sb.append("    kafkaEnable: ").append(toIndentedString(kafkaEnable)).append("\n");
+        sb.append("    kafkaShadowTopicPrefix: ").append(toIndentedString(kafkaShadowTopicPrefix)).append("\n");
+        sb.append("    appLogLevel: ").append(toIndentedString(appLogLevel)).append("\n");
+        sb.append("    appLogPath: ").append(toIndentedString(appLogPath)).append("\n");
+        sb.append("    mockRuleList: ").append(toIndentedString(mockRuleList)).append("\n");
         sb.append("}");
         return sb.toString();
     }

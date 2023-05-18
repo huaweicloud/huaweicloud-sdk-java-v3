@@ -11,11 +11,6 @@ import java.util.Objects;
 public class ListTemplatesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Language")
-
-    private String xLanguage;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_type")
 
     private String templateType;
@@ -49,25 +44,6 @@ public class ListTemplatesRequest {
     @JsonProperty(value = "asc")
 
     private String asc;
-
-    public ListTemplatesRequest withXLanguage(String xLanguage) {
-        this.xLanguage = xLanguage;
-        return this;
-    }
-
-    /**
-     * 语言类型 中文:zh-cn 英文:en-us，默认en-us
-     * @return xLanguage
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Language")
-    public String getXLanguage() {
-        return xLanguage;
-    }
-
-    public void setXLanguage(String xLanguage) {
-        this.xLanguage = xLanguage;
-    }
 
     public ListTemplatesRequest withTemplateType(String templateType) {
         this.templateType = templateType;
@@ -201,8 +177,7 @@ public class ListTemplatesRequest {
             return false;
         }
         ListTemplatesRequest listTemplatesRequest = (ListTemplatesRequest) o;
-        return Objects.equals(this.xLanguage, listTemplatesRequest.xLanguage)
-            && Objects.equals(this.templateType, listTemplatesRequest.templateType)
+        return Objects.equals(this.templateType, listTemplatesRequest.templateType)
             && Objects.equals(this.isBuildIn, listTemplatesRequest.isBuildIn)
             && Objects.equals(this.offset, listTemplatesRequest.offset)
             && Objects.equals(this.limit, listTemplatesRequest.limit)
@@ -213,14 +188,13 @@ public class ListTemplatesRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, templateType, isBuildIn, offset, limit, name, sort, asc);
+        return Objects.hash(templateType, isBuildIn, offset, limit, name, sort, asc);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListTemplatesRequest {\n");
-        sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    templateType: ").append(toIndentedString(templateType)).append("\n");
         sb.append("    isBuildIn: ").append(toIndentedString(isBuildIn)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");

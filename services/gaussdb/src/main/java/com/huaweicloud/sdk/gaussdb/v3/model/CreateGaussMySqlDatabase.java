@@ -27,6 +27,12 @@ public class CreateGaussMySqlDatabase  {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="comment")
+    
+
+    private String comment;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="character_set")
     
 
@@ -55,6 +61,28 @@ public class CreateGaussMySqlDatabase  {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    
+
+    public CreateGaussMySqlDatabase withComment(String comment) {
+        this.comment = comment;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 数据库备注,长度不能超过512个字符，不能包含回车和特殊字符!<\"='>&。
+     * @return comment
+     */
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
     }
 
     
@@ -127,18 +155,20 @@ public class CreateGaussMySqlDatabase  {
         }
         CreateGaussMySqlDatabase createGaussMySqlDatabase = (CreateGaussMySqlDatabase) o;
         return Objects.equals(this.name, createGaussMySqlDatabase.name) &&
+            Objects.equals(this.comment, createGaussMySqlDatabase.comment) &&
             Objects.equals(this.characterSet, createGaussMySqlDatabase.characterSet) &&
             Objects.equals(this.users, createGaussMySqlDatabase.users);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, characterSet, users);
+        return Objects.hash(name, comment, characterSet, users);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateGaussMySqlDatabase {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    comment: ").append(toIndentedString(comment)).append("\n");
         sb.append("    characterSet: ").append(toIndentedString(characterSet)).append("\n");
         sb.append("    users: ").append(toIndentedString(users)).append("\n");
         sb.append("}");

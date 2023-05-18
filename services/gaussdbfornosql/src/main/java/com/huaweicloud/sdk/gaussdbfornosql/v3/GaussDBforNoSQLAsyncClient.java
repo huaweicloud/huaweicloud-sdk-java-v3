@@ -1690,6 +1690,37 @@ public class GaussDBforNoSQLAsyncClient {
     }
 
     /**
+     * 查询备份列表（推荐）
+     *
+     * 根据指定条件查询备份列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAllInstancesBackupsNewRequest 请求对象
+     * @return CompletableFuture<ShowAllInstancesBackupsNewResponse>
+     */
+    public CompletableFuture<ShowAllInstancesBackupsNewResponse> showAllInstancesBackupsNewAsync(
+        ShowAllInstancesBackupsNewRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.showAllInstancesBackupsNew);
+    }
+
+    /**
+     * 查询备份列表（推荐）
+     *
+     * 根据指定条件查询备份列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAllInstancesBackupsNewRequest 请求对象
+     * @return AsyncInvoker<ShowAllInstancesBackupsNewRequest, ShowAllInstancesBackupsNewResponse>
+     */
+    public AsyncInvoker<ShowAllInstancesBackupsNewRequest, ShowAllInstancesBackupsNewResponse> showAllInstancesBackupsNewAsyncInvoker(
+        ShowAllInstancesBackupsNewRequest request) {
+        return new AsyncInvoker<ShowAllInstancesBackupsNewRequest, ShowAllInstancesBackupsNewResponse>(request,
+            GaussDBforNoSQLMeta.showAllInstancesBackupsNew, hcClient);
+    }
+
+    /**
      * 查询参数模板可应用的实例列表
      *
      * 查询参数模板可应用的实例列表。

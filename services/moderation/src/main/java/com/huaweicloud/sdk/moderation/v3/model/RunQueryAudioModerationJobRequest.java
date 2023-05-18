@@ -21,7 +21,7 @@ public class RunQueryAudioModerationJobRequest {
     }
 
     /**
-     * Get jobId
+     * 创建作业成功时，接口返回的job_id。
      * @return jobId
      */
     public String getJobId() {

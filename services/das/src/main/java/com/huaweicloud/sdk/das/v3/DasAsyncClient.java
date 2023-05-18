@@ -80,6 +80,39 @@ public class DasAsyncClient {
     }
 
     /**
+     * 删除共享链接
+     *
+     * 删除共享链接，
+     * 用于用户删除共享链接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CancelShareConnectionsRequest 请求对象
+     * @return CompletableFuture<CancelShareConnectionsResponse>
+     */
+    public CompletableFuture<CancelShareConnectionsResponse> cancelShareConnectionsAsync(
+        CancelShareConnectionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.cancelShareConnections);
+    }
+
+    /**
+     * 删除共享链接
+     *
+     * 删除共享链接，
+     * 用于用户删除共享链接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CancelShareConnectionsRequest 请求对象
+     * @return AsyncInvoker<CancelShareConnectionsRequest, CancelShareConnectionsResponse>
+     */
+    public AsyncInvoker<CancelShareConnectionsRequest, CancelShareConnectionsResponse> cancelShareConnectionsAsyncInvoker(
+        CancelShareConnectionsRequest request) {
+        return new AsyncInvoker<CancelShareConnectionsRequest, CancelShareConnectionsResponse>(request,
+            DasMeta.cancelShareConnections, hcClient);
+    }
+
+    /**
      * 设置SQL限流开关状态
      *
      * 设置SQL限流开关状态。目前仅支持MySQL数据库。
@@ -140,6 +173,39 @@ public class DasAsyncClient {
         ChangeSqlSwitchRequest request) {
         return new AsyncInvoker<ChangeSqlSwitchRequest, ChangeSqlSwitchResponse>(request, DasMeta.changeSqlSwitch,
             hcClient);
+    }
+
+    /**
+     * 设置共享链接
+     *
+     * 设置共享链接，
+     * 用于用户添加共享链接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateShareConnectionsRequest 请求对象
+     * @return CompletableFuture<CreateShareConnectionsResponse>
+     */
+    public CompletableFuture<CreateShareConnectionsResponse> createShareConnectionsAsync(
+        CreateShareConnectionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.createShareConnections);
+    }
+
+    /**
+     * 设置共享链接
+     *
+     * 设置共享链接，
+     * 用于用户添加共享链接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateShareConnectionsRequest 请求对象
+     * @return AsyncInvoker<CreateShareConnectionsRequest, CreateShareConnectionsResponse>
+     */
+    public AsyncInvoker<CreateShareConnectionsRequest, CreateShareConnectionsResponse> createShareConnectionsAsyncInvoker(
+        CreateShareConnectionsRequest request) {
+        return new AsyncInvoker<CreateShareConnectionsRequest, CreateShareConnectionsResponse>(request,
+            DasMeta.createShareConnections, hcClient);
     }
 
     /**

@@ -1664,6 +1664,36 @@ public class GaussDBforNoSQLClient {
     }
 
     /**
+     * 查询备份列表（推荐）
+     *
+     * 根据指定条件查询备份列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAllInstancesBackupsNewRequest 请求对象
+     * @return ShowAllInstancesBackupsNewResponse
+     */
+    public ShowAllInstancesBackupsNewResponse showAllInstancesBackupsNew(ShowAllInstancesBackupsNewRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.showAllInstancesBackupsNew);
+    }
+
+    /**
+     * 查询备份列表（推荐）
+     *
+     * 根据指定条件查询备份列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAllInstancesBackupsNewRequest 请求对象
+     * @return SyncInvoker<ShowAllInstancesBackupsNewRequest, ShowAllInstancesBackupsNewResponse>
+     */
+    public SyncInvoker<ShowAllInstancesBackupsNewRequest, ShowAllInstancesBackupsNewResponse> showAllInstancesBackupsNewInvoker(
+        ShowAllInstancesBackupsNewRequest request) {
+        return new SyncInvoker<ShowAllInstancesBackupsNewRequest, ShowAllInstancesBackupsNewResponse>(request,
+            GaussDBforNoSQLMeta.showAllInstancesBackupsNew, hcClient);
+    }
+
+    /**
      * 查询参数模板可应用的实例列表
      *
      * 查询参数模板可应用的实例列表。

@@ -311,7 +311,7 @@ public class AudioCreateRequest {
     }
 
     /**
-     * 需要检测的风险类型，若未传或者传参为空，则表示全场景审核。
+     * 需要检测的风险类型，列表不能为空。 风险类型如下： - porn：涉黄检测 - ad：广告检测 - moan：娇喘检测 - abuse：辱骂检测
      * @return categories
      */
     public List<CategoriesEnum> getCategories() {

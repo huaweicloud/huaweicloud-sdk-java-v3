@@ -81,67 +81,152 @@ Common conflicts, such as Jackson and okhttp3 version conflicts.
 
 - The following example shows how to query a list of VPCs synchronously in a specific region, you need to substitute
   your real `{Service}Client` for `VpcClient` in actual use.
-- Substitute the values for `{your ak string}`, `{your sk string}`, `{your endpoint string}` and `{your project id}`.
+- Substitute the values for `{your ak string}` and `{your sk string}`
+
+**Simplified Demo**
 
 ``` java
 package com.huaweicloud.sdk.test;
 
-/* Import dependent module */
-// Logger
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-// Authentication
 import com.huaweicloud.sdk.core.auth.BasicCredentials;
-// Service response exception class
+import com.huaweicloud.sdk.core.auth.ICredential;
+import com.huaweicloud.sdk.core.exception.ConnectionException;
+import com.huaweicloud.sdk.core.exception.RequestTimeoutException;
 import com.huaweicloud.sdk.core.exception.ServiceResponseException;
-// Http Configuration
-import com.huaweicloud.sdk.core.http.HttpConfig;
 import com.huaweicloud.sdk.vpc.v2.VpcClient;
-// Import the request and response classes
 import com.huaweicloud.sdk.vpc.v2.model.ListVpcsRequest;
 import com.huaweicloud.sdk.vpc.v2.model.ListVpcsResponse;
+import com.huaweicloud.sdk.vpc.v2.region.VpcRegion;
 
 public class Application {
-    private static final Logger logger = LoggerFactory.getLogger(Application.class);
+    public static void main(String[] args) {
+        // Configure authentication
+        ICredential auth = new BasicCredentials()
+                .withAk("{your ak string}")
+                .withSk("{your sk string}");
 
-    public static void listVpcs(VpcClient client) {
+        // Create a service client
+        VpcClient client = VpcClient.newBuilder()
+                .withCredential(auth)
+                .withRegion(VpcRegion.valueOf("cn-north-4"))
+                .build();
+
+        // Send the request and get the response
+        ListVpcsRequest request = new ListVpcsRequest();
         try {
-            // Instantiate the ListVpcsRequest object and call the listVpcs interface
-            ListVpcsResponse listVpcsResponse = client.listVpcs(new ListVpcsRequest().withLimit(1));
-            // Output string response in json format
-            logger.info(listVpcsResponse.toString());
+            ListVpcsResponse response = client.listVpcs(request);
+            System.out.println(response.toString());
+        } catch (ConnectionException | RequestTimeoutException e) {
+            e.printStackTrace();
         } catch (ServiceResponseException e) {
-            logger.error("HttpStatusCode: " + e.getHttpStatusCode());
-            logger.error("RequestId: " + e.getRequestId());
-            logger.error("ErrorCode: " + e.getErrorCode());
-            logger.error("ErrorMsg: " + e.getErrorMsg());
+            e.printStackTrace();
+            System.out.println(e.getHttpStatusCode());
+            System.out.println(e.getRequestId());
+            System.out.println(e.getErrorCode());
+            System.out.println(e.getErrorMsg());
         }
     }
+}
+```
+**Detailed Demo**
 
+```java
+package com.huaweicloud.sdk.test;
+
+import com.huaweicloud.sdk.core.HttpListener;
+import com.huaweicloud.sdk.core.auth.BasicCredentials;
+import com.huaweicloud.sdk.core.auth.ICredential;
+import com.huaweicloud.sdk.core.auth.SigningAlgorithm;
+import com.huaweicloud.sdk.core.exception.ConnectionException;
+import com.huaweicloud.sdk.core.exception.RequestTimeoutException;
+import com.huaweicloud.sdk.core.exception.ServiceResponseException;
+import com.huaweicloud.sdk.core.http.HttpConfig;
+import com.huaweicloud.sdk.vpc.v2.VpcClient;
+import com.huaweicloud.sdk.vpc.v2.model.ListVpcsRequest;
+import com.huaweicloud.sdk.vpc.v2.model.ListVpcsResponse;
+import com.huaweicloud.sdk.vpc.v2.region.VpcRegion;
+
+import java.util.stream.Collectors;
+
+public class Application {
     public static void main(String[] args) {
-        String ak = "{your ak string}";
-        String sk = "{your sk string}";
-        String endpoint = "{your endpoint string}";
-        String projectId = "{your project id}";
-		
-        // Http Configuration for client
-        HttpConfig config = HttpConfig.getDefaultHttpConfig();
-        config.withIgnoreSSLVerification(true);
-		
-        // Create the authentication
-        BasicCredentials auth = new BasicCredentials()
-            .withAk(ak)
-            .withSk(sk)
-            .withProjectId(projectId);
-		
-        // Create VpcClient instance
-        VpcClient vpcClient = VpcClient.newBuilder()
-            .withHttpConfig(config)
-            .withCredential(auth)
-            .withEndpoint(endpoint)
-            .build();
+        // Configure authentication
+        ICredential auth = new BasicCredentials()
+                // Access Key and Secret Access Key used for authentication
+                .withAk("{your ak string}")
+                .withSk("{your sk string}")
+                // If projectId is not filled in, the SDK will automatically call the IAM service to query the project id corresponding to the region.
+                .withProjectId("{your projectId string}")
+                // Configure the SDK built-in IAM service endpoint, default is https://iam.myhuaweicloud.com
+                .withIamEndpoint("https://iam.cn-north-4.myhuaweicloud.com");
 
-        listVpcs(vpcClient);
+        // Use default configuration
+        HttpConfig httpConfig = HttpConfig.getDefaultHttpConfig();
+        // Configure whether to ignore the SSL certificate verification, default is false
+        httpConfig.withIgnoreSSLVerification(true);
+        // Configure timeout as needed, default timeout is 60 seconds
+        httpConfig.withTimeout(60);
+        // Configure proxy as needed
+        httpConfig.withProxyHost("proxy.huaweicloud.com")
+                .withProxyPort(8080)
+                .withProxyUsername("username")
+                .withProxyPassword("password");
+        // Configure SSLSocketFactory and TrustManager, user implementation is required
+        httpConfig.withSSLSocketFactory(sslSocketFactory)
+                .withX509TrustManager(trustManager);
+        // JDK8u302+ is required when using HMAC_SM3, default is HMAC_SHA256
+        httpConfig.withSigningAlgorithm(SigningAlgorithm.HMAC_SM3);
+        // Print the original request after registering the listener, do not use it in a production environment
+        HttpListener requestListener = HttpListener.forRequestListener(listener ->
+                System.out.printf("> Request %s %s\n> Headers:\n%s\n> Body: %s\n",
+                        listener.httpMethod(),
+                        listener.uri(),
+                        listener.headers().entrySet().stream()
+                                .flatMap(entry -> entry.getValue().stream().map(
+                                        value -> "\t" + entry.getKey() + ": " + value))
+                                .collect(Collectors.joining("\n")),
+                        listener.body().orElse("")));
+        httpConfig.addHttpListener(requestListener);
+        // Print the original response after registering the listener, do not use it in a production environment
+        HttpListener responseListener = HttpListener.forResponseListener(listener ->
+                System.out.printf("< Response %s %s %s\n< Headers:\n%s\n< Body: %s\n",
+                        listener.httpMethod(),
+                        listener.uri(),
+                        listener.statusCode(),
+                        listener.headers().entrySet().stream()
+                                .flatMap(entry -> entry.getValue().stream().map(
+                                        value -> "\t" + entry.getKey() + ": " + value))
+                                .collect(Collectors.joining("\n")),
+                        listener.body().orElse("")));
+        httpConfig.addHttpListener(responseListener);
+
+        // Create a service client
+        VpcClient client = VpcClient.newBuilder()
+                // Configure authentication
+                .withCredential(auth)
+                // Configure region, it will throw a IllegalArgumentException if the region does not exist
+                .withRegion(VpcRegion.valueOf("cn-north-4"))
+                // Configure HTTP
+                .withHttpConfig(httpConfig)
+                .build();
+
+        // Create a request
+        ListVpcsRequest request = new ListVpcsRequest();
+        // Configure the number of records on each page
+        request.setLimit(1);
+        try {
+            // Send the request and get the response
+            ListVpcsResponse response = client.listVpcs(request);
+            System.out.println(response.toString());
+        } catch (ConnectionException | RequestTimeoutException e) {
+            e.printStackTrace();
+        } catch (ServiceResponseException e) {
+            e.printStackTrace();
+            System.out.println(e.getHttpStatusCode());
+            System.out.println(e.getRequestId());
+            System.out.println(e.getErrorCode());
+            System.out.println(e.getErrorMsg());
+        }
     }
 }
 ```
@@ -198,7 +283,11 @@ the [CHANGELOG.md](https://github.com/huaweicloud/huaweicloud-sdk-java-v3/blob/m
 import com.huaweicloud.sdk.core.http.HttpConfig;
 
 // Use default configuration
-HttpConfig config = HttpConfig.getDefaultHttpConfig();
+HttpConfig httpConfig = HttpConfig.getDefaultHttpConfig();
+
+VpcClient client = VpcClient.newBuilder()
+        .withHttpConfig(httpConfig)
+        .build();
 ```
 
 #### 1.2 Network Proxy [:top:](#user-manual-top)
@@ -207,17 +296,26 @@ Java SDK only supports HTTP proxy configuration currently.
 
 ``` java
 // Use network proxy if needed, the default protocol is `http`
-config.withProxyHost("proxy.huawei.com")
+HttpConfig httpConfig = HttpConfig.getDefaultHttpConfig()
+    .withProxyHost("proxy.huaweicloud.com")
     .withProxyPort(8080)
-    .withProxyUsername("test")
-    .withProxyPassword("test");
+    .withProxyUsername("username")
+    .withProxyPassword("password");
+
+VpcClient client = VpcClient.newBuilder()
+        .withHttpConfig(httpConfig)
+        .build();
 ```
 
 #### 1.3 Timeout Configuration [:top:](#user-manual-top)
 
 ``` java
 // The default connection timeout is 60 seconds, change it if needed
-config.withTimeout(60);
+HttpConfig httpConfig = HttpConfig.getDefaultHttpConfig().withTimeout(60);
+
+VpcClient client = VpcClient.newBuilder()
+        .withHttpConfig(httpConfig)
+        .build();
 ```
 
 #### 1.4 SSL Certification [:top:](#user-manual-top)
@@ -226,27 +324,37 @@ Skip SSL certification:
 
 ``` java
 // Skip SSL certification checking while using https protocol if needed
-config.withIgnoreSSLVerification(true);
+HttpConfig httpConfig = HttpConfig.getDefaultHttpConfig().withIgnoreSSLVerification(true);
+
+VpcClient client = VpcClient.newBuilder()
+        .withHttpConfig(httpConfig)
+        .build();
 ```
 
 Customized configuration:
 
 ```java
 // Configure SSLSocketFactory and TrustManager, user implementation is required.
-config.withSSLSocketFactory(sslSocketFactory).
-    withX509TrustManager(trustManager);
+HttpConfig httpConfig = HttpConfig.getDefaultHttpConfig()
+    .withSSLSocketFactory(sslSocketFactory)
+    .withX509TrustManager(trustManager);
+
+VpcClient client = VpcClient.newBuilder()
+        .withHttpConfig(httpConfig)
+        .build();
 ```
 
 #### 1.5 Signing Algorithm [:top:](#user-manual-top)
 
 ```java
 import com.huaweicloud.sdk.core.auth.SigningAlgorithm;
- 
-// Default signing algorithm is HMAC_SHA256
-config.withSigningAlgorithm(SigningAlgorithm.HMAC_SHA256);
- 
-// JDK8u302+ is required when using HMAC_SM3
-config.withSigningAlgorithm(SigningAlgorithm.HMAC_SM3);
+
+// JDK8u302+ is required when using HMAC_SM3, default signing algorithm is HMAC_SHA256
+HttpConfig.getDefaultHttpConfig().withSigningAlgorithm(SigningAlgorithm.HMAC_SM3);
+
+VpcClient client = VpcClient.newBuilder()
+        .withHttpConfig(httpConfig)
+        .build();
 ```
 
 ### 2. Credentials Configuration [:top:](#user-manual-top)
@@ -913,32 +1021,38 @@ needed. The SDK provides a listener function to obtain the original encrypted ht
 > :warning:  Warning: The original http log information is used in debugging stage only, please do not print the original http header or body in the production environment. These log information is not encrypted and contains sensitive data such as the password of your ECS virtual machine, or the password of your IAM user account, etc. When the response body is binary content, the body will be printed as "***" without detailed information.
 
 ``` java
-HttpConfig config = new HttpConfig().addHttpListener(HttpListener.forRequestListener(requestListener ->
-    // Original http request message will be printed after registing the listener,
-    // Please do not turn on http log printing in the production environment.
-    logger.debug("REQUEST: {} {} {} {}",
-        requestListener.httpMethod(),
-        requestListener.uri(),
-        requestListener.headers().entrySet().stream().flatMap(entry ->
-            entry.getValue().stream().map(value -> entry.getKey() + " : " + value))
-            .collect(Collectors.joining(";")),
-        requestListener.body().orElse(""))))
-    .addHttpListener(HttpListener.forResponseListener(responseListener ->
-        // Original http request message will be printed after registing the listener,
-        // Please do not turn on http log printing in the production environment.
-        logger.debug("RESPONSE: {} {} {} {} {}",
-            responseListener.httpMethod(),
-            responseListener.uri(),
-            responseListener.statusCode(),
-            responseListener.headers().entrySet().stream().flatMap(entry ->
-                entry.getValue().stream().map(value -> entry.getKey() + " : " + value))
-                .collect(Collectors.joining(";")),
-            responseListener.body().orElse(""))));
+import com.huaweicloud.sdk.core.HttpListener;
+import com.huaweicloud.sdk.core.http.HttpConfig;
+
+HttpConfig httpConfig = HttpConfig.getDefaultHttpConfig();
+
+// Print the original request after registering the listener, do not use it in a production environment
+HttpListener requestListener = HttpListener.forRequestListener(listener ->
+        System.out.printf("> Request %s %s\n> Headers:\n%s\n> Body: %s\n",
+                listener.httpMethod(),
+                listener.uri(),
+                listener.headers().entrySet().stream()
+                        .flatMap(entry -> entry.getValue().stream().map(
+                                value -> "\t" + entry.getKey() + ": " + value))
+                        .collect(Collectors.joining("\n")),
+                listener.body().orElse("")));
+httpConfig.addHttpListener(requestListener);
+
+// Print the original response after registering the listener, do not use it in a production environment
+HttpListener responseListener = HttpListener.forResponseListener(listener ->
+        System.out.printf("< Response %s %s %s\n< Headers:\n%s\n< Body: %s\n",
+                listener.httpMethod(),
+                listener.uri(),
+                listener.statusCode(),
+                listener.headers().entrySet().stream()
+                        .flatMap(entry -> entry.getValue().stream().map(
+                                value -> "\t" + entry.getKey() + ": " + value))
+                        .collect(Collectors.joining("\n")),
+                listener.body().orElse("")));
+httpConfig.addHttpListener(responseListener);
 
 VpcClient vpcClient = VpcClient.newBuilder()
-    .withHttpConfig(config)
-    .withCredential(auth)
-    .withEndpoint(endpoint)
+    .withHttpConfig(httpConfig)
     .build();
 ```
 

@@ -335,9 +335,9 @@ public class CptsAsyncClient {
     }
 
     /**
-     * 查询CPTS任务离线报告列表
+     * 查询PerfTest任务离线报告列表
      *
-     * 查询CPTS任务离线报告列表
+     * 查询PerfTest任务离线报告列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -349,9 +349,9 @@ public class CptsAsyncClient {
     }
 
     /**
-     * 查询CPTS任务离线报告列表
+     * 查询PerfTest任务离线报告列表
      *
-     * 查询CPTS任务离线报告列表
+     * 查询PerfTest任务离线报告列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

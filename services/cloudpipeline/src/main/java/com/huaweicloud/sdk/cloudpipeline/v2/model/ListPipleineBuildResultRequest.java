@@ -11,11 +11,6 @@ import java.util.Objects;
 public class ListPipleineBuildResultRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Language")
-
-    private String xLanguage;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
 
     private String projectId;
@@ -39,25 +34,6 @@ public class ListPipleineBuildResultRequest {
     @JsonProperty(value = "limit")
 
     private Integer limit;
-
-    public ListPipleineBuildResultRequest withXLanguage(String xLanguage) {
-        this.xLanguage = xLanguage;
-        return this;
-    }
-
-    /**
-     * 语言类型 中文:zh-cn 英文:en-us，默认en-us
-     * @return xLanguage
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Language")
-    public String getXLanguage() {
-        return xLanguage;
-    }
-
-    public void setXLanguage(String xLanguage) {
-        this.xLanguage = xLanguage;
-    }
 
     public ListPipleineBuildResultRequest withProjectId(String projectId) {
         this.projectId = projectId;
@@ -157,8 +133,7 @@ public class ListPipleineBuildResultRequest {
             return false;
         }
         ListPipleineBuildResultRequest listPipleineBuildResultRequest = (ListPipleineBuildResultRequest) o;
-        return Objects.equals(this.xLanguage, listPipleineBuildResultRequest.xLanguage)
-            && Objects.equals(this.projectId, listPipleineBuildResultRequest.projectId)
+        return Objects.equals(this.projectId, listPipleineBuildResultRequest.projectId)
             && Objects.equals(this.startDate, listPipleineBuildResultRequest.startDate)
             && Objects.equals(this.endDate, listPipleineBuildResultRequest.endDate)
             && Objects.equals(this.offset, listPipleineBuildResultRequest.offset)
@@ -167,14 +142,13 @@ public class ListPipleineBuildResultRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, projectId, startDate, endDate, offset, limit);
+        return Objects.hash(projectId, startDate, endDate, offset, limit);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListPipleineBuildResultRequest {\n");
-        sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
         sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");

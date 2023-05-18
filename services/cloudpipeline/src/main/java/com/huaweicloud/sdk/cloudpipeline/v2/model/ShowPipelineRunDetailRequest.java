@@ -25,11 +25,6 @@ public class ShowPipelineRunDetailRequest {
 
     private String pipelineRunId;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Language")
-
-    private String xLanguage;
-
     public ShowPipelineRunDetailRequest withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -81,25 +76,6 @@ public class ShowPipelineRunDetailRequest {
         this.pipelineRunId = pipelineRunId;
     }
 
-    public ShowPipelineRunDetailRequest withXLanguage(String xLanguage) {
-        this.xLanguage = xLanguage;
-        return this;
-    }
-
-    /**
-     * 语言类型 中文:zh-cn 英文:en-us，默认en-us
-     * @return xLanguage
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Language")
-    public String getXLanguage() {
-        return xLanguage;
-    }
-
-    public void setXLanguage(String xLanguage) {
-        this.xLanguage = xLanguage;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -111,13 +87,12 @@ public class ShowPipelineRunDetailRequest {
         ShowPipelineRunDetailRequest showPipelineRunDetailRequest = (ShowPipelineRunDetailRequest) o;
         return Objects.equals(this.projectId, showPipelineRunDetailRequest.projectId)
             && Objects.equals(this.pipelineId, showPipelineRunDetailRequest.pipelineId)
-            && Objects.equals(this.pipelineRunId, showPipelineRunDetailRequest.pipelineRunId)
-            && Objects.equals(this.xLanguage, showPipelineRunDetailRequest.xLanguage);
+            && Objects.equals(this.pipelineRunId, showPipelineRunDetailRequest.pipelineRunId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(projectId, pipelineId, pipelineRunId, xLanguage);
+        return Objects.hash(projectId, pipelineId, pipelineRunId);
     }
 
     @Override
@@ -127,7 +102,6 @@ public class ShowPipelineRunDetailRequest {
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    pipelineId: ").append(toIndentedString(pipelineId)).append("\n");
         sb.append("    pipelineRunId: ").append(toIndentedString(pipelineRunId)).append("\n");
-        sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("}");
         return sb.toString();
     }

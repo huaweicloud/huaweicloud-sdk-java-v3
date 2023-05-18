@@ -68,7 +68,7 @@ public class HttpPutBody {
     }
 
     /**
-     * 证书名字。（长度限制为3-32字符）。当证书开启时必传。
+     * 证书名字。（长度限制为3-64字符）。当证书开启时必传。
      * @return certificateName
      */
     public String getCertificateName() {

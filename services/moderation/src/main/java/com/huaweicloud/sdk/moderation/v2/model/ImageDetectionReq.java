@@ -171,7 +171,7 @@ public class ImageDetectionReq {
     }
 
     /**
-     * 与url二选一  图片文件Base64编码字符串。要求base64编码后大小不超过10M。  政治人物检测人脸部分不小于50*50像素。  支持JPG/PNG/BMP格式。 
+     * 与url二选一  图片文件Base64编码字符串。要求base64编码后大小不超过10M。  政治人物检测人脸部分不小于50*50像素。  支持JPEG/PNG/BMP/WEBP/GIF格式。 
      * @return image
      */
     public String getImage() {

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * IP黑白名单
+ * IP黑白名单。
  */
 public class IpFilter {
 
@@ -43,7 +43,7 @@ public class IpFilter {
     }
 
     /**
-     * 配置IP黑白名单，当type=off时，非必传。多条规则用“,”分割。
+     * 配置IP黑白名单，当type=off时，非必传。多条规则用“,”分割,不支持带通配符的地址，如192.168.0.*。
      * @return value
      */
     public String getValue() {

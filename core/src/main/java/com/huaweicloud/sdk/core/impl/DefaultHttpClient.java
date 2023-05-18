@@ -214,7 +214,7 @@ public class DefaultHttpClient implements HttpClient {
     private Request buildOkHttpRequestWithoutTextBody(HttpRequest httpRequest, Request.Builder requestBuilder) {
         if (Objects.isNull(httpRequest.getBody())) {
             if (HttpMethod.requiresRequestBody(httpRequest.getMethod().toString())) {
-                requestBuilder.method(httpRequest.getMethod().toString(), RequestBody.create(null, new byte[0]));
+                requestBuilder.method(httpRequest.getMethod().toString(), RequestBody.create(new byte[0], null));
             } else {
                 requestBuilder.method(httpRequest.getMethod().toString(), null);
             }

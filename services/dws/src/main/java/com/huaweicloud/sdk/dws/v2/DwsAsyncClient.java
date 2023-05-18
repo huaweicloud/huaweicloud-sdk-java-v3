@@ -306,6 +306,36 @@ public class DwsAsyncClient {
     }
 
     /**
+     * 检查容灾名称
+     *
+     * 检查容灾名称
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CheckDisasterNameRequest 请求对象
+     * @return CompletableFuture<CheckDisasterNameResponse>
+     */
+    public CompletableFuture<CheckDisasterNameResponse> checkDisasterNameAsync(CheckDisasterNameRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.checkDisasterName);
+    }
+
+    /**
+     * 检查容灾名称
+     *
+     * 检查容灾名称
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CheckDisasterNameRequest 请求对象
+     * @return AsyncInvoker<CheckDisasterNameRequest, CheckDisasterNameResponse>
+     */
+    public AsyncInvoker<CheckDisasterNameRequest, CheckDisasterNameResponse> checkDisasterNameAsyncInvoker(
+        CheckDisasterNameRequest request) {
+        return new AsyncInvoker<CheckDisasterNameRequest, CheckDisasterNameResponse>(request, DwsMeta.checkDisasterName,
+            hcClient);
+    }
+
+    /**
      * 复制快照
      *
      * 该接口用于复制一个自动快照。
@@ -1248,6 +1278,37 @@ public class DwsAsyncClient {
         ListAvailabilityZonesRequest request) {
         return new AsyncInvoker<ListAvailabilityZonesRequest, ListAvailabilityZonesResponse>(request,
             DwsMeta.listAvailabilityZones, hcClient);
+    }
+
+    /**
+     * 查询可用容灾集群列表
+     *
+     * 查询可用容灾集群列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAvailableDisasterClustersRequest 请求对象
+     * @return CompletableFuture<ListAvailableDisasterClustersResponse>
+     */
+    public CompletableFuture<ListAvailableDisasterClustersResponse> listAvailableDisasterClustersAsync(
+        ListAvailableDisasterClustersRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.listAvailableDisasterClusters);
+    }
+
+    /**
+     * 查询可用容灾集群列表
+     *
+     * 查询可用容灾集群列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAvailableDisasterClustersRequest 请求对象
+     * @return AsyncInvoker<ListAvailableDisasterClustersRequest, ListAvailableDisasterClustersResponse>
+     */
+    public AsyncInvoker<ListAvailableDisasterClustersRequest, ListAvailableDisasterClustersResponse> listAvailableDisasterClustersAsyncInvoker(
+        ListAvailableDisasterClustersRequest request) {
+        return new AsyncInvoker<ListAvailableDisasterClustersRequest, ListAvailableDisasterClustersResponse>(request,
+            DwsMeta.listAvailableDisasterClusters, hcClient);
     }
 
     /**
@@ -2350,6 +2411,36 @@ public class DwsAsyncClient {
     }
 
     /**
+     * 查询容灾详情
+     *
+     * 查询容灾详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDisasterDetailRequest 请求对象
+     * @return CompletableFuture<ShowDisasterDetailResponse>
+     */
+    public CompletableFuture<ShowDisasterDetailResponse> showDisasterDetailAsync(ShowDisasterDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.showDisasterDetail);
+    }
+
+    /**
+     * 查询容灾详情
+     *
+     * 查询容灾详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDisasterDetailRequest 请求对象
+     * @return AsyncInvoker<ShowDisasterDetailRequest, ShowDisasterDetailResponse>
+     */
+    public AsyncInvoker<ShowDisasterDetailRequest, ShowDisasterDetailResponse> showDisasterDetailAsyncInvoker(
+        ShowDisasterDetailRequest request) {
+        return new AsyncInvoker<ShowDisasterDetailRequest, ShowDisasterDetailResponse>(request,
+            DwsMeta.showDisasterDetail, hcClient);
+    }
+
+    /**
      * 集群缩容
      *
      * 该接口用于缩容集群。
@@ -2623,6 +2714,36 @@ public class DwsAsyncClient {
         UpdateDataSourceRequest request) {
         return new AsyncInvoker<UpdateDataSourceRequest, UpdateDataSourceResponse>(request, DwsMeta.updateDataSource,
             hcClient);
+    }
+
+    /**
+     * 更新容灾配置
+     *
+     * 更新容灾配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateDisasterInfoRequest 请求对象
+     * @return CompletableFuture<UpdateDisasterInfoResponse>
+     */
+    public CompletableFuture<UpdateDisasterInfoResponse> updateDisasterInfoAsync(UpdateDisasterInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.updateDisasterInfo);
+    }
+
+    /**
+     * 更新容灾配置
+     *
+     * 更新容灾配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateDisasterInfoRequest 请求对象
+     * @return AsyncInvoker<UpdateDisasterInfoRequest, UpdateDisasterInfoResponse>
+     */
+    public AsyncInvoker<UpdateDisasterInfoRequest, UpdateDisasterInfoResponse> updateDisasterInfoAsyncInvoker(
+        UpdateDisasterInfoRequest request) {
+        return new AsyncInvoker<UpdateDisasterInfoRequest, UpdateDisasterInfoResponse>(request,
+            DwsMeta.updateDisasterInfo, hcClient);
     }
 
     /**

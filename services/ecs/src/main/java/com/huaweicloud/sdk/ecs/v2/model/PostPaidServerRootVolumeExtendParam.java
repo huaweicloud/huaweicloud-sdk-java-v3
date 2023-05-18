@@ -11,16 +11,6 @@ import java.util.Objects;
 public class PostPaidServerRootVolumeExtendParam {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "__system__encrypted")
-
-    private String systemEncrypted;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "__system__cmkid")
-
-    private String systemCmkid;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resourceSpecCode")
 
     private String resourceSpecCode;
@@ -34,44 +24,6 @@ public class PostPaidServerRootVolumeExtendParam {
     @JsonProperty(value = "snapshotId")
 
     private String snapshotId;
-
-    public PostPaidServerRootVolumeExtendParam withSystemEncrypted(String systemEncrypted) {
-        this.systemEncrypted = systemEncrypted;
-        return this;
-    }
-
-    /**
-     * metadata中的表示加密功能的字段，0代表不加密，1代表加密。  该字段不存在时，云硬盘默认为不加密。
-     * @return systemEncrypted
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "__system__encrypted")
-    public String getSystemEncrypted() {
-        return systemEncrypted;
-    }
-
-    public void setSystemEncrypted(String systemEncrypted) {
-        this.systemEncrypted = systemEncrypted;
-    }
-
-    public PostPaidServerRootVolumeExtendParam withSystemCmkid(String systemCmkid) {
-        this.systemCmkid = systemCmkid;
-        return this;
-    }
-
-    /**
-     * metadata中的加密cmkid字段，与__system__encrypted配合表示需要加密，cmkid长度固定为36个字节。  > 说明：  - 请参考[查询密钥列表](https://support.huaweicloud.com/api-dew/ListKeys.html)，通过HTTPS请求获取密钥ID。
-     * @return systemCmkid
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "__system__cmkid")
-    public String getSystemCmkid() {
-        return systemCmkid;
-    }
-
-    public void setSystemCmkid(String systemCmkid) {
-        this.systemCmkid = systemCmkid;
-    }
 
     public PostPaidServerRootVolumeExtendParam withResourceSpecCode(String resourceSpecCode) {
         this.resourceSpecCode = resourceSpecCode;
@@ -134,24 +86,20 @@ public class PostPaidServerRootVolumeExtendParam {
         }
         PostPaidServerRootVolumeExtendParam postPaidServerRootVolumeExtendParam =
             (PostPaidServerRootVolumeExtendParam) o;
-        return Objects.equals(this.systemEncrypted, postPaidServerRootVolumeExtendParam.systemEncrypted)
-            && Objects.equals(this.systemCmkid, postPaidServerRootVolumeExtendParam.systemCmkid)
-            && Objects.equals(this.resourceSpecCode, postPaidServerRootVolumeExtendParam.resourceSpecCode)
+        return Objects.equals(this.resourceSpecCode, postPaidServerRootVolumeExtendParam.resourceSpecCode)
             && Objects.equals(this.resourceType, postPaidServerRootVolumeExtendParam.resourceType)
             && Objects.equals(this.snapshotId, postPaidServerRootVolumeExtendParam.snapshotId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(systemEncrypted, systemCmkid, resourceSpecCode, resourceType, snapshotId);
+        return Objects.hash(resourceSpecCode, resourceType, snapshotId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class PostPaidServerRootVolumeExtendParam {\n");
-        sb.append("    systemEncrypted: ").append(toIndentedString(systemEncrypted)).append("\n");
-        sb.append("    systemCmkid: ").append(toIndentedString(systemCmkid)).append("\n");
         sb.append("    resourceSpecCode: ").append(toIndentedString(resourceSpecCode)).append("\n");
         sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
         sb.append("    snapshotId: ").append(toIndentedString(snapshotId)).append("\n");

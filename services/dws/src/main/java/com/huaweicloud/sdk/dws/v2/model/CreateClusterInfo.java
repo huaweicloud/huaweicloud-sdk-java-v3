@@ -76,6 +76,11 @@ public class CreateClusterInfo {
 
     private String enterpriseProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private Tags tags;
+
     public CreateClusterInfo withNodeType(String nodeType) {
         this.nodeType = nodeType;
         return this;
@@ -310,6 +315,32 @@ public class CreateClusterInfo {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public CreateClusterInfo withTags(Tags tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public CreateClusterInfo withTags(Consumer<Tags> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new Tags();
+            tagsSetter.accept(this.tags);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get tags
+     * @return tags
+     */
+    public Tags getTags() {
+        return tags;
+    }
+
+    public void setTags(Tags tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -330,7 +361,8 @@ public class CreateClusterInfo {
             && Objects.equals(this.userPwd, createClusterInfo.userPwd)
             && Objects.equals(this.publicIp, createClusterInfo.publicIp)
             && Objects.equals(this.numberOfCn, createClusterInfo.numberOfCn)
-            && Objects.equals(this.enterpriseProjectId, createClusterInfo.enterpriseProjectId);
+            && Objects.equals(this.enterpriseProjectId, createClusterInfo.enterpriseProjectId)
+            && Objects.equals(this.tags, createClusterInfo.tags);
     }
 
     @Override
@@ -347,7 +379,8 @@ public class CreateClusterInfo {
             userPwd,
             publicIp,
             numberOfCn,
-            enterpriseProjectId);
+            enterpriseProjectId,
+            tags);
     }
 
     @Override
@@ -367,6 +400,7 @@ public class CreateClusterInfo {
         sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");
         sb.append("    numberOfCn: ").append(toIndentedString(numberOfCn)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

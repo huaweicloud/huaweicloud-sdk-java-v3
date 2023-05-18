@@ -138,6 +138,11 @@ public class PrePaidServerRootVolume {
 
     private PrePaidServerRootVolumeExtendParam extendparam;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "metadata")
+
+    private PrePaidServerRootVolumeMetadata metadata;
+
     /**
      * 云服务器系统盘对应的磁盘存储类型。 磁盘存储类型枚举值： DSS：专属存储类型
      */
@@ -286,6 +291,32 @@ public class PrePaidServerRootVolume {
         this.extendparam = extendparam;
     }
 
+    public PrePaidServerRootVolume withMetadata(PrePaidServerRootVolumeMetadata metadata) {
+        this.metadata = metadata;
+        return this;
+    }
+
+    public PrePaidServerRootVolume withMetadata(Consumer<PrePaidServerRootVolumeMetadata> metadataSetter) {
+        if (this.metadata == null) {
+            this.metadata = new PrePaidServerRootVolumeMetadata();
+            metadataSetter.accept(this.metadata);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get metadata
+     * @return metadata
+     */
+    public PrePaidServerRootVolumeMetadata getMetadata() {
+        return metadata;
+    }
+
+    public void setMetadata(PrePaidServerRootVolumeMetadata metadata) {
+        this.metadata = metadata;
+    }
+
     public PrePaidServerRootVolume withClusterType(ClusterTypeEnum clusterType) {
         this.clusterType = clusterType;
         return this;
@@ -349,6 +380,7 @@ public class PrePaidServerRootVolume {
         return Objects.equals(this.volumetype, prePaidServerRootVolume.volumetype)
             && Objects.equals(this.size, prePaidServerRootVolume.size)
             && Objects.equals(this.extendparam, prePaidServerRootVolume.extendparam)
+            && Objects.equals(this.metadata, prePaidServerRootVolume.metadata)
             && Objects.equals(this.clusterType, prePaidServerRootVolume.clusterType)
             && Objects.equals(this.clusterId, prePaidServerRootVolume.clusterId)
             && Objects.equals(this.hwPassthrough, prePaidServerRootVolume.hwPassthrough);
@@ -356,7 +388,7 @@ public class PrePaidServerRootVolume {
 
     @Override
     public int hashCode() {
-        return Objects.hash(volumetype, size, extendparam, clusterType, clusterId, hwPassthrough);
+        return Objects.hash(volumetype, size, extendparam, metadata, clusterType, clusterId, hwPassthrough);
     }
 
     @Override
@@ -366,6 +398,7 @@ public class PrePaidServerRootVolume {
         sb.append("    volumetype: ").append(toIndentedString(volumetype)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    extendparam: ").append(toIndentedString(extendparam)).append("\n");
+        sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
         sb.append("    clusterType: ").append(toIndentedString(clusterType)).append("\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("    hwPassthrough: ").append(toIndentedString(hwPassthrough)).append("\n");

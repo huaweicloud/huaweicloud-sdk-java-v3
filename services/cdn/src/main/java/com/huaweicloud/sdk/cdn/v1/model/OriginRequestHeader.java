@@ -31,7 +31,7 @@ public class OriginRequestHeader {
     }
 
     /**
-     * 设置回源请求头参数。格式要求：长度1~64，由数字，大小写字母，中划线-组成。
+     * 设置回源请求头参数。格式要求：由数字，大小写字母，中划线-组成，不能以数字或者中划线开头。
      * @return name
      */
     public String getName() {

@@ -415,6 +415,36 @@ public class ProjectManAsyncClient {
     }
 
     /**
+     * 查询项目模板
+     *
+     * 查询项目模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTemplatesRequest 请求对象
+     * @return CompletableFuture<ListTemplatesResponse>
+     */
+    public CompletableFuture<ListTemplatesResponse> listTemplatesAsync(ListTemplatesRequest request) {
+        return hcClient.asyncInvokeHttp(request, ProjectManMeta.listTemplates);
+    }
+
+    /**
+     * 查询项目模板
+     *
+     * 查询项目模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTemplatesRequest 请求对象
+     * @return AsyncInvoker<ListTemplatesRequest, ListTemplatesResponse>
+     */
+    public AsyncInvoker<ListTemplatesRequest, ListTemplatesResponse> listTemplatesAsyncInvoker(
+        ListTemplatesRequest request) {
+        return new AsyncInvoker<ListTemplatesRequest, ListTemplatesResponse>(request, ProjectManMeta.listTemplates,
+            hcClient);
+    }
+
+    /**
      * 查询看板项目下工作项的状态历史记录
      *
      * 分页查询看板项目下工作项的状态历史记录
@@ -1867,6 +1897,36 @@ public class ProjectManAsyncClient {
         ListStatusStatisticRequest request) {
         return new AsyncInvoker<ListStatusStatisticRequest, ListStatusStatisticResponse>(request,
             ProjectManMeta.listStatusStatistic, hcClient);
+    }
+
+    /**
+     * 高级查询我的待办工作项
+     *
+     * 高级查询我的待办工作项
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SearchIssuesRequest 请求对象
+     * @return CompletableFuture<SearchIssuesResponse>
+     */
+    public CompletableFuture<SearchIssuesResponse> searchIssuesAsync(SearchIssuesRequest request) {
+        return hcClient.asyncInvokeHttp(request, ProjectManMeta.searchIssues);
+    }
+
+    /**
+     * 高级查询我的待办工作项
+     *
+     * 高级查询我的待办工作项
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SearchIssuesRequest 请求对象
+     * @return AsyncInvoker<SearchIssuesRequest, SearchIssuesResponse>
+     */
+    public AsyncInvoker<SearchIssuesRequest, SearchIssuesResponse> searchIssuesAsyncInvoker(
+        SearchIssuesRequest request) {
+        return new AsyncInvoker<SearchIssuesRequest, SearchIssuesResponse>(request, ProjectManMeta.searchIssues,
+            hcClient);
     }
 
     /**

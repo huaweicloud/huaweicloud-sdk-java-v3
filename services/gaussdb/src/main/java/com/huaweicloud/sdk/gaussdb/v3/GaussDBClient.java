@@ -1028,6 +1028,62 @@ public class GaussDBClient {
     }
 
     /**
+     * 获取错误日志详情列表
+     *
+     * 获取指定实例的错误日志详情列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListLtsErrorLogDetailsRequest 请求对象
+     * @return ListLtsErrorLogDetailsResponse
+     */
+    public ListLtsErrorLogDetailsResponse listLtsErrorLogDetails(ListLtsErrorLogDetailsRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.listLtsErrorLogDetails);
+    }
+
+    /**
+     * 获取错误日志详情列表
+     *
+     * 获取指定实例的错误日志详情列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListLtsErrorLogDetailsRequest 请求对象
+     * @return SyncInvoker<ListLtsErrorLogDetailsRequest, ListLtsErrorLogDetailsResponse>
+     */
+    public SyncInvoker<ListLtsErrorLogDetailsRequest, ListLtsErrorLogDetailsResponse> listLtsErrorLogDetailsInvoker(ListLtsErrorLogDetailsRequest request) {
+        return new SyncInvoker<ListLtsErrorLogDetailsRequest, ListLtsErrorLogDetailsResponse>(request, GaussDBMeta.listLtsErrorLogDetails, hcClient);
+    }
+
+    /**
+     * 获取慢日志详情列表
+     *
+     * 获取指定实例的慢日志详情列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListLtsSlowlogDetailsRequest 请求对象
+     * @return ListLtsSlowlogDetailsResponse
+     */
+    public ListLtsSlowlogDetailsResponse listLtsSlowlogDetails(ListLtsSlowlogDetailsRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.listLtsSlowlogDetails);
+    }
+
+    /**
+     * 获取慢日志详情列表
+     *
+     * 获取指定实例的慢日志详情列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListLtsSlowlogDetailsRequest 请求对象
+     * @return SyncInvoker<ListLtsSlowlogDetailsRequest, ListLtsSlowlogDetailsResponse>
+     */
+    public SyncInvoker<ListLtsSlowlogDetailsRequest, ListLtsSlowlogDetailsResponse> listLtsSlowlogDetailsInvoker(ListLtsSlowlogDetailsRequest request) {
+        return new SyncInvoker<ListLtsSlowlogDetailsRequest, ListLtsSlowlogDetailsResponse>(request, GaussDBMeta.listLtsSlowlogDetails, hcClient);
+    }
+
+    /**
      * 查询项目标签
      *
      * 查询指定project ID下实例的所有标签集合。
@@ -1781,6 +1837,62 @@ public class GaussDBClient {
      */
     public SyncInvoker<UpdateGaussMySqlConfigurationRequest, UpdateGaussMySqlConfigurationResponse> updateGaussMySqlConfigurationInvoker(UpdateGaussMySqlConfigurationRequest request) {
         return new SyncInvoker<UpdateGaussMySqlConfigurationRequest, UpdateGaussMySqlConfigurationResponse>(request, GaussDBMeta.updateGaussMySqlConfiguration, hcClient);
+    }
+
+    /**
+     * 修改数据库备注
+     *
+     * 修改云数据库 GaussDB(for MySQL)实例数据库备注。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateGaussMySqlDatabaseCommentRequest 请求对象
+     * @return UpdateGaussMySqlDatabaseCommentResponse
+     */
+    public UpdateGaussMySqlDatabaseCommentResponse updateGaussMySqlDatabaseComment(UpdateGaussMySqlDatabaseCommentRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.updateGaussMySqlDatabaseComment);
+    }
+
+    /**
+     * 修改数据库备注
+     *
+     * 修改云数据库 GaussDB(for MySQL)实例数据库备注。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateGaussMySqlDatabaseCommentRequest 请求对象
+     * @return SyncInvoker<UpdateGaussMySqlDatabaseCommentRequest, UpdateGaussMySqlDatabaseCommentResponse>
+     */
+    public SyncInvoker<UpdateGaussMySqlDatabaseCommentRequest, UpdateGaussMySqlDatabaseCommentResponse> updateGaussMySqlDatabaseCommentInvoker(UpdateGaussMySqlDatabaseCommentRequest request) {
+        return new SyncInvoker<UpdateGaussMySqlDatabaseCommentRequest, UpdateGaussMySqlDatabaseCommentResponse>(request, GaussDBMeta.updateGaussMySqlDatabaseComment, hcClient);
+    }
+
+    /**
+     * 修改数据库用户备注
+     *
+     * 修改云数据库 GaussDB(for MySQL)实例数据库用户备注。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateGaussMySqlDatabaseUserCommentRequest 请求对象
+     * @return UpdateGaussMySqlDatabaseUserCommentResponse
+     */
+    public UpdateGaussMySqlDatabaseUserCommentResponse updateGaussMySqlDatabaseUserComment(UpdateGaussMySqlDatabaseUserCommentRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.updateGaussMySqlDatabaseUserComment);
+    }
+
+    /**
+     * 修改数据库用户备注
+     *
+     * 修改云数据库 GaussDB(for MySQL)实例数据库用户备注。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateGaussMySqlDatabaseUserCommentRequest 请求对象
+     * @return SyncInvoker<UpdateGaussMySqlDatabaseUserCommentRequest, UpdateGaussMySqlDatabaseUserCommentResponse>
+     */
+    public SyncInvoker<UpdateGaussMySqlDatabaseUserCommentRequest, UpdateGaussMySqlDatabaseUserCommentResponse> updateGaussMySqlDatabaseUserCommentInvoker(UpdateGaussMySqlDatabaseUserCommentRequest request) {
+        return new SyncInvoker<UpdateGaussMySqlDatabaseUserCommentRequest, UpdateGaussMySqlDatabaseUserCommentResponse>(request, GaussDBMeta.updateGaussMySqlDatabaseUserComment, hcClient);
     }
 
     /**

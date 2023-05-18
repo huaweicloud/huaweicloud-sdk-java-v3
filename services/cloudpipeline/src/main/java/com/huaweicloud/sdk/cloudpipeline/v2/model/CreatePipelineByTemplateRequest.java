@@ -12,33 +12,9 @@ import java.util.function.Consumer;
 public class CreatePipelineByTemplateRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Language")
-
-    private String xLanguage;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private TemplateCddl body;
-
-    public CreatePipelineByTemplateRequest withXLanguage(String xLanguage) {
-        this.xLanguage = xLanguage;
-        return this;
-    }
-
-    /**
-     * 语言类型 中文:zh-cn 英文:en-us，默认en-us
-     * @return xLanguage
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Language")
-    public String getXLanguage() {
-        return xLanguage;
-    }
-
-    public void setXLanguage(String xLanguage) {
-        this.xLanguage = xLanguage;
-    }
 
     public CreatePipelineByTemplateRequest withBody(TemplateCddl body) {
         this.body = body;
@@ -75,20 +51,18 @@ public class CreatePipelineByTemplateRequest {
             return false;
         }
         CreatePipelineByTemplateRequest createPipelineByTemplateRequest = (CreatePipelineByTemplateRequest) o;
-        return Objects.equals(this.xLanguage, createPipelineByTemplateRequest.xLanguage)
-            && Objects.equals(this.body, createPipelineByTemplateRequest.body);
+        return Objects.equals(this.body, createPipelineByTemplateRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, body);
+        return Objects.hash(body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreatePipelineByTemplateRequest {\n");
-        sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

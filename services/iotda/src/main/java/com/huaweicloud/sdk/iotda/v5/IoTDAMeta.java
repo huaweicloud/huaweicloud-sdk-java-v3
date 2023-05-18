@@ -1134,6 +1134,20 @@ public class IoTDAMeta {
             f -> f.withMarshaller(ListDeviceGroupsRequest::getAppId, (req, v) -> {
                 req.setAppId(v);
             }));
+        builder.<String>withRequestField("group_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDeviceGroupsRequest::getGroupType, (req, v) -> {
+                req.setGroupType(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDeviceGroupsRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,

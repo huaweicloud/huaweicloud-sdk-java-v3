@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class NodeStatus {
 
     /**
-     * 节点状态。
+     * 节点状态：节点资源生命周期管理（如安装卸载等）状态和集群内k8s node状态的综合体现。
      */
     public static final class PhaseEnum {
 
@@ -141,6 +141,11 @@ public class NodeStatus {
     private PhaseEnum phase;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "lastProbeTime")
+
+    private String lastProbeTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "jobID")
 
     private String jobID;
@@ -176,7 +181,7 @@ public class NodeStatus {
     }
 
     /**
-     * 节点状态。
+     * 节点状态：节点资源生命周期管理（如安装卸载等）状态和集群内k8s node状态的综合体现。
      * @return phase
      */
     public PhaseEnum getPhase() {
@@ -185,6 +190,23 @@ public class NodeStatus {
 
     public void setPhase(PhaseEnum phase) {
         this.phase = phase;
+    }
+
+    public NodeStatus withLastProbeTime(String lastProbeTime) {
+        this.lastProbeTime = lastProbeTime;
+        return this;
+    }
+
+    /**
+     * 节点最近一次状态检查时间。集群处于异常、冻结或者中间态（例如创建中）时，节点的状态检查动作可能受影响。检查时间超过5分的节点状态不具有参考意义。
+     * @return lastProbeTime
+     */
+    public String getLastProbeTime() {
+        return lastProbeTime;
+    }
+
+    public void setLastProbeTime(String lastProbeTime) {
+        this.lastProbeTime = lastProbeTime;
     }
 
     public NodeStatus withJobID(String jobID) {
@@ -307,8 +329,9 @@ public class NodeStatus {
             return false;
         }
         NodeStatus nodeStatus = (NodeStatus) o;
-        return Objects.equals(this.phase, nodeStatus.phase) && Objects.equals(this.jobID, nodeStatus.jobID)
-            && Objects.equals(this.serverId, nodeStatus.serverId)
+        return Objects.equals(this.phase, nodeStatus.phase)
+            && Objects.equals(this.lastProbeTime, nodeStatus.lastProbeTime)
+            && Objects.equals(this.jobID, nodeStatus.jobID) && Objects.equals(this.serverId, nodeStatus.serverId)
             && Objects.equals(this.privateIP, nodeStatus.privateIP)
             && Objects.equals(this.privateIPv6IP, nodeStatus.privateIPv6IP)
             && Objects.equals(this.publicIP, nodeStatus.publicIP)
@@ -317,7 +340,7 @@ public class NodeStatus {
 
     @Override
     public int hashCode() {
-        return Objects.hash(phase, jobID, serverId, privateIP, privateIPv6IP, publicIP, deleteStatus);
+        return Objects.hash(phase, lastProbeTime, jobID, serverId, privateIP, privateIPv6IP, publicIP, deleteStatus);
     }
 
     @Override
@@ -325,6 +348,7 @@ public class NodeStatus {
         StringBuilder sb = new StringBuilder();
         sb.append("class NodeStatus {\n");
         sb.append("    phase: ").append(toIndentedString(phase)).append("\n");
+        sb.append("    lastProbeTime: ").append(toIndentedString(lastProbeTime)).append("\n");
         sb.append("    jobID: ").append(toIndentedString(jobID)).append("\n");
         sb.append("    serverId: ").append(toIndentedString(serverId)).append("\n");
         sb.append("    privateIP: ").append(toIndentedString(privateIP)).append("\n");

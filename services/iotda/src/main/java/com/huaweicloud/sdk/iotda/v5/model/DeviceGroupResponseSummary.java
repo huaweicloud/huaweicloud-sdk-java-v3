@@ -8,7 +8,7 @@ import java.util.Objects;
 /**
  * 设备组信息结构体，创建、查询、修改设备组时返回
  */
-public class DeviceGroupResponsSummery {
+public class DeviceGroupResponseSummary {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_id")
@@ -30,7 +30,12 @@ public class DeviceGroupResponsSummery {
 
     private String superGroupId;
 
-    public DeviceGroupResponsSummery withGroupId(String groupId) {
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_type")
+
+    private String groupType;
+
+    public DeviceGroupResponseSummary withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
     }
@@ -47,7 +52,7 @@ public class DeviceGroupResponsSummery {
         this.groupId = groupId;
     }
 
-    public DeviceGroupResponsSummery withName(String name) {
+    public DeviceGroupResponseSummary withName(String name) {
         this.name = name;
         return this;
     }
@@ -64,7 +69,7 @@ public class DeviceGroupResponsSummery {
         this.name = name;
     }
 
-    public DeviceGroupResponsSummery withDescription(String description) {
+    public DeviceGroupResponseSummary withDescription(String description) {
         this.description = description;
         return this;
     }
@@ -81,7 +86,7 @@ public class DeviceGroupResponsSummery {
         this.description = description;
     }
 
-    public DeviceGroupResponsSummery withSuperGroupId(String superGroupId) {
+    public DeviceGroupResponseSummary withSuperGroupId(String superGroupId) {
         this.superGroupId = superGroupId;
         return this;
     }
@@ -98,6 +103,23 @@ public class DeviceGroupResponsSummery {
         this.superGroupId = superGroupId;
     }
 
+    public DeviceGroupResponseSummary withGroupType(String groupType) {
+        this.groupType = groupType;
+        return this;
+    }
+
+    /**
+     * **参数说明**：设备组类型，默认为静态设备组；当设备组类型为动态设备组时，需要填写动态设备组规则
+     * @return groupType
+     */
+    public String getGroupType() {
+        return groupType;
+    }
+
+    public void setGroupType(String groupType) {
+        this.groupType = groupType;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -106,26 +128,28 @@ public class DeviceGroupResponsSummery {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        DeviceGroupResponsSummery deviceGroupResponsSummery = (DeviceGroupResponsSummery) o;
-        return Objects.equals(this.groupId, deviceGroupResponsSummery.groupId)
-            && Objects.equals(this.name, deviceGroupResponsSummery.name)
-            && Objects.equals(this.description, deviceGroupResponsSummery.description)
-            && Objects.equals(this.superGroupId, deviceGroupResponsSummery.superGroupId);
+        DeviceGroupResponseSummary deviceGroupResponseSummary = (DeviceGroupResponseSummary) o;
+        return Objects.equals(this.groupId, deviceGroupResponseSummary.groupId)
+            && Objects.equals(this.name, deviceGroupResponseSummary.name)
+            && Objects.equals(this.description, deviceGroupResponseSummary.description)
+            && Objects.equals(this.superGroupId, deviceGroupResponseSummary.superGroupId)
+            && Objects.equals(this.groupType, deviceGroupResponseSummary.groupType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(groupId, name, description, superGroupId);
+        return Objects.hash(groupId, name, description, superGroupId, groupType);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class DeviceGroupResponsSummery {\n");
+        sb.append("class DeviceGroupResponseSummary {\n");
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    superGroupId: ").append(toIndentedString(superGroupId)).append("\n");
+        sb.append("    groupType: ").append(toIndentedString(groupType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -79,67 +79,153 @@ Maven 项目的 `pom.xml` 文件加入相应的依赖项即可。
 ## 代码示例
 
 - 使用如下代码同步查询指定 Region 下的 VPC 列表，实际使用中请将 `VpcClient` 替换为您使用的产品/服务相应的 `{Service}Client` 。
-- 调用前请根据实际情况替换如下变量： `{your ak string}`、`{your sk string}`、`{your endpoint string}` 以及 `{your project id}`。
+- 调用前请根据实际情况替换如下变量： `{your ak string}` 和 `{your sk string}`
+
+**精简示例**
 
 ``` java
 package com.huaweicloud.sdk.test;
 
-/* 导入依赖模块 */
-// 日志打印
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-// 认证信息
 import com.huaweicloud.sdk.core.auth.BasicCredentials;
-// 服务响应异常类
+import com.huaweicloud.sdk.core.auth.ICredential;
+import com.huaweicloud.sdk.core.exception.ConnectionException;
+import com.huaweicloud.sdk.core.exception.RequestTimeoutException;
 import com.huaweicloud.sdk.core.exception.ServiceResponseException;
-// Http配置
-import com.huaweicloud.sdk.core.http.HttpConfig;
 import com.huaweicloud.sdk.vpc.v2.VpcClient;
-// 导入 request 和 response 类
 import com.huaweicloud.sdk.vpc.v2.model.ListVpcsRequest;
 import com.huaweicloud.sdk.vpc.v2.model.ListVpcsResponse;
+import com.huaweicloud.sdk.vpc.v2.region.VpcRegion;
 
 public class Application {
-    private static final Logger logger = LoggerFactory.getLogger(Application.class);
+    public static void main(String[] args) {
+        // 配置认证信息
+        ICredential auth = new BasicCredentials()
+                .withAk("{your ak string}")
+                .withSk("{your sk string}");
 
-    public static void listVpcs(VpcClient client) {
+        // 创建服务客户端
+        VpcClient client = VpcClient.newBuilder()
+                .withCredential(auth)
+                .withRegion(VpcRegion.valueOf("cn-north-4"))
+                .build();
+
+        // 发送请求并获取响应
+        ListVpcsRequest request = new ListVpcsRequest();
         try {
-            // 实例化ListVpcsRequest请求对象，调用listVpcs接口
-            ListVpcsResponse listVpcsResponse = client.listVpcs(new ListVpcsRequest().withLimit(1));
-            // 输出json格式的字符串响应
-            logger.info(listVpcsResponse.toString());
+            ListVpcsResponse response = client.listVpcs(request);
+            System.out.println(response.toString());
+        } catch (ConnectionException | RequestTimeoutException e) {
+            e.printStackTrace();
         } catch (ServiceResponseException e) {
-            logger.error("HttpStatusCode: " + e.getHttpStatusCode());
-            logger.error("RequestId: " + e.getRequestId());
-            logger.error("ErrorCode: " + e.getErrorCode());
-            logger.error("ErrorMsg: " + e.getErrorMsg());
+            e.printStackTrace();
+            System.out.println(e.getHttpStatusCode());
+            System.out.println(e.getRequestId());
+            System.out.println(e.getErrorCode());
+            System.out.println(e.getErrorMsg());
         }
     }
+}
+```
 
+**详细示例**
+
+```java
+package com.huaweicloud.sdk.test;
+
+import com.huaweicloud.sdk.core.HttpListener;
+import com.huaweicloud.sdk.core.auth.BasicCredentials;
+import com.huaweicloud.sdk.core.auth.ICredential;
+import com.huaweicloud.sdk.core.auth.SigningAlgorithm;
+import com.huaweicloud.sdk.core.exception.ConnectionException;
+import com.huaweicloud.sdk.core.exception.RequestTimeoutException;
+import com.huaweicloud.sdk.core.exception.ServiceResponseException;
+import com.huaweicloud.sdk.core.http.HttpConfig;
+import com.huaweicloud.sdk.vpc.v2.VpcClient;
+import com.huaweicloud.sdk.vpc.v2.model.ListVpcsRequest;
+import com.huaweicloud.sdk.vpc.v2.model.ListVpcsResponse;
+import com.huaweicloud.sdk.vpc.v2.region.VpcRegion;
+
+import java.util.stream.Collectors;
+
+public class Application {
     public static void main(String[] args) {
-        String ak = "{your ak string}";
-        String sk = "{your sk string}";
-        String endpoint = "{your endpoint string}";
-        String projectId = "{your project id}";
+        // 配置认证信息
+        ICredential auth = new BasicCredentials()
+                // 鉴权使用的 Access Key 和 Secret Access Key
+                .withAk("{your ak string}")
+                .withSk("{your sk string}")
+                // 如果未填写ProjectId，SDK会自动调用IAM服务查询所在region对应的项目id
+                .withProjectId("{your projectId string}")
+                // 配置SDK内置的IAM服务地址，默认为https://iam.myhuaweicloud.com
+                .withIamEndpoint("https://iam.cn-north-4.myhuaweicloud.com");
 
-        // 配置客户端属性
-        HttpConfig config = HttpConfig.getDefaultHttpConfig();
-        config.withIgnoreSSLVerification(true);
+        // 使用默认配置
+        HttpConfig httpConfig = HttpConfig.getDefaultHttpConfig();
+        // 配置是否忽略SSL证书校验， 默认不忽略
+        httpConfig.withIgnoreSSLVerification(true);
+        // 默认超时时间为60秒，可根据需要配置
+        httpConfig.withTimeout(60);
+        // 根据需要配置网络代理
+        httpConfig.withProxyHost("proxy.huaweicloud.com")
+                .withProxyPort(8080)
+                .withProxyUsername("username")
+                .withProxyPassword("password");
+        // 自定义SSLSocketFactory和TrustManager，需要用户自行实现
+        httpConfig.withSSLSocketFactory(sslSocketFactory)
+                .withX509TrustManager(trustManager);
+        // 使用HMAC_SM3签名算法（需要JDK8u302及以上版本），默认签名算法为HMAC_SHA256
+        httpConfig.withSigningAlgorithm(SigningAlgorithm.HMAC_SM3);
+        // 注册监听器后打印原始请求信息,请勿用于生产环境
+        HttpListener requestListener = HttpListener.forRequestListener(listener ->
+                System.out.printf("> Request %s %s\n> Headers:\n%s\n> Body: %s\n",
+                        listener.httpMethod(),
+                        listener.uri(),
+                        listener.headers().entrySet().stream()
+                                .flatMap(entry -> entry.getValue().stream().map(
+                                        value -> "\t" + entry.getKey() + ": " + value))
+                                .collect(Collectors.joining("\n")),
+                        listener.body().orElse("")));
+        httpConfig.addHttpListener(requestListener);
+        // 注册监听器后打印原始响应信息,请勿用于生产环境
+        HttpListener responseListener = HttpListener.forResponseListener(listener ->
+                System.out.printf("< Response %s %s %s\n< Headers:\n%s\n< Body: %s\n",
+                        listener.httpMethod(),
+                        listener.uri(),
+                        listener.statusCode(),
+                        listener.headers().entrySet().stream()
+                                .flatMap(entry -> entry.getValue().stream().map(
+                                        value -> "\t" + entry.getKey() + ": " + value))
+                                .collect(Collectors.joining("\n")),
+                        listener.body().orElse("")));
+        httpConfig.addHttpListener(responseListener);
 
-        // 创建认证
-        BasicCredentials auth = new BasicCredentials()
-            .withAk(ak)
-            .withSk(sk)
-            .withProjectId(projectId);
+        // 创建服务客户端
+        VpcClient client = VpcClient.newBuilder()
+                // 配置认证信息
+                .withCredential(auth)
+                // 配置地区, 如果地区不存在会抛出IllegalArgumentException
+                .withRegion(VpcRegion.valueOf("cn-north-4"))
+                // HTTP配置
+                .withHttpConfig(httpConfig)
+                .build();
 
-        // 创建VpcClient实例
-        VpcClient vpcClient = VpcClient.newBuilder()
-            .withHttpConfig(config)
-            .withCredential(auth)
-            .withEndpoint(endpoint)
-            .build();
-
-        listVpcs(vpcClient);
+        // 创建请求
+        ListVpcsRequest request = new ListVpcsRequest();
+        // 配置每页返回的个数
+        request.setLimit(1);
+        try {
+            // 发送请求并获取响应
+            ListVpcsResponse response = client.listVpcs(request);
+            System.out.println(response.toString());
+        } catch (ConnectionException | RequestTimeoutException e) {
+            e.printStackTrace();
+        } catch (ServiceResponseException e) {
+            e.printStackTrace();
+            System.out.println(e.getHttpStatusCode());
+            System.out.println(e.getRequestId());
+            System.out.println(e.getErrorCode());
+            System.out.println(e.getErrorMsg());
+        }
     }
 }
 ```
@@ -196,7 +282,11 @@ public class Application {
 import com.huaweicloud.sdk.core.http.HttpConfig;
 
 // 使用默认配置
-HttpConfig config = HttpConfig.getDefaultHttpConfig();
+HttpConfig httpConfig = HttpConfig.getDefaultHttpConfig();
+
+VpcClient client = VpcClient.newBuilder()
+        .withHttpConfig(httpConfig)
+        .build();
 ```
 
 #### 1.2 网络代理 [:top:](#用户手册-top)
@@ -205,17 +295,26 @@ HttpConfig config = HttpConfig.getDefaultHttpConfig();
 
 ``` java
 // 根据需要配置网络代理，网络代理默认的协议为 `http` 协议
-config.withProxyHost("proxy.huaweicloud.com")
+HttpConfig httpConfig = HttpConfig.getDefaultHttpConfig()
+    .withProxyHost("proxy.huaweicloud.com")
     .withProxyPort(8080)
-    .withProxyUsername("test")
-    .withProxyPassword("test");
+    .withProxyUsername("username")
+    .withProxyPassword("password");
+
+VpcClient client = VpcClient.newBuilder()
+        .withHttpConfig(httpConfig)
+        .build();
 ```
 
 #### 1.3 超时配置 [:top:](#用户手册-top)
 
 ``` java 
 // 默认连接超时时间为60秒，可根据需要调整
-config.withTimeout(60);
+HttpConfig httpConfig = HttpConfig.getDefaultHttpConfig().withTimeout(60);
+
+VpcClient client = VpcClient.newBuilder()
+        .withHttpConfig(httpConfig)
+        .build();
 ```
 
 #### 1.4 SSL 配置 [:top:](#用户手册-top)
@@ -224,15 +323,24 @@ config.withTimeout(60);
 
 ``` java
 // 根据需要配置是否跳过SSL证书验证
-config.withIgnoreSSLVerification(true);
+HttpConfig httpConfig = HttpConfig.getDefaultHttpConfig().withIgnoreSSLVerification(true);
+
+VpcClient client = VpcClient.newBuilder()
+        .withHttpConfig(httpConfig)
+        .build();
 ```
 
 自定义配置：
 
 ```java
 // 自定义SSLSocketFactory和TrustManager，需要用户自行实现
-config.withSSLSocketFactory(sslSocketFactory).
-    withX509TrustManager(trustManager);
+HttpConfig httpConfig = HttpConfig.getDefaultHttpConfig()
+    .withSSLSocketFactory(sslSocketFactory)
+    .withX509TrustManager(trustManager);
+    
+VpcClient client = VpcClient.newBuilder()
+        .withHttpConfig(httpConfig)
+        .build();
 ```
 
 #### 1.5 签名算法 [:top:](#用户手册-top)
@@ -240,11 +348,12 @@ config.withSSLSocketFactory(sslSocketFactory).
 ```java
 import com.huaweicloud.sdk.core.auth.SigningAlgorithm;
  
-// 默认签名算法为HMAC_SHA256
-config.withSigningAlgorithm(SigningAlgorithm.HMAC_SHA256);
- 
-// 使用HMAC_SM3签名算法需要JDK8u302及以上版本
-config.withSigningAlgorithm(SigningAlgorithm.HMAC_SM3);
+// 使用HMAC_SM3签名算法需要JDK8u302及以上版本, 默认签名算法为HMAC_SHA256
+HttpConfig.getDefaultHttpConfig().withSigningAlgorithm(SigningAlgorithm.HMAC_SM3);
+
+VpcClient client = VpcClient.newBuilder()
+        .withHttpConfig(httpConfig)
+        .build();
 ```
 
 ### 2. 认证信息配置 [:top:](#用户手册-top)
@@ -898,33 +1007,41 @@ SDK 默认会打印访问日志，每次请求都会有一条记录：
 
 在某些场景下可能对业务发出的 HTTP 请求进行 Debug ，需要看到原始的 HTTP 请求和返回信息， SDK 提供监听器功能来获取原始的为加密的 HTTP 请求和返回信息。
 
-> :warning:  Warning: 原始信息打印仅在 Debug 阶段使用，请不要在生产系统中将原始的 HTTP 头和 Body 信息打印到日志，这些信息并未加密且其中包含敏感数据，例如所创建虚拟机的密码，IAM 用户的密码等；当 Body 体为二进制内容，即 Content-Type 标识为二进制时，Body 为"***"，详细内容不输出。
+> :warning:  Warning: 原始信息打印仅在 Debug 阶段使用，请不要在生产系统中打印原始的 HTTP 头和 Body 信息，这些信息并未加密且其中包含敏感数据，例如所创建虚拟机的密码，IAM 用户的密码等；当 Body 体为二进制内容，即 Content-Type 标识为二进制时，Body 为"***"，详细内容不输出。
 
 ``` java
-HttpConfig config = new HttpConfig().addHttpListener(HttpListener.forRequestListener(requestListener ->
-    // 注册监听器后打印Http Request 原始信息,请勿在生产系统中使用
-    logger.debug("REQUEST: {} {} {} {}",
-        requestListener.httpMethod(),
-        requestListener.uri(),
-        requestListener.headers().entrySet().stream().flatMap(entry ->
-            entry.getValue().stream().map(value -> entry.getKey() + " : " + value))
-            .collect(Collectors.joining(";")),
-        requestListener.body().orElse(""))))
-    .addHttpListener(HttpListener.forResponseListener(responseListener ->
-        // 注册监听器后打印Http Request 原始信息,请勿在生产系统中使用
-        logger.debug("RESPONSE: {} {} {} {} {}",
-            responseListener.httpMethod(),
-            responseListener.uri(),
-            responseListener.statusCode(),
-            responseListener.headers().entrySet().stream().flatMap(entry ->
-                entry.getValue().stream().map(value -> entry.getKey() + " : " + value))
-                .collect(Collectors.joining(";")),
-            responseListener.body().orElse(""))));
+import com.huaweicloud.sdk.core.HttpListener;
+import com.huaweicloud.sdk.core.http.HttpConfig;
+
+HttpConfig httpConfig = HttpConfig.getDefaultHttpConfig();
+
+// 注册监听器后打印原始请求信息,请勿用于生产环境
+HttpListener requestListener = HttpListener.forRequestListener(listener ->
+        System.out.printf("> Request %s %s\n> Headers:\n%s\n> Body: %s\n",
+                listener.httpMethod(),
+                listener.uri(),
+                listener.headers().entrySet().stream()
+                        .flatMap(entry -> entry.getValue().stream().map(
+                                value -> "\t" + entry.getKey() + ": " + value))
+                        .collect(Collectors.joining("\n")),
+                listener.body().orElse("")));
+httpConfig.addHttpListener(requestListener);
+
+// 注册监听器后打印原始响应信息,请勿用于生产环境
+HttpListener responseListener = HttpListener.forResponseListener(listener ->
+        System.out.printf("< Response %s %s %s\n< Headers:\n%s\n< Body: %s\n",
+                listener.httpMethod(),
+                listener.uri(),
+                listener.statusCode(),
+                listener.headers().entrySet().stream()
+                        .flatMap(entry -> entry.getValue().stream().map(
+                                value -> "\t" + entry.getKey() + ": " + value))
+                        .collect(Collectors.joining("\n")),
+                listener.body().orElse("")));
+httpConfig.addHttpListener(responseListener);
 
 VpcClient vpcClient = VpcClient.newBuilder()
-    .withHttpConfig(config)
-    .withCredential(auth)
-    .withEndpoint(endpoint)
+    .withHttpConfig(httpConfig)
     .build();
 ```
 

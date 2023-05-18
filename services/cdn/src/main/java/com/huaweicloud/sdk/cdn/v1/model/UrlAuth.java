@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * URL鉴权
+ * URL鉴权。
  */
 public class UrlAuth {
 
@@ -75,7 +75,7 @@ public class UrlAuth {
     }
 
     /**
-     * 鉴权密钥由6 - 32位大小写字母、数字构成。
+     * 鉴权KEY 由6-32位大小写字母、数字构成。
      * @return key
      */
     public String getKey() {

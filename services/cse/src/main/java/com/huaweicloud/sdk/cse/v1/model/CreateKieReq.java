@@ -11,6 +11,11 @@ import java.util.Objects;
 public class CreateKieReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key")
 
     private String key;
@@ -34,6 +39,23 @@ public class CreateKieReq {
     @JsonProperty(value = "status")
 
     private String status;
+
+    public CreateKieReq withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * 配置项的id。
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public CreateKieReq withKey(String key) {
         this.key = key;
@@ -129,20 +151,22 @@ public class CreateKieReq {
             return false;
         }
         CreateKieReq createKieReq = (CreateKieReq) o;
-        return Objects.equals(this.key, createKieReq.key) && Objects.equals(this.labels, createKieReq.labels)
-            && Objects.equals(this.value, createKieReq.value) && Objects.equals(this.valueType, createKieReq.valueType)
+        return Objects.equals(this.id, createKieReq.id) && Objects.equals(this.key, createKieReq.key)
+            && Objects.equals(this.labels, createKieReq.labels) && Objects.equals(this.value, createKieReq.value)
+            && Objects.equals(this.valueType, createKieReq.valueType)
             && Objects.equals(this.status, createKieReq.status);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(key, labels, value, valueType, status);
+        return Objects.hash(id, key, labels, value, valueType, status);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateKieReq {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    key: ").append(toIndentedString(key)).append("\n");
         sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    value: ").append(toIndentedString(value)).append("\n");

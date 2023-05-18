@@ -20,11 +20,6 @@ public class DeletePipelineRequest {
 
     private String pipelineId;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Language")
-
-    private String xLanguage;
-
     public DeletePipelineRequest withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -59,25 +54,6 @@ public class DeletePipelineRequest {
         this.pipelineId = pipelineId;
     }
 
-    public DeletePipelineRequest withXLanguage(String xLanguage) {
-        this.xLanguage = xLanguage;
-        return this;
-    }
-
-    /**
-     * 语言类型 中文:zh-cn 英文:en-us，默认en-us
-     * @return xLanguage
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Language")
-    public String getXLanguage() {
-        return xLanguage;
-    }
-
-    public void setXLanguage(String xLanguage) {
-        this.xLanguage = xLanguage;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -88,13 +64,12 @@ public class DeletePipelineRequest {
         }
         DeletePipelineRequest deletePipelineRequest = (DeletePipelineRequest) o;
         return Objects.equals(this.projectId, deletePipelineRequest.projectId)
-            && Objects.equals(this.pipelineId, deletePipelineRequest.pipelineId)
-            && Objects.equals(this.xLanguage, deletePipelineRequest.xLanguage);
+            && Objects.equals(this.pipelineId, deletePipelineRequest.pipelineId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(projectId, pipelineId, xLanguage);
+        return Objects.hash(projectId, pipelineId);
     }
 
     @Override
@@ -103,7 +78,6 @@ public class DeletePipelineRequest {
         sb.append("class DeletePipelineRequest {\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    pipelineId: ").append(toIndentedString(pipelineId)).append("\n");
-        sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("}");
         return sb.toString();
     }
