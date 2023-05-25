@@ -29,6 +29,11 @@ public class MigrateNodesSpec {
     private Login login;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "runtime")
+
+    private Runtime runtime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nodes")
 
     private List<NodeItem> nodes = null;
@@ -102,6 +107,32 @@ public class MigrateNodesSpec {
         this.login = login;
     }
 
+    public MigrateNodesSpec withRuntime(Runtime runtime) {
+        this.runtime = runtime;
+        return this;
+    }
+
+    public MigrateNodesSpec withRuntime(Consumer<Runtime> runtimeSetter) {
+        if (this.runtime == null) {
+            this.runtime = new Runtime();
+            runtimeSetter.accept(this.runtime);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get runtime
+     * @return runtime
+     */
+    public Runtime getRuntime() {
+        return runtime;
+    }
+
+    public void setRuntime(Runtime runtime) {
+        this.runtime = runtime;
+    }
+
     public MigrateNodesSpec withNodes(List<NodeItem> nodes) {
         this.nodes = nodes;
         return this;
@@ -146,12 +177,14 @@ public class MigrateNodesSpec {
         MigrateNodesSpec migrateNodesSpec = (MigrateNodesSpec) o;
         return Objects.equals(this.os, migrateNodesSpec.os)
             && Objects.equals(this.extendParam, migrateNodesSpec.extendParam)
-            && Objects.equals(this.login, migrateNodesSpec.login) && Objects.equals(this.nodes, migrateNodesSpec.nodes);
+            && Objects.equals(this.login, migrateNodesSpec.login)
+            && Objects.equals(this.runtime, migrateNodesSpec.runtime)
+            && Objects.equals(this.nodes, migrateNodesSpec.nodes);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(os, extendParam, login, nodes);
+        return Objects.hash(os, extendParam, login, runtime, nodes);
     }
 
     @Override
@@ -161,6 +194,7 @@ public class MigrateNodesSpec {
         sb.append("    os: ").append(toIndentedString(os)).append("\n");
         sb.append("    extendParam: ").append(toIndentedString(extendParam)).append("\n");
         sb.append("    login: ").append(toIndentedString(login)).append("\n");
+        sb.append("    runtime: ").append(toIndentedString(runtime)).append("\n");
         sb.append("    nodes: ").append(toIndentedString(nodes)).append("\n");
         sb.append("}");
         return sb.toString();

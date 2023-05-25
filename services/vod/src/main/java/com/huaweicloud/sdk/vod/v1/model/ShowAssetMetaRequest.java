@@ -19,11 +19,6 @@ import java.util.function.Consumer;
 public class ShowAssetMetaRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Authorization")
-
-    private String authorization;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Sdk-Date")
 
     private String xSdkDate;
@@ -392,23 +387,6 @@ public class ShowAssetMetaRequest {
 
     private Integer size;
 
-    public ShowAssetMetaRequest withAuthorization(String authorization) {
-        this.authorization = authorization;
-        return this;
-    }
-
-    /**
-     * 使用AK/SK方式认证时必选，携带的鉴权信息。 
-     * @return authorization
-     */
-    public String getAuthorization() {
-        return authorization;
-    }
-
-    public void setAuthorization(String authorization) {
-        this.authorization = authorization;
-    }
-
     public ShowAssetMetaRequest withXSdkDate(String xSdkDate) {
         this.xSdkDate = xSdkDate;
         return this;
@@ -691,8 +669,7 @@ public class ShowAssetMetaRequest {
             return false;
         }
         ShowAssetMetaRequest showAssetMetaRequest = (ShowAssetMetaRequest) o;
-        return Objects.equals(this.authorization, showAssetMetaRequest.authorization)
-            && Objects.equals(this.xSdkDate, showAssetMetaRequest.xSdkDate)
+        return Objects.equals(this.xSdkDate, showAssetMetaRequest.xSdkDate)
             && Objects.equals(this.assetId, showAssetMetaRequest.assetId)
             && Objects.equals(this.status, showAssetMetaRequest.status)
             && Objects.equals(this.transcodeStatus, showAssetMetaRequest.transcodeStatus)
@@ -708,8 +685,7 @@ public class ShowAssetMetaRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(authorization,
-            xSdkDate,
+        return Objects.hash(xSdkDate,
             assetId,
             status,
             transcodeStatus,
@@ -727,7 +703,6 @@ public class ShowAssetMetaRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowAssetMetaRequest {\n");
-        sb.append("    authorization: ").append(toIndentedString(authorization)).append("\n");
         sb.append("    xSdkDate: ").append(toIndentedString(xSdkDate)).append("\n");
         sb.append("    assetId: ").append(toIndentedString(assetId)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");

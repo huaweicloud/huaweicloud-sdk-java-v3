@@ -11,11 +11,6 @@ import java.util.Objects;
 public class ShowAssetTempAuthorityRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Authorization")
-
-    private String authorization;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Sdk-Date")
 
     private String xSdkDate;
@@ -54,23 +49,6 @@ public class ShowAssetTempAuthorityRequest {
     @JsonProperty(value = "part_number")
 
     private Integer partNumber;
-
-    public ShowAssetTempAuthorityRequest withAuthorization(String authorization) {
-        this.authorization = authorization;
-        return this;
-    }
-
-    /**
-     * 使用AK/SK方式认证时必选，携带的鉴权信息。 
-     * @return authorization
-     */
-    public String getAuthorization() {
-        return authorization;
-    }
-
-    public void setAuthorization(String authorization) {
-        this.authorization = authorization;
-    }
 
     public ShowAssetTempAuthorityRequest withXSdkDate(String xSdkDate) {
         this.xSdkDate = xSdkDate;
@@ -221,8 +199,7 @@ public class ShowAssetTempAuthorityRequest {
             return false;
         }
         ShowAssetTempAuthorityRequest showAssetTempAuthorityRequest = (ShowAssetTempAuthorityRequest) o;
-        return Objects.equals(this.authorization, showAssetTempAuthorityRequest.authorization)
-            && Objects.equals(this.xSdkDate, showAssetTempAuthorityRequest.xSdkDate)
+        return Objects.equals(this.xSdkDate, showAssetTempAuthorityRequest.xSdkDate)
             && Objects.equals(this.httpVerb, showAssetTempAuthorityRequest.httpVerb)
             && Objects.equals(this.bucket, showAssetTempAuthorityRequest.bucket)
             && Objects.equals(this.objectKey, showAssetTempAuthorityRequest.objectKey)
@@ -234,15 +211,13 @@ public class ShowAssetTempAuthorityRequest {
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(authorization, xSdkDate, httpVerb, bucket, objectKey, contentType, contentMd5, uploadId, partNumber);
+        return Objects.hash(xSdkDate, httpVerb, bucket, objectKey, contentType, contentMd5, uploadId, partNumber);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowAssetTempAuthorityRequest {\n");
-        sb.append("    authorization: ").append(toIndentedString(authorization)).append("\n");
         sb.append("    xSdkDate: ").append(toIndentedString(xSdkDate)).append("\n");
         sb.append("    httpVerb: ").append(toIndentedString(httpVerb)).append("\n");
         sb.append("    bucket: ").append(toIndentedString(bucket)).append("\n");

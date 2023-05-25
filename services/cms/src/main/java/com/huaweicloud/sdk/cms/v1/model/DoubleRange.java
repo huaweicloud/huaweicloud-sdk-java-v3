@@ -26,7 +26,7 @@ public class DoubleRange {
     }
 
     /**
-     * 最大值：999999999.9
+     * 最大值，-1表示无限制
      * @return max
      */
     public Double getMax() {
@@ -43,7 +43,7 @@ public class DoubleRange {
     }
 
     /**
-     * 最小值：0
+     * 最小值，-1表示无限制
      * @return min
      */
     public Double getMin() {

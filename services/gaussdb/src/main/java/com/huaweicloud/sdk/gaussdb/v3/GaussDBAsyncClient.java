@@ -1254,6 +1254,34 @@ public class GaussDBAsyncClient {
     }
 
     /**
+     * 备份恢复到当前实例或已有实例
+     *
+     * 备份恢复到当前实例或已有实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RestoreOldInstanceRequest 请求对象
+     * @return CompletableFuture<RestoreOldInstanceResponse>
+     */
+    public CompletableFuture<RestoreOldInstanceResponse> restoreOldInstanceAsync(RestoreOldInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.restoreOldInstance);
+    }
+
+    /**
+     * 备份恢复到当前实例或已有实例
+     *
+     * 备份恢复到当前实例或已有实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RestoreOldInstanceRequest 请求对象
+     * @return AsyncInvoker<RestoreOldInstanceRequest, RestoreOldInstanceResponse>
+     */
+    public AsyncInvoker<RestoreOldInstanceRequest, RestoreOldInstanceResponse> restoreOldInstanceAsyncInvoker(RestoreOldInstanceRequest request) {
+        return new AsyncInvoker<RestoreOldInstanceRequest, RestoreOldInstanceResponse>(request, GaussDBMeta.restoreOldInstance, hcClient);
+    }
+
+    /**
      * 设置读写分离权重
      *
      * 设置读写分离权重。
@@ -1335,6 +1363,34 @@ public class GaussDBAsyncClient {
      */
     public AsyncInvoker<ShowAuditLogRequest, ShowAuditLogResponse> showAuditLogAsyncInvoker(ShowAuditLogRequest request) {
         return new AsyncInvoker<ShowAuditLogRequest, ShowAuditLogResponse>(request, GaussDBMeta.showAuditLog, hcClient);
+    }
+
+    /**
+     * 查询可恢复时间段
+     *
+     * 查询实例的可恢复时间段。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowBackupRestoreTimeRequest 请求对象
+     * @return CompletableFuture<ShowBackupRestoreTimeResponse>
+     */
+    public CompletableFuture<ShowBackupRestoreTimeResponse> showBackupRestoreTimeAsync(ShowBackupRestoreTimeRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.showBackupRestoreTime);
+    }
+
+    /**
+     * 查询可恢复时间段
+     *
+     * 查询实例的可恢复时间段。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowBackupRestoreTimeRequest 请求对象
+     * @return AsyncInvoker<ShowBackupRestoreTimeRequest, ShowBackupRestoreTimeResponse>
+     */
+    public AsyncInvoker<ShowBackupRestoreTimeRequest, ShowBackupRestoreTimeResponse> showBackupRestoreTimeAsyncInvoker(ShowBackupRestoreTimeRequest request) {
+        return new AsyncInvoker<ShowBackupRestoreTimeRequest, ShowBackupRestoreTimeResponse>(request, GaussDBMeta.showBackupRestoreTime, hcClient);
     }
 
     /**
@@ -2147,6 +2203,34 @@ public class GaussDBAsyncClient {
      */
     public AsyncInvoker<UpdateInstanceMonitorRequest, UpdateInstanceMonitorResponse> updateInstanceMonitorAsyncInvoker(UpdateInstanceMonitorRequest request) {
         return new AsyncInvoker<UpdateInstanceMonitorRequest, UpdateInstanceMonitorResponse>(request, GaussDBMeta.updateInstanceMonitor, hcClient);
+    }
+
+    /**
+     * 更改数据库代理连接池类型
+     *
+     * 更改数据库代理连接池类型
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateProxyConnectionPoolTypeRequest 请求对象
+     * @return CompletableFuture<UpdateProxyConnectionPoolTypeResponse>
+     */
+    public CompletableFuture<UpdateProxyConnectionPoolTypeResponse> updateProxyConnectionPoolTypeAsync(UpdateProxyConnectionPoolTypeRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.updateProxyConnectionPoolType);
+    }
+
+    /**
+     * 更改数据库代理连接池类型
+     *
+     * 更改数据库代理连接池类型
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateProxyConnectionPoolTypeRequest 请求对象
+     * @return AsyncInvoker<UpdateProxyConnectionPoolTypeRequest, UpdateProxyConnectionPoolTypeResponse>
+     */
+    public AsyncInvoker<UpdateProxyConnectionPoolTypeRequest, UpdateProxyConnectionPoolTypeResponse> updateProxyConnectionPoolTypeAsyncInvoker(UpdateProxyConnectionPoolTypeRequest request) {
+        return new AsyncInvoker<UpdateProxyConnectionPoolTypeRequest, UpdateProxyConnectionPoolTypeResponse>(request, GaussDBMeta.updateProxyConnectionPoolType, hcClient);
     }
 
     /**

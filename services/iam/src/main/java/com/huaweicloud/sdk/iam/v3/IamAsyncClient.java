@@ -125,6 +125,37 @@ public class IamAsyncClient {
     }
 
     /**
+     * application/json
+     *
+     * 该接口可以基于委托为企业项目授权
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AssociateRoleToAgencyOnEnterpriseProjectRequest 请求对象
+     * @return CompletableFuture<AssociateRoleToAgencyOnEnterpriseProjectResponse>
+     */
+    public CompletableFuture<AssociateRoleToAgencyOnEnterpriseProjectResponse> associateRoleToAgencyOnEnterpriseProjectAsync(
+        AssociateRoleToAgencyOnEnterpriseProjectRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.associateRoleToAgencyOnEnterpriseProject);
+    }
+
+    /**
+     * application/json
+     *
+     * 该接口可以基于委托为企业项目授权
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AssociateRoleToAgencyOnEnterpriseProjectRequest 请求对象
+     * @return AsyncInvoker<AssociateRoleToAgencyOnEnterpriseProjectRequest, AssociateRoleToAgencyOnEnterpriseProjectResponse>
+     */
+    public AsyncInvoker<AssociateRoleToAgencyOnEnterpriseProjectRequest, AssociateRoleToAgencyOnEnterpriseProjectResponse> associateRoleToAgencyOnEnterpriseProjectAsyncInvoker(
+        AssociateRoleToAgencyOnEnterpriseProjectRequest request) {
+        return new AsyncInvoker<AssociateRoleToAgencyOnEnterpriseProjectRequest, AssociateRoleToAgencyOnEnterpriseProjectResponse>(
+            request, IamMeta.associateRoleToAgencyOnEnterpriseProject, hcClient);
+    }
+
+    /**
      * 基于用户组为企业项目授权
      *
      * 该接口用于基于用户组为企业项目授权。
@@ -3098,6 +3129,37 @@ public class IamAsyncClient {
         RemoveProjectPermissionFromAgencyRequest request) {
         return new AsyncInvoker<RemoveProjectPermissionFromAgencyRequest, RemoveProjectPermissionFromAgencyResponse>(
             request, IamMeta.removeProjectPermissionFromAgency, hcClient);
+    }
+
+    /**
+     * 
+     *
+     * 该接口可以删除企业项目委托上的授权
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RevokeRoleFromAgencyOnEnterpriseProjectRequest 请求对象
+     * @return CompletableFuture<RevokeRoleFromAgencyOnEnterpriseProjectResponse>
+     */
+    public CompletableFuture<RevokeRoleFromAgencyOnEnterpriseProjectResponse> revokeRoleFromAgencyOnEnterpriseProjectAsync(
+        RevokeRoleFromAgencyOnEnterpriseProjectRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.revokeRoleFromAgencyOnEnterpriseProject);
+    }
+
+    /**
+     * 
+     *
+     * 该接口可以删除企业项目委托上的授权
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RevokeRoleFromAgencyOnEnterpriseProjectRequest 请求对象
+     * @return AsyncInvoker<RevokeRoleFromAgencyOnEnterpriseProjectRequest, RevokeRoleFromAgencyOnEnterpriseProjectResponse>
+     */
+    public AsyncInvoker<RevokeRoleFromAgencyOnEnterpriseProjectRequest, RevokeRoleFromAgencyOnEnterpriseProjectResponse> revokeRoleFromAgencyOnEnterpriseProjectAsyncInvoker(
+        RevokeRoleFromAgencyOnEnterpriseProjectRequest request) {
+        return new AsyncInvoker<RevokeRoleFromAgencyOnEnterpriseProjectRequest, RevokeRoleFromAgencyOnEnterpriseProjectResponse>(
+            request, IamMeta.revokeRoleFromAgencyOnEnterpriseProject, hcClient);
     }
 
     /**

@@ -16,7 +16,7 @@ import java.util.Objects;
 public class SupplyOption {
 
     /**
-     * 推荐结果的粒度 BY_REGION，每个Region打分，可使用多种Flavor满足需求 BY_AZ，每个Region打分，可使用多种Flavor满足需求 BY_FLAVOR，每个Flavor打分，可使用多地域满足需求 BY_FLAVOR_AND_REGION，每个Flavor打分，按Region聚合打分 BY_FLAVOR_AND_AZ，每个Flavor打分，按AZ聚合打分
+     * 推荐结果的粒度 BY_REGION：每个Region打分，可使用多种Flavor满足需求 BY_AZ：每个AZ打分 BY_FLAVOR：对每个Flavor打分，可使用多地域满足需求 BY_FLAVOR_AND_REGION：对每个Region下的每个Flavor打分 BY_FLAVOR_AND_AZ：对每个AZ下的每个Flavor打分
      */
     public static final class ResultGranularityEnum {
 
@@ -127,7 +127,7 @@ public class SupplyOption {
     }
 
     /**
-     * 推荐结果的粒度 BY_REGION，每个Region打分，可使用多种Flavor满足需求 BY_AZ，每个Region打分，可使用多种Flavor满足需求 BY_FLAVOR，每个Flavor打分，可使用多地域满足需求 BY_FLAVOR_AND_REGION，每个Flavor打分，按Region聚合打分 BY_FLAVOR_AND_AZ，每个Flavor打分，按AZ聚合打分
+     * 推荐结果的粒度 BY_REGION：每个Region打分，可使用多种Flavor满足需求 BY_AZ：每个AZ打分 BY_FLAVOR：对每个Flavor打分，可使用多地域满足需求 BY_FLAVOR_AND_REGION：对每个Region下的每个Flavor打分 BY_FLAVOR_AND_AZ：对每个AZ下的每个Flavor打分
      * @return resultGranularity
      */
     public ResultGranularityEnum getResultGranularity() {

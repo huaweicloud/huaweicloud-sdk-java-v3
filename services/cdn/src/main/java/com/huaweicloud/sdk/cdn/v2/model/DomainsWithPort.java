@@ -24,6 +24,11 @@ public class DomainsWithPort {
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain_name")
+
+    private String domainName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "business_type")
 
     private String businessType;
@@ -171,6 +176,23 @@ public class DomainsWithPort {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public DomainsWithPort withDomainName(String domainName) {
+        this.domainName = domainName;
+        return this;
+    }
+
+    /**
+     * 加速域名。
+     * @return domainName
+     */
+    public String getDomainName() {
+        return domainName;
+    }
+
+    public void setDomainName(String domainName) {
+        this.domainName = domainName;
     }
 
     public DomainsWithPort withBusinessType(String businessType) {
@@ -369,6 +391,7 @@ public class DomainsWithPort {
         }
         DomainsWithPort domainsWithPort = (DomainsWithPort) o;
         return Objects.equals(this.id, domainsWithPort.id)
+            && Objects.equals(this.domainName, domainsWithPort.domainName)
             && Objects.equals(this.businessType, domainsWithPort.businessType)
             && Objects.equals(this.domainStatus, domainsWithPort.domainStatus)
             && Objects.equals(this.cname, domainsWithPort.cname)
@@ -384,6 +407,7 @@ public class DomainsWithPort {
     @Override
     public int hashCode() {
         return Objects.hash(id,
+            domainName,
             businessType,
             domainStatus,
             cname,
@@ -401,6 +425,7 @@ public class DomainsWithPort {
         StringBuilder sb = new StringBuilder();
         sb.append("class DomainsWithPort {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    domainName: ").append(toIndentedString(domainName)).append("\n");
         sb.append("    businessType: ").append(toIndentedString(businessType)).append("\n");
         sb.append("    domainStatus: ").append(toIndentedString(domainStatus)).append("\n");
         sb.append("    cname: ").append(toIndentedString(cname)).append("\n");

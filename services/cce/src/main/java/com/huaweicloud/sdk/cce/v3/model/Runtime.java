@@ -16,7 +16,7 @@ import java.util.Objects;
 public class Runtime {
 
     /**
-     * 容器运行时，默认为“docker”
+     * 容器运行时, 默认场景： - 1.25以下集群：默认为\"docker\" - 1.25及以上集群，随操作系统变化，默认的容器运行时不同：操作系统为欧拉2.5、欧拉2.8的节点默认为\"docker\"，其余操作系统的节点默认为\"containerd\" 
      */
     public static final class NameEnum {
 
@@ -103,7 +103,7 @@ public class Runtime {
     }
 
     /**
-     * 容器运行时，默认为“docker”
+     * 容器运行时, 默认场景： - 1.25以下集群：默认为\"docker\" - 1.25及以上集群，随操作系统变化，默认的容器运行时不同：操作系统为欧拉2.5、欧拉2.8的节点默认为\"docker\"，其余操作系统的节点默认为\"containerd\" 
      * @return name
      */
     public NameEnum getName() {

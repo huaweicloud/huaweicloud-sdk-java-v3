@@ -105,9 +105,14 @@ public class CreateInstanceReq {
     private EngineEnum engine;
 
     /**
-     * 消息引擎的版本。   - RabbitMQ版本有：3.7.17 
+     * 消息引擎的版本。   - RabbitMQ版本有：3.8.35和3.7.17 
      */
     public static final class EngineVersionEnum {
+
+        /**
+         * Enum _3_8_35 for value: "3.8.35"
+         */
+        public static final EngineVersionEnum _3_8_35 = new EngineVersionEnum("3.8.35");
 
         /**
          * Enum _3_7_17 for value: "3.7.17"
@@ -118,6 +123,7 @@ public class CreateInstanceReq {
 
         private static Map<String, EngineVersionEnum> createStaticFields() {
             Map<String, EngineVersionEnum> map = new HashMap<>();
+            map.put("3.8.35", _3_8_35);
             map.put("3.7.17", _3_7_17);
             return Collections.unmodifiableMap(map);
         }
@@ -340,7 +346,7 @@ public class CreateInstanceReq {
     private Boolean sslEnable;
 
     /**
-     * 存储IO规格。  取值范围：   - dms.physical.storage.high.v2   - dms.physical.storage.ultra.v2   - dms.physical.storage.high.dss.v2   - dms.physical.storage.ultra.dss.v2
+     * 存储IO规格。  取值范围：   - dms.physical.storage.high.v2   - dms.physical.storage.ultra.v2   - dms.physical.storage.high.dss.v2(专属云)   - dms.physical.storage.ultra.dss.v2(专属云)
      */
     public static final class StorageSpecCodeEnum {
 
@@ -504,7 +510,7 @@ public class CreateInstanceReq {
     }
 
     /**
-     * 消息引擎的版本。   - RabbitMQ版本有：3.7.17 
+     * 消息引擎的版本。   - RabbitMQ版本有：3.8.35和3.7.17 
      * @return engineVersion
      */
     public EngineVersionEnum getEngineVersion() {
@@ -775,7 +781,7 @@ public class CreateInstanceReq {
     }
 
     /**
-     * 存储IO规格。  取值范围：   - dms.physical.storage.high.v2   - dms.physical.storage.ultra.v2   - dms.physical.storage.high.dss.v2   - dms.physical.storage.ultra.dss.v2
+     * 存储IO规格。  取值范围：   - dms.physical.storage.high.v2   - dms.physical.storage.ultra.v2   - dms.physical.storage.high.dss.v2(专属云)   - dms.physical.storage.ultra.dss.v2(专属云)
      * @return storageSpecCode
      */
     public StorageSpecCodeEnum getStorageSpecCode() {

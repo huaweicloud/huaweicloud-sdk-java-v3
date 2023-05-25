@@ -48,7 +48,7 @@ public class AggregatePolicyStatesRequest {
     }
 
     /**
-     * 租户ID
+     * 源帐号ID
      * @return accountId
      */
     public String getAccountId() {

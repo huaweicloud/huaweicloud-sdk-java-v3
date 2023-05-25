@@ -14,9 +14,9 @@ import java.util.function.Consumer;
 public class ListResourceResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "resouce_detail")
+    @JsonProperty(value = "resource_detail")
 
-    private Object resouceDetail;
+    private Object resourceDetail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_id")
@@ -33,21 +33,21 @@ public class ListResourceResp {
 
     private List<ResourceTagResp> tags = null;
 
-    public ListResourceResp withResouceDetail(Object resouceDetail) {
-        this.resouceDetail = resouceDetail;
+    public ListResourceResp withResourceDetail(Object resourceDetail) {
+        this.resourceDetail = resourceDetail;
         return this;
     }
 
     /**
      * 资源详情。 资源对象，用于扩展。默认为空
-     * @return resouceDetail
+     * @return resourceDetail
      */
-    public Object getResouceDetail() {
-        return resouceDetail;
+    public Object getResourceDetail() {
+        return resourceDetail;
     }
 
-    public void setResouceDetail(Object resouceDetail) {
-        this.resouceDetail = resouceDetail;
+    public void setResourceDetail(Object resourceDetail) {
+        this.resourceDetail = resourceDetail;
     }
 
     public ListResourceResp withResourceId(String resourceId) {
@@ -126,7 +126,7 @@ public class ListResourceResp {
             return false;
         }
         ListResourceResp listResourceResp = (ListResourceResp) o;
-        return Objects.equals(this.resouceDetail, listResourceResp.resouceDetail)
+        return Objects.equals(this.resourceDetail, listResourceResp.resourceDetail)
             && Objects.equals(this.resourceId, listResourceResp.resourceId)
             && Objects.equals(this.resourceName, listResourceResp.resourceName)
             && Objects.equals(this.tags, listResourceResp.tags);
@@ -134,14 +134,14 @@ public class ListResourceResp {
 
     @Override
     public int hashCode() {
-        return Objects.hash(resouceDetail, resourceId, resourceName, tags);
+        return Objects.hash(resourceDetail, resourceId, resourceName, tags);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListResourceResp {\n");
-        sb.append("    resouceDetail: ").append(toIndentedString(resouceDetail)).append("\n");
+        sb.append("    resourceDetail: ").append(toIndentedString(resourceDetail)).append("\n");
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("    resourceName: ").append(toIndentedString(resourceName)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");

@@ -36,7 +36,7 @@ public class SupplyRecommendation {
     }
 
     /**
-     * 资源规格
+     * 弹性云服务器规格
      * @return flavorId
      */
     public String getFlavorId() {
@@ -53,7 +53,7 @@ public class SupplyRecommendation {
     }
 
     /**
-     * 地域
+     * 地域id
      * @return regionId
      */
     public String getRegionId() {
@@ -70,7 +70,7 @@ public class SupplyRecommendation {
     }
 
     /**
-     * 可用区
+     * 可用区id
      * @return availabilityZoneId
      */
     public String getAvailabilityZoneId() {

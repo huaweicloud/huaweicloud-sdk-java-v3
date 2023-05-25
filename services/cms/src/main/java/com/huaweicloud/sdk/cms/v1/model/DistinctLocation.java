@@ -26,7 +26,7 @@ public class DistinctLocation {
     }
 
     /**
-     * region的id
+     * 区域Region
      * @return regionId
      */
     public String getRegionId() {
@@ -43,7 +43,7 @@ public class DistinctLocation {
     }
 
     /**
-     * az的id
+     * 可用区Availability Zone
      * @return availabilityZoneId
      */
     public String getAvailabilityZoneId() {

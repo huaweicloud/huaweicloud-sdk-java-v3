@@ -11,11 +11,6 @@ import java.util.Objects;
 public class CheckMd5DuplicationRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Authorization")
-
-    private String authorization;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Sdk-Date")
 
     private String xSdkDate;
@@ -29,23 +24,6 @@ public class CheckMd5DuplicationRequest {
     @JsonProperty(value = "md5")
 
     private String md5;
-
-    public CheckMd5DuplicationRequest withAuthorization(String authorization) {
-        this.authorization = authorization;
-        return this;
-    }
-
-    /**
-     * 使用AK/SK方式认证时必选，携带的鉴权信息。 
-     * @return authorization
-     */
-    public String getAuthorization() {
-        return authorization;
-    }
-
-    public void setAuthorization(String authorization) {
-        this.authorization = authorization;
-    }
 
     public CheckMd5DuplicationRequest withXSdkDate(String xSdkDate) {
         this.xSdkDate = xSdkDate;
@@ -109,22 +87,20 @@ public class CheckMd5DuplicationRequest {
             return false;
         }
         CheckMd5DuplicationRequest checkMd5DuplicationRequest = (CheckMd5DuplicationRequest) o;
-        return Objects.equals(this.authorization, checkMd5DuplicationRequest.authorization)
-            && Objects.equals(this.xSdkDate, checkMd5DuplicationRequest.xSdkDate)
+        return Objects.equals(this.xSdkDate, checkMd5DuplicationRequest.xSdkDate)
             && Objects.equals(this.size, checkMd5DuplicationRequest.size)
             && Objects.equals(this.md5, checkMd5DuplicationRequest.md5);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(authorization, xSdkDate, size, md5);
+        return Objects.hash(xSdkDate, size, md5);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CheckMd5DuplicationRequest {\n");
-        sb.append("    authorization: ").append(toIndentedString(authorization)).append("\n");
         sb.append("    xSdkDate: ").append(toIndentedString(xSdkDate)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    md5: ").append(toIndentedString(md5)).append("\n");

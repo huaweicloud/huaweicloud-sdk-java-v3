@@ -11,11 +11,6 @@ import java.util.Objects;
 public class ListTemplateGroupRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Authorization")
-
-    private String authorization;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Sdk-Date")
 
     private String xSdkDate;
@@ -39,23 +34,6 @@ public class ListTemplateGroupRequest {
     @JsonProperty(value = "size")
 
     private Integer size;
-
-    public ListTemplateGroupRequest withAuthorization(String authorization) {
-        this.authorization = authorization;
-        return this;
-    }
-
-    /**
-     * 使用AK/SK方式认证时必选，携带的鉴权信息。 
-     * @return authorization
-     */
-    public String getAuthorization() {
-        return authorization;
-    }
-
-    public void setAuthorization(String authorization) {
-        this.authorization = authorization;
-    }
 
     public ListTemplateGroupRequest withXSdkDate(String xSdkDate) {
         this.xSdkDate = xSdkDate;
@@ -153,8 +131,7 @@ public class ListTemplateGroupRequest {
             return false;
         }
         ListTemplateGroupRequest listTemplateGroupRequest = (ListTemplateGroupRequest) o;
-        return Objects.equals(this.authorization, listTemplateGroupRequest.authorization)
-            && Objects.equals(this.xSdkDate, listTemplateGroupRequest.xSdkDate)
+        return Objects.equals(this.xSdkDate, listTemplateGroupRequest.xSdkDate)
             && Objects.equals(this.groupId, listTemplateGroupRequest.groupId)
             && Objects.equals(this.status, listTemplateGroupRequest.status)
             && Objects.equals(this.page, listTemplateGroupRequest.page)
@@ -163,14 +140,13 @@ public class ListTemplateGroupRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(authorization, xSdkDate, groupId, status, page, size);
+        return Objects.hash(xSdkDate, groupId, status, page, size);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListTemplateGroupRequest {\n");
-        sb.append("    authorization: ").append(toIndentedString(authorization)).append("\n");
         sb.append("    xSdkDate: ").append(toIndentedString(xSdkDate)).append("\n");
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");

@@ -49,7 +49,7 @@ public class ListAggregateComplianceByPolicyAssignmentResponse extends SdkRespon
     }
 
     /**
-     * AggregatePolicyAssignment对象的列表。
+     * 聚合合规规则的列表。
      * @return aggregatePolicyAssignments
      */
     public List<AggregatePolicyAssignments> getAggregatePolicyAssignments() {

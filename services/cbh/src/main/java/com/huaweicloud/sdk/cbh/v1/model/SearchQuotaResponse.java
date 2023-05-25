@@ -56,7 +56,7 @@ public class SearchQuotaResponse extends SdkResponse {
     }
 
     /**
-     * 弹性公网IP个数，默认值1。
+     * 弹性公网IP个数，返回默认值1。
      * minimum: 0
      * maximum: 9223372036854775807
      * @return eipQuota
@@ -75,7 +75,7 @@ public class SearchQuotaResponse extends SdkResponse {
     }
 
     /**
-     * IPV6状态信息，返回默认值null。
+     * IPV6ECS资源状态信息，返回默认值null。
      * @return statusV6
      */
     public String getStatusV6() {
@@ -92,7 +92,7 @@ public class SearchQuotaResponse extends SdkResponse {
     }
 
     /**
-     * IPV6状态信息，返回默认值null。
+     * ECS资源状态信息，返回默认值null。
      * @return status
      */
     public String getStatus() {

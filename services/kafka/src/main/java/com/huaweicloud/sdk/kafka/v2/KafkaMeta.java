@@ -171,6 +171,31 @@ public class KafkaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CloseKafkaManagerRequest, CloseKafkaManagerResponse> closeKafkaManager =
+        genForcloseKafkaManager();
+
+    private static HttpRequestDef<CloseKafkaManagerRequest, CloseKafkaManagerResponse> genForcloseKafkaManager() {
+        // basic
+        HttpRequestDef.Builder<CloseKafkaManagerRequest, CloseKafkaManagerResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, CloseKafkaManagerRequest.class, CloseKafkaManagerResponse.class)
+                .withName("CloseKafkaManager")
+                .withUri("/v2/{project_id}/kafka/instances/{instance_id}/management")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CloseKafkaManagerRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateConnectorRequest, CreateConnectorResponse> createConnector =
         genForcreateConnector();
 
@@ -195,6 +220,41 @@ public class KafkaMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateConnectorReq.class),
             f -> f.withMarshaller(CreateConnectorRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDeleteConnectorOrderRequest, CreateDeleteConnectorOrderResponse> createDeleteConnectorOrder =
+        genForcreateDeleteConnectorOrder();
+
+    private static HttpRequestDef<CreateDeleteConnectorOrderRequest, CreateDeleteConnectorOrderResponse> genForcreateDeleteConnectorOrder() {
+        // basic
+        HttpRequestDef.Builder<CreateDeleteConnectorOrderRequest, CreateDeleteConnectorOrderResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateDeleteConnectorOrderRequest.class,
+                    CreateDeleteConnectorOrderResponse.class)
+                .withName("CreateDeleteConnectorOrder")
+                .withUri("/v2/{project_id}/kafka/instances/{instance_id}/delete-connector-order")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDeleteConnectorOrderRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<ConnectorOrderRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ConnectorOrderRequestBody.class),
+            f -> f.withMarshaller(CreateDeleteConnectorOrderRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -295,6 +355,46 @@ public class KafkaMeta {
             }));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateKafkaConsumerGroupRequest, CreateKafkaConsumerGroupResponse> createKafkaConsumerGroup =
+        genForcreateKafkaConsumerGroup();
+
+    private static HttpRequestDef<CreateKafkaConsumerGroupRequest, CreateKafkaConsumerGroupResponse> genForcreateKafkaConsumerGroup() {
+        // basic
+        HttpRequestDef.Builder<CreateKafkaConsumerGroupRequest, CreateKafkaConsumerGroupResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, CreateKafkaConsumerGroupRequest.class, CreateKafkaConsumerGroupResponse.class)
+                .withName("CreateKafkaConsumerGroup")
+                .withUri("/v2/{project_id}/kafka/instances/{instance_id}/groups")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateKafkaConsumerGroupRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<CreateGroupReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateGroupReq.class),
+            f -> f.withMarshaller(CreateKafkaConsumerGroupRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateKafkaConsumerGroupResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
 
         return builder.build();
     }
@@ -452,6 +552,38 @@ public class KafkaMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteBackgroundTaskRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteConnectorRequest, DeleteConnectorResponse> deleteConnector =
+        genFordeleteConnector();
+
+    private static HttpRequestDef<DeleteConnectorRequest, DeleteConnectorResponse> genFordeleteConnector() {
+        // basic
+        HttpRequestDef.Builder<DeleteConnectorRequest, DeleteConnectorResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DeleteConnectorRequest.class, DeleteConnectorResponse.class)
+                .withName("DeleteConnector")
+                .withUri("/v2/{project_id}/kafka/instances/{instance_id}/delete-connector")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteConnectorRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<DeleteConnectorRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DeleteConnectorRequestBody.class),
+            f -> f.withMarshaller(DeleteConnectorRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

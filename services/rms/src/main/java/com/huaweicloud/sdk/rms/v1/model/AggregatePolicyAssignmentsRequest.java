@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 聚合合规策略请求体
+ * 聚合合规规则请求体
  */
 public class AggregatePolicyAssignmentsRequest {
 

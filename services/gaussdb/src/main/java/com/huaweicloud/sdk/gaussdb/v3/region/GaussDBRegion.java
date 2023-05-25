@@ -28,6 +28,10 @@ public class GaussDBRegion {
             "https://gaussdb.cn-north-2.myhuaweicloud.com");
     public static final Region CN_NORTH_9 = new Region("cn-north-9",
             "https://gaussdb.cn-north-9.myhuaweicloud.com");
+    public static final Region TR_WEST_1 = new Region("tr-west-1",
+            "https://gaussdb.tr-west-1.myhuaweicloud.com");
+    public static final Region AP_SOUTHEAST_4 = new Region("ap-southeast-4",
+            "https://gaussdb.ap-southeast-4.myhuaweicloud.com");
     public static final Region SA_BRAZIL_1 = new Region("sa-brazil-1",
             "https://gaussdb.sa-brazil-1.myhuaweicloud.com");
     
@@ -45,6 +49,8 @@ public class GaussDBRegion {
         map.put("ap-southeast-3", AP_SOUTHEAST_3);
         map.put("cn-north-2", CN_NORTH_2);
         map.put("cn-north-9", CN_NORTH_9);
+        map.put("tr-west-1", TR_WEST_1);
+        map.put("ap-southeast-4", AP_SOUTHEAST_4);
         map.put("sa-brazil-1", SA_BRAZIL_1);
         return Collections.unmodifiableMap(map);
     }

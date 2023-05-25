@@ -8,9 +8,35 @@ import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.live.v1.model.*;
 
 import java.time.OffsetDateTime;
+import java.util.List;
 
 @SuppressWarnings("unchecked")
 public class LiveMeta {
+
+    public static final HttpRequestDef<BatchShowIpBelongsRequest, BatchShowIpBelongsResponse> batchShowIpBelongs =
+        genForbatchShowIpBelongs();
+
+    private static HttpRequestDef<BatchShowIpBelongsRequest, BatchShowIpBelongsResponse> genForbatchShowIpBelongs() {
+        // basic
+        HttpRequestDef.Builder<BatchShowIpBelongsRequest, BatchShowIpBelongsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, BatchShowIpBelongsRequest.class, BatchShowIpBelongsResponse.class)
+                .withName("BatchShowIpBelongs")
+                .withUri("/v1/{project_id}/cdn/ip-info")
+                .withContentType("application/json");
+
+        // requests
+        builder.<List<String>>withRequestField("ip",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(BatchShowIpBelongsRequest::getIp, (req, v) -> {
+                req.setIp(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
 
     public static final HttpRequestDef<CreateDomainRequest, CreateDomainResponse> createDomain = genForcreateDomain();
 

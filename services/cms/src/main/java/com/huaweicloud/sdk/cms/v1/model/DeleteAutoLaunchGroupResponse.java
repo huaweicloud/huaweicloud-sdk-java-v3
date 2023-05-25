@@ -44,7 +44,7 @@ public class DeleteAutoLaunchGroupResponse extends SdkResponse {
     }
 
     /**
-     * 错误描述 请求失败时，响应体中必需包含错误 请求成功时，不在响应消息体中包含错误描述
+     * 错误描述 请求失败时，响应体中必需包含错误描述 请求成功时，不在响应消息体中包含错误描述
      * @return errorMsg
      */
     public String getErrorMsg() {

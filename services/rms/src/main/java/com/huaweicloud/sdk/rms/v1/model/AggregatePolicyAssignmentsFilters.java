@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * AggregatePolicyAssignmentsFilters对象
+ * 聚合合规规则过滤器。
  */
 public class AggregatePolicyAssignmentsFilters {
 
@@ -21,7 +21,7 @@ public class AggregatePolicyAssignmentsFilters {
     private String accountId;
 
     /**
-     * 合规性状态
+     * 合规结果。
      */
     public static final class ComplianceStateEnum {
 
@@ -119,7 +119,7 @@ public class AggregatePolicyAssignmentsFilters {
     }
 
     /**
-     * 租户ID
+     * 源帐号ID。
      * @return accountId
      */
     public String getAccountId() {
@@ -136,7 +136,7 @@ public class AggregatePolicyAssignmentsFilters {
     }
 
     /**
-     * 合规性状态
+     * 合规结果。
      * @return complianceState
      */
     public ComplianceStateEnum getComplianceState() {

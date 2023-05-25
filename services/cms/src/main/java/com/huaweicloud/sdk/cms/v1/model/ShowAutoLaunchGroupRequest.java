@@ -21,7 +21,7 @@ public class ShowAutoLaunchGroupRequest {
     }
 
     /**
-     * 指定智能购买组id
+     * 智能购买组id
      * @return autoLaunchGroupId
      */
     public String getAutoLaunchGroupId() {

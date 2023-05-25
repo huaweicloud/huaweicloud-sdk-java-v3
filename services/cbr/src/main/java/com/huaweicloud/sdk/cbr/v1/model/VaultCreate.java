@@ -63,6 +63,26 @@ public class VaultCreate {
 
     private Boolean autoExpand;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "threshold")
+
+    private Integer threshold;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "smn_notify")
+
+    private Boolean smnNotify;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "backup_name_prefix")
+
+    private String backupNamePrefix;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "demand_billing")
+
+    private Boolean demandBilling;
+
     public VaultCreate withBackupPolicyId(String backupPolicyId) {
         this.backupPolicyId = backupPolicyId;
         return this;
@@ -272,7 +292,7 @@ public class VaultCreate {
     }
 
     /**
-     * 是否自动扩容。按需存储库支持自动扩容，包周期存储库不支持扩容。
+     * [是否开启存储库自动扩容能力（只支持按需存储库）。](tag:hws,hws_hk) [是否开启存储库自动扩容能力。](tag:dt,ocb,tlf,sbc,fcs_vm,ctc,g42,tm,cmcc,hcso_dt)
      * @return autoExpand
      */
     public Boolean getAutoExpand() {
@@ -281,6 +301,76 @@ public class VaultCreate {
 
     public void setAutoExpand(Boolean autoExpand) {
         this.autoExpand = autoExpand;
+    }
+
+    public VaultCreate withThreshold(Integer threshold) {
+        this.threshold = threshold;
+        return this;
+    }
+
+    /**
+     * 存储库容量阈值，已用容量占总容量达到此百分比，将根据 smn_notify 参数设置选择是否发送相关通知。 默认值为：80 最大值：100 最小值：1
+     * minimum: 1
+     * maximum: 100
+     * @return threshold
+     */
+    public Integer getThreshold() {
+        return threshold;
+    }
+
+    public void setThreshold(Integer threshold) {
+        this.threshold = threshold;
+    }
+
+    public VaultCreate withSmnNotify(Boolean smnNotify) {
+        this.smnNotify = smnNotify;
+        return this;
+    }
+
+    /**
+     * 存储库smn消息通知开关。 默认值为 true。
+     * @return smnNotify
+     */
+    public Boolean getSmnNotify() {
+        return smnNotify;
+    }
+
+    public void setSmnNotify(Boolean smnNotify) {
+        this.smnNotify = smnNotify;
+    }
+
+    public VaultCreate withBackupNamePrefix(String backupNamePrefix) {
+        this.backupNamePrefix = backupNamePrefix;
+        return this;
+    }
+
+    /**
+     * 备份名称前缀，设置后该存储库自动备份产生的备份副本都将携带该备份名称前缀
+     * @return backupNamePrefix
+     */
+    public String getBackupNamePrefix() {
+        return backupNamePrefix;
+    }
+
+    public void setBackupNamePrefix(String backupNamePrefix) {
+        this.backupNamePrefix = backupNamePrefix;
+    }
+
+    public VaultCreate withDemandBilling(Boolean demandBilling) {
+        this.demandBilling = demandBilling;
+        return this;
+    }
+
+    /**
+     * 存储库使用是否允许超出容量，只有创建包周期存储库时才允许该值为 true
+     * @return demandBilling
+     */
+    public Boolean getDemandBilling() {
+        return demandBilling;
+    }
+
+    public void setDemandBilling(Boolean demandBilling) {
+        this.demandBilling = demandBilling;
     }
 
     @Override
@@ -299,7 +389,11 @@ public class VaultCreate {
             && Objects.equals(this.enterpriseProjectId, vaultCreate.enterpriseProjectId)
             && Objects.equals(this.autoBind, vaultCreate.autoBind)
             && Objects.equals(this.bindRules, vaultCreate.bindRules)
-            && Objects.equals(this.autoExpand, vaultCreate.autoExpand);
+            && Objects.equals(this.autoExpand, vaultCreate.autoExpand)
+            && Objects.equals(this.threshold, vaultCreate.threshold)
+            && Objects.equals(this.smnNotify, vaultCreate.smnNotify)
+            && Objects.equals(this.backupNamePrefix, vaultCreate.backupNamePrefix)
+            && Objects.equals(this.demandBilling, vaultCreate.demandBilling);
     }
 
     @Override
@@ -313,7 +407,11 @@ public class VaultCreate {
             enterpriseProjectId,
             autoBind,
             bindRules,
-            autoExpand);
+            autoExpand,
+            threshold,
+            smnNotify,
+            backupNamePrefix,
+            demandBilling);
     }
 
     @Override
@@ -330,6 +428,10 @@ public class VaultCreate {
         sb.append("    autoBind: ").append(toIndentedString(autoBind)).append("\n");
         sb.append("    bindRules: ").append(toIndentedString(bindRules)).append("\n");
         sb.append("    autoExpand: ").append(toIndentedString(autoExpand)).append("\n");
+        sb.append("    threshold: ").append(toIndentedString(threshold)).append("\n");
+        sb.append("    smnNotify: ").append(toIndentedString(smnNotify)).append("\n");
+        sb.append("    backupNamePrefix: ").append(toIndentedString(backupNamePrefix)).append("\n");
+        sb.append("    demandBilling: ").append(toIndentedString(demandBilling)).append("\n");
         sb.append("}");
         return sb.toString();
     }

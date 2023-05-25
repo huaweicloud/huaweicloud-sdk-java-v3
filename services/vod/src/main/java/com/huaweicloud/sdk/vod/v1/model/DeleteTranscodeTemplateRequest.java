@@ -11,11 +11,6 @@ import java.util.Objects;
 public class DeleteTranscodeTemplateRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Authorization")
-
-    private String authorization;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Sdk-Date")
 
     private String xSdkDate;
@@ -24,23 +19,6 @@ public class DeleteTranscodeTemplateRequest {
     @JsonProperty(value = "group_id")
 
     private String groupId;
-
-    public DeleteTranscodeTemplateRequest withAuthorization(String authorization) {
-        this.authorization = authorization;
-        return this;
-    }
-
-    /**
-     * 使用AK/SK方式认证时必选，携带的鉴权信息。 
-     * @return authorization
-     */
-    public String getAuthorization() {
-        return authorization;
-    }
-
-    public void setAuthorization(String authorization) {
-        this.authorization = authorization;
-    }
 
     public DeleteTranscodeTemplateRequest withXSdkDate(String xSdkDate) {
         this.xSdkDate = xSdkDate;
@@ -87,21 +65,19 @@ public class DeleteTranscodeTemplateRequest {
             return false;
         }
         DeleteTranscodeTemplateRequest deleteTranscodeTemplateRequest = (DeleteTranscodeTemplateRequest) o;
-        return Objects.equals(this.authorization, deleteTranscodeTemplateRequest.authorization)
-            && Objects.equals(this.xSdkDate, deleteTranscodeTemplateRequest.xSdkDate)
+        return Objects.equals(this.xSdkDate, deleteTranscodeTemplateRequest.xSdkDate)
             && Objects.equals(this.groupId, deleteTranscodeTemplateRequest.groupId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(authorization, xSdkDate, groupId);
+        return Objects.hash(xSdkDate, groupId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteTranscodeTemplateRequest {\n");
-        sb.append("    authorization: ").append(toIndentedString(authorization)).append("\n");
         sb.append("    xSdkDate: ").append(toIndentedString(xSdkDate)).append("\n");
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("}");

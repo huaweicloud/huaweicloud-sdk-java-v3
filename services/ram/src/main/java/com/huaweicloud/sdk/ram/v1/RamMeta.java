@@ -299,6 +299,23 @@ public class RamMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListQuotaRequest, ListQuotaResponse> listQuota = genForlistQuota();
+
+    private static HttpRequestDef<ListQuotaRequest, ListQuotaResponse> genForlistQuota() {
+        // basic
+        HttpRequestDef.Builder<ListQuotaRequest, ListQuotaResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListQuotaRequest.class, ListQuotaResponse.class)
+                .withName("ListQuota")
+                .withUri("/v1/resource-shares/quotas")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SearchDistinctSharedResourcesRequest, SearchDistinctSharedResourcesResponse> searchDistinctSharedResources =
         genForsearchDistinctSharedResources();
 

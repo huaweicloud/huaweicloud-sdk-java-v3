@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 模板的覆盖
+ * 实例的详细信息
  */
 public class OverrideInfo {
 
@@ -41,7 +41,7 @@ public class OverrideInfo {
     }
 
     /**
-     * 可用区
+     * 可用区id
      * @return availabilityZoneId
      */
     public String getAvailabilityZoneId() {
@@ -58,7 +58,7 @@ public class OverrideInfo {
     }
 
     /**
-     * 虚拟机规格id
+     * 实例规格id
      * @return flavorId
      */
     public String getFlavorId() {
@@ -92,7 +92,7 @@ public class OverrideInfo {
     }
 
     /**
-     * 优先级，用户可以按照需要进行修改 值越小，越优先购买 取值范围：0 ~ +∞ 默认值是Integer.MAX_VALUE
+     * 优先级，值越小，越优先购买 取值范围：0 ~ +∞ 默认值是Integer.MAX_VALUE
      * minimum: 0
      * @return priority
      */
@@ -110,7 +110,7 @@ public class OverrideInfo {
     }
 
     /**
-     * 实例规格的权重。取值越高，单台实例满足计算力需求的能力越大，所需的实例数量越小。取值范围：大于0  可以根据指定实例规格的计算力和集群单节点最低计算力得出权重值。假设单节点最低计算力为8 vCPU、60GiB，则：8 vCPU、60GiB的实例规格权重可以设置为1 16 vCPU、120GiB的实例规格权重可以设置为2 默认值：1
+     * 实例规格的权重。取值越高，单台实例满足计算里需求的能力越大，所需的实例数量越小。 取值范围：大于0 可以根据指定实例规格的计算力和集群单节点最低计算力得出权重值。假设单节点最低计算力为8vcpu、60GB，则：8vcpu、60GB的实例规格权重可设置为1，16vcpu、120GB的实例规格权重可设置为2
      * minimum: 1
      * maximum: 5E+2
      * @return weightedCapacity

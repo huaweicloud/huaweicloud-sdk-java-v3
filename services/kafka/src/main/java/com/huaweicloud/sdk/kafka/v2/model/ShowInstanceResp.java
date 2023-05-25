@@ -510,6 +510,11 @@ public class ShowInstanceResp {
     private Integer publicBandwidth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "kafka_manager_enable")
+
+    private Boolean kafkaManagerEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kafka_manager_user")
 
     private String kafkaManagerUser;
@@ -871,7 +876,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * [付费模式，1表示按需计费，0表示包年/包月计费。](tag:hc,hk,hws,hws_hk,ctc,sbc,hk_sbc,cmcc,hws_eu)[付费模式，暂未使用。](tag:hws_ocb,ocb) [付费模式，1表示按需计费。](tag:otc,dt,g42,tm)
+     * '[付费模式，1表示按需计费，0表示包年/包月计费。](tag:hc,hk,hws,hws_hk,ctc,sbc,hk_sbc,cmcc,hws_eu)[付费模式，暂未使用。](tag:hws_ocb,ocb) [付费模式，1表示按需计费。](tag:otc,dt,g42,tm)'
      * @return chargingMode
      */
     public Integer getChargingMode() {
@@ -1561,6 +1566,23 @@ public class ShowInstanceResp {
         this.publicBandwidth = publicBandwidth;
     }
 
+    public ShowInstanceResp withKafkaManagerEnable(Boolean kafkaManagerEnable) {
+        this.kafkaManagerEnable = kafkaManagerEnable;
+        return this;
+    }
+
+    /**
+     * 是否已开启kafka manager
+     * @return kafkaManagerEnable
+     */
+    public Boolean getKafkaManagerEnable() {
+        return kafkaManagerEnable;
+    }
+
+    public void setKafkaManagerEnable(Boolean kafkaManagerEnable) {
+        this.kafkaManagerEnable = kafkaManagerEnable;
+    }
+
     public ShowInstanceResp withKafkaManagerUser(String kafkaManagerUser) {
         this.kafkaManagerUser = kafkaManagerUser;
         return this;
@@ -2111,6 +2133,7 @@ public class ShowInstanceResp {
             && Objects.equals(this.retentionPolicy, showInstanceResp.retentionPolicy)
             && Objects.equals(this.kafkaPublicStatus, showInstanceResp.kafkaPublicStatus)
             && Objects.equals(this.publicBandwidth, showInstanceResp.publicBandwidth)
+            && Objects.equals(this.kafkaManagerEnable, showInstanceResp.kafkaManagerEnable)
             && Objects.equals(this.kafkaManagerUser, showInstanceResp.kafkaManagerUser)
             && Objects.equals(this.enableLogCollection, showInstanceResp.enableLogCollection)
             && Objects.equals(this.crossVpcInfo, showInstanceResp.crossVpcInfo)
@@ -2194,6 +2217,7 @@ public class ShowInstanceResp {
             retentionPolicy,
             kafkaPublicStatus,
             publicBandwidth,
+            kafkaManagerEnable,
             kafkaManagerUser,
             enableLogCollection,
             crossVpcInfo,
@@ -2281,6 +2305,7 @@ public class ShowInstanceResp {
         sb.append("    retentionPolicy: ").append(toIndentedString(retentionPolicy)).append("\n");
         sb.append("    kafkaPublicStatus: ").append(toIndentedString(kafkaPublicStatus)).append("\n");
         sb.append("    publicBandwidth: ").append(toIndentedString(publicBandwidth)).append("\n");
+        sb.append("    kafkaManagerEnable: ").append(toIndentedString(kafkaManagerEnable)).append("\n");
         sb.append("    kafkaManagerUser: ").append(toIndentedString(kafkaManagerUser)).append("\n");
         sb.append("    enableLogCollection: ").append(toIndentedString(enableLogCollection)).append("\n");
         sb.append("    crossVpcInfo: ").append(toIndentedString(crossVpcInfo)).append("\n");

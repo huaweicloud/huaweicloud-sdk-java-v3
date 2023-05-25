@@ -11,11 +11,6 @@ import java.util.Objects;
 public class ListTranscodeTemplateRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Authorization")
-
-    private String authorization;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Sdk-Date")
 
     private String xSdkDate;
@@ -44,23 +39,6 @@ public class ListTranscodeTemplateRequest {
     @JsonProperty(value = "query_string")
 
     private String queryString;
-
-    public ListTranscodeTemplateRequest withAuthorization(String authorization) {
-        this.authorization = authorization;
-        return this;
-    }
-
-    /**
-     * 使用AK/SK方式认证时必选，携带的鉴权信息。 
-     * @return authorization
-     */
-    public String getAuthorization() {
-        return authorization;
-    }
-
-    public void setAuthorization(String authorization) {
-        this.authorization = authorization;
-    }
 
     public ListTranscodeTemplateRequest withXSdkDate(String xSdkDate) {
         this.xSdkDate = xSdkDate;
@@ -175,8 +153,7 @@ public class ListTranscodeTemplateRequest {
             return false;
         }
         ListTranscodeTemplateRequest listTranscodeTemplateRequest = (ListTranscodeTemplateRequest) o;
-        return Objects.equals(this.authorization, listTranscodeTemplateRequest.authorization)
-            && Objects.equals(this.xSdkDate, listTranscodeTemplateRequest.xSdkDate)
+        return Objects.equals(this.xSdkDate, listTranscodeTemplateRequest.xSdkDate)
             && Objects.equals(this.groupId, listTranscodeTemplateRequest.groupId)
             && Objects.equals(this.isDefault, listTranscodeTemplateRequest.isDefault)
             && Objects.equals(this.offset, listTranscodeTemplateRequest.offset)
@@ -186,14 +163,13 @@ public class ListTranscodeTemplateRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(authorization, xSdkDate, groupId, isDefault, offset, limit, queryString);
+        return Objects.hash(xSdkDate, groupId, isDefault, offset, limit, queryString);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListTranscodeTemplateRequest {\n");
-        sb.append("    authorization: ").append(toIndentedString(authorization)).append("\n");
         sb.append("    xSdkDate: ").append(toIndentedString(xSdkDate)).append("\n");
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    isDefault: ").append(toIndentedString(isDefault)).append("\n");

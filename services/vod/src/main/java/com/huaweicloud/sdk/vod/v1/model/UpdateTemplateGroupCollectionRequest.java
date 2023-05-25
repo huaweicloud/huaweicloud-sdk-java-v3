@@ -12,11 +12,6 @@ import java.util.function.Consumer;
 public class UpdateTemplateGroupCollectionRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Authorization")
-
-    private String authorization;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Sdk-Date")
 
     private String xSdkDate;
@@ -25,23 +20,6 @@ public class UpdateTemplateGroupCollectionRequest {
     @JsonProperty(value = "body")
 
     private ModifyTemplateGroupCollection body;
-
-    public UpdateTemplateGroupCollectionRequest withAuthorization(String authorization) {
-        this.authorization = authorization;
-        return this;
-    }
-
-    /**
-     * 使用AK/SK方式认证时必选，携带的鉴权信息。 
-     * @return authorization
-     */
-    public String getAuthorization() {
-        return authorization;
-    }
-
-    public void setAuthorization(String authorization) {
-        this.authorization = authorization;
-    }
 
     public UpdateTemplateGroupCollectionRequest withXSdkDate(String xSdkDate) {
         this.xSdkDate = xSdkDate;
@@ -98,21 +76,19 @@ public class UpdateTemplateGroupCollectionRequest {
         }
         UpdateTemplateGroupCollectionRequest updateTemplateGroupCollectionRequest =
             (UpdateTemplateGroupCollectionRequest) o;
-        return Objects.equals(this.authorization, updateTemplateGroupCollectionRequest.authorization)
-            && Objects.equals(this.xSdkDate, updateTemplateGroupCollectionRequest.xSdkDate)
+        return Objects.equals(this.xSdkDate, updateTemplateGroupCollectionRequest.xSdkDate)
             && Objects.equals(this.body, updateTemplateGroupCollectionRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(authorization, xSdkDate, body);
+        return Objects.hash(xSdkDate, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateTemplateGroupCollectionRequest {\n");
-        sb.append("    authorization: ").append(toIndentedString(authorization)).append("\n");
         sb.append("    xSdkDate: ").append(toIndentedString(xSdkDate)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");

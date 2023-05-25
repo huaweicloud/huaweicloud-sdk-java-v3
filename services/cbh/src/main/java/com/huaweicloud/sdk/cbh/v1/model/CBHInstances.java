@@ -78,13 +78,18 @@ public class CBHInstances {
 
     private Boolean ipv6Enable;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
     public CBHInstances withFlavorRef(String flavorRef) {
         this.flavorRef = flavorRef;
         return this;
     }
 
     /**
-     * 待创建云堡垒机规格ID，例如： - cbh.basic.50 - cbh.enhance.50 已上线的规格请参见《云堡垒机产品介绍》的“服务版本差异(https://support.huaweicloud.com/productdesc-cbh/cbh_01_0010.html)”章节。
+     * 待创建云堡垒机规格ID，例如： - cbh.basic.50 - cbh.enhance.50 已上线的规格请参见《云堡垒机产品介绍》的[服务版本差异](https://support.huaweicloud.com/productdesc-cbh/cbh_01_0010.html)章节。
      * @return flavorRef
      */
     public String getFlavorRef() {
@@ -244,7 +249,7 @@ public class CBHInstances {
     }
 
     /**
-     * 创建云堡垒机所在的备机可用区，需要指定备机可用区名称。 可参考[地区和终端节点](https://developer.huaweicloud.com/endpoint)获取
+     * 创建云堡垒机所在的备机可用区，需要指定备机可用区名称。(当前字段未启用,填写默认值null) 可参考[地区和终端节点](https://developer.huaweicloud.com/endpoint)获取
      * @return slaveAvailabilityZone
      */
     public String getSlaveAvailabilityZone() {
@@ -340,6 +345,23 @@ public class CBHInstances {
         this.ipv6Enable = ipv6Enable;
     }
 
+    public CBHInstances withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目ID，不填默认为0。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -359,7 +381,8 @@ public class CBHInstances {
             && Objects.equals(this.comment, cbHInstances.comment) && Objects.equals(this.region, cbHInstances.region)
             && Objects.equals(this.hxPassword, cbHInstances.hxPassword)
             && Objects.equals(this.bastionType, cbHInstances.bastionType)
-            && Objects.equals(this.ipv6Enable, cbHInstances.ipv6Enable);
+            && Objects.equals(this.ipv6Enable, cbHInstances.ipv6Enable)
+            && Objects.equals(this.enterpriseProjectId, cbHInstances.enterpriseProjectId);
     }
 
     @Override
@@ -376,7 +399,8 @@ public class CBHInstances {
             region,
             hxPassword,
             bastionType,
-            ipv6Enable);
+            ipv6Enable,
+            enterpriseProjectId);
     }
 
     @Override
@@ -396,6 +420,7 @@ public class CBHInstances {
         sb.append("    hxPassword: ").append(toIndentedString(hxPassword)).append("\n");
         sb.append("    bastionType: ").append(toIndentedString(bastionType)).append("\n");
         sb.append("    ipv6Enable: ").append(toIndentedString(ipv6Enable)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

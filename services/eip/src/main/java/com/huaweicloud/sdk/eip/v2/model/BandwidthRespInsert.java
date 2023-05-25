@@ -310,6 +310,21 @@ public class BandwidthRespInsert {
 
     private StatusEnum status;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_bandwidth_rules")
+
+    private Boolean enableBandwidthRules;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "rule_quota")
+
+    private Integer ruleQuota;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bandwidth_rules")
+
+    private List<BandWidthRules> bandwidthRules = null;
+
     public BandwidthRespInsert withBandwidthType(String bandwidthType) {
         this.bandwidthType = bandwidthType;
         return this;
@@ -513,6 +528,75 @@ public class BandwidthRespInsert {
         this.status = status;
     }
 
+    public BandwidthRespInsert withEnableBandwidthRules(Boolean enableBandwidthRules) {
+        this.enableBandwidthRules = enableBandwidthRules;
+        return this;
+    }
+
+    /**
+     * 功能说明：是否开启企业级qos 取值范围：true/false
+     * @return enableBandwidthRules
+     */
+    public Boolean getEnableBandwidthRules() {
+        return enableBandwidthRules;
+    }
+
+    public void setEnableBandwidthRules(Boolean enableBandwidthRules) {
+        this.enableBandwidthRules = enableBandwidthRules;
+    }
+
+    public BandwidthRespInsert withRuleQuota(Integer ruleQuota) {
+        this.ruleQuota = ruleQuota;
+        return this;
+    }
+
+    /**
+     * 功能说明：带宽支持的最大分组规则数。
+     * minimum: 0
+     * maximum: 1024
+     * @return ruleQuota
+     */
+    public Integer getRuleQuota() {
+        return ruleQuota;
+    }
+
+    public void setRuleQuota(Integer ruleQuota) {
+        this.ruleQuota = ruleQuota;
+    }
+
+    public BandwidthRespInsert withBandwidthRules(List<BandWidthRules> bandwidthRules) {
+        this.bandwidthRules = bandwidthRules;
+        return this;
+    }
+
+    public BandwidthRespInsert addBandwidthRulesItem(BandWidthRules bandwidthRulesItem) {
+        if (this.bandwidthRules == null) {
+            this.bandwidthRules = new ArrayList<>();
+        }
+        this.bandwidthRules.add(bandwidthRulesItem);
+        return this;
+    }
+
+    public BandwidthRespInsert withBandwidthRules(Consumer<List<BandWidthRules>> bandwidthRulesSetter) {
+        if (this.bandwidthRules == null) {
+            this.bandwidthRules = new ArrayList<>();
+        }
+        bandwidthRulesSetter.accept(this.bandwidthRules);
+        return this;
+    }
+
+    /**
+     * 功能说明：带宽规则对象
+     * @return bandwidthRules
+     */
+    public List<BandWidthRules> getBandwidthRules() {
+        return bandwidthRules;
+    }
+
+    public void setBandwidthRules(List<BandWidthRules> bandwidthRules) {
+        this.bandwidthRules = bandwidthRules;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -531,7 +615,10 @@ public class BandwidthRespInsert {
             && Objects.equals(this.size, bandwidthRespInsert.size)
             && Objects.equals(this.tenantId, bandwidthRespInsert.tenantId)
             && Objects.equals(this.enterpriseProjectId, bandwidthRespInsert.enterpriseProjectId)
-            && Objects.equals(this.status, bandwidthRespInsert.status);
+            && Objects.equals(this.status, bandwidthRespInsert.status)
+            && Objects.equals(this.enableBandwidthRules, bandwidthRespInsert.enableBandwidthRules)
+            && Objects.equals(this.ruleQuota, bandwidthRespInsert.ruleQuota)
+            && Objects.equals(this.bandwidthRules, bandwidthRespInsert.bandwidthRules);
     }
 
     @Override
@@ -546,7 +633,10 @@ public class BandwidthRespInsert {
             size,
             tenantId,
             enterpriseProjectId,
-            status);
+            status,
+            enableBandwidthRules,
+            ruleQuota,
+            bandwidthRules);
     }
 
     @Override
@@ -564,6 +654,9 @@ public class BandwidthRespInsert {
         sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    enableBandwidthRules: ").append(toIndentedString(enableBandwidthRules)).append("\n");
+        sb.append("    ruleQuota: ").append(toIndentedString(ruleQuota)).append("\n");
+        sb.append("    bandwidthRules: ").append(toIndentedString(bandwidthRules)).append("\n");
         sb.append("}");
         return sb.toString();
     }

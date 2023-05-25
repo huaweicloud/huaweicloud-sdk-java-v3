@@ -12,11 +12,6 @@ import java.util.function.Consumer;
 public class CreateTemplateGroupRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Authorization")
-
-    private String authorization;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Sdk-Date")
 
     private String xSdkDate;
@@ -25,23 +20,6 @@ public class CreateTemplateGroupRequest {
     @JsonProperty(value = "body")
 
     private TransTemplateGroup body;
-
-    public CreateTemplateGroupRequest withAuthorization(String authorization) {
-        this.authorization = authorization;
-        return this;
-    }
-
-    /**
-     * 使用AK/SK方式认证时必选，携带的鉴权信息。 
-     * @return authorization
-     */
-    public String getAuthorization() {
-        return authorization;
-    }
-
-    public void setAuthorization(String authorization) {
-        this.authorization = authorization;
-    }
 
     public CreateTemplateGroupRequest withXSdkDate(String xSdkDate) {
         this.xSdkDate = xSdkDate;
@@ -97,21 +75,19 @@ public class CreateTemplateGroupRequest {
             return false;
         }
         CreateTemplateGroupRequest createTemplateGroupRequest = (CreateTemplateGroupRequest) o;
-        return Objects.equals(this.authorization, createTemplateGroupRequest.authorization)
-            && Objects.equals(this.xSdkDate, createTemplateGroupRequest.xSdkDate)
+        return Objects.equals(this.xSdkDate, createTemplateGroupRequest.xSdkDate)
             && Objects.equals(this.body, createTemplateGroupRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(authorization, xSdkDate, body);
+        return Objects.hash(xSdkDate, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateTemplateGroupRequest {\n");
-        sb.append("    authorization: ").append(toIndentedString(authorization)).append("\n");
         sb.append("    xSdkDate: ").append(toIndentedString(xSdkDate)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");

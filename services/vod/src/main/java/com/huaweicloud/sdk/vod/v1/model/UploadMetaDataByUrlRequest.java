@@ -12,11 +12,6 @@ import java.util.function.Consumer;
 public class UploadMetaDataByUrlRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Authorization")
-
-    private String authorization;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Sdk-Date")
 
     private String xSdkDate;
@@ -25,23 +20,6 @@ public class UploadMetaDataByUrlRequest {
     @JsonProperty(value = "body")
 
     private UploadMetaDataByUrlReq body;
-
-    public UploadMetaDataByUrlRequest withAuthorization(String authorization) {
-        this.authorization = authorization;
-        return this;
-    }
-
-    /**
-     * 使用AK/SK方式认证时必选，携带的鉴权信息。 
-     * @return authorization
-     */
-    public String getAuthorization() {
-        return authorization;
-    }
-
-    public void setAuthorization(String authorization) {
-        this.authorization = authorization;
-    }
 
     public UploadMetaDataByUrlRequest withXSdkDate(String xSdkDate) {
         this.xSdkDate = xSdkDate;
@@ -97,21 +75,19 @@ public class UploadMetaDataByUrlRequest {
             return false;
         }
         UploadMetaDataByUrlRequest uploadMetaDataByUrlRequest = (UploadMetaDataByUrlRequest) o;
-        return Objects.equals(this.authorization, uploadMetaDataByUrlRequest.authorization)
-            && Objects.equals(this.xSdkDate, uploadMetaDataByUrlRequest.xSdkDate)
+        return Objects.equals(this.xSdkDate, uploadMetaDataByUrlRequest.xSdkDate)
             && Objects.equals(this.body, uploadMetaDataByUrlRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(authorization, xSdkDate, body);
+        return Objects.hash(xSdkDate, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UploadMetaDataByUrlRequest {\n");
-        sb.append("    authorization: ").append(toIndentedString(authorization)).append("\n");
         sb.append("    xSdkDate: ").append(toIndentedString(xSdkDate)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");

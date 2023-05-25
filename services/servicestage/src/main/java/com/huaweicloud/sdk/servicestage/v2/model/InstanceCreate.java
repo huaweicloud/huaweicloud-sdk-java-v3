@@ -48,7 +48,7 @@ public class InstanceCreate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "configuration")
 
-    private Object _configuration;
+    private InstanceConfiguration _configuration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
@@ -183,20 +183,29 @@ public class InstanceCreate {
         this.version = version;
     }
 
-    public InstanceCreate withConfiguration(Object _configuration) {
+    public InstanceCreate withConfiguration(InstanceConfiguration _configuration) {
         this._configuration = _configuration;
         return this;
     }
 
+    public InstanceCreate withConfiguration(Consumer<InstanceConfiguration> _configurationSetter) {
+        if (this._configuration == null) {
+            this._configuration = new InstanceConfiguration();
+            _configurationSetter.accept(this._configuration);
+        }
+
+        return this;
+    }
+
     /**
-     * 应用配置，环境变量等，如{“env”: [{“name”: “log-level”: “warn”}]}, 默认空。
+     * Get _configuration
      * @return _configuration
      */
-    public Object getConfiguration() {
+    public InstanceConfiguration getConfiguration() {
         return _configuration;
     }
 
-    public void setConfiguration(Object _configuration) {
+    public void setConfiguration(InstanceConfiguration _configuration) {
         this._configuration = _configuration;
     }
 

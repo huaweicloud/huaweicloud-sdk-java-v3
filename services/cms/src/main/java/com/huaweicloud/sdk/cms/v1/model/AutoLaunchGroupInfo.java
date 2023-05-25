@@ -7,7 +7,7 @@ import java.time.OffsetDateTime;
 import java.util.Objects;
 
 /**
- * 智能购买组信息
+ * 智能购买组列表
  */
 public class AutoLaunchGroupInfo {
 
@@ -69,7 +69,7 @@ public class AutoLaunchGroupInfo {
     }
 
     /**
-     * autoLaunchGroup的名称(1-64个字符)，只能包含中文、字母、数字、下划线或中划线
+     * 智能购买组的名称
      * @return name
      */
     public String getName() {
@@ -103,7 +103,7 @@ public class AutoLaunchGroupInfo {
     }
 
     /**
-     * autoLaunchGroup的运行状态 SUBMITTED|ACTIVE|DELETING|DELETED
+     * 智能购买组的运行状态，枚举值 SUBMITTED：已提交 ACTIVE：运行中 DELETING：删除中 DELETED：已删除
      * @return status
      */
     public String getStatus() {
@@ -120,7 +120,7 @@ public class AutoLaunchGroupInfo {
     }
 
     /**
-     * autoLaunchGroup的任务状态， INIT|HANDLING|FULFILLED|ERROR
+     * 智能购买组的任务状态，枚举值 HANDLING：购买中 FULFILLED：智能购买组已满配 ERROR：智能购买组异常
      * @return taskState
      */
     public String getTaskState() {

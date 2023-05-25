@@ -11,12 +11,12 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * This is a auto create Body Object
+ * This is a delete Request Object
  */
 public class DeleteAutoLaunchGroupReqV2 {
 
     /**
-     * 删除智能购买组时组内实例中断行为。 terminate|noTermination terminate：释放，由delete_publicip和delete_volume决定是否释放ip和卷 noTermination：不释放，ip和卷也不释放 默认值：terminate
+     * 删除智能购买组时组内实例中断行为。枚举值 terminate：释放，由delete_publicip和delete_volume决定是否释放ip和卷 noTermination：不释放，ip和卷也不释放 默认值：terminate
      */
     public static final class DeleteInstancesEnum {
 
@@ -103,7 +103,7 @@ public class DeleteAutoLaunchGroupReqV2 {
     }
 
     /**
-     * 删除智能购买组时组内实例中断行为。 terminate|noTermination terminate：释放，由delete_publicip和delete_volume决定是否释放ip和卷 noTermination：不释放，ip和卷也不释放 默认值：terminate
+     * 删除智能购买组时组内实例中断行为。枚举值 terminate：释放，由delete_publicip和delete_volume决定是否释放ip和卷 noTermination：不释放，ip和卷也不释放 默认值：terminate
      * @return deleteInstances
      */
     public DeleteInstancesEnum getDeleteInstances() {

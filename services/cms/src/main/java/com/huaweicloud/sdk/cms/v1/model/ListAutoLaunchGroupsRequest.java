@@ -41,7 +41,7 @@ public class ListAutoLaunchGroupsRequest {
     }
 
     /**
-     * 查询返回智能购买组的数量限制
+     * 查询返回智能购买组的数量限制 取值范围：1-1000。
      * minimum: 1
      * maximum: 1000
      * @return limit
@@ -60,7 +60,7 @@ public class ListAutoLaunchGroupsRequest {
     }
 
     /**
-     * 取值为上一页数据的最后一条记录的唯一标记
+     * 取值为上一页数据的最后一条记录的唯一标识
      * @return marker
      */
     public String getMarker() {
@@ -94,7 +94,7 @@ public class ListAutoLaunchGroupsRequest {
     }
 
     /**
-     * 请求开始时间。按照时间范围过滤 按照ISO8601标准表示，并使用UTC +0时间，格式为yyyy-MM-ddTHH:mm:ssZ
+     * 请求开始时间，按照时间范围过滤 按照ISO8601标准表示，并使用UTC +0时间，格式为yyyy-MM-ddTHH:mm:ssZ
      * @return validSince
      */
     public String getValidSince() {
@@ -111,7 +111,7 @@ public class ListAutoLaunchGroupsRequest {
     }
 
     /**
-     * 请求结束时间。按照时间范围过滤
+     * 请求结束时间,按照时间范围过滤 按照ISO8601标准表示，并使用UTC +0时间，格式为yyyy-MM-ddTHH:mm:ssZ
      * @return validUntil
      */
     public String getValidUntil() {

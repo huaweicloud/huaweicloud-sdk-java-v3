@@ -108,9 +108,9 @@ public class CmsClient {
     }
 
     /**
-     * 查询智能购买组VM实例列表
+     * 查询智能购买组实例列表
      *
-     * 获取autoLaunchGroup创建的instances信息
+     * 获取智能购买组创建的实例信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -122,9 +122,9 @@ public class CmsClient {
     }
 
     /**
-     * 查询智能购买组VM实例列表
+     * 查询智能购买组实例列表
      *
-     * 获取autoLaunchGroup创建的instances信息
+     * 获取智能购买组创建的实例信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -136,9 +136,39 @@ public class CmsClient {
     }
 
     /**
+     * 地域推荐
+     *
+     * 对ECS的资源供给的地域和规格进行推荐，推荐结果以打分的形式呈现，分数越高推荐程度越高
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSupplyRecommendationRequest 请求对象
+     * @return ListSupplyRecommendationResponse
+     */
+    public ListSupplyRecommendationResponse listSupplyRecommendation(ListSupplyRecommendationRequest request) {
+        return hcClient.syncInvokeHttp(request, CmsMeta.listSupplyRecommendation);
+    }
+
+    /**
+     * 地域推荐
+     *
+     * 对ECS的资源供给的地域和规格进行推荐，推荐结果以打分的形式呈现，分数越高推荐程度越高
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSupplyRecommendationRequest 请求对象
+     * @return SyncInvoker<ListSupplyRecommendationRequest, ListSupplyRecommendationResponse>
+     */
+    public SyncInvoker<ListSupplyRecommendationRequest, ListSupplyRecommendationResponse> listSupplyRecommendationInvoker(
+        ListSupplyRecommendationRequest request) {
+        return new SyncInvoker<ListSupplyRecommendationRequest, ListSupplyRecommendationResponse>(request,
+            CmsMeta.listSupplyRecommendation, hcClient);
+    }
+
+    /**
      * 查询智能购买组详情
      *
-     * 查询指定AutoLaunchGroup的详细信息
+     * 查询指定智能购买组的详细信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -152,7 +182,7 @@ public class CmsClient {
     /**
      * 查询智能购买组详情
      *
-     * 查询指定AutoLaunchGroup的详细信息
+     * 查询指定智能购买组的详细信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -193,36 +223,6 @@ public class CmsClient {
         UpdateAutoLaunchGroupRequest request) {
         return new SyncInvoker<UpdateAutoLaunchGroupRequest, UpdateAutoLaunchGroupResponse>(request,
             CmsMeta.updateAutoLaunchGroup, hcClient);
-    }
-
-    /**
-     * 查询资源供给推荐
-     *
-     * 对ECS的资源供给的地域和规格进行推荐，推荐结果以打分的形式呈现，分数越高推荐程度越高
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListSupplyRecommendationRequest 请求对象
-     * @return ListSupplyRecommendationResponse
-     */
-    public ListSupplyRecommendationResponse listSupplyRecommendation(ListSupplyRecommendationRequest request) {
-        return hcClient.syncInvokeHttp(request, CmsMeta.listSupplyRecommendation);
-    }
-
-    /**
-     * 查询资源供给推荐
-     *
-     * 对ECS的资源供给的地域和规格进行推荐，推荐结果以打分的形式呈现，分数越高推荐程度越高
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListSupplyRecommendationRequest 请求对象
-     * @return SyncInvoker<ListSupplyRecommendationRequest, ListSupplyRecommendationResponse>
-     */
-    public SyncInvoker<ListSupplyRecommendationRequest, ListSupplyRecommendationResponse> listSupplyRecommendationInvoker(
-        ListSupplyRecommendationRequest request) {
-        return new SyncInvoker<ListSupplyRecommendationRequest, ListSupplyRecommendationResponse>(request,
-            CmsMeta.listSupplyRecommendation, hcClient);
     }
 
 }

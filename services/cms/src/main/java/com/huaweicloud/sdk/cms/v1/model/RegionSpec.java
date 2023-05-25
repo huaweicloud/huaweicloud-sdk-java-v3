@@ -37,7 +37,7 @@ public class RegionSpec {
     }
 
     /**
-     * region的id
+     * 区域Region
      * @return regionId
      */
     public String getRegionId() {
@@ -71,7 +71,7 @@ public class RegionSpec {
     }
 
     /**
-     * Region内期望的稳定算力总量
+     * Region内期望的稳定算力容量
      * @return expectStableCapacity
      */
     public Integer getExpectStableCapacity() {

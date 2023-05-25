@@ -47,7 +47,7 @@ public class ListAutoLaunchGroupsResponse extends SdkResponse {
     }
 
     /**
-     * autoLaunchGroup列表
+     * 智能购买组列表
      * @return autoLaunchGroups
      */
     public List<AutoLaunchGroupInfo> getAutoLaunchGroups() {

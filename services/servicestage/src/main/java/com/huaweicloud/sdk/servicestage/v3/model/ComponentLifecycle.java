@@ -1,0 +1,369 @@
+package com.huaweicloud.sdk.servicestage.v3.model;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/**
+ * ComponentLifecycle
+ */
+public class ComponentLifecycle {
+
+    /**
+     * Gets or Sets type
+     */
+    public static final class TypeEnum {
+
+        /**
+         * Enum HTTP for value: "http"
+         */
+        public static final TypeEnum HTTP = new TypeEnum("http");
+
+        /**
+         * Enum COMMAND for value: "command"
+         */
+        public static final TypeEnum COMMAND = new TypeEnum("command");
+
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("http", HTTP);
+            map.put("command", COMMAND);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            TypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new TypeEnum(value);
+            }
+            return result;
+        }
+
+        public static TypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            TypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TypeEnum) {
+                return this.value.equals(((TypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private TypeEnum type;
+
+    /**
+     * type为http类型时生效
+     */
+    public static final class SchemeEnum {
+
+        /**
+         * Enum HTTP for value: "HTTP"
+         */
+        public static final SchemeEnum HTTP = new SchemeEnum("HTTP");
+
+        /**
+         * Enum HTTPS for value: "HTTPS"
+         */
+        public static final SchemeEnum HTTPS = new SchemeEnum("HTTPS");
+
+        private static final Map<String, SchemeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SchemeEnum> createStaticFields() {
+            Map<String, SchemeEnum> map = new HashMap<>();
+            map.put("HTTP", HTTP);
+            map.put("HTTPS", HTTPS);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        SchemeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static SchemeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            SchemeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new SchemeEnum(value);
+            }
+            return result;
+        }
+
+        public static SchemeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            SchemeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof SchemeEnum) {
+                return this.value.equals(((SchemeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "scheme")
+
+    private SchemeEnum scheme;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "host")
+
+    private String host;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "port")
+
+    private Integer port;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "path")
+
+    private String path;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "command")
+
+    private List<String> command = null;
+
+    public ComponentLifecycle withType(TypeEnum type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * Get type
+     * @return type
+     */
+    public TypeEnum getType() {
+        return type;
+    }
+
+    public void setType(TypeEnum type) {
+        this.type = type;
+    }
+
+    public ComponentLifecycle withScheme(SchemeEnum scheme) {
+        this.scheme = scheme;
+        return this;
+    }
+
+    /**
+     * type为http类型时生效
+     * @return scheme
+     */
+    public SchemeEnum getScheme() {
+        return scheme;
+    }
+
+    public void setScheme(SchemeEnum scheme) {
+        this.scheme = scheme;
+    }
+
+    public ComponentLifecycle withHost(String host) {
+        this.host = host;
+        return this;
+    }
+
+    /**
+     * type为http类型时生效。默认为POD的IP, 可以指定自定义的IP
+     * @return host
+     */
+    public String getHost() {
+        return host;
+    }
+
+    public void setHost(String host) {
+        this.host = host;
+    }
+
+    public ComponentLifecycle withPort(Integer port) {
+        this.port = port;
+        return this;
+    }
+
+    /**
+     * type为http类型时生效。
+     * @return port
+     */
+    public Integer getPort() {
+        return port;
+    }
+
+    public void setPort(Integer port) {
+        this.port = port;
+    }
+
+    public ComponentLifecycle withPath(String path) {
+        this.path = path;
+        return this;
+    }
+
+    /**
+     * type为http类型时生效。请求路径。
+     * @return path
+     */
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
+    }
+
+    public ComponentLifecycle withCommand(List<String> command) {
+        this.command = command;
+        return this;
+    }
+
+    public ComponentLifecycle addCommandItem(String commandItem) {
+        if (this.command == null) {
+            this.command = new ArrayList<>();
+        }
+        this.command.add(commandItem);
+        return this;
+    }
+
+    public ComponentLifecycle withCommand(Consumer<List<String>> commandSetter) {
+        if (this.command == null) {
+            this.command = new ArrayList<>();
+        }
+        commandSetter.accept(this.command);
+        return this;
+    }
+
+    /**
+     * type为command类型时生效。命令列表
+     * @return command
+     */
+    public List<String> getCommand() {
+        return command;
+    }
+
+    public void setCommand(List<String> command) {
+        this.command = command;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        ComponentLifecycle componentLifecycle = (ComponentLifecycle) o;
+        return Objects.equals(this.type, componentLifecycle.type)
+            && Objects.equals(this.scheme, componentLifecycle.scheme)
+            && Objects.equals(this.host, componentLifecycle.host) && Objects.equals(this.port, componentLifecycle.port)
+            && Objects.equals(this.path, componentLifecycle.path)
+            && Objects.equals(this.command, componentLifecycle.command);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(type, scheme, host, port, path, command);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class ComponentLifecycle {\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    scheme: ").append(toIndentedString(scheme)).append("\n");
+        sb.append("    host: ").append(toIndentedString(host)).append("\n");
+        sb.append("    port: ").append(toIndentedString(port)).append("\n");
+        sb.append("    path: ").append(toIndentedString(path)).append("\n");
+        sb.append("    command: ").append(toIndentedString(command)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

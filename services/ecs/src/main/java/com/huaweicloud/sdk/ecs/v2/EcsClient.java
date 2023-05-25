@@ -881,6 +881,36 @@ public class EcsClient {
     }
 
     /**
+     * 查询规格销售策略
+     *
+     * 查询规格销售策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListFlavorSellPoliciesRequest 请求对象
+     * @return ListFlavorSellPoliciesResponse
+     */
+    public ListFlavorSellPoliciesResponse listFlavorSellPolicies(ListFlavorSellPoliciesRequest request) {
+        return hcClient.syncInvokeHttp(request, EcsMeta.listFlavorSellPolicies);
+    }
+
+    /**
+     * 查询规格销售策略
+     *
+     * 查询规格销售策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListFlavorSellPoliciesRequest 请求对象
+     * @return SyncInvoker<ListFlavorSellPoliciesRequest, ListFlavorSellPoliciesResponse>
+     */
+    public SyncInvoker<ListFlavorSellPoliciesRequest, ListFlavorSellPoliciesResponse> listFlavorSellPoliciesInvoker(
+        ListFlavorSellPoliciesRequest request) {
+        return new SyncInvoker<ListFlavorSellPoliciesRequest, ListFlavorSellPoliciesResponse>(request,
+            EcsMeta.listFlavorSellPolicies, hcClient);
+    }
+
+    /**
      * 查询规格详情和规格扩展信息列表
      *
      * 查询云服务器规格详情信息和规格扩展信息列表。

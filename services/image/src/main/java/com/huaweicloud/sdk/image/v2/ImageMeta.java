@@ -44,34 +44,6 @@ public class ImageMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateVideoObjectMaskingTaskRequest, CreateVideoObjectMaskingTaskResponse> createVideoObjectMaskingTask =
-        genForcreateVideoObjectMaskingTask();
-
-    private static HttpRequestDef<CreateVideoObjectMaskingTaskRequest, CreateVideoObjectMaskingTaskResponse> genForcreateVideoObjectMaskingTask() {
-        // basic
-        HttpRequestDef.Builder<CreateVideoObjectMaskingTaskRequest, CreateVideoObjectMaskingTaskResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.POST,
-                    CreateVideoObjectMaskingTaskRequest.class,
-                    CreateVideoObjectMaskingTaskResponse.class)
-                .withName("CreateVideoObjectMaskingTask")
-                .withUri("/v2/{project_id}/image/video-object-masking/tasks")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.<CreateVideoObjectMaskingTaskRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateVideoObjectMaskingTaskRequestBody.class),
-            f -> f.withMarshaller(CreateVideoObjectMaskingTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<CreateVideoTaggingMediaTaskRequest, CreateVideoTaggingMediaTaskResponse> createVideoTaggingMediaTask =
         genForcreateVideoTaggingMediaTask();
 
@@ -340,40 +312,6 @@ public class ImageMeta {
             String.class,
             f -> f.withMarshaller(ShowImageHighresolutionMattingTaskResponse::getXRequestId,
                 ShowImageHighresolutionMattingTaskResponse::setXRequestId));
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowVideoObjectMaskingTaskRequest, ShowVideoObjectMaskingTaskResponse> showVideoObjectMaskingTask =
-        genForshowVideoObjectMaskingTask();
-
-    private static HttpRequestDef<ShowVideoObjectMaskingTaskRequest, ShowVideoObjectMaskingTaskResponse> genForshowVideoObjectMaskingTask() {
-        // basic
-        HttpRequestDef.Builder<ShowVideoObjectMaskingTaskRequest, ShowVideoObjectMaskingTaskResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.GET,
-                    ShowVideoObjectMaskingTaskRequest.class,
-                    ShowVideoObjectMaskingTaskResponse.class)
-                .withName("ShowVideoObjectMaskingTask")
-                .withUri("/v2/{project_id}/image/video-object-masking/tasks/{task_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("task_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowVideoObjectMaskingTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
-
-        // response
-
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ShowVideoObjectMaskingTaskResponse::getXRequestId,
-                ShowVideoObjectMaskingTaskResponse::setXRequestId));
         return builder.build();
     }
 

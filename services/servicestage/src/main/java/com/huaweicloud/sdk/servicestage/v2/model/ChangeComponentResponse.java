@@ -80,6 +80,11 @@ public class ChangeComponentResponse extends SdkResponse {
     private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "creator")
+
+    private String creator;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
 
     private Long updateTime;
@@ -339,6 +344,23 @@ public class ChangeComponentResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
+    public ChangeComponentResponse withCreator(String creator) {
+        this.creator = creator;
+        return this;
+    }
+
+    /**
+     * 创建者
+     * @return creator
+     */
+    public String getCreator() {
+        return creator;
+    }
+
+    public void setCreator(String creator) {
+        this.creator = creator;
+    }
+
     public ChangeComponentResponse withUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -378,6 +400,7 @@ public class ChangeComponentResponse extends SdkResponse {
             && Objects.equals(this.build, changeComponentResponse.build)
             && Objects.equals(this.pipelineIds, changeComponentResponse.pipelineIds)
             && Objects.equals(this.createTime, changeComponentResponse.createTime)
+            && Objects.equals(this.creator, changeComponentResponse.creator)
             && Objects.equals(this.updateTime, changeComponentResponse.updateTime);
     }
 
@@ -396,6 +419,7 @@ public class ChangeComponentResponse extends SdkResponse {
             build,
             pipelineIds,
             createTime,
+            creator,
             updateTime);
     }
 
@@ -416,6 +440,7 @@ public class ChangeComponentResponse extends SdkResponse {
         sb.append("    build: ").append(toIndentedString(build)).append("\n");
         sb.append("    pipelineIds: ").append(toIndentedString(pipelineIds)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("}");
         return sb.toString();

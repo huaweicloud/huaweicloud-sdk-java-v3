@@ -28,6 +28,11 @@ public class UpdateAddressGroupOption {
 
     private List<String> ipSet = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "max_capacity")
+
+    private Integer maxCapacity;
+
     public UpdateAddressGroupOption withName(String name) {
         this.name = name;
         return this;
@@ -95,6 +100,23 @@ public class UpdateAddressGroupOption {
         this.ipSet = ipSet;
     }
 
+    public UpdateAddressGroupOption withMaxCapacity(Integer maxCapacity) {
+        this.maxCapacity = maxCapacity;
+        return this;
+    }
+
+    /**
+     * 功能说明：地址组最大条目数，限制地址组可以包含的地址数量 取值范围：0-20
+     * @return maxCapacity
+     */
+    public Integer getMaxCapacity() {
+        return maxCapacity;
+    }
+
+    public void setMaxCapacity(Integer maxCapacity) {
+        this.maxCapacity = maxCapacity;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -106,12 +128,13 @@ public class UpdateAddressGroupOption {
         UpdateAddressGroupOption updateAddressGroupOption = (UpdateAddressGroupOption) o;
         return Objects.equals(this.name, updateAddressGroupOption.name)
             && Objects.equals(this.description, updateAddressGroupOption.description)
-            && Objects.equals(this.ipSet, updateAddressGroupOption.ipSet);
+            && Objects.equals(this.ipSet, updateAddressGroupOption.ipSet)
+            && Objects.equals(this.maxCapacity, updateAddressGroupOption.maxCapacity);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, ipSet);
+        return Objects.hash(name, description, ipSet, maxCapacity);
     }
 
     @Override
@@ -121,6 +144,7 @@ public class UpdateAddressGroupOption {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    ipSet: ").append(toIndentedString(ipSet)).append("\n");
+        sb.append("    maxCapacity: ").append(toIndentedString(maxCapacity)).append("\n");
         sb.append("}");
         return sb.toString();
     }

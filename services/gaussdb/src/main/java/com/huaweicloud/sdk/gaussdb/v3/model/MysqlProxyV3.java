@@ -115,6 +115,18 @@ public class MysqlProxyV3  {
 
     private String transactionSplit;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="connection_pool_type")
+    
+
+    private String connectionPoolType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="switch_connection_pool_type_enabled")
+    
+
+    private Boolean switchConnectionPoolTypeEnabled;
+
     public MysqlProxyV3 withPoolId(String poolId) {
         this.poolId = poolId;
         return this;
@@ -481,6 +493,50 @@ public class MysqlProxyV3  {
 
     
 
+    public MysqlProxyV3 withConnectionPoolType(String connectionPoolType) {
+        this.connectionPoolType = connectionPoolType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 连接池类型。  取值范围: - CLOSED 不使用连接池; - SESSION 使用会话级连接池。
+     * @return connectionPoolType
+     */
+    public String getConnectionPoolType() {
+        return connectionPoolType;
+    }
+
+    public void setConnectionPoolType(String connectionPoolType) {
+        this.connectionPoolType = connectionPoolType;
+    }
+
+    
+
+    public MysqlProxyV3 withSwitchConnectionPoolTypeEnabled(Boolean switchConnectionPoolTypeEnabled) {
+        this.switchConnectionPoolTypeEnabled = switchConnectionPoolTypeEnabled;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 数据库代理版本是否支持会话级连接池。  取值范围: - true 支持; - false 不支持。
+     * @return switchConnectionPoolTypeEnabled
+     */
+    public Boolean getSwitchConnectionPoolTypeEnabled() {
+        return switchConnectionPoolTypeEnabled;
+    }
+
+    public void setSwitchConnectionPoolTypeEnabled(Boolean switchConnectionPoolTypeEnabled) {
+        this.switchConnectionPoolTypeEnabled = switchConnectionPoolTypeEnabled;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -505,11 +561,13 @@ public class MysqlProxyV3  {
             Objects.equals(this.nodes, mysqlProxyV3.nodes) &&
             Objects.equals(this.flavorRef, mysqlProxyV3.flavorRef) &&
             Objects.equals(this.name, mysqlProxyV3.name) &&
-            Objects.equals(this.transactionSplit, mysqlProxyV3.transactionSplit);
+            Objects.equals(this.transactionSplit, mysqlProxyV3.transactionSplit) &&
+            Objects.equals(this.connectionPoolType, mysqlProxyV3.connectionPoolType) &&
+            Objects.equals(this.switchConnectionPoolTypeEnabled, mysqlProxyV3.switchConnectionPoolTypeEnabled);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(poolId, status, address, port, poolStatus, delayThresholdInSeconds, elbVip, eip, vcpus, ram, nodeNum, mode, nodes, flavorRef, name, transactionSplit);
+        return Objects.hash(poolId, status, address, port, poolStatus, delayThresholdInSeconds, elbVip, eip, vcpus, ram, nodeNum, mode, nodes, flavorRef, name, transactionSplit, connectionPoolType, switchConnectionPoolTypeEnabled);
     }
     @Override
     public String toString() {
@@ -531,6 +589,8 @@ public class MysqlProxyV3  {
         sb.append("    flavorRef: ").append(toIndentedString(flavorRef)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    transactionSplit: ").append(toIndentedString(transactionSplit)).append("\n");
+        sb.append("    connectionPoolType: ").append(toIndentedString(connectionPoolType)).append("\n");
+        sb.append("    switchConnectionPoolTypeEnabled: ").append(toIndentedString(switchConnectionPoolTypeEnabled)).append("\n");
         sb.append("}");
         return sb.toString();
     }

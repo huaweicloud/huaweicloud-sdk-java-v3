@@ -35,6 +35,11 @@ public class ListSqlserverDatabasesRequest {
 
     private String dbName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "recover_model")
+
+    private String recoverModel;
+
     public ListSqlserverDatabasesRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -122,6 +127,23 @@ public class ListSqlserverDatabasesRequest {
         this.dbName = dbName;
     }
 
+    public ListSqlserverDatabasesRequest withRecoverModel(String recoverModel) {
+        this.recoverModel = recoverModel;
+        return this;
+    }
+
+    /**
+     * 数据库恢复健康模式，取值：FULL  ：完整模式，SIMPLE  ：简单模式，BUlK_LOGGED ：大容量日志恢复模式（该参数仅用于SQL server引擎）
+     * @return recoverModel
+     */
+    public String getRecoverModel() {
+        return recoverModel;
+    }
+
+    public void setRecoverModel(String recoverModel) {
+        this.recoverModel = recoverModel;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -135,12 +157,13 @@ public class ListSqlserverDatabasesRequest {
             && Objects.equals(this.instanceId, listSqlserverDatabasesRequest.instanceId)
             && Objects.equals(this.page, listSqlserverDatabasesRequest.page)
             && Objects.equals(this.limit, listSqlserverDatabasesRequest.limit)
-            && Objects.equals(this.dbName, listSqlserverDatabasesRequest.dbName);
+            && Objects.equals(this.dbName, listSqlserverDatabasesRequest.dbName)
+            && Objects.equals(this.recoverModel, listSqlserverDatabasesRequest.recoverModel);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, instanceId, page, limit, dbName);
+        return Objects.hash(xLanguage, instanceId, page, limit, dbName, recoverModel);
     }
 
     @Override
@@ -152,6 +175,7 @@ public class ListSqlserverDatabasesRequest {
         sb.append("    page: ").append(toIndentedString(page)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    dbName: ").append(toIndentedString(dbName)).append("\n");
+        sb.append("    recoverModel: ").append(toIndentedString(recoverModel)).append("\n");
         sb.append("}");
         return sb.toString();
     }

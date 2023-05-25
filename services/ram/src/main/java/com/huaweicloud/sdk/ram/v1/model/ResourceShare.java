@@ -30,6 +30,11 @@ public class ResourceShare {
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "allow_external_principals")
+
+    private Boolean allowExternalPrincipals;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "owning_account_id")
 
     private String owningAccountId;
@@ -103,6 +108,23 @@ public class ResourceShare {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public ResourceShare withAllowExternalPrincipals(Boolean allowExternalPrincipals) {
+        this.allowExternalPrincipals = allowExternalPrincipals;
+        return this;
+    }
+
+    /**
+     * 资源共享实例是否支持共享给组织外账号。
+     * @return allowExternalPrincipals
+     */
+    public Boolean getAllowExternalPrincipals() {
+        return allowExternalPrincipals;
+    }
+
+    public void setAllowExternalPrincipals(Boolean allowExternalPrincipals) {
+        this.allowExternalPrincipals = allowExternalPrincipals;
     }
 
     public ResourceShare withOwningAccountId(String owningAccountId) {
@@ -217,6 +239,7 @@ public class ResourceShare {
         ResourceShare resourceShare = (ResourceShare) o;
         return Objects.equals(this.id, resourceShare.id) && Objects.equals(this.name, resourceShare.name)
             && Objects.equals(this.description, resourceShare.description)
+            && Objects.equals(this.allowExternalPrincipals, resourceShare.allowExternalPrincipals)
             && Objects.equals(this.owningAccountId, resourceShare.owningAccountId)
             && Objects.equals(this.status, resourceShare.status) && Objects.equals(this.tags, resourceShare.tags)
             && Objects.equals(this.createdAt, resourceShare.createdAt)
@@ -225,7 +248,8 @@ public class ResourceShare {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, owningAccountId, status, tags, createdAt, updatedAt);
+        return Objects
+            .hash(id, name, description, allowExternalPrincipals, owningAccountId, status, tags, createdAt, updatedAt);
     }
 
     @Override
@@ -235,6 +259,7 @@ public class ResourceShare {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    allowExternalPrincipals: ").append(toIndentedString(allowExternalPrincipals)).append("\n");
         sb.append("    owningAccountId: ").append(toIndentedString(owningAccountId)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");

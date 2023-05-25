@@ -11,11 +11,6 @@ import java.util.Objects;
 public class DeleteAssetCategoryRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Authorization")
-
-    private String authorization;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Sdk-Date")
 
     private String xSdkDate;
@@ -24,23 +19,6 @@ public class DeleteAssetCategoryRequest {
     @JsonProperty(value = "id")
 
     private Integer id;
-
-    public DeleteAssetCategoryRequest withAuthorization(String authorization) {
-        this.authorization = authorization;
-        return this;
-    }
-
-    /**
-     * 使用AK/SK方式认证时必选，携带的鉴权信息。 
-     * @return authorization
-     */
-    public String getAuthorization() {
-        return authorization;
-    }
-
-    public void setAuthorization(String authorization) {
-        this.authorization = authorization;
-    }
 
     public DeleteAssetCategoryRequest withXSdkDate(String xSdkDate) {
         this.xSdkDate = xSdkDate;
@@ -88,21 +66,19 @@ public class DeleteAssetCategoryRequest {
             return false;
         }
         DeleteAssetCategoryRequest deleteAssetCategoryRequest = (DeleteAssetCategoryRequest) o;
-        return Objects.equals(this.authorization, deleteAssetCategoryRequest.authorization)
-            && Objects.equals(this.xSdkDate, deleteAssetCategoryRequest.xSdkDate)
+        return Objects.equals(this.xSdkDate, deleteAssetCategoryRequest.xSdkDate)
             && Objects.equals(this.id, deleteAssetCategoryRequest.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(authorization, xSdkDate, id);
+        return Objects.hash(xSdkDate, id);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteAssetCategoryRequest {\n");
-        sb.append("    authorization: ").append(toIndentedString(authorization)).append("\n");
         sb.append("    xSdkDate: ").append(toIndentedString(xSdkDate)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("}");

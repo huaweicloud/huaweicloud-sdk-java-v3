@@ -73,6 +73,11 @@ public class CreateSubnetOption {
 
     private List<ExtraDhcpOption> extraDhcpOpts = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<String> tags = null;
+
     public CreateSubnetOption withName(String name) {
         this.name = name;
         return this;
@@ -309,6 +314,39 @@ public class CreateSubnetOption {
         this.extraDhcpOpts = extraDhcpOpts;
     }
 
+    public CreateSubnetOption withTags(List<String> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public CreateSubnetOption addTagsItem(String tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public CreateSubnetOption withTags(Consumer<List<String>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 功能说明：子网资源标签。创建子网时，给子网添加资源标签。 取值范围：最大10个标签, key：标签名称; value：标签值。 格式：[key*value]，每一个标签的key和value之间用*连接
+     * @return tags
+     */
+    public List<String> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<String> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -329,7 +367,8 @@ public class CreateSubnetOption {
             && Objects.equals(this.secondaryDns, createSubnetOption.secondaryDns)
             && Objects.equals(this.dnsList, createSubnetOption.dnsList)
             && Objects.equals(this.availabilityZone, createSubnetOption.availabilityZone)
-            && Objects.equals(this.extraDhcpOpts, createSubnetOption.extraDhcpOpts);
+            && Objects.equals(this.extraDhcpOpts, createSubnetOption.extraDhcpOpts)
+            && Objects.equals(this.tags, createSubnetOption.tags);
     }
 
     @Override
@@ -345,7 +384,8 @@ public class CreateSubnetOption {
             secondaryDns,
             dnsList,
             availabilityZone,
-            extraDhcpOpts);
+            extraDhcpOpts,
+            tags);
     }
 
     @Override
@@ -364,6 +404,7 @@ public class CreateSubnetOption {
         sb.append("    dnsList: ").append(toIndentedString(dnsList)).append("\n");
         sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("    extraDhcpOpts: ").append(toIndentedString(extraDhcpOpts)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

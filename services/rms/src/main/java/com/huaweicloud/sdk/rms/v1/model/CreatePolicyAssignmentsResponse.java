@@ -154,6 +154,11 @@ public class CreatePolicyAssignmentsResponse extends SdkResponse {
 
     private Map<String, PolicyParameterValue> parameters = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "created_by")
+
+    private String createdBy;
+
     public CreatePolicyAssignmentsResponse withPolicyAssignmentType(PolicyAssignmentTypeEnum policyAssignmentType) {
         this.policyAssignmentType = policyAssignmentType;
         return this;
@@ -393,6 +398,23 @@ public class CreatePolicyAssignmentsResponse extends SdkResponse {
         this.parameters = parameters;
     }
 
+    public CreatePolicyAssignmentsResponse withCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
+        return this;
+    }
+
+    /**
+     * 规则的创建者
+     * @return createdBy
+     */
+    public String getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -413,7 +435,8 @@ public class CreatePolicyAssignmentsResponse extends SdkResponse {
             && Objects.equals(this.updated, createPolicyAssignmentsResponse.updated)
             && Objects.equals(this.policyDefinitionId, createPolicyAssignmentsResponse.policyDefinitionId)
             && Objects.equals(this.customPolicy, createPolicyAssignmentsResponse.customPolicy)
-            && Objects.equals(this.parameters, createPolicyAssignmentsResponse.parameters);
+            && Objects.equals(this.parameters, createPolicyAssignmentsResponse.parameters)
+            && Objects.equals(this.createdBy, createPolicyAssignmentsResponse.createdBy);
     }
 
     @Override
@@ -429,7 +452,8 @@ public class CreatePolicyAssignmentsResponse extends SdkResponse {
             updated,
             policyDefinitionId,
             customPolicy,
-            parameters);
+            parameters,
+            createdBy);
     }
 
     @Override
@@ -448,6 +472,7 @@ public class CreatePolicyAssignmentsResponse extends SdkResponse {
         sb.append("    policyDefinitionId: ").append(toIndentedString(policyDefinitionId)).append("\n");
         sb.append("    customPolicy: ").append(toIndentedString(customPolicy)).append("\n");
         sb.append("    parameters: ").append(toIndentedString(parameters)).append("\n");
+        sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
         sb.append("}");
         return sb.toString();
     }

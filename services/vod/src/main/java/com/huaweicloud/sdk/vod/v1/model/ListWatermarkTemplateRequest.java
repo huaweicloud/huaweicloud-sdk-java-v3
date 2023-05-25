@@ -14,11 +14,6 @@ import java.util.function.Consumer;
 public class ListWatermarkTemplateRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Authorization")
-
-    private String authorization;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Sdk-Date")
 
     private String xSdkDate;
@@ -37,23 +32,6 @@ public class ListWatermarkTemplateRequest {
     @JsonProperty(value = "size")
 
     private Integer size;
-
-    public ListWatermarkTemplateRequest withAuthorization(String authorization) {
-        this.authorization = authorization;
-        return this;
-    }
-
-    /**
-     * 使用AK/SK方式认证时必选，携带的鉴权信息。 
-     * @return authorization
-     */
-    public String getAuthorization() {
-        return authorization;
-    }
-
-    public void setAuthorization(String authorization) {
-        this.authorization = authorization;
-    }
 
     public ListWatermarkTemplateRequest withXSdkDate(String xSdkDate) {
         this.xSdkDate = xSdkDate;
@@ -150,8 +128,7 @@ public class ListWatermarkTemplateRequest {
             return false;
         }
         ListWatermarkTemplateRequest listWatermarkTemplateRequest = (ListWatermarkTemplateRequest) o;
-        return Objects.equals(this.authorization, listWatermarkTemplateRequest.authorization)
-            && Objects.equals(this.xSdkDate, listWatermarkTemplateRequest.xSdkDate)
+        return Objects.equals(this.xSdkDate, listWatermarkTemplateRequest.xSdkDate)
             && Objects.equals(this.id, listWatermarkTemplateRequest.id)
             && Objects.equals(this.page, listWatermarkTemplateRequest.page)
             && Objects.equals(this.size, listWatermarkTemplateRequest.size);
@@ -159,14 +136,13 @@ public class ListWatermarkTemplateRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(authorization, xSdkDate, id, page, size);
+        return Objects.hash(xSdkDate, id, page, size);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListWatermarkTemplateRequest {\n");
-        sb.append("    authorization: ").append(toIndentedString(authorization)).append("\n");
         sb.append("    xSdkDate: ").append(toIndentedString(xSdkDate)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    page: ").append(toIndentedString(page)).append("\n");

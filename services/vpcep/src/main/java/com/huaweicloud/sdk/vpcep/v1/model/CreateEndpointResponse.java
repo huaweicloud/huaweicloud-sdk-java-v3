@@ -107,7 +107,7 @@ public class CreateEndpointResponse extends SdkResponse {
     private ServiceTypeEnum serviceType;
 
     /**
-     * 终端节点的连接状态。 ● pendingAcceptance：待接受 ● creating：创建中 ● accepted：已接受 ● rejected：已拒绝 ● failed：失败 ● deleting：删除中
+     * 终端节点的状态。 ● pendingAcceptance：待接受 ● creating：创建中 ● accepted：已接受 ● rejected：已拒绝 ● failed：失败 ● deleting：删除中
      */
     public static final class StatusEnum {
 
@@ -362,7 +362,7 @@ public class CreateEndpointResponse extends SdkResponse {
     }
 
     /**
-     * 终端节点的连接状态。 ● pendingAcceptance：待接受 ● creating：创建中 ● accepted：已接受 ● rejected：已拒绝 ● failed：失败 ● deleting：删除中
+     * 终端节点的状态。 ● pendingAcceptance：待接受 ● creating：创建中 ● accepted：已接受 ● rejected：已拒绝 ● failed：失败 ● deleting：删除中
      * @return status
      */
     public StatusEnum getStatus() {

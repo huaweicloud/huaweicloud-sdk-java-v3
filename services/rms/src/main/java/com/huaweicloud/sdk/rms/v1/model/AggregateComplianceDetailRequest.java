@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 聚合合规策略详情请求体
+ * 查询指定聚合合规规则评估结果详情请求体。
  */
 public class AggregateComplianceDetailRequest {
 
@@ -26,7 +26,7 @@ public class AggregateComplianceDetailRequest {
     private String accountId;
 
     /**
-     * 合规性状态
+     * 合规结果。
      */
     public static final class ComplianceStateEnum {
 
@@ -145,7 +145,7 @@ public class AggregateComplianceDetailRequest {
     }
 
     /**
-     * 租户ID
+     * 源帐号ID
      * @return accountId
      */
     public String getAccountId() {
@@ -162,7 +162,7 @@ public class AggregateComplianceDetailRequest {
     }
 
     /**
-     * 合规性状态
+     * 合规结果。
      * @return complianceState
      */
     public ComplianceStateEnum getComplianceState() {

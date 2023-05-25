@@ -11,11 +11,6 @@ import java.util.Objects;
 public class ListDomainLogsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Authorization")
-
-    private String authorization;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Sdk-Date")
 
     private String xSdkDate;
@@ -39,23 +34,6 @@ public class ListDomainLogsRequest {
     @JsonProperty(value = "page_number")
 
     private Integer pageNumber;
-
-    public ListDomainLogsRequest withAuthorization(String authorization) {
-        this.authorization = authorization;
-        return this;
-    }
-
-    /**
-     * 使用AK/SK方式认证时必选，携带的鉴权信息。 
-     * @return authorization
-     */
-    public String getAuthorization() {
-        return authorization;
-    }
-
-    public void setAuthorization(String authorization) {
-        this.authorization = authorization;
-    }
 
     public ListDomainLogsRequest withXSdkDate(String xSdkDate) {
         this.xSdkDate = xSdkDate;
@@ -153,8 +131,7 @@ public class ListDomainLogsRequest {
             return false;
         }
         ListDomainLogsRequest listDomainLogsRequest = (ListDomainLogsRequest) o;
-        return Objects.equals(this.authorization, listDomainLogsRequest.authorization)
-            && Objects.equals(this.xSdkDate, listDomainLogsRequest.xSdkDate)
+        return Objects.equals(this.xSdkDate, listDomainLogsRequest.xSdkDate)
             && Objects.equals(this.domainName, listDomainLogsRequest.domainName)
             && Objects.equals(this.queryDate, listDomainLogsRequest.queryDate)
             && Objects.equals(this.pageSize, listDomainLogsRequest.pageSize)
@@ -163,14 +140,13 @@ public class ListDomainLogsRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(authorization, xSdkDate, domainName, queryDate, pageSize, pageNumber);
+        return Objects.hash(xSdkDate, domainName, queryDate, pageSize, pageNumber);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListDomainLogsRequest {\n");
-        sb.append("    authorization: ").append(toIndentedString(authorization)).append("\n");
         sb.append("    xSdkDate: ").append(toIndentedString(xSdkDate)).append("\n");
         sb.append("    domainName: ").append(toIndentedString(domainName)).append("\n");
         sb.append("    queryDate: ").append(toIndentedString(queryDate)).append("\n");

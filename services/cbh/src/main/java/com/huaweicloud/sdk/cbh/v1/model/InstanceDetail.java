@@ -347,7 +347,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 云堡垒机实例当前的任务状态。
+     * 云堡垒机实例当前的任务状态。 - powering-on 开启 - powering-off 关闭 - rebooting 重启 - delete_wait 删除 - frozen 冻结 - NO_TASK 运行 - unfrozen 解冻 - alter 变更 - updating 升级中 - configuring-ha 配置HA
      * @return taskStatus
      */
     public String getTaskStatus() {
@@ -364,7 +364,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 云堡垒机实例状态。
+     * 云堡垒机实例状态。 - SHUTOFF 已关闭 - ACTIVE 运行中 - DELETING 删除中 - BUILD 创建中 - DELETED 已删除 - ERROR 故障 - HAWAIT 等待备机创建成功 - FROZEN 已冻结 - UPGRADING 升级中 - UNPAID 待支付 - RESIZE 规格变更中 - DILATATION 扩容中 - HA 配置HA中
      * @return status
      */
     public String getStatus() {
@@ -517,7 +517,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 云堡垒机实例镜像是否可以升级。 - NEW，可以升级 - OLD，不能升级
+     * 云堡垒机实例是否可以升级。 - NEW，可以升级 - OLD，不能升级
      * @return update
      */
     public String getUpdate() {
@@ -619,7 +619,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 云堡垒机实例实例的资源id,UUID格式显示。
+     * 云堡垒机实例的资源id,UUID格式显示。
      * @return resourceId
      */
     public String getResourceId() {
@@ -687,7 +687,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 云堡垒机实例镜像当前版本号。
+     * 云堡垒机实例当前版本。
      * @return bastionVersion
      */
     public String getBastionVersion() {
@@ -704,7 +704,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 云堡垒机实例镜像可以升级的版本号。
+     * 云堡垒机实例可以升级的版本。
      * @return newBastionVersion
      */
     public String getNewBastionVersion() {
@@ -857,7 +857,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 云堡垒机实例浮动ip。
+     * 云堡垒机实例浮动ip。返回默认值null
      * @return vip
      */
     public String getVip() {

@@ -137,6 +137,41 @@ public class IamMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<AssociateRoleToAgencyOnEnterpriseProjectRequest, AssociateRoleToAgencyOnEnterpriseProjectResponse> associateRoleToAgencyOnEnterpriseProject =
+        genForassociateRoleToAgencyOnEnterpriseProject();
+
+    private static HttpRequestDef<AssociateRoleToAgencyOnEnterpriseProjectRequest, AssociateRoleToAgencyOnEnterpriseProjectResponse> genForassociateRoleToAgencyOnEnterpriseProject() {
+        // basic
+        HttpRequestDef.Builder<AssociateRoleToAgencyOnEnterpriseProjectRequest, AssociateRoleToAgencyOnEnterpriseProjectResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    AssociateRoleToAgencyOnEnterpriseProjectRequest.class,
+                    AssociateRoleToAgencyOnEnterpriseProjectResponse.class)
+                .withName("AssociateRoleToAgencyOnEnterpriseProject")
+                .withUri("/v3.0/OS-PERMISSION/subjects/agency/scopes/enterprise-project/role-assignments")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CreateAgencyEpPolicyAssignmentReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateAgencyEpPolicyAssignmentReqBody.class),
+            f -> f.withMarshaller(AssociateRoleToAgencyOnEnterpriseProjectRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(AssociateRoleToAgencyOnEnterpriseProjectResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<AssociateRoleToGroupOnEnterpriseProjectRequest, AssociateRoleToGroupOnEnterpriseProjectResponse> associateRoleToGroupOnEnterpriseProject =
         genForassociateRoleToGroupOnEnterpriseProject();
 
@@ -2937,6 +2972,41 @@ public class IamMeta {
             }));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RevokeRoleFromAgencyOnEnterpriseProjectRequest, RevokeRoleFromAgencyOnEnterpriseProjectResponse> revokeRoleFromAgencyOnEnterpriseProject =
+        genForrevokeRoleFromAgencyOnEnterpriseProject();
+
+    private static HttpRequestDef<RevokeRoleFromAgencyOnEnterpriseProjectRequest, RevokeRoleFromAgencyOnEnterpriseProjectResponse> genForrevokeRoleFromAgencyOnEnterpriseProject() {
+        // basic
+        HttpRequestDef.Builder<RevokeRoleFromAgencyOnEnterpriseProjectRequest, RevokeRoleFromAgencyOnEnterpriseProjectResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    RevokeRoleFromAgencyOnEnterpriseProjectRequest.class,
+                    RevokeRoleFromAgencyOnEnterpriseProjectResponse.class)
+                .withName("RevokeRoleFromAgencyOnEnterpriseProject")
+                .withUri("/v3.0/OS-PERMISSION/subjects/agency/scopes/enterprise-project/role-assignments")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateOrDelAgencyEpPolicyAssignmentReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateOrDelAgencyEpPolicyAssignmentReqBody.class),
+            f -> f.withMarshaller(RevokeRoleFromAgencyOnEnterpriseProjectRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RevokeRoleFromAgencyOnEnterpriseProjectResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
 
         return builder.build();
     }

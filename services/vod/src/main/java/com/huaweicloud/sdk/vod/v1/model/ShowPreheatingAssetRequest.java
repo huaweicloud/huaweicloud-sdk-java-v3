@@ -11,11 +11,6 @@ import java.util.Objects;
 public class ShowPreheatingAssetRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Authorization")
-
-    private String authorization;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Sdk-Date")
 
     private String xSdkDate;
@@ -24,23 +19,6 @@ public class ShowPreheatingAssetRequest {
     @JsonProperty(value = "task_id")
 
     private String taskId;
-
-    public ShowPreheatingAssetRequest withAuthorization(String authorization) {
-        this.authorization = authorization;
-        return this;
-    }
-
-    /**
-     * 使用AK/SK方式认证时必选，携带的鉴权信息。 
-     * @return authorization
-     */
-    public String getAuthorization() {
-        return authorization;
-    }
-
-    public void setAuthorization(String authorization) {
-        this.authorization = authorization;
-    }
 
     public ShowPreheatingAssetRequest withXSdkDate(String xSdkDate) {
         this.xSdkDate = xSdkDate;
@@ -87,21 +65,19 @@ public class ShowPreheatingAssetRequest {
             return false;
         }
         ShowPreheatingAssetRequest showPreheatingAssetRequest = (ShowPreheatingAssetRequest) o;
-        return Objects.equals(this.authorization, showPreheatingAssetRequest.authorization)
-            && Objects.equals(this.xSdkDate, showPreheatingAssetRequest.xSdkDate)
+        return Objects.equals(this.xSdkDate, showPreheatingAssetRequest.xSdkDate)
             && Objects.equals(this.taskId, showPreheatingAssetRequest.taskId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(authorization, xSdkDate, taskId);
+        return Objects.hash(xSdkDate, taskId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowPreheatingAssetRequest {\n");
-        sb.append("    authorization: ").append(toIndentedString(authorization)).append("\n");
         sb.append("    xSdkDate: ").append(toIndentedString(xSdkDate)).append("\n");
         sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
         sb.append("}");

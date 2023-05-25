@@ -43,7 +43,7 @@ public class ListQuotaStatusRequest {
     }
 
     /**
-     * 待创建云堡垒机规格ID，例如： - cbh.basic.10  10资产标准版 - cbh.enhance.10  10资产专业版 已上线的规格详情请参见《云堡垒机常见问题》的购买，“云堡垒机实例有哪些规格(https://support.huaweicloud.com/cbh_faq/cbh_03_0025.html)”章节。
+     * 待创建云堡垒机规格ID，例如： - cbh.basic.10  10资产标准版 - cbh.enhance.10  10资产专业版 已上线的规格详情请参见《云堡垒机常见问题》的购买，[云堡垒机实例有哪些规格](https://support.huaweicloud.com/cbh_faq/cbh_03_0025.html)章节。
      * @return resourceSpecCode
      */
     public String getResourceSpecCode() {

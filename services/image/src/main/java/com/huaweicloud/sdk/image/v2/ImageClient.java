@@ -49,37 +49,6 @@ public class ImageClient {
     }
 
     /**
-     * 创建视频脱敏任务
-     *
-     * 创建视频脱敏除任务，将输入视频的图像敏感信息模糊化，包括视频中的人脸和车牌
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateVideoObjectMaskingTaskRequest 请求对象
-     * @return CreateVideoObjectMaskingTaskResponse
-     */
-    public CreateVideoObjectMaskingTaskResponse createVideoObjectMaskingTask(
-        CreateVideoObjectMaskingTaskRequest request) {
-        return hcClient.syncInvokeHttp(request, ImageMeta.createVideoObjectMaskingTask);
-    }
-
-    /**
-     * 创建视频脱敏任务
-     *
-     * 创建视频脱敏除任务，将输入视频的图像敏感信息模糊化，包括视频中的人脸和车牌
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateVideoObjectMaskingTaskRequest 请求对象
-     * @return SyncInvoker<CreateVideoObjectMaskingTaskRequest, CreateVideoObjectMaskingTaskResponse>
-     */
-    public SyncInvoker<CreateVideoObjectMaskingTaskRequest, CreateVideoObjectMaskingTaskResponse> createVideoObjectMaskingTaskInvoker(
-        CreateVideoObjectMaskingTaskRequest request) {
-        return new SyncInvoker<CreateVideoObjectMaskingTaskRequest, CreateVideoObjectMaskingTaskResponse>(request,
-            ImageMeta.createVideoObjectMaskingTask, hcClient);
-    }
-
-    /**
      * 创建视频标签任务
      *
      * 创建视频标签任务，输入一段视频，通过AI模型分析视频中的信息，输出视频所包含的媒资标签、名人标签、logo标签、语音标签、OCR标签等信息。
@@ -378,36 +347,6 @@ public class ImageClient {
         ShowImageHighresolutionMattingTaskRequest request) {
         return new SyncInvoker<ShowImageHighresolutionMattingTaskRequest, ShowImageHighresolutionMattingTaskResponse>(
             request, ImageMeta.showImageHighresolutionMattingTask, hcClient);
-    }
-
-    /**
-     * 查询视频脱敏任务详情
-     *
-     * show task
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ShowVideoObjectMaskingTaskRequest 请求对象
-     * @return ShowVideoObjectMaskingTaskResponse
-     */
-    public ShowVideoObjectMaskingTaskResponse showVideoObjectMaskingTask(ShowVideoObjectMaskingTaskRequest request) {
-        return hcClient.syncInvokeHttp(request, ImageMeta.showVideoObjectMaskingTask);
-    }
-
-    /**
-     * 查询视频脱敏任务详情
-     *
-     * show task
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ShowVideoObjectMaskingTaskRequest 请求对象
-     * @return SyncInvoker<ShowVideoObjectMaskingTaskRequest, ShowVideoObjectMaskingTaskResponse>
-     */
-    public SyncInvoker<ShowVideoObjectMaskingTaskRequest, ShowVideoObjectMaskingTaskResponse> showVideoObjectMaskingTaskInvoker(
-        ShowVideoObjectMaskingTaskRequest request) {
-        return new SyncInvoker<ShowVideoObjectMaskingTaskRequest, ShowVideoObjectMaskingTaskResponse>(request,
-            ImageMeta.showVideoObjectMaskingTask, hcClient);
     }
 
     /**

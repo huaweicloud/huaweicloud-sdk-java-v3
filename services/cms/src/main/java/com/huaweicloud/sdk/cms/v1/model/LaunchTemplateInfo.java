@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 启动模板，创建虚拟机时，使用到安全组、网络、镜像、flavor等信息
+ * 实例的启动模板，创建虚拟机时，使用到安全组、网络、镜像、flavor等信息
  */
 public class LaunchTemplateInfo {
 
@@ -26,7 +26,7 @@ public class LaunchTemplateInfo {
     }
 
     /**
-     * 模板的ID,唯一标识一个模板
+     * 实例的启动模板id，唯一标识一个启动模板
      * @return launchTemplateId
      */
     public String getLaunchTemplateId() {
@@ -43,7 +43,7 @@ public class LaunchTemplateInfo {
     }
 
     /**
-     * 模板的版本，模板更新，都会增加版本
+     * 模板版本号
      * @return version
      */
     public String getVersion() {

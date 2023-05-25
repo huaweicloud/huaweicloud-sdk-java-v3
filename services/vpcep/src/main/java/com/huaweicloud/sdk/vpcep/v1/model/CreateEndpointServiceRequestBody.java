@@ -24,11 +24,6 @@ public class CreateEndpointServiceRequestBody {
     private String portId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "vip_port_id")
-
-    private String vipPortId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_name")
 
     private String serviceName;
@@ -49,7 +44,7 @@ public class CreateEndpointServiceRequestBody {
     private String serviceType;
 
     /**
-     * 资源类型。 ● VM：云服务器，适用于作为服务器使用。 ● VIP：虚拟IP，适用于作为虚拟资源的物理服务器使用。（该字段已废弃，请优先使用LB类型） ● LB：负载均衡，适用于高访问量业务和对可靠性和容灾性要求较高的业务。
+     * 资源类型。 ● VM：云服务器，适用于作为服务器使用。 ● VIP：虚拟IP，适用于作为虚IP场景使用。（该字段已废弃，请优先使用LB类型） ● LB：负载均衡，适用于高访问量业务和对可靠性和容灾性要求较高的业务。
      */
     public static final class ServerTypeEnum {
 
@@ -142,7 +137,7 @@ public class CreateEndpointServiceRequestBody {
     private List<PortList> ports = null;
 
     /**
-    * 用于控制是否将客户端的源IP、源端口、marker_id等信息携带到服务端。 信息携带支持两种方式： ● TCP TOA：表示将客户端信息插入到tcp option字段中携带至服务端。 说明 仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端相关信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 ● proxy_vni: 关闭toa，开启proxy和vni。 默认值为“close”。
+    * 用于控制将哪些信息（如客户端的源IP、源端口、marker_id等）携带到服务端。 支持携带的客户端信息包括如下两种类型： ● TCP TOA：表示将客户端信息插入到tcp option字段中携带至服务端。 说明：仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 该参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 ● proxy_vni: 关闭toa，开启proxy和vni。 默认值为“close”。
     */
     public static final class TcpProxyEnum {
 
@@ -262,7 +257,7 @@ public class CreateEndpointServiceRequestBody {
     }
 
     /**
-     * 标识终端节点服务后端资源的ID， 格式为通用唯一识别码（Universally Unique Identifier，下文简称UUID）。 取值为： ● LB类型：负载均衡器内网IP对应的端口ID。 详细内容请参考《弹性负载均衡API参考》中的“查询负载均衡详情”， 详见响应消息中的“vip_port_id”字段。 ● VM类型：弹性云服务器IP地址对应的网卡ID。 详细内容请参考《弹性云服务器API参考》中的“查询云服务器网卡信息”， 详见响应消息中的“port_id”字段。 ● VIP类型：虚拟IP所在虚拟机的网卡ID（VIP类型业务已不支持，该取值类型已废弃） 说明： ● 创建终端节点服务时，VPC的子网网段不能与198.19.128.0/17重叠。 ● VPC路由表中自定义路由的目的地址不能与198.19.128.0/17重叠。
+     * 标识终端节点服务后端资源的ID， 格式为通用唯一识别码（Universally Unique Identifier，下文简称UUID）。 取值为： ● LB类型：负载均衡器内网IP对应的端口ID。 详细内容请参考《弹性负载均衡API参考》中的“查询负载均衡详情”。 ● VM类型：弹性云服务器IP地址对应的网卡ID。 详细内容请参考《弹性云服务器API参考》中的“查询云服务器网卡信息”， 详见响应消息中的“port_id”字段。 ● VIP类型：虚拟IP所在虚拟机的网卡ID（VIP类型业务已不支持，该取值类型已废弃） 说明： ● 创建终端节点服务时，VPC的子网网段不能与198.19.128.0/17重叠。 ● VPC路由表中自定义路由的目的地址不能与198.19.128.0/17重叠。
      * @return portId
      */
     public String getPortId() {
@@ -271,23 +266,6 @@ public class CreateEndpointServiceRequestBody {
 
     public void setPortId(String portId) {
         this.portId = portId;
-    }
-
-    public CreateEndpointServiceRequestBody withVipPortId(String vipPortId) {
-        this.vipPortId = vipPortId;
-        return this;
-    }
-
-    /**
-     * 虚拟IP的网卡ID。如果是DCS VIP场景，则该参数必需提供
-     * @return vipPortId
-     */
-    public String getVipPortId() {
-        return vipPortId;
-    }
-
-    public void setVipPortId(String vipPortId) {
-        this.vipPortId = vipPortId;
     }
 
     public CreateEndpointServiceRequestBody withServiceName(String serviceName) {
@@ -347,7 +325,7 @@ public class CreateEndpointServiceRequestBody {
     }
 
     /**
-     * 终端节点服务类型。 仅支持将用户私有服务创建为interface类型的终端节点服务。 终端节点服务类型包括“网关（gataway）型”和“接口（interface）型”： ● gataway：由运维人员配置。用户无需创建，可直接使用。 ● interface：包括运维人员配置的云服务和用户自己创建的私有服务。 其中，运维人员配置的云服务无需创建， 用户可直接使用。 您可以通过查询公共终端节点服务列表， 查看由运维人员配置的所有用户可见且可连接的终端节点服务， 并通过创建终端节点创建访问Gateway和Interface类型终端节点服务的终端节点。
+     * 终端节点服务类型。 仅支持将用户私有服务创建为interface类型的终端节点服务。 终端节点服务类型包括“网关（gateway）型”和“接口（interface）型”： ● gateway：由运维人员配置。用户无需创建，可直接使用。 ● interface：包括运维人员配置的云服务和用户自己创建的私有服务。 其中，运维人员配置的云服务无需创建， 用户可直接使用。 您可以通过查询公共终端节点服务列表， 查看由运维人员配置的所有用户可见且可连接的终端节点服务， 并通过创建终端节点创建访问Gateway和Interface类型终端节点服务的终端节点。
      * @return serviceType
      */
     public String getServiceType() {
@@ -364,7 +342,7 @@ public class CreateEndpointServiceRequestBody {
     }
 
     /**
-     * 资源类型。 ● VM：云服务器，适用于作为服务器使用。 ● VIP：虚拟IP，适用于作为虚拟资源的物理服务器使用。（该字段已废弃，请优先使用LB类型） ● LB：负载均衡，适用于高访问量业务和对可靠性和容灾性要求较高的业务。
+     * 资源类型。 ● VM：云服务器，适用于作为服务器使用。 ● VIP：虚拟IP，适用于作为虚IP场景使用。（该字段已废弃，请优先使用LB类型） ● LB：负载均衡，适用于高访问量业务和对可靠性和容灾性要求较高的业务。
      * @return serverType
      */
     public ServerTypeEnum getServerType() {
@@ -414,7 +392,7 @@ public class CreateEndpointServiceRequestBody {
     }
 
     /**
-     * 用于控制是否将客户端的源IP、源端口、marker_id等信息携带到服务端。 信息携带支持两种方式： ● TCP TOA：表示将客户端信息插入到tcp option字段中携带至服务端。 说明 仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端相关信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 ● proxy_vni: 关闭toa，开启proxy和vni。 默认值为“close”。
+     * 用于控制将哪些信息（如客户端的源IP、源端口、marker_id等）携带到服务端。 支持携带的客户端信息包括如下两种类型： ● TCP TOA：表示将客户端信息插入到tcp option字段中携带至服务端。 说明：仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 该参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 ● proxy_vni: 关闭toa，开启proxy和vni。 默认值为“close”。
      * @return tcpProxy
      */
     public TcpProxyEnum getTcpProxy() {
@@ -502,7 +480,6 @@ public class CreateEndpointServiceRequestBody {
         }
         CreateEndpointServiceRequestBody createEndpointServiceRequestBody = (CreateEndpointServiceRequestBody) o;
         return Objects.equals(this.portId, createEndpointServiceRequestBody.portId)
-            && Objects.equals(this.vipPortId, createEndpointServiceRequestBody.vipPortId)
             && Objects.equals(this.serviceName, createEndpointServiceRequestBody.serviceName)
             && Objects.equals(this.vpcId, createEndpointServiceRequestBody.vpcId)
             && Objects.equals(this.approvalEnabled, createEndpointServiceRequestBody.approvalEnabled)
@@ -518,7 +495,6 @@ public class CreateEndpointServiceRequestBody {
     @Override
     public int hashCode() {
         return Objects.hash(portId,
-            vipPortId,
             serviceName,
             vpcId,
             approvalEnabled,
@@ -536,7 +512,6 @@ public class CreateEndpointServiceRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateEndpointServiceRequestBody {\n");
         sb.append("    portId: ").append(toIndentedString(portId)).append("\n");
-        sb.append("    vipPortId: ").append(toIndentedString(vipPortId)).append("\n");
         sb.append("    serviceName: ").append(toIndentedString(serviceName)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    approvalEnabled: ").append(toIndentedString(approvalEnabled)).append("\n");

@@ -11,11 +11,6 @@ import java.util.Objects;
 public class ListTakeOverTaskRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Authorization")
-
-    private String authorization;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Sdk-Date")
 
     private String xSdkDate;
@@ -39,23 +34,6 @@ public class ListTakeOverTaskRequest {
     @JsonProperty(value = "size")
 
     private Integer size;
-
-    public ListTakeOverTaskRequest withAuthorization(String authorization) {
-        this.authorization = authorization;
-        return this;
-    }
-
-    /**
-     * 使用AK/SK方式认证时必选，携带的鉴权信息。 
-     * @return authorization
-     */
-    public String getAuthorization() {
-        return authorization;
-    }
-
-    public void setAuthorization(String authorization) {
-        this.authorization = authorization;
-    }
 
     public ListTakeOverTaskRequest withXSdkDate(String xSdkDate) {
         this.xSdkDate = xSdkDate;
@@ -156,8 +134,7 @@ public class ListTakeOverTaskRequest {
             return false;
         }
         ListTakeOverTaskRequest listTakeOverTaskRequest = (ListTakeOverTaskRequest) o;
-        return Objects.equals(this.authorization, listTakeOverTaskRequest.authorization)
-            && Objects.equals(this.xSdkDate, listTakeOverTaskRequest.xSdkDate)
+        return Objects.equals(this.xSdkDate, listTakeOverTaskRequest.xSdkDate)
             && Objects.equals(this.status, listTakeOverTaskRequest.status)
             && Objects.equals(this.taskId, listTakeOverTaskRequest.taskId)
             && Objects.equals(this.page, listTakeOverTaskRequest.page)
@@ -166,14 +143,13 @@ public class ListTakeOverTaskRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(authorization, xSdkDate, status, taskId, page, size);
+        return Objects.hash(xSdkDate, status, taskId, page, size);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListTakeOverTaskRequest {\n");
-        sb.append("    authorization: ").append(toIndentedString(authorization)).append("\n");
         sb.append("    xSdkDate: ").append(toIndentedString(xSdkDate)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");

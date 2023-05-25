@@ -105,7 +105,7 @@ public class NetworkRequestBody {
     }
 
     /**
-     * 云堡垒升级实例的网卡信息。
+     * 云堡垒机实例的网卡信息。
      * @return nics
      */
     public List<Nics> getNics() {

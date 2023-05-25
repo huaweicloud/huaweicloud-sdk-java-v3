@@ -11,11 +11,6 @@ import java.util.Objects;
 public class ShowVodStatisticsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Authorization")
-
-    private String authorization;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Sdk-Date")
 
     private String xSdkDate;
@@ -34,23 +29,6 @@ public class ShowVodStatisticsRequest {
     @JsonProperty(value = "interval")
 
     private Integer interval;
-
-    public ShowVodStatisticsRequest withAuthorization(String authorization) {
-        this.authorization = authorization;
-        return this;
-    }
-
-    /**
-     * 使用AK/SK方式认证时必选，携带的鉴权信息。 
-     * @return authorization
-     */
-    public String getAuthorization() {
-        return authorization;
-    }
-
-    public void setAuthorization(String authorization) {
-        this.authorization = authorization;
-    }
 
     public ShowVodStatisticsRequest withXSdkDate(String xSdkDate) {
         this.xSdkDate = xSdkDate;
@@ -131,8 +109,7 @@ public class ShowVodStatisticsRequest {
             return false;
         }
         ShowVodStatisticsRequest showVodStatisticsRequest = (ShowVodStatisticsRequest) o;
-        return Objects.equals(this.authorization, showVodStatisticsRequest.authorization)
-            && Objects.equals(this.xSdkDate, showVodStatisticsRequest.xSdkDate)
+        return Objects.equals(this.xSdkDate, showVodStatisticsRequest.xSdkDate)
             && Objects.equals(this.startTime, showVodStatisticsRequest.startTime)
             && Objects.equals(this.endTime, showVodStatisticsRequest.endTime)
             && Objects.equals(this.interval, showVodStatisticsRequest.interval);
@@ -140,14 +117,13 @@ public class ShowVodStatisticsRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(authorization, xSdkDate, startTime, endTime, interval);
+        return Objects.hash(xSdkDate, startTime, endTime, interval);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowVodStatisticsRequest {\n");
-        sb.append("    authorization: ").append(toIndentedString(authorization)).append("\n");
         sb.append("    xSdkDate: ").append(toIndentedString(xSdkDate)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");

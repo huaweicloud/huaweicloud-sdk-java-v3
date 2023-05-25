@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 聚合合规策略详情请求体
+ * 查询指定聚合合规规则详情请求体。
  */
 public class AggregatePolicyAssignmentDetailRequest {
 

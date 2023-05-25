@@ -25,6 +25,16 @@ public class BuildInfoParameters {
 
     private String artifactNamespace;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cluster_id")
+
+    private String clusterId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "node_label_selector")
+
+    private Object nodeLabelSelector;
+
     public BuildInfoParameters withBuildCmd(String buildCmd) {
         this.buildCmd = buildCmd;
         return this;
@@ -76,6 +86,40 @@ public class BuildInfoParameters {
         this.artifactNamespace = artifactNamespace;
     }
 
+    public BuildInfoParameters withClusterId(String clusterId) {
+        this.clusterId = clusterId;
+        return this;
+    }
+
+    /**
+     * 指定构建集群的id。
+     * @return clusterId
+     */
+    public String getClusterId() {
+        return clusterId;
+    }
+
+    public void setClusterId(String clusterId) {
+        this.clusterId = clusterId;
+    }
+
+    public BuildInfoParameters withNodeLabelSelector(Object nodeLabelSelector) {
+        this.nodeLabelSelector = nodeLabelSelector;
+        return this;
+    }
+
+    /**
+     * key是标签的键，value是标签的值。
+     * @return nodeLabelSelector
+     */
+    public Object getNodeLabelSelector() {
+        return nodeLabelSelector;
+    }
+
+    public void setNodeLabelSelector(Object nodeLabelSelector) {
+        this.nodeLabelSelector = nodeLabelSelector;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -87,12 +131,14 @@ public class BuildInfoParameters {
         BuildInfoParameters buildInfoParameters = (BuildInfoParameters) o;
         return Objects.equals(this.buildCmd, buildInfoParameters.buildCmd)
             && Objects.equals(this.dockerfilePath, buildInfoParameters.dockerfilePath)
-            && Objects.equals(this.artifactNamespace, buildInfoParameters.artifactNamespace);
+            && Objects.equals(this.artifactNamespace, buildInfoParameters.artifactNamespace)
+            && Objects.equals(this.clusterId, buildInfoParameters.clusterId)
+            && Objects.equals(this.nodeLabelSelector, buildInfoParameters.nodeLabelSelector);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(buildCmd, dockerfilePath, artifactNamespace);
+        return Objects.hash(buildCmd, dockerfilePath, artifactNamespace, clusterId, nodeLabelSelector);
     }
 
     @Override
@@ -102,6 +148,8 @@ public class BuildInfoParameters {
         sb.append("    buildCmd: ").append(toIndentedString(buildCmd)).append("\n");
         sb.append("    dockerfilePath: ").append(toIndentedString(dockerfilePath)).append("\n");
         sb.append("    artifactNamespace: ").append(toIndentedString(artifactNamespace)).append("\n");
+        sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
+        sb.append("    nodeLabelSelector: ").append(toIndentedString(nodeLabelSelector)).append("\n");
         sb.append("}");
         return sb.toString();
     }

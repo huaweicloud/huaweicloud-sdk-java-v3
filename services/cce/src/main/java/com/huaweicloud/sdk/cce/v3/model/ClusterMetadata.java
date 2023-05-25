@@ -24,6 +24,11 @@ public class ClusterMetadata {
     private String uid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alias")
+
+    private String alias;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "annotations")
 
     private Map<String, String> annotations = null;
@@ -75,6 +80,23 @@ public class ClusterMetadata {
 
     public void setUid(String uid) {
         this.uid = uid;
+    }
+
+    public ClusterMetadata withAlias(String alias) {
+        this.alias = alias;
+        return this;
+    }
+
+    /**
+     * 集群显示名，用于在 CCE 界面显示，该名称创建后可修改。  命名规则：以小写字母开头，由小写字母、数字、中划线(-)组成，长度范围4-128位，且不能以中划线(-)结尾。  显示名和其他集群的名称、显示名不可以重复。  在创建集群、更新集群请求体中，集群显示名alias未指定或取值为空，表示与集群名称name一致。在查询集群等响应体中，集群显示名alias将必然返回，未配置时将返回集群名称name。
+     * @return alias
+     */
+    public String getAlias() {
+        return alias;
+    }
+
+    public void setAlias(String alias) {
+        this.alias = alias;
     }
 
     public ClusterMetadata withAnnotations(Map<String, String> annotations) {
@@ -187,6 +209,7 @@ public class ClusterMetadata {
         }
         ClusterMetadata clusterMetadata = (ClusterMetadata) o;
         return Objects.equals(this.name, clusterMetadata.name) && Objects.equals(this.uid, clusterMetadata.uid)
+            && Objects.equals(this.alias, clusterMetadata.alias)
             && Objects.equals(this.annotations, clusterMetadata.annotations)
             && Objects.equals(this.labels, clusterMetadata.labels)
             && Objects.equals(this.creationTimestamp, clusterMetadata.creationTimestamp)
@@ -195,7 +218,7 @@ public class ClusterMetadata {
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, uid, annotations, labels, creationTimestamp, updateTimestamp);
+        return Objects.hash(name, uid, alias, annotations, labels, creationTimestamp, updateTimestamp);
     }
 
     @Override
@@ -204,6 +227,7 @@ public class ClusterMetadata {
         sb.append("class ClusterMetadata {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    uid: ").append(toIndentedString(uid)).append("\n");
+        sb.append("    alias: ").append(toIndentedString(alias)).append("\n");
         sb.append("    annotations: ").append(toIndentedString(annotations)).append("\n");
         sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    creationTimestamp: ").append(toIndentedString(creationTimestamp)).append("\n");

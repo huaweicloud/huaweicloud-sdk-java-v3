@@ -153,6 +153,11 @@ public class PolicyAssignment {
 
     private Map<String, PolicyParameterValue> parameters = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "created_by")
+
+    private String createdBy;
+
     public PolicyAssignment withPolicyAssignmentType(PolicyAssignmentTypeEnum policyAssignmentType) {
         this.policyAssignmentType = policyAssignmentType;
         return this;
@@ -391,6 +396,23 @@ public class PolicyAssignment {
         this.parameters = parameters;
     }
 
+    public PolicyAssignment withCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
+        return this;
+    }
+
+    /**
+     * 规则的创建者
+     * @return createdBy
+     */
+    public String getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -410,7 +432,8 @@ public class PolicyAssignment {
             && Objects.equals(this.updated, policyAssignment.updated)
             && Objects.equals(this.policyDefinitionId, policyAssignment.policyDefinitionId)
             && Objects.equals(this.customPolicy, policyAssignment.customPolicy)
-            && Objects.equals(this.parameters, policyAssignment.parameters);
+            && Objects.equals(this.parameters, policyAssignment.parameters)
+            && Objects.equals(this.createdBy, policyAssignment.createdBy);
     }
 
     @Override
@@ -426,7 +449,8 @@ public class PolicyAssignment {
             updated,
             policyDefinitionId,
             customPolicy,
-            parameters);
+            parameters,
+            createdBy);
     }
 
     @Override
@@ -445,6 +469,7 @@ public class PolicyAssignment {
         sb.append("    policyDefinitionId: ").append(toIndentedString(policyDefinitionId)).append("\n");
         sb.append("    customPolicy: ").append(toIndentedString(customPolicy)).append("\n");
         sb.append("    parameters: ").append(toIndentedString(parameters)).append("\n");
+        sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
         sb.append("}");
         return sb.toString();
     }

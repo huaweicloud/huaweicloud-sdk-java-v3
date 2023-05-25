@@ -26,7 +26,7 @@ public class IntegerRange {
     }
 
     /**
-     * 最大值：2147483647
+     * 最大值，-1表示无限制
      * @return max
      */
     public Integer getMax() {
@@ -43,7 +43,7 @@ public class IntegerRange {
     }
 
     /**
-     * 最小值：-2147483648
+     * 最小值，-1表示无限制
      * @return min
      */
     public Integer getMin() {

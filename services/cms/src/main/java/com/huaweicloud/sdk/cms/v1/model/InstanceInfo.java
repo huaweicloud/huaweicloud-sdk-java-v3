@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 实例信息
+ * 虚拟机列表
  */
 public class InstanceInfo {
 
@@ -46,7 +46,7 @@ public class InstanceInfo {
     }
 
     /**
-     * 虚拟机名称
+     * 弹性云服务器名称。
      * @return name
      */
     public String getName() {
@@ -63,7 +63,7 @@ public class InstanceInfo {
     }
 
     /**
-     * 虚拟机Id
+     * 弹性云服务器id。
      * @return id
      */
     public String getId() {
@@ -97,7 +97,7 @@ public class InstanceInfo {
     }
 
     /**
-     * 虚拟机规格
+     * 弹性云服务器规格
      * @return flavorId
      */
     public String getFlavorId() {
@@ -114,7 +114,7 @@ public class InstanceInfo {
     }
 
     /**
-     * 虚拟机状态
+     * 弹性云服务器状态
      * @return status
      */
     public String getStatus() {
@@ -131,7 +131,7 @@ public class InstanceInfo {
     }
 
     /**
-     * 销售模型（spot/onDemand）
+     * 销售模型，枚举值 spot：竞价实例 onDemand：按需实例
      * @return sellMode
      */
     public String getSellMode() {

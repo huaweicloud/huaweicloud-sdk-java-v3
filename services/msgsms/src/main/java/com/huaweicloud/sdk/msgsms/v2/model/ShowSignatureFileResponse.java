@@ -47,6 +47,11 @@ public class ShowSignatureFileResponse extends SdkResponse {
     private String operator;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "file_desc")
+
+    private String fileDesc;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
 
     private String updateTime;
@@ -178,6 +183,23 @@ public class ShowSignatureFileResponse extends SdkResponse {
         this.operator = operator;
     }
 
+    public ShowSignatureFileResponse withFileDesc(String fileDesc) {
+        this.fileDesc = fileDesc;
+        return this;
+    }
+
+    /**
+     * 描述
+     * @return fileDesc
+     */
+    public String getFileDesc() {
+        return fileDesc;
+    }
+
+    public void setFileDesc(String fileDesc) {
+        this.fileDesc = fileDesc;
+    }
+
     public ShowSignatureFileResponse withUpdateTime(String updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -211,12 +233,13 @@ public class ShowSignatureFileResponse extends SdkResponse {
             && Objects.equals(this.fileType, showSignatureFileResponse.fileType)
             && Objects.equals(this.moduleType, showSignatureFileResponse.moduleType)
             && Objects.equals(this.operator, showSignatureFileResponse.operator)
+            && Objects.equals(this.fileDesc, showSignatureFileResponse.fileDesc)
             && Objects.equals(this.updateTime, showSignatureFileResponse.updateTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(fileId, fileName, fileRef, fileSize, fileType, moduleType, operator, updateTime);
+        return Objects.hash(fileId, fileName, fileRef, fileSize, fileType, moduleType, operator, fileDesc, updateTime);
     }
 
     @Override
@@ -230,6 +253,7 @@ public class ShowSignatureFileResponse extends SdkResponse {
         sb.append("    fileType: ").append(toIndentedString(fileType)).append("\n");
         sb.append("    moduleType: ").append(toIndentedString(moduleType)).append("\n");
         sb.append("    operator: ").append(toIndentedString(operator)).append("\n");
+        sb.append("    fileDesc: ").append(toIndentedString(fileDesc)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -16,9 +16,9 @@ public class ObsProperties {
     private String endpoint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "buket")
+    @JsonProperty(value = "bucket")
 
-    private String buket;
+    private String bucket;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key")
@@ -42,21 +42,21 @@ public class ObsProperties {
         this.endpoint = endpoint;
     }
 
-    public ObsProperties withBuket(String buket) {
-        this.buket = buket;
+    public ObsProperties withBucket(String bucket) {
+        this.bucket = bucket;
         return this;
     }
 
     /**
      * 软件包在obs的桶名。
-     * @return buket
+     * @return bucket
      */
-    public String getBuket() {
-        return buket;
+    public String getBucket() {
+        return bucket;
     }
 
-    public void setBuket(String buket) {
-        this.buket = buket;
+    public void setBucket(String bucket) {
+        this.bucket = bucket;
     }
 
     public ObsProperties withKey(String key) {
@@ -85,13 +85,13 @@ public class ObsProperties {
             return false;
         }
         ObsProperties obsProperties = (ObsProperties) o;
-        return Objects.equals(this.endpoint, obsProperties.endpoint) && Objects.equals(this.buket, obsProperties.buket)
-            && Objects.equals(this.key, obsProperties.key);
+        return Objects.equals(this.endpoint, obsProperties.endpoint)
+            && Objects.equals(this.bucket, obsProperties.bucket) && Objects.equals(this.key, obsProperties.key);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(endpoint, buket, key);
+        return Objects.hash(endpoint, bucket, key);
     }
 
     @Override
@@ -99,7 +99,7 @@ public class ObsProperties {
         StringBuilder sb = new StringBuilder();
         sb.append("class ObsProperties {\n");
         sb.append("    endpoint: ").append(toIndentedString(endpoint)).append("\n");
-        sb.append("    buket: ").append(toIndentedString(buket)).append("\n");
+        sb.append("    bucket: ").append(toIndentedString(bucket)).append("\n");
         sb.append("    key: ").append(toIndentedString(key)).append("\n");
         sb.append("}");
         return sb.toString();

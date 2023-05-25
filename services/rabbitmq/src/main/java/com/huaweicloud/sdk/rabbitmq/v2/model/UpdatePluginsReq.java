@@ -26,7 +26,7 @@ public class UpdatePluginsReq {
     }
 
     /**
-     * 是否开启改插件。
+     * 是否开启该插件。
      * @return enable
      */
     public Boolean getEnable() {

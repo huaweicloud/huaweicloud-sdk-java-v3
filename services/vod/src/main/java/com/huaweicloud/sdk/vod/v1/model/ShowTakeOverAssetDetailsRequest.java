@@ -11,11 +11,6 @@ import java.util.Objects;
 public class ShowTakeOverAssetDetailsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Authorization")
-
-    private String authorization;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Sdk-Date")
 
     private String xSdkDate;
@@ -29,23 +24,6 @@ public class ShowTakeOverAssetDetailsRequest {
     @JsonProperty(value = "source_object")
 
     private String sourceObject;
-
-    public ShowTakeOverAssetDetailsRequest withAuthorization(String authorization) {
-        this.authorization = authorization;
-        return this;
-    }
-
-    /**
-     * 使用AK/SK方式认证时必选，携带的鉴权信息。 
-     * @return authorization
-     */
-    public String getAuthorization() {
-        return authorization;
-    }
-
-    public void setAuthorization(String authorization) {
-        this.authorization = authorization;
-    }
 
     public ShowTakeOverAssetDetailsRequest withXSdkDate(String xSdkDate) {
         this.xSdkDate = xSdkDate;
@@ -109,22 +87,20 @@ public class ShowTakeOverAssetDetailsRequest {
             return false;
         }
         ShowTakeOverAssetDetailsRequest showTakeOverAssetDetailsRequest = (ShowTakeOverAssetDetailsRequest) o;
-        return Objects.equals(this.authorization, showTakeOverAssetDetailsRequest.authorization)
-            && Objects.equals(this.xSdkDate, showTakeOverAssetDetailsRequest.xSdkDate)
+        return Objects.equals(this.xSdkDate, showTakeOverAssetDetailsRequest.xSdkDate)
             && Objects.equals(this.sourceBucket, showTakeOverAssetDetailsRequest.sourceBucket)
             && Objects.equals(this.sourceObject, showTakeOverAssetDetailsRequest.sourceObject);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(authorization, xSdkDate, sourceBucket, sourceObject);
+        return Objects.hash(xSdkDate, sourceBucket, sourceObject);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowTakeOverAssetDetailsRequest {\n");
-        sb.append("    authorization: ").append(toIndentedString(authorization)).append("\n");
         sb.append("    xSdkDate: ").append(toIndentedString(xSdkDate)).append("\n");
         sb.append("    sourceBucket: ").append(toIndentedString(sourceBucket)).append("\n");
         sb.append("    sourceObject: ").append(toIndentedString(sourceObject)).append("\n");

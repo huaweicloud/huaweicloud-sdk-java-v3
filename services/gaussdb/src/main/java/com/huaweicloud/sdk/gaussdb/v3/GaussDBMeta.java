@@ -2063,6 +2063,40 @@ public class GaussDBMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RestoreOldInstanceRequest, RestoreOldInstanceResponse> restoreOldInstance = genForrestoreOldInstance();
+
+    private static HttpRequestDef<RestoreOldInstanceRequest, RestoreOldInstanceResponse> genForrestoreOldInstance() {
+        // basic
+        HttpRequestDef.Builder<RestoreOldInstanceRequest, RestoreOldInstanceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RestoreOldInstanceRequest.class, RestoreOldInstanceResponse.class)
+                .withName("RestoreOldInstance")
+                .withUri("/v3/{project_id}/instances/restore")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RestoreOldInstanceRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.<RestoreRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(RestoreRequest.class),
+            f -> f.withMarshaller(RestoreOldInstanceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SetGaussMySqlProxyWeightRequest, SetGaussMySqlProxyWeightResponse> setGaussMySqlProxyWeight = genForsetGaussMySqlProxyWeight();
 
     private static HttpRequestDef<SetGaussMySqlProxyWeightRequest, SetGaussMySqlProxyWeightResponse> genForsetGaussMySqlProxyWeight() {
@@ -2171,6 +2205,48 @@ public class GaussDBMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAuditLogRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowBackupRestoreTimeRequest, ShowBackupRestoreTimeResponse> showBackupRestoreTime = genForshowBackupRestoreTime();
+
+    private static HttpRequestDef<ShowBackupRestoreTimeRequest, ShowBackupRestoreTimeResponse> genForshowBackupRestoreTime() {
+        // basic
+        HttpRequestDef.Builder<ShowBackupRestoreTimeRequest, ShowBackupRestoreTimeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowBackupRestoreTimeRequest.class, ShowBackupRestoreTimeResponse.class)
+                .withName("ShowBackupRestoreTime")
+                .withUri("/v3/{project_id}/instances/{instance_id}/restore-time")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBackupRestoreTimeRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.<String>withRequestField("date",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBackupRestoreTimeRequest::getDate, (req, v) -> {
+                req.setDate(v);
+            })
+        );
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBackupRestoreTimeRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             })
         );
@@ -3399,6 +3475,56 @@ public class GaussDBMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TaurusModifyInstanceMonitorRequestBody.class),
             f -> f.withMarshaller(UpdateInstanceMonitorRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateProxyConnectionPoolTypeRequest, UpdateProxyConnectionPoolTypeResponse> updateProxyConnectionPoolType = genForupdateProxyConnectionPoolType();
+
+    private static HttpRequestDef<UpdateProxyConnectionPoolTypeRequest, UpdateProxyConnectionPoolTypeResponse> genForupdateProxyConnectionPoolType() {
+        // basic
+        HttpRequestDef.Builder<UpdateProxyConnectionPoolTypeRequest, UpdateProxyConnectionPoolTypeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateProxyConnectionPoolTypeRequest.class, UpdateProxyConnectionPoolTypeResponse.class)
+                .withName("UpdateProxyConnectionPoolType")
+                .withUri("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/connection-pool-type")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateProxyConnectionPoolTypeRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.<String>withRequestField("proxy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateProxyConnectionPoolTypeRequest::getProxyId, (req, v) -> {
+                req.setProxyId(v);
+            })
+        );
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateProxyConnectionPoolTypeRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.<ProxyUpdateProxyConnectionPoolTypeRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ProxyUpdateProxyConnectionPoolTypeRequest.class),
+            f -> f.withMarshaller(UpdateProxyConnectionPoolTypeRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );

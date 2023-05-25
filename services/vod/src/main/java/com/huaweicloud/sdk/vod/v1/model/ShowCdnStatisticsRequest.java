@@ -11,11 +11,6 @@ import java.util.Objects;
 public class ShowCdnStatisticsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Authorization")
-
-    private String authorization;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Sdk-Date")
 
     private String xSdkDate;
@@ -44,23 +39,6 @@ public class ShowCdnStatisticsRequest {
     @JsonProperty(value = "interval")
 
     private Integer interval;
-
-    public ShowCdnStatisticsRequest withAuthorization(String authorization) {
-        this.authorization = authorization;
-        return this;
-    }
-
-    /**
-     * 使用AK/SK方式认证时必选，携带的鉴权信息。 
-     * @return authorization
-     */
-    public String getAuthorization() {
-        return authorization;
-    }
-
-    public void setAuthorization(String authorization) {
-        this.authorization = authorization;
-    }
 
     public ShowCdnStatisticsRequest withXSdkDate(String xSdkDate) {
         this.xSdkDate = xSdkDate;
@@ -175,8 +153,7 @@ public class ShowCdnStatisticsRequest {
             return false;
         }
         ShowCdnStatisticsRequest showCdnStatisticsRequest = (ShowCdnStatisticsRequest) o;
-        return Objects.equals(this.authorization, showCdnStatisticsRequest.authorization)
-            && Objects.equals(this.xSdkDate, showCdnStatisticsRequest.xSdkDate)
+        return Objects.equals(this.xSdkDate, showCdnStatisticsRequest.xSdkDate)
             && Objects.equals(this.startTime, showCdnStatisticsRequest.startTime)
             && Objects.equals(this.endTime, showCdnStatisticsRequest.endTime)
             && Objects.equals(this.statType, showCdnStatisticsRequest.statType)
@@ -186,14 +163,13 @@ public class ShowCdnStatisticsRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(authorization, xSdkDate, startTime, endTime, statType, domain, interval);
+        return Objects.hash(xSdkDate, startTime, endTime, statType, domain, interval);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowCdnStatisticsRequest {\n");
-        sb.append("    authorization: ").append(toIndentedString(authorization)).append("\n");
         sb.append("    xSdkDate: ").append(toIndentedString(xSdkDate)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");

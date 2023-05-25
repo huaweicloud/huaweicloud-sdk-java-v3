@@ -19,11 +19,6 @@ import java.util.function.Consumer;
 public class ListAssetListRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Authorization")
-
-    private String authorization;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Sdk-Date")
 
     private String xSdkDate;
@@ -327,23 +322,6 @@ public class ListAssetListRequest {
 
     private OrderEnum order;
 
-    public ListAssetListRequest withAuthorization(String authorization) {
-        this.authorization = authorization;
-        return this;
-    }
-
-    /**
-     * 使用AK/SK方式认证时必选，携带的鉴权信息。 
-     * @return authorization
-     */
-    public String getAuthorization() {
-        return authorization;
-    }
-
-    public void setAuthorization(String authorization) {
-        this.authorization = authorization;
-    }
-
     public ListAssetListRequest withXSdkDate(String xSdkDate) {
         this.xSdkDate = xSdkDate;
         return this;
@@ -607,8 +585,7 @@ public class ListAssetListRequest {
             return false;
         }
         ListAssetListRequest listAssetListRequest = (ListAssetListRequest) o;
-        return Objects.equals(this.authorization, listAssetListRequest.authorization)
-            && Objects.equals(this.xSdkDate, listAssetListRequest.xSdkDate)
+        return Objects.equals(this.xSdkDate, listAssetListRequest.xSdkDate)
             && Objects.equals(this.assetId, listAssetListRequest.assetId)
             && Objects.equals(this.status, listAssetListRequest.status)
             && Objects.equals(this.startTime, listAssetListRequest.startTime)
@@ -624,8 +601,7 @@ public class ListAssetListRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(authorization,
-            xSdkDate,
+        return Objects.hash(xSdkDate,
             assetId,
             status,
             startTime,
@@ -643,7 +619,6 @@ public class ListAssetListRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListAssetListRequest {\n");
-        sb.append("    authorization: ").append(toIndentedString(authorization)).append("\n");
         sb.append("    xSdkDate: ").append(toIndentedString(xSdkDate)).append("\n");
         sb.append("    assetId: ").append(toIndentedString(assetId)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");

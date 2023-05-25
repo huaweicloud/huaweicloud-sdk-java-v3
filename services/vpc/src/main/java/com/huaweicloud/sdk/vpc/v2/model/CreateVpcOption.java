@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.vpc.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * vpc对象
@@ -29,6 +32,11 @@ public class CreateVpcOption {
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<String> tags = null;
 
     public CreateVpcOption withCidr(String cidr) {
         this.cidr = cidr;
@@ -98,6 +106,39 @@ public class CreateVpcOption {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public CreateVpcOption withTags(List<String> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public CreateVpcOption addTagsItem(String tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public CreateVpcOption withTags(Consumer<List<String>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 功能说明：VPC资源标签。创建VPC时，给VPC添加资源标签。 取值范围：最大10个标签, key：标签名称; value：标签值。 格式：[key*value]，每一个标签的key和value之间用*连接
+     * @return tags
+     */
+    public List<String> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<String> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -109,12 +150,13 @@ public class CreateVpcOption {
         CreateVpcOption createVpcOption = (CreateVpcOption) o;
         return Objects.equals(this.cidr, createVpcOption.cidr) && Objects.equals(this.name, createVpcOption.name)
             && Objects.equals(this.description, createVpcOption.description)
-            && Objects.equals(this.enterpriseProjectId, createVpcOption.enterpriseProjectId);
+            && Objects.equals(this.enterpriseProjectId, createVpcOption.enterpriseProjectId)
+            && Objects.equals(this.tags, createVpcOption.tags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(cidr, name, description, enterpriseProjectId);
+        return Objects.hash(cidr, name, description, enterpriseProjectId, tags);
     }
 
     @Override
@@ -125,6 +167,7 @@ public class CreateVpcOption {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

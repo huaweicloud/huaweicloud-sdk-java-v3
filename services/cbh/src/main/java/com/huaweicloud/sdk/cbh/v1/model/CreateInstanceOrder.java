@@ -64,7 +64,7 @@ public class CreateInstanceOrder {
     }
 
     /**
-     * 云堡垒机实例ID。
+     * 云堡垒机实例key。
      * minimum: 0
      * maximum: 9223372036854775807
      * @return instanceKey
@@ -100,7 +100,7 @@ public class CreateInstanceOrder {
     }
 
     /**
-     * 云堡垒机实例局点ID。
+     * 云堡垒机实例局点ID。 可参考[地区和终端节点](https://developer.huaweicloud.com/endpoint)获取
      * @return regionId
      */
     public String getRegionId() {
@@ -117,7 +117,7 @@ public class CreateInstanceOrder {
     }
 
     /**
-     * 计费模式。“0”包周期计费。
+     * 计费模式。 - 0 包周期计费。
      * minimum: 0
      * maximum: 9223372036854775807
      * @return chargingMode
@@ -136,7 +136,7 @@ public class CreateInstanceOrder {
     }
 
     /**
-     * 订购周期类型。 - 2：月 - 3：年 - 5：绝对时间
+     * 订购周期类型。 - 2：月 - 3：年
      * minimum: 0
      * maximum: 9223372036854775807
      * @return periodType
@@ -155,7 +155,7 @@ public class CreateInstanceOrder {
     }
 
     /**
-     * 订购周期数。 - period_type=2（周期类型为月），取值范围[1，9] - periodType=3（周期类型为年），取值范围[1，10] - periodType=5时，可空
+     * 订购周期数。 - period_type=2（周期类型为月），取值范围[1，9] - periodType=3（周期类型为年），取值范围[1，10]
      * minimum: 0
      * maximum: 9223372036854775807
      * @return periodNum
@@ -226,7 +226,7 @@ public class CreateInstanceOrder {
     }
 
     /**
-     * 订购数量，取值大于0。
+     * 订购数量。当前仅支持订购1个，填写默认值1。
      * minimum: 0
      * maximum: 9223372036854775807
      * @return subscriptionNum

@@ -30,16 +30,6 @@ public class ProductInfos {
 
     private String resourceSpecCode;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "resource_size_measure_id")
-
-    private String resourceSizeMeasureId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "resource_size")
-
-    private String resourceSize;
-
     public ProductInfos withProductId(String productId) {
         this.productId = productId;
         return this;
@@ -97,7 +87,7 @@ public class ProductInfos {
     }
 
     /**
-     * 待创建云堡垒机规格ID，例如： - cbh.basic.50 - cbh.enhance.50 已上线的规格请参见《云堡垒机产品介绍》的“服务版本差异(https://support.huaweicloud.com/productdesc-cbh/cbh_01_0010.html)”章节。
+     * 待创建云堡垒机规格ID，例如： - cbh.basic.50 - cbh.enhance.50 已上线的规格请参见《云堡垒机产品介绍》的[服务版本差异](https://support.huaweicloud.com/productdesc-cbh/cbh_01_0010.html)章节。
      * @return resourceSpecCode
      */
     public String getResourceSpecCode() {
@@ -106,40 +96,6 @@ public class ProductInfos {
 
     public void setResourceSpecCode(String resourceSpecCode) {
         this.resourceSpecCode = resourceSpecCode;
-    }
-
-    public ProductInfos withResourceSizeMeasureId(String resourceSizeMeasureId) {
-        this.resourceSizeMeasureId = resourceSizeMeasureId;
-        return this;
-    }
-
-    /**
-     * 资源容量度量标识。 - 15：Mbps（购买带宽时使用） - 17：GB（购买云硬盘时使用） - 14：个/次（购买堡垒机使用）
-     * @return resourceSizeMeasureId
-     */
-    public String getResourceSizeMeasureId() {
-        return resourceSizeMeasureId;
-    }
-
-    public void setResourceSizeMeasureId(String resourceSizeMeasureId) {
-        this.resourceSizeMeasureId = resourceSizeMeasureId;
-    }
-
-    public ProductInfos withResourceSize(String resourceSize) {
-        this.resourceSize = resourceSize;
-        return this;
-    }
-
-    /**
-     * 资源容量大小。默认为1
-     * @return resourceSize
-     */
-    public String getResourceSize() {
-        return resourceSize;
-    }
-
-    public void setResourceSize(String resourceSize) {
-        this.resourceSize = resourceSize;
     }
 
     @Override
@@ -154,15 +110,12 @@ public class ProductInfos {
         return Objects.equals(this.productId, productInfos.productId)
             && Objects.equals(this.cloudServiceType, productInfos.cloudServiceType)
             && Objects.equals(this.resourceType, productInfos.resourceType)
-            && Objects.equals(this.resourceSpecCode, productInfos.resourceSpecCode)
-            && Objects.equals(this.resourceSizeMeasureId, productInfos.resourceSizeMeasureId)
-            && Objects.equals(this.resourceSize, productInfos.resourceSize);
+            && Objects.equals(this.resourceSpecCode, productInfos.resourceSpecCode);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(productId, cloudServiceType, resourceType, resourceSpecCode, resourceSizeMeasureId, resourceSize);
+        return Objects.hash(productId, cloudServiceType, resourceType, resourceSpecCode);
     }
 
     @Override
@@ -173,8 +126,6 @@ public class ProductInfos {
         sb.append("    cloudServiceType: ").append(toIndentedString(cloudServiceType)).append("\n");
         sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
         sb.append("    resourceSpecCode: ").append(toIndentedString(resourceSpecCode)).append("\n");
-        sb.append("    resourceSizeMeasureId: ").append(toIndentedString(resourceSizeMeasureId)).append("\n");
-        sb.append("    resourceSize: ").append(toIndentedString(resourceSize)).append("\n");
         sb.append("}");
         return sb.toString();
     }

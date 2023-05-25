@@ -85,7 +85,7 @@ public class ShowInstanceMessagesResponse extends SdkResponse {
     }
 
     /**
-     * 消息条数。
+     * 每页消息条数。
      * @return size
      */
     public Long getSize() {

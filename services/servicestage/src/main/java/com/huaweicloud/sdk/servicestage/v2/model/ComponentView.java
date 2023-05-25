@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.servicestage.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -25,6 +27,16 @@ public class ComponentView {
     @JsonProperty(value = "name")
 
     private String name;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "project_id")
+
+    private String projectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pipeline_ids")
+
+    private List<String> pipelineIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "runtime")
@@ -55,6 +67,11 @@ public class ComponentView {
     @JsonProperty(value = "source")
 
     private SourceObject source;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "build")
+
+    private BuildInfo build;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "creator")
@@ -120,6 +137,56 @@ public class ComponentView {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public ComponentView withProjectId(String projectId) {
+        this.projectId = projectId;
+        return this;
+    }
+
+    /**
+     * 项目ID。
+     * @return projectId
+     */
+    public String getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(String projectId) {
+        this.projectId = projectId;
+    }
+
+    public ComponentView withPipelineIds(List<String> pipelineIds) {
+        this.pipelineIds = pipelineIds;
+        return this;
+    }
+
+    public ComponentView addPipelineIdsItem(String pipelineIdsItem) {
+        if (this.pipelineIds == null) {
+            this.pipelineIds = new ArrayList<>();
+        }
+        this.pipelineIds.add(pipelineIdsItem);
+        return this;
+    }
+
+    public ComponentView withPipelineIds(Consumer<List<String>> pipelineIdsSetter) {
+        if (this.pipelineIds == null) {
+            this.pipelineIds = new ArrayList<>();
+        }
+        pipelineIdsSetter.accept(this.pipelineIds);
+        return this;
+    }
+
+    /**
+     * 流水线Id列表，最多10个。
+     * @return pipelineIds
+     */
+    public List<String> getPipelineIds() {
+        return pipelineIds;
+    }
+
+    public void setPipelineIds(List<String> pipelineIds) {
+        this.pipelineIds = pipelineIds;
     }
 
     public ComponentView withRuntime(RuntimeType runtime) {
@@ -233,6 +300,32 @@ public class ComponentView {
         this.source = source;
     }
 
+    public ComponentView withBuild(BuildInfo build) {
+        this.build = build;
+        return this;
+    }
+
+    public ComponentView withBuild(Consumer<BuildInfo> buildSetter) {
+        if (this.build == null) {
+            this.build = new BuildInfo();
+            buildSetter.accept(this.build);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get build
+     * @return build
+     */
+    public BuildInfo getBuild() {
+        return build;
+    }
+
+    public void setBuild(BuildInfo build) {
+        this.build = build;
+    }
+
     public ComponentView withCreator(String creator) {
         this.creator = creator;
         return this;
@@ -295,12 +388,14 @@ public class ComponentView {
         ComponentView componentView = (ComponentView) o;
         return Objects.equals(this.id, componentView.id)
             && Objects.equals(this.applicationId, componentView.applicationId)
-            && Objects.equals(this.name, componentView.name) && Objects.equals(this.runtime, componentView.runtime)
+            && Objects.equals(this.name, componentView.name) && Objects.equals(this.projectId, componentView.projectId)
+            && Objects.equals(this.pipelineIds, componentView.pipelineIds)
+            && Objects.equals(this.runtime, componentView.runtime)
             && Objects.equals(this.category, componentView.category)
             && Objects.equals(this.subCategory, componentView.subCategory)
             && Objects.equals(this.description, componentView.description)
             && Objects.equals(this.status, componentView.status) && Objects.equals(this.source, componentView.source)
-            && Objects.equals(this.creator, componentView.creator)
+            && Objects.equals(this.build, componentView.build) && Objects.equals(this.creator, componentView.creator)
             && Objects.equals(this.createTime, componentView.createTime)
             && Objects.equals(this.updateTime, componentView.updateTime);
     }
@@ -310,12 +405,15 @@ public class ComponentView {
         return Objects.hash(id,
             applicationId,
             name,
+            projectId,
+            pipelineIds,
             runtime,
             category,
             subCategory,
             description,
             status,
             source,
+            build,
             creator,
             createTime,
             updateTime);
@@ -328,12 +426,15 @@ public class ComponentView {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    applicationId: ").append(toIndentedString(applicationId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
+        sb.append("    pipelineIds: ").append(toIndentedString(pipelineIds)).append("\n");
         sb.append("    runtime: ").append(toIndentedString(runtime)).append("\n");
         sb.append("    category: ").append(toIndentedString(category)).append("\n");
         sb.append("    subCategory: ").append(toIndentedString(subCategory)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    source: ").append(toIndentedString(source)).append("\n");
+        sb.append("    build: ").append(toIndentedString(build)).append("\n");
         sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");

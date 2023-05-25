@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -18,14 +17,14 @@ public class ListConfigTemplatesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_num")
 
-    private BigDecimal templateNum;
+    private Integer templateNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "config_templates")
 
     private List<ConfigTemplatesListInfo> configTemplates = null;
 
-    public ListConfigTemplatesResponse withTemplateNum(BigDecimal templateNum) {
+    public ListConfigTemplatesResponse withTemplateNum(Integer templateNum) {
         this.templateNum = templateNum;
         return this;
     }
@@ -34,11 +33,11 @@ public class ListConfigTemplatesResponse extends SdkResponse {
      * 模板个数。
      * @return templateNum
      */
-    public BigDecimal getTemplateNum() {
+    public Integer getTemplateNum() {
         return templateNum;
     }
 
-    public void setTemplateNum(BigDecimal templateNum) {
+    public void setTemplateNum(Integer templateNum) {
         this.templateNum = templateNum;
     }
 

@@ -117,6 +117,11 @@ public class ListServiceDescribeDetailsResponse extends SdkResponse {
 
     private String publicBorderGroup;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_policy")
+
+    private Boolean enablePolicy;
+
     public ListServiceDescribeDetailsResponse withId(String id) {
         this.id = id;
         return this;
@@ -219,6 +224,23 @@ public class ListServiceDescribeDetailsResponse extends SdkResponse {
         this.publicBorderGroup = publicBorderGroup;
     }
 
+    public ListServiceDescribeDetailsResponse withEnablePolicy(Boolean enablePolicy) {
+        this.enablePolicy = enablePolicy;
+        return this;
+    }
+
+    /**
+     * 是否开启终端节点策略。 ● false：不支持设置终端节点策略 ● true：支持设置终端节点策略 默认为false 是否开启终端节点策略。 ● false：不支持设置终端节点策略 ● true：支持设置终端节点策略 默认为false
+     * @return enablePolicy
+     */
+    public Boolean getEnablePolicy() {
+        return enablePolicy;
+    }
+
+    public void setEnablePolicy(Boolean enablePolicy) {
+        this.enablePolicy = enablePolicy;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -233,12 +255,13 @@ public class ListServiceDescribeDetailsResponse extends SdkResponse {
             && Objects.equals(this.serviceType, listServiceDescribeDetailsResponse.serviceType)
             && Objects.equals(this.createdAt, listServiceDescribeDetailsResponse.createdAt)
             && Objects.equals(this.isCharge, listServiceDescribeDetailsResponse.isCharge)
-            && Objects.equals(this.publicBorderGroup, listServiceDescribeDetailsResponse.publicBorderGroup);
+            && Objects.equals(this.publicBorderGroup, listServiceDescribeDetailsResponse.publicBorderGroup)
+            && Objects.equals(this.enablePolicy, listServiceDescribeDetailsResponse.enablePolicy);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, serviceName, serviceType, createdAt, isCharge, publicBorderGroup);
+        return Objects.hash(id, serviceName, serviceType, createdAt, isCharge, publicBorderGroup, enablePolicy);
     }
 
     @Override
@@ -251,6 +274,7 @@ public class ListServiceDescribeDetailsResponse extends SdkResponse {
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    isCharge: ").append(toIndentedString(isCharge)).append("\n");
         sb.append("    publicBorderGroup: ").append(toIndentedString(publicBorderGroup)).append("\n");
+        sb.append("    enablePolicy: ").append(toIndentedString(enablePolicy)).append("\n");
         sb.append("}");
         return sb.toString();
     }

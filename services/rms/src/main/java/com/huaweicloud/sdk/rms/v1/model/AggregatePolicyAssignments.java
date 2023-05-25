@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 聚合合规策略响应列表
+ * 聚合合规规则。
  */
 public class AggregatePolicyAssignments {
 
@@ -97,7 +97,7 @@ public class AggregatePolicyAssignments {
     }
 
     /**
-     * 账户ID
+     * 源帐号ID。
      * @return accountId
      */
     public String getAccountId() {

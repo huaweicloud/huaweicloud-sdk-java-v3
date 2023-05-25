@@ -30,6 +30,11 @@ public class AddressGroup {
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "max_capacity")
+
+    private Integer maxCapacity;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_set")
 
     private List<String> ipSet = null;
@@ -53,6 +58,16 @@ public class AddressGroup {
     @JsonProperty(value = "tenant_id")
 
     private String tenantId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private String status;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status_message")
+
+    private String statusMessage;
 
     public AddressGroup withId(String id) {
         this.id = id;
@@ -103,6 +118,23 @@ public class AddressGroup {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public AddressGroup withMaxCapacity(Integer maxCapacity) {
+        this.maxCapacity = maxCapacity;
+        return this;
+    }
+
+    /**
+     * 功能说明：地址组最大条目数，限制地址组可以包含的地址数量 取值范围：0-20 默认值：20
+     * @return maxCapacity
+     */
+    public Integer getMaxCapacity() {
+        return maxCapacity;
+    }
+
+    public void setMaxCapacity(Integer maxCapacity) {
+        this.maxCapacity = maxCapacity;
     }
 
     public AddressGroup withIpSet(List<String> ipSet) {
@@ -206,6 +238,40 @@ public class AddressGroup {
         this.tenantId = tenantId;
     }
 
+    public AddressGroup withStatus(String status) {
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * 功能说明：地址组状态 取值范围：       NORMAL：正常       UPDATING：更新中       UPDATE_FAILED：更新失败 默认值：NORMAL 约束：当地址组处于UPDATING（更新中）状态时，不允许再次更新
+     * @return status
+     */
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public AddressGroup withStatusMessage(String statusMessage) {
+        this.statusMessage = statusMessage;
+        return this;
+    }
+
+    /**
+     * 功能说明：地址组状态详情信息
+     * @return statusMessage
+     */
+    public String getStatusMessage() {
+        return statusMessage;
+    }
+
+    public void setStatusMessage(String statusMessage) {
+        this.statusMessage = statusMessage;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -217,15 +283,27 @@ public class AddressGroup {
         AddressGroup addressGroup = (AddressGroup) o;
         return Objects.equals(this.id, addressGroup.id) && Objects.equals(this.name, addressGroup.name)
             && Objects.equals(this.description, addressGroup.description)
+            && Objects.equals(this.maxCapacity, addressGroup.maxCapacity)
             && Objects.equals(this.ipSet, addressGroup.ipSet) && Objects.equals(this.ipVersion, addressGroup.ipVersion)
             && Objects.equals(this.createdAt, addressGroup.createdAt)
             && Objects.equals(this.updatedAt, addressGroup.updatedAt)
-            && Objects.equals(this.tenantId, addressGroup.tenantId);
+            && Objects.equals(this.tenantId, addressGroup.tenantId) && Objects.equals(this.status, addressGroup.status)
+            && Objects.equals(this.statusMessage, addressGroup.statusMessage);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, ipSet, ipVersion, createdAt, updatedAt, tenantId);
+        return Objects.hash(id,
+            name,
+            description,
+            maxCapacity,
+            ipSet,
+            ipVersion,
+            createdAt,
+            updatedAt,
+            tenantId,
+            status,
+            statusMessage);
     }
 
     @Override
@@ -235,11 +313,14 @@ public class AddressGroup {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    maxCapacity: ").append(toIndentedString(maxCapacity)).append("\n");
         sb.append("    ipSet: ").append(toIndentedString(ipSet)).append("\n");
         sb.append("    ipVersion: ").append(toIndentedString(ipVersion)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    statusMessage: ").append(toIndentedString(statusMessage)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -75,7 +75,7 @@ public class AvailabilityZones {
     }
 
     /**
-     * 云堡垒机服务分区ID
+     * 云堡垒机服务分区ID。
      * @return regionId
      */
     public String getRegionId() {

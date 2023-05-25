@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 当前用户云堡垒机的配额信息。公有云返回null。
+ * 当前用户云堡垒机的配额信息。返回默认值null。
  */
 public class QuotaDetail {
 

@@ -183,6 +183,64 @@ public class CbrAsyncClient {
     }
 
     /**
+     * 批量修改存储库
+     *
+     * 批量修改项目下所有存储库
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchUpdateVaultRequest 请求对象
+     * @return CompletableFuture<BatchUpdateVaultResponse>
+     */
+    public CompletableFuture<BatchUpdateVaultResponse> batchUpdateVaultAsync(BatchUpdateVaultRequest request) {
+        return hcClient.asyncInvokeHttp(request, CbrMeta.batchUpdateVault);
+    }
+
+    /**
+     * 批量修改存储库
+     *
+     * 批量修改项目下所有存储库
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchUpdateVaultRequest 请求对象
+     * @return AsyncInvoker<BatchUpdateVaultRequest, BatchUpdateVaultResponse>
+     */
+    public AsyncInvoker<BatchUpdateVaultRequest, BatchUpdateVaultResponse> batchUpdateVaultAsyncInvoker(
+        BatchUpdateVaultRequest request) {
+        return new AsyncInvoker<BatchUpdateVaultRequest, BatchUpdateVaultResponse>(request, CbrMeta.batchUpdateVault,
+            hcClient);
+    }
+
+    /**
+     * 查询agent状态
+     *
+     * 检查应用一致性Agent状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CheckAgentRequest 请求对象
+     * @return CompletableFuture<CheckAgentResponse>
+     */
+    public CompletableFuture<CheckAgentResponse> checkAgentAsync(CheckAgentRequest request) {
+        return hcClient.asyncInvokeHttp(request, CbrMeta.checkAgent);
+    }
+
+    /**
+     * 查询agent状态
+     *
+     * 检查应用一致性Agent状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CheckAgentRequest 请求对象
+     * @return AsyncInvoker<CheckAgentRequest, CheckAgentResponse>
+     */
+    public AsyncInvoker<CheckAgentRequest, CheckAgentResponse> checkAgentAsyncInvoker(CheckAgentRequest request) {
+        return new AsyncInvoker<CheckAgentRequest, CheckAgentResponse>(request, CbrMeta.checkAgent, hcClient);
+    }
+
+    /**
      * 复制备份
      *
      * 跨区域复制备份。
@@ -297,6 +355,36 @@ public class CbrAsyncClient {
     public AsyncInvoker<CreatePolicyRequest, CreatePolicyResponse> createPolicyAsyncInvoker(
         CreatePolicyRequest request) {
         return new AsyncInvoker<CreatePolicyRequest, CreatePolicyResponse>(request, CbrMeta.createPolicy, hcClient);
+    }
+
+    /**
+     * 创建包周期存储库
+     *
+     * 创建包周期存储库
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatePostPaidVaultRequest 请求对象
+     * @return CompletableFuture<CreatePostPaidVaultResponse>
+     */
+    public CompletableFuture<CreatePostPaidVaultResponse> createPostPaidVaultAsync(CreatePostPaidVaultRequest request) {
+        return hcClient.asyncInvokeHttp(request, CbrMeta.createPostPaidVault);
+    }
+
+    /**
+     * 创建包周期存储库
+     *
+     * 创建包周期存储库
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatePostPaidVaultRequest 请求对象
+     * @return AsyncInvoker<CreatePostPaidVaultRequest, CreatePostPaidVaultResponse>
+     */
+    public AsyncInvoker<CreatePostPaidVaultRequest, CreatePostPaidVaultResponse> createPostPaidVaultAsyncInvoker(
+        CreatePostPaidVaultRequest request) {
+        return new AsyncInvoker<CreatePostPaidVaultRequest, CreatePostPaidVaultResponse>(request,
+            CbrMeta.createPostPaidVault, hcClient);
     }
 
     /**
@@ -565,6 +653,36 @@ public class CbrAsyncClient {
     }
 
     /**
+     * 同步备份还原点
+     *
+     * 针对vault同步备份副本
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ImportCheckpointRequest 请求对象
+     * @return CompletableFuture<ImportCheckpointResponse>
+     */
+    public CompletableFuture<ImportCheckpointResponse> importCheckpointAsync(ImportCheckpointRequest request) {
+        return hcClient.asyncInvokeHttp(request, CbrMeta.importCheckpoint);
+    }
+
+    /**
+     * 同步备份还原点
+     *
+     * 针对vault同步备份副本
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ImportCheckpointRequest 请求对象
+     * @return AsyncInvoker<ImportCheckpointRequest, ImportCheckpointResponse>
+     */
+    public AsyncInvoker<ImportCheckpointRequest, ImportCheckpointResponse> importCheckpointAsyncInvoker(
+        ImportCheckpointRequest request) {
+        return new AsyncInvoker<ImportCheckpointRequest, ImportCheckpointResponse>(request, CbrMeta.importCheckpoint,
+            hcClient);
+    }
+
+    /**
      * 查询客户端列表
      *
      * 查询客户端列表
@@ -618,6 +736,66 @@ public class CbrAsyncClient {
      */
     public AsyncInvoker<ListBackupsRequest, ListBackupsResponse> listBackupsAsyncInvoker(ListBackupsRequest request) {
         return new AsyncInvoker<ListBackupsRequest, ListBackupsResponse>(request, CbrMeta.listBackups, hcClient);
+    }
+
+    /**
+     * 查询租户项目列表
+     *
+     * 根据指定租户名称查询项目列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDomainProjectsRequest 请求对象
+     * @return CompletableFuture<ListDomainProjectsResponse>
+     */
+    public CompletableFuture<ListDomainProjectsResponse> listDomainProjectsAsync(ListDomainProjectsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CbrMeta.listDomainProjects);
+    }
+
+    /**
+     * 查询租户项目列表
+     *
+     * 根据指定租户名称查询项目列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDomainProjectsRequest 请求对象
+     * @return AsyncInvoker<ListDomainProjectsRequest, ListDomainProjectsResponse>
+     */
+    public AsyncInvoker<ListDomainProjectsRequest, ListDomainProjectsResponse> listDomainProjectsAsyncInvoker(
+        ListDomainProjectsRequest request) {
+        return new AsyncInvoker<ListDomainProjectsRequest, ListDomainProjectsResponse>(request,
+            CbrMeta.listDomainProjects, hcClient);
+    }
+
+    /**
+     * 查询其他区域存储库列表
+     *
+     * 查询其他区域的存储库列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListExternalVaultRequest 请求对象
+     * @return CompletableFuture<ListExternalVaultResponse>
+     */
+    public CompletableFuture<ListExternalVaultResponse> listExternalVaultAsync(ListExternalVaultRequest request) {
+        return hcClient.asyncInvokeHttp(request, CbrMeta.listExternalVault);
+    }
+
+    /**
+     * 查询其他区域存储库列表
+     *
+     * 查询其他区域的存储库列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListExternalVaultRequest 请求对象
+     * @return AsyncInvoker<ListExternalVaultRequest, ListExternalVaultResponse>
+     */
+    public AsyncInvoker<ListExternalVaultRequest, ListExternalVaultResponse> listExternalVaultAsyncInvoker(
+        ListExternalVaultRequest request) {
+        return new AsyncInvoker<ListExternalVaultRequest, ListExternalVaultResponse>(request, CbrMeta.listExternalVault,
+            hcClient);
     }
 
     /**
@@ -678,6 +856,35 @@ public class CbrAsyncClient {
     }
 
     /**
+     * 查询租户的项目信息
+     *
+     * 查询租户的企业项目信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListProjectsRequest 请求对象
+     * @return CompletableFuture<ListProjectsResponse>
+     */
+    public CompletableFuture<ListProjectsResponse> listProjectsAsync(ListProjectsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CbrMeta.listProjects);
+    }
+
+    /**
+     * 查询租户的项目信息
+     *
+     * 查询租户的企业项目信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListProjectsRequest 请求对象
+     * @return AsyncInvoker<ListProjectsRequest, ListProjectsResponse>
+     */
+    public AsyncInvoker<ListProjectsRequest, ListProjectsResponse> listProjectsAsyncInvoker(
+        ListProjectsRequest request) {
+        return new AsyncInvoker<ListProjectsRequest, ListProjectsResponse>(request, CbrMeta.listProjects, hcClient);
+    }
+
+    /**
      * 查询可保护资源
      *
      * 查询可保护性资源列表
@@ -733,6 +940,35 @@ public class CbrAsyncClient {
      */
     public AsyncInvoker<ListVaultRequest, ListVaultResponse> listVaultAsyncInvoker(ListVaultRequest request) {
         return new AsyncInvoker<ListVaultRequest, ListVaultResponse>(request, CbrMeta.listVault, hcClient);
+    }
+
+    /**
+     * 租户迁移
+     *
+     * 将CSBS/VBS资源迁移到CBR。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param MigrateDomainRequest 请求对象
+     * @return CompletableFuture<MigrateDomainResponse>
+     */
+    public CompletableFuture<MigrateDomainResponse> migrateDomainAsync(MigrateDomainRequest request) {
+        return hcClient.asyncInvokeHttp(request, CbrMeta.migrateDomain);
+    }
+
+    /**
+     * 租户迁移
+     *
+     * 将CSBS/VBS资源迁移到CBR。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param MigrateDomainRequest 请求对象
+     * @return AsyncInvoker<MigrateDomainRequest, MigrateDomainResponse>
+     */
+    public AsyncInvoker<MigrateDomainRequest, MigrateDomainResponse> migrateDomainAsyncInvoker(
+        MigrateDomainRequest request) {
+        return new AsyncInvoker<MigrateDomainRequest, MigrateDomainResponse>(request, CbrMeta.migrateDomain, hcClient);
     }
 
     /**
@@ -885,6 +1121,36 @@ public class CbrAsyncClient {
     }
 
     /**
+     * 设置存储库资源
+     *
+     * 设置存储库资源是否自动备份
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SetVaultResourceRequest 请求对象
+     * @return CompletableFuture<SetVaultResourceResponse>
+     */
+    public CompletableFuture<SetVaultResourceResponse> setVaultResourceAsync(SetVaultResourceRequest request) {
+        return hcClient.asyncInvokeHttp(request, CbrMeta.setVaultResource);
+    }
+
+    /**
+     * 设置存储库资源
+     *
+     * 设置存储库资源是否自动备份
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SetVaultResourceRequest 请求对象
+     * @return AsyncInvoker<SetVaultResourceRequest, SetVaultResourceResponse>
+     */
+    public AsyncInvoker<SetVaultResourceRequest, SetVaultResourceResponse> setVaultResourceAsyncInvoker(
+        SetVaultResourceRequest request) {
+        return new AsyncInvoker<SetVaultResourceRequest, SetVaultResourceResponse>(request, CbrMeta.setVaultResource,
+            hcClient);
+    }
+
+    /**
      * 查询指定客户端
      *
      * 查询指定客户端
@@ -971,6 +1237,34 @@ public class CbrAsyncClient {
     }
 
     /**
+     * 查询租户信息
+     *
+     * 由控制台调用的内部接口，用于仅在查询共享备份时获取源project_id的域名信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDomainRequest 请求对象
+     * @return CompletableFuture<ShowDomainResponse>
+     */
+    public CompletableFuture<ShowDomainResponse> showDomainAsync(ShowDomainRequest request) {
+        return hcClient.asyncInvokeHttp(request, CbrMeta.showDomain);
+    }
+
+    /**
+     * 查询租户信息
+     *
+     * 由控制台调用的内部接口，用于仅在查询共享备份时获取源project_id的域名信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDomainRequest 请求对象
+     * @return AsyncInvoker<ShowDomainRequest, ShowDomainResponse>
+     */
+    public AsyncInvoker<ShowDomainRequest, ShowDomainResponse> showDomainAsyncInvoker(ShowDomainRequest request) {
+        return new AsyncInvoker<ShowDomainRequest, ShowDomainResponse>(request, CbrMeta.showDomain, hcClient);
+    }
+
+    /**
      * 获取备份成员详情
      *
      * 获取备份成员的详情
@@ -1027,6 +1321,65 @@ public class CbrAsyncClient {
     public AsyncInvoker<ShowMembersDetailRequest, ShowMembersDetailResponse> showMembersDetailAsyncInvoker(
         ShowMembersDetailRequest request) {
         return new AsyncInvoker<ShowMembersDetailRequest, ShowMembersDetailResponse>(request, CbrMeta.showMembersDetail,
+            hcClient);
+    }
+
+    /**
+     * 查询备份元数据
+     *
+     * 查询备份时资源的元数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowMetadataRequest 请求对象
+     * @return CompletableFuture<ShowMetadataResponse>
+     */
+    public CompletableFuture<ShowMetadataResponse> showMetadataAsync(ShowMetadataRequest request) {
+        return hcClient.asyncInvokeHttp(request, CbrMeta.showMetadata);
+    }
+
+    /**
+     * 查询备份元数据
+     *
+     * 查询备份时资源的元数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowMetadataRequest 请求对象
+     * @return AsyncInvoker<ShowMetadataRequest, ShowMetadataResponse>
+     */
+    public AsyncInvoker<ShowMetadataRequest, ShowMetadataResponse> showMetadataAsyncInvoker(
+        ShowMetadataRequest request) {
+        return new AsyncInvoker<ShowMetadataRequest, ShowMetadataResponse>(request, CbrMeta.showMetadata, hcClient);
+    }
+
+    /**
+     * 查询迁移
+     *
+     * 查询迁移结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowMigrateStatusRequest 请求对象
+     * @return CompletableFuture<ShowMigrateStatusResponse>
+     */
+    public CompletableFuture<ShowMigrateStatusResponse> showMigrateStatusAsync(ShowMigrateStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, CbrMeta.showMigrateStatus);
+    }
+
+    /**
+     * 查询迁移
+     *
+     * 查询迁移结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowMigrateStatusRequest 请求对象
+     * @return AsyncInvoker<ShowMigrateStatusRequest, ShowMigrateStatusResponse>
+     */
+    public AsyncInvoker<ShowMigrateStatusRequest, ShowMigrateStatusResponse> showMigrateStatusAsyncInvoker(
+        ShowMigrateStatusRequest request) {
+        return new AsyncInvoker<ShowMigrateStatusRequest, ShowMigrateStatusResponse>(request, CbrMeta.showMigrateStatus,
             hcClient);
     }
 
@@ -1145,6 +1498,36 @@ public class CbrAsyncClient {
         ShowReplicationCapabilitiesRequest request) {
         return new AsyncInvoker<ShowReplicationCapabilitiesRequest, ShowReplicationCapabilitiesResponse>(request,
             CbrMeta.showReplicationCapabilities, hcClient);
+    }
+
+    /**
+     * 查询容量统计
+     *
+     * 查询容量统计
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowStorageUsageRequest 请求对象
+     * @return CompletableFuture<ShowStorageUsageResponse>
+     */
+    public CompletableFuture<ShowStorageUsageResponse> showStorageUsageAsync(ShowStorageUsageRequest request) {
+        return hcClient.asyncInvokeHttp(request, CbrMeta.showStorageUsage);
+    }
+
+    /**
+     * 查询容量统计
+     *
+     * 查询容量统计
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowStorageUsageRequest 请求对象
+     * @return AsyncInvoker<ShowStorageUsageRequest, ShowStorageUsageResponse>
+     */
+    public AsyncInvoker<ShowStorageUsageRequest, ShowStorageUsageResponse> showStorageUsageAsyncInvoker(
+        ShowStorageUsageRequest request) {
+        return new AsyncInvoker<ShowStorageUsageRequest, ShowStorageUsageResponse>(request, CbrMeta.showStorageUsage,
+            hcClient);
     }
 
     /**
@@ -1330,6 +1713,35 @@ public class CbrAsyncClient {
     }
 
     /**
+     * 更新备份
+     *
+     * 根据备份id更改备份
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateBackupRequest 请求对象
+     * @return CompletableFuture<UpdateBackupResponse>
+     */
+    public CompletableFuture<UpdateBackupResponse> updateBackupAsync(UpdateBackupRequest request) {
+        return hcClient.asyncInvokeHttp(request, CbrMeta.updateBackup);
+    }
+
+    /**
+     * 更新备份
+     *
+     * 根据备份id更改备份
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateBackupRequest 请求对象
+     * @return AsyncInvoker<UpdateBackupRequest, UpdateBackupResponse>
+     */
+    public AsyncInvoker<UpdateBackupRequest, UpdateBackupResponse> updateBackupAsyncInvoker(
+        UpdateBackupRequest request) {
+        return new AsyncInvoker<UpdateBackupRequest, UpdateBackupResponse>(request, CbrMeta.updateBackup, hcClient);
+    }
+
+    /**
      * 更新备份成员状态
      *
      * 更新备份共享成员的状态，需要接收方执行此API。
@@ -1357,6 +1769,34 @@ public class CbrAsyncClient {
         UpdateMemberStatusRequest request) {
         return new AsyncInvoker<UpdateMemberStatusRequest, UpdateMemberStatusResponse>(request,
             CbrMeta.updateMemberStatus, hcClient);
+    }
+
+    /**
+     * 变更
+     *
+     * 订单更新，支付cbc订单后，调用该接口更新包周期产品订单信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateOrderRequest 请求对象
+     * @return CompletableFuture<UpdateOrderResponse>
+     */
+    public CompletableFuture<UpdateOrderResponse> updateOrderAsync(UpdateOrderRequest request) {
+        return hcClient.asyncInvokeHttp(request, CbrMeta.updateOrder);
+    }
+
+    /**
+     * 变更
+     *
+     * 订单更新，支付cbc订单后，调用该接口更新包周期产品订单信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateOrderRequest 请求对象
+     * @return AsyncInvoker<UpdateOrderRequest, UpdateOrderResponse>
+     */
+    public AsyncInvoker<UpdateOrderRequest, UpdateOrderResponse> updateOrderAsyncInvoker(UpdateOrderRequest request) {
+        return new AsyncInvoker<UpdateOrderRequest, UpdateOrderResponse>(request, CbrMeta.updateOrder, hcClient);
     }
 
     /**

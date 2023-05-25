@@ -71,7 +71,7 @@ public class LaunchTemplateConfig {
     }
 
     /**
-     * VM模板的覆盖
+     * 实例的详细信息
      * @return overrides
      */
     public List<OverrideInfo> getOverrides() {

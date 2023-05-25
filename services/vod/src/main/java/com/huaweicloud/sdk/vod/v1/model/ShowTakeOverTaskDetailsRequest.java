@@ -11,11 +11,6 @@ import java.util.Objects;
 public class ShowTakeOverTaskDetailsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Authorization")
-
-    private String authorization;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Sdk-Date")
 
     private String xSdkDate;
@@ -34,23 +29,6 @@ public class ShowTakeOverTaskDetailsRequest {
     @JsonProperty(value = "size")
 
     private Integer size;
-
-    public ShowTakeOverTaskDetailsRequest withAuthorization(String authorization) {
-        this.authorization = authorization;
-        return this;
-    }
-
-    /**
-     * 使用AK/SK方式认证时必选，携带的鉴权信息。 
-     * @return authorization
-     */
-    public String getAuthorization() {
-        return authorization;
-    }
-
-    public void setAuthorization(String authorization) {
-        this.authorization = authorization;
-    }
 
     public ShowTakeOverTaskDetailsRequest withXSdkDate(String xSdkDate) {
         this.xSdkDate = xSdkDate;
@@ -134,8 +112,7 @@ public class ShowTakeOverTaskDetailsRequest {
             return false;
         }
         ShowTakeOverTaskDetailsRequest showTakeOverTaskDetailsRequest = (ShowTakeOverTaskDetailsRequest) o;
-        return Objects.equals(this.authorization, showTakeOverTaskDetailsRequest.authorization)
-            && Objects.equals(this.xSdkDate, showTakeOverTaskDetailsRequest.xSdkDate)
+        return Objects.equals(this.xSdkDate, showTakeOverTaskDetailsRequest.xSdkDate)
             && Objects.equals(this.taskId, showTakeOverTaskDetailsRequest.taskId)
             && Objects.equals(this.page, showTakeOverTaskDetailsRequest.page)
             && Objects.equals(this.size, showTakeOverTaskDetailsRequest.size);
@@ -143,14 +120,13 @@ public class ShowTakeOverTaskDetailsRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(authorization, xSdkDate, taskId, page, size);
+        return Objects.hash(xSdkDate, taskId, page, size);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowTakeOverTaskDetailsRequest {\n");
-        sb.append("    authorization: ").append(toIndentedString(authorization)).append("\n");
         sb.append("    xSdkDate: ").append(toIndentedString(xSdkDate)).append("\n");
         sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
         sb.append("    page: ").append(toIndentedString(page)).append("\n");

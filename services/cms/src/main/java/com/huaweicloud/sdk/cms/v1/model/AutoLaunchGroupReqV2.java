@@ -30,7 +30,7 @@ public class AutoLaunchGroupReqV2 {
     private Boolean dryRun;
 
     /**
-     * 请求类型 request：一次性。仅在启动时交付实例集群，调度失败后不再重试。 maintain：持续供应。在启动时尝试交付实例集群，并监控实时容量，未达到目标容量则尝试继续创建ECS实例。 注意：持续供应场景下 不能保证强制均衡一直是有效的 默认值：maintain
+     * 请求类型，枚举值 request：一次性。仅在启动时交付实例集群，调度失败后不再重试。 maintain：持续供应。在启动时尝试交付实例集群，并监控实时容量，未达到目标容量则尝试继续创建ECS实例。 默认值：maintain
      */
     public static final class TypeEnum {
 
@@ -127,7 +127,7 @@ public class AutoLaunchGroupReqV2 {
     private Integer stableCapacity;
 
     /**
-     * 超过目标容量时（目标容量容量减少）实例中断行为 terminate：释放 noTermination：不释放 默认值：terminate
+     * 超过目标容量时（目标容量减少）实例中断行为，枚举值 terminate：释放 noTermination：不释放 默认值：terminate
      */
     public static final class ExcessFulfilledCapacityBehaviorEnum {
 
@@ -211,7 +211,7 @@ public class AutoLaunchGroupReqV2 {
     private ExcessFulfilledCapacityBehaviorEnum excessFulfilledCapacityBehavior;
 
     /**
-     * 请求到期正在的实例中断行为 terminate|noTermination terminate：释放 noTermination：不释放 默认值：terminate
+     * 请求到期正在的实例中断行为，枚举值 terminate：释放 noTermination：不释放 默认值：terminate
      */
     public static final class InstancesBehaviorWithExpirationEnum {
 
@@ -305,7 +305,7 @@ public class AutoLaunchGroupReqV2 {
     private OffsetDateTime validUntil;
 
     /**
-     * 实例分配策略： 1、总价最低策略:  2、多可用区均衡策略:  3、容量最优策略：智能购买组购买的实例按照大规格优先进行购买。 lowest_price：价格最低策略。智能购买组购买的所有实例的价格总和最低。 prioritized：优先级策略。按照规格设定的优先级创建实例。 capacity_optimized：容量最优化。智能购买组购买的实例按照大规格优先进行购买。  默认值：lowest_price
+     * 实例分配策略，枚举值 lowest_price：价格最低策略，智能购买组购买的所有实例的价格总和最低。 prioritized：优先级策略，按照规格设定的优先级创建实例。  capacity_optimized：容量最优化策略，智能购买组购买的实例按照大规格优先进行购买。 默认值：lowest_price
      */
     public static final class AllocationStrategyEnum {
 
@@ -405,7 +405,7 @@ public class AutoLaunchGroupReqV2 {
     private List<RegionSpec> regionSpecs = null;
 
     /**
-    * 资源供给中规格选择策略：singlation、multiple singlation：选择一种Flavor供给 multiple：组合多种Flavor供给 默认值：multiple
+    * 资源供给中规格选择策略：枚举值 singlation：选择一种Flavor供给 multiple：组合多种Flavor供给 默认值：multiple
     */
     public static final class SupplyOptionEnum {
 
@@ -497,7 +497,7 @@ public class AutoLaunchGroupReqV2 {
     }
 
     /**
-     * autoLaunchGroup名称(1-64个字符)，只能包含中文、字母、数字、下划线或中划线
+     * 智能购买组名称(1-64个字符)，只能包含中文、字母、数字、下划线和中划线
      * @return name
      */
     public String getName() {
@@ -514,7 +514,7 @@ public class AutoLaunchGroupReqV2 {
     }
 
     /**
-     * 创建智能购买组参数核查  true：发送检查请求，不会创建智能购买组。检查项包括是否填写了必需参数、请求格式等。 如果检查不通过，则返回对应错误。 如果检查通过，则返回202状态码。 false：发送正常请求，通过检查后并且执行创建智能购买组请求
+     * 创建智能购买组参数核查  true：发送检查请求，不会创建智能购买组。检查项包括是否填写了必需参数、请求格式等。 false：发送正常请求，通过检查后并且执行创建智能购买组请求。 如果检查不通过，则返回对应错误。 如果检查通过，则返回202状态码。
      * @return dryRun
      */
     public Boolean getDryRun() {
@@ -531,7 +531,7 @@ public class AutoLaunchGroupReqV2 {
     }
 
     /**
-     * 请求类型 request：一次性。仅在启动时交付实例集群，调度失败后不再重试。 maintain：持续供应。在启动时尝试交付实例集群，并监控实时容量，未达到目标容量则尝试继续创建ECS实例。 注意：持续供应场景下 不能保证强制均衡一直是有效的 默认值：maintain
+     * 请求类型，枚举值 request：一次性。仅在启动时交付实例集群，调度失败后不再重试。 maintain：持续供应。在启动时尝试交付实例集群，并监控实时容量，未达到目标容量则尝试继续创建ECS实例。 默认值：maintain
      * @return type
      */
     public TypeEnum getType() {
@@ -565,7 +565,7 @@ public class AutoLaunchGroupReqV2 {
     }
 
     /**
-     * autoLaunchGroup目标容量， 实例数量或者CPU个数 目标容量大于等于stable_capacity， spot实例的容量为满配容量减去stable_capacity                      最小值        最大值 CPU 个数       1                  40000 实例个数        1                  500
+     * 智能购买组目标容量，实例数量或者CPU个数目标容量大于等于stable_capacity，spot实例的容量为满配容量减去stable_capacity
      * minimum: 0
      * maximum: 10000
      * @return targetCapacity
@@ -584,7 +584,7 @@ public class AutoLaunchGroupReqV2 {
     }
 
     /**
-     * 按需实例目标容量（CPU或者实例个数） 小于target_capacity 非必填的原因是智能购买组中可以没有按需实例
+     * 按需实例目标容量（实例数量或CPU个数），小于target_capacity，智能购买组中可以没有按需实例
      * minimum: 0
      * maximum: 10000
      * @return stableCapacity
@@ -604,7 +604,7 @@ public class AutoLaunchGroupReqV2 {
     }
 
     /**
-     * 超过目标容量时（目标容量容量减少）实例中断行为 terminate：释放 noTermination：不释放 默认值：terminate
+     * 超过目标容量时（目标容量减少）实例中断行为，枚举值 terminate：释放 noTermination：不释放 默认值：terminate
      * @return excessFulfilledCapacityBehavior
      */
     public ExcessFulfilledCapacityBehaviorEnum getExcessFulfilledCapacityBehavior() {
@@ -623,7 +623,7 @@ public class AutoLaunchGroupReqV2 {
     }
 
     /**
-     * 请求到期正在的实例中断行为 terminate|noTermination terminate：释放 noTermination：不释放 默认值：terminate
+     * 请求到期正在的实例中断行为，枚举值 terminate：释放 noTermination：不释放 默认值：terminate
      * @return instancesBehaviorWithExpiration
      */
     public InstancesBehaviorWithExpirationEnum getInstancesBehaviorWithExpiration() {
@@ -641,7 +641,7 @@ public class AutoLaunchGroupReqV2 {
     }
 
     /**
-     * 请求开始时间 和valid_until共同确定有效时段。 按照ISO8601标准表示，并使用UTC +0时间，格式为yyyy-MM-ddTHH:mm:ssZ。 默认值：立即生效
+     * 请求开始时间，和valid_until共同确定有效时段。 按照ISO8601标准表示，并使用UTC +0时间，格式为yyyy-MM-ddTHH:mm:ssZ。 默认值：立即生效
      * @return validSince
      */
     public OffsetDateTime getValidSince() {
@@ -658,7 +658,7 @@ public class AutoLaunchGroupReqV2 {
     }
 
     /**
-     * 请求结束时间 和valid_since共同确定有效时段。 按照ISO8601标准表示，并使用UTC +0时间，格式为yyyy-MM-ddTHH:mm:ssZ。 默认值：无限期
+     * 请求结束时间，和valid_since共同确定有效时段。 按照ISO8601标准表示，并使用UTC +0时间，格式为yyyy-MM-ddTHH:mm:ssZ。 默认值：无限期
      * @return validUntil
      */
     public OffsetDateTime getValidUntil() {
@@ -675,7 +675,7 @@ public class AutoLaunchGroupReqV2 {
     }
 
     /**
-     * 实例分配策略： 1、总价最低策略:  2、多可用区均衡策略:  3、容量最优策略：智能购买组购买的实例按照大规格优先进行购买。 lowest_price：价格最低策略。智能购买组购买的所有实例的价格总和最低。 prioritized：优先级策略。按照规格设定的优先级创建实例。 capacity_optimized：容量最优化。智能购买组购买的实例按照大规格优先进行购买。  默认值：lowest_price
+     * 实例分配策略，枚举值 lowest_price：价格最低策略，智能购买组购买的所有实例的价格总和最低。 prioritized：优先级策略，按照规格设定的优先级创建实例。  capacity_optimized：容量最优化策略，智能购买组购买的实例按照大规格优先进行购买。 默认值：lowest_price
      * @return allocationStrategy
      */
     public AllocationStrategyEnum getAllocationStrategy() {
@@ -725,7 +725,7 @@ public class AutoLaunchGroupReqV2 {
     }
 
     /**
-     * 资源供给中规格选择策略：singlation、multiple singlation：选择一种Flavor供给 multiple：组合多种Flavor供给 默认值：multiple
+     * 资源供给中规格选择策略：枚举值 singlation：选择一种Flavor供给 multiple：组合多种Flavor供给 默认值：multiple
      * @return supplyOption
      */
     public SupplyOptionEnum getSupplyOption() {

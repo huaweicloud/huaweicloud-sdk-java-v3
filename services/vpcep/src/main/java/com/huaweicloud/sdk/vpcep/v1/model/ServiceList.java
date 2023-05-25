@@ -29,11 +29,6 @@ public class ServiceList {
     private String portId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "vip_port_id")
-
-    private String vipPortId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_name")
 
     private String serviceName;
@@ -265,7 +260,7 @@ public class ServiceList {
     private Integer connectionCount;
 
     /**
-     * 用于控制是否将客户端的源IP、源端口、marker_id等信息携带到服务端。 信息携带支持两种方式： ● TCP TOA：表示将客户端信息插入到tcp，option字段中携带至服务端。 说明 仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端相关信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 ● proxy_vni: 关闭toa，开启proxy和vni。 默认值为“close”。
+     * 用于控制将哪些信息（如客户端的源IP、源端口、marker_id等）携带到服务端。 支持携带的客户端信息包括如下两种类型： ● TCP TOA：表示将客户端信息插入到tcp option字段中携带至服务端。 说明：仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 该参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 ● proxy_vni: 关闭toa，开启proxy和vni。 默认值为“close”。
      */
     public static final class TcpProxyEnum {
 
@@ -416,23 +411,6 @@ public class ServiceList {
 
     public void setPortId(String portId) {
         this.portId = portId;
-    }
-
-    public ServiceList withVipPortId(String vipPortId) {
-        this.vipPortId = vipPortId;
-        return this;
-    }
-
-    /**
-     * 虚拟IP的网卡ID。 仅当“port_id”为“VIP类型”时，返回该参数。
-     * @return vipPortId
-     */
-    public String getVipPortId() {
-        return vipPortId;
-    }
-
-    public void setVipPortId(String vipPortId) {
-        this.vipPortId = vipPortId;
     }
 
     public ServiceList withServiceName(String serviceName) {
@@ -694,7 +672,7 @@ public class ServiceList {
     }
 
     /**
-     * 用于控制是否将客户端的源IP、源端口、marker_id等信息携带到服务端。 信息携带支持两种方式： ● TCP TOA：表示将客户端信息插入到tcp，option字段中携带至服务端。 说明 仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端相关信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 ● proxy_vni: 关闭toa，开启proxy和vni。 默认值为“close”。
+     * 用于控制将哪些信息（如客户端的源IP、源端口、marker_id等）携带到服务端。 支持携带的客户端信息包括如下两种类型： ● TCP TOA：表示将客户端信息插入到tcp option字段中携带至服务端。 说明：仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 该参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 ● proxy_vni: 关闭toa，开启proxy和vni。 默认值为“close”。
      * @return tcpProxy
      */
     public TcpProxyEnum getTcpProxy() {
@@ -799,7 +777,6 @@ public class ServiceList {
         }
         ServiceList serviceList = (ServiceList) o;
         return Objects.equals(this.id, serviceList.id) && Objects.equals(this.portId, serviceList.portId)
-            && Objects.equals(this.vipPortId, serviceList.vipPortId)
             && Objects.equals(this.serviceName, serviceList.serviceName)
             && Objects.equals(this.serverType, serviceList.serverType) && Objects.equals(this.vpcId, serviceList.vpcId)
             && Objects.equals(this.approvalEnabled, serviceList.approvalEnabled)
@@ -821,7 +798,6 @@ public class ServiceList {
     public int hashCode() {
         return Objects.hash(id,
             portId,
-            vipPortId,
             serviceName,
             serverType,
             vpcId,
@@ -848,7 +824,6 @@ public class ServiceList {
         sb.append("class ServiceList {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    portId: ").append(toIndentedString(portId)).append("\n");
-        sb.append("    vipPortId: ").append(toIndentedString(vipPortId)).append("\n");
         sb.append("    serviceName: ").append(toIndentedString(serviceName)).append("\n");
         sb.append("    serverType: ").append(toIndentedString(serverType)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");

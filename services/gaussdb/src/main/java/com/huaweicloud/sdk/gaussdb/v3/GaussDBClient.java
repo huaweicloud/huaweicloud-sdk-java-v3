@@ -1252,6 +1252,34 @@ public class GaussDBClient {
     }
 
     /**
+     * 备份恢复到当前实例或已有实例
+     *
+     * 备份恢复到当前实例或已有实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RestoreOldInstanceRequest 请求对象
+     * @return RestoreOldInstanceResponse
+     */
+    public RestoreOldInstanceResponse restoreOldInstance(RestoreOldInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.restoreOldInstance);
+    }
+
+    /**
+     * 备份恢复到当前实例或已有实例
+     *
+     * 备份恢复到当前实例或已有实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RestoreOldInstanceRequest 请求对象
+     * @return SyncInvoker<RestoreOldInstanceRequest, RestoreOldInstanceResponse>
+     */
+    public SyncInvoker<RestoreOldInstanceRequest, RestoreOldInstanceResponse> restoreOldInstanceInvoker(RestoreOldInstanceRequest request) {
+        return new SyncInvoker<RestoreOldInstanceRequest, RestoreOldInstanceResponse>(request, GaussDBMeta.restoreOldInstance, hcClient);
+    }
+
+    /**
      * 设置读写分离权重
      *
      * 设置读写分离权重。
@@ -1333,6 +1361,34 @@ public class GaussDBClient {
      */
     public SyncInvoker<ShowAuditLogRequest, ShowAuditLogResponse> showAuditLogInvoker(ShowAuditLogRequest request) {
         return new SyncInvoker<ShowAuditLogRequest, ShowAuditLogResponse>(request, GaussDBMeta.showAuditLog, hcClient);
+    }
+
+    /**
+     * 查询可恢复时间段
+     *
+     * 查询实例的可恢复时间段。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowBackupRestoreTimeRequest 请求对象
+     * @return ShowBackupRestoreTimeResponse
+     */
+    public ShowBackupRestoreTimeResponse showBackupRestoreTime(ShowBackupRestoreTimeRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.showBackupRestoreTime);
+    }
+
+    /**
+     * 查询可恢复时间段
+     *
+     * 查询实例的可恢复时间段。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowBackupRestoreTimeRequest 请求对象
+     * @return SyncInvoker<ShowBackupRestoreTimeRequest, ShowBackupRestoreTimeResponse>
+     */
+    public SyncInvoker<ShowBackupRestoreTimeRequest, ShowBackupRestoreTimeResponse> showBackupRestoreTimeInvoker(ShowBackupRestoreTimeRequest request) {
+        return new SyncInvoker<ShowBackupRestoreTimeRequest, ShowBackupRestoreTimeResponse>(request, GaussDBMeta.showBackupRestoreTime, hcClient);
     }
 
     /**
@@ -2145,6 +2201,34 @@ public class GaussDBClient {
      */
     public SyncInvoker<UpdateInstanceMonitorRequest, UpdateInstanceMonitorResponse> updateInstanceMonitorInvoker(UpdateInstanceMonitorRequest request) {
         return new SyncInvoker<UpdateInstanceMonitorRequest, UpdateInstanceMonitorResponse>(request, GaussDBMeta.updateInstanceMonitor, hcClient);
+    }
+
+    /**
+     * 更改数据库代理连接池类型
+     *
+     * 更改数据库代理连接池类型
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateProxyConnectionPoolTypeRequest 请求对象
+     * @return UpdateProxyConnectionPoolTypeResponse
+     */
+    public UpdateProxyConnectionPoolTypeResponse updateProxyConnectionPoolType(UpdateProxyConnectionPoolTypeRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.updateProxyConnectionPoolType);
+    }
+
+    /**
+     * 更改数据库代理连接池类型
+     *
+     * 更改数据库代理连接池类型
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateProxyConnectionPoolTypeRequest 请求对象
+     * @return SyncInvoker<UpdateProxyConnectionPoolTypeRequest, UpdateProxyConnectionPoolTypeResponse>
+     */
+    public SyncInvoker<UpdateProxyConnectionPoolTypeRequest, UpdateProxyConnectionPoolTypeResponse> updateProxyConnectionPoolTypeInvoker(UpdateProxyConnectionPoolTypeRequest request) {
+        return new SyncInvoker<UpdateProxyConnectionPoolTypeRequest, UpdateProxyConnectionPoolTypeResponse>(request, GaussDBMeta.updateProxyConnectionPoolType, hcClient);
     }
 
     /**

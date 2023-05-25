@@ -122,6 +122,11 @@ public class EndpointService {
 
     private Boolean isCharge;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_policy")
+
+    private Boolean enablePolicy;
+
     public EndpointService withId(String id) {
         this.id = id;
         return this;
@@ -224,6 +229,23 @@ public class EndpointService {
         this.isCharge = isCharge;
     }
 
+    public EndpointService withEnablePolicy(Boolean enablePolicy) {
+        this.enablePolicy = enablePolicy;
+        return this;
+    }
+
+    /**
+     * 是否开启终端节点策略。 ● false：不支持设置终端节点策略 ● true：支持设置终端节点策略 默认为false 是否开启终端节点策略。 ● false：不支持设置终端节点策略 ● true：支持设置终端节点策略 默认为false
+     * @return enablePolicy
+     */
+    public Boolean getEnablePolicy() {
+        return enablePolicy;
+    }
+
+    public void setEnablePolicy(Boolean enablePolicy) {
+        this.enablePolicy = enablePolicy;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -237,12 +259,13 @@ public class EndpointService {
             && Objects.equals(this.serviceName, endpointService.serviceName)
             && Objects.equals(this.serviceType, endpointService.serviceType)
             && Objects.equals(this.createdAt, endpointService.createdAt)
-            && Objects.equals(this.isCharge, endpointService.isCharge);
+            && Objects.equals(this.isCharge, endpointService.isCharge)
+            && Objects.equals(this.enablePolicy, endpointService.enablePolicy);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, owner, serviceName, serviceType, createdAt, isCharge);
+        return Objects.hash(id, owner, serviceName, serviceType, createdAt, isCharge, enablePolicy);
     }
 
     @Override
@@ -255,6 +278,7 @@ public class EndpointService {
         sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    isCharge: ").append(toIndentedString(isCharge)).append("\n");
+        sb.append("    enablePolicy: ").append(toIndentedString(enablePolicy)).append("\n");
         sb.append("}");
         return sb.toString();
     }

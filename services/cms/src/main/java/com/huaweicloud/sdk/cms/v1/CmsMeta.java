@@ -159,6 +159,32 @@ public class CmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListSupplyRecommendationRequest, ListSupplyRecommendationResponse> listSupplyRecommendation =
+        genForlistSupplyRecommendation();
+
+    private static HttpRequestDef<ListSupplyRecommendationRequest, ListSupplyRecommendationResponse> genForlistSupplyRecommendation() {
+        // basic
+        HttpRequestDef.Builder<ListSupplyRecommendationRequest, ListSupplyRecommendationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, ListSupplyRecommendationRequest.class, ListSupplyRecommendationResponse.class)
+                .withName("ListSupplyRecommendation")
+                .withUri("/v1/{domain_id}/recommendations/ecs-supply")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListSupplyRecommendationRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSupplyRecommendationRequestBody.class),
+            f -> f.withMarshaller(ListSupplyRecommendationRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowAutoLaunchGroupRequest, ShowAutoLaunchGroupResponse> showAutoLaunchGroup =
         genForshowAutoLaunchGroup();
 
@@ -208,32 +234,6 @@ public class CmsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateAutoLaunchGroupReqV2.class),
             f -> f.withMarshaller(UpdateAutoLaunchGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListSupplyRecommendationRequest, ListSupplyRecommendationResponse> listSupplyRecommendation =
-        genForlistSupplyRecommendation();
-
-    private static HttpRequestDef<ListSupplyRecommendationRequest, ListSupplyRecommendationResponse> genForlistSupplyRecommendation() {
-        // basic
-        HttpRequestDef.Builder<ListSupplyRecommendationRequest, ListSupplyRecommendationResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.POST, ListSupplyRecommendationRequest.class, ListSupplyRecommendationResponse.class)
-                .withName("ListSupplyRecommendation")
-                .withUri("/v1/{domain_id}/recommendations/ecs-supply")
-                .withContentType("application/json");
-
-        // requests
-        builder.<ListSupplyRecommendationRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListSupplyRecommendationRequestBody.class),
-            f -> f.withMarshaller(ListSupplyRecommendationRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

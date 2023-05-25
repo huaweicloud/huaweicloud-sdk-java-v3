@@ -770,6 +770,101 @@ public class EcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListFlavorSellPoliciesRequest, ListFlavorSellPoliciesResponse> listFlavorSellPolicies =
+        genForlistFlavorSellPolicies();
+
+    private static HttpRequestDef<ListFlavorSellPoliciesRequest, ListFlavorSellPoliciesResponse> genForlistFlavorSellPolicies() {
+        // basic
+        HttpRequestDef.Builder<ListFlavorSellPoliciesRequest, ListFlavorSellPoliciesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListFlavorSellPoliciesRequest.class, ListFlavorSellPoliciesResponse.class)
+            .withName("ListFlavorSellPolicies")
+            .withUri("/v1/{project_id}/cloudservers/flavor-sell-policies")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("flavor_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlavorSellPoliciesRequest::getFlavorId, (req, v) -> {
+                req.setFlavorId(v);
+            }));
+        builder.<ListFlavorSellPoliciesRequest.SellStatusEnum>withRequestField("sell_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListFlavorSellPoliciesRequest.SellStatusEnum.class),
+            f -> f.withMarshaller(ListFlavorSellPoliciesRequest::getSellStatus, (req, v) -> {
+                req.setSellStatus(v);
+            }));
+        builder.<ListFlavorSellPoliciesRequest.SellModeEnum>withRequestField("sell_mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListFlavorSellPoliciesRequest.SellModeEnum.class),
+            f -> f.withMarshaller(ListFlavorSellPoliciesRequest::getSellMode, (req, v) -> {
+                req.setSellMode(v);
+            }));
+        builder.<String>withRequestField("availability_zone_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlavorSellPoliciesRequest::getAvailabilityZoneId, (req, v) -> {
+                req.setAvailabilityZoneId(v);
+            }));
+        builder.<Integer>withRequestField("longest_spot_duration_hours_gt",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFlavorSellPoliciesRequest::getLongestSpotDurationHoursGt, (req, v) -> {
+                req.setLongestSpotDurationHoursGt(v);
+            }));
+        builder.<Integer>withRequestField("largest_spot_duration_count_gt",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFlavorSellPoliciesRequest::getLargestSpotDurationCountGt, (req, v) -> {
+                req.setLargestSpotDurationCountGt(v);
+            }));
+        builder.<Integer>withRequestField("longest_spot_duration_hours",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFlavorSellPoliciesRequest::getLongestSpotDurationHours, (req, v) -> {
+                req.setLongestSpotDurationHours(v);
+            }));
+        builder.<Integer>withRequestField("largest_spot_duration_count",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFlavorSellPoliciesRequest::getLargestSpotDurationCount, (req, v) -> {
+                req.setLargestSpotDurationCount(v);
+            }));
+        builder.<ListFlavorSellPoliciesRequest.InterruptionPolicyEnum>withRequestField("interruption_policy",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListFlavorSellPoliciesRequest.InterruptionPolicyEnum.class),
+            f -> f.withMarshaller(ListFlavorSellPoliciesRequest::getInterruptionPolicy, (req, v) -> {
+                req.setInterruptionPolicy(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFlavorSellPoliciesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlavorSellPoliciesRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListFlavorsRequest, ListFlavorsResponse> listFlavors = genForlistFlavors();
 
     private static HttpRequestDef<ListFlavorsRequest, ListFlavorsResponse> genForlistFlavors() {

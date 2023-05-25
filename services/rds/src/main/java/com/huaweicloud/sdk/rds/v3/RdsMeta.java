@@ -5937,6 +5937,13 @@ public class RdsMeta {
             f -> f.withMarshaller(ListSqlserverDatabasesRequest::getDbName, (req, v) -> {
                 req.setDbName(v);
             }));
+        builder.<String>withRequestField("recover_model",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSqlserverDatabasesRequest::getRecoverModel, (req, v) -> {
+                req.setRecoverModel(v);
+            }));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,

@@ -899,6 +899,37 @@ public class EcsAsyncClient {
     }
 
     /**
+     * 查询规格销售策略
+     *
+     * 查询规格销售策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListFlavorSellPoliciesRequest 请求对象
+     * @return CompletableFuture<ListFlavorSellPoliciesResponse>
+     */
+    public CompletableFuture<ListFlavorSellPoliciesResponse> listFlavorSellPoliciesAsync(
+        ListFlavorSellPoliciesRequest request) {
+        return hcClient.asyncInvokeHttp(request, EcsMeta.listFlavorSellPolicies);
+    }
+
+    /**
+     * 查询规格销售策略
+     *
+     * 查询规格销售策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListFlavorSellPoliciesRequest 请求对象
+     * @return AsyncInvoker<ListFlavorSellPoliciesRequest, ListFlavorSellPoliciesResponse>
+     */
+    public AsyncInvoker<ListFlavorSellPoliciesRequest, ListFlavorSellPoliciesResponse> listFlavorSellPoliciesAsyncInvoker(
+        ListFlavorSellPoliciesRequest request) {
+        return new AsyncInvoker<ListFlavorSellPoliciesRequest, ListFlavorSellPoliciesResponse>(request,
+            EcsMeta.listFlavorSellPolicies, hcClient);
+    }
+
+    /**
      * 查询规格详情和规格扩展信息列表
      *
      * 查询云服务器规格详情信息和规格扩展信息列表。

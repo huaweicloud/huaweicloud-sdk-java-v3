@@ -49,6 +49,11 @@ public class InstanceListInfo {
     private String createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "updated_at")
+
+    private String updatedAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_ssl")
 
     private Boolean enableSsl;
@@ -330,6 +335,23 @@ public class InstanceListInfo {
 
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public InstanceListInfo withUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
+        return this;
+    }
+
+    /**
+     * 更新时间。格式为：2017-03-31T19:24:46.297Z
+     * @return updatedAt
+     */
+    public String getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
     public InstanceListInfo withEnableSsl(Boolean enableSsl) {
@@ -950,6 +972,7 @@ public class InstanceListInfo {
             && Objects.equals(this.subnetId, instanceListInfo.subnetId)
             && Objects.equals(this.securityGroupId, instanceListInfo.securityGroupId)
             && Objects.equals(this.createdAt, instanceListInfo.createdAt)
+            && Objects.equals(this.updatedAt, instanceListInfo.updatedAt)
             && Objects.equals(this.enableSsl, instanceListInfo.enableSsl)
             && Objects.equals(this.maxMemory, instanceListInfo.maxMemory)
             && Objects.equals(this.usedMemory, instanceListInfo.usedMemory)
@@ -992,6 +1015,7 @@ public class InstanceListInfo {
             subnetId,
             securityGroupId,
             createdAt,
+            updatedAt,
             enableSsl,
             maxMemory,
             usedMemory,
@@ -1038,6 +1062,7 @@ public class InstanceListInfo {
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("    securityGroupId: ").append(toIndentedString(securityGroupId)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+        sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    enableSsl: ").append(toIndentedString(enableSsl)).append("\n");
         sb.append("    maxMemory: ").append(toIndentedString(maxMemory)).append("\n");
         sb.append("    usedMemory: ").append(toIndentedString(usedMemory)).append("\n");

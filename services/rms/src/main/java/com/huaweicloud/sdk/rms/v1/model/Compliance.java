@@ -27,7 +27,7 @@ public class Compliance {
     }
 
     /**
-     * 合规规则合规结果
+     * 合规结果。
      * @return complianceState
      */
     public String getComplianceState() {

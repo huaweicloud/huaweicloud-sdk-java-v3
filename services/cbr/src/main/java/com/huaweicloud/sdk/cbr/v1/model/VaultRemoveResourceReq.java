@@ -40,7 +40,7 @@ public class VaultRemoveResourceReq {
     }
 
     /**
-     * 要移除的资源ID列表
+     * 要移除的资源ID列表 最小长度：1 最大长度：256
      * @return resourceIds
      */
     public List<String> getResourceIds() {

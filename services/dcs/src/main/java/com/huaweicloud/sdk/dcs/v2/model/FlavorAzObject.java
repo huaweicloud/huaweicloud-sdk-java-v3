@@ -19,6 +19,16 @@ public class FlavorAzObject {
     private String capacity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "unit")
+
+    private String unit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "available_zones")
+
+    private List<String> availableZones = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "az_codes")
 
     private List<String> azCodes = null;
@@ -38,6 +48,56 @@ public class FlavorAzObject {
 
     public void setCapacity(String capacity) {
         this.capacity = capacity;
+    }
+
+    public FlavorAzObject withUnit(String unit) {
+        this.unit = unit;
+        return this;
+    }
+
+    /**
+     * 缓存容量单位。
+     * @return unit
+     */
+    public String getUnit() {
+        return unit;
+    }
+
+    public void setUnit(String unit) {
+        this.unit = unit;
+    }
+
+    public FlavorAzObject withAvailableZones(List<String> availableZones) {
+        this.availableZones = availableZones;
+        return this;
+    }
+
+    public FlavorAzObject addAvailableZonesItem(String availableZonesItem) {
+        if (this.availableZones == null) {
+            this.availableZones = new ArrayList<>();
+        }
+        this.availableZones.add(availableZonesItem);
+        return this;
+    }
+
+    public FlavorAzObject withAvailableZones(Consumer<List<String>> availableZonesSetter) {
+        if (this.availableZones == null) {
+            this.availableZones = new ArrayList<>();
+        }
+        availableZonesSetter.accept(this.availableZones);
+        return this;
+    }
+
+    /**
+     * 可用区信息。
+     * @return availableZones
+     */
+    public List<String> getAvailableZones() {
+        return availableZones;
+    }
+
+    public void setAvailableZones(List<String> availableZones) {
+        this.availableZones = availableZones;
     }
 
     public FlavorAzObject withAzCodes(List<String> azCodes) {
@@ -82,13 +142,14 @@ public class FlavorAzObject {
             return false;
         }
         FlavorAzObject flavorAzObject = (FlavorAzObject) o;
-        return Objects.equals(this.capacity, flavorAzObject.capacity)
+        return Objects.equals(this.capacity, flavorAzObject.capacity) && Objects.equals(this.unit, flavorAzObject.unit)
+            && Objects.equals(this.availableZones, flavorAzObject.availableZones)
             && Objects.equals(this.azCodes, flavorAzObject.azCodes);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(capacity, azCodes);
+        return Objects.hash(capacity, unit, availableZones, azCodes);
     }
 
     @Override
@@ -96,6 +157,8 @@ public class FlavorAzObject {
         StringBuilder sb = new StringBuilder();
         sb.append("class FlavorAzObject {\n");
         sb.append("    capacity: ").append(toIndentedString(capacity)).append("\n");
+        sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
+        sb.append("    availableZones: ").append(toIndentedString(availableZones)).append("\n");
         sb.append("    azCodes: ").append(toIndentedString(azCodes)).append("\n");
         sb.append("}");
         return sb.toString();

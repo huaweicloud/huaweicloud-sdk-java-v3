@@ -34,13 +34,6 @@ public class VodMeta {
             f -> f.withMarshaller(CancelAssetTranscodeTaskRequest::getAssetId, (req, v) -> {
                 req.setAssetId(v);
             }));
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CancelAssetTranscodeTaskRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -72,13 +65,6 @@ public class VodMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CancelExtractAudioTaskRequest::getAssetId, (req, v) -> {
                 req.setAssetId(v);
-            }));
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CancelExtractAudioTaskRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
             }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
@@ -119,13 +105,6 @@ public class VodMeta {
             f -> f.withMarshaller(CheckMd5DuplicationRequest::getMd5, (req, v) -> {
                 req.setMd5(v);
             }));
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckMd5DuplicationRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -151,13 +130,6 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ConfirmAssetUploadRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -190,13 +162,6 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ConfirmImageUploadRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -229,13 +194,6 @@ public class VodMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAssetByFileUploadRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -268,13 +226,6 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAssetCategoryRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -307,13 +258,6 @@ public class VodMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAssetProcessTaskRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -346,13 +290,6 @@ public class VodMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAssetReviewTaskRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -385,13 +322,6 @@ public class VodMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateExtractAudioTaskRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -424,13 +354,6 @@ public class VodMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreatePreheatingAssetRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -463,13 +386,6 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateTakeOverTaskRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -502,13 +418,6 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateTemplateGroupRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -544,13 +453,6 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateTemplateGroupCollectionRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -583,13 +485,6 @@ public class VodMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateTranscodeTemplateRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -622,13 +517,6 @@ public class VodMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateWatermarkTemplateRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -668,13 +556,6 @@ public class VodMeta {
             f -> f.withMarshaller(DeleteAssetCategoryRequest::getId, (req, v) -> {
                 req.setId(v);
             }));
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAssetCategoryRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -713,13 +594,6 @@ public class VodMeta {
             f -> f.withMarshaller(DeleteAssetsRequest::getDeleteType, (req, v) -> {
                 req.setDeleteType(v);
             }));
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAssetsRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -751,13 +625,6 @@ public class VodMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteTemplateGroupRequest::getGroupId, (req, v) -> {
                 req.setGroupId(v);
-            }));
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTemplateGroupRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
             }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
@@ -794,13 +661,6 @@ public class VodMeta {
             f -> f.withMarshaller(DeleteTemplateGroupCollectionRequest::getGroupCollectionId, (req, v) -> {
                 req.setGroupCollectionId(v);
             }));
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTemplateGroupCollectionRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -832,13 +692,6 @@ public class VodMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteTranscodeTemplateRequest::getGroupId, (req, v) -> {
                 req.setGroupId(v);
-            }));
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTranscodeTemplateRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
             }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
@@ -872,13 +725,6 @@ public class VodMeta {
             f -> f.withMarshaller(DeleteWatermarkTemplateRequest::getId, (req, v) -> {
                 req.setId(v);
             }));
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteWatermarkTemplateRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -910,13 +756,6 @@ public class VodMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListAssetCategoryRequest::getId, (req, v) -> {
                 req.setId(v);
-            }));
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAssetCategoryRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
             }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
@@ -1027,13 +866,6 @@ public class VodMeta {
             f -> f.withMarshaller(ListAssetListRequest::getOrder, (req, v) -> {
                 req.setOrder(v);
             }));
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAssetListRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -1086,13 +918,6 @@ public class VodMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListDomainLogsRequest::getPageNumber, (req, v) -> {
                 req.setPageNumber(v);
-            }));
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDomainLogsRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
             }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
@@ -1147,13 +972,6 @@ public class VodMeta {
             f -> f.withMarshaller(ListTemplateGroupRequest::getSize, (req, v) -> {
                 req.setSize(v);
             }));
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTemplateGroupRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -1203,13 +1021,6 @@ public class VodMeta {
             f -> f.withMarshaller(ListTemplateGroupCollectionRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
             }));
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTemplateGroupCollectionRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -1248,13 +1059,6 @@ public class VodMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTopStatisticsRequest::getDate, (req, v) -> {
                 req.setDate(v);
-            }));
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTopStatisticsRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
             }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
@@ -1316,13 +1120,6 @@ public class VodMeta {
             f -> f.withMarshaller(ListTranscodeTemplateRequest::getQueryString, (req, v) -> {
                 req.setQueryString(v);
             }));
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTranscodeTemplateRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -1369,13 +1166,6 @@ public class VodMeta {
             f -> f.withMarshaller(ListWatermarkTemplateRequest::getSize, (req, v) -> {
                 req.setSize(v);
             }));
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListWatermarkTemplateRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -1401,13 +1191,6 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(PublishAssetFromObsRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -1440,13 +1223,6 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(PublishAssetsRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -1486,13 +1262,6 @@ public class VodMeta {
             f -> f.withMarshaller(ShowAssetCipherRequest::getAssetId, (req, v) -> {
                 req.setAssetId(v);
             }));
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAssetCipherRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -1531,13 +1300,6 @@ public class VodMeta {
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ShowAssetDetailRequest::getCategories, (req, v) -> {
                 req.setCategories(v);
-            }));
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAssetDetailRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
             }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
@@ -1641,13 +1403,6 @@ public class VodMeta {
             f -> f.withMarshaller(ShowAssetMetaRequest::getSize, (req, v) -> {
                 req.setSize(v);
             }));
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAssetMetaRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -1722,13 +1477,6 @@ public class VodMeta {
             f -> f.withMarshaller(ShowAssetTempAuthorityRequest::getPartNumber, (req, v) -> {
                 req.setPartNumber(v);
             }));
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAssetTempAuthorityRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -1789,13 +1537,6 @@ public class VodMeta {
             f -> f.withMarshaller(ShowCdnStatisticsRequest::getInterval, (req, v) -> {
                 req.setInterval(v);
             }));
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCdnStatisticsRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -1827,13 +1568,6 @@ public class VodMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowPreheatingAssetRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
-            }));
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPreheatingAssetRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
             }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
@@ -1881,13 +1615,6 @@ public class VodMeta {
             f -> f.withMarshaller(ShowVodStatisticsRequest::getInterval, (req, v) -> {
                 req.setInterval(v);
             }));
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowVodStatisticsRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -1913,13 +1640,6 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UnpublishAssetsRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -1951,13 +1671,6 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAssetRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -1990,13 +1703,6 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAssetCategoryRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -2029,13 +1735,6 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAssetMetaRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -2068,13 +1767,6 @@ public class VodMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateBucketAuthorizedRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -2107,13 +1799,6 @@ public class VodMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCoverByThumbnailRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -2146,13 +1831,6 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateTemplateGroupRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -2188,13 +1866,6 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateTemplateGroupCollectionRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -2227,13 +1898,6 @@ public class VodMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateTranscodeTemplateRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -2266,13 +1930,6 @@ public class VodMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateWatermarkTemplateRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -2305,13 +1962,6 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UploadMetaDataByUrlRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -2372,13 +2022,6 @@ public class VodMeta {
             f -> f.withMarshaller(ListTakeOverTaskRequest::getSize, (req, v) -> {
                 req.setSize(v);
             }));
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTakeOverTaskRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -2418,13 +2061,6 @@ public class VodMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowTakeOverAssetDetailsRequest::getSourceObject, (req, v) -> {
                 req.setSourceObject(v);
-            }));
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTakeOverAssetDetailsRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
             }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
@@ -2471,13 +2107,6 @@ public class VodMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowTakeOverTaskDetailsRequest::getSize, (req, v) -> {
                 req.setSize(v);
-            }));
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTakeOverTaskDetailsRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
             }));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,

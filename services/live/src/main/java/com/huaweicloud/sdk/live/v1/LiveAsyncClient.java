@@ -20,6 +20,36 @@ public class LiveAsyncClient {
     }
 
     /**
+     * 查询IP归属信息
+     *
+     * 查询IP归属信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchShowIpBelongsRequest 请求对象
+     * @return CompletableFuture<BatchShowIpBelongsResponse>
+     */
+    public CompletableFuture<BatchShowIpBelongsResponse> batchShowIpBelongsAsync(BatchShowIpBelongsRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.batchShowIpBelongs);
+    }
+
+    /**
+     * 查询IP归属信息
+     *
+     * 查询IP归属信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchShowIpBelongsRequest 请求对象
+     * @return AsyncInvoker<BatchShowIpBelongsRequest, BatchShowIpBelongsResponse>
+     */
+    public AsyncInvoker<BatchShowIpBelongsRequest, BatchShowIpBelongsResponse> batchShowIpBelongsAsyncInvoker(
+        BatchShowIpBelongsRequest request) {
+        return new AsyncInvoker<BatchShowIpBelongsRequest, BatchShowIpBelongsResponse>(request,
+            LiveMeta.batchShowIpBelongs, hcClient);
+    }
+
+    /**
      * 创建直播域名
      *
      * 可单独创建直播播放域名或推流域名，每个租户最多可配置64条域名记录。

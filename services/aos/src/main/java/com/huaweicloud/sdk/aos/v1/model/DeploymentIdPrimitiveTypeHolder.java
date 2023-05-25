@@ -32,7 +32,7 @@ public class DeploymentIdPrimitiveTypeHolder  {
 
 
     /**
-     * 标识部署的唯一Id，此Id由资源编排服务在触发部署、回滚等操作时生成，为UUID。 
+     * 标识部署的唯一Id，此Id由资源编排服务在触发部署、回滚等操作时生成，为UUID。
      * @return deploymentId
      */
     public String getDeploymentId() {

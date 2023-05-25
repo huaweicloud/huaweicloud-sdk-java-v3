@@ -182,6 +182,36 @@ public class KafkaAsyncClient {
     }
 
     /**
+     * 关闭kafka manager
+     *
+     * 关闭kafka manager，相应的原来开放出的management相关接口也将不可用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CloseKafkaManagerRequest 请求对象
+     * @return CompletableFuture<CloseKafkaManagerResponse>
+     */
+    public CompletableFuture<CloseKafkaManagerResponse> closeKafkaManagerAsync(CloseKafkaManagerRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.closeKafkaManager);
+    }
+
+    /**
+     * 关闭kafka manager
+     *
+     * 关闭kafka manager，相应的原来开放出的management相关接口也将不可用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CloseKafkaManagerRequest 请求对象
+     * @return AsyncInvoker<CloseKafkaManagerRequest, CloseKafkaManagerResponse>
+     */
+    public AsyncInvoker<CloseKafkaManagerRequest, CloseKafkaManagerResponse> closeKafkaManagerAsyncInvoker(
+        CloseKafkaManagerRequest request) {
+        return new AsyncInvoker<CloseKafkaManagerRequest, CloseKafkaManagerResponse>(request,
+            KafkaMeta.closeKafkaManager, hcClient);
+    }
+
+    /**
      * 创建实例的转储节点
      *
      * 创建实例的转储节点。
@@ -213,6 +243,37 @@ public class KafkaAsyncClient {
         CreateConnectorRequest request) {
         return new AsyncInvoker<CreateConnectorRequest, CreateConnectorResponse>(request, KafkaMeta.createConnector,
             hcClient);
+    }
+
+    /**
+     * 创建关闭实例转储节点的订单
+     *
+     * 创建删除实例转储节点的订单。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDeleteConnectorOrderRequest 请求对象
+     * @return CompletableFuture<CreateDeleteConnectorOrderResponse>
+     */
+    public CompletableFuture<CreateDeleteConnectorOrderResponse> createDeleteConnectorOrderAsync(
+        CreateDeleteConnectorOrderRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.createDeleteConnectorOrder);
+    }
+
+    /**
+     * 创建关闭实例转储节点的订单
+     *
+     * 创建删除实例转储节点的订单。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDeleteConnectorOrderRequest 请求对象
+     * @return AsyncInvoker<CreateDeleteConnectorOrderRequest, CreateDeleteConnectorOrderResponse>
+     */
+    public AsyncInvoker<CreateDeleteConnectorOrderRequest, CreateDeleteConnectorOrderResponse> createDeleteConnectorOrderAsyncInvoker(
+        CreateDeleteConnectorOrderRequest request) {
+        return new AsyncInvoker<CreateDeleteConnectorOrderRequest, CreateDeleteConnectorOrderResponse>(request,
+            KafkaMeta.createDeleteConnectorOrder, hcClient);
     }
 
     /**
@@ -308,6 +369,37 @@ public class KafkaAsyncClient {
         CreateInstanceUserRequest request) {
         return new AsyncInvoker<CreateInstanceUserRequest, CreateInstanceUserResponse>(request,
             KafkaMeta.createInstanceUser, hcClient);
+    }
+
+    /**
+     * 创建消费组
+     *
+     * 实例创建消费组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateKafkaConsumerGroupRequest 请求对象
+     * @return CompletableFuture<CreateKafkaConsumerGroupResponse>
+     */
+    public CompletableFuture<CreateKafkaConsumerGroupResponse> createKafkaConsumerGroupAsync(
+        CreateKafkaConsumerGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.createKafkaConsumerGroup);
+    }
+
+    /**
+     * 创建消费组
+     *
+     * 实例创建消费组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateKafkaConsumerGroupRequest 请求对象
+     * @return AsyncInvoker<CreateKafkaConsumerGroupRequest, CreateKafkaConsumerGroupResponse>
+     */
+    public AsyncInvoker<CreateKafkaConsumerGroupRequest, CreateKafkaConsumerGroupResponse> createKafkaConsumerGroupAsyncInvoker(
+        CreateKafkaConsumerGroupRequest request) {
+        return new AsyncInvoker<CreateKafkaConsumerGroupRequest, CreateKafkaConsumerGroupResponse>(request,
+            KafkaMeta.createKafkaConsumerGroup, hcClient);
     }
 
     /**
@@ -461,6 +553,36 @@ public class KafkaAsyncClient {
         DeleteBackgroundTaskRequest request) {
         return new AsyncInvoker<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse>(request,
             KafkaMeta.deleteBackgroundTask, hcClient);
+    }
+
+    /**
+     * 关闭实例转储节点
+     *
+     * 关闭实例转储节点。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteConnectorRequest 请求对象
+     * @return CompletableFuture<DeleteConnectorResponse>
+     */
+    public CompletableFuture<DeleteConnectorResponse> deleteConnectorAsync(DeleteConnectorRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.deleteConnector);
+    }
+
+    /**
+     * 关闭实例转储节点
+     *
+     * 关闭实例转储节点。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteConnectorRequest 请求对象
+     * @return AsyncInvoker<DeleteConnectorRequest, DeleteConnectorResponse>
+     */
+    public AsyncInvoker<DeleteConnectorRequest, DeleteConnectorResponse> deleteConnectorAsyncInvoker(
+        DeleteConnectorRequest request) {
+        return new AsyncInvoker<DeleteConnectorRequest, DeleteConnectorResponse>(request, KafkaMeta.deleteConnector,
+            hcClient);
     }
 
     /**
@@ -811,7 +933,7 @@ public class KafkaAsyncClient {
      *
      * Kafka实例不支持在线重置消费进度。在执行重置消费进度之前，必须停止被重置消费组客户端。
      * 
-     * &gt; 停止待重置消费组客户端，然后等待一段时间（即ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG配置的时间，默认为1000毫秒）后，服务端才认为此消费组客户端已下线。
+     * 停止待重置消费组客户端，然后等待一段时间（即ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG配置的时间，默认为1000毫秒）后，服务端才认为此消费组客户端已下线。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -827,7 +949,7 @@ public class KafkaAsyncClient {
      *
      * Kafka实例不支持在线重置消费进度。在执行重置消费进度之前，必须停止被重置消费组客户端。
      * 
-     * &gt; 停止待重置消费组客户端，然后等待一段时间（即ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG配置的时间，默认为1000毫秒）后，服务端才认为此消费组客户端已下线。
+     * 停止待重置消费组客户端，然后等待一段时间（即ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG配置的时间，默认为1000毫秒）后，服务端才认为此消费组客户端已下线。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -903,7 +1025,7 @@ public class KafkaAsyncClient {
     /**
      * 实例规格变更
      *
-     * 实例规格变更。
+     * 实例规格变更。[当前通过调用API，只支持按需实例进行实例规格变更。](tag:hws,hws_hk,ctc,cmcc,hws_eu)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -918,7 +1040,7 @@ public class KafkaAsyncClient {
     /**
      * 实例规格变更
      *
-     * 实例规格变更。
+     * 实例规格变更。[当前通过调用API，只支持按需实例进行实例规格变更。](tag:hws,hws_hk,ctc,cmcc,hws_eu)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -934,7 +1056,7 @@ public class KafkaAsyncClient {
     /**
      * 实例规格变更
      *
-     * 实例规格变更。[当前通过调用API，只支持按需实例进行实例规格变更。](tag:hc,hk,hws,hws_hk,ctc,sbc,hk_sbc,cmcc,hws_eu)
+     * 实例规格变更。[当前通过调用API，只支持按需实例进行实例规格变更。](tag:hws,hws_hk,ctc,cmcc,hws_eu)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -948,7 +1070,7 @@ public class KafkaAsyncClient {
     /**
      * 实例规格变更
      *
-     * 实例规格变更。[当前通过调用API，只支持按需实例进行实例规格变更。](tag:hc,hk,hws,hws_hk,ctc,sbc,hk_sbc,cmcc,hws_eu)
+     * 实例规格变更。[当前通过调用API，只支持按需实例进行实例规格变更。](tag:hws,hws_hk,ctc,cmcc,hws_eu)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1262,9 +1384,9 @@ public class KafkaAsyncClient {
     }
 
     /**
-     * 查询Kafka实例Topic详细信息(单个实例调用不要超过1s一次)
+     * 查询Kafka实例Topic详细信息
      *
-     * 查询Kafka实例Topic详细信息。
+     * 查询Kafka实例Topic详细信息。(单个实例调用不要超过1s一次)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1277,9 +1399,9 @@ public class KafkaAsyncClient {
     }
 
     /**
-     * 查询Kafka实例Topic详细信息(单个实例调用不要超过1s一次)
+     * 查询Kafka实例Topic详细信息
      *
-     * 查询Kafka实例Topic详细信息。
+     * 查询Kafka实例Topic详细信息。(单个实例调用不要超过1s一次)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

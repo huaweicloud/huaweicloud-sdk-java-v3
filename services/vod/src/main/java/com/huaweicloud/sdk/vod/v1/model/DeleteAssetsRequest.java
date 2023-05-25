@@ -14,11 +14,6 @@ import java.util.function.Consumer;
 public class DeleteAssetsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Authorization")
-
-    private String authorization;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Sdk-Date")
 
     private String xSdkDate;
@@ -32,23 +27,6 @@ public class DeleteAssetsRequest {
     @JsonProperty(value = "delete_type")
 
     private String deleteType;
-
-    public DeleteAssetsRequest withAuthorization(String authorization) {
-        this.authorization = authorization;
-        return this;
-    }
-
-    /**
-     * 使用AK/SK方式认证时必选，携带的鉴权信息。 
-     * @return authorization
-     */
-    public String getAuthorization() {
-        return authorization;
-    }
-
-    public void setAuthorization(String authorization) {
-        this.authorization = authorization;
-    }
 
     public DeleteAssetsRequest withXSdkDate(String xSdkDate) {
         this.xSdkDate = xSdkDate;
@@ -128,22 +106,20 @@ public class DeleteAssetsRequest {
             return false;
         }
         DeleteAssetsRequest deleteAssetsRequest = (DeleteAssetsRequest) o;
-        return Objects.equals(this.authorization, deleteAssetsRequest.authorization)
-            && Objects.equals(this.xSdkDate, deleteAssetsRequest.xSdkDate)
+        return Objects.equals(this.xSdkDate, deleteAssetsRequest.xSdkDate)
             && Objects.equals(this.assetId, deleteAssetsRequest.assetId)
             && Objects.equals(this.deleteType, deleteAssetsRequest.deleteType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(authorization, xSdkDate, assetId, deleteType);
+        return Objects.hash(xSdkDate, assetId, deleteType);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteAssetsRequest {\n");
-        sb.append("    authorization: ").append(toIndentedString(authorization)).append("\n");
         sb.append("    xSdkDate: ").append(toIndentedString(xSdkDate)).append("\n");
         sb.append("    assetId: ").append(toIndentedString(assetId)).append("\n");
         sb.append("    deleteType: ").append(toIndentedString(deleteType)).append("\n");

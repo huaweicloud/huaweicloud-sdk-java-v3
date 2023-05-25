@@ -180,6 +180,11 @@ public class SourceOrArtifact {
     private String url;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "webUrl")
+
+    private String webUrl;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth")
 
     private String auth;
@@ -258,6 +263,23 @@ public class SourceOrArtifact {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public SourceOrArtifact withWebUrl(String webUrl) {
+        this.webUrl = webUrl;
+        return this;
+    }
+
+    /**
+     * 软件包/源码仓库地址
+     * @return webUrl
+     */
+    public String getWebUrl() {
+        return webUrl;
+    }
+
+    public void setWebUrl(String webUrl) {
+        this.webUrl = webUrl;
     }
 
     public SourceOrArtifact withAuth(String auth) {
@@ -382,7 +404,7 @@ public class SourceOrArtifact {
         SourceOrArtifact sourceOrArtifact = (SourceOrArtifact) o;
         return Objects.equals(this.storage, sourceOrArtifact.storage)
             && Objects.equals(this.type, sourceOrArtifact.type) && Objects.equals(this.url, sourceOrArtifact.url)
-            && Objects.equals(this.auth, sourceOrArtifact.auth)
+            && Objects.equals(this.webUrl, sourceOrArtifact.webUrl) && Objects.equals(this.auth, sourceOrArtifact.auth)
             && Objects.equals(this.properties, sourceOrArtifact.properties)
             && Objects.equals(this.repoType, sourceOrArtifact.repoType)
             && Objects.equals(this.repoUrl, sourceOrArtifact.repoUrl)
@@ -392,7 +414,7 @@ public class SourceOrArtifact {
 
     @Override
     public int hashCode() {
-        return Objects.hash(storage, type, url, auth, properties, repoType, repoUrl, repoRef, repoAuth);
+        return Objects.hash(storage, type, url, webUrl, auth, properties, repoType, repoUrl, repoRef, repoAuth);
     }
 
     @Override
@@ -402,6 +424,7 @@ public class SourceOrArtifact {
         sb.append("    storage: ").append(toIndentedString(storage)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    url: ").append(toIndentedString(url)).append("\n");
+        sb.append("    webUrl: ").append(toIndentedString(webUrl)).append("\n");
         sb.append("    auth: ").append(toIndentedString(auth)).append("\n");
         sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
         sb.append("    repoType: ").append(toIndentedString(repoType)).append("\n");

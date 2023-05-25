@@ -12,11 +12,6 @@ import java.util.function.Consumer;
 public class UpdateBucketAuthorizedRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Authorization")
-
-    private String authorization;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Sdk-Date")
 
     private String xSdkDate;
@@ -25,23 +20,6 @@ public class UpdateBucketAuthorizedRequest {
     @JsonProperty(value = "body")
 
     private UpdateBucketAuthorizedReq body;
-
-    public UpdateBucketAuthorizedRequest withAuthorization(String authorization) {
-        this.authorization = authorization;
-        return this;
-    }
-
-    /**
-     * 使用AK/SK方式认证时必选，携带的鉴权信息。 
-     * @return authorization
-     */
-    public String getAuthorization() {
-        return authorization;
-    }
-
-    public void setAuthorization(String authorization) {
-        this.authorization = authorization;
-    }
 
     public UpdateBucketAuthorizedRequest withXSdkDate(String xSdkDate) {
         this.xSdkDate = xSdkDate;
@@ -97,21 +75,19 @@ public class UpdateBucketAuthorizedRequest {
             return false;
         }
         UpdateBucketAuthorizedRequest updateBucketAuthorizedRequest = (UpdateBucketAuthorizedRequest) o;
-        return Objects.equals(this.authorization, updateBucketAuthorizedRequest.authorization)
-            && Objects.equals(this.xSdkDate, updateBucketAuthorizedRequest.xSdkDate)
+        return Objects.equals(this.xSdkDate, updateBucketAuthorizedRequest.xSdkDate)
             && Objects.equals(this.body, updateBucketAuthorizedRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(authorization, xSdkDate, body);
+        return Objects.hash(xSdkDate, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateBucketAuthorizedRequest {\n");
-        sb.append("    authorization: ").append(toIndentedString(authorization)).append("\n");
         sb.append("    xSdkDate: ").append(toIndentedString(xSdkDate)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");

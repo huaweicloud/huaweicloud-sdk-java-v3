@@ -36,7 +36,7 @@ public class UpdateAutoLaunchGroupReqV2 {
     private Integer stableCapacity;
 
     /**
-     * 超过目标容量时（目标容量减少）实例中断行为 terminate|noTermination terminate：释放 noTermination：不释放 默认值：terminate
+     * 超过目标容量时（目标容量减少）实例中断行为，枚举值 terminate：释放 noTermination：不释放 默认值：terminate
      */
     public static final class ExcessFulfilledCapacityBehaviorEnum {
 
@@ -120,7 +120,7 @@ public class UpdateAutoLaunchGroupReqV2 {
     private ExcessFulfilledCapacityBehaviorEnum excessFulfilledCapacityBehavior;
 
     /**
-     * 请求到期正在运行实例中断行为 terminate|noTermination terminate：释放 noTermination：不释放 默认值：terminate
+     * 请求到期正在运行实例中断行为，枚举值 terminate：释放 noTermination：不释放 默认值：terminate
      */
     public static final class InstancesBehaviorWithExpirationEnum {
 
@@ -214,7 +214,7 @@ public class UpdateAutoLaunchGroupReqV2 {
     }
 
     /**
-     * autoLaunchGroup名称(1-64个字符)，只能包含中文、字母、数字、下划线或中划线
+     * 智能购买组名称(1-64个字符)，只能包含中文、字母、数字、下划线和中划线
      * @return name
      */
     public String getName() {
@@ -248,7 +248,7 @@ public class UpdateAutoLaunchGroupReqV2 {
     }
 
     /**
-     * autoLaunchGroup请求的目标容量 实例数量或者CPU个数         最小数量   最大数量 实例个数      1        500 CPU核数      1        40000 如果目标容量变小，则进行缩容，释放spot实例虚拟机 如果变大，则进行扩容，创建虚拟机
+     * 供应组目标容量，实例数量或者CPU个数，目标容量大于等于stable_capacity。spot实例的容量为满配容量减去stable_capacity。
      * minimum: 0
      * @return targetCapacity
      */
@@ -266,7 +266,7 @@ public class UpdateAutoLaunchGroupReqV2 {
     }
 
     /**
-     * 按需实例目标容量，提供最低算力 大于等于0，小于target_capacity 非必填的原因是智能购买组中可以没有按需实例 如果stable_capacity变大，需要创建按需实例。大致方案是：从修改时刻开始，在这个时长内完成按需实例的创建，如果这时间超过结束时间，则以结束时间为最小容量的完成时间； 如果stable_capacity变小，按需实例也会删除
+     * 按需实例目标容量(实例数量或CPU个数),小于target_capacity,供应组中可以没有按需实例。
      * minimum: 0
      * @return stableCapacity
      */
@@ -285,7 +285,7 @@ public class UpdateAutoLaunchGroupReqV2 {
     }
 
     /**
-     * 超过目标容量时（目标容量减少）实例中断行为 terminate|noTermination terminate：释放 noTermination：不释放 默认值：terminate
+     * 超过目标容量时（目标容量减少）实例中断行为，枚举值 terminate：释放 noTermination：不释放 默认值：terminate
      * @return excessFulfilledCapacityBehavior
      */
     public ExcessFulfilledCapacityBehaviorEnum getExcessFulfilledCapacityBehavior() {
@@ -304,7 +304,7 @@ public class UpdateAutoLaunchGroupReqV2 {
     }
 
     /**
-     * 请求到期正在运行实例中断行为 terminate|noTermination terminate：释放 noTermination：不释放 默认值：terminate
+     * 请求到期正在运行实例中断行为，枚举值 terminate：释放 noTermination：不释放 默认值：terminate
      * @return instancesBehaviorWithExpiration
      */
     public InstancesBehaviorWithExpirationEnum getInstancesBehaviorWithExpiration() {
@@ -322,7 +322,7 @@ public class UpdateAutoLaunchGroupReqV2 {
     }
 
     /**
-     * 用户愿意为竞价实例每小时支付的最高价格。为全局spot实例的价格，如果overrides中没有提供价格，使用该价格
+     * 用户愿意为竞价实例每小时支付的最高价格。如果overrides中没有提供价格，可以使用该价格
      * @return spotPrice
      */
     public Double getSpotPrice() {

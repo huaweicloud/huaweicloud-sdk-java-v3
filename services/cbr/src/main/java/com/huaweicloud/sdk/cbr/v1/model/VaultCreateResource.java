@@ -108,6 +108,26 @@ public class VaultCreateResource {
 
     private List<CbcOrderResult> orders = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "backup_name_prefix")
+
+    private String backupNamePrefix;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "demand_billing")
+
+    private Boolean demandBilling;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cbc_delete_count")
+
+    private Integer cbcDeleteCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "frozen")
+
+    private Boolean frozen;
+
     public VaultCreateResource withBilling(Billing billing) {
         this.billing = billing;
         return this;
@@ -385,7 +405,7 @@ public class VaultCreateResource {
     }
 
     /**
-     * 是否开启存储库自动扩容能力（只支持按需存储库）
+     * [是否开启存储库自动扩容能力（只支持按需存储库）。](tag:hws,hws_hk) [是否开启存储库自动扩容能力。](tag:dt,ocb,tlf,sbc,fcs_vm,ctc,g42,tm,cmcc,tm,hcso_dt)
      * @return autoExpand
      */
     public Boolean getAutoExpand() {
@@ -499,6 +519,74 @@ public class VaultCreateResource {
         this.orders = orders;
     }
 
+    public VaultCreateResource withBackupNamePrefix(String backupNamePrefix) {
+        this.backupNamePrefix = backupNamePrefix;
+        return this;
+    }
+
+    /**
+     * 备份名称前缀
+     * @return backupNamePrefix
+     */
+    public String getBackupNamePrefix() {
+        return backupNamePrefix;
+    }
+
+    public void setBackupNamePrefix(String backupNamePrefix) {
+        this.backupNamePrefix = backupNamePrefix;
+    }
+
+    public VaultCreateResource withDemandBilling(Boolean demandBilling) {
+        this.demandBilling = demandBilling;
+        return this;
+    }
+
+    /**
+     * 是否允许使用超出存储库容量
+     * @return demandBilling
+     */
+    public Boolean getDemandBilling() {
+        return demandBilling;
+    }
+
+    public void setDemandBilling(Boolean demandBilling) {
+        this.demandBilling = demandBilling;
+    }
+
+    public VaultCreateResource withCbcDeleteCount(Integer cbcDeleteCount) {
+        this.cbcDeleteCount = cbcDeleteCount;
+        return this;
+    }
+
+    /**
+     * 存储库删除次数
+     * @return cbcDeleteCount
+     */
+    public Integer getCbcDeleteCount() {
+        return cbcDeleteCount;
+    }
+
+    public void setCbcDeleteCount(Integer cbcDeleteCount) {
+        this.cbcDeleteCount = cbcDeleteCount;
+    }
+
+    public VaultCreateResource withFrozen(Boolean frozen) {
+        this.frozen = frozen;
+        return this;
+    }
+
+    /**
+     * 存储库是否冻结
+     * @return frozen
+     */
+    public Boolean getFrozen() {
+        return frozen;
+    }
+
+    public void setFrozen(Boolean frozen) {
+        this.frozen = frozen;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -525,7 +613,11 @@ public class VaultCreateResource {
             && Objects.equals(this.threshold, vaultCreateResource.threshold)
             && Objects.equals(this.errText, vaultCreateResource.errText)
             && Objects.equals(this.retCode, vaultCreateResource.retCode)
-            && Objects.equals(this.orders, vaultCreateResource.orders);
+            && Objects.equals(this.orders, vaultCreateResource.orders)
+            && Objects.equals(this.backupNamePrefix, vaultCreateResource.backupNamePrefix)
+            && Objects.equals(this.demandBilling, vaultCreateResource.demandBilling)
+            && Objects.equals(this.cbcDeleteCount, vaultCreateResource.cbcDeleteCount)
+            && Objects.equals(this.frozen, vaultCreateResource.frozen);
     }
 
     @Override
@@ -548,7 +640,11 @@ public class VaultCreateResource {
             threshold,
             errText,
             retCode,
-            orders);
+            orders,
+            backupNamePrefix,
+            demandBilling,
+            cbcDeleteCount,
+            frozen);
     }
 
     @Override
@@ -574,6 +670,10 @@ public class VaultCreateResource {
         sb.append("    errText: ").append(toIndentedString(errText)).append("\n");
         sb.append("    retCode: ").append(toIndentedString(retCode)).append("\n");
         sb.append("    orders: ").append(toIndentedString(orders)).append("\n");
+        sb.append("    backupNamePrefix: ").append(toIndentedString(backupNamePrefix)).append("\n");
+        sb.append("    demandBilling: ").append(toIndentedString(demandBilling)).append("\n");
+        sb.append("    cbcDeleteCount: ").append(toIndentedString(cbcDeleteCount)).append("\n");
+        sb.append("    frozen: ").append(toIndentedString(frozen)).append("\n");
         sb.append("}");
         return sb.toString();
     }

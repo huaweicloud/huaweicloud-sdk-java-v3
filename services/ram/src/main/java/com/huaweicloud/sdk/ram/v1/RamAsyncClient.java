@@ -328,6 +328,34 @@ public class RamAsyncClient {
     }
 
     /**
+     * 查询资源共享的配额
+     *
+     * 查询当前帐号的资源共享配额信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListQuotaRequest 请求对象
+     * @return CompletableFuture<ListQuotaResponse>
+     */
+    public CompletableFuture<ListQuotaResponse> listQuotaAsync(ListQuotaRequest request) {
+        return hcClient.asyncInvokeHttp(request, RamMeta.listQuota);
+    }
+
+    /**
+     * 查询资源共享的配额
+     *
+     * 查询当前帐号的资源共享配额信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListQuotaRequest 请求对象
+     * @return AsyncInvoker<ListQuotaRequest, ListQuotaResponse>
+     */
+    public AsyncInvoker<ListQuotaRequest, ListQuotaResponse> listQuotaAsyncInvoker(ListQuotaRequest request) {
+        return new AsyncInvoker<ListQuotaRequest, ListQuotaResponse>(request, RamMeta.listQuota, hcClient);
+    }
+
+    /**
      * 检索去重的共享的资源
      *
      * 检索您添加到资源共享或被共享给您的不同资源。

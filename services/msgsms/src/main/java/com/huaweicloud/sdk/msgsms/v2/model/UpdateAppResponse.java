@@ -26,11 +26,6 @@ public class UpdateAppResponse extends SdkResponse {
 
     private String id;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "app_secret")
-
-    private String appSecret;
-
     public UpdateAppResponse withAppKey(String appKey) {
         this.appKey = appKey;
         return this;
@@ -82,23 +77,6 @@ public class UpdateAppResponse extends SdkResponse {
         this.id = id;
     }
 
-    public UpdateAppResponse withAppSecret(String appSecret) {
-        this.appSecret = appSecret;
-        return this;
-    }
-
-    /**
-     * Application Secret，应用密钥
-     * @return appSecret
-     */
-    public String getAppSecret() {
-        return appSecret;
-    }
-
-    public void setAppSecret(String appSecret) {
-        this.appSecret = appSecret;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -109,13 +87,12 @@ public class UpdateAppResponse extends SdkResponse {
         }
         UpdateAppResponse updateAppResponse = (UpdateAppResponse) o;
         return Objects.equals(this.appKey, updateAppResponse.appKey)
-            && Objects.equals(this.appName, updateAppResponse.appName) && Objects.equals(this.id, updateAppResponse.id)
-            && Objects.equals(this.appSecret, updateAppResponse.appSecret);
+            && Objects.equals(this.appName, updateAppResponse.appName) && Objects.equals(this.id, updateAppResponse.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(appKey, appName, id, appSecret);
+        return Objects.hash(appKey, appName, id);
     }
 
     @Override
@@ -125,7 +102,6 @@ public class UpdateAppResponse extends SdkResponse {
         sb.append("    appKey: ").append(toIndentedString(appKey)).append("\n");
         sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    appSecret: ").append(toIndentedString(appSecret)).append("\n");
         sb.append("}");
         return sb.toString();
     }

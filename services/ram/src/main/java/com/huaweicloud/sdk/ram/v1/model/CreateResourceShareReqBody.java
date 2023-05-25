@@ -24,6 +24,11 @@ public class CreateResourceShareReqBody {
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "allow_external_principals")
+
+    private Boolean allowExternalPrincipals;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "permission_ids")
 
     private List<String> permissionIds = null;
@@ -75,6 +80,23 @@ public class CreateResourceShareReqBody {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public CreateResourceShareReqBody withAllowExternalPrincipals(Boolean allowExternalPrincipals) {
+        this.allowExternalPrincipals = allowExternalPrincipals;
+        return this;
+    }
+
+    /**
+     * 资源共享实例是否支持共享给组织外账号。
+     * @return allowExternalPrincipals
+     */
+    public Boolean getAllowExternalPrincipals() {
+        return allowExternalPrincipals;
+    }
+
+    public void setAllowExternalPrincipals(Boolean allowExternalPrincipals) {
+        this.allowExternalPrincipals = allowExternalPrincipals;
     }
 
     public CreateResourceShareReqBody withPermissionIds(List<String> permissionIds) {
@@ -220,6 +242,7 @@ public class CreateResourceShareReqBody {
         CreateResourceShareReqBody createResourceShareReqBody = (CreateResourceShareReqBody) o;
         return Objects.equals(this.name, createResourceShareReqBody.name)
             && Objects.equals(this.description, createResourceShareReqBody.description)
+            && Objects.equals(this.allowExternalPrincipals, createResourceShareReqBody.allowExternalPrincipals)
             && Objects.equals(this.permissionIds, createResourceShareReqBody.permissionIds)
             && Objects.equals(this.principals, createResourceShareReqBody.principals)
             && Objects.equals(this.resourceUrns, createResourceShareReqBody.resourceUrns)
@@ -228,7 +251,7 @@ public class CreateResourceShareReqBody {
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, permissionIds, principals, resourceUrns, tags);
+        return Objects.hash(name, description, allowExternalPrincipals, permissionIds, principals, resourceUrns, tags);
     }
 
     @Override
@@ -237,6 +260,7 @@ public class CreateResourceShareReqBody {
         sb.append("class CreateResourceShareReqBody {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    allowExternalPrincipals: ").append(toIndentedString(allowExternalPrincipals)).append("\n");
         sb.append("    permissionIds: ").append(toIndentedString(permissionIds)).append("\n");
         sb.append("    principals: ").append(toIndentedString(principals)).append("\n");
         sb.append("    resourceUrns: ").append(toIndentedString(resourceUrns)).append("\n");

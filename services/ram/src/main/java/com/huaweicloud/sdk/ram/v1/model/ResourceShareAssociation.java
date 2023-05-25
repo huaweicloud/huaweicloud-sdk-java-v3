@@ -32,6 +32,11 @@ public class ResourceShareAssociation {
     private OffsetDateTime updatedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "external")
+
+    private Boolean external;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_share_id")
 
     private String resourceShareId;
@@ -114,6 +119,23 @@ public class ResourceShareAssociation {
         this.updatedAt = updatedAt;
     }
 
+    public ResourceShareAssociation withExternal(Boolean external) {
+        this.external = external;
+        return this;
+    }
+
+    /**
+     * 标识资源使用者是否和共享的拥有者属于同一个组织
+     * @return external
+     */
+    public Boolean getExternal() {
+        return external;
+    }
+
+    public void setExternal(Boolean external) {
+        this.external = external;
+    }
+
     public ResourceShareAssociation withResourceShareId(String resourceShareId) {
         this.resourceShareId = resourceShareId;
         return this;
@@ -178,6 +200,7 @@ public class ResourceShareAssociation {
             && Objects.equals(this.associationType, resourceShareAssociation.associationType)
             && Objects.equals(this.createdAt, resourceShareAssociation.createdAt)
             && Objects.equals(this.updatedAt, resourceShareAssociation.updatedAt)
+            && Objects.equals(this.external, resourceShareAssociation.external)
             && Objects.equals(this.resourceShareId, resourceShareAssociation.resourceShareId)
             && Objects.equals(this.resourceShareName, resourceShareAssociation.resourceShareName)
             && Objects.equals(this.status, resourceShareAssociation.status);
@@ -185,8 +208,14 @@ public class ResourceShareAssociation {
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(associatedEntity, associationType, createdAt, updatedAt, resourceShareId, resourceShareName, status);
+        return Objects.hash(associatedEntity,
+            associationType,
+            createdAt,
+            updatedAt,
+            external,
+            resourceShareId,
+            resourceShareName,
+            status);
     }
 
     @Override
@@ -197,6 +226,7 @@ public class ResourceShareAssociation {
         sb.append("    associationType: ").append(toIndentedString(associationType)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+        sb.append("    external: ").append(toIndentedString(external)).append("\n");
         sb.append("    resourceShareId: ").append(toIndentedString(resourceShareId)).append("\n");
         sb.append("    resourceShareName: ").append(toIndentedString(resourceShareName)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");

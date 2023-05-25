@@ -51,37 +51,6 @@ public class ImageAsyncClient {
     }
 
     /**
-     * 创建视频脱敏任务
-     *
-     * 创建视频脱敏除任务，将输入视频的图像敏感信息模糊化，包括视频中的人脸和车牌
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateVideoObjectMaskingTaskRequest 请求对象
-     * @return CompletableFuture<CreateVideoObjectMaskingTaskResponse>
-     */
-    public CompletableFuture<CreateVideoObjectMaskingTaskResponse> createVideoObjectMaskingTaskAsync(
-        CreateVideoObjectMaskingTaskRequest request) {
-        return hcClient.asyncInvokeHttp(request, ImageMeta.createVideoObjectMaskingTask);
-    }
-
-    /**
-     * 创建视频脱敏任务
-     *
-     * 创建视频脱敏除任务，将输入视频的图像敏感信息模糊化，包括视频中的人脸和车牌
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateVideoObjectMaskingTaskRequest 请求对象
-     * @return AsyncInvoker<CreateVideoObjectMaskingTaskRequest, CreateVideoObjectMaskingTaskResponse>
-     */
-    public AsyncInvoker<CreateVideoObjectMaskingTaskRequest, CreateVideoObjectMaskingTaskResponse> createVideoObjectMaskingTaskAsyncInvoker(
-        CreateVideoObjectMaskingTaskRequest request) {
-        return new AsyncInvoker<CreateVideoObjectMaskingTaskRequest, CreateVideoObjectMaskingTaskResponse>(request,
-            ImageMeta.createVideoObjectMaskingTask, hcClient);
-    }
-
-    /**
      * 创建视频标签任务
      *
      * 创建视频标签任务，输入一段视频，通过AI模型分析视频中的信息，输出视频所包含的媒资标签、名人标签、logo标签、语音标签、OCR标签等信息。
@@ -386,37 +355,6 @@ public class ImageAsyncClient {
         ShowImageHighresolutionMattingTaskRequest request) {
         return new AsyncInvoker<ShowImageHighresolutionMattingTaskRequest, ShowImageHighresolutionMattingTaskResponse>(
             request, ImageMeta.showImageHighresolutionMattingTask, hcClient);
-    }
-
-    /**
-     * 查询视频脱敏任务详情
-     *
-     * show task
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ShowVideoObjectMaskingTaskRequest 请求对象
-     * @return CompletableFuture<ShowVideoObjectMaskingTaskResponse>
-     */
-    public CompletableFuture<ShowVideoObjectMaskingTaskResponse> showVideoObjectMaskingTaskAsync(
-        ShowVideoObjectMaskingTaskRequest request) {
-        return hcClient.asyncInvokeHttp(request, ImageMeta.showVideoObjectMaskingTask);
-    }
-
-    /**
-     * 查询视频脱敏任务详情
-     *
-     * show task
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ShowVideoObjectMaskingTaskRequest 请求对象
-     * @return AsyncInvoker<ShowVideoObjectMaskingTaskRequest, ShowVideoObjectMaskingTaskResponse>
-     */
-    public AsyncInvoker<ShowVideoObjectMaskingTaskRequest, ShowVideoObjectMaskingTaskResponse> showVideoObjectMaskingTaskAsyncInvoker(
-        ShowVideoObjectMaskingTaskRequest request) {
-        return new AsyncInvoker<ShowVideoObjectMaskingTaskRequest, ShowVideoObjectMaskingTaskResponse>(request,
-            ImageMeta.showVideoObjectMaskingTask, hcClient);
     }
 
     /**

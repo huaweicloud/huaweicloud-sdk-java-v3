@@ -31,7 +31,7 @@ public class ListInstancesRequest {
     }
 
     /**
-     * 查询返回实例数量限制。默认值20，最大返回值1000
+     * 查询返回实例数量限制 取值范围：1-1000。
      * minimum: 1
      * maximum: 1000
      * @return limit
@@ -50,7 +50,7 @@ public class ListInstancesRequest {
     }
 
     /**
-     * 取值为上一页数据的最后一条记录的唯一标记
+     * 取值为上一页数据的最后一条记录的唯一标识
      * @return marker
      */
     public String getMarker() {
