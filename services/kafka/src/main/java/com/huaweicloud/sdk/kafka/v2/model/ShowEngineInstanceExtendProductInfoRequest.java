@@ -97,7 +97,7 @@ public class ShowEngineInstanceExtendProductInfoRequest {
     private String instanceId;
 
     /**
-     * [产品的类型。 - advanced: 专享版
+     * 产品的类型。 - advanced: 专享版
      */
     public static final class TypeEnum {
 
@@ -212,7 +212,7 @@ public class ShowEngineInstanceExtendProductInfoRequest {
     }
 
     /**
-     * [产品的类型。 - advanced: 专享版
+     * 产品的类型。 - advanced: 专享版
      * @return type
      */
     public TypeEnum getType() {

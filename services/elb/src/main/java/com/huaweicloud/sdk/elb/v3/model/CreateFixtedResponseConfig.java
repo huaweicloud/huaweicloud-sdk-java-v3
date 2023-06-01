@@ -21,7 +21,7 @@ public class CreateFixtedResponseConfig {
     private String statusCode;
 
     /**
-     * 返回body的格式。  取值范围： - text/plain - text/css - text/html - application/javascript - application/json
+     * 返回body的格式。  取值范围： - text/plain，默认值 - text/css - text/html - application/javascript - application/json
      */
     public static final class ContentTypeEnum {
 
@@ -148,7 +148,7 @@ public class CreateFixtedResponseConfig {
     }
 
     /**
-     * 返回body的格式。  取值范围： - text/plain - text/css - text/html - application/javascript - application/json
+     * 返回body的格式。  取值范围： - text/plain，默认值 - text/css - text/html - application/javascript - application/json
      * @return contentType
      */
     public ContentTypeEnum getContentType() {

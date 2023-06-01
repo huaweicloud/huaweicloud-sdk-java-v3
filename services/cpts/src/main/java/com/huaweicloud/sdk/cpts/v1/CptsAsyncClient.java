@@ -20,6 +20,37 @@ public class CptsAsyncClient {
     }
 
     /**
+     * 批量启停任务（新版启停任务接口）
+     *
+     * 批量启停任务（新版启停任务接口）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchUpdateTaskStatusRequest 请求对象
+     * @return CompletableFuture<BatchUpdateTaskStatusResponse>
+     */
+    public CompletableFuture<BatchUpdateTaskStatusResponse> batchUpdateTaskStatusAsync(
+        BatchUpdateTaskStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, CptsMeta.batchUpdateTaskStatus);
+    }
+
+    /**
+     * 批量启停任务（新版启停任务接口）
+     *
+     * 批量启停任务（新版启停任务接口）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchUpdateTaskStatusRequest 请求对象
+     * @return AsyncInvoker<BatchUpdateTaskStatusRequest, BatchUpdateTaskStatusResponse>
+     */
+    public AsyncInvoker<BatchUpdateTaskStatusRequest, BatchUpdateTaskStatusResponse> batchUpdateTaskStatusAsyncInvoker(
+        BatchUpdateTaskStatusRequest request) {
+        return new AsyncInvoker<BatchUpdateTaskStatusRequest, BatchUpdateTaskStatusResponse>(request,
+            CptsMeta.batchUpdateTaskStatus, hcClient);
+    }
+
+    /**
      * 创建用例
      *
      * 创建用例
@@ -45,6 +76,94 @@ public class CptsAsyncClient {
      */
     public AsyncInvoker<CreateCaseRequest, CreateCaseResponse> createCaseAsyncInvoker(CreateCaseRequest request) {
         return new AsyncInvoker<CreateCaseRequest, CreateCaseResponse>(request, CptsMeta.createCase, hcClient);
+    }
+
+    /**
+     * 创建目录
+     *
+     * 创建目录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDirectoryRequest 请求对象
+     * @return CompletableFuture<CreateDirectoryResponse>
+     */
+    public CompletableFuture<CreateDirectoryResponse> createDirectoryAsync(CreateDirectoryRequest request) {
+        return hcClient.asyncInvokeHttp(request, CptsMeta.createDirectory);
+    }
+
+    /**
+     * 创建目录
+     *
+     * 创建目录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDirectoryRequest 请求对象
+     * @return AsyncInvoker<CreateDirectoryRequest, CreateDirectoryResponse>
+     */
+    public AsyncInvoker<CreateDirectoryRequest, CreateDirectoryResponse> createDirectoryAsyncInvoker(
+        CreateDirectoryRequest request) {
+        return new AsyncInvoker<CreateDirectoryRequest, CreateDirectoryResponse>(request, CptsMeta.createDirectory,
+            hcClient);
+    }
+
+    /**
+     * 创建用例
+     *
+     * 创建用例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateNewCaseRequest 请求对象
+     * @return CompletableFuture<CreateNewCaseResponse>
+     */
+    public CompletableFuture<CreateNewCaseResponse> createNewCaseAsync(CreateNewCaseRequest request) {
+        return hcClient.asyncInvokeHttp(request, CptsMeta.createNewCase);
+    }
+
+    /**
+     * 创建用例
+     *
+     * 创建用例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateNewCaseRequest 请求对象
+     * @return AsyncInvoker<CreateNewCaseRequest, CreateNewCaseResponse>
+     */
+    public AsyncInvoker<CreateNewCaseRequest, CreateNewCaseResponse> createNewCaseAsyncInvoker(
+        CreateNewCaseRequest request) {
+        return new AsyncInvoker<CreateNewCaseRequest, CreateNewCaseResponse>(request, CptsMeta.createNewCase, hcClient);
+    }
+
+    /**
+     * 创建任务
+     *
+     * 创建任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateNewTaskRequest 请求对象
+     * @return CompletableFuture<CreateNewTaskResponse>
+     */
+    public CompletableFuture<CreateNewTaskResponse> createNewTaskAsync(CreateNewTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, CptsMeta.createNewTask);
+    }
+
+    /**
+     * 创建任务
+     *
+     * 创建任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateNewTaskRequest 请求对象
+     * @return AsyncInvoker<CreateNewTaskRequest, CreateNewTaskResponse>
+     */
+    public AsyncInvoker<CreateNewTaskRequest, CreateNewTaskResponse> createNewTaskAsyncInvoker(
+        CreateNewTaskRequest request) {
+        return new AsyncInvoker<CreateNewTaskRequest, CreateNewTaskResponse>(request, CptsMeta.createNewTask, hcClient);
     }
 
     /**
@@ -190,6 +309,94 @@ public class CptsAsyncClient {
     }
 
     /**
+     * 删除目录
+     *
+     * 删除目录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteDirectoryRequest 请求对象
+     * @return CompletableFuture<DeleteDirectoryResponse>
+     */
+    public CompletableFuture<DeleteDirectoryResponse> deleteDirectoryAsync(DeleteDirectoryRequest request) {
+        return hcClient.asyncInvokeHttp(request, CptsMeta.deleteDirectory);
+    }
+
+    /**
+     * 删除目录
+     *
+     * 删除目录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteDirectoryRequest 请求对象
+     * @return AsyncInvoker<DeleteDirectoryRequest, DeleteDirectoryResponse>
+     */
+    public AsyncInvoker<DeleteDirectoryRequest, DeleteDirectoryResponse> deleteDirectoryAsyncInvoker(
+        DeleteDirectoryRequest request) {
+        return new AsyncInvoker<DeleteDirectoryRequest, DeleteDirectoryResponse>(request, CptsMeta.deleteDirectory,
+            hcClient);
+    }
+
+    /**
+     * 删除用例
+     *
+     * 删除用例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteNewCaseRequest 请求对象
+     * @return CompletableFuture<DeleteNewCaseResponse>
+     */
+    public CompletableFuture<DeleteNewCaseResponse> deleteNewCaseAsync(DeleteNewCaseRequest request) {
+        return hcClient.asyncInvokeHttp(request, CptsMeta.deleteNewCase);
+    }
+
+    /**
+     * 删除用例
+     *
+     * 删除用例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteNewCaseRequest 请求对象
+     * @return AsyncInvoker<DeleteNewCaseRequest, DeleteNewCaseResponse>
+     */
+    public AsyncInvoker<DeleteNewCaseRequest, DeleteNewCaseResponse> deleteNewCaseAsyncInvoker(
+        DeleteNewCaseRequest request) {
+        return new AsyncInvoker<DeleteNewCaseRequest, DeleteNewCaseResponse>(request, CptsMeta.deleteNewCase, hcClient);
+    }
+
+    /**
+     * 删除任务
+     *
+     * 删除任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteNewTaskRequest 请求对象
+     * @return CompletableFuture<DeleteNewTaskResponse>
+     */
+    public CompletableFuture<DeleteNewTaskResponse> deleteNewTaskAsync(DeleteNewTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, CptsMeta.deleteNewTask);
+    }
+
+    /**
+     * 删除任务
+     *
+     * 删除任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteNewTaskRequest 请求对象
+     * @return AsyncInvoker<DeleteNewTaskRequest, DeleteNewTaskResponse>
+     */
+    public AsyncInvoker<DeleteNewTaskRequest, DeleteNewTaskResponse> deleteNewTaskAsyncInvoker(
+        DeleteNewTaskRequest request) {
+        return new AsyncInvoker<DeleteNewTaskRequest, DeleteNewTaskResponse>(request, CptsMeta.deleteNewTask, hcClient);
+    }
+
+    /**
      * 删除任务
      *
      * 删除任务
@@ -276,6 +483,65 @@ public class CptsAsyncClient {
     }
 
     /**
+     * 查询用例树
+     *
+     * 查询用例树
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListProjectTestCaseRequest 请求对象
+     * @return CompletableFuture<ListProjectTestCaseResponse>
+     */
+    public CompletableFuture<ListProjectTestCaseResponse> listProjectTestCaseAsync(ListProjectTestCaseRequest request) {
+        return hcClient.asyncInvokeHttp(request, CptsMeta.listProjectTestCase);
+    }
+
+    /**
+     * 查询用例树
+     *
+     * 查询用例树
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListProjectTestCaseRequest 请求对象
+     * @return AsyncInvoker<ListProjectTestCaseRequest, ListProjectTestCaseResponse>
+     */
+    public AsyncInvoker<ListProjectTestCaseRequest, ListProjectTestCaseResponse> listProjectTestCaseAsyncInvoker(
+        ListProjectTestCaseRequest request) {
+        return new AsyncInvoker<ListProjectTestCaseRequest, ListProjectTestCaseResponse>(request,
+            CptsMeta.listProjectTestCase, hcClient);
+    }
+
+    /**
+     * 获取任务关联的用例列表
+     *
+     * 获取任务关联的用例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTaskCasesRequest 请求对象
+     * @return CompletableFuture<ListTaskCasesResponse>
+     */
+    public CompletableFuture<ListTaskCasesResponse> listTaskCasesAsync(ListTaskCasesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CptsMeta.listTaskCases);
+    }
+
+    /**
+     * 获取任务关联的用例列表
+     *
+     * 获取任务关联的用例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTaskCasesRequest 请求对象
+     * @return AsyncInvoker<ListTaskCasesRequest, ListTaskCasesResponse>
+     */
+    public AsyncInvoker<ListTaskCasesRequest, ListTaskCasesResponse> listTaskCasesAsyncInvoker(
+        ListTaskCasesRequest request) {
+        return new AsyncInvoker<ListTaskCasesRequest, ListTaskCasesResponse>(request, CptsMeta.listTaskCases, hcClient);
+    }
+
+    /**
      * 查询全局变量
      *
      * 查询全局变量
@@ -335,6 +601,34 @@ public class CptsAsyncClient {
     }
 
     /**
+     * 查询用例
+     *
+     * 查询用例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowCaseRequest 请求对象
+     * @return CompletableFuture<ShowCaseResponse>
+     */
+    public CompletableFuture<ShowCaseResponse> showCaseAsync(ShowCaseRequest request) {
+        return hcClient.asyncInvokeHttp(request, CptsMeta.showCase);
+    }
+
+    /**
+     * 查询用例
+     *
+     * 查询用例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowCaseRequest 请求对象
+     * @return AsyncInvoker<ShowCaseRequest, ShowCaseResponse>
+     */
+    public AsyncInvoker<ShowCaseRequest, ShowCaseResponse> showCaseAsyncInvoker(ShowCaseRequest request) {
+        return new AsyncInvoker<ShowCaseRequest, ShowCaseResponse>(request, CptsMeta.showCase, hcClient);
+    }
+
+    /**
      * 查询PerfTest任务离线报告列表
      *
      * 查询PerfTest任务离线报告列表
@@ -362,6 +656,97 @@ public class CptsAsyncClient {
         ShowHistoryRunInfoRequest request) {
         return new AsyncInvoker<ShowHistoryRunInfoRequest, ShowHistoryRunInfoResponse>(request,
             CptsMeta.showHistoryRunInfo, hcClient);
+    }
+
+    /**
+     * 内外融合单个用例的详情数据
+     *
+     * 内外融合单个用例的详情数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowMergeCaseDetailRequest 请求对象
+     * @return CompletableFuture<ShowMergeCaseDetailResponse>
+     */
+    public CompletableFuture<ShowMergeCaseDetailResponse> showMergeCaseDetailAsync(ShowMergeCaseDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, CptsMeta.showMergeCaseDetail);
+    }
+
+    /**
+     * 内外融合单个用例的详情数据
+     *
+     * 内外融合单个用例的详情数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowMergeCaseDetailRequest 请求对象
+     * @return AsyncInvoker<ShowMergeCaseDetailRequest, ShowMergeCaseDetailResponse>
+     */
+    public AsyncInvoker<ShowMergeCaseDetailRequest, ShowMergeCaseDetailResponse> showMergeCaseDetailAsyncInvoker(
+        ShowMergeCaseDetailRequest request) {
+        return new AsyncInvoker<ShowMergeCaseDetailRequest, ShowMergeCaseDetailResponse>(request,
+            CptsMeta.showMergeCaseDetail, hcClient);
+    }
+
+    /**
+     * 查询报告汇总数据接口
+     *
+     * 查询报告汇总数据接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowMergeReportLogsOutlineRequest 请求对象
+     * @return CompletableFuture<ShowMergeReportLogsOutlineResponse>
+     */
+    public CompletableFuture<ShowMergeReportLogsOutlineResponse> showMergeReportLogsOutlineAsync(
+        ShowMergeReportLogsOutlineRequest request) {
+        return hcClient.asyncInvokeHttp(request, CptsMeta.showMergeReportLogsOutline);
+    }
+
+    /**
+     * 查询报告汇总数据接口
+     *
+     * 查询报告汇总数据接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowMergeReportLogsOutlineRequest 请求对象
+     * @return AsyncInvoker<ShowMergeReportLogsOutlineRequest, ShowMergeReportLogsOutlineResponse>
+     */
+    public AsyncInvoker<ShowMergeReportLogsOutlineRequest, ShowMergeReportLogsOutlineResponse> showMergeReportLogsOutlineAsyncInvoker(
+        ShowMergeReportLogsOutlineRequest request) {
+        return new AsyncInvoker<ShowMergeReportLogsOutlineRequest, ShowMergeReportLogsOutlineResponse>(request,
+            CptsMeta.showMergeReportLogsOutline, hcClient);
+    }
+
+    /**
+     * 内外融合当前任务用例列表接口
+     *
+     * 内外融合当前任务用例列表接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowMergeTaskCaseRequest 请求对象
+     * @return CompletableFuture<ShowMergeTaskCaseResponse>
+     */
+    public CompletableFuture<ShowMergeTaskCaseResponse> showMergeTaskCaseAsync(ShowMergeTaskCaseRequest request) {
+        return hcClient.asyncInvokeHttp(request, CptsMeta.showMergeTaskCase);
+    }
+
+    /**
+     * 内外融合当前任务用例列表接口
+     *
+     * 内外融合当前任务用例列表接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowMergeTaskCaseRequest 请求对象
+     * @return AsyncInvoker<ShowMergeTaskCaseRequest, ShowMergeTaskCaseResponse>
+     */
+    public AsyncInvoker<ShowMergeTaskCaseRequest, ShowMergeTaskCaseResponse> showMergeTaskCaseAsyncInvoker(
+        ShowMergeTaskCaseRequest request) {
+        return new AsyncInvoker<ShowMergeTaskCaseRequest, ShowMergeTaskCaseResponse>(request,
+            CptsMeta.showMergeTaskCase, hcClient);
     }
 
     /**
@@ -418,6 +803,36 @@ public class CptsAsyncClient {
      */
     public AsyncInvoker<ShowTaskRequest, ShowTaskResponse> showTaskAsyncInvoker(ShowTaskRequest request) {
         return new AsyncInvoker<ShowTaskRequest, ShowTaskResponse>(request, CptsMeta.showTask, hcClient);
+    }
+
+    /**
+     * 内外融合获取用例的AW曲线图获取接口
+     *
+     * 内外融合获取用例的AW曲线图获取接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTaskCaseAwChartRequest 请求对象
+     * @return CompletableFuture<ShowTaskCaseAwChartResponse>
+     */
+    public CompletableFuture<ShowTaskCaseAwChartResponse> showTaskCaseAwChartAsync(ShowTaskCaseAwChartRequest request) {
+        return hcClient.asyncInvokeHttp(request, CptsMeta.showTaskCaseAwChart);
+    }
+
+    /**
+     * 内外融合获取用例的AW曲线图获取接口
+     *
+     * 内外融合获取用例的AW曲线图获取接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTaskCaseAwChartRequest 请求对象
+     * @return AsyncInvoker<ShowTaskCaseAwChartRequest, ShowTaskCaseAwChartResponse>
+     */
+    public AsyncInvoker<ShowTaskCaseAwChartRequest, ShowTaskCaseAwChartResponse> showTaskCaseAwChartAsyncInvoker(
+        ShowTaskCaseAwChartRequest request) {
+        return new AsyncInvoker<ShowTaskCaseAwChartRequest, ShowTaskCaseAwChartResponse>(request,
+            CptsMeta.showTaskCaseAwChart, hcClient);
     }
 
     /**
@@ -561,6 +976,65 @@ public class CptsAsyncClient {
      */
     public AsyncInvoker<UpdateCaseRequest, UpdateCaseResponse> updateCaseAsyncInvoker(UpdateCaseRequest request) {
         return new AsyncInvoker<UpdateCaseRequest, UpdateCaseResponse>(request, CptsMeta.updateCase, hcClient);
+    }
+
+    /**
+     * 修改目录
+     *
+     * 修改目录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateDirectoryRequest 请求对象
+     * @return CompletableFuture<UpdateDirectoryResponse>
+     */
+    public CompletableFuture<UpdateDirectoryResponse> updateDirectoryAsync(UpdateDirectoryRequest request) {
+        return hcClient.asyncInvokeHttp(request, CptsMeta.updateDirectory);
+    }
+
+    /**
+     * 修改目录
+     *
+     * 修改目录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateDirectoryRequest 请求对象
+     * @return AsyncInvoker<UpdateDirectoryRequest, UpdateDirectoryResponse>
+     */
+    public AsyncInvoker<UpdateDirectoryRequest, UpdateDirectoryResponse> updateDirectoryAsyncInvoker(
+        UpdateDirectoryRequest request) {
+        return new AsyncInvoker<UpdateDirectoryRequest, UpdateDirectoryResponse>(request, CptsMeta.updateDirectory,
+            hcClient);
+    }
+
+    /**
+     * 修改用例
+     *
+     * 修改用例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateNewCaseRequest 请求对象
+     * @return CompletableFuture<UpdateNewCaseResponse>
+     */
+    public CompletableFuture<UpdateNewCaseResponse> updateNewCaseAsync(UpdateNewCaseRequest request) {
+        return hcClient.asyncInvokeHttp(request, CptsMeta.updateNewCase);
+    }
+
+    /**
+     * 修改用例
+     *
+     * 修改用例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateNewCaseRequest 请求对象
+     * @return AsyncInvoker<UpdateNewCaseRequest, UpdateNewCaseResponse>
+     */
+    public AsyncInvoker<UpdateNewCaseRequest, UpdateNewCaseResponse> updateNewCaseAsyncInvoker(
+        UpdateNewCaseRequest request) {
+        return new AsyncInvoker<UpdateNewCaseRequest, UpdateNewCaseResponse>(request, CptsMeta.updateNewCase, hcClient);
     }
 
     /**
@@ -796,36 +1270,6 @@ public class CptsAsyncClient {
         ListProjectSetsRequest request) {
         return new AsyncInvoker<ListProjectSetsRequest, ListProjectSetsResponse>(request, CptsMeta.listProjectSets,
             hcClient);
-    }
-
-    /**
-     * 查询用例树
-     *
-     * 查询用例树
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListProjectTestCaseRequest 请求对象
-     * @return CompletableFuture<ListProjectTestCaseResponse>
-     */
-    public CompletableFuture<ListProjectTestCaseResponse> listProjectTestCaseAsync(ListProjectTestCaseRequest request) {
-        return hcClient.asyncInvokeHttp(request, CptsMeta.listProjectTestCase);
-    }
-
-    /**
-     * 查询用例树
-     *
-     * 查询用例树
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListProjectTestCaseRequest 请求对象
-     * @return AsyncInvoker<ListProjectTestCaseRequest, ListProjectTestCaseResponse>
-     */
-    public AsyncInvoker<ListProjectTestCaseRequest, ListProjectTestCaseResponse> listProjectTestCaseAsyncInvoker(
-        ListProjectTestCaseRequest request) {
-        return new AsyncInvoker<ListProjectTestCaseRequest, ListProjectTestCaseResponse>(request,
-            CptsMeta.listProjectTestCase, hcClient);
     }
 
     /**

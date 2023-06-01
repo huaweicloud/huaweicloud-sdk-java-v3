@@ -25,6 +25,11 @@ public class UpdateMemberOption {
 
     private Integer weight;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "protocol_port")
+
+    private Integer protocolPort;
+
     public UpdateMemberOption withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -78,6 +83,25 @@ public class UpdateMemberOption {
         this.weight = weight;
     }
 
+    public UpdateMemberOption withProtocolPort(Integer protocolPort) {
+        this.protocolPort = protocolPort;
+        return this;
+    }
+
+    /**
+     * 后端服务器端口。 >在开启端口透传的pool下的member，该字段无法更新
+     * minimum: 1
+     * maximum: 65535
+     * @return protocolPort
+     */
+    public Integer getProtocolPort() {
+        return protocolPort;
+    }
+
+    public void setProtocolPort(Integer protocolPort) {
+        this.protocolPort = protocolPort;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -89,12 +113,13 @@ public class UpdateMemberOption {
         UpdateMemberOption updateMemberOption = (UpdateMemberOption) o;
         return Objects.equals(this.adminStateUp, updateMemberOption.adminStateUp)
             && Objects.equals(this.name, updateMemberOption.name)
-            && Objects.equals(this.weight, updateMemberOption.weight);
+            && Objects.equals(this.weight, updateMemberOption.weight)
+            && Objects.equals(this.protocolPort, updateMemberOption.protocolPort);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(adminStateUp, name, weight);
+        return Objects.hash(adminStateUp, name, weight, protocolPort);
     }
 
     @Override
@@ -104,6 +129,7 @@ public class UpdateMemberOption {
         sb.append("    adminStateUp: ").append(toIndentedString(adminStateUp)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    weight: ").append(toIndentedString(weight)).append("\n");
+        sb.append("    protocolPort: ").append(toIndentedString(protocolPort)).append("\n");
         sb.append("}");
         return sb.toString();
     }

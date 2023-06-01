@@ -300,7 +300,7 @@ public class Configs {
     }
 
     /**
-     * 回源协议（follow：协议跟随回源，http：HTTP回源(默认)，https：https回源）。
+     * 回源协议，follow：协议跟随回源，http：HTTP回源(默认)，https：https回源。
      * @return originProtocol
      */
     public String getOriginProtocol() {
@@ -317,7 +317,7 @@ public class Configs {
     }
 
     /**
-     * 回源跟随（on：开启，off：关闭）。
+     * 回源跟随，on：开启，off：关闭。
      * @return originFollow302Status
      */
     public String getOriginFollow302Status() {
@@ -350,7 +350,7 @@ public class Configs {
     }
 
     /**
-     * 缓存规则
+     * 缓存规则。
      * @return cacheRules
      */
     public List<CacheRules> getCacheRules() {
@@ -497,7 +497,7 @@ public class Configs {
     }
 
     /**
-     * ipv6设置（1：打开；0：关闭）
+     * ipv6设置，1：打开；0：关闭。
      * @return ipv6Accelerate
      */
     public Integer getIpv6Accelerate() {
@@ -547,7 +547,7 @@ public class Configs {
     }
 
     /**
-     * Range回源，即分片回源 开启Range回源的前提是您的源站支持Range请求，即HTTP请求头中包含Range字段，否则可能导致回源失败。 开启: on 关闭: off
+     * Range回源，即分片回源，开启: on，关闭: off。  > 开启Range回源的前提是您的源站支持Range请求，即HTTP请求头中包含Range字段，否则可能导致回源失败。
      * @return originRangeStatus
      */
     public String getOriginRangeStatus() {
@@ -656,7 +656,7 @@ public class Configs {
     }
 
     /**
-     * 回源是否校验ETag（on：开启，off：关闭）。
+     * 回源是否校验ETag，on：开启，off：关闭。
      * @return sliceEtagStatus
      */
     public String getSliceEtagStatus() {
@@ -817,7 +817,7 @@ public class Configs {
     }
 
     /**
-     * 自定义错误页面
+     * 自定义错误页面。
      * @return errorCodeRedirectRules
      */
     public List<ErrorCodeRedirectRules> getErrorCodeRedirectRules() {

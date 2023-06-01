@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.bss.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
@@ -18,7 +19,7 @@ public class BalanceTypeDeductSumV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "amount")
 
-    private Double amount;
+    private BigDecimal amount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bill_type")
@@ -42,7 +43,7 @@ public class BalanceTypeDeductSumV2 {
         this.balanceType = balanceType;
     }
 
-    public BalanceTypeDeductSumV2 withAmount(Double amount) {
+    public BalanceTypeDeductSumV2 withAmount(BigDecimal amount) {
         this.amount = amount;
         return this;
     }
@@ -51,11 +52,11 @@ public class BalanceTypeDeductSumV2 {
      * 金额。 对于billType=1或者2的账单，该金额为负值。
      * @return amount
      */
-    public Double getAmount() {
+    public BigDecimal getAmount() {
         return amount;
     }
 
-    public void setAmount(Double amount) {
+    public void setAmount(BigDecimal amount) {
         this.amount = amount;
     }
 

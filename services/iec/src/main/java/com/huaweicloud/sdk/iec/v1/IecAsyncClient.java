@@ -242,6 +242,34 @@ public class IecAsyncClient {
     }
 
     /**
+     * 从边缘实例创建边缘私有镜像
+     *
+     * 使用指定边缘实例的系统盘创建边缘私有镜像。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateImageRequest 请求对象
+     * @return CompletableFuture<CreateImageResponse>
+     */
+    public CompletableFuture<CreateImageResponse> createImageAsync(CreateImageRequest request) {
+        return hcClient.asyncInvokeHttp(request, IecMeta.createImage);
+    }
+
+    /**
+     * 从边缘实例创建边缘私有镜像
+     *
+     * 使用指定边缘实例的系统盘创建边缘私有镜像。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateImageRequest 请求对象
+     * @return AsyncInvoker<CreateImageRequest, CreateImageResponse>
+     */
+    public AsyncInvoker<CreateImageRequest, CreateImageResponse> createImageAsyncInvoker(CreateImageRequest request) {
+        return new AsyncInvoker<CreateImageRequest, CreateImageResponse>(request, IecMeta.createImage, hcClient);
+    }
+
+    /**
      * 创建和导入密钥
      *
      * 创建SSH密钥，或把公钥导入系统，生成密钥对。
@@ -451,6 +479,36 @@ public class IecAsyncClient {
     }
 
     /**
+     * 删除带宽
+     *
+     * 删除带宽。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteBandwidthRequest 请求对象
+     * @return CompletableFuture<DeleteBandwidthResponse>
+     */
+    public CompletableFuture<DeleteBandwidthResponse> deleteBandwidthAsync(DeleteBandwidthRequest request) {
+        return hcClient.asyncInvokeHttp(request, IecMeta.deleteBandwidth);
+    }
+
+    /**
+     * 删除带宽
+     *
+     * 删除带宽。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteBandwidthRequest 请求对象
+     * @return AsyncInvoker<DeleteBandwidthRequest, DeleteBandwidthResponse>
+     */
+    public AsyncInvoker<DeleteBandwidthRequest, DeleteBandwidthResponse> deleteBandwidthAsyncInvoker(
+        DeleteBandwidthRequest request) {
+        return new AsyncInvoker<DeleteBandwidthRequest, DeleteBandwidthResponse>(request, IecMeta.deleteBandwidth,
+            hcClient);
+    }
+
+    /**
      * 删除部署计划
      *
      * 删除部署计划。
@@ -508,6 +566,34 @@ public class IecAsyncClient {
         DeleteEdgeCloudRequest request) {
         return new AsyncInvoker<DeleteEdgeCloudRequest, DeleteEdgeCloudResponse>(request, IecMeta.deleteEdgeCloud,
             hcClient);
+    }
+
+    /**
+     * 删除边缘私有镜像
+     *
+     * 将指定ID的边缘私有镜像删除
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteImageRequest 请求对象
+     * @return CompletableFuture<DeleteImageResponse>
+     */
+    public CompletableFuture<DeleteImageResponse> deleteImageAsync(DeleteImageRequest request) {
+        return hcClient.asyncInvokeHttp(request, IecMeta.deleteImage);
+    }
+
+    /**
+     * 删除边缘私有镜像
+     *
+     * 将指定ID的边缘私有镜像删除
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteImageRequest 请求对象
+     * @return AsyncInvoker<DeleteImageRequest, DeleteImageResponse>
+     */
+    public AsyncInvoker<DeleteImageRequest, DeleteImageResponse> deleteImageAsyncInvoker(DeleteImageRequest request) {
+        return new AsyncInvoker<DeleteImageRequest, DeleteImageResponse>(request, IecMeta.deleteImage, hcClient);
     }
 
     /**
@@ -919,6 +1005,36 @@ public class IecAsyncClient {
     public AsyncInvoker<ListBandwidthsRequest, ListBandwidthsResponse> listBandwidthsAsyncInvoker(
         ListBandwidthsRequest request) {
         return new AsyncInvoker<ListBandwidthsRequest, ListBandwidthsResponse>(request, IecMeta.listBandwidths,
+            hcClient);
+    }
+
+    /**
+     * 查询中心镜像列表
+     *
+     * 查询租户在某个云Region的可见镜像列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCloudImagesRequest 请求对象
+     * @return CompletableFuture<ListCloudImagesResponse>
+     */
+    public CompletableFuture<ListCloudImagesResponse> listCloudImagesAsync(ListCloudImagesRequest request) {
+        return hcClient.asyncInvokeHttp(request, IecMeta.listCloudImages);
+    }
+
+    /**
+     * 查询中心镜像列表
+     *
+     * 查询租户在某个云Region的可见镜像列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCloudImagesRequest 请求对象
+     * @return AsyncInvoker<ListCloudImagesRequest, ListCloudImagesResponse>
+     */
+    public AsyncInvoker<ListCloudImagesRequest, ListCloudImagesResponse> listCloudImagesAsyncInvoker(
+        ListCloudImagesRequest request) {
+        return new AsyncInvoker<ListCloudImagesRequest, ListCloudImagesResponse>(request, IecMeta.listCloudImages,
             hcClient);
     }
 
@@ -1398,6 +1514,66 @@ public class IecAsyncClient {
     }
 
     /**
+     * 重试边缘镜像任务
+     *
+     * 重试边缘镜像任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RebuildImageRequest 请求对象
+     * @return CompletableFuture<RebuildImageResponse>
+     */
+    public CompletableFuture<RebuildImageResponse> rebuildImageAsync(RebuildImageRequest request) {
+        return hcClient.asyncInvokeHttp(request, IecMeta.rebuildImage);
+    }
+
+    /**
+     * 重试边缘镜像任务
+     *
+     * 重试边缘镜像任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RebuildImageRequest 请求对象
+     * @return AsyncInvoker<RebuildImageRequest, RebuildImageResponse>
+     */
+    public AsyncInvoker<RebuildImageRequest, RebuildImageResponse> rebuildImageAsyncInvoker(
+        RebuildImageRequest request) {
+        return new AsyncInvoker<RebuildImageRequest, RebuildImageResponse>(request, IecMeta.rebuildImage, hcClient);
+    }
+
+    /**
+     * 注册边缘私有镜像
+     *
+     * 将指定Region和ID的IMS镜像注册到边缘IEC-IMS; 
+     * 注意指定的Region必须在当前IEC-IMS支持的Region列表中。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RegisterImageRequest 请求对象
+     * @return CompletableFuture<RegisterImageResponse>
+     */
+    public CompletableFuture<RegisterImageResponse> registerImageAsync(RegisterImageRequest request) {
+        return hcClient.asyncInvokeHttp(request, IecMeta.registerImage);
+    }
+
+    /**
+     * 注册边缘私有镜像
+     *
+     * 将指定Region和ID的IMS镜像注册到边缘IEC-IMS; 
+     * 注意指定的Region必须在当前IEC-IMS支持的Region列表中。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RegisterImageRequest 请求对象
+     * @return AsyncInvoker<RegisterImageRequest, RegisterImageResponse>
+     */
+    public AsyncInvoker<RegisterImageRequest, RegisterImageResponse> registerImageAsyncInvoker(
+        RegisterImageRequest request) {
+        return new AsyncInvoker<RegisterImageRequest, RegisterImageResponse>(request, IecMeta.registerImage, hcClient);
+    }
+
+    /**
      * 查询带宽详情
      *
      * 查询带宽详情。
@@ -1716,6 +1892,36 @@ public class IecAsyncClient {
     }
 
     /**
+     * 查询硬盘类型列表
+     *
+     * 查询硬盘类型列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowVolumeTypesRequest 请求对象
+     * @return CompletableFuture<ShowVolumeTypesResponse>
+     */
+    public CompletableFuture<ShowVolumeTypesResponse> showVolumeTypesAsync(ShowVolumeTypesRequest request) {
+        return hcClient.asyncInvokeHttp(request, IecMeta.showVolumeTypes);
+    }
+
+    /**
+     * 查询硬盘类型列表
+     *
+     * 查询硬盘类型列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowVolumeTypesRequest 请求对象
+     * @return AsyncInvoker<ShowVolumeTypesRequest, ShowVolumeTypesResponse>
+     */
+    public AsyncInvoker<ShowVolumeTypesRequest, ShowVolumeTypesResponse> showVolumeTypesAsyncInvoker(
+        ShowVolumeTypesRequest request) {
+        return new AsyncInvoker<ShowVolumeTypesRequest, ShowVolumeTypesResponse>(request, IecMeta.showVolumeTypes,
+            hcClient);
+    }
+
+    /**
      * 查询虚拟私有云详情
      *
      * 根据虚拟私有云ID，获取虚拟私有云的详情。
@@ -1741,6 +1947,36 @@ public class IecAsyncClient {
      */
     public AsyncInvoker<ShowVpcRequest, ShowVpcResponse> showVpcAsyncInvoker(ShowVpcRequest request) {
         return new AsyncInvoker<ShowVpcRequest, ShowVpcResponse>(request, IecMeta.showVpc, hcClient);
+    }
+
+    /**
+     * 更新带宽
+     *
+     * 更新带宽。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateBandwidthRequest 请求对象
+     * @return CompletableFuture<UpdateBandwidthResponse>
+     */
+    public CompletableFuture<UpdateBandwidthResponse> updateBandwidthAsync(UpdateBandwidthRequest request) {
+        return hcClient.asyncInvokeHttp(request, IecMeta.updateBandwidth);
+    }
+
+    /**
+     * 更新带宽
+     *
+     * 更新带宽。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateBandwidthRequest 请求对象
+     * @return AsyncInvoker<UpdateBandwidthRequest, UpdateBandwidthResponse>
+     */
+    public AsyncInvoker<UpdateBandwidthRequest, UpdateBandwidthResponse> updateBandwidthAsyncInvoker(
+        UpdateBandwidthRequest request) {
+        return new AsyncInvoker<UpdateBandwidthRequest, UpdateBandwidthResponse>(request, IecMeta.updateBandwidth,
+            hcClient);
     }
 
     /**

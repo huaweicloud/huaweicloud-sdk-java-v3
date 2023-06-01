@@ -36,7 +36,7 @@ public class UpdateAutoLaunchGroupReqV2 {
     private Integer stableCapacity;
 
     /**
-     * 超过目标容量时（目标容量减少）实例中断行为，枚举值 terminate：释放 noTermination：不释放 默认值：terminate
+     * 超过目标容量或目标容量减少时的实例中断行为，枚举值 terminate：释放 noTermination：不释放 默认值：terminate
      */
     public static final class ExcessFulfilledCapacityBehaviorEnum {
 
@@ -120,7 +120,7 @@ public class UpdateAutoLaunchGroupReqV2 {
     private ExcessFulfilledCapacityBehaviorEnum excessFulfilledCapacityBehavior;
 
     /**
-     * 请求到期正在运行实例中断行为，枚举值 terminate：释放 noTermination：不释放 默认值：terminate
+     * 请求到期时正在运行实例的中断行为，枚举值 terminate：释放 noTermination：不释放 默认值：terminate
      */
     public static final class InstancesBehaviorWithExpirationEnum {
 
@@ -214,7 +214,7 @@ public class UpdateAutoLaunchGroupReqV2 {
     }
 
     /**
-     * 智能购买组名称(1-64个字符)，只能包含中文、字母、数字、下划线和中划线
+     * 智能购买组名称。 取值范围：1-64个字符，只能包含中文、字母、数字、下划线和中划线
      * @return name
      */
     public String getName() {
@@ -231,7 +231,7 @@ public class UpdateAutoLaunchGroupReqV2 {
     }
 
     /**
-     * 保障计划id
+     * 算力保障计划ID
      * @return guaranteePlanId
      */
     public String getGuaranteePlanId() {
@@ -248,7 +248,7 @@ public class UpdateAutoLaunchGroupReqV2 {
     }
 
     /**
-     * 供应组目标容量，实例数量或者CPU个数，目标容量大于等于stable_capacity。spot实例的容量为满配容量减去stable_capacity。
+     * 智能购买组目标容量。 实例数量或者CPU个数，目标容量大于等于stable_capacity。竞价实例的容量为满配容量减去stable_capacity。
      * minimum: 0
      * @return targetCapacity
      */
@@ -266,7 +266,7 @@ public class UpdateAutoLaunchGroupReqV2 {
     }
 
     /**
-     * 按需实例目标容量(实例数量或CPU个数),小于target_capacity,供应组中可以没有按需实例。
+     * 按需实例目标容量。 目标容量指实例数量或CPU个数，必须小于等于target_capacity，智能购买组中可以没有按需实例。
      * minimum: 0
      * @return stableCapacity
      */
@@ -285,7 +285,7 @@ public class UpdateAutoLaunchGroupReqV2 {
     }
 
     /**
-     * 超过目标容量时（目标容量减少）实例中断行为，枚举值 terminate：释放 noTermination：不释放 默认值：terminate
+     * 超过目标容量或目标容量减少时的实例中断行为，枚举值 terminate：释放 noTermination：不释放 默认值：terminate
      * @return excessFulfilledCapacityBehavior
      */
     public ExcessFulfilledCapacityBehaviorEnum getExcessFulfilledCapacityBehavior() {
@@ -304,7 +304,7 @@ public class UpdateAutoLaunchGroupReqV2 {
     }
 
     /**
-     * 请求到期正在运行实例中断行为，枚举值 terminate：释放 noTermination：不释放 默认值：terminate
+     * 请求到期时正在运行实例的中断行为，枚举值 terminate：释放 noTermination：不释放 默认值：terminate
      * @return instancesBehaviorWithExpiration
      */
     public InstancesBehaviorWithExpirationEnum getInstancesBehaviorWithExpiration() {

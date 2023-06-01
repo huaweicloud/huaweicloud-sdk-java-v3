@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 一个Region内的资源需求描述
+ * 一个区域内的资源需求描述
  */
 public class RegionSpec {
 
@@ -37,7 +37,7 @@ public class RegionSpec {
     }
 
     /**
-     * 区域Region
+     * 区域ID
      * @return regionId
      */
     public String getRegionId() {
@@ -54,7 +54,7 @@ public class RegionSpec {
     }
 
     /**
-     * Region内期望的总算力容量
+     * 区域内期望的总算力容量
      * @return expectTargetCapacity
      */
     public Integer getExpectTargetCapacity() {
@@ -71,7 +71,7 @@ public class RegionSpec {
     }
 
     /**
-     * Region内期望的稳定算力容量
+     * 区域内期望的稳定算力容量
      * @return expectStableCapacity
      */
     public Integer getExpectStableCapacity() {

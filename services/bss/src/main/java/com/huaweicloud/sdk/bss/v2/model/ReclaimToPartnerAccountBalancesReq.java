@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.bss.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
@@ -18,7 +19,7 @@ public class ReclaimToPartnerAccountBalancesReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "amount")
 
-    private Double amount;
+    private BigDecimal amount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "indirect_partner_id")
@@ -42,7 +43,7 @@ public class ReclaimToPartnerAccountBalancesReq {
         this.customerId = customerId;
     }
 
-    public ReclaimToPartnerAccountBalancesReq withAmount(Double amount) {
+    public ReclaimToPartnerAccountBalancesReq withAmount(BigDecimal amount) {
         this.amount = amount;
         return this;
     }
@@ -53,11 +54,11 @@ public class ReclaimToPartnerAccountBalancesReq {
      * maximum: 2147483647
      * @return amount
      */
-    public Double getAmount() {
+    public BigDecimal getAmount() {
         return amount;
     }
 
-    public void setAmount(Double amount) {
+    public void setAmount(BigDecimal amount) {
         this.amount = amount;
     }
 

@@ -56,7 +56,7 @@ public class LicensePlateResult {
     }
 
     /**
-     * 当前版本支持的车牌底色类型：  - blue: 蓝色  - green: 绿色  - black: 黑色  - white: 白色  - yellow: 黄色 
+     * 当前版本支持的车牌底色类型：  - blue: 蓝色  - green: 绿色（小型新能源车牌）  - black: 黑色  - white: 白色  - yellow: 黄色  - yellow_green: 黄绿（大型新能源车牌） 
      * @return plateColor
      */
     public String getPlateColor() {

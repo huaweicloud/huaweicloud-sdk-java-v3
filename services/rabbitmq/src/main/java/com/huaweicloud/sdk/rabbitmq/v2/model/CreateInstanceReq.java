@@ -453,6 +453,11 @@ public class CreateInstanceReq {
 
     private List<TagEntity> tags = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bss_param")
+
+    private BssParam bssParam;
+
     public CreateInstanceReq withName(String name) {
         this.name = name;
         return this;
@@ -842,6 +847,32 @@ public class CreateInstanceReq {
         this.tags = tags;
     }
 
+    public CreateInstanceReq withBssParam(BssParam bssParam) {
+        this.bssParam = bssParam;
+        return this;
+    }
+
+    public CreateInstanceReq withBssParam(Consumer<BssParam> bssParamSetter) {
+        if (this.bssParam == null) {
+            this.bssParam = new BssParam();
+            bssParamSetter.accept(this.bssParam);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get bssParam
+     * @return bssParam
+     */
+    public BssParam getBssParam() {
+        return bssParam;
+    }
+
+    public void setBssParam(BssParam bssParam) {
+        this.bssParam = bssParam;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -871,7 +902,8 @@ public class CreateInstanceReq {
             && Objects.equals(this.sslEnable, createInstanceReq.sslEnable)
             && Objects.equals(this.storageSpecCode, createInstanceReq.storageSpecCode)
             && Objects.equals(this.enterpriseProjectId, createInstanceReq.enterpriseProjectId)
-            && Objects.equals(this.tags, createInstanceReq.tags);
+            && Objects.equals(this.tags, createInstanceReq.tags)
+            && Objects.equals(this.bssParam, createInstanceReq.bssParam);
     }
 
     @Override
@@ -896,7 +928,8 @@ public class CreateInstanceReq {
             sslEnable,
             storageSpecCode,
             enterpriseProjectId,
-            tags);
+            tags,
+            bssParam);
     }
 
     @Override
@@ -924,6 +957,7 @@ public class CreateInstanceReq {
         sb.append("    storageSpecCode: ").append(toIndentedString(storageSpecCode)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    bssParam: ").append(toIndentedString(bssParam)).append("\n");
         sb.append("}");
         return sb.toString();
     }

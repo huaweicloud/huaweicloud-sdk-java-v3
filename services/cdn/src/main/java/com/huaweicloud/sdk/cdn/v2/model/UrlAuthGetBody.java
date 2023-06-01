@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * URL鉴权查询响应体
+ * URL鉴权查询响应体。
  */
 public class UrlAuthGetBody {
 
@@ -61,7 +61,7 @@ public class UrlAuthGetBody {
     }
 
     /**
-     * 是否开启URL鉴权(\"off\"/\"on\")。
+     * 是否开启URL鉴权，off：开启,on：关闭。
      * @return status
      */
     public String getStatus() {
@@ -78,7 +78,7 @@ public class UrlAuthGetBody {
     }
 
     /**
-     * 鉴权方式 type_a：鉴权方式A type_b：鉴权方式B type_c1：鉴权方式C1 type_c2：鉴权方式C2
+     * 鉴权方式， type_a：鉴权方式A， type_b：鉴权方式B， type_c1：鉴权方式C1， type_c2：鉴权方式C2。
      * @return type
      */
     public String getType() {
@@ -95,7 +95,7 @@ public class UrlAuthGetBody {
     }
 
     /**
-     * 过期时间：范围：0-31536000单位为秒。
+     * 过期时间，单位：秒。
      * @return expireTime
      */
     public Integer getExpireTime() {
@@ -112,7 +112,7 @@ public class UrlAuthGetBody {
     }
 
     /**
-     * 加密的算法 可选择md5或sha256。
+     * 加密算法。
      * @return signMethod
      */
     public String getSignMethod() {
@@ -129,7 +129,7 @@ public class UrlAuthGetBody {
     }
 
     /**
-     * 鉴权范围，目前仅支持配置所有文件参与鉴权。all：所有文件
+     * 鉴权范围。
      * @return matchType
      */
     public String getMatchType() {
@@ -146,7 +146,7 @@ public class UrlAuthGetBody {
     }
 
     /**
-     * 鉴权KEY 由6-32位大小写字母、数字构成。
+     * 鉴权KEY。
      * @return key
      */
     public String getKey() {
@@ -163,7 +163,7 @@ public class UrlAuthGetBody {
     }
 
     /**
-     * 鉴权KEY（备） 由6-32位大小写字母、数字构成。
+     * 鉴权KEY（备）。
      * @return backupKey
      */
     public String getBackupKey() {
@@ -180,7 +180,7 @@ public class UrlAuthGetBody {
     }
 
     /**
-     * 鉴权参数：1-100位可以由大小写字母、数字、下划线构成（不能以数字开头）。
+     * 鉴权参数。
      * @return signArg
      */
     public String getSignArg() {
@@ -197,7 +197,7 @@ public class UrlAuthGetBody {
     }
 
     /**
-     * 时间格式 dec：十进制 hex：十六进制 鉴权方式A：只支持十进制 鉴权方式B：只支持十进制 鉴权方式C1：只支持十六进制鉴权方式 鉴权方式C2：支持十进制/十六进制            
+     * 时间格式， dec：十进制, hex：十六进制。
      * @return timeFormat
      */
     public String getTimeFormat() {

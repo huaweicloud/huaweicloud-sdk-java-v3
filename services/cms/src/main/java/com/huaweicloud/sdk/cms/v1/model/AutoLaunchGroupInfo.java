@@ -52,7 +52,7 @@ public class AutoLaunchGroupInfo {
     }
 
     /**
-     * 智能购买组id
+     * 智能购买组ID
      * @return id
      */
     public String getId() {

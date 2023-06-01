@@ -27,6 +27,11 @@ public class IssueCommentV4 {
     private String createdTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "timestamp")
+
+    private String timestamp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user")
 
     private CommentUserV4 user;
@@ -82,6 +87,23 @@ public class IssueCommentV4 {
         this.createdTime = createdTime;
     }
 
+    public IssueCommentV4 withTimestamp(String timestamp) {
+        this.timestamp = timestamp;
+        return this;
+    }
+
+    /**
+     * 评论时间戳
+     * @return timestamp
+     */
+    public String getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
+    }
+
     public IssueCommentV4 withUser(CommentUserV4 user) {
         this.user = user;
         return this;
@@ -119,12 +141,13 @@ public class IssueCommentV4 {
         IssueCommentV4 issueCommentV4 = (IssueCommentV4) o;
         return Objects.equals(this.comment, issueCommentV4.comment) && Objects.equals(this.id, issueCommentV4.id)
             && Objects.equals(this.createdTime, issueCommentV4.createdTime)
+            && Objects.equals(this.timestamp, issueCommentV4.timestamp)
             && Objects.equals(this.user, issueCommentV4.user);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(comment, id, createdTime, user);
+        return Objects.hash(comment, id, createdTime, timestamp, user);
     }
 
     @Override
@@ -134,6 +157,7 @@ public class IssueCommentV4 {
         sb.append("    comment: ").append(toIndentedString(comment)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    createdTime: ").append(toIndentedString(createdTime)).append("\n");
+        sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
         sb.append("    user: ").append(toIndentedString(user)).append("\n");
         sb.append("}");
         return sb.toString();

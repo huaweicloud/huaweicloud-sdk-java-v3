@@ -14,16 +14,16 @@ public class CreateResourceTagRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag")
 
-    private CreateResourceTagRequestBodyTag tag;
+    private ResourceTag tag;
 
-    public CreateResourceTagRequestBody withTag(CreateResourceTagRequestBodyTag tag) {
+    public CreateResourceTagRequestBody withTag(ResourceTag tag) {
         this.tag = tag;
         return this;
     }
 
-    public CreateResourceTagRequestBody withTag(Consumer<CreateResourceTagRequestBodyTag> tagSetter) {
+    public CreateResourceTagRequestBody withTag(Consumer<ResourceTag> tagSetter) {
         if (this.tag == null) {
-            this.tag = new CreateResourceTagRequestBodyTag();
+            this.tag = new ResourceTag();
             tagSetter.accept(this.tag);
         }
 
@@ -34,11 +34,11 @@ public class CreateResourceTagRequestBody {
      * Get tag
      * @return tag
      */
-    public CreateResourceTagRequestBodyTag getTag() {
+    public ResourceTag getTag() {
         return tag;
     }
 
-    public void setTag(CreateResourceTagRequestBodyTag tag) {
+    public void setTag(ResourceTag tag) {
         this.tag = tag;
     }
 

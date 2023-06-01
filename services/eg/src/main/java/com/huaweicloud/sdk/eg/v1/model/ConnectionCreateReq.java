@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * ConnectionCreateReq
@@ -29,6 +30,16 @@ public class ConnectionCreateReq {
     @JsonProperty(value = "subnet_id")
 
     private String subnetId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private ConnectionType type;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "kafka_detail")
+
+    private KafkaConnectionDetail kafkaDetail;
 
     public ConnectionCreateReq withName(String name) {
         this.name = name;
@@ -98,6 +109,49 @@ public class ConnectionCreateReq {
         this.subnetId = subnetId;
     }
 
+    public ConnectionCreateReq withType(ConnectionType type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * Get type
+     * @return type
+     */
+    public ConnectionType getType() {
+        return type;
+    }
+
+    public void setType(ConnectionType type) {
+        this.type = type;
+    }
+
+    public ConnectionCreateReq withKafkaDetail(KafkaConnectionDetail kafkaDetail) {
+        this.kafkaDetail = kafkaDetail;
+        return this;
+    }
+
+    public ConnectionCreateReq withKafkaDetail(Consumer<KafkaConnectionDetail> kafkaDetailSetter) {
+        if (this.kafkaDetail == null) {
+            this.kafkaDetail = new KafkaConnectionDetail();
+            kafkaDetailSetter.accept(this.kafkaDetail);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get kafkaDetail
+     * @return kafkaDetail
+     */
+    public KafkaConnectionDetail getKafkaDetail() {
+        return kafkaDetail;
+    }
+
+    public void setKafkaDetail(KafkaConnectionDetail kafkaDetail) {
+        this.kafkaDetail = kafkaDetail;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -110,12 +164,14 @@ public class ConnectionCreateReq {
         return Objects.equals(this.name, connectionCreateReq.name)
             && Objects.equals(this.description, connectionCreateReq.description)
             && Objects.equals(this.vpcId, connectionCreateReq.vpcId)
-            && Objects.equals(this.subnetId, connectionCreateReq.subnetId);
+            && Objects.equals(this.subnetId, connectionCreateReq.subnetId)
+            && Objects.equals(this.type, connectionCreateReq.type)
+            && Objects.equals(this.kafkaDetail, connectionCreateReq.kafkaDetail);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, vpcId, subnetId);
+        return Objects.hash(name, description, vpcId, subnetId, type, kafkaDetail);
     }
 
     @Override
@@ -126,6 +182,8 @@ public class ConnectionCreateReq {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    kafkaDetail: ").append(toIndentedString(kafkaDetail)).append("\n");
         sb.append("}");
         return sb.toString();
     }

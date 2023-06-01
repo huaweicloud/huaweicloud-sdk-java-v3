@@ -32,7 +32,7 @@ public class CreateChannelResponse extends SdkResponse {
     private String description;
 
     /**
-     * 通道提供方类型，OFFICIAL：官方事件通道；CUSTOM：自定义事件通道
+     * 通道提供方类型，OFFICIAL：官方事件通道；CUSTOM：自定义事件通道；PARTNER：伙伴事件通道
      */
     public static final class ProviderTypeEnum {
 
@@ -46,12 +46,18 @@ public class CreateChannelResponse extends SdkResponse {
          */
         public static final ProviderTypeEnum CUSTOM = new ProviderTypeEnum("CUSTOM");
 
+        /**
+         * Enum PARTNER for value: "PARTNER"
+         */
+        public static final ProviderTypeEnum PARTNER = new ProviderTypeEnum("PARTNER");
+
         private static final Map<String, ProviderTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ProviderTypeEnum> createStaticFields() {
             Map<String, ProviderTypeEnum> map = new HashMap<>();
             map.put("OFFICIAL", OFFICIAL);
             map.put("CUSTOM", CUSTOM);
+            map.put("PARTNER", PARTNER);
             return Collections.unmodifiableMap(map);
         }
 
@@ -185,7 +191,7 @@ public class CreateChannelResponse extends SdkResponse {
     }
 
     /**
-     * 通道提供方类型，OFFICIAL：官方事件通道；CUSTOM：自定义事件通道
+     * 通道提供方类型，OFFICIAL：官方事件通道；CUSTOM：自定义事件通道；PARTNER：伙伴事件通道
      * @return providerType
      */
     public ProviderTypeEnum getProviderType() {

@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.bss.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
@@ -38,7 +39,7 @@ public class QuotaRecord {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "amount")
 
-    private Double amount;
+    private BigDecimal amount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operation_time")
@@ -155,7 +156,7 @@ public class QuotaRecord {
         this.parentQuotaId = parentQuotaId;
     }
 
-    public QuotaRecord withAmount(Double amount) {
+    public QuotaRecord withAmount(BigDecimal amount) {
         this.amount = amount;
         return this;
     }
@@ -164,11 +165,11 @@ public class QuotaRecord {
      * 发放回收的金额。 取值大于0且精确到小数点后2位，单位：元。
      * @return amount
      */
-    public Double getAmount() {
+    public BigDecimal getAmount() {
         return amount;
     }
 
-    public void setAmount(Double amount) {
+    public void setAmount(BigDecimal amount) {
         this.amount = amount;
     }
 

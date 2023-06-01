@@ -2,13 +2,15 @@ package com.huaweicloud.sdk.projectman.v4.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.huaweicloud.sdk.core.progress.ProgressListener;
+import com.huaweicloud.sdk.core.progress.ProgressRequest;
 
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class DownloadImageFileRequest {
+public class DownloadImageFileRequest implements ProgressRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
@@ -19,6 +21,30 @@ public class DownloadImageFileRequest {
     @JsonProperty(value = "image_uri")
 
     private String imageUri;
+
+    private ProgressListener progressListener;
+
+    private long progressInterval;
+
+    @Override
+    public void setProgressListener(ProgressListener progressListener) {
+        this.progressListener = progressListener;
+    }
+
+    @Override
+    public ProgressListener getProgressListener() {
+        return progressListener;
+    }
+
+    @Override
+    public void setProgressInterval(long progressInterval) {
+        this.progressInterval = progressInterval;
+    }
+
+    @Override
+    public long getProgressInterval() {
+        return progressInterval;
+    }
 
     public DownloadImageFileRequest withProjectId(String projectId) {
         this.projectId = projectId;

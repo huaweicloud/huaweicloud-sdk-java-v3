@@ -24,7 +24,7 @@ public class AddonInstance {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
 
-    private Metadata metadata;
+    private AddonMetadata metadata;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "spec")
@@ -70,14 +70,14 @@ public class AddonInstance {
         this.apiVersion = apiVersion;
     }
 
-    public AddonInstance withMetadata(Metadata metadata) {
+    public AddonInstance withMetadata(AddonMetadata metadata) {
         this.metadata = metadata;
         return this;
     }
 
-    public AddonInstance withMetadata(Consumer<Metadata> metadataSetter) {
+    public AddonInstance withMetadata(Consumer<AddonMetadata> metadataSetter) {
         if (this.metadata == null) {
-            this.metadata = new Metadata();
+            this.metadata = new AddonMetadata();
             metadataSetter.accept(this.metadata);
         }
 
@@ -88,11 +88,11 @@ public class AddonInstance {
      * Get metadata
      * @return metadata
      */
-    public Metadata getMetadata() {
+    public AddonMetadata getMetadata() {
         return metadata;
     }
 
-    public void setMetadata(Metadata metadata) {
+    public void setMetadata(AddonMetadata metadata) {
         this.metadata = metadata;
     }
 

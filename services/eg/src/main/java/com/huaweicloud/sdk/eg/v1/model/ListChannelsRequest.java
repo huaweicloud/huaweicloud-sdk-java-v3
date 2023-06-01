@@ -45,12 +45,18 @@ public class ListChannelsRequest {
          */
         public static final ProviderTypeEnum CUSTOM = new ProviderTypeEnum("CUSTOM");
 
+        /**
+         * Enum PARTNER for value: "PARTNER"
+         */
+        public static final ProviderTypeEnum PARTNER = new ProviderTypeEnum("PARTNER");
+
         private static final Map<String, ProviderTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ProviderTypeEnum> createStaticFields() {
             Map<String, ProviderTypeEnum> map = new HashMap<>();
             map.put("OFFICIAL", OFFICIAL);
             map.put("CUSTOM", CUSTOM);
+            map.put("PARTNER", PARTNER);
             return Collections.unmodifiableMap(map);
         }
 

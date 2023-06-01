@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.bss.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -41,7 +42,7 @@ public class IQueryUserPartnerCouponsResultV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "face_value")
 
-    private Double faceValue;
+    private BigDecimal faceValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "effective_time")
@@ -111,7 +112,7 @@ public class IQueryUserPartnerCouponsResultV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "balance")
 
-    private Double balance;
+    private BigDecimal balance;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lock_order_id")
@@ -208,7 +209,7 @@ public class IQueryUserPartnerCouponsResultV2 {
         this.measureId = measureId;
     }
 
-    public IQueryUserPartnerCouponsResultV2 withFaceValue(Double faceValue) {
+    public IQueryUserPartnerCouponsResultV2 withFaceValue(BigDecimal faceValue) {
         this.faceValue = faceValue;
         return this;
     }
@@ -217,11 +218,11 @@ public class IQueryUserPartnerCouponsResultV2 {
      * 优惠券面值。
      * @return faceValue
      */
-    public Double getFaceValue() {
+    public BigDecimal getFaceValue() {
         return faceValue;
     }
 
-    public void setFaceValue(Double faceValue) {
+    public void setFaceValue(BigDecimal faceValue) {
         this.faceValue = faceValue;
     }
 
@@ -462,7 +463,7 @@ public class IQueryUserPartnerCouponsResultV2 {
         this.createTime = createTime;
     }
 
-    public IQueryUserPartnerCouponsResultV2 withBalance(Double balance) {
+    public IQueryUserPartnerCouponsResultV2 withBalance(BigDecimal balance) {
         this.balance = balance;
         return this;
     }
@@ -471,11 +472,11 @@ public class IQueryUserPartnerCouponsResultV2 {
      * 优惠券余额。
      * @return balance
      */
-    public Double getBalance() {
+    public BigDecimal getBalance() {
         return balance;
     }
 
-    public void setBalance(Double balance) {
+    public void setBalance(BigDecimal balance) {
         this.balance = balance;
     }
 

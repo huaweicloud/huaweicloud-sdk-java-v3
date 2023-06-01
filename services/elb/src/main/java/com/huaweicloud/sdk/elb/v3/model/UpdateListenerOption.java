@@ -1,10 +1,15 @@
 package com.huaweicloud.sdk.elb.v3.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -113,6 +118,98 @@ public class UpdateListenerOption {
 
     private UpdateListenerQuicConfigOption quicConfig;
 
+    /**
+     * 修改保护状态, 取值： - nonProtection: 不保护 - consoleProtection: 控制台修改保护
+     */
+    public static final class ProtectionStatusEnum {
+
+        /**
+         * Enum NONPROTECTION for value: "nonProtection"
+         */
+        public static final ProtectionStatusEnum NONPROTECTION = new ProtectionStatusEnum("nonProtection");
+
+        /**
+         * Enum CONSOLEPROTECTION for value: "consoleProtection"
+         */
+        public static final ProtectionStatusEnum CONSOLEPROTECTION = new ProtectionStatusEnum("consoleProtection");
+
+        private static final Map<String, ProtectionStatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ProtectionStatusEnum> createStaticFields() {
+            Map<String, ProtectionStatusEnum> map = new HashMap<>();
+            map.put("nonProtection", NONPROTECTION);
+            map.put("consoleProtection", CONSOLEPROTECTION);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ProtectionStatusEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ProtectionStatusEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            ProtectionStatusEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new ProtectionStatusEnum(value);
+            }
+            return result;
+        }
+
+        public static ProtectionStatusEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            ProtectionStatusEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ProtectionStatusEnum) {
+                return this.value.equals(((ProtectionStatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "protection_status")
+
+    private ProtectionStatusEnum protectionStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "protection_reason")
+
+    private String protectionReason;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "gzip_enable")
+
+    private Boolean gzipEnable;
+
     public UpdateListenerOption withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -136,7 +233,7 @@ public class UpdateListenerOption {
     }
 
     /**
-     * 监听器使用的CA证书ID。当且仅当type=client时，才会使用该字段对应的证书。  监听器协议为QUIC时不支持该字段。  [荷兰region不支持QUIC。](tag:dt)
+     * 监听器使用的CA证书ID。当且仅当type=client时，才会使用该字段对应的证书。  监听器协议为QUIC时不支持该字段。  [不支持QUIC。](tag:tm,hws_eu,g42,hk_g42,hcso_dt,dt,dt_test)
      * @return clientCaTlsContainerRef
      */
     public String getClientCaTlsContainerRef() {
@@ -204,7 +301,7 @@ public class UpdateListenerOption {
     }
 
     /**
-     * 客户端与LB之间的HTTPS请求的HTTP2功能的开启状态。 开启后，可提升客户端与LB间的访问性能，但LB与后端服务器间仍采用HTTP1.X协议。  使用说明： - 仅HTTPS协议监听器有效。 - QUIC监听器不能设置该字段，固定返回为true。 - 其他协议的监听器可设置该字段但无效，无论取值如何都不影响监听器正常运行。  [荷兰region不支持QUIC。](tag:dt)
+     * 客户端与LB之间的HTTPS请求的HTTP2功能的开启状态。 开启后，可提升客户端与LB间的访问性能，但LB与后端服务器间仍采用HTTP1.X协议。  使用说明： - 仅HTTPS协议监听器有效。 - QUIC监听器不能设置该字段，固定返回为true。 - 其他协议的监听器可设置该字段但无效，无论取值如何都不影响监听器正常运行。  [不支持QUIC。](tag:tm,hws_eu,g42,hk_g42,hcso_dt,dt,dt_test)
      * @return http2Enable
      */
     public Boolean getHttp2Enable() {
@@ -247,7 +344,7 @@ public class UpdateListenerOption {
     }
 
     /**
-     * 监听器的名称。
+     * 监听器的名称。  注意：若名称为空，则console上无法选中并查看详情。
      * @return name
      */
     public String getName() {
@@ -280,7 +377,7 @@ public class UpdateListenerOption {
     }
 
     /**
-     * 监听器使用的SNI证书（带域名的服务器证书）ID列表。  使用说明： - 列表对应的所有SNI证书的域名不允许存在重复。 - 列表对应的所有SNI证书的域名总数不超过30。
+     * 监听器使用的SNI证书（带域名的服务器证书）ID列表。  使用说明： - 列表对应的所有SNI证书的域名不允许存在重复。 - 列表对应的所有SNI证书的域名总数不超过50。
      * @return sniContainerRefs
      */
     public List<String> getSniContainerRefs() {
@@ -314,7 +411,7 @@ public class UpdateListenerOption {
     }
 
     /**
-     * 监听器使用的安全策略。  [取值：tls-1-0-inherit,tls-1-0, tls-1-1, tls-1-2,tls-1-2-strict，tls-1-2-fs，tls-1-0-with-1-3, tls-1-2-fs-with-1-3, hybrid-policy-1-0，默认：tls-1-0。 ](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,tm,cmcc,dt)  [取值：tls-1-0, tls-1-1, tls-1-2, tls-1-2-strict，默认：tls-1-0。](tag:hws_eu,g42,hk_g42,hcso_dt)  [使用说明： - 仅对HTTPS协议类型的监听器且关联LB为独享型时有效。 - QUIC监听器不支持该字段。 - 若同时设置了security_policy_id和tls_ciphers_policy，则仅security_policy_id生效。 - 加密套件的优先顺序为ecc套件、rsa套件、tls1.3协议的套件（即支持ecc又支持rsa） ](tag:hws,hws_hk,hws_eu,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42,dt)  [使用说明： - 仅对HTTPS协议类型的监听器有效](tag:hcso_dt)  [不支持tls1.3协议的套件。](tag:hws_eu,g42,hk_g42)  [荷兰region不支持QUIC。](tag:dt)
+     * 监听器使用的安全策略。  [取值：tls-1-0-inherit,tls-1-0, tls-1-1, tls-1-2,tls-1-2-strict，tls-1-2-fs，tls-1-0-with-1-3, tls-1-2-fs-with-1-3, hybrid-policy-1-0，默认：tls-1-0。 ](tag:hws,hws_hk,ocb,tlf,ctc,hcso,sbc,tm,cmcc,dt)  [取值：tls-1-0, tls-1-1, tls-1-2, tls-1-2-strict，默认：tls-1-0。](tag:hws_eu,g42,hk_g42,hcso_dt)  [使用说明： - 仅对HTTPS协议类型的监听器且关联LB为独享型时有效。 - QUIC监听器不支持该字段。 - 若同时设置了security_policy_id和tls_ciphers_policy，则仅security_policy_id生效。 - 加密套件的优先顺序为ecc套件、rsa套件、tls1.3协议的套件（即支持ecc又支持rsa） ](tag:hws,hws_hk,hws_eu,ocb,tlf,ctc,hcso,sbc,g42,tm,cmcc,hk-g42,dt)  [使用说明： - 仅对HTTPS协议类型的监听器有效](tag:hcso_dt)  [不支持tls1.3协议的套件。](tag:tm,hws_eu,g42,hk_g42)  [不支持QUIC。](tag:tm,hws_eu,g42,hk_g42,hcso_dt,dt,dt_test)
      * @return tlsCiphersPolicy
      */
     public String getTlsCiphersPolicy() {
@@ -348,7 +445,7 @@ public class UpdateListenerOption {
     }
 
     /**
-     * 是否开启后端服务器的重试。  取值：true 开启重试，false 不开启重试。默认：true。  [使用说明： - 若关联是共享型LB，仅在protocol为HTTP、TERMINATED_HTTPS时才能传入该字段。 - 若关联是独享型LB，仅在protocol为HTTP、HTTPS和QUIC时才能传入该字段。 ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,fcs,dt)  [使用说明： - 仅在protocol为HTTP、HTTPS时才能传入该字段。](tag:hws_eu,hcso_dt)  [荷兰region不支持QUIC。](tag:dt)
+     * 是否开启后端服务器的重试。  取值：true 开启重试，false 不开启重试。默认：true。  [使用说明： - 若关联是共享型LB，仅在protocol为HTTP、TERMINATED_HTTPS时才能传入该字段。 - 若关联是独享型LB，仅在protocol为HTTP、HTTPS和QUIC时才能传入该字段。 ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,fcs,dt)  [使用说明： - 仅在protocol为HTTP、HTTPS时才能传入该字段。](tag:hws_eu,hcso_dt)  [不支持QUIC。](tag:tm,hws_eu,g42,hk_g42,hcso_dt,dt,dt_test)
      * @return enableMemberRetry
      */
     public Boolean getEnableMemberRetry() {
@@ -403,7 +500,7 @@ public class UpdateListenerOption {
     }
 
     /**
-     * 客户端连接空闲超时时间。在超过keepalive_timeout时长一直没有请求， 负载均衡会暂时中断当前连接，直到一下次请求时重新建立新的连接。  取值： - 若为TCP监听器，取值范围为（10-4000s）默认值为300s。 - 若为HTTP/HTTPS/TERMINATED_HTTPS监听器，取值范围为（0-4000s）默认值为60s。  UDP监听器不支持此字段。
+     * 客户端连接空闲超时时间。在超过keepalive_timeout时长一直没有请求， 负载均衡会暂时中断当前连接，直到下一次请求时重新建立新的连接。  取值： - 若为TCP监听器，取值范围为（10-4000s）默认值为300s。 - 若为HTTP/HTTPS/TERMINATED_HTTPS监听器，取值范围为（0-4000s）默认值为60s。  UDP监听器不支持此字段。
      * @return keepaliveTimeout
      */
     public Integer getKeepaliveTimeout() {
@@ -463,7 +560,7 @@ public class UpdateListenerOption {
     }
 
     /**
-     * 是否开启高级转发策略功能。开启高级转发策略后，支持更灵活的转发策略和转发规则设置。  取值：true开启，false不开启。  开启后支持如下场景： - 转发策略的action字段支持指定为REDIRECT_TO_URL, FIXED_RESPONSE，即支持URL重定向和响应固定的内容给客户端。 - 转发策略支持指定priority、redirect_url_config、fixed_response_config字段。 - 转发规则rule的type可以指定METHOD, HEADER, QUERY_STRING, SOURCE_IP这几种取值。 - 转发规则rule的type为HOST_NAME时，转发规则rule的value支持通配符*。 - 转发规则支持指定conditions字段。  [荷兰region不支持该字段，请勿使用。](tag:dt)
+     * 是否开启高级转发策略功能。开启高级转发策略后，支持更灵活的转发策略和转发规则设置。  取值：true开启，false不开启。  开启后支持如下场景： - 转发策略的action字段支持指定为REDIRECT_TO_URL, FIXED_RESPONSE，即支持URL重定向和响应固定的内容给客户端。 - 转发策略支持指定priority、redirect_url_config、fixed_response_config字段。 - 转发规则rule的type可以指定METHOD, HEADER, QUERY_STRING, SOURCE_IP这几种取值。 - 转发规则rule的type为HOST_NAME时，转发规则rule的value支持通配符*。 - 转发规则支持指定conditions字段。  [荷兰region不支持该字段，请勿使用。](tag:dt) > 开启后不支持关闭
      * @return enhanceL7policyEnable
      */
     public Boolean getEnhanceL7policyEnable() {
@@ -500,6 +597,57 @@ public class UpdateListenerOption {
         this.quicConfig = quicConfig;
     }
 
+    public UpdateListenerOption withProtectionStatus(ProtectionStatusEnum protectionStatus) {
+        this.protectionStatus = protectionStatus;
+        return this;
+    }
+
+    /**
+     * 修改保护状态, 取值： - nonProtection: 不保护 - consoleProtection: 控制台修改保护
+     * @return protectionStatus
+     */
+    public ProtectionStatusEnum getProtectionStatus() {
+        return protectionStatus;
+    }
+
+    public void setProtectionStatus(ProtectionStatusEnum protectionStatus) {
+        this.protectionStatus = protectionStatus;
+    }
+
+    public UpdateListenerOption withProtectionReason(String protectionReason) {
+        this.protectionReason = protectionReason;
+        return this;
+    }
+
+    /**
+     * 设置保护的原因 >仅当protection_status为consoleProtection时有效。
+     * @return protectionReason
+     */
+    public String getProtectionReason() {
+        return protectionReason;
+    }
+
+    public void setProtectionReason(String protectionReason) {
+        this.protectionReason = protectionReason;
+    }
+
+    public UpdateListenerOption withGzipEnable(Boolean gzipEnable) {
+        this.gzipEnable = gzipEnable;
+        return this;
+    }
+
+    /**
+     * ELB是否开启gzip压缩，缺省值：false，非必选  [仅HTTP/HTTPS类型监听器支持配置。](tag:tm,hws_eu,g42,hk_g42,hcso_dt,dt,dt_test) [仅HTTP/HTTPS/QUIC类型监听器支持配置。](tag:hws,hws_hk,hws_test,hcs,hcs_sm,hcso,fcs,fcs_vm,mix,ocb,ctc,cmcc,sbc,hws_ocb,hk_sbc)
+     * @return gzipEnable
+     */
+    public Boolean getGzipEnable() {
+        return gzipEnable;
+    }
+
+    public void setGzipEnable(Boolean gzipEnable) {
+        this.gzipEnable = gzipEnable;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -528,7 +676,10 @@ public class UpdateListenerOption {
             && Objects.equals(this.ipgroup, updateListenerOption.ipgroup)
             && Objects.equals(this.transparentClientIpEnable, updateListenerOption.transparentClientIpEnable)
             && Objects.equals(this.enhanceL7policyEnable, updateListenerOption.enhanceL7policyEnable)
-            && Objects.equals(this.quicConfig, updateListenerOption.quicConfig);
+            && Objects.equals(this.quicConfig, updateListenerOption.quicConfig)
+            && Objects.equals(this.protectionStatus, updateListenerOption.protectionStatus)
+            && Objects.equals(this.protectionReason, updateListenerOption.protectionReason)
+            && Objects.equals(this.gzipEnable, updateListenerOption.gzipEnable);
     }
 
     @Override
@@ -552,7 +703,10 @@ public class UpdateListenerOption {
             ipgroup,
             transparentClientIpEnable,
             enhanceL7policyEnable,
-            quicConfig);
+            quicConfig,
+            protectionStatus,
+            protectionReason,
+            gzipEnable);
     }
 
     @Override
@@ -579,6 +733,9 @@ public class UpdateListenerOption {
         sb.append("    transparentClientIpEnable: ").append(toIndentedString(transparentClientIpEnable)).append("\n");
         sb.append("    enhanceL7policyEnable: ").append(toIndentedString(enhanceL7policyEnable)).append("\n");
         sb.append("    quicConfig: ").append(toIndentedString(quicConfig)).append("\n");
+        sb.append("    protectionStatus: ").append(toIndentedString(protectionStatus)).append("\n");
+        sb.append("    protectionReason: ").append(toIndentedString(protectionReason)).append("\n");
+        sb.append("    gzipEnable: ").append(toIndentedString(gzipEnable)).append("\n");
         sb.append("}");
         return sb.toString();
     }

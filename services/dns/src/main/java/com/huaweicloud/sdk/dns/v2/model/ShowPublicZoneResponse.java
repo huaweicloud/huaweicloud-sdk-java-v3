@@ -219,7 +219,7 @@ public class ShowPublicZoneResponse extends SdkResponse {
     }
 
     /**
-     * 该zone下的recordset个数
+     * 资源状态
      * @return status
      */
     public String getStatus() {

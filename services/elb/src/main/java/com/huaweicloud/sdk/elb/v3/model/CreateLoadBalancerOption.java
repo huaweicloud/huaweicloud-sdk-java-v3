@@ -144,7 +144,7 @@ public class CreateLoadBalancerOption {
     private CreateLoadbalancerAutoscalingOption autoscaling;
 
     /**
-     * WAF故障时的流量处理策略。discard:丢弃，forward: 转发到后端（默认）  使用说明：只有绑定了waf的LB实例，该字段才会生效。  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt,fcs,ctc)
+     * WAF故障时的流量处理策略。discard:丢弃，forward: 转发到后端（默认）  使用说明：只有绑定了waf的LB实例，该字段才会生效。  [不支持该字段，请勿使用。](tag:hws_hk,hws_eu,hws_test,hcs,hcs_sm,hcso,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b,hcso_dt,dt,dt_test,ocb,ctc,cmcc,tm,sbc,g42,hws_ocb,hk_sbc,hk_tm,hk_g42)
      */
     public static final class WafFailureActionEnum {
 
@@ -224,6 +224,93 @@ public class CreateLoadBalancerOption {
     @JsonProperty(value = "waf_failure_action")
 
     private WafFailureActionEnum wafFailureAction;
+
+    /**
+     * 修改保护状态, 取值： - nonProtection: 不保护，默认值为nonProtection - consoleProtection: 控制台修改保护
+     */
+    public static final class ProtectionStatusEnum {
+
+        /**
+         * Enum NONPROTECTION for value: "nonProtection"
+         */
+        public static final ProtectionStatusEnum NONPROTECTION = new ProtectionStatusEnum("nonProtection");
+
+        /**
+         * Enum CONSOLEPROTECTION for value: "consoleProtection"
+         */
+        public static final ProtectionStatusEnum CONSOLEPROTECTION = new ProtectionStatusEnum("consoleProtection");
+
+        private static final Map<String, ProtectionStatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ProtectionStatusEnum> createStaticFields() {
+            Map<String, ProtectionStatusEnum> map = new HashMap<>();
+            map.put("nonProtection", NONPROTECTION);
+            map.put("consoleProtection", CONSOLEPROTECTION);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ProtectionStatusEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ProtectionStatusEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            ProtectionStatusEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new ProtectionStatusEnum(value);
+            }
+            return result;
+        }
+
+        public static ProtectionStatusEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            ProtectionStatusEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ProtectionStatusEnum) {
+                return this.value.equals(((ProtectionStatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "protection_status")
+
+    private ProtectionStatusEnum protectionStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "protection_reason")
+
+    private String protectionReason;
 
     public CreateLoadBalancerOption withId(String id) {
         this.id = id;
@@ -367,7 +454,7 @@ public class CreateLoadBalancerOption {
     }
 
     /**
-     * 四层Flavor ID。  [使用说明：当l4_flavor_id和l7_flavor_id都不传的时，会使用默认flavor （默认flavor根据不同局点有所不同，具体以实际值为准）。 ](tag:hws,hws_hk,hws_eu,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb)  [只支持设置为l4_flavor.elb.shared。](tag:hcso_dt)  [所有LB实例共享带宽，该字段无效，请勿使用。](tag:fcs)
+     * 四层Flavor ID。  [使用说明：当l4_flavor_id和l7_flavor_id都不传的时，会使用默认flavor （默认flavor根据不同局点有所不同，具体以实际值为准）。 ](tag:hws,hws_hk,hws_eu,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb)  [只支持设置为l4_flavor.elb.shared。](tag:hcso_dt)  [所有LB实例共享带宽，该字段无效，请勿使用。](tag:hcso,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
      * @return l4FlavorId
      */
     public String getL4FlavorId() {
@@ -384,7 +471,7 @@ public class CreateLoadBalancerOption {
     }
 
     /**
-     * 七层Flavor ID。  [使用说明：当l4_flavor_id和l7_flavor_id都不传的时，会使用默认flavor （默认flavor根据不同局点有所不同，具体以实际值为准）。 ](tag:hws,hws_hk,hws_eu,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb)  [只支持设置为l4_flavor.elb.shared。](tag:hcso_dt)  [所有LB实例共享带宽，该字段无效，请勿使用。](tag:fcs)
+     * 七层Flavor ID。  [使用说明：当l4_flavor_id和l7_flavor_id都不传的时，会使用默认flavor （默认flavor根据不同局点有所不同，具体以实际值为准）。 ](tag:hws,hws_hk,hws_eu,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb)  [只支持设置为l4_flavor.elb.shared。](tag:hcso_dt)  [所有LB实例共享带宽，该字段无效，请勿使用。](tag:hcso,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
      * @return l7FlavorId
      */
     public String getL7FlavorId() {
@@ -535,7 +622,7 @@ public class CreateLoadBalancerOption {
     }
 
     /**
-     * 资源账单信息。  取值： - 空：按需计费。 - 非空：包周期计费。  格式为： order_id:product_id:region_id:project_id，如：  CS2107161019CDJZZ:OFFI569702121789763584:az1: 057ef081eb00d2732fd1c01a9be75e6f  [不支持该字段，请勿使用](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt,fcs)
+     * 资源账单信息。  取值： - 空：按需计费。 - 非空：包周期计费。  格式为： order_id:product_id:region_id:project_id，如：  CS2107161019CDJZZ:OFFI569702121789763584:az1: 057ef081eb00d2732fd1c01a9be75e6f  [不支持该字段，请勿使用](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt,hcso,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
      * @return billingInfo
      */
     public String getBillingInfo() {
@@ -670,7 +757,7 @@ public class CreateLoadBalancerOption {
     }
 
     /**
-     * 是否启用跨VPC后端转发。  开启跨VPC后端转发后，后端服务器组不仅支持添加云上VPC内的服务器，还支持添加 [其他VPC、](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,fcs) 其他公有云、云下数据中心的服务器。  [仅独享型负载均衡器支持该特性。 ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,fcs,dt)  取值： - true：开启。 - false：不开启。  使用说明： - 开启不能关闭。  [荷兰region不支持该字段，请勿使用。](tag:dt)
+     * 是否启用跨VPC后端转发。  开启跨VPC后端转发后，后端服务器组不仅支持添加云上VPC内的服务器，还支持添加其他VPC、其他公有云、云下数据中心的服务器。  使用共享VPC的实例使用此特性时，需确保共享资源所有者已开通VPC对等连接，否则通信异常。  [仅独享型负载均衡器支持该特性。 ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,fcs,dt)  取值： - true：开启。 - false：不开启。  使用说明： - 开启不能关闭。  [荷兰region不支持该字段，请勿使用。](tag:dt)
      * @return ipTargetEnable
      */
     public Boolean getIpTargetEnable() {
@@ -756,7 +843,7 @@ public class CreateLoadBalancerOption {
     }
 
     /**
-     * WAF故障时的流量处理策略。discard:丢弃，forward: 转发到后端（默认）  使用说明：只有绑定了waf的LB实例，该字段才会生效。  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt,fcs,ctc)
+     * WAF故障时的流量处理策略。discard:丢弃，forward: 转发到后端（默认）  使用说明：只有绑定了waf的LB实例，该字段才会生效。  [不支持该字段，请勿使用。](tag:hws_hk,hws_eu,hws_test,hcs,hcs_sm,hcso,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b,hcso_dt,dt,dt_test,ocb,ctc,cmcc,tm,sbc,g42,hws_ocb,hk_sbc,hk_tm,hk_g42)
      * @return wafFailureAction
      */
     public WafFailureActionEnum getWafFailureAction() {
@@ -765,6 +852,40 @@ public class CreateLoadBalancerOption {
 
     public void setWafFailureAction(WafFailureActionEnum wafFailureAction) {
         this.wafFailureAction = wafFailureAction;
+    }
+
+    public CreateLoadBalancerOption withProtectionStatus(ProtectionStatusEnum protectionStatus) {
+        this.protectionStatus = protectionStatus;
+        return this;
+    }
+
+    /**
+     * 修改保护状态, 取值： - nonProtection: 不保护，默认值为nonProtection - consoleProtection: 控制台修改保护
+     * @return protectionStatus
+     */
+    public ProtectionStatusEnum getProtectionStatus() {
+        return protectionStatus;
+    }
+
+    public void setProtectionStatus(ProtectionStatusEnum protectionStatus) {
+        this.protectionStatus = protectionStatus;
+    }
+
+    public CreateLoadBalancerOption withProtectionReason(String protectionReason) {
+        this.protectionReason = protectionReason;
+        return this;
+    }
+
+    /**
+     * 设置保护的原因 >仅当protection_status为consoleProtection时有效。
+     * @return protectionReason
+     */
+    public String getProtectionReason() {
+        return protectionReason;
+    }
+
+    public void setProtectionReason(String protectionReason) {
+        this.protectionReason = protectionReason;
     }
 
     @Override
@@ -801,7 +922,9 @@ public class CreateLoadBalancerOption {
             && Objects.equals(this.deletionProtectionEnable, createLoadBalancerOption.deletionProtectionEnable)
             && Objects.equals(this.prepaidOptions, createLoadBalancerOption.prepaidOptions)
             && Objects.equals(this.autoscaling, createLoadBalancerOption.autoscaling)
-            && Objects.equals(this.wafFailureAction, createLoadBalancerOption.wafFailureAction);
+            && Objects.equals(this.wafFailureAction, createLoadBalancerOption.wafFailureAction)
+            && Objects.equals(this.protectionStatus, createLoadBalancerOption.protectionStatus)
+            && Objects.equals(this.protectionReason, createLoadBalancerOption.protectionReason);
     }
 
     @Override
@@ -831,7 +954,9 @@ public class CreateLoadBalancerOption {
             deletionProtectionEnable,
             prepaidOptions,
             autoscaling,
-            wafFailureAction);
+            wafFailureAction,
+            protectionStatus,
+            protectionReason);
     }
 
     @Override
@@ -864,6 +989,8 @@ public class CreateLoadBalancerOption {
         sb.append("    prepaidOptions: ").append(toIndentedString(prepaidOptions)).append("\n");
         sb.append("    autoscaling: ").append(toIndentedString(autoscaling)).append("\n");
         sb.append("    wafFailureAction: ").append(toIndentedString(wafFailureAction)).append("\n");
+        sb.append("    protectionStatus: ").append(toIndentedString(protectionStatus)).append("\n");
+        sb.append("    protectionReason: ").append(toIndentedString(protectionReason)).append("\n");
         sb.append("}");
         return sb.toString();
     }

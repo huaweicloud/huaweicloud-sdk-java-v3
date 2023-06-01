@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.bss.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -41,22 +42,22 @@ public class BillSumInfoV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "amount")
 
-    private Double amount;
+    private BigDecimal amount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "debt_amount")
 
-    private Double debtAmount;
+    private BigDecimal debtAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "adjustment_amount")
 
-    private Double adjustmentAmount;
+    private BigDecimal adjustmentAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "discount_amount")
 
-    private Double discountAmount;
+    private BigDecimal discountAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "measure_id")
@@ -163,7 +164,7 @@ public class BillSumInfoV2 {
         this.chargeMode = chargeMode;
     }
 
-    public BillSumInfoV2 withAmount(Double amount) {
+    public BillSumInfoV2 withAmount(BigDecimal amount) {
         this.amount = amount;
         return this;
     }
@@ -172,15 +173,15 @@ public class BillSumInfoV2 {
      * 金额。 对于billType=1或者2的账单，该金额为负值。
      * @return amount
      */
-    public Double getAmount() {
+    public BigDecimal getAmount() {
         return amount;
     }
 
-    public void setAmount(Double amount) {
+    public void setAmount(BigDecimal amount) {
         this.amount = amount;
     }
 
-    public BillSumInfoV2 withDebtAmount(Double debtAmount) {
+    public BillSumInfoV2 withDebtAmount(BigDecimal debtAmount) {
         this.debtAmount = debtAmount;
         return this;
     }
@@ -189,15 +190,15 @@ public class BillSumInfoV2 {
      * 欠费金额，指从客户账户扣费的时候，客户账户金额不足，欠费的金额，华为核销或者退订的时候没有该字段。
      * @return debtAmount
      */
-    public Double getDebtAmount() {
+    public BigDecimal getDebtAmount() {
         return debtAmount;
     }
 
-    public void setDebtAmount(Double debtAmount) {
+    public void setDebtAmount(BigDecimal debtAmount) {
         this.debtAmount = debtAmount;
     }
 
-    public BillSumInfoV2 withAdjustmentAmount(Double adjustmentAmount) {
+    public BillSumInfoV2 withAdjustmentAmount(BigDecimal adjustmentAmount) {
         this.adjustmentAmount = adjustmentAmount;
         return this;
     }
@@ -206,15 +207,15 @@ public class BillSumInfoV2 {
      * 核销欠款，华为核销或者退订的时候没有该字段。
      * @return adjustmentAmount
      */
-    public Double getAdjustmentAmount() {
+    public BigDecimal getAdjustmentAmount() {
         return adjustmentAmount;
     }
 
-    public void setAdjustmentAmount(Double adjustmentAmount) {
+    public void setAdjustmentAmount(BigDecimal adjustmentAmount) {
         this.adjustmentAmount = adjustmentAmount;
     }
 
-    public BillSumInfoV2 withDiscountAmount(Double discountAmount) {
+    public BillSumInfoV2 withDiscountAmount(BigDecimal discountAmount) {
         this.discountAmount = discountAmount;
         return this;
     }
@@ -223,11 +224,11 @@ public class BillSumInfoV2 {
      * 折扣金额，华为核销或者退订的时候没有该字段。
      * @return discountAmount
      */
-    public Double getDiscountAmount() {
+    public BigDecimal getDiscountAmount() {
         return discountAmount;
     }
 
-    public void setDiscountAmount(Double discountAmount) {
+    public void setDiscountAmount(BigDecimal discountAmount) {
         this.discountAmount = discountAmount;
     }
 

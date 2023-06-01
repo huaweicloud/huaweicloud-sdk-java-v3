@@ -36,7 +36,7 @@ public class RequestLimitRules {
     }
 
     /**
-     * 配置开关（on/off）
+     * 状态, on：开启，off：关闭。
      * @return status
      */
     public String getStatus() {
@@ -53,7 +53,7 @@ public class RequestLimitRules {
     }
 
     /**
-     * 限速方式，目前只支持按流量大小限速，size:大小。
+     * 限速方式，目前只支持按传送流量限速，当单个HTTP请求流量达到设定的值，开始限制访问速度。  > size:按传送流量限速。
      * @return type
      */
     public String getType() {
@@ -70,7 +70,7 @@ public class RequestLimitRules {
     }
 
     /**
-     * 限速条件,type=size,limit_rate_after=50表示从传输表示传输50个字节后开始限速且限速值为limit_rate_value， 单位byte，取值范围：0-1073741824。
+     * 限速条件,type=size,limit_rate_after=50表示从传输传输50个字节后开始限速且限速值为limit_rate_value，  > 单位byte，取值范围：0-1073741824。
      * @return limitRateAfter
      */
     public Long getLimitRateAfter() {
@@ -87,7 +87,7 @@ public class RequestLimitRules {
     }
 
     /**
-     * 限速值,单位Bps，取值范围 0-104857600
+     * 限速值,设置开始限速后的最大访问速度。  > 单位Bps，取值范围 0-104857600
      * @return limitRateValue
      */
     public Integer getLimitRateValue() {

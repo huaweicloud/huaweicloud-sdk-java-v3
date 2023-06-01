@@ -71,6 +71,14 @@ public final class Constants {
 
     public static final String ISO_8601_BASIC_FORMAT = "yyyyMMdd'T'HHmmss'Z'";
 
+    public static final int DEFAULT_CHUNK_SIZE = 4096;
+
+    public static final int DEFAULT_WRITE_BUFFER_STREAM = 8192;
+
+    public static final int DEFAULT_READ_BUFFER_STREAM = 8192;
+
+    public static final long DEFAULT_PROGRESS_INTERVAL = 100 * 1024L;
+
     /**
      * Supported media type
      */

@@ -61,7 +61,7 @@ public class UpdateNewTaskRequestBody {
     }
 
     /**
-     * 并行状态(表示任务执行时用例是否并行执行;true:并行执行,false:串行执行)
+     * 并行状态（表示任务执行时用例是否并行执行；true：并行执行，false：串行执行）
      * @return parallel
      */
     public Boolean getParallel() {
@@ -95,7 +95,7 @@ public class UpdateNewTaskRequestBody {
     }
 
     /**
-     * 任务模式(兼容旧版接口保留字段,0:时长模式,1:次数模式,2:混合模式;此处请传固定值:2)
+     * 任务模式（兼容旧版接口保留字段，0：时长模式，1：次数模式，2：混合模式；此处请传固定值：2）
      * @return operateMode
      */
     public Integer getOperateMode() {

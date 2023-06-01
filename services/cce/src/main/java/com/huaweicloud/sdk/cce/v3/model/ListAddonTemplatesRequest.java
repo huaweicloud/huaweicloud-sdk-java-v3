@@ -21,7 +21,7 @@ public class ListAddonTemplatesRequest {
     }
 
     /**
-     * 指定的模板名称，不填写则查询列表。
+     * 指定的插件名称或插件别名，不填写则查询列表。
      * @return addonTemplateName
      */
     public String getAddonTemplateName() {

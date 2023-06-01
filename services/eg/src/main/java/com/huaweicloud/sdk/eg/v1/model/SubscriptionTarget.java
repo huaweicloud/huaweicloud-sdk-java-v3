@@ -119,6 +119,11 @@ public class SubscriptionTarget {
     private Object detail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "kafka_detail")
+
+    private KafkaTargetDetail kafkaDetail;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "transform")
 
     private TransForm transform;
@@ -208,6 +213,32 @@ public class SubscriptionTarget {
         this.detail = detail;
     }
 
+    public SubscriptionTarget withKafkaDetail(KafkaTargetDetail kafkaDetail) {
+        this.kafkaDetail = kafkaDetail;
+        return this;
+    }
+
+    public SubscriptionTarget withKafkaDetail(Consumer<KafkaTargetDetail> kafkaDetailSetter) {
+        if (this.kafkaDetail == null) {
+            this.kafkaDetail = new KafkaTargetDetail();
+            kafkaDetailSetter.accept(this.kafkaDetail);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get kafkaDetail
+     * @return kafkaDetail
+     */
+    public KafkaTargetDetail getKafkaDetail() {
+        return kafkaDetail;
+    }
+
+    public void setKafkaDetail(KafkaTargetDetail kafkaDetail) {
+        this.kafkaDetail = kafkaDetail;
+    }
+
     public SubscriptionTarget withTransform(TransForm transform) {
         this.transform = transform;
         return this;
@@ -247,12 +278,13 @@ public class SubscriptionTarget {
             && Objects.equals(this.providerType, subscriptionTarget.providerType)
             && Objects.equals(this.connectionId, subscriptionTarget.connectionId)
             && Objects.equals(this.detail, subscriptionTarget.detail)
+            && Objects.equals(this.kafkaDetail, subscriptionTarget.kafkaDetail)
             && Objects.equals(this.transform, subscriptionTarget.transform);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, providerType, connectionId, detail, transform);
+        return Objects.hash(id, name, providerType, connectionId, detail, kafkaDetail, transform);
     }
 
     @Override
@@ -264,6 +296,7 @@ public class SubscriptionTarget {
         sb.append("    providerType: ").append(toIndentedString(providerType)).append("\n");
         sb.append("    connectionId: ").append(toIndentedString(connectionId)).append("\n");
         sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
+        sb.append("    kafkaDetail: ").append(toIndentedString(kafkaDetail)).append("\n");
         sb.append("    transform: ").append(toIndentedString(transform)).append("\n");
         sb.append("}");
         return sb.toString();

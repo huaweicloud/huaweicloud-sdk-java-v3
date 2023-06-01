@@ -127,7 +127,7 @@ public class AutoLaunchGroupReqV2 {
     private Integer stableCapacity;
 
     /**
-     * 超过目标容量时（目标容量减少）实例中断行为，枚举值 terminate：释放 noTermination：不释放 默认值：terminate
+     * 超过目标容量或目标容量减少时的实例中断行为，枚举值 terminate：释放 noTermination：不释放 默认值：terminate
      */
     public static final class ExcessFulfilledCapacityBehaviorEnum {
 
@@ -405,7 +405,7 @@ public class AutoLaunchGroupReqV2 {
     private List<RegionSpec> regionSpecs = null;
 
     /**
-    * 资源供给中规格选择策略：枚举值 singlation：选择一种Flavor供给 multiple：组合多种Flavor供给 默认值：multiple
+    * 资源供给中规格选择策略：枚举值 singlation：选择一种规格供给 multiple：组合多种规格供给 默认值：multiple
     */
     public static final class SupplyOptionEnum {
 
@@ -497,7 +497,7 @@ public class AutoLaunchGroupReqV2 {
     }
 
     /**
-     * 智能购买组名称(1-64个字符)，只能包含中文、字母、数字、下划线和中划线
+     * 智能购买组名称。 取值范围：1-64个字符，只能包含中文、字母、数字、下划线和中划线。
      * @return name
      */
     public String getName() {
@@ -514,7 +514,7 @@ public class AutoLaunchGroupReqV2 {
     }
 
     /**
-     * 创建智能购买组参数核查  true：发送检查请求，不会创建智能购买组。检查项包括是否填写了必需参数、请求格式等。 false：发送正常请求，通过检查后并且执行创建智能购买组请求。 如果检查不通过，则返回对应错误。 如果检查通过，则返回202状态码。
+     * 创建智能购买组参数核查 true：发送检查请求，不会创建智能购买组。检查项包括是否填写了必需参数、请求格式等。 如果检查不通过，则返回对应错误。 如果检查通过，则返回202状态码。 false：发送正常请求，通过检查后并且执行创建智能购买组请求。
      * @return dryRun
      */
     public Boolean getDryRun() {
@@ -548,7 +548,7 @@ public class AutoLaunchGroupReqV2 {
     }
 
     /**
-     * 算力保障计划id
+     * 算力保障计划ID
      * @return guaranteePlanId
      */
     public String getGuaranteePlanId() {
@@ -565,7 +565,7 @@ public class AutoLaunchGroupReqV2 {
     }
 
     /**
-     * 智能购买组目标容量，实例数量或者CPU个数目标容量大于等于stable_capacity，spot实例的容量为满配容量减去stable_capacity
+     * 智能购买组目标容量。 实例数量或者CPU个数目标容量大于等于stable_capacity。竞价实例的容量为满配容量减去stable_capacity。
      * minimum: 0
      * maximum: 10000
      * @return targetCapacity
@@ -584,7 +584,7 @@ public class AutoLaunchGroupReqV2 {
     }
 
     /**
-     * 按需实例目标容量（实例数量或CPU个数），小于target_capacity，智能购买组中可以没有按需实例
+     * 按需实例目标容量。 目标容量指实例数量或CPU个数，必须小于等于target_capacity，智能购买组中可以没有按需实例。
      * minimum: 0
      * maximum: 10000
      * @return stableCapacity
@@ -604,7 +604,7 @@ public class AutoLaunchGroupReqV2 {
     }
 
     /**
-     * 超过目标容量时（目标容量减少）实例中断行为，枚举值 terminate：释放 noTermination：不释放 默认值：terminate
+     * 超过目标容量或目标容量减少时的实例中断行为，枚举值 terminate：释放 noTermination：不释放 默认值：terminate
      * @return excessFulfilledCapacityBehavior
      */
     public ExcessFulfilledCapacityBehaviorEnum getExcessFulfilledCapacityBehavior() {
@@ -708,7 +708,7 @@ public class AutoLaunchGroupReqV2 {
     }
 
     /**
-     * 智能购买组内各region的资源描述
+     * 智能购买组内各区域的资源描述
      * @return regionSpecs
      */
     public List<RegionSpec> getRegionSpecs() {
@@ -725,7 +725,7 @@ public class AutoLaunchGroupReqV2 {
     }
 
     /**
-     * 资源供给中规格选择策略：枚举值 singlation：选择一种Flavor供给 multiple：组合多种Flavor供给 默认值：multiple
+     * 资源供给中规格选择策略：枚举值 singlation：选择一种规格供给 multiple：组合多种规格供给 默认值：multiple
      * @return supplyOption
      */
     public SupplyOptionEnum getSupplyOption() {

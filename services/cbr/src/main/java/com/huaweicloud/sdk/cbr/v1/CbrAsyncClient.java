@@ -1531,6 +1531,34 @@ public class CbrAsyncClient {
     }
 
     /**
+     * 存储库容量总览
+     *
+     * 查询项目下所有存储库的总容量和总使用量
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowSummaryRequest 请求对象
+     * @return CompletableFuture<ShowSummaryResponse>
+     */
+    public CompletableFuture<ShowSummaryResponse> showSummaryAsync(ShowSummaryRequest request) {
+        return hcClient.asyncInvokeHttp(request, CbrMeta.showSummary);
+    }
+
+    /**
+     * 存储库容量总览
+     *
+     * 查询项目下所有存储库的总容量和总使用量
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowSummaryRequest 请求对象
+     * @return AsyncInvoker<ShowSummaryRequest, ShowSummaryResponse>
+     */
+    public AsyncInvoker<ShowSummaryRequest, ShowSummaryResponse> showSummaryAsyncInvoker(ShowSummaryRequest request) {
+        return new AsyncInvoker<ShowSummaryRequest, ShowSummaryResponse>(request, CbrMeta.showSummary, hcClient);
+    }
+
+    /**
      * 查询指定存储库
      *
      * 根据ID查询指定存储库

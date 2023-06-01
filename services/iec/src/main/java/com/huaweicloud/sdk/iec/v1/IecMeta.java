@@ -206,6 +206,30 @@ public class IecMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateImageRequest, CreateImageResponse> createImage = genForcreateImage();
+
+    private static HttpRequestDef<CreateImageRequest, CreateImageResponse> genForcreateImage() {
+        // basic
+        HttpRequestDef.Builder<CreateImageRequest, CreateImageResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateImageRequest.class, CreateImageResponse.class)
+                .withName("CreateImage")
+                .withUri("/v1/images/create")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateImageRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateImageRequestBody.class),
+            f -> f.withMarshaller(CreateImageRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateKeypairRequest, CreateKeypairResponse> createKeypair =
         genForcreateKeypair();
 
@@ -385,6 +409,31 @@ public class IecMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteBandwidthRequest, DeleteBandwidthResponse> deleteBandwidth =
+        genFordeleteBandwidth();
+
+    private static HttpRequestDef<DeleteBandwidthRequest, DeleteBandwidthResponse> genFordeleteBandwidth() {
+        // basic
+        HttpRequestDef.Builder<DeleteBandwidthRequest, DeleteBandwidthResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteBandwidthRequest.class, DeleteBandwidthResponse.class)
+                .withName("DeleteBandwidth")
+                .withUri("/v1/bandwidths/{bandwidth_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("bandwidth_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteBandwidthRequest::getBandwidthId, (req, v) -> {
+                req.setBandwidthId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteDeploymentRequest, DeleteDeploymentResponse> deleteDeployment =
         genFordeleteDeployment();
 
@@ -428,6 +477,30 @@ public class IecMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteEdgeCloudRequest::getEdgecloudId, (req, v) -> {
                 req.setEdgecloudId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteImageRequest, DeleteImageResponse> deleteImage = genFordeleteImage();
+
+    private static HttpRequestDef<DeleteImageRequest, DeleteImageResponse> genFordeleteImage() {
+        // basic
+        HttpRequestDef.Builder<DeleteImageRequest, DeleteImageResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteImageRequest.class, DeleteImageResponse.class)
+                .withName("DeleteImage")
+                .withUri("/v1/images/{image_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("image_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteImageRequest::getImageId, (req, v) -> {
+                req.setImageId(v);
             }));
 
         // response
@@ -808,6 +881,192 @@ public class IecMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListBandwidthsRequest::getSiteId, (req, v) -> {
                 req.setSiteId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListCloudImagesRequest, ListCloudImagesResponse> listCloudImages =
+        genForlistCloudImages();
+
+    private static HttpRequestDef<ListCloudImagesRequest, ListCloudImagesResponse> genForlistCloudImages() {
+        // basic
+        HttpRequestDef.Builder<ListCloudImagesRequest, ListCloudImagesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListCloudImagesRequest.class, ListCloudImagesResponse.class)
+                .withName("ListCloudImages")
+                .withUri("/v1/cloudimages/{region_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("region_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloudImagesRequest::getRegionId, (req, v) -> {
+                req.setRegionId(v);
+            }));
+        builder.<String>withRequestField("__imagetype",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloudImagesRequest::getImagetype, (req, v) -> {
+                req.setImagetype(v);
+            }));
+        builder.<ListCloudImagesRequest.IsregisteredEnum>withRequestField("__isregistered",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListCloudImagesRequest.IsregisteredEnum.class),
+            f -> f.withMarshaller(ListCloudImagesRequest::getIsregistered, (req, v) -> {
+                req.setIsregistered(v);
+            }));
+        builder.<String>withRequestField("__os_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloudImagesRequest::getOsType, (req, v) -> {
+                req.setOsType(v);
+            }));
+        builder.<String>withRequestField("__support_diskintensive",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloudImagesRequest::getSupportDiskintensive, (req, v) -> {
+                req.setSupportDiskintensive(v);
+            }));
+        builder.<String>withRequestField("__support_highperformance",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloudImagesRequest::getSupportHighperformance, (req, v) -> {
+                req.setSupportHighperformance(v);
+            }));
+        builder.<String>withRequestField("__support_kvm",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloudImagesRequest::getSupportKvm, (req, v) -> {
+                req.setSupportKvm(v);
+            }));
+        builder.<String>withRequestField("__support_kvm_gpu_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloudImagesRequest::getSupportKvmGpuType, (req, v) -> {
+                req.setSupportKvmGpuType(v);
+            }));
+        builder.<String>withRequestField("__support_kvm_infiniband",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloudImagesRequest::getSupportKvmInfiniband, (req, v) -> {
+                req.setSupportKvmInfiniband(v);
+            }));
+        builder.<String>withRequestField("__support_largememory",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloudImagesRequest::getSupportLargememory, (req, v) -> {
+                req.setSupportLargememory(v);
+            }));
+        builder.<String>withRequestField("__support_xen",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloudImagesRequest::getSupportXen, (req, v) -> {
+                req.setSupportXen(v);
+            }));
+        builder.<String>withRequestField("__support_xen_gpu_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloudImagesRequest::getSupportXenGpuType, (req, v) -> {
+                req.setSupportXenGpuType(v);
+            }));
+        builder.<String>withRequestField("__support_xen_hana",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloudImagesRequest::getSupportXenHana, (req, v) -> {
+                req.setSupportXenHana(v);
+            }));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloudImagesRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCloudImagesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloudImagesRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloudImagesRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<String>withRequestField("owner",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloudImagesRequest::getOwner, (req, v) -> {
+                req.setOwner(v);
+            }));
+        builder.<ListCloudImagesRequest.ProtectedEnum>withRequestField("protected",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListCloudImagesRequest.ProtectedEnum.class),
+            f -> f.withMarshaller(ListCloudImagesRequest::getProtected, (req, v) -> {
+                req.setProtected(v);
+            }));
+        builder.<ListCloudImagesRequest.SortDirEnum>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListCloudImagesRequest.SortDirEnum.class),
+            f -> f.withMarshaller(ListCloudImagesRequest::getSortDir, (req, v) -> {
+                req.setSortDir(v);
+            }));
+        builder.<ListCloudImagesRequest.SortKeyEnum>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListCloudImagesRequest.SortKeyEnum.class),
+            f -> f.withMarshaller(ListCloudImagesRequest::getSortKey, (req, v) -> {
+                req.setSortKey(v);
+            }));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloudImagesRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            }));
+        builder.<ListCloudImagesRequest.VirtualEnvTypeEnum>withRequestField("virtual_env_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListCloudImagesRequest.VirtualEnvTypeEnum.class),
+            f -> f.withMarshaller(ListCloudImagesRequest::getVirtualEnvType, (req, v) -> {
+                req.setVirtualEnvType(v);
+            }));
+        builder.<String>withRequestField("visibility",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloudImagesRequest::getVisibility, (req, v) -> {
+                req.setVisibility(v);
             }));
 
         // response
@@ -1724,6 +1983,62 @@ public class IecMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RebuildImageRequest, RebuildImageResponse> rebuildImage = genForrebuildImage();
+
+    private static HttpRequestDef<RebuildImageRequest, RebuildImageResponse> genForrebuildImage() {
+        // basic
+        HttpRequestDef.Builder<RebuildImageRequest, RebuildImageResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RebuildImageRequest.class, RebuildImageResponse.class)
+                .withName("RebuildImage")
+                .withUri("/v1/{domain_id}/jobs/{job_id}/action")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RebuildImageRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+        builder.<RebuildImageRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(RebuildImageRequestBody.class),
+            f -> f.withMarshaller(RebuildImageRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RegisterImageRequest, RegisterImageResponse> registerImage =
+        genForregisterImage();
+
+    private static HttpRequestDef<RegisterImageRequest, RegisterImageResponse> genForregisterImage() {
+        // basic
+        HttpRequestDef.Builder<RegisterImageRequest, RegisterImageResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RegisterImageRequest.class, RegisterImageResponse.class)
+                .withName("RegisterImage")
+                .withUri("/v1/images/register")
+                .withContentType("application/json");
+
+        // requests
+        builder.<RegisterImageRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RegisterImageRequestBody.class),
+            f -> f.withMarshaller(RegisterImageRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowBandwidthRequest, ShowBandwidthResponse> showBandwidth =
         genForshowBandwidth();
 
@@ -1993,6 +2308,24 @@ public class IecMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowVolumeTypesRequest, ShowVolumeTypesResponse> showVolumeTypes =
+        genForshowVolumeTypes();
+
+    private static HttpRequestDef<ShowVolumeTypesRequest, ShowVolumeTypesResponse> genForshowVolumeTypes() {
+        // basic
+        HttpRequestDef.Builder<ShowVolumeTypesRequest, ShowVolumeTypesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowVolumeTypesRequest.class, ShowVolumeTypesResponse.class)
+                .withName("ShowVolumeTypes")
+                .withUri("/v1/cloudvolumes/volume-types")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowVpcRequest, ShowVpcResponse> showVpc = genForshowVpc();
 
     private static HttpRequestDef<ShowVpcRequest, ShowVpcResponse> genForshowVpc() {
@@ -2010,6 +2343,38 @@ public class IecMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowVpcRequest::getVpcId, (req, v) -> {
                 req.setVpcId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateBandwidthRequest, UpdateBandwidthResponse> updateBandwidth =
+        genForupdateBandwidth();
+
+    private static HttpRequestDef<UpdateBandwidthRequest, UpdateBandwidthResponse> genForupdateBandwidth() {
+        // basic
+        HttpRequestDef.Builder<UpdateBandwidthRequest, UpdateBandwidthResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateBandwidthRequest.class, UpdateBandwidthResponse.class)
+                .withName("UpdateBandwidth")
+                .withUri("/v1/bandwidths/{bandwidth_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("bandwidth_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateBandwidthRequest::getBandwidthId, (req, v) -> {
+                req.setBandwidthId(v);
+            }));
+        builder.<UpdateBandwidthRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateBandwidthRequestBody.class),
+            f -> f.withMarshaller(UpdateBandwidthRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

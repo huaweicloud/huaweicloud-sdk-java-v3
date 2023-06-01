@@ -95,6 +95,11 @@ public class ShowIssueV4Response extends SdkResponse {
     private IssueItemSfV4Iteration iteration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "story_point")
+
+    private IssueDetailResponseV4StoryPoint storyPoint;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "module")
 
     private IssueItemSfV4Module module;
@@ -528,6 +533,32 @@ public class ShowIssueV4Response extends SdkResponse {
         this.iteration = iteration;
     }
 
+    public ShowIssueV4Response withStoryPoint(IssueDetailResponseV4StoryPoint storyPoint) {
+        this.storyPoint = storyPoint;
+        return this;
+    }
+
+    public ShowIssueV4Response withStoryPoint(Consumer<IssueDetailResponseV4StoryPoint> storyPointSetter) {
+        if (this.storyPoint == null) {
+            this.storyPoint = new IssueDetailResponseV4StoryPoint();
+            storyPointSetter.accept(this.storyPoint);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get storyPoint
+     * @return storyPoint
+     */
+    public IssueDetailResponseV4StoryPoint getStoryPoint() {
+        return storyPoint;
+    }
+
+    public void setStoryPoint(IssueDetailResponseV4StoryPoint storyPoint) {
+        this.storyPoint = storyPoint;
+    }
+
     public ShowIssueV4Response withModule(IssueItemSfV4Module module) {
         this.module = module;
         return this;
@@ -836,6 +867,7 @@ public class ShowIssueV4Response extends SdkResponse {
             && Objects.equals(this.id, showIssueV4Response.id)
             && Objects.equals(this.project, showIssueV4Response.project)
             && Objects.equals(this.iteration, showIssueV4Response.iteration)
+            && Objects.equals(this.storyPoint, showIssueV4Response.storyPoint)
             && Objects.equals(this.module, showIssueV4Response.module)
             && Objects.equals(this.name, showIssueV4Response.name)
             && Objects.equals(this.parentIssue, showIssueV4Response.parentIssue)
@@ -868,6 +900,7 @@ public class ShowIssueV4Response extends SdkResponse {
             id,
             project,
             iteration,
+            storyPoint,
             module,
             name,
             parentIssue,
@@ -902,6 +935,7 @@ public class ShowIssueV4Response extends SdkResponse {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    project: ").append(toIndentedString(project)).append("\n");
         sb.append("    iteration: ").append(toIndentedString(iteration)).append("\n");
+        sb.append("    storyPoint: ").append(toIndentedString(storyPoint)).append("\n");
         sb.append("    module: ").append(toIndentedString(module)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    parentIssue: ").append(toIndentedString(parentIssue)).append("\n");

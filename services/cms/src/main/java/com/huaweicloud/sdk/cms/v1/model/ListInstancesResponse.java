@@ -46,7 +46,7 @@ public class ListInstancesResponse extends SdkResponse {
     }
 
     /**
-     * 虚拟机列表
+     * 实例列表
      * @return instances
      */
     public List<InstanceInfo> getInstances() {

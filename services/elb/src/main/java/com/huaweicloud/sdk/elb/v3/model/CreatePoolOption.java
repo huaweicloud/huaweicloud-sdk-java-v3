@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.elb.v3.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -76,6 +81,93 @@ public class CreatePoolOption {
 
     private String type;
 
+    /**
+     * 修改保护状态, 取值： - nonProtection: 不保护，默认值为nonProtection - consoleProtection: 控制台修改保护
+     */
+    public static final class ProtectionStatusEnum {
+
+        /**
+         * Enum NONPROTECTION for value: "nonProtection"
+         */
+        public static final ProtectionStatusEnum NONPROTECTION = new ProtectionStatusEnum("nonProtection");
+
+        /**
+         * Enum CONSOLEPROTECTION for value: "consoleProtection"
+         */
+        public static final ProtectionStatusEnum CONSOLEPROTECTION = new ProtectionStatusEnum("consoleProtection");
+
+        private static final Map<String, ProtectionStatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ProtectionStatusEnum> createStaticFields() {
+            Map<String, ProtectionStatusEnum> map = new HashMap<>();
+            map.put("nonProtection", NONPROTECTION);
+            map.put("consoleProtection", CONSOLEPROTECTION);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ProtectionStatusEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ProtectionStatusEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            ProtectionStatusEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new ProtectionStatusEnum(value);
+            }
+            return result;
+        }
+
+        public static ProtectionStatusEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            ProtectionStatusEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ProtectionStatusEnum) {
+                return this.value.equals(((ProtectionStatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "protection_status")
+
+    private ProtectionStatusEnum protectionStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "protection_reason")
+
+    private String protectionReason;
+
     public CreatePoolOption withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -116,7 +208,7 @@ public class CreatePoolOption {
     }
 
     /**
-     * 后端云服务器组的负载均衡算法。  取值： - ROUND_ROBIN：加权轮询算法。 - LEAST_CONNECTIONS：加权最少连接算法。 - SOURCE_IP：源IP算法。 - QUIC_CID：连接ID算法。  使用说明： - 当该字段的取值为SOURCE_IP时，后端云服务器组绑定的后端云服务器的weight字段无效。 - 只有pool的protocol为QUIC时，才支持QUIC_CID算法。  [不支持QUIC_CID算法。](tag:hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC。](tag:dt)
+     * 后端云服务器组的负载均衡算法。  取值： - ROUND_ROBIN：加权轮询算法。 - LEAST_CONNECTIONS：加权最少连接算法。 - SOURCE_IP：源IP算法。 - QUIC_CID：连接ID算法。  使用说明： - 当该字段的取值为SOURCE_IP时，后端云服务器组绑定的后端云服务器的weight字段无效。 - 只有pool的protocol为QUIC时，才支持QUIC_CID算法。  [不支持QUIC_CID。](tag:tm,hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC_CID。](tag:dt,dt_test)
      * @return lbAlgorithm
      */
     public String getLbAlgorithm() {
@@ -201,7 +293,7 @@ public class CreatePoolOption {
     }
 
     /**
-     * 后端云服务器组的后端协议。  取值：TCP、UDP、HTTP、HTTPS和QUIC。  使用说明： - listener的protocol为UDP时，pool的protocol必须为UDP或QUIC； - listener的protocol为TCP时pool的protocol必须为TCP； - listener的protocol为HTTP时，pool的protocol必须为HTTP。 - listener的protocol为HTTPS时，pool的protocol必须为HTTP或HTTPS。 - listener的protocol为TERMINATED_HTTPS时，pool的protocol必须为HTTP。 - 若pool的protocol为QUIC，则必须开启session_persistence且type为SOURCE_IP。  [不支持QUIC协议。](tag:hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC。](tag:dt)
+     * 后端云服务器组的后端协议。  取值：TCP、UDP、HTTP、HTTPS和QUIC。  使用说明： - listener的protocol为UDP时，pool的protocol必须为UDP或QUIC； - listener的protocol为TCP时pool的protocol必须为TCP； - listener的protocol为HTTP时，pool的protocol必须为HTTP。 - listener的protocol为HTTPS时，pool的protocol必须为HTTP或HTTPS。 - listener的protocol为TERMINATED_HTTPS时，pool的protocol必须为HTTP。 - 若pool的protocol为QUIC，则必须开启session_persistence且type为SOURCE_IP。  [不支持QUIC。](tag:tm,hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC。](tag:dt,dt_test)
      * @return protocol
      */
     public String getProtocol() {
@@ -316,6 +408,40 @@ public class CreatePoolOption {
         this.type = type;
     }
 
+    public CreatePoolOption withProtectionStatus(ProtectionStatusEnum protectionStatus) {
+        this.protectionStatus = protectionStatus;
+        return this;
+    }
+
+    /**
+     * 修改保护状态, 取值： - nonProtection: 不保护，默认值为nonProtection - consoleProtection: 控制台修改保护
+     * @return protectionStatus
+     */
+    public ProtectionStatusEnum getProtectionStatus() {
+        return protectionStatus;
+    }
+
+    public void setProtectionStatus(ProtectionStatusEnum protectionStatus) {
+        this.protectionStatus = protectionStatus;
+    }
+
+    public CreatePoolOption withProtectionReason(String protectionReason) {
+        this.protectionReason = protectionReason;
+        return this;
+    }
+
+    /**
+     * 设置保护的原因 >仅当protection_status为consoleProtection时有效。
+     * @return protectionReason
+     */
+    public String getProtectionReason() {
+        return protectionReason;
+    }
+
+    public void setProtectionReason(String protectionReason) {
+        this.protectionReason = protectionReason;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -336,7 +462,9 @@ public class CreatePoolOption {
             && Objects.equals(this.sessionPersistence, createPoolOption.sessionPersistence)
             && Objects.equals(this.slowStart, createPoolOption.slowStart)
             && Objects.equals(this.memberDeletionProtectionEnable, createPoolOption.memberDeletionProtectionEnable)
-            && Objects.equals(this.vpcId, createPoolOption.vpcId) && Objects.equals(this.type, createPoolOption.type);
+            && Objects.equals(this.vpcId, createPoolOption.vpcId) && Objects.equals(this.type, createPoolOption.type)
+            && Objects.equals(this.protectionStatus, createPoolOption.protectionStatus)
+            && Objects.equals(this.protectionReason, createPoolOption.protectionReason);
     }
 
     @Override
@@ -353,7 +481,9 @@ public class CreatePoolOption {
             slowStart,
             memberDeletionProtectionEnable,
             vpcId,
-            type);
+            type,
+            protectionStatus,
+            protectionReason);
     }
 
     @Override
@@ -375,6 +505,8 @@ public class CreatePoolOption {
             .append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    protectionStatus: ").append(toIndentedString(protectionStatus)).append("\n");
+        sb.append("    protectionReason: ").append(toIndentedString(protectionReason)).append("\n");
         sb.append("}");
         return sb.toString();
     }

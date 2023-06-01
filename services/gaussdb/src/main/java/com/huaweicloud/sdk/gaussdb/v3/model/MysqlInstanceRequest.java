@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.gaussdb.v3.model.MysqlBackupStrategy;
 import com.huaweicloud.sdk.gaussdb.v3.model.MysqlChargeInfo;
 import com.huaweicloud.sdk.gaussdb.v3.model.MysqlDatastore;
+import com.huaweicloud.sdk.gaussdb.v3.model.MysqlRestorePoint;
 import com.huaweicloud.sdk.gaussdb.v3.model.MysqlTags;
 import com.huaweicloud.sdk.gaussdb.v3.model.MysqlVolume;
 import java.util.ArrayList;
@@ -148,6 +149,12 @@ public class MysqlInstanceRequest  {
     
 
     private String dedicatedResourceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="restore_point")
+    
+
+    private MysqlRestorePoint restorePoint;
 
     public MysqlInstanceRequest withChargeInfo(MysqlChargeInfo chargeInfo) {
         this.chargeInfo = chargeInfo;
@@ -653,6 +660,35 @@ public class MysqlInstanceRequest  {
 
     
 
+    public MysqlInstanceRequest withRestorePoint(MysqlRestorePoint restorePoint) {
+        this.restorePoint = restorePoint;
+        return this;
+    }
+
+    public MysqlInstanceRequest withRestorePoint(Consumer<MysqlRestorePoint> restorePointSetter) {
+        if(this.restorePoint == null ){
+            this.restorePoint = new MysqlRestorePoint();
+            restorePointSetter.accept(this.restorePoint);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get restorePoint
+     * @return restorePoint
+     */
+    public MysqlRestorePoint getRestorePoint() {
+        return restorePoint;
+    }
+
+    public void setRestorePoint(MysqlRestorePoint restorePoint) {
+        this.restorePoint = restorePoint;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -682,11 +718,12 @@ public class MysqlInstanceRequest  {
             Objects.equals(this.tags, mysqlInstanceRequest.tags) &&
             Objects.equals(this.lowerCaseTableNames, mysqlInstanceRequest.lowerCaseTableNames) &&
             Objects.equals(this.enterpriseProjectId, mysqlInstanceRequest.enterpriseProjectId) &&
-            Objects.equals(this.dedicatedResourceId, mysqlInstanceRequest.dedicatedResourceId);
+            Objects.equals(this.dedicatedResourceId, mysqlInstanceRequest.dedicatedResourceId) &&
+            Objects.equals(this.restorePoint, mysqlInstanceRequest.restorePoint);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(chargeInfo, region, name, datastore, mode, flavorRef, vpcId, subnetId, securityGroupId, configurationId, password, backupStrategy, timeZone, availabilityZoneMode, masterAvailabilityZone, slaveCount, volume, tags, lowerCaseTableNames, enterpriseProjectId, dedicatedResourceId);
+        return Objects.hash(chargeInfo, region, name, datastore, mode, flavorRef, vpcId, subnetId, securityGroupId, configurationId, password, backupStrategy, timeZone, availabilityZoneMode, masterAvailabilityZone, slaveCount, volume, tags, lowerCaseTableNames, enterpriseProjectId, dedicatedResourceId, restorePoint);
     }
     @Override
     public String toString() {
@@ -713,6 +750,7 @@ public class MysqlInstanceRequest  {
         sb.append("    lowerCaseTableNames: ").append(toIndentedString(lowerCaseTableNames)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    dedicatedResourceId: ").append(toIndentedString(dedicatedResourceId)).append("\n");
+        sb.append("    restorePoint: ").append(toIndentedString(restorePoint)).append("\n");
         sb.append("}");
         return sb.toString();
     }

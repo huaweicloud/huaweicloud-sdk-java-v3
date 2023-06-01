@@ -553,6 +553,34 @@ public class OrganizationsClient {
     }
 
     /**
+     * 列出租户的组织配额
+     *
+     * 列出租户的组织配额。此操作只能由组织的管理帐号或作为服务委托管理员的成员帐号调用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListQuotasRequest 请求对象
+     * @return ListQuotasResponse
+     */
+    public ListQuotasResponse listQuotas(ListQuotasRequest request) {
+        return hcClient.syncInvokeHttp(request, OrganizationsMeta.listQuotas);
+    }
+
+    /**
+     * 列出租户的组织配额
+     *
+     * 列出租户的组织配额。此操作只能由组织的管理帐号或作为服务委托管理员的成员帐号调用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListQuotasRequest 请求对象
+     * @return SyncInvoker<ListQuotasRequest, ListQuotasResponse>
+     */
+    public SyncInvoker<ListQuotasRequest, ListQuotasResponse> listQuotasInvoker(ListQuotasRequest request) {
+        return new SyncInvoker<ListQuotasRequest, ListQuotasResponse>(request, OrganizationsMeta.listQuotas, hcClient);
+    }
+
+    /**
      * 列出所有可以与组织服务集成的云服务
      *
      * 列出所有可以与组织服务集成的云服务。集成后云服务将成为组织的可信服务。

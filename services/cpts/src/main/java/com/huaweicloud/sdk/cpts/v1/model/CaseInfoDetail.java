@@ -63,6 +63,36 @@ public class CaseInfoDetail {
 
     private Integer sort;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "directory_id")
+
+    private Integer directoryId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "setup_contents")
+
+    private List<Contents> setupContents = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user_replicas")
+
+    private Integer userReplicas;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "collect_log_policy")
+
+    private Integer collectLogPolicy;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "link_app_list")
+
+    private List<Integer> linkAppList = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "case_info")
+
+    private CaseDoc caseInfo;
+
     public CaseInfoDetail withCaseId(Integer caseId) {
         this.caseId = caseId;
         return this;
@@ -305,6 +335,155 @@ public class CaseInfoDetail {
         this.sort = sort;
     }
 
+    public CaseInfoDetail withDirectoryId(Integer directoryId) {
+        this.directoryId = directoryId;
+        return this;
+    }
+
+    /**
+     * 用例所属目录id（旧版接口可不传）
+     * minimum: 0
+     * maximum: 2147483647
+     * @return directoryId
+     */
+    public Integer getDirectoryId() {
+        return directoryId;
+    }
+
+    public void setDirectoryId(Integer directoryId) {
+        this.directoryId = directoryId;
+    }
+
+    public CaseInfoDetail withSetupContents(List<Contents> setupContents) {
+        this.setupContents = setupContents;
+        return this;
+    }
+
+    public CaseInfoDetail addSetupContentsItem(Contents setupContentsItem) {
+        if (this.setupContents == null) {
+            this.setupContents = new ArrayList<>();
+        }
+        this.setupContents.add(setupContentsItem);
+        return this;
+    }
+
+    public CaseInfoDetail withSetupContents(Consumer<List<Contents>> setupContentsSetter) {
+        if (this.setupContents == null) {
+            this.setupContents = new ArrayList<>();
+        }
+        setupContentsSetter.accept(this.setupContents);
+        return this;
+    }
+
+    /**
+     * 前置步骤
+     * @return setupContents
+     */
+    public List<Contents> getSetupContents() {
+        return setupContents;
+    }
+
+    public void setSetupContents(List<Contents> setupContents) {
+        this.setupContents = setupContents;
+    }
+
+    public CaseInfoDetail withUserReplicas(Integer userReplicas) {
+        this.userReplicas = userReplicas;
+        return this;
+    }
+
+    /**
+     * 执行器个数
+     * minimum: 0
+     * maximum: 2147483647
+     * @return userReplicas
+     */
+    public Integer getUserReplicas() {
+        return userReplicas;
+    }
+
+    public void setUserReplicas(Integer userReplicas) {
+        this.userReplicas = userReplicas;
+    }
+
+    public CaseInfoDetail withCollectLogPolicy(Integer collectLogPolicy) {
+        this.collectLogPolicy = collectLogPolicy;
+        return this;
+    }
+
+    /**
+     * 日志采集策略（0-请求模式；1-用例模式）
+     * minimum: 0
+     * maximum: 32
+     * @return collectLogPolicy
+     */
+    public Integer getCollectLogPolicy() {
+        return collectLogPolicy;
+    }
+
+    public void setCollectLogPolicy(Integer collectLogPolicy) {
+        this.collectLogPolicy = collectLogPolicy;
+    }
+
+    public CaseInfoDetail withLinkAppList(List<Integer> linkAppList) {
+        this.linkAppList = linkAppList;
+        return this;
+    }
+
+    public CaseInfoDetail addLinkAppListItem(Integer linkAppListItem) {
+        if (this.linkAppList == null) {
+            this.linkAppList = new ArrayList<>();
+        }
+        this.linkAppList.add(linkAppListItem);
+        return this;
+    }
+
+    public CaseInfoDetail withLinkAppList(Consumer<List<Integer>> linkAppListSetter) {
+        if (this.linkAppList == null) {
+            this.linkAppList = new ArrayList<>();
+        }
+        linkAppListSetter.accept(this.linkAppList);
+        return this;
+    }
+
+    /**
+     * 关联全链路应用列表
+     * @return linkAppList
+     */
+    public List<Integer> getLinkAppList() {
+        return linkAppList;
+    }
+
+    public void setLinkAppList(List<Integer> linkAppList) {
+        this.linkAppList = linkAppList;
+    }
+
+    public CaseInfoDetail withCaseInfo(CaseDoc caseInfo) {
+        this.caseInfo = caseInfo;
+        return this;
+    }
+
+    public CaseInfoDetail withCaseInfo(Consumer<CaseDoc> caseInfoSetter) {
+        if (this.caseInfo == null) {
+            this.caseInfo = new CaseDoc();
+            caseInfoSetter.accept(this.caseInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get caseInfo
+     * @return caseInfo
+     */
+    public CaseDoc getCaseInfo() {
+        return caseInfo;
+    }
+
+    public void setCaseInfo(CaseDoc caseInfo) {
+        this.caseInfo = caseInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -320,13 +499,33 @@ public class CaseInfoDetail {
             && Objects.equals(this.forLoopParams, caseInfoDetail.forLoopParams)
             && Objects.equals(this.increaseSetting, caseInfoDetail.increaseSetting)
             && Objects.equals(this.stages, caseInfoDetail.stages) && Objects.equals(this.status, caseInfoDetail.status)
-            && Objects.equals(this.tempId, caseInfoDetail.tempId) && Objects.equals(this.sort, caseInfoDetail.sort);
+            && Objects.equals(this.tempId, caseInfoDetail.tempId) && Objects.equals(this.sort, caseInfoDetail.sort)
+            && Objects.equals(this.directoryId, caseInfoDetail.directoryId)
+            && Objects.equals(this.setupContents, caseInfoDetail.setupContents)
+            && Objects.equals(this.userReplicas, caseInfoDetail.userReplicas)
+            && Objects.equals(this.collectLogPolicy, caseInfoDetail.collectLogPolicy)
+            && Objects.equals(this.linkAppList, caseInfoDetail.linkAppList)
+            && Objects.equals(this.caseInfo, caseInfoDetail.caseInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(caseId, name, caseType, contents, forLoopParams, increaseSetting, stages, status, tempId, sort);
+        return Objects.hash(caseId,
+            name,
+            caseType,
+            contents,
+            forLoopParams,
+            increaseSetting,
+            stages,
+            status,
+            tempId,
+            sort,
+            directoryId,
+            setupContents,
+            userReplicas,
+            collectLogPolicy,
+            linkAppList,
+            caseInfo);
     }
 
     @Override
@@ -343,6 +542,12 @@ public class CaseInfoDetail {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    tempId: ").append(toIndentedString(tempId)).append("\n");
         sb.append("    sort: ").append(toIndentedString(sort)).append("\n");
+        sb.append("    directoryId: ").append(toIndentedString(directoryId)).append("\n");
+        sb.append("    setupContents: ").append(toIndentedString(setupContents)).append("\n");
+        sb.append("    userReplicas: ").append(toIndentedString(userReplicas)).append("\n");
+        sb.append("    collectLogPolicy: ").append(toIndentedString(collectLogPolicy)).append("\n");
+        sb.append("    linkAppList: ").append(toIndentedString(linkAppList)).append("\n");
+        sb.append("    caseInfo: ").append(toIndentedString(caseInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

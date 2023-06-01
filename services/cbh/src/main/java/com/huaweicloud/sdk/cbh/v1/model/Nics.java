@@ -15,6 +15,11 @@ public class Nics {
 
     private String subnetId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip_address")
+
+    private String ipAddress;
+
     public Nics withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
@@ -32,6 +37,23 @@ public class Nics {
         this.subnetId = subnetId;
     }
 
+    public Nics withIpAddress(String ipAddress) {
+        this.ipAddress = ipAddress;
+        return this;
+    }
+
+    /**
+     * IPV4地址。
+     * @return ipAddress
+     */
+    public String getIpAddress() {
+        return ipAddress;
+    }
+
+    public void setIpAddress(String ipAddress) {
+        this.ipAddress = ipAddress;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -41,12 +63,12 @@ public class Nics {
             return false;
         }
         Nics nics = (Nics) o;
-        return Objects.equals(this.subnetId, nics.subnetId);
+        return Objects.equals(this.subnetId, nics.subnetId) && Objects.equals(this.ipAddress, nics.ipAddress);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(subnetId);
+        return Objects.hash(subnetId, ipAddress);
     }
 
     @Override
@@ -54,6 +76,7 @@ public class Nics {
         StringBuilder sb = new StringBuilder();
         sb.append("class Nics {\n");
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
+        sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
         sb.append("}");
         return sb.toString();
     }

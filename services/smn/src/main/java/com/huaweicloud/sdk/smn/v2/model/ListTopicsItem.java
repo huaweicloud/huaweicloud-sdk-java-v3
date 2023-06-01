@@ -35,6 +35,11 @@ public class ListTopicsItem {
 
     private String enterpriseProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "topic_id")
+
+    private String topicId;
+
     public ListTopicsItem withTopicUrn(String topicUrn) {
         this.topicUrn = topicUrn;
         return this;
@@ -120,6 +125,23 @@ public class ListTopicsItem {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public ListTopicsItem withTopicId(String topicId) {
+        this.topicId = topicId;
+        return this;
+    }
+
+    /**
+     * 主题ID。
+     * @return topicId
+     */
+    public String getTopicId() {
+        return topicId;
+    }
+
+    public void setTopicId(String topicId) {
+        this.topicId = topicId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -132,12 +154,13 @@ public class ListTopicsItem {
         return Objects.equals(this.topicUrn, listTopicsItem.topicUrn) && Objects.equals(this.name, listTopicsItem.name)
             && Objects.equals(this.displayName, listTopicsItem.displayName)
             && Objects.equals(this.pushPolicy, listTopicsItem.pushPolicy)
-            && Objects.equals(this.enterpriseProjectId, listTopicsItem.enterpriseProjectId);
+            && Objects.equals(this.enterpriseProjectId, listTopicsItem.enterpriseProjectId)
+            && Objects.equals(this.topicId, listTopicsItem.topicId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(topicUrn, name, displayName, pushPolicy, enterpriseProjectId);
+        return Objects.hash(topicUrn, name, displayName, pushPolicy, enterpriseProjectId, topicId);
     }
 
     @Override
@@ -149,6 +172,7 @@ public class ListTopicsItem {
         sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
         sb.append("    pushPolicy: ").append(toIndentedString(pushPolicy)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    topicId: ").append(toIndentedString(topicId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

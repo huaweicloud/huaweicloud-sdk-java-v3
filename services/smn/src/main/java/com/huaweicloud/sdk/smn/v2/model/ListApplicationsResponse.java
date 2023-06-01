@@ -85,7 +85,7 @@ public class ListApplicationsResponse extends SdkResponse {
     }
 
     /**
-     * Get applications
+     * Application列表。
      * @return applications
      */
     public List<ApplicationItem> getApplications() {

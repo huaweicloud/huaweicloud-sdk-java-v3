@@ -113,6 +113,11 @@ public class ListPoolsRequest {
 
     private List<String> type = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "protection_status")
+
+    private List<String> protectionStatus = null;
+
     public ListPoolsRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -370,7 +375,7 @@ public class ListPoolsRequest {
     }
 
     /**
-     * 后端云服务器组的后端协议。  取值：TCP、UDP、HTTP、HTTPS和QUIC。  支持多值查询，查询条件格式：*protocol=xxx&protocol=xxx*。  [不支持QUIC协议。](tag:hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC。](tag:dt)
+     * 后端云服务器组的后端协议。  取值：TCP、UDP、HTTP、HTTPS、QUIC。  支持多值查询，查询条件格式：*protocol=xxx&protocol=xxx*。  [不支持QUIC协议。](tag:hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC。](tag:dt,dt_test)
      * @return protocol
      */
     public List<String> getProtocol() {
@@ -403,7 +408,7 @@ public class ListPoolsRequest {
     }
 
     /**
-     * 后端云服务器组的负载均衡算法。  取值： - ROUND_ROBIN：加权轮询算法。 - LEAST_CONNECTIONS：加权最少连接算法。 - SOURCE_IP：源IP算法。 - QUIC_CID：连接ID算法。  支持多值查询，查询条件格式：*lb_algorithm=xxx&lb_algorithm=xxx*。  [不支持QUIC_CID算法。](tag:hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC。](tag:dt)
+     * 后端云服务器组的负载均衡算法。  取值： - ROUND_ROBIN：加权轮询算法。 - LEAST_CONNECTIONS：加权最少连接算法。 - SOURCE_IP：源IP算法。 - QUIC_CID：连接ID算法。  支持多值查询，查询条件格式：*lb_algorithm=xxx&lb_algorithm=xxx*。  [不支持QUIC_CID。](tag:hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC_CID。](tag:dt,dt_test)
      * @return lbAlgorithm
      */
     public List<String> getLbAlgorithm() {
@@ -695,6 +700,39 @@ public class ListPoolsRequest {
         this.type = type;
     }
 
+    public ListPoolsRequest withProtectionStatus(List<String> protectionStatus) {
+        this.protectionStatus = protectionStatus;
+        return this;
+    }
+
+    public ListPoolsRequest addProtectionStatusItem(String protectionStatusItem) {
+        if (this.protectionStatus == null) {
+            this.protectionStatus = new ArrayList<>();
+        }
+        this.protectionStatus.add(protectionStatusItem);
+        return this;
+    }
+
+    public ListPoolsRequest withProtectionStatus(Consumer<List<String>> protectionStatusSetter) {
+        if (this.protectionStatus == null) {
+            this.protectionStatus = new ArrayList<>();
+        }
+        protectionStatusSetter.accept(this.protectionStatus);
+        return this;
+    }
+
+    /**
+     * 修改保护状态, 取值： - nonProtection: 不保护，默认值为nonProtection - consoleProtection: 控制台修改保护
+     * @return protectionStatus
+     */
+    public List<String> getProtectionStatus() {
+        return protectionStatus;
+    }
+
+    public void setProtectionStatus(List<String> protectionStatus) {
+        this.protectionStatus = protectionStatus;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -721,7 +759,8 @@ public class ListPoolsRequest {
             && Objects.equals(this.memberDeletionProtectionEnable, listPoolsRequest.memberDeletionProtectionEnable)
             && Objects.equals(this.listenerId, listPoolsRequest.listenerId)
             && Objects.equals(this.memberInstanceId, listPoolsRequest.memberInstanceId)
-            && Objects.equals(this.vpcId, listPoolsRequest.vpcId) && Objects.equals(this.type, listPoolsRequest.type);
+            && Objects.equals(this.vpcId, listPoolsRequest.vpcId) && Objects.equals(this.type, listPoolsRequest.type)
+            && Objects.equals(this.protectionStatus, listPoolsRequest.protectionStatus);
     }
 
     @Override
@@ -745,7 +784,8 @@ public class ListPoolsRequest {
             listenerId,
             memberInstanceId,
             vpcId,
-            type);
+            type,
+            protectionStatus);
     }
 
     @Override
@@ -774,6 +814,7 @@ public class ListPoolsRequest {
         sb.append("    memberInstanceId: ").append(toIndentedString(memberInstanceId)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    protectionStatus: ").append(toIndentedString(protectionStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

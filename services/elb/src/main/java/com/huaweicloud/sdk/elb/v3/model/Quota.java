@@ -36,6 +36,11 @@ public class Quota {
     private Integer l7policy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "condition_per_policy")
+
+    private Integer conditionPerPolicy;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pool")
 
     private Integer pool;
@@ -56,9 +61,24 @@ public class Quota {
     private Integer membersPerPool;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "listeners_per_pool")
+
+    private Integer listenersPerPool;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipgroup")
 
     private Integer ipgroup;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipgroup_bindings")
+
+    private Integer ipgroupBindings;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipgroup_max_length")
+
+    private Integer ipgroupMaxLength;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_policy")
@@ -66,14 +86,9 @@ public class Quota {
     private Integer securityPolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ipgroup_bindings")
+    @JsonProperty(value = "listeners_per_loadbalancer")
 
-    private String ipgroupBindings;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ipgroup_max_length")
-
-    private String ipgroupMaxLength;
+    private Integer listenersPerLoadbalancer;
 
     public Quota withProjectId(String projectId) {
         this.projectId = projectId;
@@ -160,6 +175,23 @@ public class Quota {
         this.l7policy = l7policy;
     }
 
+    public Quota withConditionPerPolicy(Integer conditionPerPolicy) {
+        this.conditionPerPolicy = conditionPerPolicy;
+        return this;
+    }
+
+    /**
+     * 转发策略配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+     * @return conditionPerPolicy
+     */
+    public Integer getConditionPerPolicy() {
+        return conditionPerPolicy;
+    }
+
+    public void setConditionPerPolicy(Integer conditionPerPolicy) {
+        this.conditionPerPolicy = conditionPerPolicy;
+    }
+
     public Quota withPool(Integer pool) {
         this.pool = pool;
         return this;
@@ -228,6 +260,23 @@ public class Quota {
         this.membersPerPool = membersPerPool;
     }
 
+    public Quota withListenersPerPool(Integer listenersPerPool) {
+        this.listenersPerPool = listenersPerPool;
+        return this;
+    }
+
+    /**
+     * 单个pool下的member的配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+     * @return listenersPerPool
+     */
+    public Integer getListenersPerPool() {
+        return listenersPerPool;
+    }
+
+    public void setListenersPerPool(Integer listenersPerPool) {
+        this.listenersPerPool = listenersPerPool;
+    }
+
     public Quota withIpgroup(Integer ipgroup) {
         this.ipgroup = ipgroup;
         return this;
@@ -243,6 +292,40 @@ public class Quota {
 
     public void setIpgroup(Integer ipgroup) {
         this.ipgroup = ipgroup;
+    }
+
+    public Quota withIpgroupBindings(Integer ipgroupBindings) {
+        this.ipgroupBindings = ipgroupBindings;
+        return this;
+    }
+
+    /**
+     * IP地址组配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  [不支持该字段，请勿使用。](tag:hcso_dt)
+     * @return ipgroupBindings
+     */
+    public Integer getIpgroupBindings() {
+        return ipgroupBindings;
+    }
+
+    public void setIpgroupBindings(Integer ipgroupBindings) {
+        this.ipgroupBindings = ipgroupBindings;
+    }
+
+    public Quota withIpgroupMaxLength(Integer ipgroupMaxLength) {
+        this.ipgroupMaxLength = ipgroupMaxLength;
+        return this;
+    }
+
+    /**
+     * IP地址组配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  [不支持该字段，请勿使用。](tag:hcso_dt)
+     * @return ipgroupMaxLength
+     */
+    public Integer getIpgroupMaxLength() {
+        return ipgroupMaxLength;
+    }
+
+    public void setIpgroupMaxLength(Integer ipgroupMaxLength) {
+        this.ipgroupMaxLength = ipgroupMaxLength;
     }
 
     public Quota withSecurityPolicy(Integer securityPolicy) {
@@ -262,38 +345,21 @@ public class Quota {
         this.securityPolicy = securityPolicy;
     }
 
-    public Quota withIpgroupBindings(String ipgroupBindings) {
-        this.ipgroupBindings = ipgroupBindings;
+    public Quota withListenersPerLoadbalancer(Integer listenersPerLoadbalancer) {
+        this.listenersPerLoadbalancer = listenersPerLoadbalancer;
         return this;
     }
 
     /**
-     * ipgroup最大可关联的监听器数量。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  [不支持该字段，请勿使用。](tag:hcso_dt)
-     * @return ipgroupBindings
+     * 单个LB实例下的监听器配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+     * @return listenersPerLoadbalancer
      */
-    public String getIpgroupBindings() {
-        return ipgroupBindings;
+    public Integer getListenersPerLoadbalancer() {
+        return listenersPerLoadbalancer;
     }
 
-    public void setIpgroupBindings(String ipgroupBindings) {
-        this.ipgroupBindings = ipgroupBindings;
-    }
-
-    public Quota withIpgroupMaxLength(String ipgroupMaxLength) {
-        this.ipgroupMaxLength = ipgroupMaxLength;
-        return this;
-    }
-
-    /**
-     * 单个ipgroup最多可设置的ip地址数量。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  [不支持该字段，请勿使用。](tag:hcso_dt)
-     * @return ipgroupMaxLength
-     */
-    public String getIpgroupMaxLength() {
-        return ipgroupMaxLength;
-    }
-
-    public void setIpgroupMaxLength(String ipgroupMaxLength) {
-        this.ipgroupMaxLength = ipgroupMaxLength;
+    public void setListenersPerLoadbalancer(Integer listenersPerLoadbalancer) {
+        this.listenersPerLoadbalancer = listenersPerLoadbalancer;
     }
 
     @Override
@@ -307,12 +373,16 @@ public class Quota {
         Quota quota = (Quota) o;
         return Objects.equals(this.projectId, quota.projectId) && Objects.equals(this.loadbalancer, quota.loadbalancer)
             && Objects.equals(this.certificate, quota.certificate) && Objects.equals(this.listener, quota.listener)
-            && Objects.equals(this.l7policy, quota.l7policy) && Objects.equals(this.pool, quota.pool)
-            && Objects.equals(this.healthmonitor, quota.healthmonitor) && Objects.equals(this.member, quota.member)
-            && Objects.equals(this.membersPerPool, quota.membersPerPool) && Objects.equals(this.ipgroup, quota.ipgroup)
-            && Objects.equals(this.securityPolicy, quota.securityPolicy)
+            && Objects.equals(this.l7policy, quota.l7policy)
+            && Objects.equals(this.conditionPerPolicy, quota.conditionPerPolicy)
+            && Objects.equals(this.pool, quota.pool) && Objects.equals(this.healthmonitor, quota.healthmonitor)
+            && Objects.equals(this.member, quota.member) && Objects.equals(this.membersPerPool, quota.membersPerPool)
+            && Objects.equals(this.listenersPerPool, quota.listenersPerPool)
+            && Objects.equals(this.ipgroup, quota.ipgroup)
             && Objects.equals(this.ipgroupBindings, quota.ipgroupBindings)
-            && Objects.equals(this.ipgroupMaxLength, quota.ipgroupMaxLength);
+            && Objects.equals(this.ipgroupMaxLength, quota.ipgroupMaxLength)
+            && Objects.equals(this.securityPolicy, quota.securityPolicy)
+            && Objects.equals(this.listenersPerLoadbalancer, quota.listenersPerLoadbalancer);
     }
 
     @Override
@@ -322,14 +392,17 @@ public class Quota {
             certificate,
             listener,
             l7policy,
+            conditionPerPolicy,
             pool,
             healthmonitor,
             member,
             membersPerPool,
+            listenersPerPool,
             ipgroup,
-            securityPolicy,
             ipgroupBindings,
-            ipgroupMaxLength);
+            ipgroupMaxLength,
+            securityPolicy,
+            listenersPerLoadbalancer);
     }
 
     @Override
@@ -341,14 +414,17 @@ public class Quota {
         sb.append("    certificate: ").append(toIndentedString(certificate)).append("\n");
         sb.append("    listener: ").append(toIndentedString(listener)).append("\n");
         sb.append("    l7policy: ").append(toIndentedString(l7policy)).append("\n");
+        sb.append("    conditionPerPolicy: ").append(toIndentedString(conditionPerPolicy)).append("\n");
         sb.append("    pool: ").append(toIndentedString(pool)).append("\n");
         sb.append("    healthmonitor: ").append(toIndentedString(healthmonitor)).append("\n");
         sb.append("    member: ").append(toIndentedString(member)).append("\n");
         sb.append("    membersPerPool: ").append(toIndentedString(membersPerPool)).append("\n");
+        sb.append("    listenersPerPool: ").append(toIndentedString(listenersPerPool)).append("\n");
         sb.append("    ipgroup: ").append(toIndentedString(ipgroup)).append("\n");
-        sb.append("    securityPolicy: ").append(toIndentedString(securityPolicy)).append("\n");
         sb.append("    ipgroupBindings: ").append(toIndentedString(ipgroupBindings)).append("\n");
         sb.append("    ipgroupMaxLength: ").append(toIndentedString(ipgroupMaxLength)).append("\n");
+        sb.append("    securityPolicy: ").append(toIndentedString(securityPolicy)).append("\n");
+        sb.append("    listenersPerLoadbalancer: ").append(toIndentedString(listenersPerLoadbalancer)).append("\n");
         sb.append("}");
         return sb.toString();
     }

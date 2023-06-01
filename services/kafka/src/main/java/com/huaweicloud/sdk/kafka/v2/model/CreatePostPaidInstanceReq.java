@@ -914,7 +914,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 代理个数。 [取值范围:  - 老规格实例此参数无需设置  - 新规格必须设置，取值范围：3 ~ 30。](tag:hc,hk,hws,hws_hk,g42,tm) [此参数无需设置](tag:otc,ocb,hws_ocb,ctc,sbc,hk_sbc,cmcc)
+     * 代理个数。 [取值范围:  - 老规格实例此参数无需设置  - 新规格必须设置，取值范围：3 ~ 30。](tag:hws,hws_hk,g42,tm,hk_g42,hk_tm) [此参数无需设置](tag:otc,ocb,hws_ocb,ctc,sbc,hk_sbc,cmcc)
      * @return brokerNum
      */
     public Integer getBrokerNum() {
@@ -1083,7 +1083,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 产品ID。  [产品ID可以从**查询产品规格列表**接口查询到。](tag:hc,hk,hws,hws_hk,ctc,sbc,hk_sbc,cmcc,hws_eu,g42,tm)  [创建kafka实例,支持的产品规格有: (product_id/specification/partition_num/storage_space)  00300-30308-0--0/100MB/300/600;  00300-30310-0--0/300MB/900/1200;  00300-30312-0--0/600MB/1800/2400;  00300-30314-0--0/1200MB/1800/4800](tag:otc,dt)
+     * 产品ID。  [产品ID可以从**查询产品规格列表**接口查询到。](tag:hws,hws_hk,ctc,sbc,hk_sbc,cmcc,hws_eu,g42,tm,hk_g42,hk_tm)  [创建kafka实例,支持的产品规格有: (product_id/specification/partition_num/storage_space)  00300-30308-0--0/100MB/300/600;  00300-30310-0--0/300MB/900/1200;  00300-30312-0--0/600MB/1800/2400;  00300-30314-0--0/1200MB/1800/4800](tag:otc,dt)
      * @return productId
      */
     public String getProductId() {
@@ -1185,7 +1185,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 表示公网带宽，单位是Mbit/s。  [取值范围：  - Kafka实例规格为100MB时，公网带宽取值范围3到900，且必须为实例节点个数的倍数。  - Kafka实例规格为300MB时，公网带宽取值范围3到900，且必须为实例节点个数的倍数。  - Kafka实例规格为600MB时，公网带宽取值范围4到1200，且必须为实例节点个数的倍数。  - Kafka实例规格为1200MB时，公网带宽取值范围8到2400，且必须为实例节点个数的倍数。](tag:hws,hws_hk,otc,ocb,hws_ocb,ctc,sbc,hk_sbc,cmcc,g42,tm)   [老规格实例取值范围：  - Kafka实例规格为100MB时，公网带宽取值范围3到900，且必须为实例节点个数的倍数。  - Kafka实例规格为300MB时，公网带宽取值范围3到900，且必须为实例节点个数的倍数。  - Kafka实例规格为600MB时，公网带宽取值范围4到1200，且必须为实例节点个数的倍数。  - Kafka实例规格为1200MB时，公网带宽取值范围8到2400，且必须为实例节点个数的倍数。   新规格实例取值范围：  - Kafka实例规格为c6.2u4g.cluster时，公网带宽取值范围3到250，且必须为实例节点个数的倍数。  - Kafka实例规格为c6.4u8g.cluster时，公网带宽取值范围3到500，且必须为实例节点个数的倍数。  - Kafka实例规格为c6.8u16g.cluster时，公网带宽取值范围4到1000，且必须为实例节点个数的倍数。  - Kafka实例规格为c6.12u24g.cluster时，公网带宽取值范围8到1500，且必须为实例节点个数的倍数。  - Kafka实例规格为c6.16u32g.cluster时，公网带宽取值范围8到2000，且必须为实例节点个数的倍数。](tag:hc,hk)
+     * 表示公网带宽，单位是Mbit/s。  [取值范围：  - Kafka实例规格为100MB时，公网带宽取值范围3到900，且必须为实例节点个数的倍数。  - Kafka实例规格为300MB时，公网带宽取值范围3到900，且必须为实例节点个数的倍数。  - Kafka实例规格为600MB时，公网带宽取值范围4到1200，且必须为实例节点个数的倍数。  - Kafka实例规格为1200MB时，公网带宽取值范围8到2400，且必须为实例节点个数的倍数。](tag:hws,hws_hk,otc,ocb,hws_ocb,ctc,sbc,hk_sbc,cmcc,g42,tm,hk_g42,hk_tm)   [老规格实例取值范围：  - Kafka实例规格为100MB时，公网带宽取值范围3到900，且必须为实例节点个数的倍数。  - Kafka实例规格为300MB时，公网带宽取值范围3到900，且必须为实例节点个数的倍数。  - Kafka实例规格为600MB时，公网带宽取值范围4到1200，且必须为实例节点个数的倍数。  - Kafka实例规格为1200MB时，公网带宽取值范围8到2400，且必须为实例节点个数的倍数。   新规格实例取值范围：  - Kafka实例规格为c6.2u4g.cluster时，公网带宽取值范围3到250，且必须为实例节点个数的倍数。  - Kafka实例规格为c6.4u8g.cluster时，公网带宽取值范围3到500，且必须为实例节点个数的倍数。  - Kafka实例规格为c6.8u16g.cluster时，公网带宽取值范围4到1000，且必须为实例节点个数的倍数。  - Kafka实例规格为c6.12u24g.cluster时，公网带宽取值范围8到1500，且必须为实例节点个数的倍数。  - Kafka实例规格为c6.16u32g.cluster时，公网带宽取值范围8到2000，且必须为实例节点个数的倍数。](tag:hc,hk)
      * @return publicBandwidth
      */
     public Integer getPublicBandwidth() {
@@ -1236,7 +1236,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 开启SASL后使用的安全协议，如果开启了SASL认证功能（即ssl_enable=true），该字段为必选。  若该字段值为空，默认开启SASL_SSL认证机制。  实例创建后将不支持动态开启和关闭。  - SASL_SSL: 采用SSL证书进行加密传输，支持账号密码认证，安全性更高。 - SASL_PLAINTEXT: 明文传输，支持账号密码认证，性能更好，仅支持SCRAM-SHA-512机制。
+     * 开启SASL后使用的安全协议，如果开启了SASL认证功能（即ssl_enable=true），该字段为必选。  若该字段值为空，默认开启SASL_SSL认证机制。  实例创建后将不支持动态开启和关闭。  - SASL_SSL: 采用SSL证书进行加密传输，支持帐号密码认证，安全性更高。 - SASL_PLAINTEXT: 明文传输，支持帐号密码认证，性能更好，仅支持SCRAM-SHA-512机制。
      * @return kafkaSecurityProtocol
      */
     public String getKafkaSecurityProtocol() {

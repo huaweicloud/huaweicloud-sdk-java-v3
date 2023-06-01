@@ -568,6 +568,23 @@ public class OrganizationsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListQuotasRequest, ListQuotasResponse> listQuotas = genForlistQuotas();
+
+    private static HttpRequestDef<ListQuotasRequest, ListQuotasResponse> genForlistQuotas() {
+        // basic
+        HttpRequestDef.Builder<ListQuotasRequest, ListQuotasResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListQuotasRequest.class, ListQuotasResponse.class)
+                .withName("ListQuotas")
+                .withUri("/v1/organizations/quotas")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListServicesRequest, ListServicesResponse> listServices = genForlistServices();
 
     private static HttpRequestDef<ListServicesRequest, ListServicesResponse> genForlistServices() {

@@ -146,6 +146,11 @@ public class WorkTableIssuseListResponseBodyIssueList {
 
     private String updatedOn;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "due_date")
+
+    private String dueDate;
+
     public WorkTableIssuseListResponseBodyIssueList withId(Integer id) {
         this.id = id;
         return this;
@@ -732,6 +737,23 @@ public class WorkTableIssuseListResponseBodyIssueList {
         this.updatedOn = updatedOn;
     }
 
+    public WorkTableIssuseListResponseBodyIssueList withDueDate(String dueDate) {
+        this.dueDate = dueDate;
+        return this;
+    }
+
+    /**
+     * 工作项预计结束时间戳
+     * @return dueDate
+     */
+    public String getDueDate() {
+        return dueDate;
+    }
+
+    public void setDueDate(String dueDate) {
+        this.dueDate = dueDate;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -768,7 +790,8 @@ public class WorkTableIssuseListResponseBodyIssueList {
             && Objects.equals(this.isWatcher, workTableIssuseListResponseBodyIssueList.isWatcher)
             && Objects.equals(this.closedFlag, workTableIssuseListResponseBodyIssueList.closedFlag)
             && Objects.equals(this.createdOn, workTableIssuseListResponseBodyIssueList.createdOn)
-            && Objects.equals(this.updatedOn, workTableIssuseListResponseBodyIssueList.updatedOn);
+            && Objects.equals(this.updatedOn, workTableIssuseListResponseBodyIssueList.updatedOn)
+            && Objects.equals(this.dueDate, workTableIssuseListResponseBodyIssueList.dueDate);
     }
 
     @Override
@@ -799,7 +822,8 @@ public class WorkTableIssuseListResponseBodyIssueList {
             isWatcher,
             closedFlag,
             createdOn,
-            updatedOn);
+            updatedOn,
+            dueDate);
     }
 
     @Override
@@ -833,6 +857,7 @@ public class WorkTableIssuseListResponseBodyIssueList {
         sb.append("    closedFlag: ").append(toIndentedString(closedFlag)).append("\n");
         sb.append("    createdOn: ").append(toIndentedString(createdOn)).append("\n");
         sb.append("    updatedOn: ").append(toIndentedString(updatedOn)).append("\n");
+        sb.append("    dueDate: ").append(toIndentedString(dueDate)).append("\n");
         sb.append("}");
         return sb.toString();
     }

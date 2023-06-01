@@ -295,6 +295,93 @@ public class LoadBalancer {
 
     private String wafFailureAction;
 
+    /**
+     * 修改保护状态, 取值： - nonProtection: 不保护，默认值为nonProtection - consoleProtection: 控制台修改保护
+     */
+    public static final class ProtectionStatusEnum {
+
+        /**
+         * Enum NONPROTECTION for value: "nonProtection"
+         */
+        public static final ProtectionStatusEnum NONPROTECTION = new ProtectionStatusEnum("nonProtection");
+
+        /**
+         * Enum CONSOLEPROTECTION for value: "consoleProtection"
+         */
+        public static final ProtectionStatusEnum CONSOLEPROTECTION = new ProtectionStatusEnum("consoleProtection");
+
+        private static final Map<String, ProtectionStatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ProtectionStatusEnum> createStaticFields() {
+            Map<String, ProtectionStatusEnum> map = new HashMap<>();
+            map.put("nonProtection", NONPROTECTION);
+            map.put("consoleProtection", CONSOLEPROTECTION);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ProtectionStatusEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ProtectionStatusEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            ProtectionStatusEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new ProtectionStatusEnum(value);
+            }
+            return result;
+        }
+
+        public static ProtectionStatusEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            ProtectionStatusEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ProtectionStatusEnum) {
+                return this.value.equals(((ProtectionStatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "protection_status")
+
+    private ProtectionStatusEnum protectionStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "protection_reason")
+
+    private String protectionReason;
+
     public LoadBalancer withId(String id) {
         this.id = id;
         return this;
@@ -352,7 +439,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 负载均衡器的管理状态。固定为true。
+     * 负载均衡器的管理状态。取值：false停用，true启用。
      * @return adminStateUp
      */
     public Boolean getAdminStateUp() {
@@ -537,7 +624,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 负载均衡器的IPv4对应的port ID。 [该port创建时关联默认安全组，这个安全组对所有流量不生效。](tag:dt,dt_test,hcso_dt)
+     * 负载均衡器的IPv4对应的port ID。 [创建弹性负载均衡时，会自动为负载均衡创建一个port并关联一个默认的安全组，这个安全组对所有流量不生效。 ](tag:dt,dt_test,hcso_dt)
      * @return vipPortId
      */
     public String getVipPortId() {
@@ -789,7 +876,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 资源账单信息。  取值： - 空：按需计费。 - 非空：包周期计费，  包周期计费billing_info字段的格式为：order_id:product_id:region_id:project_id，如：  CS2107161019CDJZZ:OFFI569702121789763584: az:057ef081eb00d2732fd1c01a9be75e6f  [不支持该字段，请勿使用](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt,fcs)
+     * 资源账单信息。  取值： - 空：按需计费。 - 非空：包周期计费，  包周期计费billing_info字段的格式为：order_id:product_id:region_id:project_id，如：  CS2107161019CDJZZ:OFFI569702121789763584: az:057ef081eb00d2732fd1c01a9be75e6f  [不支持该字段，请勿使用](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt,hcso,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
      * @return billingInfo
      */
     public String getBillingInfo() {
@@ -806,7 +893,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 四层Flavor ID。  对于弹性扩缩容实例，表示上限规格。  [hsco场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hcso)
+     * 四层Flavor ID。  对于弹性扩缩容实例，表示上限规格。  [hsco场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hcso,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
      * @return l4FlavorId
      */
     public String getL4FlavorId() {
@@ -840,7 +927,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 七层Flavor ID。 对于弹性扩缩容实例，表示上限规格ID。  [hsco场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hcso)
+     * 七层Flavor ID。 对于弹性扩缩容实例，表示上限规格ID。  [hsco场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hcso,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
      * @return l7FlavorId
      */
     public String getL7FlavorId() {
@@ -923,7 +1010,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 负载均衡器绑定的global eip。只支持绑定一个globaleip。  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt,fcs,ctc)
+     * 负载均衡器绑定的global eip。只支持绑定一个globaleip。  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt,fcs,ctc,ocb,hws_ocb)
      * @return globalEips
      */
     public List<GlobalEipInfo> getGlobalEips() {
@@ -990,7 +1077,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 是否启用跨VPC后端转发。  开启跨VPC后端转发后，后端服务器组不仅支持添加云上VPC内的服务器，还支持添加 [其他VPC、](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,fcs) 其他公有云、云下数据中心的服务器。  [仅独享型负载均衡器支持该特性。 ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,fcs,dt)  取值： - true：开启。 - false：不开启。  使用说明： - 开启不能关闭。  [荷兰region不支持该字段，请勿使用。](tag:dt)
+     * 是否启用跨VPC后端转发。  开启跨VPC后端转发后，后端服务器组不仅支持添加云上VPC内的服务器，还支持添加其他VPC、其他公有云、云下数据中心的服务器。  使用共享VPC的实例使用此特性时，需确保共享资源所有者已开通VPC对等连接，否则通信异常。 [仅独享型负载均衡器支持该特性。 ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,fcs,dt)  取值： - true：开启。 - false：不开启。  使用说明： - 开启不能关闭。  [荷兰region不支持该字段，请勿使用。](tag:dt)
      * @return ipTargetEnable
      */
     public Boolean getIpTargetEnable() {
@@ -1007,7 +1094,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 负载均衡器的冻结场景。若负载均衡器有多个冻结场景，用逗号分隔。  取值： - POLICE：公安冻结场景。 - ILLEGAL：违规冻结场景。 - VERIFY：客户未实名认证冻结场景。 - PARTNER：合作伙伴冻结（合作伙伴冻结子客户资源）。 - REAR：欠费冻结场景。  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt)
+     * 负载均衡器的冻结场景。 [若负载均衡器有多个冻结场景，用逗号分隔。  取值： - POLICE：公安冻结场景。 - ILLEGAL：违规冻结场景。 - VERIFY：客户未实名认证冻结场景。 - PARTNER：合作伙伴冻结（合作伙伴冻结子客户资源）。 - AREAR：欠费冻结场景。](tag:hws,hws_hk)  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt,ocb,hws_ocb)
      * @return frozenScene
      */
     public String getFrozenScene() {
@@ -1110,7 +1197,7 @@ public class LoadBalancer {
     }
 
     /**
-     * WAF故障时的流量处理策略。discard:丢弃，forward: 转发到后端（默认）  使用说明：只有绑定了waf的LB实例，该字段才会生效。  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt,fcs,ctc)
+     * WAF故障时的流量处理策略。discard:丢弃，forward: 转发到后端（默认）  使用说明：只有绑定了waf的LB实例，该字段才会生效。  [不支持该字段，请勿使用。](tag:hws_hk,hws_eu,hws_test,hcs,hcs_sm,hcso,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b,hcso_dt,dt,dt_test,ocb,ctc,cmcc,tm,sbc,g42,hws_ocb,hk_sbc,hk_tm,hk_g42)
      * @return wafFailureAction
      */
     public String getWafFailureAction() {
@@ -1119,6 +1206,40 @@ public class LoadBalancer {
 
     public void setWafFailureAction(String wafFailureAction) {
         this.wafFailureAction = wafFailureAction;
+    }
+
+    public LoadBalancer withProtectionStatus(ProtectionStatusEnum protectionStatus) {
+        this.protectionStatus = protectionStatus;
+        return this;
+    }
+
+    /**
+     * 修改保护状态, 取值： - nonProtection: 不保护，默认值为nonProtection - consoleProtection: 控制台修改保护
+     * @return protectionStatus
+     */
+    public ProtectionStatusEnum getProtectionStatus() {
+        return protectionStatus;
+    }
+
+    public void setProtectionStatus(ProtectionStatusEnum protectionStatus) {
+        this.protectionStatus = protectionStatus;
+    }
+
+    public LoadBalancer withProtectionReason(String protectionReason) {
+        this.protectionReason = protectionReason;
+        return this;
+    }
+
+    /**
+     * 设置保护的原因 >仅当protection_status为consoleProtection时有效。
+     * @return protectionReason
+     */
+    public String getProtectionReason() {
+        return protectionReason;
+    }
+
+    public void setProtectionReason(String protectionReason) {
+        this.protectionReason = protectionReason;
     }
 
     @Override
@@ -1164,7 +1285,9 @@ public class LoadBalancer {
             && Objects.equals(this.deletionProtectionEnable, loadBalancer.deletionProtectionEnable)
             && Objects.equals(this.autoscaling, loadBalancer.autoscaling)
             && Objects.equals(this.publicBorderGroup, loadBalancer.publicBorderGroup)
-            && Objects.equals(this.wafFailureAction, loadBalancer.wafFailureAction);
+            && Objects.equals(this.wafFailureAction, loadBalancer.wafFailureAction)
+            && Objects.equals(this.protectionStatus, loadBalancer.protectionStatus)
+            && Objects.equals(this.protectionReason, loadBalancer.protectionReason);
     }
 
     @Override
@@ -1208,7 +1331,9 @@ public class LoadBalancer {
             deletionProtectionEnable,
             autoscaling,
             publicBorderGroup,
-            wafFailureAction);
+            wafFailureAction,
+            protectionStatus,
+            protectionReason);
     }
 
     @Override
@@ -1255,6 +1380,8 @@ public class LoadBalancer {
         sb.append("    autoscaling: ").append(toIndentedString(autoscaling)).append("\n");
         sb.append("    publicBorderGroup: ").append(toIndentedString(publicBorderGroup)).append("\n");
         sb.append("    wafFailureAction: ").append(toIndentedString(wafFailureAction)).append("\n");
+        sb.append("    protectionStatus: ").append(toIndentedString(protectionStatus)).append("\n");
+        sb.append("    protectionReason: ").append(toIndentedString(protectionReason)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -24,7 +24,7 @@ public class InstanceRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
 
-    private Metadata metadata;
+    private AddonMetadata metadata;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "spec")
@@ -65,14 +65,14 @@ public class InstanceRequest {
         this.apiVersion = apiVersion;
     }
 
-    public InstanceRequest withMetadata(Metadata metadata) {
+    public InstanceRequest withMetadata(AddonMetadata metadata) {
         this.metadata = metadata;
         return this;
     }
 
-    public InstanceRequest withMetadata(Consumer<Metadata> metadataSetter) {
+    public InstanceRequest withMetadata(Consumer<AddonMetadata> metadataSetter) {
         if (this.metadata == null) {
-            this.metadata = new Metadata();
+            this.metadata = new AddonMetadata();
             metadataSetter.accept(this.metadata);
         }
 
@@ -83,11 +83,11 @@ public class InstanceRequest {
      * Get metadata
      * @return metadata
      */
-    public Metadata getMetadata() {
+    public AddonMetadata getMetadata() {
         return metadata;
     }
 
-    public void setMetadata(Metadata metadata) {
+    public void setMetadata(AddonMetadata metadata) {
         this.metadata = metadata;
     }
 

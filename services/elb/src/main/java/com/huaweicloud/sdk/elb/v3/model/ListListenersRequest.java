@@ -143,6 +143,11 @@ public class ListListenersRequest {
 
     private List<String> memberInstanceId = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "protection_status")
+
+    private List<String> protectionStatus = null;
+
     public ListListenersRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -251,7 +256,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 监听器的监听协议。  [取值：TCP、UDP、HTTP、HTTPS、TERMINATED_HTTPS、QUIC。  说明：TERMINATED_HTTPS为共享型LB上的监听器独有的协议。 ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,fcs,dt)  [取值：TCP、UDP、HTTP、HTTPS。](tag:hws_eu,hcso_dt)  支持多值查询，查询条件格式：*protocol=xxx&protocol=xxx*。  [荷兰region不支持QUIC。](tag:dt)
+     * 监听器的监听协议。  [取值：TCP、UDP、HTTP、HTTPS、TERMINATED_HTTPS、QUIC。  说明：TERMINATED_HTTPS为共享型LB上的监听器独有的协议。 ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,fcs,dt)  [取值：TCP、UDP、HTTP、HTTPS。](tag:hws_eu,hcso_dt)  支持多值查询，查询条件格式：*protocol=xxx&protocol=xxx*。  [不支持QUIC。](tag:tm,hws_eu,g42,hk_g42,hcso_dt,dt,dt_test)
      * @return protocol
      */
     public List<String> getProtocol() {
@@ -516,7 +521,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 客户端与LB之间的HTTPS请求的HTTP2功能的开启状态。 开启后，可提升客户端与LB间的访问性能，但LB与后端服务器间仍采用HTTP1.X协议。  使用说明： - 仅HTTPS协议监听器有效。 - QUIC监听器不能设置该字段，固定返回为true。 - 其他协议的监听器可设置该字段但无效，无论取值如何都不影响监听器正常运行。  [荷兰region不支持QUIC。](tag:dt)
+     * 客户端与LB之间的HTTPS请求的HTTP2功能的开启状态。 开启后，可提升客户端与LB间的访问性能，但LB与后端服务器间仍采用HTTP1.X协议。  使用说明： - 仅HTTPS协议监听器有效。 - QUIC监听器不能设置该字段，固定返回为true。 - 其他协议的监听器可设置该字段但无效，无论取值如何都不影响监听器正常运行。  [不支持QUIC。](tag:tm,hws_eu,g42,hk_g42,hcso_dt,dt,dt_test)
      * @return http2Enable
      */
     public Boolean getHttp2Enable() {
@@ -797,7 +802,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 客户端连接空闲超时时间。在超过keepalive_timeout时长一直没有请求， 负载均衡会暂时中断当前连接，直到一下次请求时重新建立新的连接。  取值： - TCP监听器：10-4000s。 - HTTP/HTTPS/TERMINATED_HTTPS监听器：0-4000s。 - UDP监听器不支持此字段。  支持多值查询，查询条件格式：*keepalive_timeout=xxx&keepalive_timeout=xxx*。
+     * 客户端连接空闲超时时间。在超过keepalive_timeout时长一直没有请求， 负载均衡会暂时中断当前连接，直到下一次请求时重新建立新的连接。  取值： - TCP监听器：10-4000s。 - HTTP/HTTPS/TERMINATED_HTTPS监听器：0-4000s。 - UDP监听器不支持此字段。  支持多值查询，查询条件格式：*keepalive_timeout=xxx&keepalive_timeout=xxx*。
      * @return keepaliveTimeout
      */
     public List<Integer> getKeepaliveTimeout() {
@@ -875,6 +880,39 @@ public class ListListenersRequest {
         this.memberInstanceId = memberInstanceId;
     }
 
+    public ListListenersRequest withProtectionStatus(List<String> protectionStatus) {
+        this.protectionStatus = protectionStatus;
+        return this;
+    }
+
+    public ListListenersRequest addProtectionStatusItem(String protectionStatusItem) {
+        if (this.protectionStatus == null) {
+            this.protectionStatus = new ArrayList<>();
+        }
+        this.protectionStatus.add(protectionStatusItem);
+        return this;
+    }
+
+    public ListListenersRequest withProtectionStatus(Consumer<List<String>> protectionStatusSetter) {
+        if (this.protectionStatus == null) {
+            this.protectionStatus = new ArrayList<>();
+        }
+        protectionStatusSetter.accept(this.protectionStatus);
+        return this;
+    }
+
+    /**
+     * 修改保护状态, 取值： - nonProtection: 不保护，默认值为nonProtection - consoleProtection: 控制台修改保护
+     * @return protectionStatus
+     */
+    public List<String> getProtectionStatus() {
+        return protectionStatus;
+    }
+
+    public void setProtectionStatus(List<String> protectionStatus) {
+        this.protectionStatus = protectionStatus;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -908,7 +946,8 @@ public class ListListenersRequest {
             && Objects.equals(this.keepaliveTimeout, listListenersRequest.keepaliveTimeout)
             && Objects.equals(this.transparentClientIpEnable, listListenersRequest.transparentClientIpEnable)
             && Objects.equals(this.enhanceL7policyEnable, listListenersRequest.enhanceL7policyEnable)
-            && Objects.equals(this.memberInstanceId, listListenersRequest.memberInstanceId);
+            && Objects.equals(this.memberInstanceId, listListenersRequest.memberInstanceId)
+            && Objects.equals(this.protectionStatus, listListenersRequest.protectionStatus);
     }
 
     @Override
@@ -938,7 +977,8 @@ public class ListListenersRequest {
             keepaliveTimeout,
             transparentClientIpEnable,
             enhanceL7policyEnable,
-            memberInstanceId);
+            memberInstanceId,
+            protectionStatus);
     }
 
     @Override
@@ -971,6 +1011,7 @@ public class ListListenersRequest {
         sb.append("    transparentClientIpEnable: ").append(toIndentedString(transparentClientIpEnable)).append("\n");
         sb.append("    enhanceL7policyEnable: ").append(toIndentedString(enhanceL7policyEnable)).append("\n");
         sb.append("    memberInstanceId: ").append(toIndentedString(memberInstanceId)).append("\n");
+        sb.append("    protectionStatus: ").append(toIndentedString(protectionStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

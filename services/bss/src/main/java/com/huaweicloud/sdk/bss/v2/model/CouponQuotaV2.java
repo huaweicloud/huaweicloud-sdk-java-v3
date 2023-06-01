@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.bss.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -36,7 +37,7 @@ public class CouponQuotaV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quota_value")
 
-    private Double quotaValue;
+    private BigDecimal quotaValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quota_status")
@@ -46,7 +47,7 @@ public class CouponQuotaV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "balance")
 
-    private Double balance;
+    private BigDecimal balance;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "measure_id")
@@ -141,7 +142,7 @@ public class CouponQuotaV2 {
         this.lastUpdateTime = lastUpdateTime;
     }
 
-    public CouponQuotaV2 withQuotaValue(Double quotaValue) {
+    public CouponQuotaV2 withQuotaValue(BigDecimal quotaValue) {
         this.quotaValue = quotaValue;
         return this;
     }
@@ -150,11 +151,11 @@ public class CouponQuotaV2 {
      * 优惠券额度的值，精确到小数点后2位。
      * @return quotaValue
      */
-    public Double getQuotaValue() {
+    public BigDecimal getQuotaValue() {
         return quotaValue;
     }
 
-    public void setQuotaValue(Double quotaValue) {
+    public void setQuotaValue(BigDecimal quotaValue) {
         this.quotaValue = quotaValue;
     }
 
@@ -175,7 +176,7 @@ public class CouponQuotaV2 {
         this.quotaStatus = quotaStatus;
     }
 
-    public CouponQuotaV2 withBalance(Double balance) {
+    public CouponQuotaV2 withBalance(BigDecimal balance) {
         this.balance = balance;
         return this;
     }
@@ -184,11 +185,11 @@ public class CouponQuotaV2 {
      * 剩余的优惠券额度，精确到小数点后2位。
      * @return balance
      */
-    public Double getBalance() {
+    public BigDecimal getBalance() {
         return balance;
     }
 
-    public void setBalance(Double balance) {
+    public void setBalance(BigDecimal balance) {
         this.balance = balance;
     }
 

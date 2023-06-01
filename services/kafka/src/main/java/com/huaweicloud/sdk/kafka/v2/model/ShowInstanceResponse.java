@@ -877,7 +877,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * '[付费模式，1表示按需计费，0表示包年/包月计费。](tag:hc,hk,hws,hws_hk,ctc,sbc,hk_sbc,cmcc,hws_eu)[付费模式，暂未使用。](tag:hws_ocb,ocb) [付费模式，1表示按需计费。](tag:otc,dt,g42,tm)'
+     * '[付费模式，1表示按需计费，0表示包年/包月计费。](tag:hc,hk,hws,hws_hk,ctc,sbc,hk_sbc,cmcc,hws_eu)[付费模式，暂未使用。](tag:hws_ocb,ocb) [付费模式，1表示按需计费。](tag:otc,dt,g42,tm,hk_g42,hk_tm)'
      * @return chargingMode
      */
     public Integer getChargingMode() {
@@ -1132,7 +1132,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 开启SASL后使用的安全协议。 - SASL_SSL: 采用SSL证书进行加密传输，支持账号密码认证，安全性更高。 - SASL_PLAINTEXT: 明文传输，支持账号密码认证，性能更好，仅支持SCRAM-SHA-512机制。  
+     * 开启SASL后使用的安全协议。 - SASL_SSL: 采用SSL证书进行加密传输，支持帐号密码认证，安全性更高。 - SASL_PLAINTEXT: 明文传输，支持帐号密码认证，性能更好，仅支持SCRAM-SHA-512机制。  
      * @return kafkaSecurityProtocol
      */
     public String getKafkaSecurityProtocol() {

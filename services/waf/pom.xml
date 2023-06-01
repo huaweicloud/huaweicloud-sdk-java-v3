@@ -3,12 +3,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<parent>
 		<groupId>com.huaweicloud.sdk</groupId>
-		<version>3.1.41</version>
+		<version>3.1.42</version>
 		<artifactId>huaweicloud-sdk-services</artifactId>
 		<relativePath>..</relativePath>
 	</parent>
 	<artifactId>huaweicloud-sdk-waf</artifactId>
-	<version>3.1.41</version>
+	<version>3.1.42</version>
 	<name>Huawei Cloud SDK for WAF</name>
 
 	<modelVersion>4.0.0</modelVersion>
@@ -17,7 +17,7 @@
 		<dependency>
 			<groupId>com.huaweicloud.sdk</groupId>
 			<artifactId>huaweicloud-sdk-core</artifactId>
-			<version>3.1.41</version>
+			<version>3.1.42</version>
 		</dependency>
 	</dependencies>
 

@@ -12,6 +12,38 @@ import java.util.List;
 @SuppressWarnings("unchecked")
 public class CptsMeta {
 
+    public static final HttpRequestDef<BatchUpdateTaskStatusRequest, BatchUpdateTaskStatusResponse> batchUpdateTaskStatus =
+        genForbatchUpdateTaskStatus();
+
+    private static HttpRequestDef<BatchUpdateTaskStatusRequest, BatchUpdateTaskStatusResponse> genForbatchUpdateTaskStatus() {
+        // basic
+        HttpRequestDef.Builder<BatchUpdateTaskStatusRequest, BatchUpdateTaskStatusResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchUpdateTaskStatusRequest.class, BatchUpdateTaskStatusResponse.class)
+            .withName("BatchUpdateTaskStatus")
+            .withUri("/v1/{project_id}/test-suites/{test_suit_id}/tasks/batch-update-task-status")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("test_suit_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(BatchUpdateTaskStatusRequest::getTestSuitId, (req, v) -> {
+                req.setTestSuitId(v);
+            }));
+        builder.<BatchUpdateTaskStatusRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchUpdateTaskStatusRequestBody.class),
+            f -> f.withMarshaller(BatchUpdateTaskStatusRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateCaseRequest, CreateCaseResponse> createCase = genForcreateCase();
 
     private static HttpRequestDef<CreateCaseRequest, CreateCaseResponse> genForcreateCase() {
@@ -28,6 +60,88 @@ public class CptsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateCaseRequestBody.class),
             f -> f.withMarshaller(CreateCaseRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDirectoryRequest, CreateDirectoryResponse> createDirectory =
+        genForcreateDirectory();
+
+    private static HttpRequestDef<CreateDirectoryRequest, CreateDirectoryResponse> genForcreateDirectory() {
+        // basic
+        HttpRequestDef.Builder<CreateDirectoryRequest, CreateDirectoryResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateDirectoryRequest.class, CreateDirectoryResponse.class)
+                .withName("CreateDirectory")
+                .withUri("/v1/{project_id}/test-suites/{test_suite_id}/directory")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("test_suite_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(CreateDirectoryRequest::getTestSuiteId, (req, v) -> {
+                req.setTestSuiteId(v);
+            }));
+        builder.<CreateDirectoryRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateDirectoryRequestBody.class),
+            f -> f.withMarshaller(CreateDirectoryRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateNewCaseRequest, CreateNewCaseResponse> createNewCase =
+        genForcreateNewCase();
+
+    private static HttpRequestDef<CreateNewCaseRequest, CreateNewCaseResponse> genForcreateNewCase() {
+        // basic
+        HttpRequestDef.Builder<CreateNewCaseRequest, CreateNewCaseResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateNewCaseRequest.class, CreateNewCaseResponse.class)
+                .withName("CreateNewCase")
+                .withUri("/v2/{project_id}/test-cases")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CaseInfoDetail>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CaseInfoDetail.class),
+            f -> f.withMarshaller(CreateNewCaseRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateNewTaskRequest, CreateNewTaskResponse> createNewTask =
+        genForcreateNewTask();
+
+    private static HttpRequestDef<CreateNewTaskRequest, CreateNewTaskResponse> genForcreateNewTask() {
+        // basic
+        HttpRequestDef.Builder<CreateNewTaskRequest, CreateNewTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateNewTaskRequest.class, CreateNewTaskResponse.class)
+                .withName("CreateNewTask")
+                .withUri("/v3/{project_id}/tasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<NewTaskInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(NewTaskInfo.class),
+            f -> f.withMarshaller(CreateNewTaskRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -185,6 +299,88 @@ public class CptsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteDirectoryRequest, DeleteDirectoryResponse> deleteDirectory =
+        genFordeleteDirectory();
+
+    private static HttpRequestDef<DeleteDirectoryRequest, DeleteDirectoryResponse> genFordeleteDirectory() {
+        // basic
+        HttpRequestDef.Builder<DeleteDirectoryRequest, DeleteDirectoryResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteDirectoryRequest.class, DeleteDirectoryResponse.class)
+                .withName("DeleteDirectory")
+                .withUri("/v1/{project_id}/test-suites/{test_suite_id}/directory/{directory_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("directory_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(DeleteDirectoryRequest::getDirectoryId, (req, v) -> {
+                req.setDirectoryId(v);
+            }));
+        builder.<Integer>withRequestField("test_suite_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(DeleteDirectoryRequest::getTestSuiteId, (req, v) -> {
+                req.setTestSuiteId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteNewCaseRequest, DeleteNewCaseResponse> deleteNewCase =
+        genFordeleteNewCase();
+
+    private static HttpRequestDef<DeleteNewCaseRequest, DeleteNewCaseResponse> genFordeleteNewCase() {
+        // basic
+        HttpRequestDef.Builder<DeleteNewCaseRequest, DeleteNewCaseResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteNewCaseRequest.class, DeleteNewCaseResponse.class)
+                .withName("DeleteNewCase")
+                .withUri("/v2/{project_id}/test-cases/{case_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("case_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(DeleteNewCaseRequest::getCaseId, (req, v) -> {
+                req.setCaseId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteNewTaskRequest, DeleteNewTaskResponse> deleteNewTask =
+        genFordeleteNewTask();
+
+    private static HttpRequestDef<DeleteNewTaskRequest, DeleteNewTaskResponse> genFordeleteNewTask() {
+        // basic
+        HttpRequestDef.Builder<DeleteNewTaskRequest, DeleteNewTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteNewTaskRequest.class, DeleteNewTaskResponse.class)
+                .withName("DeleteNewTask")
+                .withUri("/v3/{project_id}/tasks/{task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(DeleteNewTaskRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteTaskRequest, DeleteTaskResponse> deleteTask = genFordeleteTask();
 
     private static HttpRequestDef<DeleteTaskRequest, DeleteTaskResponse> genFordeleteTask() {
@@ -265,6 +461,63 @@ public class CptsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListProjectTestCaseRequest, ListProjectTestCaseResponse> listProjectTestCase =
+        genForlistProjectTestCase();
+
+    private static HttpRequestDef<ListProjectTestCaseRequest, ListProjectTestCaseResponse> genForlistProjectTestCase() {
+        // basic
+        HttpRequestDef.Builder<ListProjectTestCaseRequest, ListProjectTestCaseResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListProjectTestCaseRequest.class, ListProjectTestCaseResponse.class)
+                .withName("ListProjectTestCase")
+                .withUri("/v1/{project_id}/test-suites/{test_suite_id}/directory")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("test_suite_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListProjectTestCaseRequest::getTestSuiteId, (req, v) -> {
+                req.setTestSuiteId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTaskCasesRequest, ListTaskCasesResponse> listTaskCases =
+        genForlistTaskCases();
+
+    private static HttpRequestDef<ListTaskCasesRequest, ListTaskCasesResponse> genForlistTaskCases() {
+        // basic
+        HttpRequestDef.Builder<ListTaskCasesRequest, ListTaskCasesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTaskCasesRequest.class, ListTaskCasesResponse.class)
+                .withName("ListTaskCases")
+                .withUri("/v1/{project_id}/test-suites/{test_suit_id}/tasks/{task_id}/test-cases")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("test_suit_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTaskCasesRequest::getTestSuitId, (req, v) -> {
+                req.setTestSuitId(v);
+            }));
+        builder.<Integer>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTaskCasesRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListVariablesRequest, ListVariablesResponse> listVariables =
         genForlistVariables();
 
@@ -322,6 +575,30 @@ public class CptsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowCaseRequest, ShowCaseResponse> showCase = genForshowCase();
+
+    private static HttpRequestDef<ShowCaseRequest, ShowCaseResponse> genForshowCase() {
+        // basic
+        HttpRequestDef.Builder<ShowCaseRequest, ShowCaseResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowCaseRequest.class, ShowCaseResponse.class)
+                .withName("ShowCase")
+                .withUri("/v2/{project_id}/test-cases/{case_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("case_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowCaseRequest::getCaseId, (req, v) -> {
+                req.setCaseId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowHistoryRunInfoRequest, ShowHistoryRunInfoResponse> showHistoryRunInfo =
         genForshowHistoryRunInfo();
 
@@ -340,6 +617,91 @@ public class CptsMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowHistoryRunInfoRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowMergeCaseDetailRequest, ShowMergeCaseDetailResponse> showMergeCaseDetail =
+        genForshowMergeCaseDetail();
+
+    private static HttpRequestDef<ShowMergeCaseDetailRequest, ShowMergeCaseDetailResponse> genForshowMergeCaseDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowMergeCaseDetailRequest, ShowMergeCaseDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowMergeCaseDetailRequest.class, ShowMergeCaseDetailResponse.class)
+                .withName("ShowMergeCaseDetail")
+                .withUri("/v2/{project_id}/task-run-infos/{task_run_id}/case-run-infos/{case_run_id}/detail")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("task_run_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowMergeCaseDetailRequest::getTaskRunId, (req, v) -> {
+                req.setTaskRunId(v);
+            }));
+        builder.<Integer>withRequestField("case_run_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowMergeCaseDetailRequest::getCaseRunId, (req, v) -> {
+                req.setCaseRunId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowMergeReportLogsOutlineRequest, ShowMergeReportLogsOutlineResponse> showMergeReportLogsOutline =
+        genForshowMergeReportLogsOutline();
+
+    private static HttpRequestDef<ShowMergeReportLogsOutlineRequest, ShowMergeReportLogsOutlineResponse> genForshowMergeReportLogsOutline() {
+        // basic
+        HttpRequestDef.Builder<ShowMergeReportLogsOutlineRequest, ShowMergeReportLogsOutlineResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowMergeReportLogsOutlineRequest.class,
+                    ShowMergeReportLogsOutlineResponse.class)
+                .withName("ShowMergeReportLogsOutline")
+                .withUri("/v2/{project_id}/task-run-infos/{task_run_id}/reports/log-outline")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("task_run_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowMergeReportLogsOutlineRequest::getTaskRunId, (req, v) -> {
+                req.setTaskRunId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowMergeTaskCaseRequest, ShowMergeTaskCaseResponse> showMergeTaskCase =
+        genForshowMergeTaskCase();
+
+    private static HttpRequestDef<ShowMergeTaskCaseRequest, ShowMergeTaskCaseResponse> genForshowMergeTaskCase() {
+        // basic
+        HttpRequestDef.Builder<ShowMergeTaskCaseRequest, ShowMergeTaskCaseResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowMergeTaskCaseRequest.class, ShowMergeTaskCaseResponse.class)
+                .withName("ShowMergeTaskCase")
+                .withUri("/v2/{project_id}/task-run-infos/{task_run_id}/cases")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("task_run_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowMergeTaskCaseRequest::getTaskRunId, (req, v) -> {
+                req.setTaskRunId(v);
             }));
 
         // response
@@ -402,6 +764,46 @@ public class CptsMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowTaskRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTaskCaseAwChartRequest, ShowTaskCaseAwChartResponse> showTaskCaseAwChart =
+        genForshowTaskCaseAwChart();
+
+    private static HttpRequestDef<ShowTaskCaseAwChartRequest, ShowTaskCaseAwChartResponse> genForshowTaskCaseAwChart() {
+        // basic
+        HttpRequestDef.Builder<ShowTaskCaseAwChartRequest, ShowTaskCaseAwChartResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowTaskCaseAwChartRequest.class, ShowTaskCaseAwChartResponse.class)
+            .withName("ShowTaskCaseAwChart")
+            .withUri(
+                "/v2/{project_id}/task-run-infos/{task_run_id}/case-run-infos/{case_run_id}/detail/{detail_id}/chart")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("task_run_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowTaskCaseAwChartRequest::getTaskRunId, (req, v) -> {
+                req.setTaskRunId(v);
+            }));
+        builder.<Integer>withRequestField("case_run_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowTaskCaseAwChartRequest::getCaseRunId, (req, v) -> {
+                req.setCaseRunId(v);
+            }));
+        builder.<String>withRequestField("detail_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTaskCaseAwChartRequest::getDetailId, (req, v) -> {
+                req.setDetailId(v);
             }));
 
         // response
@@ -571,6 +973,77 @@ public class CptsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CaseInfoDetail.class),
             f -> f.withMarshaller(UpdateCaseRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDirectoryRequest, UpdateDirectoryResponse> updateDirectory =
+        genForupdateDirectory();
+
+    private static HttpRequestDef<UpdateDirectoryRequest, UpdateDirectoryResponse> genForupdateDirectory() {
+        // basic
+        HttpRequestDef.Builder<UpdateDirectoryRequest, UpdateDirectoryResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateDirectoryRequest.class, UpdateDirectoryResponse.class)
+                .withName("UpdateDirectory")
+                .withUri("/v1/{project_id}/test-suites/{test_suite_id}/directory/{directory_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("directory_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(UpdateDirectoryRequest::getDirectoryId, (req, v) -> {
+                req.setDirectoryId(v);
+            }));
+        builder.<Integer>withRequestField("test_suite_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(UpdateDirectoryRequest::getTestSuiteId, (req, v) -> {
+                req.setTestSuiteId(v);
+            }));
+        builder.<UpdateDirectoryRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateDirectoryRequestBody.class),
+            f -> f.withMarshaller(UpdateDirectoryRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateNewCaseRequest, UpdateNewCaseResponse> updateNewCase =
+        genForupdateNewCase();
+
+    private static HttpRequestDef<UpdateNewCaseRequest, UpdateNewCaseResponse> genForupdateNewCase() {
+        // basic
+        HttpRequestDef.Builder<UpdateNewCaseRequest, UpdateNewCaseResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateNewCaseRequest.class, UpdateNewCaseResponse.class)
+                .withName("UpdateNewCase")
+                .withUri("/v2/{project_id}/test-cases/{case_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("case_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(UpdateNewCaseRequest::getCaseId, (req, v) -> {
+                req.setCaseId(v);
+            }));
+        builder.<CaseInfoDetail>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CaseInfoDetail.class),
+            f -> f.withMarshaller(UpdateNewCaseRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -822,31 +1295,6 @@ public class CptsMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListProjectSetsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListProjectTestCaseRequest, ListProjectTestCaseResponse> listProjectTestCase =
-        genForlistProjectTestCase();
-
-    private static HttpRequestDef<ListProjectTestCaseRequest, ListProjectTestCaseResponse> genForlistProjectTestCase() {
-        // basic
-        HttpRequestDef.Builder<ListProjectTestCaseRequest, ListProjectTestCaseResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListProjectTestCaseRequest.class, ListProjectTestCaseResponse.class)
-                .withName("ListProjectTestCase")
-                .withUri("/v1/{project_id}/test-suites/{test_suite_id}/directory")
-                .withContentType("application/json");
-
-        // requests
-        builder.<Integer>withRequestField("test_suite_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProjectTestCaseRequest::getTestSuiteId, (req, v) -> {
-                req.setTestSuiteId(v);
             }));
 
         // response

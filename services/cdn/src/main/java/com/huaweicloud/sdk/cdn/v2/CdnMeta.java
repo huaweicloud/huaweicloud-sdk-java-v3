@@ -462,6 +462,13 @@ public class CdnMeta {
             f -> f.withMarshaller(ShowDomainFullConfigRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
             }));
+        builder.<String>withRequestField("show_special_configs",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainFullConfigRequest::getShowSpecialConfigs, (req, v) -> {
+                req.setShowSpecialConfigs(v);
+            }));
 
         // response
 

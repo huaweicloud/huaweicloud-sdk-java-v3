@@ -219,7 +219,7 @@ public class DeletePrivateZoneResponse extends SdkResponse {
     }
 
     /**
-     * 状态
+     * 资源状态
      * @return status
      */
     public String getStatus() {

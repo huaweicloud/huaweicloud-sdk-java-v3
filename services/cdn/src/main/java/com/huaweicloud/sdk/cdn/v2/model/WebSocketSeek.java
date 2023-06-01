@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * webSocket配置。
+ * webSocket配置。  &gt; 只支持全站加速。
  */
 public class WebSocketSeek {
 
@@ -26,7 +26,7 @@ public class WebSocketSeek {
     }
 
     /**
-     * 开关(on 开启，off 关闭)
+     * 开关， on 开启，off 关闭。
      * @return status
      */
     public String getStatus() {

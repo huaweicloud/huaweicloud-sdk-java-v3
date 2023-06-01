@@ -137,7 +137,7 @@ public class ShowAutoLaunchGroupResp {
     private Integer currentStableCapacity;
 
     /**
-     * 超过目标容量时（目标容量减少）实例的中断行为，枚举值 terminate：释放 noTermination：不释放
+     * 超过目标容量或目标容量减少时的实例中断行为，枚举值 terminate：释放 noTermination：不释放
      */
     public static final class ExcessFulfilledCapacityBehaviorEnum {
 
@@ -221,7 +221,7 @@ public class ShowAutoLaunchGroupResp {
     private ExcessFulfilledCapacityBehaviorEnum excessFulfilledCapacityBehavior;
 
     /**
-     * 请求到期正在的实例终端行为，枚举值 terminate：释放 noTermination：不释放
+     * 请求到期时的实例中断行为，枚举值 terminate：释放 noTermination：不释放
      */
     public static final class InstancesBehaviorWithExpirationEnum {
 
@@ -498,7 +498,7 @@ public class ShowAutoLaunchGroupResp {
     }
 
     /**
-     * 智能购买组目标容量，实例数量或者CPU个数，目标容量大于等于stable_capacity。spot实例的容量为目标容量减去stable_capacity
+     * 智能购买组目标容量. 实例数量或者CPU个数，目标容量大于等于stable_capacity。竞价实例的容量为满配容量减去stable_capacity
      * minimum: 0
      * maximum: 10000
      * @return targetCapacity
@@ -517,7 +517,7 @@ public class ShowAutoLaunchGroupResp {
     }
 
     /**
-     * 按需实例目标容量 小于等于target_capacity
+     * 按需实例目标容量 目标容量指实例数量或CPU个数，必须小于等于target_capacity，智能购买组中可以没有按需实例
      * minimum: 0
      * maximum: 10000
      * @return stableCapacity
@@ -575,7 +575,7 @@ public class ShowAutoLaunchGroupResp {
     }
 
     /**
-     * 超过目标容量时（目标容量减少）实例的中断行为，枚举值 terminate：释放 noTermination：不释放
+     * 超过目标容量或目标容量减少时的实例中断行为，枚举值 terminate：释放 noTermination：不释放
      * @return excessFulfilledCapacityBehavior
      */
     public ExcessFulfilledCapacityBehaviorEnum getExcessFulfilledCapacityBehavior() {
@@ -594,7 +594,7 @@ public class ShowAutoLaunchGroupResp {
     }
 
     /**
-     * 请求到期正在的实例终端行为，枚举值 terminate：释放 noTermination：不释放
+     * 请求到期时的实例中断行为，枚举值 terminate：释放 noTermination：不释放
      * @return instancesBehaviorWithExpiration
      */
     public InstancesBehaviorWithExpirationEnum getInstancesBehaviorWithExpiration() {
@@ -662,7 +662,7 @@ public class ShowAutoLaunchGroupResp {
     }
 
     /**
-     * 智能购买组在各个region的配置
+     * 智能购买组在各个区域的配置
      * @return regionSpecs
      */
     public List<RegionSpec> getRegionSpecs() {
@@ -696,7 +696,7 @@ public class ShowAutoLaunchGroupResp {
     }
 
     /**
-     * spot实例价格
+     * 用户愿意为竞价实例每小时支付的最高价格。如果overrides中没有提供价格，可以使用该价格。
      * minimum: 0
      * maximum: 1E+3
      * @return spotPrice

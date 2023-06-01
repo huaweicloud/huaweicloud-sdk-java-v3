@@ -663,6 +663,15 @@ public class AosMeta {
         // response
 
 
+        builder.<String>withResponseField(
+            "Location",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(
+                GetStackTemplateResponse::getLocation,
+                GetStackTemplateResponse::setLocation)
+        );
         return builder.build();
     }
 
@@ -1125,6 +1134,15 @@ public class AosMeta {
         // response
 
 
+        builder.<String>withResponseField(
+            "Location",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(
+                ShowTemplateVersionContentResponse::getLocation,
+                ShowTemplateVersionContentResponse::setLocation)
+        );
         return builder.build();
     }
 

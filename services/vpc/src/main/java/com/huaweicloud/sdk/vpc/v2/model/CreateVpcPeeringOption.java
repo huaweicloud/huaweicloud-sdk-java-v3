@@ -17,6 +17,11 @@ public class CreateVpcPeeringOption {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "request_vpc_info")
 
     private VpcInfo requestVpcInfo;
@@ -41,6 +46,23 @@ public class CreateVpcPeeringOption {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public CreateVpcPeeringOption withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 功能说明：对等连接的描述 取值范围：0-255个字符，不能包含“<”和“>”。
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public CreateVpcPeeringOption withRequestVpcInfo(VpcInfo requestVpcInfo) {
@@ -105,13 +127,14 @@ public class CreateVpcPeeringOption {
         }
         CreateVpcPeeringOption createVpcPeeringOption = (CreateVpcPeeringOption) o;
         return Objects.equals(this.name, createVpcPeeringOption.name)
+            && Objects.equals(this.description, createVpcPeeringOption.description)
             && Objects.equals(this.requestVpcInfo, createVpcPeeringOption.requestVpcInfo)
             && Objects.equals(this.acceptVpcInfo, createVpcPeeringOption.acceptVpcInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, requestVpcInfo, acceptVpcInfo);
+        return Objects.hash(name, description, requestVpcInfo, acceptVpcInfo);
     }
 
     @Override
@@ -119,6 +142,7 @@ public class CreateVpcPeeringOption {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateVpcPeeringOption {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    requestVpcInfo: ").append(toIndentedString(requestVpcInfo)).append("\n");
         sb.append("    acceptVpcInfo: ").append(toIndentedString(acceptVpcInfo)).append("\n");
         sb.append("}");

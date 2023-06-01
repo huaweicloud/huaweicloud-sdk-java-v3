@@ -25,7 +25,7 @@ public class UpdateAddonInstanceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
 
-    private Metadata metadata;
+    private AddonMetadata metadata;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "spec")
@@ -71,14 +71,14 @@ public class UpdateAddonInstanceResponse extends SdkResponse {
         this.apiVersion = apiVersion;
     }
 
-    public UpdateAddonInstanceResponse withMetadata(Metadata metadata) {
+    public UpdateAddonInstanceResponse withMetadata(AddonMetadata metadata) {
         this.metadata = metadata;
         return this;
     }
 
-    public UpdateAddonInstanceResponse withMetadata(Consumer<Metadata> metadataSetter) {
+    public UpdateAddonInstanceResponse withMetadata(Consumer<AddonMetadata> metadataSetter) {
         if (this.metadata == null) {
-            this.metadata = new Metadata();
+            this.metadata = new AddonMetadata();
             metadataSetter.accept(this.metadata);
         }
 
@@ -89,11 +89,11 @@ public class UpdateAddonInstanceResponse extends SdkResponse {
      * Get metadata
      * @return metadata
      */
-    public Metadata getMetadata() {
+    public AddonMetadata getMetadata() {
         return metadata;
     }
 
-    public void setMetadata(Metadata metadata) {
+    public void setMetadata(AddonMetadata metadata) {
         this.metadata = metadata;
     }
 

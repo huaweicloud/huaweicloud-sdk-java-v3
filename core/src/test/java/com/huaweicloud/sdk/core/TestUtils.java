@@ -43,7 +43,7 @@ public class TestUtils {
             int totalLen = 0;
             try {
                 while ((len = inputStream.read(bytes)) != -1) {
-                    totalLen = totalLen + len;
+                    totalLen += len;
                 }
                 Assert.assertEquals(totalLen, 1024 * 1024 * 5);
             } catch (IOException e) {

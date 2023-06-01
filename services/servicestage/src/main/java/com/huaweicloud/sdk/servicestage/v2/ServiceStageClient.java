@@ -205,6 +205,32 @@ public class ServiceStageClient {
     }
 
     /**
+     * 创建、更新实例
+     *
+     * 创建、更新实例
+     *
+     * @param CreateCamInstanceRequest 请求对象
+     * @return CreateCamInstanceResponse
+     */
+    public CreateCamInstanceResponse createCamInstance(CreateCamInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, ServiceStageMeta.createCamInstance);
+    }
+
+    /**
+     * 创建、更新实例
+     *
+     * 创建、更新实例
+     *
+     * @param CreateCamInstanceRequest 请求对象
+     * @return SyncInvoker<CreateCamInstanceRequest, CreateCamInstanceResponse>
+     */
+    public SyncInvoker<CreateCamInstanceRequest, CreateCamInstanceResponse> createCamInstanceInvoker(
+        CreateCamInstanceRequest request) {
+        return new SyncInvoker<CreateCamInstanceRequest, CreateCamInstanceResponse>(request,
+            ServiceStageMeta.createCamInstance, hcClient);
+    }
+
+    /**
      * 应用中创建组件
      *
      * 应用组件是组成应用的某个业务特性实现，以代码或者软件包为载体，可独立部署运行。
@@ -287,6 +313,32 @@ public class ServiceStageClient {
     public SyncInvoker<CreateInstanceRequest, CreateInstanceResponse> createInstanceInvoker(
         CreateInstanceRequest request) {
         return new SyncInvoker<CreateInstanceRequest, CreateInstanceResponse>(request, ServiceStageMeta.createInstance,
+            hcClient);
+    }
+
+    /**
+     * 创建模板
+     *
+     * 创建模板
+     *
+     * @param CreateTemplateRequest 请求对象
+     * @return CreateTemplateResponse
+     */
+    public CreateTemplateResponse createTemplate(CreateTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, ServiceStageMeta.createTemplate);
+    }
+
+    /**
+     * 创建模板
+     *
+     * 创建模板
+     *
+     * @param CreateTemplateRequest 请求对象
+     * @return SyncInvoker<CreateTemplateRequest, CreateTemplateResponse>
+     */
+    public SyncInvoker<CreateTemplateRequest, CreateTemplateResponse> createTemplateInvoker(
+        CreateTemplateRequest request) {
+        return new SyncInvoker<CreateTemplateRequest, CreateTemplateResponse>(request, ServiceStageMeta.createTemplate,
             hcClient);
     }
 
@@ -418,6 +470,84 @@ public class ServiceStageClient {
     public SyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse> deleteInstanceInvoker(
         DeleteInstanceRequest request) {
         return new SyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>(request, ServiceStageMeta.deleteInstance,
+            hcClient);
+    }
+
+    /**
+     * 删除实例
+     *
+     * 删除实例
+     *
+     * @param DeleteInstanceByIdRequest 请求对象
+     * @return DeleteInstanceByIdResponse
+     */
+    public DeleteInstanceByIdResponse deleteInstanceById(DeleteInstanceByIdRequest request) {
+        return hcClient.syncInvokeHttp(request, ServiceStageMeta.deleteInstanceById);
+    }
+
+    /**
+     * 删除实例
+     *
+     * 删除实例
+     *
+     * @param DeleteInstanceByIdRequest 请求对象
+     * @return SyncInvoker<DeleteInstanceByIdRequest, DeleteInstanceByIdResponse>
+     */
+    public SyncInvoker<DeleteInstanceByIdRequest, DeleteInstanceByIdResponse> deleteInstanceByIdInvoker(
+        DeleteInstanceByIdRequest request) {
+        return new SyncInvoker<DeleteInstanceByIdRequest, DeleteInstanceByIdResponse>(request,
+            ServiceStageMeta.deleteInstanceById, hcClient);
+    }
+
+    /**
+     * 删除模板
+     *
+     * 删除模板
+     *
+     * @param DeleteTemplateRequest 请求对象
+     * @return DeleteTemplateResponse
+     */
+    public DeleteTemplateResponse deleteTemplate(DeleteTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, ServiceStageMeta.deleteTemplate);
+    }
+
+    /**
+     * 删除模板
+     *
+     * 删除模板
+     *
+     * @param DeleteTemplateRequest 请求对象
+     * @return SyncInvoker<DeleteTemplateRequest, DeleteTemplateResponse>
+     */
+    public SyncInvoker<DeleteTemplateRequest, DeleteTemplateResponse> deleteTemplateInvoker(
+        DeleteTemplateRequest request) {
+        return new SyncInvoker<DeleteTemplateRequest, DeleteTemplateResponse>(request, ServiceStageMeta.deleteTemplate,
+            hcClient);
+    }
+
+    /**
+     * 部署实例
+     *
+     * 部署实例
+     *
+     * @param DeployInstanceRequest 请求对象
+     * @return DeployInstanceResponse
+     */
+    public DeployInstanceResponse deployInstance(DeployInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, ServiceStageMeta.deployInstance);
+    }
+
+    /**
+     * 部署实例
+     *
+     * 部署实例
+     *
+     * @param DeployInstanceRequest 请求对象
+     * @return SyncInvoker<DeployInstanceRequest, DeployInstanceResponse>
+     */
+    public SyncInvoker<DeployInstanceRequest, DeployInstanceResponse> deployInstanceInvoker(
+        DeployInstanceRequest request) {
+        return new SyncInvoker<DeployInstanceRequest, DeployInstanceResponse>(request, ServiceStageMeta.deployInstance,
             hcClient);
     }
 
@@ -730,6 +860,32 @@ public class ServiceStageClient {
         UpdateInstanceActionRequest request) {
         return new SyncInvoker<UpdateInstanceActionRequest, UpdateInstanceActionResponse>(request,
             ServiceStageMeta.updateInstanceAction, hcClient);
+    }
+
+    /**
+     * 更新模板
+     *
+     * 更新模板
+     *
+     * @param UpdateTemplateRequest 请求对象
+     * @return UpdateTemplateResponse
+     */
+    public UpdateTemplateResponse updateTemplate(UpdateTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, ServiceStageMeta.updateTemplate);
+    }
+
+    /**
+     * 更新模板
+     *
+     * 更新模板
+     *
+     * @param UpdateTemplateRequest 请求对象
+     * @return SyncInvoker<UpdateTemplateRequest, UpdateTemplateResponse>
+     */
+    public SyncInvoker<UpdateTemplateRequest, UpdateTemplateResponse> updateTemplateInvoker(
+        UpdateTemplateRequest request) {
+        return new SyncInvoker<UpdateTemplateRequest, UpdateTemplateResponse>(request, ServiceStageMeta.updateTemplate,
+            hcClient);
     }
 
     /**

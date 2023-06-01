@@ -122,7 +122,7 @@ public class PartitionReassignEntity {
     }
 
     /**
-     * 手动指定的分配方案。brokers 参数与该参数不能同时为空。
+     * 手动指定的分配方案。brokers参数与该参数不能同时为空。
      * @return assignment
      */
     public List<TopicAssignment> getAssignment() {

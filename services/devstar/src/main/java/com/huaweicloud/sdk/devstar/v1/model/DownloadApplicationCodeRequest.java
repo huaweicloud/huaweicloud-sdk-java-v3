@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.core.progress.ProgressListener;
+import com.huaweicloud.sdk.core.progress.ProgressRequest;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -13,7 +15,7 @@ import java.util.Objects;
 /**
  * Request Object
  */
-public class DownloadApplicationCodeRequest {
+public class DownloadApplicationCodeRequest implements ProgressRequest {
 
     /**
      * 语言类型，缺省值为“zh-cn”。  枚举值： - zh-cn：中文 - en-us：英文 
@@ -101,6 +103,30 @@ public class DownloadApplicationCodeRequest {
     @JsonProperty(value = "job_id")
 
     private String jobId;
+
+    private ProgressListener progressListener;
+
+    private long progressInterval;
+
+    @Override
+    public void setProgressListener(ProgressListener progressListener) {
+        this.progressListener = progressListener;
+    }
+
+    @Override
+    public ProgressListener getProgressListener() {
+        return progressListener;
+    }
+
+    @Override
+    public void setProgressInterval(long progressInterval) {
+        this.progressInterval = progressInterval;
+    }
+
+    @Override
+    public long getProgressInterval() {
+        return progressInterval;
+    }
 
     public DownloadApplicationCodeRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;

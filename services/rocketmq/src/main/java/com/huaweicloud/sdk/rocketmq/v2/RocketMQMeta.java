@@ -204,6 +204,69 @@ public class RocketMQMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateRocketMqMigrationTaskRequest, CreateRocketMqMigrationTaskResponse> createRocketMqMigrationTask =
+        genForcreateRocketMqMigrationTask();
+
+    private static HttpRequestDef<CreateRocketMqMigrationTaskRequest, CreateRocketMqMigrationTaskResponse> genForcreateRocketMqMigrationTask() {
+        // basic
+        HttpRequestDef.Builder<CreateRocketMqMigrationTaskRequest, CreateRocketMqMigrationTaskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateRocketMqMigrationTaskRequest.class,
+                    CreateRocketMqMigrationTaskResponse.class)
+                .withName("CreateRocketMqMigrationTask")
+                .withUri("/v2/{project_id}/instances/{instance_id}/metadata")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateRocketMqMigrationTaskRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<CreateRocketMqMigrationTaskRequest.OverwriteEnum>withRequestField("overwrite",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateRocketMqMigrationTaskRequest.OverwriteEnum.class),
+            f -> f.withMarshaller(CreateRocketMqMigrationTaskRequest::getOverwrite, (req, v) -> {
+                req.setOverwrite(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateRocketMqMigrationTaskRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<CreateRocketMqMigrationTaskRequest.TypeEnum>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateRocketMqMigrationTaskRequest.TypeEnum.class),
+            f -> f.withMarshaller(CreateRocketMqMigrationTaskRequest::getType, (req, v) -> {
+                req.setType(v);
+            }));
+        builder.<String>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateRocketMqMigrationTaskRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateRocketMqMigrationTaskResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateUserRequest, CreateUserResponse> createUser = genForcreateUser();
 
     private static HttpRequestDef<CreateUserRequest, CreateUserResponse> genForcreateUser() {
@@ -288,6 +351,48 @@ public class RocketMQMeta {
             }));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteRocketMqMigrationTaskRequest, DeleteRocketMqMigrationTaskResponse> deleteRocketMqMigrationTask =
+        genFordeleteRocketMqMigrationTask();
+
+    private static HttpRequestDef<DeleteRocketMqMigrationTaskRequest, DeleteRocketMqMigrationTaskResponse> genFordeleteRocketMqMigrationTask() {
+        // basic
+        HttpRequestDef.Builder<DeleteRocketMqMigrationTaskRequest, DeleteRocketMqMigrationTaskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteRocketMqMigrationTaskRequest.class,
+                    DeleteRocketMqMigrationTaskResponse.class)
+                .withName("DeleteRocketMqMigrationTask")
+                .withUri("/v2/{project_id}/instances/{instance_id}/metadata")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteRocketMqMigrationTaskRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<MetadataDeleteReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(MetadataDeleteReq.class),
+            f -> f.withMarshaller(DeleteRocketMqMigrationTaskRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteRocketMqMigrationTaskResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
 
         return builder.build();
     }
@@ -702,6 +807,69 @@ public class RocketMQMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListRocketMqMigrationTaskRequest, ListRocketMqMigrationTaskResponse> listRocketMqMigrationTask =
+        genForlistRocketMqMigrationTask();
+
+    private static HttpRequestDef<ListRocketMqMigrationTaskRequest, ListRocketMqMigrationTaskResponse> genForlistRocketMqMigrationTask() {
+        // basic
+        HttpRequestDef.Builder<ListRocketMqMigrationTaskRequest, ListRocketMqMigrationTaskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListRocketMqMigrationTaskRequest.class,
+                    ListRocketMqMigrationTaskResponse.class)
+                .withName("ListRocketMqMigrationTask")
+                .withUri("/v2/{project_id}/instances/{instance_id}/metadata")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRocketMqMigrationTaskRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRocketMqMigrationTaskRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+        builder.<ListRocketMqMigrationTaskRequest.TypeEnum>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListRocketMqMigrationTaskRequest.TypeEnum.class),
+            f -> f.withMarshaller(ListRocketMqMigrationTaskRequest::getType, (req, v) -> {
+                req.setType(v);
+            }));
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRocketMqMigrationTaskRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRocketMqMigrationTaskRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRocketMqMigrationTaskRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListTopicAccessPolicyRequest, ListTopicAccessPolicyResponse> listTopicAccessPolicy =
         genForlistTopicAccessPolicy();
 
@@ -824,6 +992,38 @@ public class RocketMQMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResetConsumeOffsetReq.class),
             f -> f.withMarshaller(ResetConsumeOffsetRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SendRocketMqDlqMessageRequest, SendRocketMqDlqMessageResponse> sendRocketMqDlqMessage =
+        genForsendRocketMqDlqMessage();
+
+    private static HttpRequestDef<SendRocketMqDlqMessageRequest, SendRocketMqDlqMessageResponse> genForsendRocketMqDlqMessage() {
+        // basic
+        HttpRequestDef.Builder<SendRocketMqDlqMessageRequest, SendRocketMqDlqMessageResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, SendRocketMqDlqMessageRequest.class, SendRocketMqDlqMessageResponse.class)
+            .withName("SendRocketMqDlqMessage")
+            .withUri("/v2/reliability/{project_id}/instances/{instance_id}/messages/deadletter-resend")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SendRocketMqDlqMessageRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<DeadletterResendReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeadletterResendReq.class),
+            f -> f.withMarshaller(SendRocketMqDlqMessageRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -1171,6 +1371,41 @@ public class RocketMQMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(User.class),
             f -> f.withMarshaller(UpdateUserRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ValidateRocketMqConsumedMessageRequest, ValidateRocketMqConsumedMessageResponse> validateRocketMqConsumedMessage =
+        genForvalidateRocketMqConsumedMessage();
+
+    private static HttpRequestDef<ValidateRocketMqConsumedMessageRequest, ValidateRocketMqConsumedMessageResponse> genForvalidateRocketMqConsumedMessage() {
+        // basic
+        HttpRequestDef.Builder<ValidateRocketMqConsumedMessageRequest, ValidateRocketMqConsumedMessageResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ValidateRocketMqConsumedMessageRequest.class,
+                    ValidateRocketMqConsumedMessageResponse.class)
+                .withName("ValidateRocketMqConsumedMessage")
+                .withUri("/v2/reliability/{project_id}/instances/{instance_id}/messages/resend")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ValidateRocketMqConsumedMessageRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<ResendReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResendReq.class),
+            f -> f.withMarshaller(ValidateRocketMqConsumedMessageRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

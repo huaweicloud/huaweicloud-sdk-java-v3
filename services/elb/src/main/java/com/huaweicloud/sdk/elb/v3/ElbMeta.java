@@ -76,6 +76,38 @@ public class ElbMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchUpdateMembersRequest, BatchUpdateMembersResponse> batchUpdateMembers =
+        genForbatchUpdateMembers();
+
+    private static HttpRequestDef<BatchUpdateMembersRequest, BatchUpdateMembersResponse> genForbatchUpdateMembers() {
+        // basic
+        HttpRequestDef.Builder<BatchUpdateMembersRequest, BatchUpdateMembersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchUpdateMembersRequest.class, BatchUpdateMembersResponse.class)
+                .withName("BatchUpdateMembers")
+                .withUri("/v3/{project_id}/elb/pools/{pool_id}/members/batch-update")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("pool_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchUpdateMembersRequest::getPoolId, (req, v) -> {
+                req.setPoolId(v);
+            }));
+        builder.<BatchUpdateMembersRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchUpdateMembersRequestBody.class),
+            f -> f.withMarshaller(BatchUpdateMembersRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchUpdatePoliciesPriorityRequest, BatchUpdatePoliciesPriorityResponse> batchUpdatePoliciesPriority =
         genForbatchUpdatePoliciesPriority();
 
@@ -524,6 +556,31 @@ public class ElbMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteListenerForceRequest, DeleteListenerForceResponse> deleteListenerForce =
+        genFordeleteListenerForce();
+
+    private static HttpRequestDef<DeleteListenerForceRequest, DeleteListenerForceResponse> genFordeleteListenerForce() {
+        // basic
+        HttpRequestDef.Builder<DeleteListenerForceRequest, DeleteListenerForceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteListenerForceRequest.class, DeleteListenerForceResponse.class)
+            .withName("DeleteListenerForce")
+            .withUri("/v3/{project_id}/elb/listeners/{listener_id}/force")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("listener_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteListenerForceRequest::getListenerId, (req, v) -> {
+                req.setListenerId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteLoadBalancerRequest, DeleteLoadBalancerResponse> deleteLoadBalancer =
         genFordeleteLoadBalancer();
 
@@ -541,6 +598,31 @@ public class ElbMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteLoadBalancerRequest::getLoadbalancerId, (req, v) -> {
+                req.setLoadbalancerId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteLoadBalancerForceRequest, DeleteLoadBalancerForceResponse> deleteLoadBalancerForce =
+        genFordeleteLoadBalancerForce();
+
+    private static HttpRequestDef<DeleteLoadBalancerForceRequest, DeleteLoadBalancerForceResponse> genFordeleteLoadBalancerForce() {
+        // basic
+        HttpRequestDef.Builder<DeleteLoadBalancerForceRequest, DeleteLoadBalancerForceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteLoadBalancerForceRequest.class, DeleteLoadBalancerForceResponse.class)
+            .withName("DeleteLoadBalancerForce")
+            .withUri("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/force-elb")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("loadbalancer_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteLoadBalancerForceRequest::getLoadbalancerId, (req, v) -> {
                 req.setLoadbalancerId(v);
             }));
 
@@ -1525,6 +1607,13 @@ public class ElbMeta {
             f -> f.withMarshaller(ListListenersRequest::getMemberInstanceId, (req, v) -> {
                 req.setMemberInstanceId(v);
             }));
+        builder.<List<String>>withRequestField("protection_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListListenersRequest::getProtectionStatus, (req, v) -> {
+                req.setProtectionStatus(v);
+            }));
 
         // response
 
@@ -1766,6 +1855,20 @@ public class ElbMeta {
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListLoadBalancersRequest::getAutoscaling, (req, v) -> {
                 req.setAutoscaling(v);
+            }));
+        builder.<List<String>>withRequestField("protection_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListLoadBalancersRequest::getProtectionStatus, (req, v) -> {
+                req.setProtectionStatus(v);
+            }));
+        builder.<List<String>>withRequestField("global_eips",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListLoadBalancersRequest::getGlobalEips, (req, v) -> {
+                req.setGlobalEips(v);
             }));
 
         // response
@@ -2125,6 +2228,13 @@ public class ElbMeta {
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListPoolsRequest::getType, (req, v) -> {
                 req.setType(v);
+            }));
+        builder.<List<String>>withRequestField("protection_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListPoolsRequest::getProtectionStatus, (req, v) -> {
+                req.setProtectionStatus(v);
             }));
 
         // response

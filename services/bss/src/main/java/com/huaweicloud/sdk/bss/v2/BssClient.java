@@ -271,6 +271,43 @@ public class BssClient {
     }
 
     /**
+     * 企业主账号向企业子账号拨款优惠券
+     *
+     * 企业主账号在自建平台向企业子账号拨款优惠券。
+     * 
+     * &gt;![](public_sys-resources/icon-note.gif) **说明：** 
+     * &gt;-   仅支持华为发放的测试类、商务类、活动类代金券。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ClaimEnterpriseMultiAccountCouponRequest 请求对象
+     * @return ClaimEnterpriseMultiAccountCouponResponse
+     */
+    public ClaimEnterpriseMultiAccountCouponResponse claimEnterpriseMultiAccountCoupon(
+        ClaimEnterpriseMultiAccountCouponRequest request) {
+        return hcClient.syncInvokeHttp(request, BssMeta.claimEnterpriseMultiAccountCoupon);
+    }
+
+    /**
+     * 企业主账号向企业子账号拨款优惠券
+     *
+     * 企业主账号在自建平台向企业子账号拨款优惠券。
+     * 
+     * &gt;![](public_sys-resources/icon-note.gif) **说明：** 
+     * &gt;-   仅支持华为发放的测试类、商务类、活动类代金券。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ClaimEnterpriseMultiAccountCouponRequest 请求对象
+     * @return SyncInvoker<ClaimEnterpriseMultiAccountCouponRequest, ClaimEnterpriseMultiAccountCouponResponse>
+     */
+    public SyncInvoker<ClaimEnterpriseMultiAccountCouponRequest, ClaimEnterpriseMultiAccountCouponResponse> claimEnterpriseMultiAccountCouponInvoker(
+        ClaimEnterpriseMultiAccountCouponRequest request) {
+        return new SyncInvoker<ClaimEnterpriseMultiAccountCouponRequest, ClaimEnterpriseMultiAccountCouponResponse>(
+            request, BssMeta.claimEnterpriseMultiAccountCoupon, hcClient);
+    }
+
+    /**
      * 开通客户企业项目权限
      *
      * 客户在自建平台开通客户企业项目权限。
@@ -1405,6 +1442,80 @@ public class BssClient {
     }
 
     /**
+     * 查询企业子账号可回收优惠券列表
+     *
+     * 企业主账号在自建平台查询企业子账号的可回收优惠券。
+     * 
+     * &gt;![](public_sys-resources/icon-note.gif) **说明：** 
+     * &gt;-   仅支持华为发放的测试类、商务类、活动类代金券。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListMultiAccountRetrieveCouponsRequest 请求对象
+     * @return ListMultiAccountRetrieveCouponsResponse
+     */
+    public ListMultiAccountRetrieveCouponsResponse listMultiAccountRetrieveCoupons(
+        ListMultiAccountRetrieveCouponsRequest request) {
+        return hcClient.syncInvokeHttp(request, BssMeta.listMultiAccountRetrieveCoupons);
+    }
+
+    /**
+     * 查询企业子账号可回收优惠券列表
+     *
+     * 企业主账号在自建平台查询企业子账号的可回收优惠券。
+     * 
+     * &gt;![](public_sys-resources/icon-note.gif) **说明：** 
+     * &gt;-   仅支持华为发放的测试类、商务类、活动类代金券。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListMultiAccountRetrieveCouponsRequest 请求对象
+     * @return SyncInvoker<ListMultiAccountRetrieveCouponsRequest, ListMultiAccountRetrieveCouponsResponse>
+     */
+    public SyncInvoker<ListMultiAccountRetrieveCouponsRequest, ListMultiAccountRetrieveCouponsResponse> listMultiAccountRetrieveCouponsInvoker(
+        ListMultiAccountRetrieveCouponsRequest request) {
+        return new SyncInvoker<ListMultiAccountRetrieveCouponsRequest, ListMultiAccountRetrieveCouponsResponse>(request,
+            BssMeta.listMultiAccountRetrieveCoupons, hcClient);
+    }
+
+    /**
+     * 查询企业主账号可拨款优惠券列表
+     *
+     * 企业主账号在自建平台查询自己的可拨款优惠券列表。
+     * 
+     * &gt;![](public_sys-resources/icon-note.gif) **说明：** 
+     * &gt;-   仅支持华为发放的测试类、商务类、活动类代金券。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListMultiAccountTransferCouponsRequest 请求对象
+     * @return ListMultiAccountTransferCouponsResponse
+     */
+    public ListMultiAccountTransferCouponsResponse listMultiAccountTransferCoupons(
+        ListMultiAccountTransferCouponsRequest request) {
+        return hcClient.syncInvokeHttp(request, BssMeta.listMultiAccountTransferCoupons);
+    }
+
+    /**
+     * 查询企业主账号可拨款优惠券列表
+     *
+     * 企业主账号在自建平台查询自己的可拨款优惠券列表。
+     * 
+     * &gt;![](public_sys-resources/icon-note.gif) **说明：** 
+     * &gt;-   仅支持华为发放的测试类、商务类、活动类代金券。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListMultiAccountTransferCouponsRequest 请求对象
+     * @return SyncInvoker<ListMultiAccountTransferCouponsRequest, ListMultiAccountTransferCouponsResponse>
+     */
+    public SyncInvoker<ListMultiAccountTransferCouponsRequest, ListMultiAccountTransferCouponsResponse> listMultiAccountTransferCouponsInvoker(
+        ListMultiAccountTransferCouponsRequest request) {
+        return new SyncInvoker<ListMultiAccountTransferCouponsRequest, ListMultiAccountTransferCouponsResponse>(request,
+            BssMeta.listMultiAccountTransferCoupons, hcClient);
+    }
+
+    /**
      * 查询按需产品价格
      *
      * 伙伴在销售平台按照条件查询按需产品的价格。
@@ -2300,6 +2411,43 @@ public class BssClient {
         ReclaimCouponQuotasRequest request) {
         return new SyncInvoker<ReclaimCouponQuotasRequest, ReclaimCouponQuotasResponse>(request,
             BssMeta.reclaimCouponQuotas, hcClient);
+    }
+
+    /**
+     * 企业主账号从企业子账号回收优惠券
+     *
+     * 企业主账号在自建平台回收给企业子账号的拨款优惠券。
+     * 
+     * &gt;![](public_sys-resources/icon-note.gif) **说明：** 
+     * &gt;-   仅支持华为发放的测试类、商务类、活动类代金券。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ReclaimEnterpriseMultiAccountCouponRequest 请求对象
+     * @return ReclaimEnterpriseMultiAccountCouponResponse
+     */
+    public ReclaimEnterpriseMultiAccountCouponResponse reclaimEnterpriseMultiAccountCoupon(
+        ReclaimEnterpriseMultiAccountCouponRequest request) {
+        return hcClient.syncInvokeHttp(request, BssMeta.reclaimEnterpriseMultiAccountCoupon);
+    }
+
+    /**
+     * 企业主账号从企业子账号回收优惠券
+     *
+     * 企业主账号在自建平台回收给企业子账号的拨款优惠券。
+     * 
+     * &gt;![](public_sys-resources/icon-note.gif) **说明：** 
+     * &gt;-   仅支持华为发放的测试类、商务类、活动类代金券。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ReclaimEnterpriseMultiAccountCouponRequest 请求对象
+     * @return SyncInvoker<ReclaimEnterpriseMultiAccountCouponRequest, ReclaimEnterpriseMultiAccountCouponResponse>
+     */
+    public SyncInvoker<ReclaimEnterpriseMultiAccountCouponRequest, ReclaimEnterpriseMultiAccountCouponResponse> reclaimEnterpriseMultiAccountCouponInvoker(
+        ReclaimEnterpriseMultiAccountCouponRequest request) {
+        return new SyncInvoker<ReclaimEnterpriseMultiAccountCouponRequest, ReclaimEnterpriseMultiAccountCouponResponse>(
+            request, BssMeta.reclaimEnterpriseMultiAccountCoupon, hcClient);
     }
 
     /**

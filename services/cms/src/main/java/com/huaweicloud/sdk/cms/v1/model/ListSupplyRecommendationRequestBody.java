@@ -39,7 +39,7 @@ public class ListSupplyRecommendationRequestBody {
     private SupplyOption option;
 
     /**
-     * 推荐的策略
+     * 推荐的策略。 CAPACITY：容量策略 COST：成本策略
      */
     public static final class StrategyEnum {
 
@@ -211,7 +211,7 @@ public class ListSupplyRecommendationRequestBody {
     }
 
     /**
-     * 接受推荐的地域列表，默认接受所有Region
+     * 接受推荐的地域列表，默认接受所有区域
      * @return locations
      */
     public List<DistinctLocation> getLocations() {
@@ -254,7 +254,7 @@ public class ListSupplyRecommendationRequestBody {
     }
 
     /**
-     * 推荐的策略
+     * 推荐的策略。 CAPACITY：容量策略 COST：成本策略
      * @return strategy
      */
     public StrategyEnum getStrategy() {

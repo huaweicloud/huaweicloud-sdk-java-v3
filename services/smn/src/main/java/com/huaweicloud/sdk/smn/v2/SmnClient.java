@@ -115,6 +115,34 @@ public class SmnClient {
     }
 
     /**
+     * 绑定云日志
+     *
+     * 为指定Topic绑定一个云日志，用于记录主题消息发送状态等信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateLogtankRequest 请求对象
+     * @return CreateLogtankResponse
+     */
+    public CreateLogtankResponse createLogtank(CreateLogtankRequest request) {
+        return hcClient.syncInvokeHttp(request, SmnMeta.createLogtank);
+    }
+
+    /**
+     * 绑定云日志
+     *
+     * 为指定Topic绑定一个云日志，用于记录主题消息发送状态等信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateLogtankRequest 请求对象
+     * @return SyncInvoker<CreateLogtankRequest, CreateLogtankResponse>
+     */
+    public SyncInvoker<CreateLogtankRequest, CreateLogtankResponse> createLogtankInvoker(CreateLogtankRequest request) {
+        return new SyncInvoker<CreateLogtankRequest, CreateLogtankResponse>(request, SmnMeta.createLogtank, hcClient);
+    }
+
+    /**
      * 创建消息模板
      *
      * 创建一个模板，用户可以按照模板去发送消息，这样可以减少请求的数据量。
@@ -204,6 +232,34 @@ public class SmnClient {
      */
     public SyncInvoker<CreateTopicRequest, CreateTopicResponse> createTopicInvoker(CreateTopicRequest request) {
         return new SyncInvoker<CreateTopicRequest, CreateTopicResponse>(request, SmnMeta.createTopic, hcClient);
+    }
+
+    /**
+     * 解绑云日志
+     *
+     * 解绑指定Topic绑定的云日志。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteLogtankRequest 请求对象
+     * @return DeleteLogtankResponse
+     */
+    public DeleteLogtankResponse deleteLogtank(DeleteLogtankRequest request) {
+        return hcClient.syncInvokeHttp(request, SmnMeta.deleteLogtank);
+    }
+
+    /**
+     * 解绑云日志
+     *
+     * 解绑指定Topic绑定的云日志。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteLogtankRequest 请求对象
+     * @return SyncInvoker<DeleteLogtankRequest, DeleteLogtankResponse>
+     */
+    public SyncInvoker<DeleteLogtankRequest, DeleteLogtankResponse> deleteLogtankInvoker(DeleteLogtankRequest request) {
+        return new SyncInvoker<DeleteLogtankRequest, DeleteLogtankResponse>(request, SmnMeta.deleteLogtank, hcClient);
     }
 
     /**
@@ -352,6 +408,34 @@ public class SmnClient {
         DeleteTopicAttributesRequest request) {
         return new SyncInvoker<DeleteTopicAttributesRequest, DeleteTopicAttributesResponse>(request,
             SmnMeta.deleteTopicAttributes, hcClient);
+    }
+
+    /**
+     * 查询云日志
+     *
+     * 查询指定Topic绑定的云日志。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListLogtankRequest 请求对象
+     * @return ListLogtankResponse
+     */
+    public ListLogtankResponse listLogtank(ListLogtankRequest request) {
+        return hcClient.syncInvokeHttp(request, SmnMeta.listLogtank);
+    }
+
+    /**
+     * 查询云日志
+     *
+     * 查询指定Topic绑定的云日志。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListLogtankRequest 请求对象
+     * @return SyncInvoker<ListLogtankRequest, ListLogtankResponse>
+     */
+    public SyncInvoker<ListLogtankRequest, ListLogtankResponse> listLogtankInvoker(ListLogtankRequest request) {
+        return new SyncInvoker<ListLogtankRequest, ListLogtankResponse>(request, SmnMeta.listLogtank, hcClient);
     }
 
     /**
@@ -757,6 +841,34 @@ public class SmnClient {
     }
 
     /**
+     * 更新云日志
+     *
+     * 更新指定Topic绑定的云日志。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateLogtankRequest 请求对象
+     * @return UpdateLogtankResponse
+     */
+    public UpdateLogtankResponse updateLogtank(UpdateLogtankRequest request) {
+        return hcClient.syncInvokeHttp(request, SmnMeta.updateLogtank);
+    }
+
+    /**
+     * 更新云日志
+     *
+     * 更新指定Topic绑定的云日志。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateLogtankRequest 请求对象
+     * @return SyncInvoker<UpdateLogtankRequest, UpdateLogtankResponse>
+     */
+    public SyncInvoker<UpdateLogtankRequest, UpdateLogtankResponse> updateLogtankInvoker(UpdateLogtankRequest request) {
+        return new SyncInvoker<UpdateLogtankRequest, UpdateLogtankResponse>(request, SmnMeta.updateLogtank, hcClient);
+    }
+
+    /**
      * 更新消息模板
      *
      * 修改消息模板的内容。
@@ -784,6 +896,36 @@ public class SmnClient {
         UpdateMessageTemplateRequest request) {
         return new SyncInvoker<UpdateMessageTemplateRequest, UpdateMessageTemplateResponse>(request,
             SmnMeta.updateMessageTemplate, hcClient);
+    }
+
+    /**
+     * 更新订阅者
+     *
+     * 更新订阅者备注。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateSubscriptionRequest 请求对象
+     * @return UpdateSubscriptionResponse
+     */
+    public UpdateSubscriptionResponse updateSubscription(UpdateSubscriptionRequest request) {
+        return hcClient.syncInvokeHttp(request, SmnMeta.updateSubscription);
+    }
+
+    /**
+     * 更新订阅者
+     *
+     * 更新订阅者备注。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateSubscriptionRequest 请求对象
+     * @return SyncInvoker<UpdateSubscriptionRequest, UpdateSubscriptionResponse>
+     */
+    public SyncInvoker<UpdateSubscriptionRequest, UpdateSubscriptionResponse> updateSubscriptionInvoker(
+        UpdateSubscriptionRequest request) {
+        return new SyncInvoker<UpdateSubscriptionRequest, UpdateSubscriptionResponse>(request,
+            SmnMeta.updateSubscription, hcClient);
     }
 
     /**

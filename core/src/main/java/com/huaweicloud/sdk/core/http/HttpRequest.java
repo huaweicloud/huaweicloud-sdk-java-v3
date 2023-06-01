@@ -24,6 +24,7 @@ package com.huaweicloud.sdk.core.http;
 import com.huaweicloud.sdk.core.Constants;
 import com.huaweicloud.sdk.core.auth.SigningAlgorithm;
 import com.huaweicloud.sdk.core.exception.SdkException;
+import com.huaweicloud.sdk.core.progress.ProgressListener;
 import com.huaweicloud.sdk.core.utils.SignUtils;
 import com.huaweicloud.sdk.core.utils.StringUtils;
 import org.slf4j.Logger;
@@ -147,6 +148,16 @@ public interface HttpRequest {
             return this;
         }
 
+        public HttpRequestBuilder withProgressListener(ProgressListener progressListener) {
+            httpRequest.progressListener = progressListener;
+            return this;
+        }
+
+        public HttpRequestBuilder withProgressInterval(long progressInterval) {
+            httpRequest.progressInterval = progressInterval;
+            return this;
+        }
+
         public HttpRequest build() {
             return httpRequest.buildPathParamsString().buildQueryParamsString().buildUrl();
         }
@@ -184,6 +195,10 @@ public interface HttpRequest {
         private Map<String, FormDataPart<?>> formData = new TreeMap<>();
 
         private SigningAlgorithm signingAlgorithm = SigningAlgorithm.getDefault();
+
+        private ProgressListener progressListener;
+
+        private long progressInterval;
 
         @Override
         public HttpRequestBuilder builder() {
@@ -277,6 +292,16 @@ public interface HttpRequest {
         }
 
         @Override
+        public ProgressListener getProgressListener() {
+            return progressListener;
+        }
+
+        @Override
+        public long getProgressInterval() {
+            return progressInterval;
+        }
+
+        @Override
         public Impl clone() throws CloneNotSupportedException {
             Impl impl = (Impl) super.clone();
             impl.method = this.method;
@@ -288,6 +313,9 @@ public interface HttpRequest {
             impl.autoFilledPathParams = new HashMap<>(this.autoFilledPathParams);
             impl.queryParams = new HashMap<>(this.queryParams);
             impl.headers = new HashMap<>(this.headers);
+            impl.signingAlgorithm = this.signingAlgorithm;
+            impl.progressListener = this.progressListener;
+            impl.progressInterval = this.progressInterval;
             return impl.buildPathParamsString().buildQueryParamsString().buildUrl();
         }
 
@@ -365,4 +393,8 @@ public interface HttpRequest {
     Map<String, FormDataPart<?>> getFormData();
 
     SigningAlgorithm getSigningAlgorithm();
+
+    ProgressListener getProgressListener();
+
+    long getProgressInterval();
 }

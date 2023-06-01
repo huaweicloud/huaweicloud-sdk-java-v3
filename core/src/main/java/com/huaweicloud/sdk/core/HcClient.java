@@ -39,13 +39,18 @@ import com.huaweicloud.sdk.core.http.HttpResponse;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.core.http.SdkFormDataBody;
 import com.huaweicloud.sdk.core.impl.DefaultHttpClient;
+import com.huaweicloud.sdk.core.progress.ProgressInputStream;
+import com.huaweicloud.sdk.core.progress.ProgressRequest;
+import com.huaweicloud.sdk.core.progress.SimpleProgressManager;
 import com.huaweicloud.sdk.core.utils.CastUtils;
 import com.huaweicloud.sdk.core.utils.ExceptionUtils;
+import com.huaweicloud.sdk.core.utils.HttpUtils;
 import com.huaweicloud.sdk.core.utils.JsonUtils;
 import com.huaweicloud.sdk.core.utils.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.BufferedInputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.OffsetDateTime;
@@ -185,7 +190,7 @@ public class HcClient implements CustomizationConfigure {
             }
             printAccessLog(httpRequest, httpResponse, exchange);
             handleException(httpRequest, httpResponse);
-            return extractResponse(httpResponse, reqDef);
+            return extractResponse(httpRequest, httpResponse, reqDef);
         } finally {
             SdkExchangeCache.removeExchange(exchangeId);
         }
@@ -233,7 +238,7 @@ public class HcClient implements CustomizationConfigure {
             return httpClient.asyncInvokeHttp(validHttpRequest).thenApplyAsync(httpResponse -> {
                 printAccessLog(finalValidHttpRequest, httpResponse, exchange);
                 handleException(finalValidHttpRequest, httpResponse);
-                return extractResponse(httpResponse, reqDef);
+                return extractResponse(finalValidHttpRequest, httpResponse, reqDef);
             }, httpConfig.getExecutorService()).whenCompleteAsync((r, e) ->
                     SdkExchangeCache.removeExchange(exchangeIdRef.get()), httpConfig.getExecutorService());
         }, httpConfig.getExecutorService());
@@ -285,9 +290,15 @@ public class HcClient implements CustomizationConfigure {
             }
         }
 
-        // upload
-        if (request instanceof SdkStreamRequest) {
-            httpRequestBuilder.withBody(((SdkStreamRequest) request).extractBody());
+        // handle upload/download progress
+        if (request instanceof ProgressRequest) {
+            ProgressRequest progressRequest = (ProgressRequest) request;
+            httpRequestBuilder.withProgressListener((progressRequest.getProgressListener()))
+                    .withProgressInterval(progressRequest.getProgressInterval() > 0 ?
+                            progressRequest.getProgressInterval() : Constants.DEFAULT_PROGRESS_INTERVAL);
+            if (request instanceof SdkStreamRequest) {
+                httpRequestBuilder.withBody(((SdkStreamRequest) request).extractBody());
+            }
         }
 
         httpRequestBuilder.addHeader(Constants.USER_AGENT, "huaweicloud-usdk-java/3.0");
@@ -311,12 +322,13 @@ public class HcClient implements CustomizationConfigure {
         } else if (reqValue instanceof SdkSerializable) {
             httpRequestBuilder.withBodyAsString(((SdkSerializable<?>) reqValue).serialize());
         } else {
-            httpRequestBuilder.withBodyAsString(JsonUtils.toJSON(reqValue));
+            String bodyString = reqValue instanceof String ? (String) reqValue : JsonUtils.toJSON(reqValue);
+            httpRequestBuilder.withBodyAsString(bodyString);
         }
     }
 
     private void buildQueryParams(HttpRequest.HttpRequestBuilder httpRequestBuilder, String fieldName,
-        Object reqValue) {
+                                  Object reqValue) {
         if (reqValue instanceof Collection) {
             httpRequestBuilder.addQueryParam(fieldName, buildCollectionQueryParams(reqValue));
         } else if (reqValue instanceof Map) {
@@ -380,52 +392,72 @@ public class HcClient implements CustomizationConfigure {
         }
     }
 
-    private <ReqT, ResT> ResT extractResponse(HttpResponse httpResponse, HttpRequestDef<ReqT, ResT> reqDef) {
-        int code = httpResponse.getStatusCode();
+    private <T> T processTextBasedType(HttpResponse httpResponse, HttpRequestDef<?, T> reqDef)
+            throws InstantiationException, IllegalAccessException {
 
-        try {
-            ResT resT;
-            String stringResult = httpResponse.getBodyAsString();
-            String respContentType = httpResponse.getContentType();
-
-            if (Objects.nonNull(respContentType)
-                    && (respContentType.startsWith(Constants.MEDIATYPE.APPLICATION_OCTET_STREAM)
-                    || respContentType.startsWith(Constants.MEDIATYPE.IMAGE)
-                    || respContentType.startsWith(Constants.MEDIATYPE.APPLICATION_BSON))) {
-                resT = reqDef.getResponseType().newInstance();
-                if (resT instanceof SdkStreamResponse) {
-                    resT = CastUtils.cast(((SdkStreamResponse) resT).parseBody(httpResponse.getBody()));
-                }
-            } else {
-                if (SdkSerializable.class.isAssignableFrom(reqDef.getResponseType())) {
-                    resT = deserializeSerializableResponse(reqDef.getResponseType(), stringResult);
-                } else if (!reqDef.hasResponseField(Constants.BODY)) {
-                    resT = JsonUtils.toObjectIgnoreUnknown(stringResult, reqDef.getResponseType());
-                    if (Objects.isNull(resT)) {
-                        resT = reqDef.getResponseType().newInstance();
-                    }
-
-                    if (reqDef.hasResponseField(String.valueOf(code))) {
-                        Field<ResT, ?> resTField = reqDef.getResponseField(String.valueOf(code));
-                        resTField.writeValueSafe(resT,
-                                JsonUtils.toObjectIgnoreUnknown(stringResult, resTField.getFieldType()),
-                                resTField.getFieldType());
-                    }
-
-                } else {
-                    resT = reqDef.getResponseType().newInstance();
-                    Field<ResT, ?> responseField = reqDef.getResponseField(Constants.BODY);
-                    Object obj = responseToObject(stringResult, responseField);
-                    responseField.writeValueSafe(resT, obj, responseField.getFieldType());
-
-                    if (reqDef.hasResponseField(String.valueOf(code))) {
-                        Field<ResT, ?> resTField = reqDef.getResponseField(String.valueOf(code));
-                        resTField.writeValueSafe(resT, obj, resTField.getFieldType());
-                    }
-                }
+        T response;
+        String stringResult = httpResponse.getBodyAsString();
+        int statusCode = httpResponse.getStatusCode();
+        if (SdkSerializable.class.isAssignableFrom(reqDef.getResponseType())) {
+            // Processes the response that implements the SdkSerializable interface
+            response = deserializeSerializableResponse(reqDef.getResponseType(), stringResult);
+        } else if (!reqDef.hasResponseField(Constants.BODY)) {
+            // process response without body
+            response = JsonUtils.toObjectIgnoreUnknown(stringResult, reqDef.getResponseType());
+            if (Objects.isNull(response)) {
+                response = reqDef.getResponseType().newInstance();
             }
 
-            ResT finalResT = resT;
+            if (reqDef.hasResponseField(String.valueOf(statusCode))) {
+                Field<T, ?> resTField = reqDef.getResponseField(String.valueOf(statusCode));
+                resTField.writeValueSafe(response,
+                        JsonUtils.toObjectIgnoreUnknown(stringResult, resTField.getFieldType()),
+                        resTField.getFieldType());
+            }
+
+        } else {
+            // process response with body[object, map, list, string...]
+            response = reqDef.getResponseType().newInstance();
+            Field<T, ?> responseField = reqDef.getResponseField(Constants.BODY);
+            Object obj = responseToObject(stringResult, responseField);
+            responseField.writeValueSafe(response, obj, responseField.getFieldType());
+
+            if (reqDef.hasResponseField(String.valueOf(statusCode))) {
+                Field<T, ?> resTField = reqDef.getResponseField(String.valueOf(statusCode));
+                resTField.writeValueSafe(response, obj, resTField.getFieldType());
+            }
+        }
+
+        return response;
+    }
+
+    private <T> T processStreamType(HttpRequest httpRequest, HttpResponse httpResponse, HttpRequestDef<?, T> reqDef)
+            throws InstantiationException, IllegalAccessException {
+
+        T response = reqDef.getResponseType().newInstance();
+        if (response instanceof SdkStreamResponse) {
+            if (Objects.nonNull(httpRequest.getProgressListener())) {
+                SimpleProgressManager progressManager = new SimpleProgressManager(
+                        httpResponse.getContentLength(), 0,
+                        httpRequest.getProgressListener(), httpRequest.getProgressInterval());
+                ((SdkStreamResponse) response).parseBody(new BufferedInputStream(
+                        new ProgressInputStream(httpResponse.getBody(), progressManager),
+                        Constants.DEFAULT_READ_BUFFER_STREAM));
+            } else {
+                response = CastUtils.cast(((SdkStreamResponse) response).parseBody(httpResponse.getBody()));
+            }
+        }
+
+        return response;
+    }
+
+    private <ReqT, ResT> ResT extractResponse(
+            HttpRequest httpRequest, HttpResponse httpResponse, HttpRequestDef<ReqT, ResT> reqDef) {
+
+        try {
+            ResT finalResT = HttpUtils.isTextBasedContentType(httpResponse.getContentType()) ?
+                    processTextBasedType(httpResponse, reqDef) : processStreamType(httpRequest, httpResponse, reqDef);
+
             reqDef.getResponseFields().forEach(resTField -> {
                 if (resTField.getLocation() == LocationType.Header) {
                     fillHeaderField(httpResponse, finalResT, resTField);

@@ -22,13 +22,39 @@
 package com.huaweicloud.sdk.core;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.huaweicloud.sdk.core.progress.ProgressListener;
+import com.huaweicloud.sdk.core.progress.ProgressRequest;
 
 import java.io.InputStream;
 
 /**
  * @author HuaweiCloud_SDK
  */
-public class SdkStreamRequest implements SdkRequest {
+public class SdkStreamRequest implements SdkRequest, ProgressRequest {
+
+    private ProgressListener progressListener;
+
+    private long progressInterval;
+
+    @Override
+    public void setProgressListener(ProgressListener progressListener) {
+        this.progressListener = progressListener;
+    }
+
+    @Override
+    public ProgressListener getProgressListener() {
+        return progressListener;
+    }
+
+    @Override
+    public void setProgressInterval(long progressInterval) {
+        this.progressInterval = progressInterval;
+    }
+
+    @Override
+    public long getProgressInterval() {
+        return progressInterval;
+    }
 
     @JsonIgnore
     private InputStream body;

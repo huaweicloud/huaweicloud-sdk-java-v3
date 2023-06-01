@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.bss.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
@@ -43,57 +44,57 @@ public class BillSumRecordInfoV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "official_amount")
 
-    private Double officialAmount;
+    private BigDecimal officialAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "official_discount_amount")
 
-    private Double officialDiscountAmount;
+    private BigDecimal officialDiscountAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "truncated_amount")
 
-    private Double truncatedAmount;
+    private BigDecimal truncatedAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "consume_amount")
 
-    private Double consumeAmount;
+    private BigDecimal consumeAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "coupon_amount")
 
-    private Double couponAmount;
+    private BigDecimal couponAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flexipurchase_coupon_amount")
 
-    private Double flexipurchaseCouponAmount;
+    private BigDecimal flexipurchaseCouponAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stored_value_card_amount")
 
-    private Double storedValueCardAmount;
+    private BigDecimal storedValueCardAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "debt_amount")
 
-    private Double debtAmount;
+    private BigDecimal debtAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "writeoff_amount")
 
-    private Double writeoffAmount;
+    private BigDecimal writeoffAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cash_amount")
 
-    private Double cashAmount;
+    private BigDecimal cashAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "credit_amount")
 
-    private Double creditAmount;
+    private BigDecimal creditAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "measure_id")
@@ -212,7 +213,7 @@ public class BillSumRecordInfoV2 {
         this.chargingMode = chargingMode;
     }
 
-    public BillSumRecordInfoV2 withOfficialAmount(Double officialAmount) {
+    public BillSumRecordInfoV2 withOfficialAmount(BigDecimal officialAmount) {
         this.officialAmount = officialAmount;
         return this;
     }
@@ -221,15 +222,15 @@ public class BillSumRecordInfoV2 {
      * 官网价。
      * @return officialAmount
      */
-    public Double getOfficialAmount() {
+    public BigDecimal getOfficialAmount() {
         return officialAmount;
     }
 
-    public void setOfficialAmount(Double officialAmount) {
+    public void setOfficialAmount(BigDecimal officialAmount) {
         this.officialAmount = officialAmount;
     }
 
-    public BillSumRecordInfoV2 withOfficialDiscountAmount(Double officialDiscountAmount) {
+    public BillSumRecordInfoV2 withOfficialDiscountAmount(BigDecimal officialDiscountAmount) {
         this.officialDiscountAmount = officialDiscountAmount;
         return this;
     }
@@ -238,15 +239,15 @@ public class BillSumRecordInfoV2 {
      * 折扣金额。
      * @return officialDiscountAmount
      */
-    public Double getOfficialDiscountAmount() {
+    public BigDecimal getOfficialDiscountAmount() {
         return officialDiscountAmount;
     }
 
-    public void setOfficialDiscountAmount(Double officialDiscountAmount) {
+    public void setOfficialDiscountAmount(BigDecimal officialDiscountAmount) {
         this.officialDiscountAmount = officialDiscountAmount;
     }
 
-    public BillSumRecordInfoV2 withTruncatedAmount(Double truncatedAmount) {
+    public BillSumRecordInfoV2 withTruncatedAmount(BigDecimal truncatedAmount) {
         this.truncatedAmount = truncatedAmount;
         return this;
     }
@@ -255,15 +256,15 @@ public class BillSumRecordInfoV2 {
      * 抹零金额。
      * @return truncatedAmount
      */
-    public Double getTruncatedAmount() {
+    public BigDecimal getTruncatedAmount() {
         return truncatedAmount;
     }
 
-    public void setTruncatedAmount(Double truncatedAmount) {
+    public void setTruncatedAmount(BigDecimal truncatedAmount) {
         this.truncatedAmount = truncatedAmount;
     }
 
-    public BillSumRecordInfoV2 withConsumeAmount(Double consumeAmount) {
+    public BillSumRecordInfoV2 withConsumeAmount(BigDecimal consumeAmount) {
         this.consumeAmount = consumeAmount;
         return this;
     }
@@ -272,15 +273,15 @@ public class BillSumRecordInfoV2 {
      * 应付金额。 应付金额=官网价-折扣金额-抹零金额
      * @return consumeAmount
      */
-    public Double getConsumeAmount() {
+    public BigDecimal getConsumeAmount() {
         return consumeAmount;
     }
 
-    public void setConsumeAmount(Double consumeAmount) {
+    public void setConsumeAmount(BigDecimal consumeAmount) {
         this.consumeAmount = consumeAmount;
     }
 
-    public BillSumRecordInfoV2 withCouponAmount(Double couponAmount) {
+    public BillSumRecordInfoV2 withCouponAmount(BigDecimal couponAmount) {
         this.couponAmount = couponAmount;
         return this;
     }
@@ -289,15 +290,15 @@ public class BillSumRecordInfoV2 {
      * 代金券金额。
      * @return couponAmount
      */
-    public Double getCouponAmount() {
+    public BigDecimal getCouponAmount() {
         return couponAmount;
     }
 
-    public void setCouponAmount(Double couponAmount) {
+    public void setCouponAmount(BigDecimal couponAmount) {
         this.couponAmount = couponAmount;
     }
 
-    public BillSumRecordInfoV2 withFlexipurchaseCouponAmount(Double flexipurchaseCouponAmount) {
+    public BillSumRecordInfoV2 withFlexipurchaseCouponAmount(BigDecimal flexipurchaseCouponAmount) {
         this.flexipurchaseCouponAmount = flexipurchaseCouponAmount;
         return this;
     }
@@ -306,15 +307,15 @@ public class BillSumRecordInfoV2 {
      * 现金券金额，预留。
      * @return flexipurchaseCouponAmount
      */
-    public Double getFlexipurchaseCouponAmount() {
+    public BigDecimal getFlexipurchaseCouponAmount() {
         return flexipurchaseCouponAmount;
     }
 
-    public void setFlexipurchaseCouponAmount(Double flexipurchaseCouponAmount) {
+    public void setFlexipurchaseCouponAmount(BigDecimal flexipurchaseCouponAmount) {
         this.flexipurchaseCouponAmount = flexipurchaseCouponAmount;
     }
 
-    public BillSumRecordInfoV2 withStoredValueCardAmount(Double storedValueCardAmount) {
+    public BillSumRecordInfoV2 withStoredValueCardAmount(BigDecimal storedValueCardAmount) {
         this.storedValueCardAmount = storedValueCardAmount;
         return this;
     }
@@ -323,15 +324,15 @@ public class BillSumRecordInfoV2 {
      * 储值卡金额，预留。
      * @return storedValueCardAmount
      */
-    public Double getStoredValueCardAmount() {
+    public BigDecimal getStoredValueCardAmount() {
         return storedValueCardAmount;
     }
 
-    public void setStoredValueCardAmount(Double storedValueCardAmount) {
+    public void setStoredValueCardAmount(BigDecimal storedValueCardAmount) {
         this.storedValueCardAmount = storedValueCardAmount;
     }
 
-    public BillSumRecordInfoV2 withDebtAmount(Double debtAmount) {
+    public BillSumRecordInfoV2 withDebtAmount(BigDecimal debtAmount) {
         this.debtAmount = debtAmount;
         return this;
     }
@@ -340,15 +341,15 @@ public class BillSumRecordInfoV2 {
      * 欠费金额。即伙伴从客户账户扣费时，客户账户金额不足，欠费的金额。
      * @return debtAmount
      */
-    public Double getDebtAmount() {
+    public BigDecimal getDebtAmount() {
         return debtAmount;
     }
 
-    public void setDebtAmount(Double debtAmount) {
+    public void setDebtAmount(BigDecimal debtAmount) {
         this.debtAmount = debtAmount;
     }
 
-    public BillSumRecordInfoV2 withWriteoffAmount(Double writeoffAmount) {
+    public BillSumRecordInfoV2 withWriteoffAmount(BigDecimal writeoffAmount) {
         this.writeoffAmount = writeoffAmount;
         return this;
     }
@@ -357,15 +358,15 @@ public class BillSumRecordInfoV2 {
      * 欠费核销金额。
      * @return writeoffAmount
      */
-    public Double getWriteoffAmount() {
+    public BigDecimal getWriteoffAmount() {
         return writeoffAmount;
     }
 
-    public void setWriteoffAmount(Double writeoffAmount) {
+    public void setWriteoffAmount(BigDecimal writeoffAmount) {
         this.writeoffAmount = writeoffAmount;
     }
 
-    public BillSumRecordInfoV2 withCashAmount(Double cashAmount) {
+    public BillSumRecordInfoV2 withCashAmount(BigDecimal cashAmount) {
         this.cashAmount = cashAmount;
         return this;
     }
@@ -374,15 +375,15 @@ public class BillSumRecordInfoV2 {
      * 现金账户金额。
      * @return cashAmount
      */
-    public Double getCashAmount() {
+    public BigDecimal getCashAmount() {
         return cashAmount;
     }
 
-    public void setCashAmount(Double cashAmount) {
+    public void setCashAmount(BigDecimal cashAmount) {
         this.cashAmount = cashAmount;
     }
 
-    public BillSumRecordInfoV2 withCreditAmount(Double creditAmount) {
+    public BillSumRecordInfoV2 withCreditAmount(BigDecimal creditAmount) {
         this.creditAmount = creditAmount;
         return this;
     }
@@ -391,11 +392,11 @@ public class BillSumRecordInfoV2 {
      * 信用账户金额。
      * @return creditAmount
      */
-    public Double getCreditAmount() {
+    public BigDecimal getCreditAmount() {
         return creditAmount;
     }
 
-    public void setCreditAmount(Double creditAmount) {
+    public void setCreditAmount(BigDecimal creditAmount) {
         this.creditAmount = creditAmount;
     }
 

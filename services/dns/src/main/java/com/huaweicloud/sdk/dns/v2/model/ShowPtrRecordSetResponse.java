@@ -52,6 +52,11 @@ public class ShowPtrRecordSetResponse extends SdkResponse {
 
     private PageLink links;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
     public ShowPtrRecordSetResponse withId(String id) {
         this.id = id;
         return this;
@@ -197,6 +202,23 @@ public class ShowPtrRecordSetResponse extends SdkResponse {
         this.links = links;
     }
 
+    public ShowPtrRecordSetResponse withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 反向解析关联的企业项目ID，长度不超过36个字符。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -213,12 +235,13 @@ public class ShowPtrRecordSetResponse extends SdkResponse {
             && Objects.equals(this.address, showPtrRecordSetResponse.address)
             && Objects.equals(this.status, showPtrRecordSetResponse.status)
             && Objects.equals(this.action, showPtrRecordSetResponse.action)
-            && Objects.equals(this.links, showPtrRecordSetResponse.links);
+            && Objects.equals(this.links, showPtrRecordSetResponse.links)
+            && Objects.equals(this.enterpriseProjectId, showPtrRecordSetResponse.enterpriseProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, ptrdname, description, ttl, address, status, action, links);
+        return Objects.hash(id, ptrdname, description, ttl, address, status, action, links, enterpriseProjectId);
     }
 
     @Override
@@ -233,6 +256,7 @@ public class ShowPtrRecordSetResponse extends SdkResponse {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    action: ").append(toIndentedString(action)).append("\n");
         sb.append("    links: ").append(toIndentedString(links)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

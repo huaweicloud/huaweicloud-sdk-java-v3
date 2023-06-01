@@ -79,6 +79,37 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 批量删除手动备份
+     *
+     * 批量删除手动备份。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteManualBackupRequest 请求对象
+     * @return CompletableFuture<BatchDeleteManualBackupResponse>
+     */
+    public CompletableFuture<BatchDeleteManualBackupResponse> batchDeleteManualBackupAsync(
+        BatchDeleteManualBackupRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.batchDeleteManualBackup);
+    }
+
+    /**
+     * 批量删除手动备份
+     *
+     * 批量删除手动备份。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteManualBackupRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteManualBackupRequest, BatchDeleteManualBackupResponse>
+     */
+    public AsyncInvoker<BatchDeleteManualBackupRequest, BatchDeleteManualBackupResponse> batchDeleteManualBackupAsyncInvoker(
+        BatchDeleteManualBackupRequest request) {
+        return new AsyncInvoker<BatchDeleteManualBackupRequest, BatchDeleteManualBackupResponse>(request,
+            RdsMeta.batchDeleteManualBackup, hcClient);
+    }
+
+    /**
      * 批量添加标签
      *
      * 批量添加标签。
@@ -470,6 +501,32 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 删除即时任务
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteJobRequest 请求对象
+     * @return CompletableFuture<DeleteJobResponse>
+     */
+    public CompletableFuture<DeleteJobResponse> deleteJobAsync(DeleteJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.deleteJob);
+    }
+
+    /**
+     * 删除即时任务
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteJobRequest 请求对象
+     * @return AsyncInvoker<DeleteJobRequest, DeleteJobResponse>
+     */
+    public AsyncInvoker<DeleteJobRequest, DeleteJobResponse> deleteJobAsyncInvoker(DeleteJobRequest request) {
+        return new AsyncInvoker<DeleteJobRequest, DeleteJobResponse>(request, RdsMeta.deleteJob, hcClient);
+    }
+
+    /**
      * 删除手动备份
      *
      * 删除手动备份。
@@ -733,6 +790,36 @@ public class RdsAsyncClient {
     public AsyncInvoker<ListDrRelationsRequest, ListDrRelationsResponse> listDrRelationsAsyncInvoker(
         ListDrRelationsRequest request) {
         return new AsyncInvoker<ListDrRelationsRequest, ListDrRelationsResponse>(request, RdsMeta.listDrRelations,
+            hcClient);
+    }
+
+    /**
+     * 查询实例可变更规格
+     *
+     * 查询实例可变更规格
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListEngineFlavorsRequest 请求对象
+     * @return CompletableFuture<ListEngineFlavorsResponse>
+     */
+    public CompletableFuture<ListEngineFlavorsResponse> listEngineFlavorsAsync(ListEngineFlavorsRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listEngineFlavors);
+    }
+
+    /**
+     * 查询实例可变更规格
+     *
+     * 查询实例可变更规格
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListEngineFlavorsRequest 请求对象
+     * @return AsyncInvoker<ListEngineFlavorsRequest, ListEngineFlavorsResponse>
+     */
+    public AsyncInvoker<ListEngineFlavorsRequest, ListEngineFlavorsResponse> listEngineFlavorsAsyncInvoker(
+        ListEngineFlavorsRequest request) {
+        return new AsyncInvoker<ListEngineFlavorsRequest, ListEngineFlavorsResponse>(request, RdsMeta.listEngineFlavors,
             hcClient);
     }
 

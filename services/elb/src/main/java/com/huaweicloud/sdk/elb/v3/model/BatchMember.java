@@ -174,7 +174,7 @@ public class BatchMember {
     }
 
     /**
-     * 后端服务器业务端口号。
+     * 后端服务器业务端口。 >在开启端口透传的pool下创建member传该字段不生效，可不传该字段。
      * minimum: 1
      * maximum: 65535
      * @return protocolPort

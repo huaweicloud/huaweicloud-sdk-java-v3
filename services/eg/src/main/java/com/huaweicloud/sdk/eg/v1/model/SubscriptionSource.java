@@ -40,12 +40,18 @@ public class SubscriptionSource {
          */
         public static final ProviderTypeEnum OFFICIAL = new ProviderTypeEnum("OFFICIAL");
 
+        /**
+         * Enum PARTNER for value: "PARTNER"
+         */
+        public static final ProviderTypeEnum PARTNER = new ProviderTypeEnum("PARTNER");
+
         private static final Map<String, ProviderTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ProviderTypeEnum> createStaticFields() {
             Map<String, ProviderTypeEnum> map = new HashMap<>();
             map.put("CUSTOM", CUSTOM);
             map.put("OFFICIAL", OFFICIAL);
+            map.put("PARTNER", PARTNER);
             return Collections.unmodifiableMap(map);
         }
 

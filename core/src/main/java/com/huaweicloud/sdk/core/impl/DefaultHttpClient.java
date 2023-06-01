@@ -24,12 +24,17 @@ package com.huaweicloud.sdk.core.impl;
 import com.huaweicloud.sdk.core.Constants;
 import com.huaweicloud.sdk.core.exception.ConnectionException;
 import com.huaweicloud.sdk.core.exception.HostUnreachableException;
+import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.exception.SslHandShakeException;
 import com.huaweicloud.sdk.core.http.FormDataFilePart;
 import com.huaweicloud.sdk.core.http.HttpClient;
 import com.huaweicloud.sdk.core.http.HttpConfig;
 import com.huaweicloud.sdk.core.http.HttpRequest;
 import com.huaweicloud.sdk.core.http.HttpResponse;
+import com.huaweicloud.sdk.core.progress.ProgressInputStream;
+import com.huaweicloud.sdk.core.progress.ProgressManager;
+import com.huaweicloud.sdk.core.progress.RepeatableRequestEntity;
+import com.huaweicloud.sdk.core.progress.SimpleProgressManager;
 import com.huaweicloud.sdk.core.ssl.IgnoreSSLVerificationFactory;
 import com.huaweicloud.sdk.core.utils.ExceptionUtils;
 import com.huaweicloud.sdk.core.utils.StringUtils;
@@ -49,8 +54,12 @@ import okhttp3.internal.http.HttpMethod;
 import okio.BufferedSink;
 import okio.Okio;
 import okio.Source;
+import org.jetbrains.annotations.NotNull;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.net.ssl.SSLHandshakeException;
+import java.io.Closeable;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.Proxy;
@@ -58,6 +67,7 @@ import java.net.SocketTimeoutException;
 import java.net.UnknownHostException;
 import java.util.Collections;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
 
@@ -65,6 +75,8 @@ import java.util.concurrent.TimeUnit;
  * @author HuaweiCloud_SDK
  */
 public class DefaultHttpClient implements HttpClient {
+
+    private static final Logger logger = LoggerFactory.getLogger(DefaultHttpClient.class);
 
     private static final String OKHTTP_PREEMPTIVE = "OkHttp-Preemptive";
 
@@ -90,7 +102,7 @@ public class DefaultHttpClient implements HttpClient {
 
     public DefaultHttpClient withHttpConfig(HttpConfig httpConfig) {
         this.httpConfig = httpConfig;
-        OkHttpClient.Builder clientBuilder = new OkHttpClient.Builder();
+        OkHttpClient.Builder clientBuilder = new OkHttpClient.Builder().followRedirects(httpConfig.isAllowRedirects());
         clientBuilder.connectionPool(httpConfig.getConnectionPool());
         if (Objects.nonNull(httpConfig.getDispatcher())) {
             clientBuilder.dispatcher(httpConfig.getDispatcher());
@@ -135,18 +147,17 @@ public class DefaultHttpClient implements HttpClient {
     }
 
     private Request buildOkHttpRequest(HttpRequest httpRequest) {
-
         Request.Builder requestBuilder = new Request.Builder();
-        HttpUrl.Builder urlBuilder = HttpUrl.parse(httpRequest.getEndpoint() + httpRequest.getPathParamsString())
-                .newBuilder();
+        String url = httpRequest.getEndpoint() + httpRequest.getPathParamsString();
+        HttpUrl httpUrl = Optional.ofNullable(HttpUrl.parse(url))
+                .orElseThrow(() -> new SdkException("failed to parse url from " + url));
+        HttpUrl.Builder urlBuilder = httpUrl.newBuilder();
 
         httpRequest.getQueryParams().forEach((key, values) -> {
             if (values.size() == 0) {
                 urlBuilder.addQueryParameter(key, null);
             } else {
-                values.forEach(value -> {
-                    urlBuilder.addQueryParameter(key, value);
-                });
+                values.forEach(value -> urlBuilder.addQueryParameter(key, value));
             }
         });
 
@@ -166,7 +177,10 @@ public class DefaultHttpClient implements HttpClient {
 
     private Request buildOkHttpRequestWithFormData(HttpRequest httpRequest, Request.Builder requestBuilder) {
         MultipartBody.Builder bodyBuilder = new MultipartBody.Builder();
-        bodyBuilder.setType(MediaType.parse(httpRequest.getContentType()));
+        MediaType mediaType = Optional.ofNullable(MediaType.parse(httpRequest.getContentType())).orElseThrow(
+                () -> new SdkException("failed to parse request Content-Type from " + httpRequest.getContentType()));
+
+        bodyBuilder.setType(mediaType);
         httpRequest.getFormData().forEach((name, part) -> {
             if (part instanceof FormDataFilePart) {
                 FormDataFilePart filePart = (FormDataFilePart) part;
@@ -180,7 +194,7 @@ public class DefaultHttpClient implements HttpClient {
                     }
 
                     @Override
-                    public void writeTo(BufferedSink bufferedSink) throws IOException {
+                    public void writeTo(@NotNull BufferedSink bufferedSink) throws IOException {
                         try (Source source = Okio.source(filePart.getInputStream())) {
                             bufferedSink.writeAll(source);
                         }
@@ -204,7 +218,7 @@ public class DefaultHttpClient implements HttpClient {
             }
 
             @Override
-            public void writeTo(BufferedSink bufferedSink) throws IOException {
+            public void writeTo(@NotNull BufferedSink bufferedSink) throws IOException {
                 bufferedSink.writeUtf8(httpRequest.getBodyAsString());
             }
         });
@@ -214,38 +228,71 @@ public class DefaultHttpClient implements HttpClient {
     private Request buildOkHttpRequestWithoutTextBody(HttpRequest httpRequest, Request.Builder requestBuilder) {
         if (Objects.isNull(httpRequest.getBody())) {
             if (HttpMethod.requiresRequestBody(httpRequest.getMethod().toString())) {
-                requestBuilder.method(httpRequest.getMethod().toString(), RequestBody.create(new byte[0], null));
+                requestBuilder.method(
+                        httpRequest.getMethod().toString(), createRequestBody(new byte[0], null));
             } else {
                 requestBuilder.method(httpRequest.getMethod().toString(), null);
             }
         } else {
-            requestBuilder.method(httpRequest.getMethod().toString(), new RequestBody() {
+            buildStreamRequestBody(httpRequest, requestBuilder);
+        }
+        return requestBuilder.build();
+    }
 
+    private RequestBody createRequestBody(byte[] content, MediaType contentType) {
+        try {
+            return RequestBody.create(content, contentType);
+        } catch (NoSuchMethodError e) {
+            return RequestBody.create(contentType, content);
+        }
+    }
+
+    private void buildStreamRequestBody(HttpRequest httpRequest, Request.Builder requestBuilder) {
+        RequestBody requestBody;
+        if (Objects.isNull(httpRequest.getProgressListener())) {
+            requestBody = new RequestBody() {
                 @Override
                 public MediaType contentType() {
                     return MediaType.parse(httpRequest.getContentType());
                 }
 
                 @Override
-                public void writeTo(BufferedSink bufferedSink) throws IOException {
+                public void writeTo(@NotNull BufferedSink bufferedSink) throws IOException {
                     try (Source source = Okio.source(httpRequest.getBody())) {
                         bufferedSink.writeAll(source);
                     }
                 }
-            });
+            };
+
+        } else {
+            long contentLength;
+            try {
+                contentLength = httpRequest.haveHeader(Constants.CONTENT_LENGTH)
+                        ? Long.parseLong(httpRequest.getHeader(Constants.CONTENT_LENGTH))
+                        : httpRequest.getBody().available();
+            } catch (IOException | NumberFormatException ignore) {
+                contentLength = -1L;
+            }
+
+            ProgressManager progressManager = new SimpleProgressManager(contentLength, 0,
+                    httpRequest.getProgressListener(), httpRequest.getProgressInterval());
+            ProgressInputStream inputStream = new ProgressInputStream(httpRequest.getBody(), progressManager);
+            requestBody = new RepeatableRequestEntity(
+                    inputStream, httpRequest.getHeader(Constants.CONTENT_TYPE), contentLength);
         }
-        return requestBuilder.build();
+
+        requestBuilder.method(httpRequest.getMethod().toString(), requestBody);
     }
 
     public Callback toCallback(CompletableFuture<Response> future) {
         return new Callback() {
             @Override
-            public void onFailure(Call call, IOException e) {
+            public void onFailure(@NotNull Call call, @NotNull IOException e) {
                 future.completeExceptionally(e);
             }
 
             @Override
-            public void onResponse(Call call, Response response) {
+            public void onResponse(@NotNull Call call, @NotNull Response response) {
                 future.complete(response);
             }
         };
@@ -257,14 +304,22 @@ public class DefaultHttpClient implements HttpClient {
         CompletableFuture<Response> asyncHttpResponse = new CompletableFuture<>();
         client.newCall(request).enqueue(toCallback(asyncHttpResponse));
         return asyncHttpResponse.handleAsync((response, throwable) -> {
+            if (Objects.nonNull(request.body()) && request.body() instanceof Closeable) {
+                closeStream((Closeable) request.body());
+            }
+
             if (throwable != null) {
                 if (throwable instanceof SSLHandshakeException) {
+                    logger.error("DefaultHttpClient SslHandShakeException", throwable);
                     throw new SslHandShakeException("DefaultHttpClient SslHandShakeException", throwable);
                 } else if (throwable instanceof UnknownHostException) {
+                    logger.error("DefaultHttpClient HostUnreachableException", throwable);
                     throw new HostUnreachableException("DefaultHttpClient HostUnreachableException", throwable);
                 } else if (throwable instanceof SocketTimeoutException) {
+                    logger.error("DefaultHttpClient RequestTimeoutException", throwable);
                     ExceptionUtils.mapSocketTimeoutException("DefaultHttpClient RequestTimeoutException", throwable);
                 } else {
+                    logger.error("DefaultHttpClient ConnectionException", throwable);
                     throw new ConnectionException("DefaultHttpClient ConnectionException", throwable);
                 }
             }
@@ -279,15 +334,30 @@ public class DefaultHttpClient implements HttpClient {
         try {
             response = client.newCall(request).execute();
         } catch (SSLHandshakeException e) {
+            logger.error("DefaultHttpClient SslHandShakeException", e);
             throw new SslHandShakeException("DefaultHttpClient SslHandShakeException", e);
         } catch (UnknownHostException e) {
+            logger.error("DefaultHttpClient HostUnreachableException", e);
             throw new HostUnreachableException("DefaultHttpClient HostUnreachableException", e);
         } catch (SocketTimeoutException e) {
+            logger.error("DefaultHttpClient RequestTimeout", e);
             ExceptionUtils.mapSocketTimeoutException("DefaultHttpClient RequestTimeout", e);
         } catch (IOException e) {
+            logger.error("DefaultHttpClient ConnectionException", e);
             throw new ConnectionException("DefaultHttpClient ConnectionException", e);
+        } finally {
+            if (Objects.nonNull(request.body()) && request.body() instanceof Closeable) {
+                closeStream((Closeable) request.body());
+            }
         }
         return DefaultHttpResponse.wrap(response);
     }
 
+    private void closeStream(Closeable closeable) {
+        try {
+            closeable.close();
+        } catch (IOException e) {
+            logger.warn("close failed.", e);
+        }
+    }
 }

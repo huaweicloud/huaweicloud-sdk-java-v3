@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 包周期选项，charge_mode为prepaid时填写。
+ * 包周期选项，pay_type&#x3D;prepaid或charge_mode为prepaid时填写。
  */
 public class PrepaidChangeChargeModeOption {
 

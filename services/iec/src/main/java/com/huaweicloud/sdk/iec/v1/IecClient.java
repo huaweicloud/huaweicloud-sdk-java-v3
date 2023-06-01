@@ -240,6 +240,34 @@ public class IecClient {
     }
 
     /**
+     * 从边缘实例创建边缘私有镜像
+     *
+     * 使用指定边缘实例的系统盘创建边缘私有镜像。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateImageRequest 请求对象
+     * @return CreateImageResponse
+     */
+    public CreateImageResponse createImage(CreateImageRequest request) {
+        return hcClient.syncInvokeHttp(request, IecMeta.createImage);
+    }
+
+    /**
+     * 从边缘实例创建边缘私有镜像
+     *
+     * 使用指定边缘实例的系统盘创建边缘私有镜像。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateImageRequest 请求对象
+     * @return SyncInvoker<CreateImageRequest, CreateImageResponse>
+     */
+    public SyncInvoker<CreateImageRequest, CreateImageResponse> createImageInvoker(CreateImageRequest request) {
+        return new SyncInvoker<CreateImageRequest, CreateImageResponse>(request, IecMeta.createImage, hcClient);
+    }
+
+    /**
      * 创建和导入密钥
      *
      * 创建SSH密钥，或把公钥导入系统，生成密钥对。
@@ -446,6 +474,36 @@ public class IecClient {
     }
 
     /**
+     * 删除带宽
+     *
+     * 删除带宽。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteBandwidthRequest 请求对象
+     * @return DeleteBandwidthResponse
+     */
+    public DeleteBandwidthResponse deleteBandwidth(DeleteBandwidthRequest request) {
+        return hcClient.syncInvokeHttp(request, IecMeta.deleteBandwidth);
+    }
+
+    /**
+     * 删除带宽
+     *
+     * 删除带宽。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteBandwidthRequest 请求对象
+     * @return SyncInvoker<DeleteBandwidthRequest, DeleteBandwidthResponse>
+     */
+    public SyncInvoker<DeleteBandwidthRequest, DeleteBandwidthResponse> deleteBandwidthInvoker(
+        DeleteBandwidthRequest request) {
+        return new SyncInvoker<DeleteBandwidthRequest, DeleteBandwidthResponse>(request, IecMeta.deleteBandwidth,
+            hcClient);
+    }
+
+    /**
      * 删除部署计划
      *
      * 删除部署计划。
@@ -503,6 +561,34 @@ public class IecClient {
         DeleteEdgeCloudRequest request) {
         return new SyncInvoker<DeleteEdgeCloudRequest, DeleteEdgeCloudResponse>(request, IecMeta.deleteEdgeCloud,
             hcClient);
+    }
+
+    /**
+     * 删除边缘私有镜像
+     *
+     * 将指定ID的边缘私有镜像删除
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteImageRequest 请求对象
+     * @return DeleteImageResponse
+     */
+    public DeleteImageResponse deleteImage(DeleteImageRequest request) {
+        return hcClient.syncInvokeHttp(request, IecMeta.deleteImage);
+    }
+
+    /**
+     * 删除边缘私有镜像
+     *
+     * 将指定ID的边缘私有镜像删除
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteImageRequest 请求对象
+     * @return SyncInvoker<DeleteImageRequest, DeleteImageResponse>
+     */
+    public SyncInvoker<DeleteImageRequest, DeleteImageResponse> deleteImageInvoker(DeleteImageRequest request) {
+        return new SyncInvoker<DeleteImageRequest, DeleteImageResponse>(request, IecMeta.deleteImage, hcClient);
     }
 
     /**
@@ -910,6 +996,36 @@ public class IecClient {
     public SyncInvoker<ListBandwidthsRequest, ListBandwidthsResponse> listBandwidthsInvoker(
         ListBandwidthsRequest request) {
         return new SyncInvoker<ListBandwidthsRequest, ListBandwidthsResponse>(request, IecMeta.listBandwidths,
+            hcClient);
+    }
+
+    /**
+     * 查询中心镜像列表
+     *
+     * 查询租户在某个云Region的可见镜像列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCloudImagesRequest 请求对象
+     * @return ListCloudImagesResponse
+     */
+    public ListCloudImagesResponse listCloudImages(ListCloudImagesRequest request) {
+        return hcClient.syncInvokeHttp(request, IecMeta.listCloudImages);
+    }
+
+    /**
+     * 查询中心镜像列表
+     *
+     * 查询租户在某个云Region的可见镜像列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCloudImagesRequest 请求对象
+     * @return SyncInvoker<ListCloudImagesRequest, ListCloudImagesResponse>
+     */
+    public SyncInvoker<ListCloudImagesRequest, ListCloudImagesResponse> listCloudImagesInvoker(
+        ListCloudImagesRequest request) {
+        return new SyncInvoker<ListCloudImagesRequest, ListCloudImagesResponse>(request, IecMeta.listCloudImages,
             hcClient);
     }
 
@@ -1384,6 +1500,64 @@ public class IecClient {
     }
 
     /**
+     * 重试边缘镜像任务
+     *
+     * 重试边缘镜像任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RebuildImageRequest 请求对象
+     * @return RebuildImageResponse
+     */
+    public RebuildImageResponse rebuildImage(RebuildImageRequest request) {
+        return hcClient.syncInvokeHttp(request, IecMeta.rebuildImage);
+    }
+
+    /**
+     * 重试边缘镜像任务
+     *
+     * 重试边缘镜像任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RebuildImageRequest 请求对象
+     * @return SyncInvoker<RebuildImageRequest, RebuildImageResponse>
+     */
+    public SyncInvoker<RebuildImageRequest, RebuildImageResponse> rebuildImageInvoker(RebuildImageRequest request) {
+        return new SyncInvoker<RebuildImageRequest, RebuildImageResponse>(request, IecMeta.rebuildImage, hcClient);
+    }
+
+    /**
+     * 注册边缘私有镜像
+     *
+     * 将指定Region和ID的IMS镜像注册到边缘IEC-IMS; 
+     * 注意指定的Region必须在当前IEC-IMS支持的Region列表中。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RegisterImageRequest 请求对象
+     * @return RegisterImageResponse
+     */
+    public RegisterImageResponse registerImage(RegisterImageRequest request) {
+        return hcClient.syncInvokeHttp(request, IecMeta.registerImage);
+    }
+
+    /**
+     * 注册边缘私有镜像
+     *
+     * 将指定Region和ID的IMS镜像注册到边缘IEC-IMS; 
+     * 注意指定的Region必须在当前IEC-IMS支持的Region列表中。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RegisterImageRequest 请求对象
+     * @return SyncInvoker<RegisterImageRequest, RegisterImageResponse>
+     */
+    public SyncInvoker<RegisterImageRequest, RegisterImageResponse> registerImageInvoker(RegisterImageRequest request) {
+        return new SyncInvoker<RegisterImageRequest, RegisterImageResponse>(request, IecMeta.registerImage, hcClient);
+    }
+
+    /**
      * 查询带宽详情
      *
      * 查询带宽详情。
@@ -1698,6 +1872,36 @@ public class IecClient {
     }
 
     /**
+     * 查询硬盘类型列表
+     *
+     * 查询硬盘类型列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowVolumeTypesRequest 请求对象
+     * @return ShowVolumeTypesResponse
+     */
+    public ShowVolumeTypesResponse showVolumeTypes(ShowVolumeTypesRequest request) {
+        return hcClient.syncInvokeHttp(request, IecMeta.showVolumeTypes);
+    }
+
+    /**
+     * 查询硬盘类型列表
+     *
+     * 查询硬盘类型列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowVolumeTypesRequest 请求对象
+     * @return SyncInvoker<ShowVolumeTypesRequest, ShowVolumeTypesResponse>
+     */
+    public SyncInvoker<ShowVolumeTypesRequest, ShowVolumeTypesResponse> showVolumeTypesInvoker(
+        ShowVolumeTypesRequest request) {
+        return new SyncInvoker<ShowVolumeTypesRequest, ShowVolumeTypesResponse>(request, IecMeta.showVolumeTypes,
+            hcClient);
+    }
+
+    /**
      * 查询虚拟私有云详情
      *
      * 根据虚拟私有云ID，获取虚拟私有云的详情。
@@ -1723,6 +1927,36 @@ public class IecClient {
      */
     public SyncInvoker<ShowVpcRequest, ShowVpcResponse> showVpcInvoker(ShowVpcRequest request) {
         return new SyncInvoker<ShowVpcRequest, ShowVpcResponse>(request, IecMeta.showVpc, hcClient);
+    }
+
+    /**
+     * 更新带宽
+     *
+     * 更新带宽。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateBandwidthRequest 请求对象
+     * @return UpdateBandwidthResponse
+     */
+    public UpdateBandwidthResponse updateBandwidth(UpdateBandwidthRequest request) {
+        return hcClient.syncInvokeHttp(request, IecMeta.updateBandwidth);
+    }
+
+    /**
+     * 更新带宽
+     *
+     * 更新带宽。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateBandwidthRequest 请求对象
+     * @return SyncInvoker<UpdateBandwidthRequest, UpdateBandwidthResponse>
+     */
+    public SyncInvoker<UpdateBandwidthRequest, UpdateBandwidthResponse> updateBandwidthInvoker(
+        UpdateBandwidthRequest request) {
+        return new SyncInvoker<UpdateBandwidthRequest, UpdateBandwidthResponse>(request, IecMeta.updateBandwidth,
+            hcClient);
     }
 
     /**

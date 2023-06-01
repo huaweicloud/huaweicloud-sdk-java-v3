@@ -141,6 +141,16 @@ public class ShowDetailOfConnectionResponse extends SdkResponse {
     private ConnectionInfoFlavor flavor;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private ConnectionType type;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "kafka_detail")
+
+    private KafkaConnectionDetail kafkaDetail;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_time")
 
     private String createdTime;
@@ -295,6 +305,49 @@ public class ShowDetailOfConnectionResponse extends SdkResponse {
         this.flavor = flavor;
     }
 
+    public ShowDetailOfConnectionResponse withType(ConnectionType type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * Get type
+     * @return type
+     */
+    public ConnectionType getType() {
+        return type;
+    }
+
+    public void setType(ConnectionType type) {
+        this.type = type;
+    }
+
+    public ShowDetailOfConnectionResponse withKafkaDetail(KafkaConnectionDetail kafkaDetail) {
+        this.kafkaDetail = kafkaDetail;
+        return this;
+    }
+
+    public ShowDetailOfConnectionResponse withKafkaDetail(Consumer<KafkaConnectionDetail> kafkaDetailSetter) {
+        if (this.kafkaDetail == null) {
+            this.kafkaDetail = new KafkaConnectionDetail();
+            kafkaDetailSetter.accept(this.kafkaDetail);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get kafkaDetail
+     * @return kafkaDetail
+     */
+    public KafkaConnectionDetail getKafkaDetail() {
+        return kafkaDetail;
+    }
+
+    public void setKafkaDetail(KafkaConnectionDetail kafkaDetail) {
+        this.kafkaDetail = kafkaDetail;
+    }
+
     public ShowDetailOfConnectionResponse withCreatedTime(String createdTime) {
         this.createdTime = createdTime;
         return this;
@@ -346,13 +399,26 @@ public class ShowDetailOfConnectionResponse extends SdkResponse {
             && Objects.equals(this.subnetId, showDetailOfConnectionResponse.subnetId)
             && Objects.equals(this.agency, showDetailOfConnectionResponse.agency)
             && Objects.equals(this.flavor, showDetailOfConnectionResponse.flavor)
+            && Objects.equals(this.type, showDetailOfConnectionResponse.type)
+            && Objects.equals(this.kafkaDetail, showDetailOfConnectionResponse.kafkaDetail)
             && Objects.equals(this.createdTime, showDetailOfConnectionResponse.createdTime)
             && Objects.equals(this.updatedTime, showDetailOfConnectionResponse.updatedTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, status, vpcId, subnetId, agency, flavor, createdTime, updatedTime);
+        return Objects.hash(id,
+            name,
+            description,
+            status,
+            vpcId,
+            subnetId,
+            agency,
+            flavor,
+            type,
+            kafkaDetail,
+            createdTime,
+            updatedTime);
     }
 
     @Override
@@ -367,6 +433,8 @@ public class ShowDetailOfConnectionResponse extends SdkResponse {
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("    agency: ").append(toIndentedString(agency)).append("\n");
         sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    kafkaDetail: ").append(toIndentedString(kafkaDetail)).append("\n");
         sb.append("    createdTime: ").append(toIndentedString(createdTime)).append("\n");
         sb.append("    updatedTime: ").append(toIndentedString(updatedTime)).append("\n");
         sb.append("}");

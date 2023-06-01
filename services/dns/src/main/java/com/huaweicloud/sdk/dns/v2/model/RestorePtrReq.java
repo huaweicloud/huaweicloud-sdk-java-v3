@@ -13,9 +13,9 @@ public class RestorePtrReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ptrdname")
 
-    private String ptrdname;
+    private Object ptrdname;
 
-    public RestorePtrReq withPtrdname(String ptrdname) {
+    public RestorePtrReq withPtrdname(Object ptrdname) {
         this.ptrdname = ptrdname;
         return this;
     }
@@ -24,11 +24,11 @@ public class RestorePtrReq {
      * PTR记录对应的域名。  此处值为null。
      * @return ptrdname
      */
-    public String getPtrdname() {
+    public Object getPtrdname() {
         return ptrdname;
     }
 
-    public void setPtrdname(String ptrdname) {
+    public void setPtrdname(Object ptrdname) {
         this.ptrdname = ptrdname;
     }
 

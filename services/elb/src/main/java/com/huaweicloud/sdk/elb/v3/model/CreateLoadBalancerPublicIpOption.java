@@ -76,7 +76,7 @@ public class CreateLoadBalancerPublicIpOption {
     }
 
     /**
-     * 资源账单信息。  取值： - 空：按需计费。 - 非空：包周期计费。  [不支持该字段，请勿使用](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt)
+     * 资源账单信息。  取值： - 空：按需计费。 - 非空：包周期计费。  [不支持该字段，请勿使用](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt,hcso,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
      * @return billingInfo
      */
     public String getBillingInfo() {

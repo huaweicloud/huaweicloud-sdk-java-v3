@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.bss.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -36,7 +37,7 @@ public class IssuedCouponQuota {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quota_value")
 
-    private Double quotaValue;
+    private BigDecimal quotaValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quota_status")
@@ -161,7 +162,7 @@ public class IssuedCouponQuota {
         this.lastUpdateTime = lastUpdateTime;
     }
 
-    public IssuedCouponQuota withQuotaValue(Double quotaValue) {
+    public IssuedCouponQuota withQuotaValue(BigDecimal quotaValue) {
         this.quotaValue = quotaValue;
         return this;
     }
@@ -170,11 +171,11 @@ public class IssuedCouponQuota {
      * 代金券额度的值，精确到小数点后2位。
      * @return quotaValue
      */
-    public Double getQuotaValue() {
+    public BigDecimal getQuotaValue() {
         return quotaValue;
     }
 
-    public void setQuotaValue(Double quotaValue) {
+    public void setQuotaValue(BigDecimal quotaValue) {
         this.quotaValue = quotaValue;
     }
 

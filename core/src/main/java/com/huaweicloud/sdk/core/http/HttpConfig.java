@@ -49,6 +49,8 @@ public class HttpConfig {
 
     private boolean ignoreRequiredValidation = false;
 
+    private boolean allowRedirects = false;
+
     private String proxyUsername;
 
     private String proxyPassword;
@@ -96,7 +98,7 @@ public class HttpConfig {
     }
 
     public HttpConfig withExecutorService(ExecutorService executorService) {
-        this.executorService = executorService;
+        setExecutorService(executorService);
         return this;
     }
 
@@ -109,7 +111,7 @@ public class HttpConfig {
     }
 
     public HttpConfig withIgnoreSSLVerification(boolean ignoreSSLVerification) {
-        this.ignoreSSLVerification = ignoreSSLVerification;
+        setIgnoreSSLVerification(ignoreSSLVerification);
         return this;
     }
 
@@ -122,7 +124,28 @@ public class HttpConfig {
     }
 
     public HttpConfig withIgnoreRequiredValidation(boolean ignoreRequiredValidation) {
-        this.ignoreRequiredValidation = ignoreRequiredValidation;
+        setIgnoreRequiredValidation(ignoreRequiredValidation);
+        return this;
+    }
+
+    public boolean isAllowRedirects() {
+        return allowRedirects;
+    }
+
+    /**
+     * @param allowRedirects Experimental configuration, the default value is false.
+     *                       Automatic redirection is allowed when turns on, which may cause some request exceptions.
+     */
+    public void setAllowRedirects(boolean allowRedirects) {
+        this.allowRedirects = allowRedirects;
+    }
+
+    /**
+     * @param allowRedirects Experimental configuration, the default value is false.
+     *                       Automatic redirection is allowed when turns on, which may cause some request exceptions.
+     */
+    public HttpConfig withAllowRedirects(boolean allowRedirects) {
+        setAllowRedirects(allowRedirects);
         return this;
     }
 
@@ -135,7 +158,7 @@ public class HttpConfig {
     }
 
     public HttpConfig withProxyUsername(String proxyUsername) {
-        this.proxyUsername = proxyUsername;
+        setProxyUsername(proxyUsername);
         return this;
     }
 
@@ -148,7 +171,7 @@ public class HttpConfig {
     }
 
     public HttpConfig withProxyPassword(String proxyPassword) {
-        this.proxyPassword = proxyPassword;
+        setProxyPassword(proxyPassword);
         return this;
     }
 
@@ -161,7 +184,7 @@ public class HttpConfig {
     }
 
     public HttpConfig withProxyHost(String proxyHost) {
-        this.proxyHost = proxyHost;
+        setProxyHost(proxyHost);
         return this;
     }
 
@@ -174,7 +197,7 @@ public class HttpConfig {
     }
 
     public HttpConfig withProxyPort(int proxyPort) {
-        this.proxyPort = proxyPort;
+        setProxyPort(proxyPort);
         return this;
     }
 
@@ -187,7 +210,7 @@ public class HttpConfig {
     }
 
     public HttpConfig withSSLSocketFactory(SSLSocketFactory sslSocketFactory) {
-        this.sslSocketFactory = sslSocketFactory;
+        setSSLSocketFactory(sslSocketFactory);
         return this;
     }
 
@@ -200,7 +223,7 @@ public class HttpConfig {
     }
 
     public HttpConfig withX509TrustManager(X509TrustManager trustManager) {
-        this.trustManager = trustManager;
+        setX509TrustManager(trustManager);
         return this;
     }
 
@@ -217,15 +240,14 @@ public class HttpConfig {
     }
 
     public HttpConfig withHttpListeners(List<HttpListener> httpListeners) {
-        this.httpListeners = httpListeners;
+        setHttpListeners(httpListeners);
         return this;
     }
 
     public HttpConfig addHttpListener(HttpListener httpListener) {
-        if (Objects.isNull(httpListener)) {
-            return this;
+        if (Objects.nonNull(httpListener)) {
+            httpListeners.add(httpListener);
         }
-        httpListeners.add(httpListener);
         return this;
     }
 
@@ -238,7 +260,7 @@ public class HttpConfig {
     }
 
     public HttpConfig withConnectionPool(ConnectionPool connectionPool) {
-        this.connectionPool = connectionPool;
+        setConnectionPool(connectionPool);
         return this;
     }
 
@@ -251,7 +273,7 @@ public class HttpConfig {
     }
 
     public HttpConfig withDispatcher(Dispatcher dispatcher) {
-        this.dispatcher = dispatcher;
+        setDispatcher(dispatcher);
         return this;
     }
 
@@ -264,7 +286,7 @@ public class HttpConfig {
     }
 
     public HttpConfig withSigningAlgorithm(SigningAlgorithm signingAlgorithm) {
-        this.signingAlgorithm = signingAlgorithm;
+        setSigningAlgorithm(signingAlgorithm);
         return this;
     }
 
@@ -277,7 +299,7 @@ public class HttpConfig {
     }
 
     public HttpConfig withSecureRandom(SecureRandom secureRandom) {
-        this.secureRandom = secureRandom;
+        setSecureRandom(secureRandom);
         return this;
     }
 }

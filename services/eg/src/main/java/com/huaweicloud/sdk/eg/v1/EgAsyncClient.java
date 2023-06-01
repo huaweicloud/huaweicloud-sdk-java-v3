@@ -169,67 +169,6 @@ public class EgAsyncClient {
     }
 
     /**
-     * 创建自定义事件模型
-     *
-     * 创建自定义事件模型
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateEventSchemaRequest 请求对象
-     * @return CompletableFuture<CreateEventSchemaResponse>
-     */
-    public CompletableFuture<CreateEventSchemaResponse> createEventSchemaAsync(CreateEventSchemaRequest request) {
-        return hcClient.asyncInvokeHttp(request, EgMeta.createEventSchema);
-    }
-
-    /**
-     * 创建自定义事件模型
-     *
-     * 创建自定义事件模型
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateEventSchemaRequest 请求对象
-     * @return AsyncInvoker<CreateEventSchemaRequest, CreateEventSchemaResponse>
-     */
-    public AsyncInvoker<CreateEventSchemaRequest, CreateEventSchemaResponse> createEventSchemaAsyncInvoker(
-        CreateEventSchemaRequest request) {
-        return new AsyncInvoker<CreateEventSchemaRequest, CreateEventSchemaResponse>(request, EgMeta.createEventSchema,
-            hcClient);
-    }
-
-    /**
-     * 创建自定义事件模型版本
-     *
-     * 创建自定义事件模型版本，版本号后台自动生成
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateEventSchemaVersionRequest 请求对象
-     * @return CompletableFuture<CreateEventSchemaVersionResponse>
-     */
-    public CompletableFuture<CreateEventSchemaVersionResponse> createEventSchemaVersionAsync(
-        CreateEventSchemaVersionRequest request) {
-        return hcClient.asyncInvokeHttp(request, EgMeta.createEventSchemaVersion);
-    }
-
-    /**
-     * 创建自定义事件模型版本
-     *
-     * 创建自定义事件模型版本，版本号后台自动生成
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateEventSchemaVersionRequest 请求对象
-     * @return AsyncInvoker<CreateEventSchemaVersionRequest, CreateEventSchemaVersionResponse>
-     */
-    public AsyncInvoker<CreateEventSchemaVersionRequest, CreateEventSchemaVersionResponse> createEventSchemaVersionAsyncInvoker(
-        CreateEventSchemaVersionRequest request) {
-        return new AsyncInvoker<CreateEventSchemaVersionRequest, CreateEventSchemaVersionResponse>(request,
-            EgMeta.createEventSchemaVersion, hcClient);
-    }
-
-    /**
      * 创建自定义事件源
      *
      * 创建用户自定义类型的事件源，只能指定自定义通道，不能指定系统通道
@@ -257,6 +196,37 @@ public class EgAsyncClient {
         CreateEventSourceRequest request) {
         return new AsyncInvoker<CreateEventSourceRequest, CreateEventSourceResponse>(request, EgMeta.createEventSource,
             hcClient);
+    }
+
+    /**
+     * 创建事件流
+     *
+     * 创建事件流
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateEventStreamingRequest 请求对象
+     * @return CompletableFuture<CreateEventStreamingResponse>
+     */
+    public CompletableFuture<CreateEventStreamingResponse> createEventStreamingAsync(
+        CreateEventStreamingRequest request) {
+        return hcClient.asyncInvokeHttp(request, EgMeta.createEventStreaming);
+    }
+
+    /**
+     * 创建事件流
+     *
+     * 创建事件流
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateEventStreamingRequest 请求对象
+     * @return AsyncInvoker<CreateEventStreamingRequest, CreateEventStreamingResponse>
+     */
+    public AsyncInvoker<CreateEventStreamingRequest, CreateEventStreamingResponse> createEventStreamingAsyncInvoker(
+        CreateEventStreamingRequest request) {
+        return new AsyncInvoker<CreateEventStreamingRequest, CreateEventStreamingResponse>(request,
+            EgMeta.createEventStreaming, hcClient);
     }
 
     /**
@@ -410,67 +380,6 @@ public class EgAsyncClient {
     }
 
     /**
-     * 删除事件模型
-     *
-     * 删除事件模型
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param DeleteEventSchemaRequest 请求对象
-     * @return CompletableFuture<DeleteEventSchemaResponse>
-     */
-    public CompletableFuture<DeleteEventSchemaResponse> deleteEventSchemaAsync(DeleteEventSchemaRequest request) {
-        return hcClient.asyncInvokeHttp(request, EgMeta.deleteEventSchema);
-    }
-
-    /**
-     * 删除事件模型
-     *
-     * 删除事件模型
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param DeleteEventSchemaRequest 请求对象
-     * @return AsyncInvoker<DeleteEventSchemaRequest, DeleteEventSchemaResponse>
-     */
-    public AsyncInvoker<DeleteEventSchemaRequest, DeleteEventSchemaResponse> deleteEventSchemaAsyncInvoker(
-        DeleteEventSchemaRequest request) {
-        return new AsyncInvoker<DeleteEventSchemaRequest, DeleteEventSchemaResponse>(request, EgMeta.deleteEventSchema,
-            hcClient);
-    }
-
-    /**
-     * 删除事件模型版本
-     *
-     * 删除事件模型指定版本
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param DeleteEventSchemaVersionRequest 请求对象
-     * @return CompletableFuture<DeleteEventSchemaVersionResponse>
-     */
-    public CompletableFuture<DeleteEventSchemaVersionResponse> deleteEventSchemaVersionAsync(
-        DeleteEventSchemaVersionRequest request) {
-        return hcClient.asyncInvokeHttp(request, EgMeta.deleteEventSchemaVersion);
-    }
-
-    /**
-     * 删除事件模型版本
-     *
-     * 删除事件模型指定版本
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param DeleteEventSchemaVersionRequest 请求对象
-     * @return AsyncInvoker<DeleteEventSchemaVersionRequest, DeleteEventSchemaVersionResponse>
-     */
-    public AsyncInvoker<DeleteEventSchemaVersionRequest, DeleteEventSchemaVersionResponse> deleteEventSchemaVersionAsyncInvoker(
-        DeleteEventSchemaVersionRequest request) {
-        return new AsyncInvoker<DeleteEventSchemaVersionRequest, DeleteEventSchemaVersionResponse>(request,
-            EgMeta.deleteEventSchemaVersion, hcClient);
-    }
-
-    /**
      * 删除自定义事件源
      *
      * 删除指定的自定义事件源
@@ -498,6 +407,37 @@ public class EgAsyncClient {
         DeleteEventSourceRequest request) {
         return new AsyncInvoker<DeleteEventSourceRequest, DeleteEventSourceResponse>(request, EgMeta.deleteEventSource,
             hcClient);
+    }
+
+    /**
+     * 删除事件流
+     *
+     * 删除事件流
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteEventStreamingRequest 请求对象
+     * @return CompletableFuture<DeleteEventStreamingResponse>
+     */
+    public CompletableFuture<DeleteEventStreamingResponse> deleteEventStreamingAsync(
+        DeleteEventStreamingRequest request) {
+        return hcClient.asyncInvokeHttp(request, EgMeta.deleteEventStreaming);
+    }
+
+    /**
+     * 删除事件流
+     *
+     * 删除事件流
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteEventStreamingRequest 请求对象
+     * @return AsyncInvoker<DeleteEventStreamingRequest, DeleteEventStreamingResponse>
+     */
+    public AsyncInvoker<DeleteEventStreamingRequest, DeleteEventStreamingResponse> deleteEventStreamingAsyncInvoker(
+        DeleteEventStreamingRequest request) {
+        return new AsyncInvoker<DeleteEventStreamingRequest, DeleteEventStreamingResponse>(request,
+            EgMeta.deleteEventStreaming, hcClient);
     }
 
     /**
@@ -559,37 +499,6 @@ public class EgAsyncClient {
         DeleteSubscriptionTargetRequest request) {
         return new AsyncInvoker<DeleteSubscriptionTargetRequest, DeleteSubscriptionTargetResponse>(request,
             EgMeta.deleteSubscriptionTarget, hcClient);
-    }
-
-    /**
-     * 事件模型自动发现
-     *
-     * 事件模型自动发现
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param DiscoverEventSchemaFromDataRequest 请求对象
-     * @return CompletableFuture<DiscoverEventSchemaFromDataResponse>
-     */
-    public CompletableFuture<DiscoverEventSchemaFromDataResponse> discoverEventSchemaFromDataAsync(
-        DiscoverEventSchemaFromDataRequest request) {
-        return hcClient.asyncInvokeHttp(request, EgMeta.discoverEventSchemaFromData);
-    }
-
-    /**
-     * 事件模型自动发现
-     *
-     * 事件模型自动发现
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param DiscoverEventSchemaFromDataRequest 请求对象
-     * @return AsyncInvoker<DiscoverEventSchemaFromDataRequest, DiscoverEventSchemaFromDataResponse>
-     */
-    public AsyncInvoker<DiscoverEventSchemaFromDataRequest, DiscoverEventSchemaFromDataResponse> discoverEventSchemaFromDataAsyncInvoker(
-        DiscoverEventSchemaFromDataRequest request) {
-        return new AsyncInvoker<DiscoverEventSchemaFromDataRequest, DiscoverEventSchemaFromDataResponse>(request,
-            EgMeta.discoverEventSchemaFromData, hcClient);
     }
 
     /**
@@ -710,67 +619,6 @@ public class EgAsyncClient {
     }
 
     /**
-     * 查询事件模型列表
-     *
-     * 查询事件模型列表，包括系统事件模型和自定义事件模型
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListEventSchemaRequest 请求对象
-     * @return CompletableFuture<ListEventSchemaResponse>
-     */
-    public CompletableFuture<ListEventSchemaResponse> listEventSchemaAsync(ListEventSchemaRequest request) {
-        return hcClient.asyncInvokeHttp(request, EgMeta.listEventSchema);
-    }
-
-    /**
-     * 查询事件模型列表
-     *
-     * 查询事件模型列表，包括系统事件模型和自定义事件模型
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListEventSchemaRequest 请求对象
-     * @return AsyncInvoker<ListEventSchemaRequest, ListEventSchemaResponse>
-     */
-    public AsyncInvoker<ListEventSchemaRequest, ListEventSchemaResponse> listEventSchemaAsyncInvoker(
-        ListEventSchemaRequest request) {
-        return new AsyncInvoker<ListEventSchemaRequest, ListEventSchemaResponse>(request, EgMeta.listEventSchema,
-            hcClient);
-    }
-
-    /**
-     * 查询事件模型版本列表
-     *
-     * 查询事件模型版本列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListEventSchemaVersionsRequest 请求对象
-     * @return CompletableFuture<ListEventSchemaVersionsResponse>
-     */
-    public CompletableFuture<ListEventSchemaVersionsResponse> listEventSchemaVersionsAsync(
-        ListEventSchemaVersionsRequest request) {
-        return hcClient.asyncInvokeHttp(request, EgMeta.listEventSchemaVersions);
-    }
-
-    /**
-     * 查询事件模型版本列表
-     *
-     * 查询事件模型版本列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListEventSchemaVersionsRequest 请求对象
-     * @return AsyncInvoker<ListEventSchemaVersionsRequest, ListEventSchemaVersionsResponse>
-     */
-    public AsyncInvoker<ListEventSchemaVersionsRequest, ListEventSchemaVersionsResponse> listEventSchemaVersionsAsyncInvoker(
-        ListEventSchemaVersionsRequest request) {
-        return new AsyncInvoker<ListEventSchemaVersionsRequest, ListEventSchemaVersionsResponse>(request,
-            EgMeta.listEventSchemaVersions, hcClient);
-    }
-
-    /**
      * 查询事件源列表
      *
      * 支持条件查询，如可以指定事件通道ID来查询某个事件通道下的所有事件源
@@ -798,6 +646,36 @@ public class EgAsyncClient {
         ListEventSourcesRequest request) {
         return new AsyncInvoker<ListEventSourcesRequest, ListEventSourcesResponse>(request, EgMeta.listEventSources,
             hcClient);
+    }
+
+    /**
+     * 查询事件流列表
+     *
+     * 查询事件流列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListEventStreamingRequest 请求对象
+     * @return CompletableFuture<ListEventStreamingResponse>
+     */
+    public CompletableFuture<ListEventStreamingResponse> listEventStreamingAsync(ListEventStreamingRequest request) {
+        return hcClient.asyncInvokeHttp(request, EgMeta.listEventStreaming);
+    }
+
+    /**
+     * 查询事件流列表
+     *
+     * 查询事件流列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListEventStreamingRequest 请求对象
+     * @return AsyncInvoker<ListEventStreamingRequest, ListEventStreamingResponse>
+     */
+    public AsyncInvoker<ListEventStreamingRequest, ListEventStreamingResponse> listEventStreamingAsyncInvoker(
+        ListEventStreamingRequest request) {
+        return new AsyncInvoker<ListEventStreamingRequest, ListEventStreamingResponse>(request,
+            EgMeta.listEventStreaming, hcClient);
     }
 
     /**
@@ -949,6 +827,36 @@ public class EgAsyncClient {
     }
 
     /**
+     * 查询事件追踪列表
+     *
+     * 查询事件追踪列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTracedEventsRequest 请求对象
+     * @return CompletableFuture<ListTracedEventsResponse>
+     */
+    public CompletableFuture<ListTracedEventsResponse> listTracedEventsAsync(ListTracedEventsRequest request) {
+        return hcClient.asyncInvokeHttp(request, EgMeta.listTracedEvents);
+    }
+
+    /**
+     * 查询事件追踪列表
+     *
+     * 查询事件追踪列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTracedEventsRequest 请求对象
+     * @return AsyncInvoker<ListTracedEventsRequest, ListTracedEventsResponse>
+     */
+    public AsyncInvoker<ListTracedEventsRequest, ListTracedEventsResponse> listTracedEventsAsyncInvoker(
+        ListTracedEventsRequest request) {
+        return new AsyncInvoker<ListTracedEventsRequest, ListTracedEventsResponse>(request, EgMeta.listTracedEvents,
+            hcClient);
+    }
+
+    /**
      * 查询单个函数的EG触发器
      *
      * 查询触发器，支持指定函数urn。一个以函数urn为目标的订阅为一个触发器。
@@ -1067,6 +975,67 @@ public class EgAsyncClient {
     }
 
     /**
+     * 发布官方事件到事件通道
+     *
+     * 发布官方事件到事件通道
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param PutOfficialEventsRequest 请求对象
+     * @return CompletableFuture<PutOfficialEventsResponse>
+     */
+    public CompletableFuture<PutOfficialEventsResponse> putOfficialEventsAsync(PutOfficialEventsRequest request) {
+        return hcClient.asyncInvokeHttp(request, EgMeta.putOfficialEvents);
+    }
+
+    /**
+     * 发布官方事件到事件通道
+     *
+     * 发布官方事件到事件通道
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param PutOfficialEventsRequest 请求对象
+     * @return AsyncInvoker<PutOfficialEventsRequest, PutOfficialEventsResponse>
+     */
+    public AsyncInvoker<PutOfficialEventsRequest, PutOfficialEventsResponse> putOfficialEventsAsyncInvoker(
+        PutOfficialEventsRequest request) {
+        return new AsyncInvoker<PutOfficialEventsRequest, PutOfficialEventsResponse>(request, EgMeta.putOfficialEvents,
+            hcClient);
+    }
+
+    /**
+     * 操作事件流
+     *
+     * 操作事件流
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ResumeEventStreamingRequest 请求对象
+     * @return CompletableFuture<ResumeEventStreamingResponse>
+     */
+    public CompletableFuture<ResumeEventStreamingResponse> resumeEventStreamingAsync(
+        ResumeEventStreamingRequest request) {
+        return hcClient.asyncInvokeHttp(request, EgMeta.resumeEventStreaming);
+    }
+
+    /**
+     * 操作事件流
+     *
+     * 操作事件流
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ResumeEventStreamingRequest 请求对象
+     * @return AsyncInvoker<ResumeEventStreamingRequest, ResumeEventStreamingResponse>
+     */
+    public AsyncInvoker<ResumeEventStreamingRequest, ResumeEventStreamingResponse> resumeEventStreamingAsyncInvoker(
+        ResumeEventStreamingRequest request) {
+        return new AsyncInvoker<ResumeEventStreamingRequest, ResumeEventStreamingResponse>(request,
+            EgMeta.resumeEventStreaming, hcClient);
+    }
+
+    /**
      * 查询事件通道详情
      *
      * 查询指定事件通道详情
@@ -1128,65 +1097,33 @@ public class EgAsyncClient {
     }
 
     /**
-     * 查询事件模型详情
+     * 查询发送事件的内容
      *
-     * 查询事件模型详情
+     * 根据事件ID查询事件详情
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailOfEventSchemaRequest 请求对象
-     * @return CompletableFuture<ShowDetailOfEventSchemaResponse>
+     * @param ShowDetailOfEventRequest 请求对象
+     * @return CompletableFuture<ShowDetailOfEventResponse>
      */
-    public CompletableFuture<ShowDetailOfEventSchemaResponse> showDetailOfEventSchemaAsync(
-        ShowDetailOfEventSchemaRequest request) {
-        return hcClient.asyncInvokeHttp(request, EgMeta.showDetailOfEventSchema);
+    public CompletableFuture<ShowDetailOfEventResponse> showDetailOfEventAsync(ShowDetailOfEventRequest request) {
+        return hcClient.asyncInvokeHttp(request, EgMeta.showDetailOfEvent);
     }
 
     /**
-     * 查询事件模型详情
+     * 查询发送事件的内容
      *
-     * 查询事件模型详情
+     * 根据事件ID查询事件详情
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDetailOfEventSchemaRequest 请求对象
-     * @return AsyncInvoker<ShowDetailOfEventSchemaRequest, ShowDetailOfEventSchemaResponse>
+     * @param ShowDetailOfEventRequest 请求对象
+     * @return AsyncInvoker<ShowDetailOfEventRequest, ShowDetailOfEventResponse>
      */
-    public AsyncInvoker<ShowDetailOfEventSchemaRequest, ShowDetailOfEventSchemaResponse> showDetailOfEventSchemaAsyncInvoker(
-        ShowDetailOfEventSchemaRequest request) {
-        return new AsyncInvoker<ShowDetailOfEventSchemaRequest, ShowDetailOfEventSchemaResponse>(request,
-            EgMeta.showDetailOfEventSchema, hcClient);
-    }
-
-    /**
-     * 查询事件模型版本详情
-     *
-     * 查询事件模型指定版本详情
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ShowDetailOfEventSchemaVersionRequest 请求对象
-     * @return CompletableFuture<ShowDetailOfEventSchemaVersionResponse>
-     */
-    public CompletableFuture<ShowDetailOfEventSchemaVersionResponse> showDetailOfEventSchemaVersionAsync(
-        ShowDetailOfEventSchemaVersionRequest request) {
-        return hcClient.asyncInvokeHttp(request, EgMeta.showDetailOfEventSchemaVersion);
-    }
-
-    /**
-     * 查询事件模型版本详情
-     *
-     * 查询事件模型指定版本详情
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ShowDetailOfEventSchemaVersionRequest 请求对象
-     * @return AsyncInvoker<ShowDetailOfEventSchemaVersionRequest, ShowDetailOfEventSchemaVersionResponse>
-     */
-    public AsyncInvoker<ShowDetailOfEventSchemaVersionRequest, ShowDetailOfEventSchemaVersionResponse> showDetailOfEventSchemaVersionAsyncInvoker(
-        ShowDetailOfEventSchemaVersionRequest request) {
-        return new AsyncInvoker<ShowDetailOfEventSchemaVersionRequest, ShowDetailOfEventSchemaVersionResponse>(request,
-            EgMeta.showDetailOfEventSchemaVersion, hcClient);
+    public AsyncInvoker<ShowDetailOfEventRequest, ShowDetailOfEventResponse> showDetailOfEventAsyncInvoker(
+        ShowDetailOfEventRequest request) {
+        return new AsyncInvoker<ShowDetailOfEventRequest, ShowDetailOfEventResponse>(request, EgMeta.showDetailOfEvent,
+            hcClient);
     }
 
     /**
@@ -1218,6 +1155,37 @@ public class EgAsyncClient {
         ShowDetailOfEventSourceRequest request) {
         return new AsyncInvoker<ShowDetailOfEventSourceRequest, ShowDetailOfEventSourceResponse>(request,
             EgMeta.showDetailOfEventSource, hcClient);
+    }
+
+    /**
+     * 事件轨迹详情
+     *
+     * 事件轨迹详情，展示事件源到投递目标的投递情况
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDetailOfEventTraceRequest 请求对象
+     * @return CompletableFuture<ShowDetailOfEventTraceResponse>
+     */
+    public CompletableFuture<ShowDetailOfEventTraceResponse> showDetailOfEventTraceAsync(
+        ShowDetailOfEventTraceRequest request) {
+        return hcClient.asyncInvokeHttp(request, EgMeta.showDetailOfEventTrace);
+    }
+
+    /**
+     * 事件轨迹详情
+     *
+     * 事件轨迹详情，展示事件源到投递目标的投递情况
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDetailOfEventTraceRequest 请求对象
+     * @return AsyncInvoker<ShowDetailOfEventTraceRequest, ShowDetailOfEventTraceResponse>
+     */
+    public AsyncInvoker<ShowDetailOfEventTraceRequest, ShowDetailOfEventTraceResponse> showDetailOfEventTraceAsyncInvoker(
+        ShowDetailOfEventTraceRequest request) {
+        return new AsyncInvoker<ShowDetailOfEventTraceRequest, ShowDetailOfEventTraceResponse>(request,
+            EgMeta.showDetailOfEventTrace, hcClient);
     }
 
     /**
@@ -1280,6 +1248,36 @@ public class EgAsyncClient {
         ShowDetailOfSubscriptionTargetRequest request) {
         return new AsyncInvoker<ShowDetailOfSubscriptionTargetRequest, ShowDetailOfSubscriptionTargetResponse>(request,
             EgMeta.showDetailOfSubscriptionTarget, hcClient);
+    }
+
+    /**
+     * 查询事件流详情
+     *
+     * 查询事件流详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowEventStreamingRequest 请求对象
+     * @return CompletableFuture<ShowEventStreamingResponse>
+     */
+    public CompletableFuture<ShowEventStreamingResponse> showEventStreamingAsync(ShowEventStreamingRequest request) {
+        return hcClient.asyncInvokeHttp(request, EgMeta.showEventStreaming);
+    }
+
+    /**
+     * 查询事件流详情
+     *
+     * 查询事件流详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowEventStreamingRequest 请求对象
+     * @return AsyncInvoker<ShowEventStreamingRequest, ShowEventStreamingResponse>
+     */
+    public AsyncInvoker<ShowEventStreamingRequest, ShowEventStreamingResponse> showEventStreamingAsyncInvoker(
+        ShowEventStreamingRequest request) {
+        return new AsyncInvoker<ShowEventStreamingRequest, ShowEventStreamingResponse>(request,
+            EgMeta.showEventStreaming, hcClient);
     }
 
     /**
@@ -1372,36 +1370,6 @@ public class EgAsyncClient {
     }
 
     /**
-     * 更新自定义事件模型
-     *
-     * 更新自定义事件模型定义
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param UpdateEventSchemaRequest 请求对象
-     * @return CompletableFuture<UpdateEventSchemaResponse>
-     */
-    public CompletableFuture<UpdateEventSchemaResponse> updateEventSchemaAsync(UpdateEventSchemaRequest request) {
-        return hcClient.asyncInvokeHttp(request, EgMeta.updateEventSchema);
-    }
-
-    /**
-     * 更新自定义事件模型
-     *
-     * 更新自定义事件模型定义
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param UpdateEventSchemaRequest 请求对象
-     * @return AsyncInvoker<UpdateEventSchemaRequest, UpdateEventSchemaResponse>
-     */
-    public AsyncInvoker<UpdateEventSchemaRequest, UpdateEventSchemaResponse> updateEventSchemaAsyncInvoker(
-        UpdateEventSchemaRequest request) {
-        return new AsyncInvoker<UpdateEventSchemaRequest, UpdateEventSchemaResponse>(request, EgMeta.updateEventSchema,
-            hcClient);
-    }
-
-    /**
      * 更新自定义事件源
      *
      * 更新自定义事件源定义
@@ -1429,6 +1397,37 @@ public class EgAsyncClient {
         UpdateEventSourceRequest request) {
         return new AsyncInvoker<UpdateEventSourceRequest, UpdateEventSourceResponse>(request, EgMeta.updateEventSource,
             hcClient);
+    }
+
+    /**
+     * 更新事件流
+     *
+     * 更新事件流
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateEventStreamingRequest 请求对象
+     * @return CompletableFuture<UpdateEventStreamingResponse>
+     */
+    public CompletableFuture<UpdateEventStreamingResponse> updateEventStreamingAsync(
+        UpdateEventStreamingRequest request) {
+        return hcClient.asyncInvokeHttp(request, EgMeta.updateEventStreaming);
+    }
+
+    /**
+     * 更新事件流
+     *
+     * 更新事件流
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateEventStreamingRequest 请求对象
+     * @return AsyncInvoker<UpdateEventStreamingRequest, UpdateEventStreamingResponse>
+     */
+    public AsyncInvoker<UpdateEventStreamingRequest, UpdateEventStreamingResponse> updateEventStreamingAsyncInvoker(
+        UpdateEventStreamingRequest request) {
+        return new AsyncInvoker<UpdateEventStreamingRequest, UpdateEventStreamingResponse>(request,
+            EgMeta.updateEventStreaming, hcClient);
     }
 
     /**

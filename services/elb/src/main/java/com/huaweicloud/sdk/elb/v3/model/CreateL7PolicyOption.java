@@ -64,11 +64,6 @@ public class CreateL7PolicyOption {
     private String redirectPoolId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "redirect_pools_config")
-
-    private List<CreateRedirectPoolsConfig> redirectPoolsConfig = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "redirect_url")
 
     private String redirectUrl;
@@ -82,6 +77,11 @@ public class CreateL7PolicyOption {
     @JsonProperty(value = "fixed_response_config")
 
     private CreateFixtedResponseConfig fixedResponseConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "redirect_pools_extend_config")
+
+    private CreateRedirectPoolsExtendConfig redirectPoolsExtendConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rules")
@@ -251,7 +251,7 @@ public class CreateL7PolicyOption {
     }
 
     /**
-     * 转发到pool的ID。当action为REDIRECT_TO_POOL时生效。  使用说明： - 当action为REDIRECT_TO_POOL时，redirect_pool_id和redirect_pools_config 必须指定一个，两个都指定时按redirect_pools_config生效。 - 当action为REDIRECT_TO_LISTENER时，不可指定。
+     * 转发到pool的ID。当action为REDIRECT_TO_POOL时生效。  使用说明： - 当action为REDIRECT_TO_LISTENER时，不可指定。
      * @return redirectPoolId
      */
     public String getRedirectPoolId() {
@@ -260,40 +260,6 @@ public class CreateL7PolicyOption {
 
     public void setRedirectPoolId(String redirectPoolId) {
         this.redirectPoolId = redirectPoolId;
-    }
-
-    public CreateL7PolicyOption withRedirectPoolsConfig(List<CreateRedirectPoolsConfig> redirectPoolsConfig) {
-        this.redirectPoolsConfig = redirectPoolsConfig;
-        return this;
-    }
-
-    public CreateL7PolicyOption addRedirectPoolsConfigItem(CreateRedirectPoolsConfig redirectPoolsConfigItem) {
-        if (this.redirectPoolsConfig == null) {
-            this.redirectPoolsConfig = new ArrayList<>();
-        }
-        this.redirectPoolsConfig.add(redirectPoolsConfigItem);
-        return this;
-    }
-
-    public CreateL7PolicyOption withRedirectPoolsConfig(
-        Consumer<List<CreateRedirectPoolsConfig>> redirectPoolsConfigSetter) {
-        if (this.redirectPoolsConfig == null) {
-            this.redirectPoolsConfig = new ArrayList<>();
-        }
-        redirectPoolsConfigSetter.accept(this.redirectPoolsConfig);
-        return this;
-    }
-
-    /**
-     * 转发到的后端主机组的配置。当action为REDIRECT_TO_POOL时生效。  使用说明： - 当action为REDIRECT_TO_POOL时redirect_pool_id和redirect_pools_config 必须指定一个，两个都指定时按redirect_pools_config生效。 - 当action为REDIRECT_TO_LISTENER时，不可指定。
-     * @return redirectPoolsConfig
-     */
-    public List<CreateRedirectPoolsConfig> getRedirectPoolsConfig() {
-        return redirectPoolsConfig;
-    }
-
-    public void setRedirectPoolsConfig(List<CreateRedirectPoolsConfig> redirectPoolsConfig) {
-        this.redirectPoolsConfig = redirectPoolsConfig;
     }
 
     public CreateL7PolicyOption withRedirectUrl(String redirectUrl) {
@@ -366,6 +332,34 @@ public class CreateL7PolicyOption {
         this.fixedResponseConfig = fixedResponseConfig;
     }
 
+    public CreateL7PolicyOption withRedirectPoolsExtendConfig(
+        CreateRedirectPoolsExtendConfig redirectPoolsExtendConfig) {
+        this.redirectPoolsExtendConfig = redirectPoolsExtendConfig;
+        return this;
+    }
+
+    public CreateL7PolicyOption withRedirectPoolsExtendConfig(
+        Consumer<CreateRedirectPoolsExtendConfig> redirectPoolsExtendConfigSetter) {
+        if (this.redirectPoolsExtendConfig == null) {
+            this.redirectPoolsExtendConfig = new CreateRedirectPoolsExtendConfig();
+            redirectPoolsExtendConfigSetter.accept(this.redirectPoolsExtendConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get redirectPoolsExtendConfig
+     * @return redirectPoolsExtendConfig
+     */
+    public CreateRedirectPoolsExtendConfig getRedirectPoolsExtendConfig() {
+        return redirectPoolsExtendConfig;
+    }
+
+    public void setRedirectPoolsExtendConfig(CreateRedirectPoolsExtendConfig redirectPoolsExtendConfig) {
+        this.redirectPoolsExtendConfig = redirectPoolsExtendConfig;
+    }
+
     public CreateL7PolicyOption withRules(List<CreateL7PolicyRuleOption> rules) {
         this.rules = rules;
         return this;
@@ -418,10 +412,10 @@ public class CreateL7PolicyOption {
             && Objects.equals(this.projectId, createL7PolicyOption.projectId)
             && Objects.equals(this.redirectListenerId, createL7PolicyOption.redirectListenerId)
             && Objects.equals(this.redirectPoolId, createL7PolicyOption.redirectPoolId)
-            && Objects.equals(this.redirectPoolsConfig, createL7PolicyOption.redirectPoolsConfig)
             && Objects.equals(this.redirectUrl, createL7PolicyOption.redirectUrl)
             && Objects.equals(this.redirectUrlConfig, createL7PolicyOption.redirectUrlConfig)
             && Objects.equals(this.fixedResponseConfig, createL7PolicyOption.fixedResponseConfig)
+            && Objects.equals(this.redirectPoolsExtendConfig, createL7PolicyOption.redirectPoolsExtendConfig)
             && Objects.equals(this.rules, createL7PolicyOption.rules);
     }
 
@@ -437,10 +431,10 @@ public class CreateL7PolicyOption {
             projectId,
             redirectListenerId,
             redirectPoolId,
-            redirectPoolsConfig,
             redirectUrl,
             redirectUrlConfig,
             fixedResponseConfig,
+            redirectPoolsExtendConfig,
             rules);
     }
 
@@ -458,10 +452,10 @@ public class CreateL7PolicyOption {
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    redirectListenerId: ").append(toIndentedString(redirectListenerId)).append("\n");
         sb.append("    redirectPoolId: ").append(toIndentedString(redirectPoolId)).append("\n");
-        sb.append("    redirectPoolsConfig: ").append(toIndentedString(redirectPoolsConfig)).append("\n");
         sb.append("    redirectUrl: ").append(toIndentedString(redirectUrl)).append("\n");
         sb.append("    redirectUrlConfig: ").append(toIndentedString(redirectUrlConfig)).append("\n");
         sb.append("    fixedResponseConfig: ").append(toIndentedString(fixedResponseConfig)).append("\n");
+        sb.append("    redirectPoolsExtendConfig: ").append(toIndentedString(redirectPoolsExtendConfig)).append("\n");
         sb.append("    rules: ").append(toIndentedString(rules)).append("\n");
         sb.append("}");
         return sb.toString();

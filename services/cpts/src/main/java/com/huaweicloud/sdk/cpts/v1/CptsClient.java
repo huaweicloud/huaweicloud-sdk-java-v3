@@ -18,6 +18,36 @@ public class CptsClient {
     }
 
     /**
+     * 批量启停任务（新版启停任务接口）
+     *
+     * 批量启停任务（新版启停任务接口）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchUpdateTaskStatusRequest 请求对象
+     * @return BatchUpdateTaskStatusResponse
+     */
+    public BatchUpdateTaskStatusResponse batchUpdateTaskStatus(BatchUpdateTaskStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, CptsMeta.batchUpdateTaskStatus);
+    }
+
+    /**
+     * 批量启停任务（新版启停任务接口）
+     *
+     * 批量启停任务（新版启停任务接口）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchUpdateTaskStatusRequest 请求对象
+     * @return SyncInvoker<BatchUpdateTaskStatusRequest, BatchUpdateTaskStatusResponse>
+     */
+    public SyncInvoker<BatchUpdateTaskStatusRequest, BatchUpdateTaskStatusResponse> batchUpdateTaskStatusInvoker(
+        BatchUpdateTaskStatusRequest request) {
+        return new SyncInvoker<BatchUpdateTaskStatusRequest, BatchUpdateTaskStatusResponse>(request,
+            CptsMeta.batchUpdateTaskStatus, hcClient);
+    }
+
+    /**
      * 创建用例
      *
      * 创建用例
@@ -43,6 +73,92 @@ public class CptsClient {
      */
     public SyncInvoker<CreateCaseRequest, CreateCaseResponse> createCaseInvoker(CreateCaseRequest request) {
         return new SyncInvoker<CreateCaseRequest, CreateCaseResponse>(request, CptsMeta.createCase, hcClient);
+    }
+
+    /**
+     * 创建目录
+     *
+     * 创建目录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDirectoryRequest 请求对象
+     * @return CreateDirectoryResponse
+     */
+    public CreateDirectoryResponse createDirectory(CreateDirectoryRequest request) {
+        return hcClient.syncInvokeHttp(request, CptsMeta.createDirectory);
+    }
+
+    /**
+     * 创建目录
+     *
+     * 创建目录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDirectoryRequest 请求对象
+     * @return SyncInvoker<CreateDirectoryRequest, CreateDirectoryResponse>
+     */
+    public SyncInvoker<CreateDirectoryRequest, CreateDirectoryResponse> createDirectoryInvoker(
+        CreateDirectoryRequest request) {
+        return new SyncInvoker<CreateDirectoryRequest, CreateDirectoryResponse>(request, CptsMeta.createDirectory,
+            hcClient);
+    }
+
+    /**
+     * 创建用例
+     *
+     * 创建用例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateNewCaseRequest 请求对象
+     * @return CreateNewCaseResponse
+     */
+    public CreateNewCaseResponse createNewCase(CreateNewCaseRequest request) {
+        return hcClient.syncInvokeHttp(request, CptsMeta.createNewCase);
+    }
+
+    /**
+     * 创建用例
+     *
+     * 创建用例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateNewCaseRequest 请求对象
+     * @return SyncInvoker<CreateNewCaseRequest, CreateNewCaseResponse>
+     */
+    public SyncInvoker<CreateNewCaseRequest, CreateNewCaseResponse> createNewCaseInvoker(CreateNewCaseRequest request) {
+        return new SyncInvoker<CreateNewCaseRequest, CreateNewCaseResponse>(request, CptsMeta.createNewCase, hcClient);
+    }
+
+    /**
+     * 创建任务
+     *
+     * 创建任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateNewTaskRequest 请求对象
+     * @return CreateNewTaskResponse
+     */
+    public CreateNewTaskResponse createNewTask(CreateNewTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, CptsMeta.createNewTask);
+    }
+
+    /**
+     * 创建任务
+     *
+     * 创建任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateNewTaskRequest 请求对象
+     * @return SyncInvoker<CreateNewTaskRequest, CreateNewTaskResponse>
+     */
+    public SyncInvoker<CreateNewTaskRequest, CreateNewTaskResponse> createNewTaskInvoker(CreateNewTaskRequest request) {
+        return new SyncInvoker<CreateNewTaskRequest, CreateNewTaskResponse>(request, CptsMeta.createNewTask, hcClient);
     }
 
     /**
@@ -188,6 +304,92 @@ public class CptsClient {
     }
 
     /**
+     * 删除目录
+     *
+     * 删除目录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteDirectoryRequest 请求对象
+     * @return DeleteDirectoryResponse
+     */
+    public DeleteDirectoryResponse deleteDirectory(DeleteDirectoryRequest request) {
+        return hcClient.syncInvokeHttp(request, CptsMeta.deleteDirectory);
+    }
+
+    /**
+     * 删除目录
+     *
+     * 删除目录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteDirectoryRequest 请求对象
+     * @return SyncInvoker<DeleteDirectoryRequest, DeleteDirectoryResponse>
+     */
+    public SyncInvoker<DeleteDirectoryRequest, DeleteDirectoryResponse> deleteDirectoryInvoker(
+        DeleteDirectoryRequest request) {
+        return new SyncInvoker<DeleteDirectoryRequest, DeleteDirectoryResponse>(request, CptsMeta.deleteDirectory,
+            hcClient);
+    }
+
+    /**
+     * 删除用例
+     *
+     * 删除用例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteNewCaseRequest 请求对象
+     * @return DeleteNewCaseResponse
+     */
+    public DeleteNewCaseResponse deleteNewCase(DeleteNewCaseRequest request) {
+        return hcClient.syncInvokeHttp(request, CptsMeta.deleteNewCase);
+    }
+
+    /**
+     * 删除用例
+     *
+     * 删除用例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteNewCaseRequest 请求对象
+     * @return SyncInvoker<DeleteNewCaseRequest, DeleteNewCaseResponse>
+     */
+    public SyncInvoker<DeleteNewCaseRequest, DeleteNewCaseResponse> deleteNewCaseInvoker(DeleteNewCaseRequest request) {
+        return new SyncInvoker<DeleteNewCaseRequest, DeleteNewCaseResponse>(request, CptsMeta.deleteNewCase, hcClient);
+    }
+
+    /**
+     * 删除任务
+     *
+     * 删除任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteNewTaskRequest 请求对象
+     * @return DeleteNewTaskResponse
+     */
+    public DeleteNewTaskResponse deleteNewTask(DeleteNewTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, CptsMeta.deleteNewTask);
+    }
+
+    /**
+     * 删除任务
+     *
+     * 删除任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteNewTaskRequest 请求对象
+     * @return SyncInvoker<DeleteNewTaskRequest, DeleteNewTaskResponse>
+     */
+    public SyncInvoker<DeleteNewTaskRequest, DeleteNewTaskResponse> deleteNewTaskInvoker(DeleteNewTaskRequest request) {
+        return new SyncInvoker<DeleteNewTaskRequest, DeleteNewTaskResponse>(request, CptsMeta.deleteNewTask, hcClient);
+    }
+
+    /**
      * 删除任务
      *
      * 删除任务
@@ -274,6 +476,64 @@ public class CptsClient {
     }
 
     /**
+     * 查询用例树
+     *
+     * 查询用例树
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListProjectTestCaseRequest 请求对象
+     * @return ListProjectTestCaseResponse
+     */
+    public ListProjectTestCaseResponse listProjectTestCase(ListProjectTestCaseRequest request) {
+        return hcClient.syncInvokeHttp(request, CptsMeta.listProjectTestCase);
+    }
+
+    /**
+     * 查询用例树
+     *
+     * 查询用例树
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListProjectTestCaseRequest 请求对象
+     * @return SyncInvoker<ListProjectTestCaseRequest, ListProjectTestCaseResponse>
+     */
+    public SyncInvoker<ListProjectTestCaseRequest, ListProjectTestCaseResponse> listProjectTestCaseInvoker(
+        ListProjectTestCaseRequest request) {
+        return new SyncInvoker<ListProjectTestCaseRequest, ListProjectTestCaseResponse>(request,
+            CptsMeta.listProjectTestCase, hcClient);
+    }
+
+    /**
+     * 获取任务关联的用例列表
+     *
+     * 获取任务关联的用例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTaskCasesRequest 请求对象
+     * @return ListTaskCasesResponse
+     */
+    public ListTaskCasesResponse listTaskCases(ListTaskCasesRequest request) {
+        return hcClient.syncInvokeHttp(request, CptsMeta.listTaskCases);
+    }
+
+    /**
+     * 获取任务关联的用例列表
+     *
+     * 获取任务关联的用例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTaskCasesRequest 请求对象
+     * @return SyncInvoker<ListTaskCasesRequest, ListTaskCasesResponse>
+     */
+    public SyncInvoker<ListTaskCasesRequest, ListTaskCasesResponse> listTaskCasesInvoker(ListTaskCasesRequest request) {
+        return new SyncInvoker<ListTaskCasesRequest, ListTaskCasesResponse>(request, CptsMeta.listTaskCases, hcClient);
+    }
+
+    /**
      * 查询全局变量
      *
      * 查询全局变量
@@ -332,6 +592,34 @@ public class CptsClient {
     }
 
     /**
+     * 查询用例
+     *
+     * 查询用例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowCaseRequest 请求对象
+     * @return ShowCaseResponse
+     */
+    public ShowCaseResponse showCase(ShowCaseRequest request) {
+        return hcClient.syncInvokeHttp(request, CptsMeta.showCase);
+    }
+
+    /**
+     * 查询用例
+     *
+     * 查询用例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowCaseRequest 请求对象
+     * @return SyncInvoker<ShowCaseRequest, ShowCaseResponse>
+     */
+    public SyncInvoker<ShowCaseRequest, ShowCaseResponse> showCaseInvoker(ShowCaseRequest request) {
+        return new SyncInvoker<ShowCaseRequest, ShowCaseResponse>(request, CptsMeta.showCase, hcClient);
+    }
+
+    /**
      * 查询PerfTest任务离线报告列表
      *
      * 查询PerfTest任务离线报告列表
@@ -359,6 +647,96 @@ public class CptsClient {
         ShowHistoryRunInfoRequest request) {
         return new SyncInvoker<ShowHistoryRunInfoRequest, ShowHistoryRunInfoResponse>(request,
             CptsMeta.showHistoryRunInfo, hcClient);
+    }
+
+    /**
+     * 内外融合单个用例的详情数据
+     *
+     * 内外融合单个用例的详情数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowMergeCaseDetailRequest 请求对象
+     * @return ShowMergeCaseDetailResponse
+     */
+    public ShowMergeCaseDetailResponse showMergeCaseDetail(ShowMergeCaseDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, CptsMeta.showMergeCaseDetail);
+    }
+
+    /**
+     * 内外融合单个用例的详情数据
+     *
+     * 内外融合单个用例的详情数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowMergeCaseDetailRequest 请求对象
+     * @return SyncInvoker<ShowMergeCaseDetailRequest, ShowMergeCaseDetailResponse>
+     */
+    public SyncInvoker<ShowMergeCaseDetailRequest, ShowMergeCaseDetailResponse> showMergeCaseDetailInvoker(
+        ShowMergeCaseDetailRequest request) {
+        return new SyncInvoker<ShowMergeCaseDetailRequest, ShowMergeCaseDetailResponse>(request,
+            CptsMeta.showMergeCaseDetail, hcClient);
+    }
+
+    /**
+     * 查询报告汇总数据接口
+     *
+     * 查询报告汇总数据接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowMergeReportLogsOutlineRequest 请求对象
+     * @return ShowMergeReportLogsOutlineResponse
+     */
+    public ShowMergeReportLogsOutlineResponse showMergeReportLogsOutline(ShowMergeReportLogsOutlineRequest request) {
+        return hcClient.syncInvokeHttp(request, CptsMeta.showMergeReportLogsOutline);
+    }
+
+    /**
+     * 查询报告汇总数据接口
+     *
+     * 查询报告汇总数据接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowMergeReportLogsOutlineRequest 请求对象
+     * @return SyncInvoker<ShowMergeReportLogsOutlineRequest, ShowMergeReportLogsOutlineResponse>
+     */
+    public SyncInvoker<ShowMergeReportLogsOutlineRequest, ShowMergeReportLogsOutlineResponse> showMergeReportLogsOutlineInvoker(
+        ShowMergeReportLogsOutlineRequest request) {
+        return new SyncInvoker<ShowMergeReportLogsOutlineRequest, ShowMergeReportLogsOutlineResponse>(request,
+            CptsMeta.showMergeReportLogsOutline, hcClient);
+    }
+
+    /**
+     * 内外融合当前任务用例列表接口
+     *
+     * 内外融合当前任务用例列表接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowMergeTaskCaseRequest 请求对象
+     * @return ShowMergeTaskCaseResponse
+     */
+    public ShowMergeTaskCaseResponse showMergeTaskCase(ShowMergeTaskCaseRequest request) {
+        return hcClient.syncInvokeHttp(request, CptsMeta.showMergeTaskCase);
+    }
+
+    /**
+     * 内外融合当前任务用例列表接口
+     *
+     * 内外融合当前任务用例列表接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowMergeTaskCaseRequest 请求对象
+     * @return SyncInvoker<ShowMergeTaskCaseRequest, ShowMergeTaskCaseResponse>
+     */
+    public SyncInvoker<ShowMergeTaskCaseRequest, ShowMergeTaskCaseResponse> showMergeTaskCaseInvoker(
+        ShowMergeTaskCaseRequest request) {
+        return new SyncInvoker<ShowMergeTaskCaseRequest, ShowMergeTaskCaseResponse>(request, CptsMeta.showMergeTaskCase,
+            hcClient);
     }
 
     /**
@@ -415,6 +793,36 @@ public class CptsClient {
      */
     public SyncInvoker<ShowTaskRequest, ShowTaskResponse> showTaskInvoker(ShowTaskRequest request) {
         return new SyncInvoker<ShowTaskRequest, ShowTaskResponse>(request, CptsMeta.showTask, hcClient);
+    }
+
+    /**
+     * 内外融合获取用例的AW曲线图获取接口
+     *
+     * 内外融合获取用例的AW曲线图获取接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTaskCaseAwChartRequest 请求对象
+     * @return ShowTaskCaseAwChartResponse
+     */
+    public ShowTaskCaseAwChartResponse showTaskCaseAwChart(ShowTaskCaseAwChartRequest request) {
+        return hcClient.syncInvokeHttp(request, CptsMeta.showTaskCaseAwChart);
+    }
+
+    /**
+     * 内外融合获取用例的AW曲线图获取接口
+     *
+     * 内外融合获取用例的AW曲线图获取接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTaskCaseAwChartRequest 请求对象
+     * @return SyncInvoker<ShowTaskCaseAwChartRequest, ShowTaskCaseAwChartResponse>
+     */
+    public SyncInvoker<ShowTaskCaseAwChartRequest, ShowTaskCaseAwChartResponse> showTaskCaseAwChartInvoker(
+        ShowTaskCaseAwChartRequest request) {
+        return new SyncInvoker<ShowTaskCaseAwChartRequest, ShowTaskCaseAwChartResponse>(request,
+            CptsMeta.showTaskCaseAwChart, hcClient);
     }
 
     /**
@@ -557,6 +965,64 @@ public class CptsClient {
      */
     public SyncInvoker<UpdateCaseRequest, UpdateCaseResponse> updateCaseInvoker(UpdateCaseRequest request) {
         return new SyncInvoker<UpdateCaseRequest, UpdateCaseResponse>(request, CptsMeta.updateCase, hcClient);
+    }
+
+    /**
+     * 修改目录
+     *
+     * 修改目录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateDirectoryRequest 请求对象
+     * @return UpdateDirectoryResponse
+     */
+    public UpdateDirectoryResponse updateDirectory(UpdateDirectoryRequest request) {
+        return hcClient.syncInvokeHttp(request, CptsMeta.updateDirectory);
+    }
+
+    /**
+     * 修改目录
+     *
+     * 修改目录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateDirectoryRequest 请求对象
+     * @return SyncInvoker<UpdateDirectoryRequest, UpdateDirectoryResponse>
+     */
+    public SyncInvoker<UpdateDirectoryRequest, UpdateDirectoryResponse> updateDirectoryInvoker(
+        UpdateDirectoryRequest request) {
+        return new SyncInvoker<UpdateDirectoryRequest, UpdateDirectoryResponse>(request, CptsMeta.updateDirectory,
+            hcClient);
+    }
+
+    /**
+     * 修改用例
+     *
+     * 修改用例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateNewCaseRequest 请求对象
+     * @return UpdateNewCaseResponse
+     */
+    public UpdateNewCaseResponse updateNewCase(UpdateNewCaseRequest request) {
+        return hcClient.syncInvokeHttp(request, CptsMeta.updateNewCase);
+    }
+
+    /**
+     * 修改用例
+     *
+     * 修改用例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateNewCaseRequest 请求对象
+     * @return SyncInvoker<UpdateNewCaseRequest, UpdateNewCaseResponse>
+     */
+    public SyncInvoker<UpdateNewCaseRequest, UpdateNewCaseResponse> updateNewCaseInvoker(UpdateNewCaseRequest request) {
+        return new SyncInvoker<UpdateNewCaseRequest, UpdateNewCaseResponse>(request, CptsMeta.updateNewCase, hcClient);
     }
 
     /**
@@ -789,36 +1255,6 @@ public class CptsClient {
         ListProjectSetsRequest request) {
         return new SyncInvoker<ListProjectSetsRequest, ListProjectSetsResponse>(request, CptsMeta.listProjectSets,
             hcClient);
-    }
-
-    /**
-     * 查询用例树
-     *
-     * 查询用例树
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListProjectTestCaseRequest 请求对象
-     * @return ListProjectTestCaseResponse
-     */
-    public ListProjectTestCaseResponse listProjectTestCase(ListProjectTestCaseRequest request) {
-        return hcClient.syncInvokeHttp(request, CptsMeta.listProjectTestCase);
-    }
-
-    /**
-     * 查询用例树
-     *
-     * 查询用例树
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListProjectTestCaseRequest 请求对象
-     * @return SyncInvoker<ListProjectTestCaseRequest, ListProjectTestCaseResponse>
-     */
-    public SyncInvoker<ListProjectTestCaseRequest, ListProjectTestCaseResponse> listProjectTestCaseInvoker(
-        ListProjectTestCaseRequest request) {
-        return new SyncInvoker<ListProjectTestCaseRequest, ListProjectTestCaseResponse>(request,
-            CptsMeta.listProjectTestCase, hcClient);
     }
 
     /**

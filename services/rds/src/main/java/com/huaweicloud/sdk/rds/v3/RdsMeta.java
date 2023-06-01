@@ -87,6 +87,38 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchDeleteManualBackupRequest, BatchDeleteManualBackupResponse> batchDeleteManualBackup =
+        genForbatchDeleteManualBackup();
+
+    private static HttpRequestDef<BatchDeleteManualBackupRequest, BatchDeleteManualBackupResponse> genForbatchDeleteManualBackup() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteManualBackupRequest, BatchDeleteManualBackupResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchDeleteManualBackupRequest.class, BatchDeleteManualBackupResponse.class)
+            .withName("BatchDeleteManualBackup")
+            .withUri("/v3/{project_id}/backups/batch-delete")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteManualBackupRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<BatchDeleteBackupRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteBackupRequestBody.class),
+            f -> f.withMarshaller(BatchDeleteManualBackupRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchTagAddActionRequest, BatchTagAddActionResponse> batchTagAddAction =
         genForbatchTagAddAction();
 
@@ -552,6 +584,37 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteJobRequest, DeleteJobResponse> deleteJob = genFordeleteJob();
+
+    private static HttpRequestDef<DeleteJobRequest, DeleteJobResponse> genFordeleteJob() {
+        // basic
+        HttpRequestDef.Builder<DeleteJobRequest, DeleteJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteJobRequest.class, DeleteJobResponse.class)
+                .withName("DeleteJob")
+                .withUri("/v3/{project_id}/jobs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteJobRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteJobResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteManualBackupRequest, DeleteManualBackupResponse> deleteManualBackup =
         genFordeleteManualBackup();
 
@@ -895,6 +958,80 @@ public class RdsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDrRelationsRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListEngineFlavorsRequest, ListEngineFlavorsResponse> listEngineFlavors =
+        genForlistEngineFlavors();
+
+    private static HttpRequestDef<ListEngineFlavorsRequest, ListEngineFlavorsResponse> genForlistEngineFlavors() {
+        // basic
+        HttpRequestDef.Builder<ListEngineFlavorsRequest, ListEngineFlavorsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListEngineFlavorsRequest.class, ListEngineFlavorsResponse.class)
+                .withName("ListEngineFlavors")
+                .withUri("/v3/{project_id}/instances/{instance_id}/available-flavors")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEngineFlavorsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("availability_zone_ids",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEngineFlavorsRequest::getAvailabilityZoneIds, (req, v) -> {
+                req.setAvailabilityZoneIds(v);
+            }));
+        builder.<String>withRequestField("ha_mode",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEngineFlavorsRequest::getHaMode, (req, v) -> {
+                req.setHaMode(v);
+            }));
+        builder.<String>withRequestField("spec_code_like",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEngineFlavorsRequest::getSpecCodeLike, (req, v) -> {
+                req.setSpecCodeLike(v);
+            }));
+        builder.<String>withRequestField("flavor_category_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEngineFlavorsRequest::getFlavorCategoryType, (req, v) -> {
+                req.setFlavorCategoryType(v);
+            }));
+        builder.<Boolean>withRequestField("is_rha_flavor",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListEngineFlavorsRequest::getIsRhaFlavor, (req, v) -> {
+                req.setIsRhaFlavor(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEngineFlavorsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEngineFlavorsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
             }));
 
         // response

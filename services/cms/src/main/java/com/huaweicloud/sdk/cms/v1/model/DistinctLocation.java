@@ -26,7 +26,7 @@ public class DistinctLocation {
     }
 
     /**
-     * 区域Region
+     * 区域ID
      * @return regionId
      */
     public String getRegionId() {
@@ -43,7 +43,7 @@ public class DistinctLocation {
     }
 
     /**
-     * 可用区Availability Zone
+     * 可用区ID
      * @return availabilityZoneId
      */
     public String getAvailabilityZoneId() {

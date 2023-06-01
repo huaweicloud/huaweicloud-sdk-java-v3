@@ -40,6 +40,11 @@ public class ListSubscriptionsRequest {
 
     private String fuzzyName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "connection_id")
+
+    private String connectionId;
+
     public ListSubscriptionsRequest withChannelId(String channelId) {
         this.channelId = channelId;
         return this;
@@ -146,6 +151,23 @@ public class ListSubscriptionsRequest {
         this.fuzzyName = fuzzyName;
     }
 
+    public ListSubscriptionsRequest withConnectionId(String connectionId) {
+        this.connectionId = connectionId;
+        return this;
+    }
+
+    /**
+     * 目标连接 id
+     * @return connectionId
+     */
+    public String getConnectionId() {
+        return connectionId;
+    }
+
+    public void setConnectionId(String connectionId) {
+        this.connectionId = connectionId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -160,12 +182,13 @@ public class ListSubscriptionsRequest {
             && Objects.equals(this.limit, listSubscriptionsRequest.limit)
             && Objects.equals(this.sort, listSubscriptionsRequest.sort)
             && Objects.equals(this.name, listSubscriptionsRequest.name)
-            && Objects.equals(this.fuzzyName, listSubscriptionsRequest.fuzzyName);
+            && Objects.equals(this.fuzzyName, listSubscriptionsRequest.fuzzyName)
+            && Objects.equals(this.connectionId, listSubscriptionsRequest.connectionId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(channelId, offset, limit, sort, name, fuzzyName);
+        return Objects.hash(channelId, offset, limit, sort, name, fuzzyName, connectionId);
     }
 
     @Override
@@ -178,6 +201,7 @@ public class ListSubscriptionsRequest {
         sb.append("    sort: ").append(toIndentedString(sort)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    fuzzyName: ").append(toIndentedString(fuzzyName)).append("\n");
+        sb.append("    connectionId: ").append(toIndentedString(connectionId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

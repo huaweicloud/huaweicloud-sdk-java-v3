@@ -255,6 +255,31 @@ public class ServiceStageMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateCamInstanceRequest, CreateCamInstanceResponse> createCamInstance =
+        genForcreateCamInstance();
+
+    private static HttpRequestDef<CreateCamInstanceRequest, CreateCamInstanceResponse> genForcreateCamInstance() {
+        // basic
+        HttpRequestDef.Builder<CreateCamInstanceRequest, CreateCamInstanceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateCamInstanceRequest.class, CreateCamInstanceResponse.class)
+                .withName("CreateCamInstance")
+                .withUri("/v1/{project_id}/instances")
+                .withContentType("application/json");
+
+        // requests
+        builder.<InstanceCreation>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(InstanceCreation.class),
+            f -> f.withMarshaller(CreateCamInstanceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateComponentRequest, CreateComponentResponse> createComponent =
         genForcreateComponent();
 
@@ -343,6 +368,31 @@ public class ServiceStageMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(InstanceCreate.class),
             f -> f.withMarshaller(CreateInstanceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateTemplateRequest, CreateTemplateResponse> createTemplate =
+        genForcreateTemplate();
+
+    private static HttpRequestDef<CreateTemplateRequest, CreateTemplateResponse> genForcreateTemplate() {
+        // basic
+        HttpRequestDef.Builder<CreateTemplateRequest, CreateTemplateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateTemplateRequest.class, CreateTemplateResponse.class)
+                .withName("CreateTemplate")
+                .withUri("/v1/{project_id}/templates")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateTemplate>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateTemplate.class),
+            f -> f.withMarshaller(CreateTemplateRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -515,6 +565,81 @@ public class ServiceStageMeta {
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(DeleteInstanceRequest::getForce, (req, v) -> {
                 req.setForce(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteInstanceByIdRequest, DeleteInstanceByIdResponse> deleteInstanceById =
+        genFordeleteInstanceById();
+
+    private static HttpRequestDef<DeleteInstanceByIdRequest, DeleteInstanceByIdResponse> genFordeleteInstanceById() {
+        // basic
+        HttpRequestDef.Builder<DeleteInstanceByIdRequest, DeleteInstanceByIdResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteInstanceByIdRequest.class, DeleteInstanceByIdResponse.class)
+                .withName("DeleteInstanceById")
+                .withUri("/v1/{project_id}/instances/{instance_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInstanceByIdRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteTemplateRequest, DeleteTemplateResponse> deleteTemplate =
+        genFordeleteTemplate();
+
+    private static HttpRequestDef<DeleteTemplateRequest, DeleteTemplateResponse> genFordeleteTemplate() {
+        // basic
+        HttpRequestDef.Builder<DeleteTemplateRequest, DeleteTemplateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteTemplateRequest.class, DeleteTemplateResponse.class)
+                .withName("DeleteTemplate")
+                .withUri("/v1/{project_id}/templates/{template_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("template_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTemplateRequest::getTemplateId, (req, v) -> {
+                req.setTemplateId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeployInstanceRequest, DeployInstanceResponse> deployInstance =
+        genFordeployInstance();
+
+    private static HttpRequestDef<DeployInstanceRequest, DeployInstanceResponse> genFordeployInstance() {
+        // basic
+        HttpRequestDef.Builder<DeployInstanceRequest, DeployInstanceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DeployInstanceRequest.class, DeployInstanceResponse.class)
+                .withName("DeployInstance")
+                .withUri("/v1/{project_id}/instance/deployments")
+                .withContentType("application/json");
+
+        // requests
+        builder.<InstanceDeployment>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(InstanceDeployment.class),
+            f -> f.withMarshaller(DeployInstanceRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response
@@ -1044,6 +1169,38 @@ public class ServiceStageMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(InstanceAction.class),
             f -> f.withMarshaller(UpdateInstanceActionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateTemplateRequest, UpdateTemplateResponse> updateTemplate =
+        genForupdateTemplate();
+
+    private static HttpRequestDef<UpdateTemplateRequest, UpdateTemplateResponse> genForupdateTemplate() {
+        // basic
+        HttpRequestDef.Builder<UpdateTemplateRequest, UpdateTemplateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateTemplateRequest.class, UpdateTemplateResponse.class)
+                .withName("UpdateTemplate")
+                .withUri("/v1/{project_id}/templates/{template_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("template_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTemplateRequest::getTemplateId, (req, v) -> {
+                req.setTemplateId(v);
+            }));
+        builder.<UpdateTemplates>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateTemplates.class),
+            f -> f.withMarshaller(UpdateTemplateRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

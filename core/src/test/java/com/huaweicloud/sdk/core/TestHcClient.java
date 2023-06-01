@@ -27,6 +27,8 @@ import com.github.tomakehurst.wiremock.matching.MatchResult;
 import com.github.tomakehurst.wiremock.matching.StringValuePattern;
 import com.huaweicloud.sdk.core.Constants.MEDIATYPE;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
+import com.huaweicloud.sdk.core.progress.ProgressListener;
+import com.huaweicloud.sdk.core.progress.ProgressStatus;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -36,6 +38,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Locale;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
@@ -58,6 +62,12 @@ public class TestHcClient {
 
     HttpRequestDef<TestHttpRequestDef.TestUploadDownloadRequest, TestHttpRequestDef.TestUploadDownloadResponse>
             testUploadDownloadDef = TestHttpRequestDef.buildTestUploadDownloadRequestDef();
+
+    HttpRequestDef<TestHttpRequestDef.TestUploadDownloadRequest, SdkResponse>
+            testUploadDef = TestHttpRequestDef.buildTestUploadRequestDef();
+
+    HttpRequestDef<TestHttpRequestDef.TestProgressRequest, TestHttpRequestDef.TestUploadDownloadResponse>
+            testDownloadDef = TestHttpRequestDef.buildTestDownloadRequestDef();
 
     HttpRequestDef<TestHttpRequestDef.TestCustomAuthorizationRequest,
             TestHttpRequestDef.TestCustomAuthorizationResponse> testCustomizeAuthorizationDef =
@@ -84,10 +94,21 @@ public class TestHcClient {
                         .withHeader("Content-Type", MEDIATYPE.APPLICATION_JSON)
                         .withBody("[{\"ires\":\"1\",\"jres\":\"2\"},{\"ires\":\"2\",\"jres\":\"3\"}]")
                         .withStatus(200)));
+
         wireMockRule.stubFor(WireMock.post("/uploaddownload")
                 .andMatching(request -> MatchResult.of(request.getBody().length == FILE_SIZE))
                 .willReturn(WireMock.aResponse()
-                        .withHeader("Content-Type", MEDIATYPE.APPLICATION_OCTET_STREAM)
+                        .withHeader(Constants.CONTENT_TYPE, MEDIATYPE.APPLICATION_OCTET_STREAM)
+                        .withBody(new byte[FILE_SIZE])
+                        .withStatus(200)));
+        wireMockRule.stubFor(WireMock.post("/upload")
+                .andMatching(request -> MatchResult.of(request.getBody().length == FILE_SIZE))
+                .willReturn(WireMock.aResponse()
+                        .withHeader(Constants.CONTENT_TYPE, MEDIATYPE.APPLICATION_JSON)
+                        .withStatus(204)));
+        wireMockRule.stubFor(WireMock.post("/download")
+                .willReturn(WireMock.aResponse()
+                        .withHeader(Constants.CONTENT_TYPE, MEDIATYPE.APPLICATION_OCTET_STREAM)
                         .withBody(new byte[FILE_SIZE])
                         .withStatus(200)));
 
@@ -115,7 +136,7 @@ public class TestHcClient {
         CompletableFuture<TestHttpRequestDef.TestResponse> future = callAsync(new TestHttpRequestDef.TestRequest());
         TestHttpRequestDef.TestResponse response = future.get();
         Assert.assertNotNull(response.getBody());
-        TestHttpRequestDef.InnerResponse[] result = new TestHttpRequestDef.InnerResponse[] {
+        TestHttpRequestDef.InnerResponse[] result = new TestHttpRequestDef.InnerResponse[]{
                 new TestHttpRequestDef.InnerResponse().withIres("1").withJres("2"),
                 new TestHttpRequestDef.InnerResponse().withIres("2").withJres("3")
         };
@@ -128,7 +149,7 @@ public class TestHcClient {
                 new TestHttpRequestDef.TestNoBodyRequest());
         TestHttpRequestDef.TestResponse response = future.get();
         Assert.assertNotNull(response.getBody());
-        TestHttpRequestDef.InnerResponse[] result = new TestHttpRequestDef.InnerResponse[] {
+        TestHttpRequestDef.InnerResponse[] result = new TestHttpRequestDef.InnerResponse[]{
                 new TestHttpRequestDef.InnerResponse().withIres("1").withJres("2"),
                 new TestHttpRequestDef.InnerResponse().withIres("2").withJres("3")
         };
@@ -158,6 +179,43 @@ public class TestHcClient {
     }
 
     @Test
+    public void testUploadProgressRequest() {
+        TestHttpRequestDef.TestUploadDownloadRequest testUploadDownloadRequest
+                = new TestHttpRequestDef.TestUploadDownloadRequest();
+        TestProgressListener testProgressListener = new TestProgressListener();
+        testUploadDownloadRequest.setProgressListener(testProgressListener);
+        testUploadDownloadRequest.setProgressInterval(1024 * 1024L);
+
+        SdkResponse response = null;
+        try (InputStream inputStream = new ByteArrayInputStream(new byte[FILE_SIZE])) {
+            testUploadDownloadRequest.setUploadStream(inputStream);
+            response = hcClient.syncInvokeHttp(testUploadDownloadRequest, testUploadDef);
+        } catch (IOException e) {
+            LOGGER.error(String.valueOf(e));
+        }
+
+        Assert.assertNotNull(response);
+        Assert.assertEquals(204, response.getHttpStatusCode());
+        Assert.assertEquals(FILE_SIZE, testProgressListener.transferredBytes);
+        Assert.assertEquals(100, testProgressListener.transferPercentage);
+    }
+
+    @Test
+    public void testDownloadProgressRequest() {
+        TestHttpRequestDef.TestProgressRequest testProgressRequest = new TestHttpRequestDef.TestProgressRequest();
+        TestProgressListener testProgressListener = new TestProgressListener();
+        testProgressRequest.setProgressListener(testProgressListener);
+        testProgressRequest.setProgressInterval(1024 * 1024L);
+
+        TestHttpRequestDef.TestUploadDownloadResponse response = hcClient.syncInvokeHttp(
+                testProgressRequest, testDownloadDef);
+
+        response.consumeDownloadStream(TestUtils.getDownloadConsumer(LOGGER));
+        Assert.assertEquals(FILE_SIZE, testProgressListener.transferredBytes);
+        Assert.assertEquals(100, testProgressListener.transferPercentage);
+    }
+
+    @Test
     public void testCustomizedHeaderRequest() throws ExecutionException, InterruptedException {
         CompletableFuture<TestHttpRequestDef.TestCustomAuthorizationResponse> future = callCustomAuthorizationAsync(
                 new TestHttpRequestDef.TestCustomAuthorizationRequest().withAuthorization("test"));
@@ -170,4 +228,20 @@ public class TestHcClient {
         return hcClient.asyncInvokeHttp(request, testCustomizeAuthorizationDef);
     }
 
+    static class TestProgressListener implements ProgressListener {
+
+        private long transferredBytes;
+
+        private int transferPercentage;
+
+        @Override
+        public void progressChanged(ProgressStatus status) {
+            LOGGER.info(String.format(Locale.ROOT,
+                    "AverageSpeed: %f, TransferPercentage: %d%%",
+                    status.getAverageSpeed(), status.getTransferPercentage()));
+
+            transferredBytes = status.getTransferredBytes();
+            transferPercentage = status.getTransferPercentage();
+        }
+    }
 }

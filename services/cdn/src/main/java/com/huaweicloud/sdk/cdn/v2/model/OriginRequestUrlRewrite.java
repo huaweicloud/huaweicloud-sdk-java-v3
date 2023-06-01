@@ -53,7 +53,7 @@ public class OriginRequestUrlRewrite {
     }
 
     /**
-     * 匹配类型， all：所有文件， file_path：URL路径， wildcard：通配符。 full_path: 全路径
+     * 匹配类型， all：所有文件， file_path：URL路径， wildcard：通配符， full_path: 全路径。
      * @return matchType
      */
     public String getMatchType() {

@@ -50,6 +50,11 @@ public class SmnRegion {
 
     public static final Region CN_NORTH_9 = new Region("cn-north-9", "https://smn.cn-north-9.myhuaweicloud.com");
 
+    public static final Region AP_SOUTHEAST_4 =
+        new Region("ap-southeast-4", "https://smn.ap-southeast-4.myhuaweicloud.com");
+
+    public static final Region TR_WEST_1 = new Region("tr-west-1", "https://smn.tr-west-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("SMN");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -73,6 +78,8 @@ public class SmnRegion {
         map.put("sa-brazil-1", SA_BRAZIL_1);
         map.put("la-south-2", LA_SOUTH_2);
         map.put("cn-north-9", CN_NORTH_9);
+        map.put("ap-southeast-4", AP_SOUTHEAST_4);
+        map.put("tr-west-1", TR_WEST_1);
         return Collections.unmodifiableMap(map);
     }
 

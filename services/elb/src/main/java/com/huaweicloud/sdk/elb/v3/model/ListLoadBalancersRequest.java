@@ -173,6 +173,16 @@ public class ListLoadBalancersRequest {
 
     private List<String> autoscaling = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "protection_status")
+
+    private List<String> protectionStatus = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "global_eips")
+
+    private List<String> globalEips = null;
+
     public ListLoadBalancersRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -777,7 +787,7 @@ public class ListLoadBalancersRequest {
     }
 
     /**
-     * 四层Flavor ID。  支持多值查询，查询条件格式：*l4_flavor_id=xxx&l4_flavor_id=xxx*。  [不支持该字段，请勿使用。](tag:fcs)
+     * 四层Flavor ID。  支持多值查询，查询条件格式：*l4_flavor_id=xxx&l4_flavor_id=xxx*。  [不支持该字段，请勿使用。](tag:hcso,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
      * @return l4FlavorId
      */
     public List<String> getL4FlavorId() {
@@ -843,7 +853,7 @@ public class ListLoadBalancersRequest {
     }
 
     /**
-     * 七层Flavor ID。  支持多值查询，查询条件格式：*l7_flavor_id=xxx&l7_flavor_id=xxx*。  [不支持该字段，请勿使用。](tag:fcs)
+     * 七层Flavor ID。  支持多值查询，查询条件格式：*l7_flavor_id=xxx&l7_flavor_id=xxx*。  [不支持该字段，请勿使用。](tag:hcso,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
      * @return l7FlavorId
      */
     public List<String> getL7FlavorId() {
@@ -909,7 +919,7 @@ public class ListLoadBalancersRequest {
     }
 
     /**
-     * 资源账单信息。  支持多值查询，查询条件格式：*billing_info=xxx&billing_info=xxx*。  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt)
+     * 资源账单信息。  支持多值查询，查询条件格式：*billing_info=xxx&billing_info=xxx*。  [不支持该字段，请勿使用。](tag:hws_hk,hws_eu,hws_test,hcs,hcs_sm,hcso,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b,hcso_dt,dt,dt_test,ocb,ctc,cmcc,tm,sbc,g42,hws_ocb,hk_sbc,hk_tm,hk_g42)
      * @return billingInfo
      */
     public List<String> getBillingInfo() {
@@ -1124,7 +1134,7 @@ public class ListLoadBalancersRequest {
     }
 
     /**
-     * 是否开启弹性扩缩容。示例如下： \"autoscaling\": {             \"enable\": \"true\"         }  支持多值查询，查询条件格式：  *autoscaling=enable=true&autoscaling=enable=false*。  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42,fcs)
+     * 是否开启弹性扩缩容。示例如下： \"autoscaling\": {             \"enable\": \"true\"         }  支持多值查询，查询条件格式：  *autoscaling=enable=true&autoscaling=enable=false*。  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42,hcso,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
      * @return autoscaling
      */
     public List<String> getAutoscaling() {
@@ -1133,6 +1143,72 @@ public class ListLoadBalancersRequest {
 
     public void setAutoscaling(List<String> autoscaling) {
         this.autoscaling = autoscaling;
+    }
+
+    public ListLoadBalancersRequest withProtectionStatus(List<String> protectionStatus) {
+        this.protectionStatus = protectionStatus;
+        return this;
+    }
+
+    public ListLoadBalancersRequest addProtectionStatusItem(String protectionStatusItem) {
+        if (this.protectionStatus == null) {
+            this.protectionStatus = new ArrayList<>();
+        }
+        this.protectionStatus.add(protectionStatusItem);
+        return this;
+    }
+
+    public ListLoadBalancersRequest withProtectionStatus(Consumer<List<String>> protectionStatusSetter) {
+        if (this.protectionStatus == null) {
+            this.protectionStatus = new ArrayList<>();
+        }
+        protectionStatusSetter.accept(this.protectionStatus);
+        return this;
+    }
+
+    /**
+     * 修改保护状态, 取值： - nonProtection: 不保护，默认值为nonProtection - consoleProtection: 控制台修改保护
+     * @return protectionStatus
+     */
+    public List<String> getProtectionStatus() {
+        return protectionStatus;
+    }
+
+    public void setProtectionStatus(List<String> protectionStatus) {
+        this.protectionStatus = protectionStatus;
+    }
+
+    public ListLoadBalancersRequest withGlobalEips(List<String> globalEips) {
+        this.globalEips = globalEips;
+        return this;
+    }
+
+    public ListLoadBalancersRequest addGlobalEipsItem(String globalEipsItem) {
+        if (this.globalEips == null) {
+            this.globalEips = new ArrayList<>();
+        }
+        this.globalEips.add(globalEipsItem);
+        return this;
+    }
+
+    public ListLoadBalancersRequest withGlobalEips(Consumer<List<String>> globalEipsSetter) {
+        if (this.globalEips == null) {
+            this.globalEips = new ArrayList<>();
+        }
+        globalEipsSetter.accept(this.globalEips);
+        return this;
+    }
+
+    /**
+     * 负载均衡器绑定的公网IP。示例如下：  {     \"global_eips\": [         {             \"global_eip_id\": \"24000000-0000-0000-0000-100000000001\",             \"global_eip_address\": \"10.10.10.10\",             \"ip_version\": 4         }     ] }   支持多值查询，查询条件格式：  - global_eip_id作为查询条件：*global_eips=global_eip_id=xxx&global_eips=global_eip_id=xxx*。  - global_eip_address作为查询条件：*global_eips=global_eip_address=xxx&global_eips=global_eip_address=xxx*。  - ip_version作为查询条件：*global_eips=ip_version=xxx&global_eips=ip_version=xxx*。
+     * @return globalEips
+     */
+    public List<String> getGlobalEips() {
+        return globalEips;
+    }
+
+    public void setGlobalEips(List<String> globalEips) {
+        this.globalEips = globalEips;
     }
 
     @Override
@@ -1175,7 +1251,9 @@ public class ListLoadBalancersRequest {
             && Objects.equals(this.ipVersion, listLoadBalancersRequest.ipVersion)
             && Objects.equals(this.deletionProtectionEnable, listLoadBalancersRequest.deletionProtectionEnable)
             && Objects.equals(this.elbVirsubnetType, listLoadBalancersRequest.elbVirsubnetType)
-            && Objects.equals(this.autoscaling, listLoadBalancersRequest.autoscaling);
+            && Objects.equals(this.autoscaling, listLoadBalancersRequest.autoscaling)
+            && Objects.equals(this.protectionStatus, listLoadBalancersRequest.protectionStatus)
+            && Objects.equals(this.globalEips, listLoadBalancersRequest.globalEips);
     }
 
     @Override
@@ -1211,7 +1289,9 @@ public class ListLoadBalancersRequest {
             ipVersion,
             deletionProtectionEnable,
             elbVirsubnetType,
-            autoscaling);
+            autoscaling,
+            protectionStatus,
+            globalEips);
     }
 
     @Override
@@ -1250,6 +1330,8 @@ public class ListLoadBalancersRequest {
         sb.append("    deletionProtectionEnable: ").append(toIndentedString(deletionProtectionEnable)).append("\n");
         sb.append("    elbVirsubnetType: ").append(toIndentedString(elbVirsubnetType)).append("\n");
         sb.append("    autoscaling: ").append(toIndentedString(autoscaling)).append("\n");
+        sb.append("    protectionStatus: ").append(toIndentedString(protectionStatus)).append("\n");
+        sb.append("    globalEips: ").append(toIndentedString(globalEips)).append("\n");
         sb.append("}");
         return sb.toString();
     }

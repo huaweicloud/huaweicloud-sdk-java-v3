@@ -121,9 +121,9 @@ public class RabbitMQAsyncClient {
     }
 
     /**
-     * 创建实例(按需)
+     * 创建实例
      *
-     * 创建实例，该接口创建的实例为按需计费的方式。
+     * 创建实例，该接口支持创建按需[和包周期](tag:hws,hws_hk,ctc,cmcc)计费方式的实例。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -136,9 +136,9 @@ public class RabbitMQAsyncClient {
     }
 
     /**
-     * 创建实例(按需)
+     * 创建实例
      *
-     * 创建实例，该接口创建的实例为按需计费的方式。
+     * 创建实例，该接口支持创建按需[和包周期](tag:hws,hws_hk,ctc,cmcc)计费方式的实例。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

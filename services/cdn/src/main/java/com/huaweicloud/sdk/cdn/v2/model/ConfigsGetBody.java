@@ -300,7 +300,7 @@ public class ConfigsGetBody {
     }
 
     /**
-     * 回源协议（follow：协议跟随回源，http：HTTP回源(默认)，https：https回源）。
+     * 回源协议，follow：协议跟随回源，http：HTTP回源(默认)，https：https回源。
      * @return originProtocol
      */
     public String getOriginProtocol() {
@@ -317,7 +317,7 @@ public class ConfigsGetBody {
     }
 
     /**
-     * 回源跟随（on：开启，off：关闭）。
+     * 回源跟随，on：开启，off：关闭。
      * @return originFollow302Status
      */
     public String getOriginFollow302Status() {
@@ -497,7 +497,7 @@ public class ConfigsGetBody {
     }
 
     /**
-     * ipv6设置（1：打开；0：关闭）
+     * ipv6设置，1：打开；0：关闭。
      * @return ipv6Accelerate
      */
     public Integer getIpv6Accelerate() {
@@ -530,7 +530,7 @@ public class ConfigsGetBody {
     }
 
     /**
-     * CDN状态码缓存时间
+     * 状态码缓存时间。
      * @return errorCodeCache
      */
     public List<ErrorCodeCache> getErrorCodeCache() {
@@ -547,7 +547,7 @@ public class ConfigsGetBody {
     }
 
     /**
-     * Range回源，即分片回源 开启Range回源的前提是您的源站支持Range请求，即HTTP请求头中包含Range字段，否则可能导致回源失败。 开启: on
+     * Range回源，开启: on，off:关闭。
      * @return originRangeStatus
      */
     public String getOriginRangeStatus() {
@@ -607,7 +607,7 @@ public class ConfigsGetBody {
     }
 
     /**
-     * 改写回源URL，最多配置20条。
+     * 改写回源URL。
      * @return originRequestUrlRewrite
      */
     public List<OriginRequestUrlRewrite> getOriginRequestUrlRewrite() {
@@ -640,7 +640,7 @@ public class ConfigsGetBody {
     }
 
     /**
-     * 高级回源，最多配置20条。
+     * 高级回源。
      * @return flexibleOrigin
      */
     public List<FlexibleOrigins> getFlexibleOrigin() {
@@ -657,7 +657,7 @@ public class ConfigsGetBody {
     }
 
     /**
-     * 回源是否校验ETag（on：开启，off：关闭）。
+     * 回源是否校验ETag，on：开启，off：关闭。
      * @return sliceEtagStatus
      */
     public String getSliceEtagStatus() {
@@ -674,7 +674,7 @@ public class ConfigsGetBody {
     }
 
     /**
-     * 回源超时时间，范围:5-60，单位：秒。
+     * 回源超时时间，单位：秒。
      * @return originReceiveTimeout
      */
     public Integer getOriginReceiveTimeout() {

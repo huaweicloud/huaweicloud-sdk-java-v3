@@ -92,7 +92,7 @@ public class AosAsyncClient {
      * 当执行计划状态为&#x60;AVAILABLE&#x60;时，可以通过GetExecutionPlan获取本次执行计划的结果
      * 
      * 执行计划不会做过多深层的检查和校验，如用户是否有权限生成、修改资源等
-     *         
+     * 
      * **注意：**
      *   * 若指定资源栈不存在，则返回404
      *   * 若请求中不含有template_body和template_uri，则返回400
@@ -120,7 +120,7 @@ public class AosAsyncClient {
      * 当执行计划状态为&#x60;AVAILABLE&#x60;时，可以通过GetExecutionPlan获取本次执行计划的结果
      * 
      * 执行计划不会做过多深层的检查和校验，如用户是否有权限生成、修改资源等
-     *         
+     * 
      * **注意：**
      *   * 若指定资源栈不存在，则返回404
      *   * 若请求中不含有template_body和template_uri，则返回400

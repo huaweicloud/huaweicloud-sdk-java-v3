@@ -68,7 +68,7 @@ public class SourcesConfig {
     }
 
     /**
-     * 源站类型（\"ipaddr\"：\"IP源站\"，\"domain\"：\"域名源站\"，\"obs_bucket\"：\"OBS Bucket源站\"）。
+     * 源站类型， ipaddr：源站IP，domain：源站域名，obs_bucket：OBS桶域名。
      * @return originType
      */
     public String getOriginType() {

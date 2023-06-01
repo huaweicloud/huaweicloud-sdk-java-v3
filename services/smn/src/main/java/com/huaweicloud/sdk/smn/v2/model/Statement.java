@@ -90,7 +90,7 @@ public class Statement {
     }
 
     /**
-     * Statement语句作用的对象。 目前支持“CSP”和“Service”两类对象。  “CSP”对象指的是其他用户，可以作用于多个用户。  “Service”对象指的是云服务，可以作用于多个云服务。  Principal元素和NotPrincipal元素两者任选其一。选定后， “CSP”对象填写内容的格式为urn:csp:iam::domainId:root，其中domainId为其他用户的“账号ID”。  “Service”对象填写内容的格式为小写的云服务名称缩写。
+     * Statement语句作用的对象。 目前支持“CSP”和“Service”两类对象。  “CSP”对象指的是其他用户，可以作用于多个用户。  “Service”对象指的是云服务，可以作用于多个云服务。  Principal元素和NotPrincipal元素两者任选其一。选定后， “CSP”对象填写内容的格式为urn:csp:iam::domainId:root或“\\*”，其中domainId为其他用户的“账号ID”，“\\*”指作用于所有人。  “Service”对象填写内容的格式为小写的云服务名称缩写。
      * @return principal
      */
     public String getPrincipal() {
@@ -107,7 +107,7 @@ public class Statement {
     }
 
     /**
-     * NotPrincipal：Statement语句排除作用的对象。  目前支持“CSP”和“Service”两类对象。  “CSP”对象指的是其他用户，可以作用于多个用户。  “Service”对象指的是云服务，可以作用于多个云服务。  Principal元素和NotPrincipal元素两者任选其一。选定后， “CSP”对象填写内容的格式为urn:csp:iam::domainId:root，其中domainId为其他用户的“账号ID”。  “Service”对象填写内容的格式为小写的云服务名称缩写。
+     * NotPrincipal：Statement语句排除作用的对象。  目前支持“CSP”和“Service”两类对象。  “CSP”对象指的是其他用户，可以作用于多个用户。  “Service”对象指的是云服务，可以作用于多个云服务。  Principal元素和NotPrincipal元素两者任选其一。选定后， “CSP”对象填写内容的格式为urn:csp:iam::domainId:root或“\\*”，其中domainId为其他用户的“账号ID”，“\\*”指作用于所有人。  “Service”对象填写内容的格式为小写的云服务名称缩写。
      * @return notPrincipal
      */
     public String getNotPrincipal() {

@@ -35,6 +35,11 @@ public class ListTopicsRequest {
 
     private String fuzzyName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "topic_id")
+
+    private String topicId;
+
     public ListTopicsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -120,6 +125,23 @@ public class ListTopicsRequest {
         this.fuzzyName = fuzzyName;
     }
 
+    public ListTopicsRequest withTopicId(String topicId) {
+        this.topicId = topicId;
+        return this;
+    }
+
+    /**
+     * 检索的主题ID，完全匹配。
+     * @return topicId
+     */
+    public String getTopicId() {
+        return topicId;
+    }
+
+    public void setTopicId(String topicId) {
+        this.topicId = topicId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -133,12 +155,13 @@ public class ListTopicsRequest {
             && Objects.equals(this.limit, listTopicsRequest.limit)
             && Objects.equals(this.enterpriseProjectId, listTopicsRequest.enterpriseProjectId)
             && Objects.equals(this.name, listTopicsRequest.name)
-            && Objects.equals(this.fuzzyName, listTopicsRequest.fuzzyName);
+            && Objects.equals(this.fuzzyName, listTopicsRequest.fuzzyName)
+            && Objects.equals(this.topicId, listTopicsRequest.topicId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(offset, limit, enterpriseProjectId, name, fuzzyName);
+        return Objects.hash(offset, limit, enterpriseProjectId, name, fuzzyName, topicId);
     }
 
     @Override
@@ -150,6 +173,7 @@ public class ListTopicsRequest {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    fuzzyName: ").append(toIndentedString(fuzzyName)).append("\n");
+        sb.append("    topicId: ").append(toIndentedString(topicId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

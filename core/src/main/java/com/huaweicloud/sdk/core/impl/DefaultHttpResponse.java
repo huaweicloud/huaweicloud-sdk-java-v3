@@ -21,8 +21,8 @@
 
 package com.huaweicloud.sdk.core.impl;
 
-import com.huaweicloud.sdk.core.Constants.MEDIATYPE;
 import com.huaweicloud.sdk.core.http.HttpResponse;
+import com.huaweicloud.sdk.core.utils.HttpUtils;
 import okhttp3.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -40,15 +40,9 @@ public class DefaultHttpResponse implements HttpResponse {
 
     private static final Logger logger = LoggerFactory.getLogger(DefaultHttpResponse.class);
 
-    private Response response;
+    private final Response response;
 
     private String strBody;
-
-    private static final String[] SHOULD_READ_BODY_CONTENT_TYPES = new String[]{
-            MEDIATYPE.APPLICATION_JSON,
-            MEDIATYPE.APPLICATION_XML,
-            MEDIATYPE.TEXT
-    };
 
     private DefaultHttpResponse(Response response) {
         this.response = response;
@@ -65,17 +59,12 @@ public class DefaultHttpResponse implements HttpResponse {
         if (Objects.isNull(response.body())) {
             return false;
         }
-        if (Objects.isNull(response.body().contentType())) {
-            return response.body().contentLength() != 0;
-        }
 
-        String contentType = response.body().contentType().toString();
-        for (String shouldReadBodyContentType : SHOULD_READ_BODY_CONTENT_TYPES) {
-            if (contentType.startsWith(shouldReadBodyContentType)) {
-                return true;
-            }
+        if (Objects.isNull(response.body().contentType()) && response.body().contentLength() <= 0) {
+            return false;
+        } else {
+            return HttpUtils.isTextBasedContentType(response.body().contentType().toString());
         }
-        return false;
     }
 
     static DefaultHttpResponse wrap(Response response) {

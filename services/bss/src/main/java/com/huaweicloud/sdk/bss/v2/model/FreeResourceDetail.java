@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.bss.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
@@ -48,12 +49,12 @@ public class FreeResourceDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "amount")
 
-    private Double amount;
+    private BigDecimal amount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "original_amount")
 
-    private Double originalAmount;
+    private BigDecimal originalAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "measure_id")
@@ -179,7 +180,7 @@ public class FreeResourceDetail {
         this.endTime = endTime;
     }
 
-    public FreeResourceDetail withAmount(Double amount) {
+    public FreeResourceDetail withAmount(BigDecimal amount) {
         this.amount = amount;
         return this;
     }
@@ -188,15 +189,15 @@ public class FreeResourceDetail {
      * 资源剩余额度，针对可重置资源包，是指当前重置周期内的剩余量。
      * @return amount
      */
-    public Double getAmount() {
+    public BigDecimal getAmount() {
         return amount;
     }
 
-    public void setAmount(Double amount) {
+    public void setAmount(BigDecimal amount) {
         this.amount = amount;
     }
 
-    public FreeResourceDetail withOriginalAmount(Double originalAmount) {
+    public FreeResourceDetail withOriginalAmount(BigDecimal originalAmount) {
         this.originalAmount = originalAmount;
         return this;
     }
@@ -205,11 +206,11 @@ public class FreeResourceDetail {
      * 资源原始额度，针对可重置资源包，是指每个重置周期内的总量。
      * @return originalAmount
      */
-    public Double getOriginalAmount() {
+    public BigDecimal getOriginalAmount() {
         return originalAmount;
     }
 
-    public void setOriginalAmount(Double originalAmount) {
+    public void setOriginalAmount(BigDecimal originalAmount) {
         this.originalAmount = originalAmount;
     }
 

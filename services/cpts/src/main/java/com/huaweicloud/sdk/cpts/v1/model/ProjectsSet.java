@@ -147,7 +147,7 @@ public class ProjectsSet {
     }
 
     /**
-     * 工程来源 0:PerfTest,2:CloudTest
+     * 工程来源 0：PerfTest，2：CloudTest
      * minimum: 0
      * maximum: 2147483647
      * @return source

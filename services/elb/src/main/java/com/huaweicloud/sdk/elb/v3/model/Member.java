@@ -136,7 +136,7 @@ public class Member {
     }
 
     /**
-     * 后端服务器名称。
+     * 后端服务器名称。注意：该名称并非ECS名称。
      * @return name
      */
     public String getName() {
@@ -221,7 +221,7 @@ public class Member {
     }
 
     /**
-     * 后端服务器业务端口号。
+     * 后端服务器业务端口。 >在开启端口透传的pool下创建member传该字段不生效，可不传该字段。
      * minimum: 1
      * maximum: 65535
      * @return protocolPort
@@ -327,7 +327,7 @@ public class Member {
     }
 
     /**
-     * 后端云服务器的健康状态。  取值： - ONLINE：后端云服务器正常。 - NO_MONITOR：后端云服务器所在的服务器组没有健康检查器。 - OFFLINE：后端云服务器关联的ECS服务器不存在或已关机。
+     * 后端云服务器的健康状态。当status非空时，以status字段中监听器粒度的健康检查状态优先。  取值： - ONLINE：后端云服务器正常。 - NO_MONITOR：后端云服务器所在的服务器组没有健康检查器。 - OFFLINE：后端云服务器关联的ECS服务器不存在或已关机。
      * @return operatingStatus
      */
     public String getOperatingStatus() {

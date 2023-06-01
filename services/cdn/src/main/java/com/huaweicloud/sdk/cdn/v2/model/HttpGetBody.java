@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 证书配置查询响应体
+ * 证书配置查询响应体。
  */
 public class HttpGetBody {
 
@@ -61,7 +61,7 @@ public class HttpGetBody {
     }
 
     /**
-     * HTTPS证书是否启用。（on：开启，off：关闭）
+     * HTTPS证书是否启用，on：开启，off：关闭。
      * @return httpsStatus
      */
     public String getHttpsStatus() {
@@ -78,7 +78,7 @@ public class HttpGetBody {
     }
 
     /**
-     * 证书名字。（长度限制为3-32字符）。当证书开启时必返回该字段。
+     * 证书名字。
      * @return certificateName
      */
     public String getCertificateName() {
@@ -95,7 +95,7 @@ public class HttpGetBody {
     }
 
     /**
-     * HTTPS协议使用的证书内容，当证书开启时必返回该字段。取值范围：PEM编码格式。
+     * HTTPS协议使用的证书内容，PEM编码格式。
      * @return certificateValue
      */
     public String getCertificateValue() {
@@ -112,7 +112,7 @@ public class HttpGetBody {
     }
 
     /**
-     * 证书过期时间,单位：毫秒。
+     * 证书过期时间。  > UTC时间。
      * @return expireTime
      */
     public Long getExpireTime() {
@@ -129,7 +129,7 @@ public class HttpGetBody {
     }
 
     /**
-     * 证书来源。1：代表华为云托管证书；0：表示自有证书。 默认值0。当证书开启时必返回该字段。
+     * 证书来源,1：华为云托管证书,0：自有证书。
      * @return certificateSource
      */
     public Integer getCertificateSource() {
@@ -163,7 +163,7 @@ public class HttpGetBody {
     }
 
     /**
-     * 是否使用HTTP2.0。（on：是，off：否）
+     * 是否使用HTTP2.0，on：是，off：否。
      * @return http2Status
      */
     public String getHttp2Status() {
@@ -180,7 +180,7 @@ public class HttpGetBody {
     }
 
     /**
-     * 传输层安全性协议，目前支持TLSv1.0/1.1/1.2/1.3四个版本的协议。当证书开启时返回该字段，默认全部开启，不可全部关闭。
+     * 传输层安全性协议。
      * @return tlsVersion
      */
     public String getTlsVersion() {
@@ -197,7 +197,7 @@ public class HttpGetBody {
     }
 
     /**
-     * 是否开启ocsp stapling （on：是，off：否）。
+     * 是否开启ocsp stapling,on：是，off：否。
      * @return ocspStaplingStatus
      */
     public String getOcspStaplingStatus() {

@@ -1886,6 +1886,23 @@ public class CbrMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowSummaryRequest, ShowSummaryResponse> showSummary = genForshowSummary();
+
+    private static HttpRequestDef<ShowSummaryRequest, ShowSummaryResponse> genForshowSummary() {
+        // basic
+        HttpRequestDef.Builder<ShowSummaryRequest, ShowSummaryResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowSummaryRequest.class, ShowSummaryResponse.class)
+                .withName("ShowSummary")
+                .withUri("/v3/{project_id}/vaults/summary")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowVaultRequest, ShowVaultResponse> showVault = genForshowVault();
 
     private static HttpRequestDef<ShowVaultRequest, ShowVaultResponse> genForshowVault() {

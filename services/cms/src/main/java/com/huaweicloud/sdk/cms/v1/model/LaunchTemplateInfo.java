@@ -26,7 +26,7 @@ public class LaunchTemplateInfo {
     }
 
     /**
-     * 实例的启动模板id，唯一标识一个启动模板
+     * 实例的启动模板ID，唯一标识一个启动模板
      * @return launchTemplateId
      */
     public String getLaunchTemplateId() {
@@ -43,7 +43,7 @@ public class LaunchTemplateInfo {
     }
 
     /**
-     * 模板版本号
+     * 启动模板版本号
      * @return version
      */
     public String getVersion() {

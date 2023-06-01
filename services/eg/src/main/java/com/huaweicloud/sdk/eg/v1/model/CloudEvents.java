@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * CloudEvent事件格式定义，参考https://github.com/cloudevents/spec/blob/v1.0.1/spec.md
+ * CloudEvents事件格式定义，参考https://github.com/cloudevents/spec/blob/v1.0.1/spec.md
  */
 public class CloudEvents {
 

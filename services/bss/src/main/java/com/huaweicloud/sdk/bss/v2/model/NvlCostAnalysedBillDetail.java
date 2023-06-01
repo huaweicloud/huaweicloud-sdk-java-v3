@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.bss.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -126,7 +127,7 @@ public class NvlCostAnalysedBillDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "usage")
 
-    private Double usage;
+    private BigDecimal usage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "usage_measure_id")
@@ -136,7 +137,7 @@ public class NvlCostAnalysedBillDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "free_resource_usage")
 
-    private Double freeResourceUsage;
+    private BigDecimal freeResourceUsage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "free_resource_measure_id")
@@ -146,7 +147,7 @@ public class NvlCostAnalysedBillDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ri_usage")
 
-    private Double riUsage;
+    private BigDecimal riUsage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ri_usage_measure_id")
@@ -156,7 +157,7 @@ public class NvlCostAnalysedBillDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "consume_amount")
 
-    private Double consumeAmount;
+    private BigDecimal consumeAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "past_months_amortized_amount")
@@ -166,12 +167,12 @@ public class NvlCostAnalysedBillDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "current_month_amortized_amount")
 
-    private Double currentMonthAmortizedAmount;
+    private BigDecimal currentMonthAmortizedAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "future_months_amortized_amount")
 
-    private Double futureMonthsAmortizedAmount;
+    private BigDecimal futureMonthsAmortizedAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "amortized_cash_amount")
@@ -181,27 +182,27 @@ public class NvlCostAnalysedBillDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "amortized_credit_amount")
 
-    private Double amortizedCreditAmount;
+    private BigDecimal amortizedCreditAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "amortized_coupon_amount")
 
-    private Double amortizedCouponAmount;
+    private BigDecimal amortizedCouponAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "amortized_flexipurchase_coupon_amount")
 
-    private Double amortizedFlexipurchaseCouponAmount;
+    private BigDecimal amortizedFlexipurchaseCouponAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "amortized_stored_value_card_amount")
 
-    private Double amortizedStoredValueCardAmount;
+    private BigDecimal amortizedStoredValueCardAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "amortized_bonus_amount")
 
-    private Double amortizedBonusAmount;
+    private BigDecimal amortizedBonusAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sub_service_type_code")
@@ -617,7 +618,7 @@ public class NvlCostAnalysedBillDetail {
         this.usageType = usageType;
     }
 
-    public NvlCostAnalysedBillDetail withUsage(Double usage) {
+    public NvlCostAnalysedBillDetail withUsage(BigDecimal usage) {
         this.usage = usage;
         return this;
     }
@@ -626,11 +627,11 @@ public class NvlCostAnalysedBillDetail {
      * 资源的使用量。
      * @return usage
      */
-    public Double getUsage() {
+    public BigDecimal getUsage() {
         return usage;
     }
 
-    public void setUsage(Double usage) {
+    public void setUsage(BigDecimal usage) {
         this.usage = usage;
     }
 
@@ -651,7 +652,7 @@ public class NvlCostAnalysedBillDetail {
         this.usageMeasureId = usageMeasureId;
     }
 
-    public NvlCostAnalysedBillDetail withFreeResourceUsage(Double freeResourceUsage) {
+    public NvlCostAnalysedBillDetail withFreeResourceUsage(BigDecimal freeResourceUsage) {
         this.freeResourceUsage = freeResourceUsage;
         return this;
     }
@@ -660,11 +661,11 @@ public class NvlCostAnalysedBillDetail {
      * 套餐内使用量。
      * @return freeResourceUsage
      */
-    public Double getFreeResourceUsage() {
+    public BigDecimal getFreeResourceUsage() {
         return freeResourceUsage;
     }
 
-    public void setFreeResourceUsage(Double freeResourceUsage) {
+    public void setFreeResourceUsage(BigDecimal freeResourceUsage) {
         this.freeResourceUsage = freeResourceUsage;
     }
 
@@ -685,7 +686,7 @@ public class NvlCostAnalysedBillDetail {
         this.freeResourceMeasureId = freeResourceMeasureId;
     }
 
-    public NvlCostAnalysedBillDetail withRiUsage(Double riUsage) {
+    public NvlCostAnalysedBillDetail withRiUsage(BigDecimal riUsage) {
         this.riUsage = riUsage;
         return this;
     }
@@ -694,11 +695,11 @@ public class NvlCostAnalysedBillDetail {
      * 预留实例使用量。
      * @return riUsage
      */
-    public Double getRiUsage() {
+    public BigDecimal getRiUsage() {
         return riUsage;
     }
 
-    public void setRiUsage(Double riUsage) {
+    public void setRiUsage(BigDecimal riUsage) {
         this.riUsage = riUsage;
     }
 
@@ -719,7 +720,7 @@ public class NvlCostAnalysedBillDetail {
         this.riUsageMeasureId = riUsageMeasureId;
     }
 
-    public NvlCostAnalysedBillDetail withConsumeAmount(Double consumeAmount) {
+    public NvlCostAnalysedBillDetail withConsumeAmount(BigDecimal consumeAmount) {
         this.consumeAmount = consumeAmount;
         return this;
     }
@@ -728,11 +729,11 @@ public class NvlCostAnalysedBillDetail {
      * 消费金额（应付金额）。 消费金额=期初已分摊金额+当月分摊金额+期末未分摊金额
      * @return consumeAmount
      */
-    public Double getConsumeAmount() {
+    public BigDecimal getConsumeAmount() {
         return consumeAmount;
     }
 
-    public void setConsumeAmount(Double consumeAmount) {
+    public void setConsumeAmount(BigDecimal consumeAmount) {
         this.consumeAmount = consumeAmount;
     }
 
@@ -753,7 +754,7 @@ public class NvlCostAnalysedBillDetail {
         this.pastMonthsAmortizedAmount = pastMonthsAmortizedAmount;
     }
 
-    public NvlCostAnalysedBillDetail withCurrentMonthAmortizedAmount(Double currentMonthAmortizedAmount) {
+    public NvlCostAnalysedBillDetail withCurrentMonthAmortizedAmount(BigDecimal currentMonthAmortizedAmount) {
         this.currentMonthAmortizedAmount = currentMonthAmortizedAmount;
         return this;
     }
@@ -762,15 +763,15 @@ public class NvlCostAnalysedBillDetail {
      * 当月分摊金额。 当月分摊金额=现金分摊金额+信用额度分摊金额+代金券分摊金额+现金券分摊金额+储值卡分摊金额+奖励金分摊金额
      * @return currentMonthAmortizedAmount
      */
-    public Double getCurrentMonthAmortizedAmount() {
+    public BigDecimal getCurrentMonthAmortizedAmount() {
         return currentMonthAmortizedAmount;
     }
 
-    public void setCurrentMonthAmortizedAmount(Double currentMonthAmortizedAmount) {
+    public void setCurrentMonthAmortizedAmount(BigDecimal currentMonthAmortizedAmount) {
         this.currentMonthAmortizedAmount = currentMonthAmortizedAmount;
     }
 
-    public NvlCostAnalysedBillDetail withFutureMonthsAmortizedAmount(Double futureMonthsAmortizedAmount) {
+    public NvlCostAnalysedBillDetail withFutureMonthsAmortizedAmount(BigDecimal futureMonthsAmortizedAmount) {
         this.futureMonthsAmortizedAmount = futureMonthsAmortizedAmount;
         return this;
     }
@@ -779,11 +780,11 @@ public class NvlCostAnalysedBillDetail {
      * 期末未分摊金额。月度成本分摊时，当月以后还未分摊的金额。  说明： 包周期和预留实例预付时有效；计费类型为按需，预留实例为按时计费时该值为0。
      * @return futureMonthsAmortizedAmount
      */
-    public Double getFutureMonthsAmortizedAmount() {
+    public BigDecimal getFutureMonthsAmortizedAmount() {
         return futureMonthsAmortizedAmount;
     }
 
-    public void setFutureMonthsAmortizedAmount(Double futureMonthsAmortizedAmount) {
+    public void setFutureMonthsAmortizedAmount(BigDecimal futureMonthsAmortizedAmount) {
         this.futureMonthsAmortizedAmount = futureMonthsAmortizedAmount;
     }
 
@@ -804,7 +805,7 @@ public class NvlCostAnalysedBillDetail {
         this.amortizedCashAmount = amortizedCashAmount;
     }
 
-    public NvlCostAnalysedBillDetail withAmortizedCreditAmount(Double amortizedCreditAmount) {
+    public NvlCostAnalysedBillDetail withAmortizedCreditAmount(BigDecimal amortizedCreditAmount) {
         this.amortizedCreditAmount = amortizedCreditAmount;
         return this;
     }
@@ -813,15 +814,15 @@ public class NvlCostAnalysedBillDetail {
      * 月度成本分摊时，当月已分摊金额中包含的信用额度分摊金额。
      * @return amortizedCreditAmount
      */
-    public Double getAmortizedCreditAmount() {
+    public BigDecimal getAmortizedCreditAmount() {
         return amortizedCreditAmount;
     }
 
-    public void setAmortizedCreditAmount(Double amortizedCreditAmount) {
+    public void setAmortizedCreditAmount(BigDecimal amortizedCreditAmount) {
         this.amortizedCreditAmount = amortizedCreditAmount;
     }
 
-    public NvlCostAnalysedBillDetail withAmortizedCouponAmount(Double amortizedCouponAmount) {
+    public NvlCostAnalysedBillDetail withAmortizedCouponAmount(BigDecimal amortizedCouponAmount) {
         this.amortizedCouponAmount = amortizedCouponAmount;
         return this;
     }
@@ -830,15 +831,16 @@ public class NvlCostAnalysedBillDetail {
      * 月度成本分摊时，当月已分摊金额中包含的代金券分摊金额。
      * @return amortizedCouponAmount
      */
-    public Double getAmortizedCouponAmount() {
+    public BigDecimal getAmortizedCouponAmount() {
         return amortizedCouponAmount;
     }
 
-    public void setAmortizedCouponAmount(Double amortizedCouponAmount) {
+    public void setAmortizedCouponAmount(BigDecimal amortizedCouponAmount) {
         this.amortizedCouponAmount = amortizedCouponAmount;
     }
 
-    public NvlCostAnalysedBillDetail withAmortizedFlexipurchaseCouponAmount(Double amortizedFlexipurchaseCouponAmount) {
+    public NvlCostAnalysedBillDetail withAmortizedFlexipurchaseCouponAmount(
+        BigDecimal amortizedFlexipurchaseCouponAmount) {
         this.amortizedFlexipurchaseCouponAmount = amortizedFlexipurchaseCouponAmount;
         return this;
     }
@@ -847,15 +849,15 @@ public class NvlCostAnalysedBillDetail {
      * 月度成本分摊时，当月已分摊金额中包含的现金券分摊金额。
      * @return amortizedFlexipurchaseCouponAmount
      */
-    public Double getAmortizedFlexipurchaseCouponAmount() {
+    public BigDecimal getAmortizedFlexipurchaseCouponAmount() {
         return amortizedFlexipurchaseCouponAmount;
     }
 
-    public void setAmortizedFlexipurchaseCouponAmount(Double amortizedFlexipurchaseCouponAmount) {
+    public void setAmortizedFlexipurchaseCouponAmount(BigDecimal amortizedFlexipurchaseCouponAmount) {
         this.amortizedFlexipurchaseCouponAmount = amortizedFlexipurchaseCouponAmount;
     }
 
-    public NvlCostAnalysedBillDetail withAmortizedStoredValueCardAmount(Double amortizedStoredValueCardAmount) {
+    public NvlCostAnalysedBillDetail withAmortizedStoredValueCardAmount(BigDecimal amortizedStoredValueCardAmount) {
         this.amortizedStoredValueCardAmount = amortizedStoredValueCardAmount;
         return this;
     }
@@ -864,15 +866,15 @@ public class NvlCostAnalysedBillDetail {
      * 月度成本分摊时，当月已分摊金额中包含的储值卡分摊金额。
      * @return amortizedStoredValueCardAmount
      */
-    public Double getAmortizedStoredValueCardAmount() {
+    public BigDecimal getAmortizedStoredValueCardAmount() {
         return amortizedStoredValueCardAmount;
     }
 
-    public void setAmortizedStoredValueCardAmount(Double amortizedStoredValueCardAmount) {
+    public void setAmortizedStoredValueCardAmount(BigDecimal amortizedStoredValueCardAmount) {
         this.amortizedStoredValueCardAmount = amortizedStoredValueCardAmount;
     }
 
-    public NvlCostAnalysedBillDetail withAmortizedBonusAmount(Double amortizedBonusAmount) {
+    public NvlCostAnalysedBillDetail withAmortizedBonusAmount(BigDecimal amortizedBonusAmount) {
         this.amortizedBonusAmount = amortizedBonusAmount;
         return this;
     }
@@ -881,11 +883,11 @@ public class NvlCostAnalysedBillDetail {
      * 月度成本分摊时，当月已分摊金额中包含的奖励金分摊金额（用于现网未清干净的奖励金）。
      * @return amortizedBonusAmount
      */
-    public Double getAmortizedBonusAmount() {
+    public BigDecimal getAmortizedBonusAmount() {
         return amortizedBonusAmount;
     }
 
-    public void setAmortizedBonusAmount(Double amortizedBonusAmount) {
+    public void setAmortizedBonusAmount(BigDecimal amortizedBonusAmount) {
         this.amortizedBonusAmount = amortizedBonusAmount;
     }
 

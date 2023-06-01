@@ -39,7 +39,7 @@ public class CustomizeSourceInfo {
     private String description;
 
     /**
-     * 事件源提供方类型，OFFICIAL：官方云服务事件源；CUSTOM：用户创建的自定义事件源
+     * 事件源提供方类型，OFFICIAL：官方云服务事件源；CUSTOM：用户创建的自定义事件源；PARTNER：伙伴事件源
      */
     public static final class ProviderTypeEnum {
 
@@ -53,12 +53,18 @@ public class CustomizeSourceInfo {
          */
         public static final ProviderTypeEnum CUSTOM = new ProviderTypeEnum("CUSTOM");
 
+        /**
+         * Enum PARTNER for value: "PARTNER"
+         */
+        public static final ProviderTypeEnum PARTNER = new ProviderTypeEnum("PARTNER");
+
         private static final Map<String, ProviderTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ProviderTypeEnum> createStaticFields() {
             Map<String, ProviderTypeEnum> map = new HashMap<>();
             map.put("OFFICIAL", OFFICIAL);
             map.put("CUSTOM", CUSTOM);
+            map.put("PARTNER", PARTNER);
             return Collections.unmodifiableMap(map);
         }
 
@@ -317,7 +323,7 @@ public class CustomizeSourceInfo {
     }
 
     /**
-     * 事件源提供方类型，OFFICIAL：官方云服务事件源；CUSTOM：用户创建的自定义事件源
+     * 事件源提供方类型，OFFICIAL：官方云服务事件源；CUSTOM：用户创建的自定义事件源；PARTNER：伙伴事件源
      * @return providerType
      */
     public ProviderTypeEnum getProviderType() {

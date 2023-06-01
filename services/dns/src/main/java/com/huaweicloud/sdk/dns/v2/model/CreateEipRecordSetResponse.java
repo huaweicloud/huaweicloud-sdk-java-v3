@@ -52,6 +52,11 @@ public class CreateEipRecordSetResponse extends SdkResponse {
 
     private PageLink links;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
     public CreateEipRecordSetResponse withId(String id) {
         this.id = id;
         return this;
@@ -197,6 +202,23 @@ public class CreateEipRecordSetResponse extends SdkResponse {
         this.links = links;
     }
 
+    public CreateEipRecordSetResponse withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 反向解析关联的企业项目ID，长度不超过36个字符。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -213,12 +235,13 @@ public class CreateEipRecordSetResponse extends SdkResponse {
             && Objects.equals(this.address, createEipRecordSetResponse.address)
             && Objects.equals(this.status, createEipRecordSetResponse.status)
             && Objects.equals(this.action, createEipRecordSetResponse.action)
-            && Objects.equals(this.links, createEipRecordSetResponse.links);
+            && Objects.equals(this.links, createEipRecordSetResponse.links)
+            && Objects.equals(this.enterpriseProjectId, createEipRecordSetResponse.enterpriseProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, ptrdname, description, ttl, address, status, action, links);
+        return Objects.hash(id, ptrdname, description, ttl, address, status, action, links, enterpriseProjectId);
     }
 
     @Override
@@ -233,6 +256,7 @@ public class CreateEipRecordSetResponse extends SdkResponse {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    action: ").append(toIndentedString(action)).append("\n");
         sb.append("    links: ").append(toIndentedString(links)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

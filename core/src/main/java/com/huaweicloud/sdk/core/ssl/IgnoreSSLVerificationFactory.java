@@ -78,7 +78,7 @@ public class IgnoreSSLVerificationFactory {
 
     public static SSLContext getSSLContext(SecureRandom secureRandom) {
         try {
-            SSLContext sslContext = SSLContext.getInstance("TLS");
+            SSLContext sslContext = SSLContext.getInstance("TLSv1.2");
             sslContext.init(null, new TrustManager[] {TRUST_ALL_MANAGER}, secureRandom);
             return sslContext;
         } catch (NoSuchAlgorithmException e) {

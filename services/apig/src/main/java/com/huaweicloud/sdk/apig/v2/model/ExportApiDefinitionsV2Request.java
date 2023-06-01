@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.core.progress.ProgressListener;
+import com.huaweicloud.sdk.core.progress.ProgressRequest;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -14,7 +16,7 @@ import java.util.function.Consumer;
 /**
  * Request Object
  */
-public class ExportApiDefinitionsV2Request {
+public class ExportApiDefinitionsV2Request implements ProgressRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
@@ -107,6 +109,30 @@ public class ExportApiDefinitionsV2Request {
     @JsonProperty(value = "body")
 
     private ExportOpenApiReq body;
+
+    private ProgressListener progressListener;
+
+    private long progressInterval;
+
+    @Override
+    public void setProgressListener(ProgressListener progressListener) {
+        this.progressListener = progressListener;
+    }
+
+    @Override
+    public ProgressListener getProgressListener() {
+        return progressListener;
+    }
+
+    @Override
+    public void setProgressInterval(long progressInterval) {
+        this.progressInterval = progressInterval;
+    }
+
+    @Override
+    public long getProgressInterval() {
+        return progressInterval;
+    }
 
     public ExportApiDefinitionsV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;

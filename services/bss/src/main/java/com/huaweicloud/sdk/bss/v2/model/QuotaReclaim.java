@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.bss.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
@@ -18,7 +19,7 @@ public class QuotaReclaim {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quota_balance")
 
-    private Double quotaBalance;
+    private BigDecimal quotaBalance;
 
     public QuotaReclaim withQuotaId(String quotaId) {
         this.quotaId = quotaId;
@@ -37,7 +38,7 @@ public class QuotaReclaim {
         this.quotaId = quotaId;
     }
 
-    public QuotaReclaim withQuotaBalance(Double quotaBalance) {
+    public QuotaReclaim withQuotaBalance(BigDecimal quotaBalance) {
         this.quotaBalance = quotaBalance;
         return this;
     }
@@ -46,11 +47,11 @@ public class QuotaReclaim {
      * 被回收额度后的代金券额度余额。单位：元。
      * @return quotaBalance
      */
-    public Double getQuotaBalance() {
+    public BigDecimal getQuotaBalance() {
         return quotaBalance;
     }
 
-    public void setQuotaBalance(Double quotaBalance) {
+    public void setQuotaBalance(BigDecimal quotaBalance) {
         this.quotaBalance = quotaBalance;
     }
 

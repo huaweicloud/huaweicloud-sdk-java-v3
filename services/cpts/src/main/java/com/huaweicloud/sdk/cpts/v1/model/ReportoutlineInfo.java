@@ -559,7 +559,7 @@ public class ReportoutlineInfo {
     }
 
     /**
-     * Get progressState
+     * 内部版本字段，已弃用，待删除
      * @return progressState
      */
     public String getProgressState() {
@@ -576,7 +576,7 @@ public class ReportoutlineInfo {
     }
 
     /**
-     * Get createBy
+     * 报告执行人
      * @return createBy
      */
     public String getCreateBy() {
@@ -593,7 +593,7 @@ public class ReportoutlineInfo {
     }
 
     /**
-     * Get statusValue
+     * 内部版本字段，已弃用，待删除
      * @return statusValue
      */
     public String getStatusValue() {

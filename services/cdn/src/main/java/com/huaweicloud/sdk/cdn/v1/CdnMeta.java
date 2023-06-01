@@ -1039,12 +1039,19 @@ public class CdnMeta {
             f -> f.withMarshaller(ShowLogsRequest::getDomainName, (req, v) -> {
                 req.setDomainName(v);
             }));
-        builder.<Long>withRequestField("query_date",
+        builder.<Long>withRequestField("start_time",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowLogsRequest::getQueryDate, (req, v) -> {
-                req.setQueryDate(v);
+            f -> f.withMarshaller(ShowLogsRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            }));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowLogsRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
             }));
         builder.<Integer>withRequestField("page_size",
             LocationType.Query,

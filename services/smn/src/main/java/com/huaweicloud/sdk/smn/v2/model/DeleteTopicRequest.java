@@ -21,7 +21,7 @@ public class DeleteTopicRequest {
     }
 
     /**
-     * Topic的唯一的资源标识，可通过[查询主题列表](https://support.huaweicloud.com/api-smn/smn_api_51004.html)获取该标识。
+     * Topic的唯一的资源标识，可通过[查询主题列表](smn_api_51004.xml)获取该标识。
      * @return topicUrn
      */
     public String getTopicUrn() {

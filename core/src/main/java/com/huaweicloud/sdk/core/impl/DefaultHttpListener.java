@@ -21,17 +21,21 @@
 
 package com.huaweicloud.sdk.core.impl;
 
-import com.huaweicloud.sdk.core.Constants;
 import com.huaweicloud.sdk.core.HttpListener;
+import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.exchange.ApiTimer;
 import com.huaweicloud.sdk.core.exchange.SdkExchange;
 import com.huaweicloud.sdk.core.exchange.SdkExchangeCache;
 import com.huaweicloud.sdk.core.http.HttpConfig;
+import com.huaweicloud.sdk.core.utils.HttpUtils;
 import okhttp3.Interceptor;
+import okhttp3.MediaType;
 import okhttp3.Request;
+import okhttp3.RequestBody;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
 import okio.Buffer;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
 import java.util.List;
@@ -45,12 +49,13 @@ import static com.huaweicloud.sdk.core.Constants.SDK_EXCHANGE;
  * @author HuaweiCloud_SDK
  */
 public class DefaultHttpListener implements Interceptor {
-    private List<HttpListener> httpListeners;
+    private final List<HttpListener> httpListeners;
 
     public DefaultHttpListener(HttpConfig httpConfig) {
         this.httpListeners = httpConfig.getHttpListeners();
     }
 
+    @NotNull
     @Override
     public Response intercept(Chain chain) throws IOException {
 
@@ -76,23 +81,20 @@ public class DefaultHttpListener implements Interceptor {
     }
 
     public void preRequest(Request request, SdkExchange sdkExchange) throws IOException {
-
-        String reqBody;
-        if (Objects.nonNull(request.body()) && Objects.nonNull(request.body().contentType()) && (
-            request.body().contentType().toString().startsWith(Constants.MEDIATYPE.APPLICATION_JSON) || request.body()
-                .contentType()
-                .toString()
-                .startsWith(Constants.MEDIATYPE.TEXT))) {
-            Buffer buffer = new Buffer();
-            request.body().writeTo(buffer);
-            reqBody = buffer.readUtf8();
-        } else if (Objects.nonNull(request.body()) && Objects.nonNull(request.body().contentType()) && request.body()
-            .contentType()
-            .toString()
-            .equals(Constants.MEDIATYPE.APPLICATION_OCTET_STREAM)) {
-            reqBody = request.body().contentLength() > 0 || request.body().contentLength() == -1 ? "******" : null;
-        } else {
-            reqBody = null;
+        String reqBody = null;
+        RequestBody body = request.body();
+        if (Objects.nonNull(body)) {
+            String contentType = Optional.of(body)
+                    .map(RequestBody::contentType)
+                    .map(MediaType::toString)
+                    .orElse("");
+            if (HttpUtils.isTextBasedContentType(contentType)) {
+                Buffer buffer = new Buffer();
+                body.writeTo(buffer);
+                reqBody = buffer.readUtf8();
+            } else if (HttpUtils.isOctetStreamContentType(contentType)) {
+                reqBody = body.contentLength() > 0 || body.contentLength() == -1 ? "******" : null;
+            }
         }
 
         String finalReqBody = reqBody;
@@ -115,7 +117,7 @@ public class DefaultHttpListener implements Interceptor {
 
             @Override
             public Optional<String> body() {
-                return Objects.isNull(finalReqBody) ? Optional.empty() : Optional.of(finalReqBody);
+                return Optional.ofNullable(finalReqBody);
             }
 
             @Override
@@ -128,24 +130,26 @@ public class DefaultHttpListener implements Interceptor {
     }
 
     public Response postResponse(Response response, SdkExchange sdkExchange) throws IOException {
-
         Request request = response.request();
         Response.Builder responseBuilder = response.newBuilder();
-        String respBody;
-        if (Objects.nonNull(response.body()) && Objects.nonNull(response.body().contentType()) && (
-            response.body().contentType().toString().startsWith(Constants.MEDIATYPE.APPLICATION_JSON) || response.body()
-                .contentType()
-                .toString()
-                .startsWith(Constants.MEDIATYPE.TEXT))) {
-            respBody = response.body().string();
-            responseBuilder.body(ResponseBody.create(respBody, response.body().contentType()));
-        } else if (Objects.nonNull(response.body()) && Objects.nonNull(response.body().contentType()) && response.body()
-            .contentType()
-            .toString()
-            .equals(Constants.MEDIATYPE.APPLICATION_OCTET_STREAM)) {
-            respBody = response.body().contentLength() > 0 || response.body().contentLength() == -1 ? "******" : null;
-        } else {
-            respBody = null;
+        String respBody = null;
+        ResponseBody body = response.body();
+        if (Objects.nonNull(body)) {
+            if (body.contentLength() == 0) {
+                respBody = body.string();
+                responseBuilder.body(createResponseBody(respBody, body.contentType()));
+            } else {
+                String contentType = Optional.of(body)
+                        .map(ResponseBody::contentType)
+                        .map(MediaType::toString)
+                        .orElseThrow(() -> new SdkException("Failed to parse the Content-Type of ResponseBody"));
+                if (HttpUtils.isTextBasedContentType(contentType)) {
+                    respBody = body.string();
+                    responseBuilder.body(createResponseBody(respBody, body.contentType()));
+                } else if (HttpUtils.isOctetStreamContentType(contentType)) {
+                    respBody = body.contentLength() > 0 || body.contentLength() == -1 ? "******" : null;
+                }
+            }
         }
 
         String finalRespBody = respBody;
@@ -167,7 +171,7 @@ public class DefaultHttpListener implements Interceptor {
 
             @Override
             public Optional<String> body() {
-                return Objects.isNull(finalRespBody) ? Optional.empty() : Optional.of(finalRespBody);
+                return Optional.ofNullable(finalRespBody);
             }
 
             @Override
@@ -182,5 +186,13 @@ public class DefaultHttpListener implements Interceptor {
         };
         this.httpListeners.forEach(httpListener -> httpListener.postResponse(responseListener));
         return responseBuilder.build();
+    }
+
+    private ResponseBody createResponseBody(String content, MediaType contentType) {
+        try {
+            return ResponseBody.create(content, contentType);
+        } catch (NoSuchMethodError e) {
+            return ResponseBody.create(contentType, content);
+        }
     }
 }

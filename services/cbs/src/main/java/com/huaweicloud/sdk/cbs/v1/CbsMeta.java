@@ -1102,4 +1102,38 @@ public class CbsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<PostRequestsRequest, PostRequestsResponse> postRequests = genForpostRequests();
+
+    private static HttpRequestDef<PostRequestsRequest, PostRequestsResponse> genForpostRequests() {
+        // basic
+        HttpRequestDef.Builder<PostRequestsRequest, PostRequestsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, PostRequestsRequest.class, PostRequestsResponse.class)
+                .withName("PostRequests")
+                .withUri("/v1/{project_id}/qabots/{qabot_id}/requests")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("qabot_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(PostRequestsRequest::getQabotId, (req, v) -> {
+                req.setQabotId(v);
+            })
+        );
+        builder.<PostOldRequestsReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(PostOldRequestsReq.class),
+            f -> f.withMarshaller(PostRequestsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
 }

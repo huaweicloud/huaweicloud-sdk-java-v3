@@ -317,6 +317,16 @@ public class ListInstancesDetailsRequest {
 
     private String enterpriseProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private String offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private String limit;
+
     public ListInstancesDetailsRequest withEngine(String engine) {
         this.engine = engine;
         return this;
@@ -436,6 +446,40 @@ public class ListInstancesDetailsRequest {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public ListInstancesDetailsRequest withOffset(String offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * 偏移量，表示从此偏移量开始查询， offset大于等于0。
+     * @return offset
+     */
+    public String getOffset() {
+        return offset;
+    }
+
+    public void setOffset(String offset) {
+        this.offset = offset;
+    }
+
+    public ListInstancesDetailsRequest withLimit(String limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 当次查询返回的最大实例个数，默认值为10，取值范围为1~50。
+     * @return limit
+     */
+    public String getLimit() {
+        return limit;
+    }
+
+    public void setLimit(String limit) {
+        this.limit = limit;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -451,12 +495,15 @@ public class ListInstancesDetailsRequest {
             && Objects.equals(this.status, listInstancesDetailsRequest.status)
             && Objects.equals(this.includeFailure, listInstancesDetailsRequest.includeFailure)
             && Objects.equals(this.exactMatchName, listInstancesDetailsRequest.exactMatchName)
-            && Objects.equals(this.enterpriseProjectId, listInstancesDetailsRequest.enterpriseProjectId);
+            && Objects.equals(this.enterpriseProjectId, listInstancesDetailsRequest.enterpriseProjectId)
+            && Objects.equals(this.offset, listInstancesDetailsRequest.offset)
+            && Objects.equals(this.limit, listInstancesDetailsRequest.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(engine, name, instanceId, status, includeFailure, exactMatchName, enterpriseProjectId);
+        return Objects
+            .hash(engine, name, instanceId, status, includeFailure, exactMatchName, enterpriseProjectId, offset, limit);
     }
 
     @Override
@@ -470,6 +517,8 @@ public class ListInstancesDetailsRequest {
         sb.append("    includeFailure: ").append(toIndentedString(includeFailure)).append("\n");
         sb.append("    exactMatchName: ").append(toIndentedString(exactMatchName)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

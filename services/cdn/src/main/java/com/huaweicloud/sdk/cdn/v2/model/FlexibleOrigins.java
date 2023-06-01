@@ -106,7 +106,7 @@ public class FlexibleOrigins {
     }
 
     /**
-     * 回源信息。
+     * 回源信息。  > 每个目录的回源源站数量不超过1个。
      * @return backSources
      */
     public List<BackSources> getBackSources() {

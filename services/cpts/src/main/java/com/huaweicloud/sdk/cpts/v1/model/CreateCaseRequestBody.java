@@ -48,7 +48,7 @@ public class CreateCaseRequestBody {
     }
 
     /**
-     * type (0-常规用例,1-视频流用例,2-预制用例)
+     * type（0-常规用例，1-视频流用例，2-预制用例）
      * minimum: 0
      * maximum: 2
      * @return type

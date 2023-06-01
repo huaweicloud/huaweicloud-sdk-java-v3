@@ -85,7 +85,7 @@ public class ProjectDirectory {
     }
 
     /**
-     * 状态(0:已删除,1:启用,2:停用)
+     * 状态（0：已删除，1：启用，2：停用）
      * @return status
      */
     public Integer getStatus() {
@@ -153,7 +153,7 @@ public class ProjectDirectory {
     }
 
     /**
-     * 类型(1:目录, 2:用例)
+     * 类型（1：目录，2：用例）
      * @return type
      */
     public Integer getType() {

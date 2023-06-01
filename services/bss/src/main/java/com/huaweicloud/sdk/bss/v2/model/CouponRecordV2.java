@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.bss.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
@@ -43,7 +44,7 @@ public class CouponRecordV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operation_amount")
 
-    private Double operationAmount;
+    private BigDecimal operationAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operation_time")
@@ -162,7 +163,7 @@ public class CouponRecordV2 {
         this.customerId = customerId;
     }
 
-    public CouponRecordV2 withOperationAmount(Double operationAmount) {
+    public CouponRecordV2 withOperationAmount(BigDecimal operationAmount) {
         this.operationAmount = operationAmount;
         return this;
     }
@@ -171,11 +172,11 @@ public class CouponRecordV2 {
      * 操作的面额值。单位：元。 发放时，等于面额值；回收时，指每次回收的具体值。
      * @return operationAmount
      */
-    public Double getOperationAmount() {
+    public BigDecimal getOperationAmount() {
         return operationAmount;
     }
 
-    public void setOperationAmount(Double operationAmount) {
+    public void setOperationAmount(BigDecimal operationAmount) {
         this.operationAmount = operationAmount;
     }
 

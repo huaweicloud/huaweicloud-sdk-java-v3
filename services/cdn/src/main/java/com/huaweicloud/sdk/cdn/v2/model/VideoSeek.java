@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 视频拖拽配置。
+ * 视频拖拽配置。 &gt; 1. 需同步开启FLV、MP4格式文件的URL参数功能，并选择“忽略参数”。 &gt; 2. 关闭视频拖拽功能时，FLV时间拖拽功能失效。
  */
 public class VideoSeek {
 
@@ -36,7 +36,7 @@ public class VideoSeek {
     }
 
     /**
-     * 视频拖拽开关（true：开启，false：关闭）  > 当本字段设置为“false”时，查询域名配置接口将不会返回视频拖拽配置信息。
+     * 视频拖拽开关， true：开启，false：关闭  > 当本字段设置为“false”时，查询域名配置接口将不会返回视频拖拽配置信息。
      * @return enableVideoSeek
      */
     public Boolean getEnableVideoSeek() {
@@ -53,7 +53,7 @@ public class VideoSeek {
     }
 
     /**
-     * flv时间拖拽开关（true：开启，false：关闭）。
+     * flv时间拖拽开关， true：开启，false：关闭。
      * @return enableFlvByTimeSeek
      */
     public Boolean getEnableFlvByTimeSeek() {

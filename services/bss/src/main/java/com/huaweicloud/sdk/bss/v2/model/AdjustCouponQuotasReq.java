@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.bss.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -26,7 +27,7 @@ public class AdjustCouponQuotasReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quota_amount")
 
-    private Double quotaAmount;
+    private BigDecimal quotaAmount;
 
     public AdjustCouponQuotasReq withQuotaId(String quotaId) {
         this.quotaId = quotaId;
@@ -78,7 +79,7 @@ public class AdjustCouponQuotasReq {
         this.indirectPartnerIds = indirectPartnerIds;
     }
 
-    public AdjustCouponQuotasReq withQuotaAmount(Double quotaAmount) {
+    public AdjustCouponQuotasReq withQuotaAmount(BigDecimal quotaAmount) {
         this.quotaAmount = quotaAmount;
         return this;
     }
@@ -89,11 +90,11 @@ public class AdjustCouponQuotasReq {
      * maximum: 1E+8
      * @return quotaAmount
      */
-    public Double getQuotaAmount() {
+    public BigDecimal getQuotaAmount() {
         return quotaAmount;
     }
 
-    public void setQuotaAmount(Double quotaAmount) {
+    public void setQuotaAmount(BigDecimal quotaAmount) {
         this.quotaAmount = quotaAmount;
     }
 

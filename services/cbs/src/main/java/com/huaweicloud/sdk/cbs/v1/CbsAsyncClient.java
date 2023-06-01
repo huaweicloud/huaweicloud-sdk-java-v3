@@ -795,4 +795,38 @@ public class CbsAsyncClient {
         return new AsyncInvoker<TagSatisfactionRequest, TagSatisfactionResponse>(request, CbsMeta.tagSatisfaction, hcClient);
     }
 
+    /**
+     * PostRequests
+     *
+     * 问答服务的输入为用户提问，输出是与输入最匹配的Top N(默认为top5)个知识点，知识点按得分从高到低排序。
+     * 
+     * 说明： 
+     * 返回知识点如果含有答案字段（answer），则表示返回匹配成功结果，如果没有答案字段，则表示推荐结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param PostRequestsRequest 请求对象
+     * @return CompletableFuture<PostRequestsResponse>
+     */
+    public CompletableFuture<PostRequestsResponse> postRequestsAsync(PostRequestsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CbsMeta.postRequests);
+    }
+
+    /**
+     * PostRequests
+     *
+     * 问答服务的输入为用户提问，输出是与输入最匹配的Top N(默认为top5)个知识点，知识点按得分从高到低排序。
+     * 
+     * 说明： 
+     * 返回知识点如果含有答案字段（answer），则表示返回匹配成功结果，如果没有答案字段，则表示推荐结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param PostRequestsRequest 请求对象
+     * @return AsyncInvoker<PostRequestsRequest, PostRequestsResponse>
+     */
+    public AsyncInvoker<PostRequestsRequest, PostRequestsResponse> postRequestsAsyncInvoker(PostRequestsRequest request) {
+        return new AsyncInvoker<PostRequestsRequest, PostRequestsResponse>(request, CbsMeta.postRequests, hcClient);
+    }
+
 }

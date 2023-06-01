@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 自定义错误页面
+ * 自定义错误页面。
  */
 public class ErrorCodeRedirectRules {
 

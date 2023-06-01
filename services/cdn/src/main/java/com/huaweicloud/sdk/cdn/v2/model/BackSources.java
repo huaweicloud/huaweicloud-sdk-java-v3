@@ -25,13 +25,23 @@ public class BackSources {
 
     private String obsBucketType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "http_port")
+
+    private Integer httpPort;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "https_port")
+
+    private Integer httpsPort;
+
     public BackSources withSourcesType(String sourcesType) {
         this.sourcesType = sourcesType;
         return this;
     }
 
     /**
-     * 源站类型（\"ipaddr\"：\"源站IP\"，\"domain\"：\"源站域名\"，\"obs_bucket\"：\"OBS桶域名\"）。
+     * 源站类型, ipaddr：源站IP，domain：源站域名，obs_bucket：OBS桶域名。
      * @return sourcesType
      */
     public String getSourcesType() {
@@ -65,7 +75,7 @@ public class BackSources {
     }
 
     /**
-     * obs桶类型，“private”： 私有桶， “public”： 公有桶。
+     * obs桶类型， “private”： 私有桶， “public”： 公有桶。
      * @return obsBucketType
      */
     public String getObsBucketType() {
@@ -74,6 +84,40 @@ public class BackSources {
 
     public void setObsBucketType(String obsBucketType) {
         this.obsBucketType = obsBucketType;
+    }
+
+    public BackSources withHttpPort(Integer httpPort) {
+        this.httpPort = httpPort;
+        return this;
+    }
+
+    /**
+     * HTTP端口，取值范围：1-65535。
+     * @return httpPort
+     */
+    public Integer getHttpPort() {
+        return httpPort;
+    }
+
+    public void setHttpPort(Integer httpPort) {
+        this.httpPort = httpPort;
+    }
+
+    public BackSources withHttpsPort(Integer httpsPort) {
+        this.httpsPort = httpsPort;
+        return this;
+    }
+
+    /**
+     * HTTPS端口，取值范围：1-65535。
+     * @return httpsPort
+     */
+    public Integer getHttpsPort() {
+        return httpsPort;
+    }
+
+    public void setHttpsPort(Integer httpsPort) {
+        this.httpsPort = httpsPort;
     }
 
     @Override
@@ -87,12 +131,14 @@ public class BackSources {
         BackSources backSources = (BackSources) o;
         return Objects.equals(this.sourcesType, backSources.sourcesType)
             && Objects.equals(this.ipOrDomain, backSources.ipOrDomain)
-            && Objects.equals(this.obsBucketType, backSources.obsBucketType);
+            && Objects.equals(this.obsBucketType, backSources.obsBucketType)
+            && Objects.equals(this.httpPort, backSources.httpPort)
+            && Objects.equals(this.httpsPort, backSources.httpsPort);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(sourcesType, ipOrDomain, obsBucketType);
+        return Objects.hash(sourcesType, ipOrDomain, obsBucketType, httpPort, httpsPort);
     }
 
     @Override
@@ -102,6 +148,8 @@ public class BackSources {
         sb.append("    sourcesType: ").append(toIndentedString(sourcesType)).append("\n");
         sb.append("    ipOrDomain: ").append(toIndentedString(ipOrDomain)).append("\n");
         sb.append("    obsBucketType: ").append(toIndentedString(obsBucketType)).append("\n");
+        sb.append("    httpPort: ").append(toIndentedString(httpPort)).append("\n");
+        sb.append("    httpsPort: ").append(toIndentedString(httpsPort)).append("\n");
         sb.append("}");
         return sb.toString();
     }

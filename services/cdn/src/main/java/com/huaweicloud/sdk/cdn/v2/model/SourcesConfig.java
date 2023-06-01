@@ -73,7 +73,7 @@ public class SourcesConfig {
     }
 
     /**
-     * 源站类型（\"ipaddr\"：\"IP源站\"，\"domain\"：\"域名源站\"，\"obs_bucket\"：\"OBS Bucket源站\"）。
+     * 源站类型， ipaddr：源站IP，domain：源站域名，obs_bucket：OBS桶域名。
      * @return originType
      */
     public String getOriginType() {
@@ -90,7 +90,7 @@ public class SourcesConfig {
     }
 
     /**
-     * 源站优先级（70：主，30：备）。
+     * 源站优先级，70：主，30：备。
      * @return priority
      */
     public Integer getPriority() {
@@ -107,7 +107,7 @@ public class SourcesConfig {
     }
 
     /**
-     * 是否开启Obs静态网站托管，源站类型为obs_bucket时传递(off：关闭，on：开启)。
+     * 是否开启Obs静态网站托管，源站类型为obs_bucket时传递，off：关闭，on：开启。
      * @return obsWebHostingStatus
      */
     public String getObsWebHostingStatus() {
@@ -124,7 +124,7 @@ public class SourcesConfig {
     }
 
     /**
-     * HTTP端口，默认80。
+     * HTTP端口，默认80,端口取值取值范围1-65535。
      * @return httpPort
      */
     public Integer getHttpPort() {
@@ -141,7 +141,7 @@ public class SourcesConfig {
     }
 
     /**
-     * HTTPS端口，默认443。
+     * HTTPS端口，默认443,端口取值取值范围1-65535。
      * @return httpsPort
      */
     public Integer getHttpsPort() {

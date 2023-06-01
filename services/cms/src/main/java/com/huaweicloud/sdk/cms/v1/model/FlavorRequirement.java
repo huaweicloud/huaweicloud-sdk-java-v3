@@ -337,7 +337,7 @@ public class FlavorRequirement {
     }
 
     /**
-     * 接受的资源代系，不填表示全接受
+     * 接受的资源代系，不填表示接受所有
      * @return instanceGenerations
      */
     public List<InstanceGenerationsEnum> getInstanceGenerations() {

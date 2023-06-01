@@ -88,6 +88,36 @@ public class ContentInfo {
 
     private String url;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "rtmp_url")
+
+    private String rtmpUrl;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "flv_url")
+
+    private String flvUrl;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bitrate_type")
+
+    private Integer bitrateType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "duration")
+
+    private Integer duration;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "retry_delay")
+
+    private Integer retryDelay;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "retry_time")
+
+    private Integer retryTime;
+
     public ContentInfo withBodyType(Integer bodyType) {
         this.bodyType = bodyType;
         return this;
@@ -385,6 +415,116 @@ public class ContentInfo {
         this.url = url;
     }
 
+    public ContentInfo withRtmpUrl(String rtmpUrl) {
+        this.rtmpUrl = rtmpUrl;
+        return this;
+    }
+
+    /**
+     * rtmp地址
+     * @return rtmpUrl
+     */
+    public String getRtmpUrl() {
+        return rtmpUrl;
+    }
+
+    public void setRtmpUrl(String rtmpUrl) {
+        this.rtmpUrl = rtmpUrl;
+    }
+
+    public ContentInfo withFlvUrl(String flvUrl) {
+        this.flvUrl = flvUrl;
+        return this;
+    }
+
+    /**
+     * flv地址
+     * @return flvUrl
+     */
+    public String getFlvUrl() {
+        return flvUrl;
+    }
+
+    public void setFlvUrl(String flvUrl) {
+        this.flvUrl = flvUrl;
+    }
+
+    public ContentInfo withBitrateType(Integer bitrateType) {
+        this.bitrateType = bitrateType;
+        return this;
+    }
+
+    /**
+     * 分辨率策略
+     * minimum: 0
+     * maximum: 128
+     * @return bitrateType
+     */
+    public Integer getBitrateType() {
+        return bitrateType;
+    }
+
+    public void setBitrateType(Integer bitrateType) {
+        this.bitrateType = bitrateType;
+    }
+
+    public ContentInfo withDuration(Integer duration) {
+        this.duration = duration;
+        return this;
+    }
+
+    /**
+     * duration
+     * minimum: 0
+     * maximum: 2147483647
+     * @return duration
+     */
+    public Integer getDuration() {
+        return duration;
+    }
+
+    public void setDuration(Integer duration) {
+        this.duration = duration;
+    }
+
+    public ContentInfo withRetryDelay(Integer retryDelay) {
+        this.retryDelay = retryDelay;
+        return this;
+    }
+
+    /**
+     * HLS重试延迟时间
+     * minimum: 0
+     * maximum: 2147483647
+     * @return retryDelay
+     */
+    public Integer getRetryDelay() {
+        return retryDelay;
+    }
+
+    public void setRetryDelay(Integer retryDelay) {
+        this.retryDelay = retryDelay;
+    }
+
+    public ContentInfo withRetryTime(Integer retryTime) {
+        this.retryTime = retryTime;
+        return this;
+    }
+
+    /**
+     * HLS重试次数
+     * minimum: 0
+     * maximum: 2147483647
+     * @return retryTime
+     */
+    public Integer getRetryTime() {
+        return retryTime;
+    }
+
+    public void setRetryTime(Integer retryTime) {
+        this.retryTime = retryTime;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -406,7 +546,12 @@ public class ContentInfo {
             && Objects.equals(this.protocolType, contentInfo.protocolType)
             && Objects.equals(this.returnTimeout, contentInfo.returnTimeout)
             && Objects.equals(this.returnTimeoutParam, contentInfo.returnTimeoutParam)
-            && Objects.equals(this.url, contentInfo.url);
+            && Objects.equals(this.url, contentInfo.url) && Objects.equals(this.rtmpUrl, contentInfo.rtmpUrl)
+            && Objects.equals(this.flvUrl, contentInfo.flvUrl)
+            && Objects.equals(this.bitrateType, contentInfo.bitrateType)
+            && Objects.equals(this.duration, contentInfo.duration)
+            && Objects.equals(this.retryDelay, contentInfo.retryDelay)
+            && Objects.equals(this.retryTime, contentInfo.retryTime);
     }
 
     @Override
@@ -425,7 +570,13 @@ public class ContentInfo {
             protocolType,
             returnTimeout,
             returnTimeoutParam,
-            url);
+            url,
+            rtmpUrl,
+            flvUrl,
+            bitrateType,
+            duration,
+            retryDelay,
+            retryTime);
     }
 
     @Override
@@ -447,6 +598,12 @@ public class ContentInfo {
         sb.append("    returnTimeout: ").append(toIndentedString(returnTimeout)).append("\n");
         sb.append("    returnTimeoutParam: ").append(toIndentedString(returnTimeoutParam)).append("\n");
         sb.append("    url: ").append(toIndentedString(url)).append("\n");
+        sb.append("    rtmpUrl: ").append(toIndentedString(rtmpUrl)).append("\n");
+        sb.append("    flvUrl: ").append(toIndentedString(flvUrl)).append("\n");
+        sb.append("    bitrateType: ").append(toIndentedString(bitrateType)).append("\n");
+        sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
+        sb.append("    retryDelay: ").append(toIndentedString(retryDelay)).append("\n");
+        sb.append("    retryTime: ").append(toIndentedString(retryTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

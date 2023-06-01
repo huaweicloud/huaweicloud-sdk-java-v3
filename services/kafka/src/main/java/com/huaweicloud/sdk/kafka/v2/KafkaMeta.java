@@ -368,7 +368,7 @@ public class KafkaMeta {
             HttpRequestDef
                 .builder(HttpMethod.POST, CreateKafkaConsumerGroupRequest.class, CreateKafkaConsumerGroupResponse.class)
                 .withName("CreateKafkaConsumerGroup")
-                .withUri("/v2/{project_id}/kafka/instances/{instance_id}/groups")
+                .withUri("/v2/{project_id}/kafka/instances/{instance_id}/group")
                 .withContentType("application/json");
 
         // requests
@@ -819,6 +819,20 @@ public class KafkaMeta {
             f -> f.withMarshaller(ListInstanceTopicsRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstanceTopicsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstanceTopicsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
 
         // response
 
@@ -885,6 +899,20 @@ public class KafkaMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListInstancesRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstancesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstancesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
             }));
 
         // response

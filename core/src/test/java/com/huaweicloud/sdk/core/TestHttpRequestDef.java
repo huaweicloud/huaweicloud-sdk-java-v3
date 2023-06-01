@@ -29,6 +29,8 @@ import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.core.http.SdkFormDataBody;
+import com.huaweicloud.sdk.core.progress.ProgressListener;
+import com.huaweicloud.sdk.core.progress.ProgressRequest;
 import com.huaweicloud.sdk.core.utils.JsonUtils;
 import net.minidev.json.annotate.JsonIgnore;
 import org.junit.Assert;
@@ -149,7 +151,7 @@ public class TestHttpRequestDef {
     @SuppressWarnings(value = {"unchecked", "rawtypes"})
     public static HttpRequestDef<TestRequest, TestResponse> buildHttpRequestDef() {
         HttpRequestDef.Builder<TestRequest, TestResponse> builder = HttpRequestDef.builder(HttpMethod.GET,
-                TestRequest.class, TestResponse.class)
+                        TestRequest.class, TestResponse.class)
                 .withName("Test")
                 .withUri("/v2.1/{project_id}/servers")
                 .withContentType("application/json;charset=UTF-8");
@@ -159,6 +161,32 @@ public class TestHttpRequestDef {
                         .withInnerContainerType(InnerResponse.class));
 
         return builder.build();
+    }
+
+    public static class TestProgressRequest implements ProgressRequest {
+
+        private ProgressListener progressListener;
+        private long progressInterval;
+
+        @Override
+        public void setProgressListener(ProgressListener progressListener) {
+            this.progressListener = progressListener;
+        }
+
+        @Override
+        public ProgressListener getProgressListener() {
+            return progressListener;
+        }
+
+        @Override
+        public void setProgressInterval(long progressInterval) {
+            this.progressInterval = progressInterval;
+        }
+
+        @Override
+        public long getProgressInterval() {
+            return progressInterval;
+        }
     }
 
     public static class TestUploadDownloadRequest extends SdkStreamRequest {
@@ -207,7 +235,7 @@ public class TestHttpRequestDef {
         }
 
         public TestFormDataBodyBody withUploadFile(InputStream inputstream, String filename,
-            Map<String, String> headers) {
+                                                   Map<String, String> headers) {
             uploadFile = new FormDataFilePart(inputstream, filename).withHeaders(headers);
             return this;
         }
@@ -265,6 +293,35 @@ public class TestHttpRequestDef {
                                 TestUploadDownloadResponse.class)
                         .withName("TestUploadDownload")
                         .withUri("/uploaddownload")
+                        .withContentType("application/octet-stream");
+        builder.withRequestField("id",
+                LocationType.Query,
+                FieldExistence.NULL_IGNORE,
+                String.class,
+                f -> f.withMarshaller(TestUploadDownloadRequest::getId, TestUploadDownloadRequest::setId));
+
+        return builder.build();
+    }
+
+    public static HttpRequestDef<TestProgressRequest, TestUploadDownloadResponse> buildTestDownloadRequestDef() {
+        HttpRequestDef.Builder<TestProgressRequest, TestUploadDownloadResponse> builder =
+                HttpRequestDef.builder(HttpMethod.POST,
+                                TestProgressRequest.class,
+                                TestUploadDownloadResponse.class)
+                        .withName("TestDownload")
+                        .withUri("/download")
+                        .withContentType("application/json");
+
+        return builder.build();
+    }
+
+    public static HttpRequestDef<TestUploadDownloadRequest, SdkResponse> buildTestUploadRequestDef() {
+        HttpRequestDef.Builder<TestUploadDownloadRequest, SdkResponse> builder =
+                HttpRequestDef.builder(HttpMethod.POST,
+                                TestUploadDownloadRequest.class,
+                                SdkResponse.class)
+                        .withName("TestUpload")
+                        .withUri("/upload")
                         .withContentType("application/octet-stream");
         builder.withRequestField("id",
                 LocationType.Query,

@@ -84,6 +84,11 @@ public class ShowRecordSetResponse extends SdkResponse {
 
     private PageLink links;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bundle")
+
+    private String bundle;
+
     public ShowRecordSetResponse withId(String id) {
         this.id = id;
         return this;
@@ -347,6 +352,23 @@ public class ShowRecordSetResponse extends SdkResponse {
         this.links = links;
     }
 
+    public ShowRecordSetResponse withBundle(String bundle) {
+        this.bundle = bundle;
+        return this;
+    }
+
+    /**
+     * 规格，默认规格，保留字段。
+     * @return bundle
+     */
+    public String getBundle() {
+        return bundle;
+    }
+
+    public void setBundle(String bundle) {
+        this.bundle = bundle;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -369,7 +391,8 @@ public class ShowRecordSetResponse extends SdkResponse {
             && Objects.equals(this.status, showRecordSetResponse.status)
             && Objects.equals(this._default, showRecordSetResponse._default)
             && Objects.equals(this.projectId, showRecordSetResponse.projectId)
-            && Objects.equals(this.links, showRecordSetResponse.links);
+            && Objects.equals(this.links, showRecordSetResponse.links)
+            && Objects.equals(this.bundle, showRecordSetResponse.bundle);
     }
 
     @Override
@@ -387,7 +410,8 @@ public class ShowRecordSetResponse extends SdkResponse {
             status,
             _default,
             projectId,
-            links);
+            links,
+            bundle);
     }
 
     @Override
@@ -408,6 +432,7 @@ public class ShowRecordSetResponse extends SdkResponse {
         sb.append("    _default: ").append(toIndentedString(_default)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    links: ").append(toIndentedString(links)).append("\n");
+        sb.append("    bundle: ").append(toIndentedString(bundle)).append("\n");
         sb.append("}");
         return sb.toString();
     }

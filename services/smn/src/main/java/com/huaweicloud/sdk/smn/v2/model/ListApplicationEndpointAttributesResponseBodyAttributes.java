@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * ListApplicationEndpointAttributesResponseBodyAttributes
+ * 属性列表。
  */
 public class ListApplicationEndpointAttributesResponseBodyAttributes {
 

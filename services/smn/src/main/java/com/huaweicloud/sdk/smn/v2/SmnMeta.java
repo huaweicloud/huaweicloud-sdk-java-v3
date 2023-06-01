@@ -109,6 +109,38 @@ public class SmnMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateLogtankRequest, CreateLogtankResponse> createLogtank =
+        genForcreateLogtank();
+
+    private static HttpRequestDef<CreateLogtankRequest, CreateLogtankResponse> genForcreateLogtank() {
+        // basic
+        HttpRequestDef.Builder<CreateLogtankRequest, CreateLogtankResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateLogtankRequest.class, CreateLogtankResponse.class)
+                .withName("CreateLogtank")
+                .withUri("/v2/{project_id}/notifications/topics/{topic_urn}/logtanks")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("topic_urn",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateLogtankRequest::getTopicUrn, (req, v) -> {
+                req.setTopicUrn(v);
+            }));
+        builder.<CreateLogtankRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateLogtankRequestBody.class),
+            f -> f.withMarshaller(CreateLogtankRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateMessageTemplateRequest, CreateMessageTemplateResponse> createMessageTemplate =
         genForcreateMessageTemplate();
 
@@ -190,6 +222,38 @@ public class SmnMeta {
             TypeCasts.uncheckedConversion(CreateTopicRequestBody.class),
             f -> f.withMarshaller(CreateTopicRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteLogtankRequest, DeleteLogtankResponse> deleteLogtank =
+        genFordeleteLogtank();
+
+    private static HttpRequestDef<DeleteLogtankRequest, DeleteLogtankResponse> genFordeleteLogtank() {
+        // basic
+        HttpRequestDef.Builder<DeleteLogtankRequest, DeleteLogtankResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteLogtankRequest.class, DeleteLogtankResponse.class)
+                .withName("DeleteLogtank")
+                .withUri("/v2/{project_id}/notifications/topics/{topic_urn}/logtanks/{logtank_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("topic_urn",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteLogtankRequest::getTopicUrn, (req, v) -> {
+                req.setTopicUrn(v);
+            }));
+        builder.<String>withRequestField("logtank_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteLogtankRequest::getLogtankId, (req, v) -> {
+                req.setLogtankId(v);
             }));
 
         // response
@@ -337,6 +401,30 @@ public class SmnMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteTopicAttributesRequest::getTopicUrn, (req, v) -> {
+                req.setTopicUrn(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListLogtankRequest, ListLogtankResponse> listLogtank = genForlistLogtank();
+
+    private static HttpRequestDef<ListLogtankRequest, ListLogtankResponse> genForlistLogtank() {
+        // basic
+        HttpRequestDef.Builder<ListLogtankRequest, ListLogtankResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListLogtankRequest.class, ListLogtankResponse.class)
+                .withName("ListLogtank")
+                .withUri("/v2/{project_id}/notifications/topics/{topic_urn}/logtanks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("topic_urn",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLogtankRequest::getTopicUrn, (req, v) -> {
                 req.setTopicUrn(v);
             }));
 
@@ -704,6 +792,13 @@ public class SmnMeta {
             f -> f.withMarshaller(ListTopicsRequest::getFuzzyName, (req, v) -> {
                 req.setFuzzyName(v);
             }));
+        builder.<String>withRequestField("topic_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTopicsRequest::getTopicId, (req, v) -> {
+                req.setTopicId(v);
+            }));
 
         // response
 
@@ -717,17 +812,10 @@ public class SmnMeta {
         HttpRequestDef.Builder<ListVersionRequest, ListVersionResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListVersionRequest.class, ListVersionResponse.class)
                 .withName("ListVersion")
-                .withUri("/{api_version}")
+                .withUri("/v2")
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("api_version",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVersionRequest::getApiVersion, (req, v) -> {
-                req.setApiVersion(v);
-            }));
 
         // response
 
@@ -783,6 +871,45 @@ public class SmnMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateLogtankRequest, UpdateLogtankResponse> updateLogtank =
+        genForupdateLogtank();
+
+    private static HttpRequestDef<UpdateLogtankRequest, UpdateLogtankResponse> genForupdateLogtank() {
+        // basic
+        HttpRequestDef.Builder<UpdateLogtankRequest, UpdateLogtankResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateLogtankRequest.class, UpdateLogtankResponse.class)
+                .withName("UpdateLogtank")
+                .withUri("/v2/{project_id}/notifications/topics/{topic_urn}/logtanks/{logtank_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("topic_urn",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateLogtankRequest::getTopicUrn, (req, v) -> {
+                req.setTopicUrn(v);
+            }));
+        builder.<String>withRequestField("logtank_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateLogtankRequest::getLogtankId, (req, v) -> {
+                req.setLogtankId(v);
+            }));
+        builder.<UpdateLogtankRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateLogtankRequestBody.class),
+            f -> f.withMarshaller(UpdateLogtankRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateMessageTemplateRequest, UpdateMessageTemplateResponse> updateMessageTemplate =
         genForupdateMessageTemplate();
 
@@ -807,6 +934,45 @@ public class SmnMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateMessageTemplateRequestBody.class),
             f -> f.withMarshaller(UpdateMessageTemplateRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateSubscriptionRequest, UpdateSubscriptionResponse> updateSubscription =
+        genForupdateSubscription();
+
+    private static HttpRequestDef<UpdateSubscriptionRequest, UpdateSubscriptionResponse> genForupdateSubscription() {
+        // basic
+        HttpRequestDef.Builder<UpdateSubscriptionRequest, UpdateSubscriptionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateSubscriptionRequest.class, UpdateSubscriptionResponse.class)
+                .withName("UpdateSubscription")
+                .withUri("/v2/{project_id}/notifications/topics/{topic_urn}/subscriptions/{subscription_urn}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("topic_urn",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSubscriptionRequest::getTopicUrn, (req, v) -> {
+                req.setTopicUrn(v);
+            }));
+        builder.<String>withRequestField("subscription_urn",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSubscriptionRequest::getSubscriptionUrn, (req, v) -> {
+                req.setSubscriptionUrn(v);
+            }));
+        builder.<UpdateSubscriptionRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateSubscriptionRequestBody.class),
+            f -> f.withMarshaller(UpdateSubscriptionRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

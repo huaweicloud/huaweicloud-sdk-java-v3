@@ -171,6 +171,34 @@ public class BssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ClaimEnterpriseMultiAccountCouponRequest, ClaimEnterpriseMultiAccountCouponResponse> claimEnterpriseMultiAccountCoupon =
+        genForclaimEnterpriseMultiAccountCoupon();
+
+    private static HttpRequestDef<ClaimEnterpriseMultiAccountCouponRequest, ClaimEnterpriseMultiAccountCouponResponse> genForclaimEnterpriseMultiAccountCoupon() {
+        // basic
+        HttpRequestDef.Builder<ClaimEnterpriseMultiAccountCouponRequest, ClaimEnterpriseMultiAccountCouponResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ClaimEnterpriseMultiAccountCouponRequest.class,
+                    ClaimEnterpriseMultiAccountCouponResponse.class)
+                .withName("ClaimEnterpriseMultiAccountCoupon")
+                .withUri("/v2/enterprises/multi-accounts/transfer-coupon")
+                .withContentType("application/json");
+
+        // requests
+        builder.<TransferEnterpriseMultiAccountCouponReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(TransferEnterpriseMultiAccountCouponReq.class),
+            f -> f.withMarshaller(ClaimEnterpriseMultiAccountCouponRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateEnterpriseProjectAuthRequest, CreateEnterpriseProjectAuthResponse> createEnterpriseProjectAuth =
         genForcreateEnterpriseProjectAuth();
 
@@ -1880,6 +1908,83 @@ public class BssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListMultiAccountRetrieveCouponsRequest, ListMultiAccountRetrieveCouponsResponse> listMultiAccountRetrieveCoupons =
+        genForlistMultiAccountRetrieveCoupons();
+
+    private static HttpRequestDef<ListMultiAccountRetrieveCouponsRequest, ListMultiAccountRetrieveCouponsResponse> genForlistMultiAccountRetrieveCoupons() {
+        // basic
+        HttpRequestDef.Builder<ListMultiAccountRetrieveCouponsRequest, ListMultiAccountRetrieveCouponsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListMultiAccountRetrieveCouponsRequest.class,
+                    ListMultiAccountRetrieveCouponsResponse.class)
+                .withName("ListMultiAccountRetrieveCoupons")
+                .withUri("/v2/enterprises/multi-accounts/retrieve-coupons")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("sub_customer_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMultiAccountRetrieveCouponsRequest::getSubCustomerId, (req, v) -> {
+                req.setSubCustomerId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListMultiAccountRetrieveCouponsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListMultiAccountRetrieveCouponsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListMultiAccountTransferCouponsRequest, ListMultiAccountTransferCouponsResponse> listMultiAccountTransferCoupons =
+        genForlistMultiAccountTransferCoupons();
+
+    private static HttpRequestDef<ListMultiAccountTransferCouponsRequest, ListMultiAccountTransferCouponsResponse> genForlistMultiAccountTransferCoupons() {
+        // basic
+        HttpRequestDef.Builder<ListMultiAccountTransferCouponsRequest, ListMultiAccountTransferCouponsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListMultiAccountTransferCouponsRequest.class,
+                    ListMultiAccountTransferCouponsResponse.class)
+                .withName("ListMultiAccountTransferCoupons")
+                .withUri("/v2/enterprises/multi-accounts/transfer-coupons")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListMultiAccountTransferCouponsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListMultiAccountTransferCouponsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListOnDemandResourceRatingsRequest, ListOnDemandResourceRatingsResponse> listOnDemandResourceRatings =
         genForlistOnDemandResourceRatings();
 
@@ -3137,6 +3242,34 @@ public class BssMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ReclaimCouponQuotasReq.class),
             f -> f.withMarshaller(ReclaimCouponQuotasRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ReclaimEnterpriseMultiAccountCouponRequest, ReclaimEnterpriseMultiAccountCouponResponse> reclaimEnterpriseMultiAccountCoupon =
+        genForreclaimEnterpriseMultiAccountCoupon();
+
+    private static HttpRequestDef<ReclaimEnterpriseMultiAccountCouponRequest, ReclaimEnterpriseMultiAccountCouponResponse> genForreclaimEnterpriseMultiAccountCoupon() {
+        // basic
+        HttpRequestDef.Builder<ReclaimEnterpriseMultiAccountCouponRequest, ReclaimEnterpriseMultiAccountCouponResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ReclaimEnterpriseMultiAccountCouponRequest.class,
+                    ReclaimEnterpriseMultiAccountCouponResponse.class)
+                .withName("ReclaimEnterpriseMultiAccountCoupon")
+                .withUri("/v2/enterprises/multi-accounts/retrieve-coupon")
+                .withContentType("application/json");
+
+        // requests
+        builder.<RetrieveEnterpriseMultiAccountCouponReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RetrieveEnterpriseMultiAccountCouponReq.class),
+            f -> f.withMarshaller(ReclaimEnterpriseMultiAccountCouponRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

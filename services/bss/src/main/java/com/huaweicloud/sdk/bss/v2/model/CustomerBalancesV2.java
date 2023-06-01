@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.bss.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
@@ -18,12 +19,12 @@ public class CustomerBalancesV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "debt_amount")
 
-    private Double debtAmount;
+    private BigDecimal debtAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "amount")
 
-    private Double amount;
+    private BigDecimal amount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "currency")
@@ -52,7 +53,7 @@ public class CustomerBalancesV2 {
         this.customerId = customerId;
     }
 
-    public CustomerBalancesV2 withDebtAmount(Double debtAmount) {
+    public CustomerBalancesV2 withDebtAmount(BigDecimal debtAmount) {
         this.debtAmount = debtAmount;
         return this;
     }
@@ -61,15 +62,15 @@ public class CustomerBalancesV2 {
      * 客户欠款总额度。
      * @return debtAmount
      */
-    public Double getDebtAmount() {
+    public BigDecimal getDebtAmount() {
         return debtAmount;
     }
 
-    public void setDebtAmount(Double debtAmount) {
+    public void setDebtAmount(BigDecimal debtAmount) {
         this.debtAmount = debtAmount;
     }
 
-    public CustomerBalancesV2 withAmount(Double amount) {
+    public CustomerBalancesV2 withAmount(BigDecimal amount) {
         this.amount = amount;
         return this;
     }
@@ -78,11 +79,11 @@ public class CustomerBalancesV2 {
      * 客户可用总额度。
      * @return amount
      */
-    public Double getAmount() {
+    public BigDecimal getAmount() {
         return amount;
     }
 
-    public void setAmount(Double amount) {
+    public void setAmount(BigDecimal amount) {
         this.amount = amount;
     }
 
