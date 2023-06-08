@@ -372,6 +372,34 @@ public class FunctionGraphAsyncClient {
     }
 
     /**
+     * 创建资源标签
+     *
+     * 创建资源标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateTagsRequest 请求对象
+     * @return CompletableFuture<CreateTagsResponse>
+     */
+    public CompletableFuture<CreateTagsResponse> createTagsAsync(CreateTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.createTags);
+    }
+
+    /**
+     * 创建资源标签
+     *
+     * 创建资源标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateTagsRequest 请求对象
+     * @return AsyncInvoker<CreateTagsRequest, CreateTagsResponse>
+     */
+    public AsyncInvoker<CreateTagsRequest, CreateTagsResponse> createTagsAsyncInvoker(CreateTagsRequest request) {
+        return new AsyncInvoker<CreateTagsRequest, CreateTagsResponse>(request, FunctionGraphMeta.createTags, hcClient);
+    }
+
+    /**
      * 创建函数版本别名
      *
      * 创建函数灰度版本别名。
@@ -399,6 +427,36 @@ public class FunctionGraphAsyncClient {
         CreateVersionAliasRequest request) {
         return new AsyncInvoker<CreateVersionAliasRequest, CreateVersionAliasResponse>(request,
             FunctionGraphMeta.createVersionAlias, hcClient);
+    }
+
+    /**
+     * 创建下沉入口
+     *
+     * 创建下沉入口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateVpcEndpointRequest 请求对象
+     * @return CompletableFuture<CreateVpcEndpointResponse>
+     */
+    public CompletableFuture<CreateVpcEndpointResponse> createVpcEndpointAsync(CreateVpcEndpointRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.createVpcEndpoint);
+    }
+
+    /**
+     * 创建下沉入口
+     *
+     * 创建下沉入口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateVpcEndpointRequest 请求对象
+     * @return AsyncInvoker<CreateVpcEndpointRequest, CreateVpcEndpointResponse>
+     */
+    public AsyncInvoker<CreateVpcEndpointRequest, CreateVpcEndpointResponse> createVpcEndpointAsyncInvoker(
+        CreateVpcEndpointRequest request) {
+        return new AsyncInvoker<CreateVpcEndpointRequest, CreateVpcEndpointResponse>(request,
+            FunctionGraphMeta.createVpcEndpoint, hcClient);
     }
 
     /**
@@ -620,6 +678,34 @@ public class FunctionGraphAsyncClient {
     }
 
     /**
+     * 删除资源标签
+     *
+     * 删除资源标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteTagsRequest 请求对象
+     * @return CompletableFuture<DeleteTagsResponse>
+     */
+    public CompletableFuture<DeleteTagsResponse> deleteTagsAsync(DeleteTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.deleteTags);
+    }
+
+    /**
+     * 删除资源标签
+     *
+     * 删除资源标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteTagsRequest 请求对象
+     * @return AsyncInvoker<DeleteTagsRequest, DeleteTagsResponse>
+     */
+    public AsyncInvoker<DeleteTagsRequest, DeleteTagsResponse> deleteTagsAsyncInvoker(DeleteTagsRequest request) {
+        return new AsyncInvoker<DeleteTagsRequest, DeleteTagsResponse>(request, FunctionGraphMeta.deleteTags, hcClient);
+    }
+
+    /**
      * 删除函数版本别名
      *
      * 删除函数版本别名。
@@ -647,6 +733,36 @@ public class FunctionGraphAsyncClient {
         DeleteVersionAliasRequest request) {
         return new AsyncInvoker<DeleteVersionAliasRequest, DeleteVersionAliasResponse>(request,
             FunctionGraphMeta.deleteVersionAlias, hcClient);
+    }
+
+    /**
+     * 删除下沉入口
+     *
+     * 删除下沉入口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteVpcEndpointRequest 请求对象
+     * @return CompletableFuture<DeleteVpcEndpointResponse>
+     */
+    public CompletableFuture<DeleteVpcEndpointResponse> deleteVpcEndpointAsync(DeleteVpcEndpointRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.deleteVpcEndpoint);
+    }
+
+    /**
+     * 删除下沉入口
+     *
+     * 删除下沉入口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteVpcEndpointRequest 请求对象
+     * @return AsyncInvoker<DeleteVpcEndpointRequest, DeleteVpcEndpointResponse>
+     */
+    public AsyncInvoker<DeleteVpcEndpointRequest, DeleteVpcEndpointResponse> deleteVpcEndpointAsyncInvoker(
+        DeleteVpcEndpointRequest request) {
+        return new AsyncInvoker<DeleteVpcEndpointRequest, DeleteVpcEndpointResponse>(request,
+            FunctionGraphMeta.deleteVpcEndpoint, hcClient);
     }
 
     /**
@@ -1415,6 +1531,37 @@ public class FunctionGraphAsyncClient {
     }
 
     /**
+     * 查询函数快照制作状态
+     *
+     * 查询函数快照制作状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowFuncSnapshotStateRequest 请求对象
+     * @return CompletableFuture<ShowFuncSnapshotStateResponse>
+     */
+    public CompletableFuture<ShowFuncSnapshotStateResponse> showFuncSnapshotStateAsync(
+        ShowFuncSnapshotStateRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.showFuncSnapshotState);
+    }
+
+    /**
+     * 查询函数快照制作状态
+     *
+     * 查询函数快照制作状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowFuncSnapshotStateRequest 请求对象
+     * @return AsyncInvoker<ShowFuncSnapshotStateRequest, ShowFuncSnapshotStateResponse>
+     */
+    public AsyncInvoker<ShowFuncSnapshotStateRequest, ShowFuncSnapshotStateResponse> showFuncSnapshotStateAsyncInvoker(
+        ShowFuncSnapshotStateRequest request) {
+        return new AsyncInvoker<ShowFuncSnapshotStateRequest, ShowFuncSnapshotStateResponse>(request,
+            FunctionGraphMeta.showFuncSnapshotState, hcClient);
+    }
+
+    /**
      * 获取函数异步配置信息
      *
      * 获取指定函数某一版本的异步配置信息。
@@ -1563,6 +1710,66 @@ public class FunctionGraphAsyncClient {
         ShowLtsLogDetailsRequest request) {
         return new AsyncInvoker<ShowLtsLogDetailsRequest, ShowLtsLogDetailsResponse>(request,
             FunctionGraphMeta.showLtsLogDetails, hcClient);
+    }
+
+    /**
+     * 查询资源标签
+     *
+     * 查询资源标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowProjectTagsListRequest 请求对象
+     * @return CompletableFuture<ShowProjectTagsListResponse>
+     */
+    public CompletableFuture<ShowProjectTagsListResponse> showProjectTagsListAsync(ShowProjectTagsListRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.showProjectTagsList);
+    }
+
+    /**
+     * 查询资源标签
+     *
+     * 查询资源标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowProjectTagsListRequest 请求对象
+     * @return AsyncInvoker<ShowProjectTagsListRequest, ShowProjectTagsListResponse>
+     */
+    public AsyncInvoker<ShowProjectTagsListRequest, ShowProjectTagsListResponse> showProjectTagsListAsyncInvoker(
+        ShowProjectTagsListRequest request) {
+        return new AsyncInvoker<ShowProjectTagsListRequest, ShowProjectTagsListResponse>(request,
+            FunctionGraphMeta.showProjectTagsList, hcClient);
+    }
+
+    /**
+     * 查询资源实例
+     *
+     * 查询资源实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowResInstanceInfoRequest 请求对象
+     * @return CompletableFuture<ShowResInstanceInfoResponse>
+     */
+    public CompletableFuture<ShowResInstanceInfoResponse> showResInstanceInfoAsync(ShowResInstanceInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.showResInstanceInfo);
+    }
+
+    /**
+     * 查询资源实例
+     *
+     * 查询资源实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowResInstanceInfoRequest 请求对象
+     * @return AsyncInvoker<ShowResInstanceInfoRequest, ShowResInstanceInfoResponse>
+     */
+    public AsyncInvoker<ShowResInstanceInfoRequest, ShowResInstanceInfoResponse> showResInstanceInfoAsyncInvoker(
+        ShowResInstanceInfoRequest request) {
+        return new AsyncInvoker<ShowResInstanceInfoRequest, ShowResInstanceInfoResponse>(request,
+            FunctionGraphMeta.showResInstanceInfo, hcClient);
     }
 
     /**
@@ -1925,6 +2132,36 @@ public class FunctionGraphAsyncClient {
     public AsyncInvoker<UpdateEventRequest, UpdateEventResponse> updateEventAsyncInvoker(UpdateEventRequest request) {
         return new AsyncInvoker<UpdateEventRequest, UpdateEventResponse>(request, FunctionGraphMeta.updateEvent,
             hcClient);
+    }
+
+    /**
+     * 禁用/启动函数快照
+     *
+     * 禁用/启动函数快照
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateFuncSnapshotRequest 请求对象
+     * @return CompletableFuture<UpdateFuncSnapshotResponse>
+     */
+    public CompletableFuture<UpdateFuncSnapshotResponse> updateFuncSnapshotAsync(UpdateFuncSnapshotRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.updateFuncSnapshot);
+    }
+
+    /**
+     * 禁用/启动函数快照
+     *
+     * 禁用/启动函数快照
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateFuncSnapshotRequest 请求对象
+     * @return AsyncInvoker<UpdateFuncSnapshotRequest, UpdateFuncSnapshotResponse>
+     */
+    public AsyncInvoker<UpdateFuncSnapshotRequest, UpdateFuncSnapshotResponse> updateFuncSnapshotAsyncInvoker(
+        UpdateFuncSnapshotRequest request) {
+        return new AsyncInvoker<UpdateFuncSnapshotRequest, UpdateFuncSnapshotResponse>(request,
+            FunctionGraphMeta.updateFuncSnapshot, hcClient);
     }
 
     /**

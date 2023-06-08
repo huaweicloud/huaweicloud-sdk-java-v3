@@ -556,6 +556,84 @@ public class BcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListBcsEventsRequest, ListBcsEventsResponse> listBcsEvents =
+        genForlistBcsEvents();
+
+    private static HttpRequestDef<ListBcsEventsRequest, ListBcsEventsResponse> genForlistBcsEvents() {
+        // basic
+        HttpRequestDef.Builder<ListBcsEventsRequest, ListBcsEventsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListBcsEventsRequest.class, ListBcsEventsResponse.class)
+                .withName("ListBcsEvents")
+                .withUri("/v2/{project_id}/blockchains/{blockchain_id}/events")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("blockchain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBcsEventsRequest::getBlockchainId, (req, v) -> {
+                req.setBlockchainId(v);
+            }));
+        builder.<ListBcsEventsRequest.TypeEnum>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListBcsEventsRequest.TypeEnum.class),
+            f -> f.withMarshaller(ListBcsEventsRequest::getType, (req, v) -> {
+                req.setType(v);
+            }));
+        builder.<ListBcsEventRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListBcsEventRequestBody.class),
+            f -> f.withMarshaller(ListBcsEventsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListBcsEventsStatisticRequest, ListBcsEventsStatisticResponse> listBcsEventsStatistic =
+        genForlistBcsEventsStatistic();
+
+    private static HttpRequestDef<ListBcsEventsStatisticRequest, ListBcsEventsStatisticResponse> genForlistBcsEventsStatistic() {
+        // basic
+        HttpRequestDef.Builder<ListBcsEventsStatisticRequest, ListBcsEventsStatisticResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ListBcsEventsStatisticRequest.class, ListBcsEventsStatisticResponse.class)
+            .withName("ListBcsEventsStatistic")
+            .withUri("/v2/{project_id}/blockchains/{blockchain_id}/events/statistic")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("blockchain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBcsEventsStatisticRequest::getBlockchainId, (req, v) -> {
+                req.setBlockchainId(v);
+            }));
+        builder.<ListBcsEventsStatisticRequest.TypeEnum>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListBcsEventsStatisticRequest.TypeEnum.class),
+            f -> f.withMarshaller(ListBcsEventsStatisticRequest::getType, (req, v) -> {
+                req.setType(v);
+            }));
+        builder.<ListBcsEventRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListBcsEventRequestBody.class),
+            f -> f.withMarshaller(ListBcsEventsStatisticRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListBcsMetricRequest, ListBcsMetricResponse> listBcsMetric =
         genForlistBcsMetric();
 

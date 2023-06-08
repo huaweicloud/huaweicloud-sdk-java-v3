@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.ecs.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -30,6 +32,11 @@ public class PostPaidServerNic {
     @JsonProperty(value = "ipv6_bandwidth")
 
     private PostPaidServerIpv6Bandwidth ipv6Bandwidth;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "allowed_address_pairs")
+
+    private List<CreateServerNicAllowedAddressPairs> allowedAddressPairs = null;
 
     public PostPaidServerNic withSubnetId(String subnetId) {
         this.subnetId = subnetId;
@@ -108,6 +115,40 @@ public class PostPaidServerNic {
         this.ipv6Bandwidth = ipv6Bandwidth;
     }
 
+    public PostPaidServerNic withAllowedAddressPairs(List<CreateServerNicAllowedAddressPairs> allowedAddressPairs) {
+        this.allowedAddressPairs = allowedAddressPairs;
+        return this;
+    }
+
+    public PostPaidServerNic addAllowedAddressPairsItem(CreateServerNicAllowedAddressPairs allowedAddressPairsItem) {
+        if (this.allowedAddressPairs == null) {
+            this.allowedAddressPairs = new ArrayList<>();
+        }
+        this.allowedAddressPairs.add(allowedAddressPairsItem);
+        return this;
+    }
+
+    public PostPaidServerNic withAllowedAddressPairs(
+        Consumer<List<CreateServerNicAllowedAddressPairs>> allowedAddressPairsSetter) {
+        if (this.allowedAddressPairs == null) {
+            this.allowedAddressPairs = new ArrayList<>();
+        }
+        allowedAddressPairsSetter.accept(this.allowedAddressPairs);
+        return this;
+    }
+
+    /**
+     * IP/Mac对列表， 约束：IP地址不允许为 “0.0.0.0/0” 如果allowed_address_pairs配置地址池较大的CIDR（掩码小于24位），建议为该port配置一个单独的安全组 如果allowed_address_pairs为“1.1.1.1/0”，表示关闭源目地址检查开关 被绑定的云服务器网卡allowed_address_pairs填“1.1.1.1/0”
+     * @return allowedAddressPairs
+     */
+    public List<CreateServerNicAllowedAddressPairs> getAllowedAddressPairs() {
+        return allowedAddressPairs;
+    }
+
+    public void setAllowedAddressPairs(List<CreateServerNicAllowedAddressPairs> allowedAddressPairs) {
+        this.allowedAddressPairs = allowedAddressPairs;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -120,12 +161,13 @@ public class PostPaidServerNic {
         return Objects.equals(this.subnetId, postPaidServerNic.subnetId)
             && Objects.equals(this.ipAddress, postPaidServerNic.ipAddress)
             && Objects.equals(this.ipv6Enable, postPaidServerNic.ipv6Enable)
-            && Objects.equals(this.ipv6Bandwidth, postPaidServerNic.ipv6Bandwidth);
+            && Objects.equals(this.ipv6Bandwidth, postPaidServerNic.ipv6Bandwidth)
+            && Objects.equals(this.allowedAddressPairs, postPaidServerNic.allowedAddressPairs);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(subnetId, ipAddress, ipv6Enable, ipv6Bandwidth);
+        return Objects.hash(subnetId, ipAddress, ipv6Enable, ipv6Bandwidth, allowedAddressPairs);
     }
 
     @Override
@@ -136,6 +178,7 @@ public class PostPaidServerNic {
         sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
         sb.append("    ipv6Enable: ").append(toIndentedString(ipv6Enable)).append("\n");
         sb.append("    ipv6Bandwidth: ").append(toIndentedString(ipv6Bandwidth)).append("\n");
+        sb.append("    allowedAddressPairs: ").append(toIndentedString(allowedAddressPairs)).append("\n");
         sb.append("}");
         return sb.toString();
     }

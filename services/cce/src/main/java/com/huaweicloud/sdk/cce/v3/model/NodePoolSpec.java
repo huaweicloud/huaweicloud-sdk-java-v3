@@ -19,7 +19,7 @@ import java.util.function.Consumer;
 public class NodePoolSpec {
 
     /**
-     * 节点池类型。不填写时默认为vm。  - vm：弹性云服务器 - ElasticBMS：C6型弹性裸金属通用计算增强型云服务器，规格示例：c6.22xlarge.2.physical 
+     * 节点池类型。不填写时默认为vm。  - vm：弹性云服务器 - ElasticBMS：C6型弹性裸金属通用计算增强型云服务器，规格示例：c6.22xlarge.2.physical - pm: 裸金属服务器 
      */
     public static final class TypeEnum {
 
@@ -33,12 +33,18 @@ public class NodePoolSpec {
          */
         public static final TypeEnum ELASTICBMS = new TypeEnum("ElasticBMS");
 
+        /**
+         * Enum PM for value: "pm"
+         */
+        public static final TypeEnum PM = new TypeEnum("pm");
+
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
             Map<String, TypeEnum> map = new HashMap<>();
             map.put("vm", VM);
             map.put("ElasticBMS", ELASTICBMS);
+            map.put("pm", PM);
             return Collections.unmodifiableMap(map);
         }
 
@@ -136,7 +142,7 @@ public class NodePoolSpec {
     }
 
     /**
-     * 节点池类型。不填写时默认为vm。  - vm：弹性云服务器 - ElasticBMS：C6型弹性裸金属通用计算增强型云服务器，规格示例：c6.22xlarge.2.physical 
+     * 节点池类型。不填写时默认为vm。  - vm：弹性云服务器 - ElasticBMS：C6型弹性裸金属通用计算增强型云服务器，规格示例：c6.22xlarge.2.physical - pm: 裸金属服务器 
      * @return type
      */
     public TypeEnum getType() {

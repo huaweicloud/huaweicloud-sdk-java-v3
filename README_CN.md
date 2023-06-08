@@ -39,12 +39,12 @@ Maven 项目的 `pom.xml` 文件加入相应的依赖项即可。
 <dependency>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk-ecs</artifactId>
-    <version>[3.0.40-rc, 3.2.0)</version>
+    <version>${version}</version>
 </dependency>
 <dependency>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk-vpc</artifactId>
-    <version>[3.0.40-rc, 3.2.0)</version>
+    <version>${version}</version>
 </dependency>
 ```
 
@@ -57,7 +57,7 @@ Maven 项目的 `pom.xml` 文件加入相应的依赖项即可。
 <dependency>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk-all</artifactId>
-    <version>[3.0.40-rc, 3.2.0)</version>
+    <version>${version}</version>
 </dependency>
 ```
 
@@ -70,11 +70,36 @@ Maven 项目的 `pom.xml` 文件加入相应的依赖项即可。
 <dependency>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk-bundle</artifactId>
-    <version>[3.0.40-rc, 3.2.0)</version>
+    <version>${version}</version>
 </dependency>
 ```
 
 常见冲突例如Jackson，okhttp3版本冲突等。
+
+**注意：**bundle包已经包含了core包和云服务集合包，不要再单独引入core包和服务包，根据maven依赖解析顺序，可能会导致bundle包不生效。
+
+以下为错误示例：
+
+```xml
+<!-- 引入core包，会覆盖掉bundle包中的core包，请删除此依赖 -->
+<dependency>
+    <groupId>com.huaweicloud.sdk</groupId>
+    <artifactId>huaweicloud-sdk-core</artifactId>
+    <version>${version}</version>
+</dependency>
+<!-- 引入core包，会覆盖掉bundle包中的ecs服务包，请删除此依赖 -->
+<dependency>
+    <groupId>com.huaweicloud.sdk</groupId>
+    <artifactId>huaweicloud-sdk-ecs</artifactId>
+    <version>${version}</version>
+</dependency>
+<!-- 只保留bundle包即可 -->
+<dependency>
+    <groupId>com.huaweicloud.sdk</groupId>
+    <artifactId>huaweicloud-sdk-bundle</artifactId>
+    <version>${version}</version>
+</dependency>
+```
 
 ## 代码示例
 

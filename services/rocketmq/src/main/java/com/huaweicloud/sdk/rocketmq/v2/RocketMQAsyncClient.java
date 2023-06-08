@@ -752,12 +752,11 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SendRocketMqDlqMessageRequest 请求对象
-     * @return CompletableFuture<SendRocketMqDlqMessageResponse>
+     * @param SendDlqMessageRequest 请求对象
+     * @return CompletableFuture<SendDlqMessageResponse>
      */
-    public CompletableFuture<SendRocketMqDlqMessageResponse> sendRocketMqDlqMessageAsync(
-        SendRocketMqDlqMessageRequest request) {
-        return hcClient.asyncInvokeHttp(request, RocketMQMeta.sendRocketMqDlqMessage);
+    public CompletableFuture<SendDlqMessageResponse> sendDlqMessageAsync(SendDlqMessageRequest request) {
+        return hcClient.asyncInvokeHttp(request, RocketMQMeta.sendDlqMessage);
     }
 
     /**
@@ -767,13 +766,13 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SendRocketMqDlqMessageRequest 请求对象
-     * @return AsyncInvoker<SendRocketMqDlqMessageRequest, SendRocketMqDlqMessageResponse>
+     * @param SendDlqMessageRequest 请求对象
+     * @return AsyncInvoker<SendDlqMessageRequest, SendDlqMessageResponse>
      */
-    public AsyncInvoker<SendRocketMqDlqMessageRequest, SendRocketMqDlqMessageResponse> sendRocketMqDlqMessageAsyncInvoker(
-        SendRocketMqDlqMessageRequest request) {
-        return new AsyncInvoker<SendRocketMqDlqMessageRequest, SendRocketMqDlqMessageResponse>(request,
-            RocketMQMeta.sendRocketMqDlqMessage, hcClient);
+    public AsyncInvoker<SendDlqMessageRequest, SendDlqMessageResponse> sendDlqMessageAsyncInvoker(
+        SendDlqMessageRequest request) {
+        return new AsyncInvoker<SendDlqMessageRequest, SendDlqMessageResponse>(request, RocketMQMeta.sendDlqMessage,
+            hcClient);
     }
 
     /**
@@ -1080,12 +1079,12 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ValidateRocketMqConsumedMessageRequest 请求对象
-     * @return CompletableFuture<ValidateRocketMqConsumedMessageResponse>
+     * @param ValidateConsumedMessageRequest 请求对象
+     * @return CompletableFuture<ValidateConsumedMessageResponse>
      */
-    public CompletableFuture<ValidateRocketMqConsumedMessageResponse> validateRocketMqConsumedMessageAsync(
-        ValidateRocketMqConsumedMessageRequest request) {
-        return hcClient.asyncInvokeHttp(request, RocketMQMeta.validateRocketMqConsumedMessage);
+    public CompletableFuture<ValidateConsumedMessageResponse> validateConsumedMessageAsync(
+        ValidateConsumedMessageRequest request) {
+        return hcClient.asyncInvokeHttp(request, RocketMQMeta.validateConsumedMessage);
     }
 
     /**
@@ -1095,13 +1094,13 @@ public class RocketMQAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ValidateRocketMqConsumedMessageRequest 请求对象
-     * @return AsyncInvoker<ValidateRocketMqConsumedMessageRequest, ValidateRocketMqConsumedMessageResponse>
+     * @param ValidateConsumedMessageRequest 请求对象
+     * @return AsyncInvoker<ValidateConsumedMessageRequest, ValidateConsumedMessageResponse>
      */
-    public AsyncInvoker<ValidateRocketMqConsumedMessageRequest, ValidateRocketMqConsumedMessageResponse> validateRocketMqConsumedMessageAsyncInvoker(
-        ValidateRocketMqConsumedMessageRequest request) {
-        return new AsyncInvoker<ValidateRocketMqConsumedMessageRequest, ValidateRocketMqConsumedMessageResponse>(
-            request, RocketMQMeta.validateRocketMqConsumedMessage, hcClient);
+    public AsyncInvoker<ValidateConsumedMessageRequest, ValidateConsumedMessageResponse> validateConsumedMessageAsyncInvoker(
+        ValidateConsumedMessageRequest request) {
+        return new AsyncInvoker<ValidateConsumedMessageRequest, ValidateConsumedMessageResponse>(request,
+            RocketMQMeta.validateConsumedMessage, hcClient);
     }
 
     /**

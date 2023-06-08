@@ -195,7 +195,7 @@ public class UpdateRecordSetsResponse extends SdkResponse {
     }
 
     /**
-     * 记录类型。  取值范围：A、AAAA、MX、CNAME、TXT、NS、SRV、CAA。
+     * 记录类型。 公网支持修改类型： A、AAAA、MX、CNAME、TXT、NS、SRV、CAA 内网支持修改类型： A、AAAA、MX、CNAME、TXT、SRV
      * @return type
      */
     public String getType() {

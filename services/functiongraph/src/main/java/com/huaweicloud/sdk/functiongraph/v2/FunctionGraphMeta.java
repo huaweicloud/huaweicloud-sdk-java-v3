@@ -342,6 +342,44 @@ public class FunctionGraphMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateTagsRequest, CreateTagsResponse> createTags = genForcreateTags();
+
+    private static HttpRequestDef<CreateTagsRequest, CreateTagsResponse> genForcreateTags() {
+        // basic
+        HttpRequestDef.Builder<CreateTagsRequest, CreateTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateTagsRequest.class, CreateTagsResponse.class)
+                .withName("CreateTags")
+                .withUri("/v2/{project_id}/{resource_type}/{resource_id}/tags/create")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTagsRequest::getResourceType, (req, v) -> {
+                req.setResourceType(v);
+            }));
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTagsRequest::getResourceId, (req, v) -> {
+                req.setResourceId(v);
+            }));
+        builder.<UpdateFunctionTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateFunctionTagsRequestBody.class),
+            f -> f.withMarshaller(CreateTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateVersionAliasRequest, CreateVersionAliasResponse> createVersionAlias =
         genForcreateVersionAlias();
 
@@ -366,6 +404,31 @@ public class FunctionGraphMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateVersionAliasRequestBody.class),
             f -> f.withMarshaller(CreateVersionAliasRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateVpcEndpointRequest, CreateVpcEndpointResponse> createVpcEndpoint =
+        genForcreateVpcEndpoint();
+
+    private static HttpRequestDef<CreateVpcEndpointRequest, CreateVpcEndpointResponse> genForcreateVpcEndpoint() {
+        // basic
+        HttpRequestDef.Builder<CreateVpcEndpointRequest, CreateVpcEndpointResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateVpcEndpointRequest.class, CreateVpcEndpointResponse.class)
+                .withName("CreateVpcEndpoint")
+                .withUri("/v2/{project_id}/fgs/vpc-endpoint")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateVpcEndpointRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateVpcEndpointRequestBody.class),
+            f -> f.withMarshaller(CreateVpcEndpointRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -579,6 +642,44 @@ public class FunctionGraphMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteTagsRequest, DeleteTagsResponse> deleteTags = genFordeleteTags();
+
+    private static HttpRequestDef<DeleteTagsRequest, DeleteTagsResponse> genFordeleteTags() {
+        // basic
+        HttpRequestDef.Builder<DeleteTagsRequest, DeleteTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteTagsRequest.class, DeleteTagsResponse.class)
+                .withName("DeleteTags")
+                .withUri("/v2/{project_id}/{resource_type}/{resource_id}/tags/delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTagsRequest::getResourceType, (req, v) -> {
+                req.setResourceType(v);
+            }));
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTagsRequest::getResourceId, (req, v) -> {
+                req.setResourceId(v);
+            }));
+        builder.<UpdateFunctionTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateFunctionTagsRequestBody.class),
+            f -> f.withMarshaller(DeleteTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteVersionAliasRequest, DeleteVersionAliasResponse> deleteVersionAlias =
         genFordeleteVersionAlias();
 
@@ -604,6 +705,38 @@ public class FunctionGraphMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteVersionAliasRequest::getAliasName, (req, v) -> {
                 req.setAliasName(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteVpcEndpointRequest, DeleteVpcEndpointResponse> deleteVpcEndpoint =
+        genFordeleteVpcEndpoint();
+
+    private static HttpRequestDef<DeleteVpcEndpointRequest, DeleteVpcEndpointResponse> genFordeleteVpcEndpoint() {
+        // basic
+        HttpRequestDef.Builder<DeleteVpcEndpointRequest, DeleteVpcEndpointResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteVpcEndpointRequest.class, DeleteVpcEndpointResponse.class)
+                .withName("DeleteVpcEndpoint")
+                .withUri("/v2/{project_id}/fgs/vpc-endpoint/{vpc_id}/{subnet_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("vpc_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteVpcEndpointRequest::getVpcId, (req, v) -> {
+                req.setVpcId(v);
+            }));
+        builder.<String>withRequestField("subnet_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteVpcEndpointRequest::getSubnetId, (req, v) -> {
+                req.setSubnetId(v);
             }));
 
         // response
@@ -1574,6 +1707,31 @@ public class FunctionGraphMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowFuncSnapshotStateRequest, ShowFuncSnapshotStateResponse> showFuncSnapshotState =
+        genForshowFuncSnapshotState();
+
+    private static HttpRequestDef<ShowFuncSnapshotStateRequest, ShowFuncSnapshotStateResponse> genForshowFuncSnapshotState() {
+        // basic
+        HttpRequestDef.Builder<ShowFuncSnapshotStateRequest, ShowFuncSnapshotStateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowFuncSnapshotStateRequest.class, ShowFuncSnapshotStateResponse.class)
+            .withName("ShowFuncSnapshotState")
+            .withUri("/v2/{project_id}/fgs/functions/{function_urn}/snapshots/state")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("function_urn",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFuncSnapshotStateRequest::getFunctionUrn, (req, v) -> {
+                req.setFunctionUrn(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowFunctionAsyncInvokeConfigRequest, ShowFunctionAsyncInvokeConfigResponse> showFunctionAsyncInvokeConfig =
         genForshowFunctionAsyncInvokeConfig();
 
@@ -1709,6 +1867,70 @@ public class FunctionGraphMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowLtsLogDetailsRequest::getFunctionUrn, (req, v) -> {
                 req.setFunctionUrn(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowProjectTagsListRequest, ShowProjectTagsListResponse> showProjectTagsList =
+        genForshowProjectTagsList();
+
+    private static HttpRequestDef<ShowProjectTagsListRequest, ShowProjectTagsListResponse> genForshowProjectTagsList() {
+        // basic
+        HttpRequestDef.Builder<ShowProjectTagsListRequest, ShowProjectTagsListResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowProjectTagsListRequest.class, ShowProjectTagsListResponse.class)
+                .withName("ShowProjectTagsList")
+                .withUri("/v2/{project_id}/{resource_type}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowProjectTagsListRequest::getResourceType, (req, v) -> {
+                req.setResourceType(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowResInstanceInfoRequest, ShowResInstanceInfoResponse> showResInstanceInfo =
+        genForshowResInstanceInfo();
+
+    private static HttpRequestDef<ShowResInstanceInfoRequest, ShowResInstanceInfoResponse> genForshowResInstanceInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowResInstanceInfoRequest, ShowResInstanceInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ShowResInstanceInfoRequest.class, ShowResInstanceInfoResponse.class)
+                .withName("ShowResInstanceInfo")
+                .withUri("/v2/{project_id}/{resource_type}/resource-instances/{action}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowResInstanceInfoRequest::getResourceType, (req, v) -> {
+                req.setResourceType(v);
+            }));
+        builder.<String>withRequestField("action",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowResInstanceInfoRequest::getAction, (req, v) -> {
+                req.setAction(v);
+            }));
+        builder.<ListEnterpriseResourceRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListEnterpriseResourceRequestBody.class),
+            f -> f.withMarshaller(ShowResInstanceInfoRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response
@@ -2165,6 +2387,38 @@ public class FunctionGraphMeta {
             TypeCasts.uncheckedConversion(UpdateEventRequestBody.class),
             f -> f.withMarshaller(UpdateEventRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateFuncSnapshotRequest, UpdateFuncSnapshotResponse> updateFuncSnapshot =
+        genForupdateFuncSnapshot();
+
+    private static HttpRequestDef<UpdateFuncSnapshotRequest, UpdateFuncSnapshotResponse> genForupdateFuncSnapshot() {
+        // basic
+        HttpRequestDef.Builder<UpdateFuncSnapshotRequest, UpdateFuncSnapshotResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpdateFuncSnapshotRequest.class, UpdateFuncSnapshotResponse.class)
+                .withName("UpdateFuncSnapshot")
+                .withUri("/v2/{project_id}/fgs/functions/{function_urn}/snapshots/{action}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("action",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateFuncSnapshotRequest::getAction, (req, v) -> {
+                req.setAction(v);
+            }));
+        builder.<String>withRequestField("function_urn",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateFuncSnapshotRequest::getFunctionUrn, (req, v) -> {
+                req.setFunctionUrn(v);
             }));
 
         // response

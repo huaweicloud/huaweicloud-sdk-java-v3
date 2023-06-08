@@ -23,6 +23,11 @@ public class ListIssueCustomFieldsRequestBody {
 
     private List<String> names = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "included_not_in_use")
+
+    private Boolean includedNotInUse;
+
     public ListIssueCustomFieldsRequestBody withCustomFields(List<String> customFields) {
         this.customFields = customFields;
         return this;
@@ -89,6 +94,23 @@ public class ListIssueCustomFieldsRequestBody {
         this.names = names;
     }
 
+    public ListIssueCustomFieldsRequestBody withIncludedNotInUse(Boolean includedNotInUse) {
+        this.includedNotInUse = includedNotInUse;
+        return this;
+    }
+
+    /**
+     * 查询结果是否包括未使用的自定义字段，默认仅查询使用中的自定义字段，设为true时查询项目中所有自定义字段
+     * @return includedNotInUse
+     */
+    public Boolean getIncludedNotInUse() {
+        return includedNotInUse;
+    }
+
+    public void setIncludedNotInUse(Boolean includedNotInUse) {
+        this.includedNotInUse = includedNotInUse;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -99,12 +121,13 @@ public class ListIssueCustomFieldsRequestBody {
         }
         ListIssueCustomFieldsRequestBody listIssueCustomFieldsRequestBody = (ListIssueCustomFieldsRequestBody) o;
         return Objects.equals(this.customFields, listIssueCustomFieldsRequestBody.customFields)
-            && Objects.equals(this.names, listIssueCustomFieldsRequestBody.names);
+            && Objects.equals(this.names, listIssueCustomFieldsRequestBody.names)
+            && Objects.equals(this.includedNotInUse, listIssueCustomFieldsRequestBody.includedNotInUse);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(customFields, names);
+        return Objects.hash(customFields, names, includedNotInUse);
     }
 
     @Override
@@ -113,6 +136,7 @@ public class ListIssueCustomFieldsRequestBody {
         sb.append("class ListIssueCustomFieldsRequestBody {\n");
         sb.append("    customFields: ").append(toIndentedString(customFields)).append("\n");
         sb.append("    names: ").append(toIndentedString(names)).append("\n");
+        sb.append("    includedNotInUse: ").append(toIndentedString(includedNotInUse)).append("\n");
         sb.append("}");
         return sb.toString();
     }

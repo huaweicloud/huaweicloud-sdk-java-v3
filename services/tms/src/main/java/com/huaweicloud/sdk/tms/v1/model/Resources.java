@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.tms.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 资源列表
@@ -39,6 +42,11 @@ public class Resources {
     @JsonProperty(value = "resource_type")
 
     private String resourceType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<CreateTagRequest> tags = null;
 
     public Resources withProjectId(String projectId) {
         this.projectId = projectId;
@@ -142,6 +150,39 @@ public class Resources {
         this.resourceType = resourceType;
     }
 
+    public Resources withTags(List<CreateTagRequest> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public Resources addTagsItem(CreateTagRequest tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public Resources withTags(Consumer<List<CreateTagRequest>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 标签列表
+     * @return tags
+     */
+    public List<CreateTagRequest> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<CreateTagRequest> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -156,12 +197,12 @@ public class Resources {
             && Objects.equals(this.resourceDetail, resources.resourceDetail)
             && Objects.equals(this.resourceId, resources.resourceId)
             && Objects.equals(this.resourceName, resources.resourceName)
-            && Objects.equals(this.resourceType, resources.resourceType);
+            && Objects.equals(this.resourceType, resources.resourceType) && Objects.equals(this.tags, resources.tags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(projectId, projectName, resourceDetail, resourceId, resourceName, resourceType);
+        return Objects.hash(projectId, projectName, resourceDetail, resourceId, resourceName, resourceType, tags);
     }
 
     @Override
@@ -174,6 +215,7 @@ public class Resources {
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("    resourceName: ").append(toIndentedString(resourceName)).append("\n");
         sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

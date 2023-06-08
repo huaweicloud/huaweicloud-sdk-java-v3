@@ -904,6 +904,45 @@ public class ProjectManMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<AddIssueWorkHoursRequest, AddIssueWorkHoursResponse> addIssueWorkHours =
+        genForaddIssueWorkHours();
+
+    private static HttpRequestDef<AddIssueWorkHoursRequest, AddIssueWorkHoursResponse> genForaddIssueWorkHours() {
+        // basic
+        HttpRequestDef.Builder<AddIssueWorkHoursRequest, AddIssueWorkHoursResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddIssueWorkHoursRequest.class, AddIssueWorkHoursResponse.class)
+                .withName("AddIssueWorkHours")
+                .withUri("/v4/projects/{project_id}/issues/{issue_id}/work-hours")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddIssueWorkHoursRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<Integer>withRequestField("issue_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(AddIssueWorkHoursRequest::getIssueId, (req, v) -> {
+                req.setIssueId(v);
+            }));
+        builder.<AddIssueWorkHoursRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddIssueWorkHoursRequestBody.class),
+            f -> f.withMarshaller(AddIssueWorkHoursRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchDeleteIssuesV4Request, BatchDeleteIssuesV4Response> batchDeleteIssuesV4 =
         genForbatchDeleteIssuesV4();
 
@@ -2062,6 +2101,53 @@ public class ProjectManMeta {
             TypeCasts.uncheckedConversion(ListProjectWorkHoursRequestBody.class),
             f -> f.withMarshaller(ListProjectWorkHoursRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListProjectWorkHoursTypeRequest, ListProjectWorkHoursTypeResponse> listProjectWorkHoursType =
+        genForlistProjectWorkHoursType();
+
+    private static HttpRequestDef<ListProjectWorkHoursTypeRequest, ListProjectWorkHoursTypeResponse> genForlistProjectWorkHoursType() {
+        // basic
+        HttpRequestDef.Builder<ListProjectWorkHoursTypeRequest, ListProjectWorkHoursTypeResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListProjectWorkHoursTypeRequest.class, ListProjectWorkHoursTypeResponse.class)
+                .withName("ListProjectWorkHoursType")
+                .withUri("/v4/projects/{project_id}/work-hours-type")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProjectWorkHoursTypeRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListProjectWorkHoursTypeRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListProjectWorkHoursTypeRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListProjectWorkHoursTypeRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
             }));
 
         // response

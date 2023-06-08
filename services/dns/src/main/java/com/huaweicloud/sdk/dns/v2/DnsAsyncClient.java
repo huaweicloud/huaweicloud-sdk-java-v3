@@ -1461,9 +1461,9 @@ public class DnsAsyncClient {
     }
 
     /**
-     * 查询公网Zone的列表
+     * 查询公网Zone列表
      *
-     * 查询公网Zone的列表
+     * 查询公网Zone列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1475,9 +1475,9 @@ public class DnsAsyncClient {
     }
 
     /**
-     * 查询公网Zone的列表
+     * 查询公网Zone列表
      *
-     * 查询公网Zone的列表
+     * 查询公网Zone列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

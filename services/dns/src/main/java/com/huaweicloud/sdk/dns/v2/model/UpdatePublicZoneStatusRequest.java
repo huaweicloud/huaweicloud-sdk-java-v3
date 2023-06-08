@@ -19,7 +19,7 @@ public class UpdatePublicZoneStatusRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private UpdatePublicZoneStatus body;
+    private UpdatePublicZoneStatusRequestBody body;
 
     public UpdatePublicZoneStatusRequest withZoneId(String zoneId) {
         this.zoneId = zoneId;
@@ -38,14 +38,14 @@ public class UpdatePublicZoneStatusRequest {
         this.zoneId = zoneId;
     }
 
-    public UpdatePublicZoneStatusRequest withBody(UpdatePublicZoneStatus body) {
+    public UpdatePublicZoneStatusRequest withBody(UpdatePublicZoneStatusRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public UpdatePublicZoneStatusRequest withBody(Consumer<UpdatePublicZoneStatus> bodySetter) {
+    public UpdatePublicZoneStatusRequest withBody(Consumer<UpdatePublicZoneStatusRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new UpdatePublicZoneStatus();
+            this.body = new UpdatePublicZoneStatusRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class UpdatePublicZoneStatusRequest {
      * Get body
      * @return body
      */
-    public UpdatePublicZoneStatus getBody() {
+    public UpdatePublicZoneStatusRequestBody getBody() {
         return body;
     }
 
-    public void setBody(UpdatePublicZoneStatus body) {
+    public void setBody(UpdatePublicZoneStatusRequestBody body) {
         this.body = body;
     }
 

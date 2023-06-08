@@ -6,12 +6,12 @@
 
     <parent>
         <groupId>com.huaweicloud.sdk</groupId>
-        <version>3.1.42</version>
+        <version>3.1.43</version>
         <artifactId>huaweicloud-sdk</artifactId>
     </parent>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk-services</artifactId>
-    <version>3.1.42</version>
+    <version>3.1.43</version>
     <packaging>pom</packaging>
     <name>Huawei Cloud SDK for Java Services</name>
     <description>Services code for Huawei Cloud SDK for Java</description>
@@ -41,6 +41,7 @@
         <module>expert</module>
         <module>ces</module>
         <module>mrs</module>
+        <module>eds</module>
         <module>antiddos</module>
         <module>mpc</module>
         <module>eip</module>
@@ -59,6 +60,7 @@
         <module>codehub</module>
         <module>bms</module>
         <module>as</module>
+        <module>obs</module>
         <module>dns</module>
         <module>sdrs</module>
         <module>lts</module>
@@ -91,7 +93,6 @@
         <module>koomessage</module>
         <module>organizations</module>
         <module>cloudrtc</module>
-        <module>dms</module>
         <module>deh</module>
         <module>cbs</module>
         <module>cdm</module>
@@ -122,6 +123,7 @@
         <module>cloudtest</module>
         <module>elb</module>
         <module>scm</module>
+        <module>idme</module>
         <module>cgs</module>
         <module>vas</module>
         <module>gaussdb</module>

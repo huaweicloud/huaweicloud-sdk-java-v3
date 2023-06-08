@@ -105,6 +105,16 @@ public class NodeExtendParam {
 
     private String agencyName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "kube-reserved-mem")
+
+    private Integer kubeReservedMem;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "system-reserved-mem")
+
+    private Integer systemReservedMem;
+
     public NodeExtendParam withEcsPerformancetype(String ecsPerformancetype) {
         this.ecsPerformancetype = ecsPerformancetype;
         return this;
@@ -430,6 +440,40 @@ public class NodeExtendParam {
         this.agencyName = agencyName;
     }
 
+    public NodeExtendParam withKubeReservedMem(Integer kubeReservedMem) {
+        this.kubeReservedMem = kubeReservedMem;
+        return this;
+    }
+
+    /**
+     * 节点内存预留，Kubernetes相关组件预留值。 
+     * @return kubeReservedMem
+     */
+    public Integer getKubeReservedMem() {
+        return kubeReservedMem;
+    }
+
+    public void setKubeReservedMem(Integer kubeReservedMem) {
+        this.kubeReservedMem = kubeReservedMem;
+    }
+
+    public NodeExtendParam withSystemReservedMem(Integer systemReservedMem) {
+        this.systemReservedMem = systemReservedMem;
+        return this;
+    }
+
+    /**
+     * 节点内存预留，系统组件预留值。 
+     * @return systemReservedMem
+     */
+    public Integer getSystemReservedMem() {
+        return systemReservedMem;
+    }
+
+    public void setSystemReservedMem(Integer systemReservedMem) {
+        this.systemReservedMem = systemReservedMem;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -457,7 +501,9 @@ public class NodeExtendParam {
             && Objects.equals(this.nicThreshold, nodeExtendParam.nicThreshold)
             && Objects.equals(this.enterpriseProjectId, nodeExtendParam.enterpriseProjectId)
             && Objects.equals(this.chargingMode, nodeExtendParam.chargingMode)
-            && Objects.equals(this.agencyName, nodeExtendParam.agencyName);
+            && Objects.equals(this.agencyName, nodeExtendParam.agencyName)
+            && Objects.equals(this.kubeReservedMem, nodeExtendParam.kubeReservedMem)
+            && Objects.equals(this.systemReservedMem, nodeExtendParam.systemReservedMem);
     }
 
     @Override
@@ -480,7 +526,9 @@ public class NodeExtendParam {
             nicThreshold,
             enterpriseProjectId,
             chargingMode,
-            agencyName);
+            agencyName,
+            kubeReservedMem,
+            systemReservedMem);
     }
 
     @Override
@@ -506,6 +554,8 @@ public class NodeExtendParam {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    chargingMode: ").append(toIndentedString(chargingMode)).append("\n");
         sb.append("    agencyName: ").append(toIndentedString(agencyName)).append("\n");
+        sb.append("    kubeReservedMem: ").append(toIndentedString(kubeReservedMem)).append("\n");
+        sb.append("    systemReservedMem: ").append(toIndentedString(systemReservedMem)).append("\n");
         sb.append("}");
         return sb.toString();
     }

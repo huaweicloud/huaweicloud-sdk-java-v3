@@ -75,6 +75,16 @@ public class ShowProjectWorkHoursResponseBodyWorkHours {
 
     private String closedTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "work_hours_created_time")
+
+    private String workHoursCreatedTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "work_hours_updated_time")
+
+    private String workHoursUpdatedTime;
+
     public ShowProjectWorkHoursResponseBodyWorkHours withProjectName(String projectName) {
         this.projectName = projectName;
         return this;
@@ -296,6 +306,40 @@ public class ShowProjectWorkHoursResponseBodyWorkHours {
         this.closedTime = closedTime;
     }
 
+    public ShowProjectWorkHoursResponseBodyWorkHours withWorkHoursCreatedTime(String workHoursCreatedTime) {
+        this.workHoursCreatedTime = workHoursCreatedTime;
+        return this;
+    }
+
+    /**
+     * 工时创建时间
+     * @return workHoursCreatedTime
+     */
+    public String getWorkHoursCreatedTime() {
+        return workHoursCreatedTime;
+    }
+
+    public void setWorkHoursCreatedTime(String workHoursCreatedTime) {
+        this.workHoursCreatedTime = workHoursCreatedTime;
+    }
+
+    public ShowProjectWorkHoursResponseBodyWorkHours withWorkHoursUpdatedTime(String workHoursUpdatedTime) {
+        this.workHoursUpdatedTime = workHoursUpdatedTime;
+        return this;
+    }
+
+    /**
+     * 工时更新时间
+     * @return workHoursUpdatedTime
+     */
+    public String getWorkHoursUpdatedTime() {
+        return workHoursUpdatedTime;
+    }
+
+    public void setWorkHoursUpdatedTime(String workHoursUpdatedTime) {
+        this.workHoursUpdatedTime = workHoursUpdatedTime;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -318,7 +362,10 @@ public class ShowProjectWorkHoursResponseBodyWorkHours {
             && Objects.equals(this.issueType, showProjectWorkHoursResponseBodyWorkHours.issueType)
             && Objects.equals(this.subject, showProjectWorkHoursResponseBodyWorkHours.subject)
             && Objects.equals(this.createdTime, showProjectWorkHoursResponseBodyWorkHours.createdTime)
-            && Objects.equals(this.closedTime, showProjectWorkHoursResponseBodyWorkHours.closedTime);
+            && Objects.equals(this.closedTime, showProjectWorkHoursResponseBodyWorkHours.closedTime)
+            && Objects.equals(this.workHoursCreatedTime, showProjectWorkHoursResponseBodyWorkHours.workHoursCreatedTime)
+            && Objects.equals(this.workHoursUpdatedTime,
+                showProjectWorkHoursResponseBodyWorkHours.workHoursUpdatedTime);
     }
 
     @Override
@@ -335,7 +382,9 @@ public class ShowProjectWorkHoursResponseBodyWorkHours {
             issueType,
             subject,
             createdTime,
-            closedTime);
+            closedTime,
+            workHoursCreatedTime,
+            workHoursUpdatedTime);
     }
 
     @Override
@@ -355,6 +404,8 @@ public class ShowProjectWorkHoursResponseBodyWorkHours {
         sb.append("    subject: ").append(toIndentedString(subject)).append("\n");
         sb.append("    createdTime: ").append(toIndentedString(createdTime)).append("\n");
         sb.append("    closedTime: ").append(toIndentedString(closedTime)).append("\n");
+        sb.append("    workHoursCreatedTime: ").append(toIndentedString(workHoursCreatedTime)).append("\n");
+        sb.append("    workHoursUpdatedTime: ").append(toIndentedString(workHoursUpdatedTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

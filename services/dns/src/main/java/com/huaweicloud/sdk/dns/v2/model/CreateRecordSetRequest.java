@@ -19,7 +19,7 @@ public class CreateRecordSetRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private CreateRecordSetReq body;
+    private CreateRecordSetRequestBody body;
 
     public CreateRecordSetRequest withZoneId(String zoneId) {
         this.zoneId = zoneId;
@@ -38,14 +38,14 @@ public class CreateRecordSetRequest {
         this.zoneId = zoneId;
     }
 
-    public CreateRecordSetRequest withBody(CreateRecordSetReq body) {
+    public CreateRecordSetRequest withBody(CreateRecordSetRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public CreateRecordSetRequest withBody(Consumer<CreateRecordSetReq> bodySetter) {
+    public CreateRecordSetRequest withBody(Consumer<CreateRecordSetRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new CreateRecordSetReq();
+            this.body = new CreateRecordSetRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class CreateRecordSetRequest {
      * Get body
      * @return body
      */
-    public CreateRecordSetReq getBody() {
+    public CreateRecordSetRequestBody getBody() {
         return body;
     }
 
-    public void setBody(CreateRecordSetReq body) {
+    public void setBody(CreateRecordSetRequestBody body) {
         this.body = body;
     }
 

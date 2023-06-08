@@ -191,7 +191,7 @@ public class CreateRequestBody {
     }
 
     /**
-     * BCS服务版本类型，[专业版（4），企业版（2）](tag:g42)[可选：专业版（4），企业版（2），铂金版（3）](tag:online)。被邀请方创建时，和邀请方保持一致。
+     * BCS服务版本类型，可选：[基础版（4），专业版（2），企业版（3）](tag: hws)[基础版（4），专业版（2）](tag: hws_hk)。被邀请方创建时，和邀请方保持一致。
      * @return versionType
      */
     public Long getVersionType() {
@@ -327,7 +327,7 @@ public class CreateRequestBody {
     }
 
     /**
-     * 节点组织存储容量[专业版和企业版至少100GB，铂金版至少500GB](tag:online)[，专业版和企业版至少100GB](tag:g42)[节点组织存储容量GB，至少为100GB](tag:hcs)
+     * 节点组织存储容量，[基础版和专业版至少100GB，企业版至少500GB](tag: hws)[基础版和专业版至少100GB](tag: hws_hk)
      * @return orgDiskSize
      */
     public Long getOrgDiskSize() {

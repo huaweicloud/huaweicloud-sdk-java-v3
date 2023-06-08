@@ -235,6 +235,11 @@ public class CreateListenerOption {
 
     private Boolean gzipEnable;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "port_ranges")
+
+    private List<PortRange> portRanges = null;
+
     public CreateListenerOption withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -437,8 +442,8 @@ public class CreateListenerOption {
     }
 
     /**
-     * 监听器的监听端口。QUIC监听器端口不能是4789，且不能和UDP监听器端口重复。  [不支持QUIC。](tag:tm,hws_eu,g42,hk_g42,hcso_dt,dt,dt_test)
-     * minimum: 1
+     * 监听器的监听端口。QUIC监听器端口不能是4789，且不能和UDP监听器端口重复。传0时表示开启监听端口范围的能力，此时port_ranges为必填字段。 [不支持QUIC。](tag:tm,hws_eu,g42,hk_g42,hcso_dt,dt,dt_test)
+     * minimum: 0
      * maximum: 65535
      * @return protocolPort
      */
@@ -776,6 +781,39 @@ public class CreateListenerOption {
         this.gzipEnable = gzipEnable;
     }
 
+    public CreateListenerOption withPortRanges(List<PortRange> portRanges) {
+        this.portRanges = portRanges;
+        return this;
+    }
+
+    public CreateListenerOption addPortRangesItem(PortRange portRangesItem) {
+        if (this.portRanges == null) {
+            this.portRanges = new ArrayList<>();
+        }
+        this.portRanges.add(portRangesItem);
+        return this;
+    }
+
+    public CreateListenerOption withPortRanges(Consumer<List<PortRange>> portRangesSetter) {
+        if (this.portRanges == null) {
+            this.portRanges = new ArrayList<>();
+        }
+        portRangesSetter.accept(this.portRanges);
+        return this;
+    }
+
+    /**
+     * 端口监听范围（闭区间)，最多指定10个端口组，每个组范围不可有重叠部分 >仅当protocol_port为0或未传入protoco_port时可以传入该字段。仅TCP, UDP，TLS监听支持该字段
+     * @return portRanges
+     */
+    public List<PortRange> getPortRanges() {
+        return portRanges;
+    }
+
+    public void setPortRanges(List<PortRange> portRanges) {
+        this.portRanges = portRanges;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -812,7 +850,8 @@ public class CreateListenerOption {
             && Objects.equals(this.quicConfig, createListenerOption.quicConfig)
             && Objects.equals(this.protectionStatus, createListenerOption.protectionStatus)
             && Objects.equals(this.protectionReason, createListenerOption.protectionReason)
-            && Objects.equals(this.gzipEnable, createListenerOption.gzipEnable);
+            && Objects.equals(this.gzipEnable, createListenerOption.gzipEnable)
+            && Objects.equals(this.portRanges, createListenerOption.portRanges);
     }
 
     @Override
@@ -844,7 +883,8 @@ public class CreateListenerOption {
             quicConfig,
             protectionStatus,
             protectionReason,
-            gzipEnable);
+            gzipEnable,
+            portRanges);
     }
 
     @Override
@@ -879,6 +919,7 @@ public class CreateListenerOption {
         sb.append("    protectionStatus: ").append(toIndentedString(protectionStatus)).append("\n");
         sb.append("    protectionReason: ").append(toIndentedString(protectionReason)).append("\n");
         sb.append("    gzipEnable: ").append(toIndentedString(gzipEnable)).append("\n");
+        sb.append("    portRanges: ").append(toIndentedString(portRanges)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -869,6 +869,36 @@ public class ProjectManAsyncClient {
     }
 
     /**
+     * 添加指定工作项工时
+     *
+     * 添加指定工作项工时
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddIssueWorkHoursRequest 请求对象
+     * @return CompletableFuture<AddIssueWorkHoursResponse>
+     */
+    public CompletableFuture<AddIssueWorkHoursResponse> addIssueWorkHoursAsync(AddIssueWorkHoursRequest request) {
+        return hcClient.asyncInvokeHttp(request, ProjectManMeta.addIssueWorkHours);
+    }
+
+    /**
+     * 添加指定工作项工时
+     *
+     * 添加指定工作项工时
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddIssueWorkHoursRequest 请求对象
+     * @return AsyncInvoker<AddIssueWorkHoursRequest, AddIssueWorkHoursResponse>
+     */
+    public AsyncInvoker<AddIssueWorkHoursRequest, AddIssueWorkHoursResponse> addIssueWorkHoursAsyncInvoker(
+        AddIssueWorkHoursRequest request) {
+        return new AsyncInvoker<AddIssueWorkHoursRequest, AddIssueWorkHoursResponse>(request,
+            ProjectManMeta.addIssueWorkHours, hcClient);
+    }
+
+    /**
      * 批量删除工作项
      *
      * 批量删除工作项
@@ -1805,6 +1835,37 @@ public class ProjectManAsyncClient {
         ListProjectWorkHoursRequest request) {
         return new AsyncInvoker<ListProjectWorkHoursRequest, ListProjectWorkHoursResponse>(request,
             ProjectManMeta.listProjectWorkHours, hcClient);
+    }
+
+    /**
+     * 查询项目下的工时类型
+     *
+     * 查询项目下的工时类型
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListProjectWorkHoursTypeRequest 请求对象
+     * @return CompletableFuture<ListProjectWorkHoursTypeResponse>
+     */
+    public CompletableFuture<ListProjectWorkHoursTypeResponse> listProjectWorkHoursTypeAsync(
+        ListProjectWorkHoursTypeRequest request) {
+        return hcClient.asyncInvokeHttp(request, ProjectManMeta.listProjectWorkHoursType);
+    }
+
+    /**
+     * 查询项目下的工时类型
+     *
+     * 查询项目下的工时类型
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListProjectWorkHoursTypeRequest 请求对象
+     * @return AsyncInvoker<ListProjectWorkHoursTypeRequest, ListProjectWorkHoursTypeResponse>
+     */
+    public AsyncInvoker<ListProjectWorkHoursTypeRequest, ListProjectWorkHoursTypeResponse> listProjectWorkHoursTypeAsyncInvoker(
+        ListProjectWorkHoursTypeRequest request) {
+        return new AsyncInvoker<ListProjectWorkHoursTypeRequest, ListProjectWorkHoursTypeResponse>(request,
+            ProjectManMeta.listProjectWorkHoursType, hcClient);
     }
 
     /**

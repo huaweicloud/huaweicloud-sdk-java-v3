@@ -46,6 +46,11 @@ public class ListPublicZonesRequest {
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "search_mode")
+
+    private String searchMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
@@ -56,7 +61,7 @@ public class ListPublicZonesRequest {
     }
 
     /**
-     * 待查询的zone的类型。  取值范围：public、private  如果为空，表示查询公网类型的zone。 如果为public，表示查询公网类型的zone。 如果为private，表示查询内网类型的zone。 搜索模式默认为模糊搜索。  默认值为空。
+     * 待查询的zone的类型。  取值范围：public  搜索模式默认为模糊搜索。  默认值为空。
      * @return type
      */
     public String getType() {
@@ -169,6 +174,23 @@ public class ListPublicZonesRequest {
         this.status = status;
     }
 
+    public ListPublicZonesRequest withSearchMode(String searchMode) {
+        this.searchMode = searchMode;
+        return this;
+    }
+
+    /**
+     * 查询条件搜索模式。  取值范围：  like：模糊搜索 equal：精确搜索 默认值为equal。
+     * @return searchMode
+     */
+    public String getSearchMode() {
+        return searchMode;
+    }
+
+    public void setSearchMode(String searchMode) {
+        this.searchMode = searchMode;
+    }
+
     public ListPublicZonesRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -202,12 +224,13 @@ public class ListPublicZonesRequest {
             && Objects.equals(this.tags, listPublicZonesRequest.tags)
             && Objects.equals(this.name, listPublicZonesRequest.name)
             && Objects.equals(this.status, listPublicZonesRequest.status)
+            && Objects.equals(this.searchMode, listPublicZonesRequest.searchMode)
             && Objects.equals(this.enterpriseProjectId, listPublicZonesRequest.enterpriseProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, limit, marker, offset, tags, name, status, enterpriseProjectId);
+        return Objects.hash(type, limit, marker, offset, tags, name, status, searchMode, enterpriseProjectId);
     }
 
     @Override
@@ -221,6 +244,7 @@ public class ListPublicZonesRequest {
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    searchMode: ").append(toIndentedString(searchMode)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();

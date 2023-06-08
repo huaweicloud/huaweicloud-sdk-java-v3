@@ -854,6 +854,36 @@ public class ProjectManClient {
     }
 
     /**
+     * 添加指定工作项工时
+     *
+     * 添加指定工作项工时
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddIssueWorkHoursRequest 请求对象
+     * @return AddIssueWorkHoursResponse
+     */
+    public AddIssueWorkHoursResponse addIssueWorkHours(AddIssueWorkHoursRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.addIssueWorkHours);
+    }
+
+    /**
+     * 添加指定工作项工时
+     *
+     * 添加指定工作项工时
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddIssueWorkHoursRequest 请求对象
+     * @return SyncInvoker<AddIssueWorkHoursRequest, AddIssueWorkHoursResponse>
+     */
+    public SyncInvoker<AddIssueWorkHoursRequest, AddIssueWorkHoursResponse> addIssueWorkHoursInvoker(
+        AddIssueWorkHoursRequest request) {
+        return new SyncInvoker<AddIssueWorkHoursRequest, AddIssueWorkHoursResponse>(request,
+            ProjectManMeta.addIssueWorkHours, hcClient);
+    }
+
+    /**
      * 批量删除工作项
      *
      * 批量删除工作项
@@ -1778,6 +1808,36 @@ public class ProjectManClient {
         ListProjectWorkHoursRequest request) {
         return new SyncInvoker<ListProjectWorkHoursRequest, ListProjectWorkHoursResponse>(request,
             ProjectManMeta.listProjectWorkHours, hcClient);
+    }
+
+    /**
+     * 查询项目下的工时类型
+     *
+     * 查询项目下的工时类型
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListProjectWorkHoursTypeRequest 请求对象
+     * @return ListProjectWorkHoursTypeResponse
+     */
+    public ListProjectWorkHoursTypeResponse listProjectWorkHoursType(ListProjectWorkHoursTypeRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.listProjectWorkHoursType);
+    }
+
+    /**
+     * 查询项目下的工时类型
+     *
+     * 查询项目下的工时类型
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListProjectWorkHoursTypeRequest 请求对象
+     * @return SyncInvoker<ListProjectWorkHoursTypeRequest, ListProjectWorkHoursTypeResponse>
+     */
+    public SyncInvoker<ListProjectWorkHoursTypeRequest, ListProjectWorkHoursTypeResponse> listProjectWorkHoursTypeInvoker(
+        ListProjectWorkHoursTypeRequest request) {
+        return new SyncInvoker<ListProjectWorkHoursTypeRequest, ListProjectWorkHoursTypeResponse>(request,
+            ProjectManMeta.listProjectWorkHoursType, hcClient);
     }
 
     /**

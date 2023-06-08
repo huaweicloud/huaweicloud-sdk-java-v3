@@ -38,6 +38,11 @@ public class IssueCustomField {
 
     private List<Integer> trackerIds = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "create_time")
+
+    private String createTime;
+
     public IssueCustomField withName(String name) {
         this.name = name;
         return this;
@@ -139,6 +144,23 @@ public class IssueCustomField {
         this.trackerIds = trackerIds;
     }
 
+    public IssueCustomField withCreateTime(String createTime) {
+        this.createTime = createTime;
+        return this;
+    }
+
+    /**
+     * 自定义字段创建时间
+     * @return createTime
+     */
+    public String getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -152,12 +174,13 @@ public class IssueCustomField {
             && Objects.equals(this.customField, issueCustomField.customField)
             && Objects.equals(this.options, issueCustomField.options)
             && Objects.equals(this.type, issueCustomField.type)
-            && Objects.equals(this.trackerIds, issueCustomField.trackerIds);
+            && Objects.equals(this.trackerIds, issueCustomField.trackerIds)
+            && Objects.equals(this.createTime, issueCustomField.createTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, customField, options, type, trackerIds);
+        return Objects.hash(name, customField, options, type, trackerIds, createTime);
     }
 
     @Override
@@ -169,6 +192,7 @@ public class IssueCustomField {
         sb.append("    options: ").append(toIndentedString(options)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    trackerIds: ").append(toIndentedString(trackerIds)).append("\n");
+        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -19,7 +19,7 @@ public class CreateRecordSetWithLineRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private CreateRecordSetWithLineReq body;
+    private CreateRecordSetWithLineRequestBody body;
 
     public CreateRecordSetWithLineRequest withZoneId(String zoneId) {
         this.zoneId = zoneId;
@@ -38,14 +38,14 @@ public class CreateRecordSetWithLineRequest {
         this.zoneId = zoneId;
     }
 
-    public CreateRecordSetWithLineRequest withBody(CreateRecordSetWithLineReq body) {
+    public CreateRecordSetWithLineRequest withBody(CreateRecordSetWithLineRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public CreateRecordSetWithLineRequest withBody(Consumer<CreateRecordSetWithLineReq> bodySetter) {
+    public CreateRecordSetWithLineRequest withBody(Consumer<CreateRecordSetWithLineRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new CreateRecordSetWithLineReq();
+            this.body = new CreateRecordSetWithLineRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class CreateRecordSetWithLineRequest {
      * Get body
      * @return body
      */
-    public CreateRecordSetWithLineReq getBody() {
+    public CreateRecordSetWithLineRequestBody getBody() {
         return body;
     }
 
-    public void setBody(CreateRecordSetWithLineReq body) {
+    public void setBody(CreateRecordSetWithLineRequestBody body) {
         this.body = body;
     }
 

@@ -742,6 +742,13 @@ public class VpcMeta {
             f -> f.withMarshaller(ListAddressGroupRequest::getDescription, (req, v) -> {
                 req.setDescription(v);
             }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAddressGroupRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
 
         // response
 

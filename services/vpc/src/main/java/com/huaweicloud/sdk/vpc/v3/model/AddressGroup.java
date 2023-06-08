@@ -60,6 +60,11 @@ public class AddressGroup {
     private String tenantId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
     private String status;
@@ -238,6 +243,23 @@ public class AddressGroup {
         this.tenantId = tenantId;
     }
 
+    public AddressGroup withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 功能说明：企业项目ID。 取值范围：最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     public AddressGroup withStatus(String status) {
         this.status = status;
         return this;
@@ -287,7 +309,9 @@ public class AddressGroup {
             && Objects.equals(this.ipSet, addressGroup.ipSet) && Objects.equals(this.ipVersion, addressGroup.ipVersion)
             && Objects.equals(this.createdAt, addressGroup.createdAt)
             && Objects.equals(this.updatedAt, addressGroup.updatedAt)
-            && Objects.equals(this.tenantId, addressGroup.tenantId) && Objects.equals(this.status, addressGroup.status)
+            && Objects.equals(this.tenantId, addressGroup.tenantId)
+            && Objects.equals(this.enterpriseProjectId, addressGroup.enterpriseProjectId)
+            && Objects.equals(this.status, addressGroup.status)
             && Objects.equals(this.statusMessage, addressGroup.statusMessage);
     }
 
@@ -302,6 +326,7 @@ public class AddressGroup {
             createdAt,
             updatedAt,
             tenantId,
+            enterpriseProjectId,
             status,
             statusMessage);
     }
@@ -319,6 +344,7 @@ public class AddressGroup {
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    statusMessage: ").append(toIndentedString(statusMessage)).append("\n");
         sb.append("}");

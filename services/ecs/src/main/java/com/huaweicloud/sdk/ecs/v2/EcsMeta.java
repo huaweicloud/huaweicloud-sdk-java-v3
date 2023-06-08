@@ -398,6 +398,31 @@ public class EcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ChangeServerChargeModeRequest, ChangeServerChargeModeResponse> changeServerChargeMode =
+        genForchangeServerChargeMode();
+
+    private static HttpRequestDef<ChangeServerChargeModeRequest, ChangeServerChargeModeResponse> genForchangeServerChargeMode() {
+        // basic
+        HttpRequestDef.Builder<ChangeServerChargeModeRequest, ChangeServerChargeModeResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ChangeServerChargeModeRequest.class, ChangeServerChargeModeResponse.class)
+            .withName("ChangeServerChargeMode")
+            .withUri("/v1/{project_id}/cloudservers/actions/change-charge-mode")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ChangeServerChargeModeRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ChangeServerChargeModeRequestBody.class),
+            f -> f.withMarshaller(ChangeServerChargeModeRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ChangeServerOsWithCloudInitRequest, ChangeServerOsWithCloudInitResponse> changeServerOsWithCloudInit =
         genForchangeServerOsWithCloudInit();
 

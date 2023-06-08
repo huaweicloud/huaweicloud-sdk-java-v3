@@ -465,6 +465,64 @@ public class BcsClient {
     }
 
     /**
+     * 查询服务实例告警信息
+     *
+     * 该接口用于查询BCS服务的事件、告警数据，可以指定查询时的过滤条件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListBcsEventsRequest 请求对象
+     * @return ListBcsEventsResponse
+     */
+    public ListBcsEventsResponse listBcsEvents(ListBcsEventsRequest request) {
+        return hcClient.syncInvokeHttp(request, BcsMeta.listBcsEvents);
+    }
+
+    /**
+     * 查询服务实例告警信息
+     *
+     * 该接口用于查询BCS服务的事件、告警数据，可以指定查询时的过滤条件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListBcsEventsRequest 请求对象
+     * @return SyncInvoker<ListBcsEventsRequest, ListBcsEventsResponse>
+     */
+    public SyncInvoker<ListBcsEventsRequest, ListBcsEventsResponse> listBcsEventsInvoker(ListBcsEventsRequest request) {
+        return new SyncInvoker<ListBcsEventsRequest, ListBcsEventsResponse>(request, BcsMeta.listBcsEvents, hcClient);
+    }
+
+    /**
+     * 查询服务实例告警统计接口
+     *
+     * 该接口用于查询BCS服务的分段事件、告警统计数据，可以指定查询时的过滤条件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListBcsEventsStatisticRequest 请求对象
+     * @return ListBcsEventsStatisticResponse
+     */
+    public ListBcsEventsStatisticResponse listBcsEventsStatistic(ListBcsEventsStatisticRequest request) {
+        return hcClient.syncInvokeHttp(request, BcsMeta.listBcsEventsStatistic);
+    }
+
+    /**
+     * 查询服务实例告警统计接口
+     *
+     * 该接口用于查询BCS服务的分段事件、告警统计数据，可以指定查询时的过滤条件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListBcsEventsStatisticRequest 请求对象
+     * @return SyncInvoker<ListBcsEventsStatisticRequest, ListBcsEventsStatisticResponse>
+     */
+    public SyncInvoker<ListBcsEventsStatisticRequest, ListBcsEventsStatisticResponse> listBcsEventsStatisticInvoker(
+        ListBcsEventsStatisticRequest request) {
+        return new SyncInvoker<ListBcsEventsStatisticRequest, ListBcsEventsStatisticResponse>(request,
+            BcsMeta.listBcsEventsStatistic, hcClient);
+    }
+
+    /**
      * 查询服务实例监控数据
      *
      * 该接口用于查询BCS服务的监控数据，可以指定相应的指标名称。

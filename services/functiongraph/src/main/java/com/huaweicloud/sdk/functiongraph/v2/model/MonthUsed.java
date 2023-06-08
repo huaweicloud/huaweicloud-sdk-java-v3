@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.functiongraph.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
@@ -18,7 +19,7 @@ public class MonthUsed {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "value")
 
-    private Integer value;
+    private BigDecimal value;
 
     public MonthUsed withDate(String date) {
         this.date = date;
@@ -37,7 +38,7 @@ public class MonthUsed {
         this.date = date;
     }
 
-    public MonthUsed withValue(Integer value) {
+    public MonthUsed withValue(BigDecimal value) {
         this.value = value;
         return this;
     }
@@ -46,11 +47,11 @@ public class MonthUsed {
      * 使用量
      * @return value
      */
-    public Integer getValue() {
+    public BigDecimal getValue() {
         return value;
     }
 
-    public void setValue(Integer value) {
+    public void setValue(BigDecimal value) {
         this.value = value;
     }
 

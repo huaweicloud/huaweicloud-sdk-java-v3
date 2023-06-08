@@ -363,6 +363,34 @@ public class FunctionGraphClient {
     }
 
     /**
+     * 创建资源标签
+     *
+     * 创建资源标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateTagsRequest 请求对象
+     * @return CreateTagsResponse
+     */
+    public CreateTagsResponse createTags(CreateTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.createTags);
+    }
+
+    /**
+     * 创建资源标签
+     *
+     * 创建资源标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateTagsRequest 请求对象
+     * @return SyncInvoker<CreateTagsRequest, CreateTagsResponse>
+     */
+    public SyncInvoker<CreateTagsRequest, CreateTagsResponse> createTagsInvoker(CreateTagsRequest request) {
+        return new SyncInvoker<CreateTagsRequest, CreateTagsResponse>(request, FunctionGraphMeta.createTags, hcClient);
+    }
+
+    /**
      * 创建函数版本别名
      *
      * 创建函数灰度版本别名。
@@ -390,6 +418,36 @@ public class FunctionGraphClient {
         CreateVersionAliasRequest request) {
         return new SyncInvoker<CreateVersionAliasRequest, CreateVersionAliasResponse>(request,
             FunctionGraphMeta.createVersionAlias, hcClient);
+    }
+
+    /**
+     * 创建下沉入口
+     *
+     * 创建下沉入口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateVpcEndpointRequest 请求对象
+     * @return CreateVpcEndpointResponse
+     */
+    public CreateVpcEndpointResponse createVpcEndpoint(CreateVpcEndpointRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.createVpcEndpoint);
+    }
+
+    /**
+     * 创建下沉入口
+     *
+     * 创建下沉入口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateVpcEndpointRequest 请求对象
+     * @return SyncInvoker<CreateVpcEndpointRequest, CreateVpcEndpointResponse>
+     */
+    public SyncInvoker<CreateVpcEndpointRequest, CreateVpcEndpointResponse> createVpcEndpointInvoker(
+        CreateVpcEndpointRequest request) {
+        return new SyncInvoker<CreateVpcEndpointRequest, CreateVpcEndpointResponse>(request,
+            FunctionGraphMeta.createVpcEndpoint, hcClient);
     }
 
     /**
@@ -609,6 +667,34 @@ public class FunctionGraphClient {
     }
 
     /**
+     * 删除资源标签
+     *
+     * 删除资源标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteTagsRequest 请求对象
+     * @return DeleteTagsResponse
+     */
+    public DeleteTagsResponse deleteTags(DeleteTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.deleteTags);
+    }
+
+    /**
+     * 删除资源标签
+     *
+     * 删除资源标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteTagsRequest 请求对象
+     * @return SyncInvoker<DeleteTagsRequest, DeleteTagsResponse>
+     */
+    public SyncInvoker<DeleteTagsRequest, DeleteTagsResponse> deleteTagsInvoker(DeleteTagsRequest request) {
+        return new SyncInvoker<DeleteTagsRequest, DeleteTagsResponse>(request, FunctionGraphMeta.deleteTags, hcClient);
+    }
+
+    /**
      * 删除函数版本别名
      *
      * 删除函数版本别名。
@@ -636,6 +722,36 @@ public class FunctionGraphClient {
         DeleteVersionAliasRequest request) {
         return new SyncInvoker<DeleteVersionAliasRequest, DeleteVersionAliasResponse>(request,
             FunctionGraphMeta.deleteVersionAlias, hcClient);
+    }
+
+    /**
+     * 删除下沉入口
+     *
+     * 删除下沉入口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteVpcEndpointRequest 请求对象
+     * @return DeleteVpcEndpointResponse
+     */
+    public DeleteVpcEndpointResponse deleteVpcEndpoint(DeleteVpcEndpointRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.deleteVpcEndpoint);
+    }
+
+    /**
+     * 删除下沉入口
+     *
+     * 删除下沉入口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteVpcEndpointRequest 请求对象
+     * @return SyncInvoker<DeleteVpcEndpointRequest, DeleteVpcEndpointResponse>
+     */
+    public SyncInvoker<DeleteVpcEndpointRequest, DeleteVpcEndpointResponse> deleteVpcEndpointInvoker(
+        DeleteVpcEndpointRequest request) {
+        return new SyncInvoker<DeleteVpcEndpointRequest, DeleteVpcEndpointResponse>(request,
+            FunctionGraphMeta.deleteVpcEndpoint, hcClient);
     }
 
     /**
@@ -1390,6 +1506,36 @@ public class FunctionGraphClient {
     }
 
     /**
+     * 查询函数快照制作状态
+     *
+     * 查询函数快照制作状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowFuncSnapshotStateRequest 请求对象
+     * @return ShowFuncSnapshotStateResponse
+     */
+    public ShowFuncSnapshotStateResponse showFuncSnapshotState(ShowFuncSnapshotStateRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.showFuncSnapshotState);
+    }
+
+    /**
+     * 查询函数快照制作状态
+     *
+     * 查询函数快照制作状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowFuncSnapshotStateRequest 请求对象
+     * @return SyncInvoker<ShowFuncSnapshotStateRequest, ShowFuncSnapshotStateResponse>
+     */
+    public SyncInvoker<ShowFuncSnapshotStateRequest, ShowFuncSnapshotStateResponse> showFuncSnapshotStateInvoker(
+        ShowFuncSnapshotStateRequest request) {
+        return new SyncInvoker<ShowFuncSnapshotStateRequest, ShowFuncSnapshotStateResponse>(request,
+            FunctionGraphMeta.showFuncSnapshotState, hcClient);
+    }
+
+    /**
      * 获取函数异步配置信息
      *
      * 获取指定函数某一版本的异步配置信息。
@@ -1538,6 +1684,66 @@ public class FunctionGraphClient {
         ShowLtsLogDetailsRequest request) {
         return new SyncInvoker<ShowLtsLogDetailsRequest, ShowLtsLogDetailsResponse>(request,
             FunctionGraphMeta.showLtsLogDetails, hcClient);
+    }
+
+    /**
+     * 查询资源标签
+     *
+     * 查询资源标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowProjectTagsListRequest 请求对象
+     * @return ShowProjectTagsListResponse
+     */
+    public ShowProjectTagsListResponse showProjectTagsList(ShowProjectTagsListRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.showProjectTagsList);
+    }
+
+    /**
+     * 查询资源标签
+     *
+     * 查询资源标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowProjectTagsListRequest 请求对象
+     * @return SyncInvoker<ShowProjectTagsListRequest, ShowProjectTagsListResponse>
+     */
+    public SyncInvoker<ShowProjectTagsListRequest, ShowProjectTagsListResponse> showProjectTagsListInvoker(
+        ShowProjectTagsListRequest request) {
+        return new SyncInvoker<ShowProjectTagsListRequest, ShowProjectTagsListResponse>(request,
+            FunctionGraphMeta.showProjectTagsList, hcClient);
+    }
+
+    /**
+     * 查询资源实例
+     *
+     * 查询资源实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowResInstanceInfoRequest 请求对象
+     * @return ShowResInstanceInfoResponse
+     */
+    public ShowResInstanceInfoResponse showResInstanceInfo(ShowResInstanceInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.showResInstanceInfo);
+    }
+
+    /**
+     * 查询资源实例
+     *
+     * 查询资源实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowResInstanceInfoRequest 请求对象
+     * @return SyncInvoker<ShowResInstanceInfoRequest, ShowResInstanceInfoResponse>
+     */
+    public SyncInvoker<ShowResInstanceInfoRequest, ShowResInstanceInfoResponse> showResInstanceInfoInvoker(
+        ShowResInstanceInfoRequest request) {
+        return new SyncInvoker<ShowResInstanceInfoRequest, ShowResInstanceInfoResponse>(request,
+            FunctionGraphMeta.showResInstanceInfo, hcClient);
     }
 
     /**
@@ -1895,6 +2101,36 @@ public class FunctionGraphClient {
     public SyncInvoker<UpdateEventRequest, UpdateEventResponse> updateEventInvoker(UpdateEventRequest request) {
         return new SyncInvoker<UpdateEventRequest, UpdateEventResponse>(request, FunctionGraphMeta.updateEvent,
             hcClient);
+    }
+
+    /**
+     * 禁用/启动函数快照
+     *
+     * 禁用/启动函数快照
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateFuncSnapshotRequest 请求对象
+     * @return UpdateFuncSnapshotResponse
+     */
+    public UpdateFuncSnapshotResponse updateFuncSnapshot(UpdateFuncSnapshotRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.updateFuncSnapshot);
+    }
+
+    /**
+     * 禁用/启动函数快照
+     *
+     * 禁用/启动函数快照
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateFuncSnapshotRequest 请求对象
+     * @return SyncInvoker<UpdateFuncSnapshotRequest, UpdateFuncSnapshotResponse>
+     */
+    public SyncInvoker<UpdateFuncSnapshotRequest, UpdateFuncSnapshotResponse> updateFuncSnapshotInvoker(
+        UpdateFuncSnapshotRequest request) {
+        return new SyncInvoker<UpdateFuncSnapshotRequest, UpdateFuncSnapshotResponse>(request,
+            FunctionGraphMeta.updateFuncSnapshot, hcClient);
     }
 
     /**

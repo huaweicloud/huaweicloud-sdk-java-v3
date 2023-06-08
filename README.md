@@ -41,12 +41,12 @@ import `huaweicloud-sdk-ecs` and `huaweicloud-sdk-vpc` libraries:
 <dependency>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk-ecs</artifactId>
-    <version>[3.0.40-rc, 3.2.0)</version>
+    <version>${version}</version>
 </dependency>
 <dependency>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk-vpc</artifactId>
-    <version>[3.0.40-rc, 3.2.0)</version>
+    <version>${version}</version>
 </dependency>
 ```
 
@@ -58,7 +58,7 @@ You can add only one dependency library to import all supported services.(3.0.40
 <dependency>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk-all</artifactId>
-    <version>[3.0.40-rc, 3.2.0)</version>
+    <version>${version}</version>
 </dependency>
 ```
 
@@ -71,11 +71,34 @@ contains all supported services and dependent JARs with third-party libraries re
 <dependency>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk-bundle</artifactId>
-    <version>[3.0.40-rc, 3.2.0)</version>
+    <version>${version}</version>
 </dependency>
 ```
 
 Common conflicts, such as Jackson and okhttp3 version conflicts.
+
+**Note:** The bundle library already includes the core package and cloud service package. Do not import the core library and service library separately. According to the Maven dependency parsing sequence, the bundle library may not take effect.
+
+The following is an incorrect example:
+
+<!-- Import the core library will overwrite the core in the bundle library, please remove this dependency -->
+<dependency>
+    <groupId>com.huaweicloud.sdk</groupId>
+    <artifactId>huaweicloud-sdk-core</artifactId>
+    <version>${version}</version>
+</dependency>
+<!-- Import the ecs library will overwrite the ecs package in the bundle library, please remove this dependency -->
+<dependency>
+    <groupId>com.huaweicloud.sdk</groupId>
+    <artifactId>huaweicloud-sdk-ecs</artifactId>
+    <version>${version}</version>
+</dependency>
+<!-- Reserve bundle library only -->
+<dependency>
+    <groupId>com.huaweicloud.sdk</groupId>
+    <artifactId>huaweicloud-sdk-bundle</artifactId>
+    <version>${version}</version>
+</dependency>
 
 ## Code Example
 

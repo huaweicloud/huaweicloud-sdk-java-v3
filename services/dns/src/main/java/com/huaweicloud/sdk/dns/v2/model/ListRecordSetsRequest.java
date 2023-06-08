@@ -21,6 +21,11 @@ public class ListRecordSetsRequest {
     private String marker;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "search_mode")
+
+    private String searchMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
     private Integer limit;
@@ -104,6 +109,23 @@ public class ListRecordSetsRequest {
         this.marker = marker;
     }
 
+    public ListRecordSetsRequest withSearchMode(String searchMode) {
+        this.searchMode = searchMode;
+        return this;
+    }
+
+    /**
+     * 查询条件搜索模式。  取值范围：  like：模糊搜索 equal：精确搜索 默认值为equal。
+     * @return searchMode
+     */
+    public String getSearchMode() {
+        return searchMode;
+    }
+
+    public void setSearchMode(String searchMode) {
+        this.searchMode = searchMode;
+    }
+
     public ListRecordSetsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -178,7 +200,7 @@ public class ListRecordSetsRequest {
     }
 
     /**
-     * 待查询的Record Set的记录集类型。  取值范围：A,AAAA,MX,CNAME,TXT, NS（仅限公网Zone）,SRV,PTR（仅限内网Zone）,CAA（仅限公网Zone）。
+     * 待查询的Record Set的记录集类型。 公网域名场景的记录类型: A、AAAA、MX、CNAME、TXT、NS、SRV、CAA。 内网域名场景的记录类型: A、AAAA、MX、CNAME、TXT、SRV。
      * @return type
      */
     public String getType() {
@@ -285,6 +307,7 @@ public class ListRecordSetsRequest {
         ListRecordSetsRequest listRecordSetsRequest = (ListRecordSetsRequest) o;
         return Objects.equals(this.zoneType, listRecordSetsRequest.zoneType)
             && Objects.equals(this.marker, listRecordSetsRequest.marker)
+            && Objects.equals(this.searchMode, listRecordSetsRequest.searchMode)
             && Objects.equals(this.limit, listRecordSetsRequest.limit)
             && Objects.equals(this.offset, listRecordSetsRequest.offset)
             && Objects.equals(this.tags, listRecordSetsRequest.tags)
@@ -299,7 +322,8 @@ public class ListRecordSetsRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(zoneType, marker, limit, offset, tags, status, type, name, id, records, sortKey, sortDir);
+        return Objects
+            .hash(zoneType, marker, searchMode, limit, offset, tags, status, type, name, id, records, sortKey, sortDir);
     }
 
     @Override
@@ -308,6 +332,7 @@ public class ListRecordSetsRequest {
         sb.append("class ListRecordSetsRequest {\n");
         sb.append("    zoneType: ").append(toIndentedString(zoneType)).append("\n");
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
+        sb.append("    searchMode: ").append(toIndentedString(searchMode)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");

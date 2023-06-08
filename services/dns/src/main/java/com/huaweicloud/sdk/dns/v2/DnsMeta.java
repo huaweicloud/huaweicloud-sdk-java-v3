@@ -635,10 +635,10 @@ public class DnsMeta {
             f -> f.withMarshaller(BatchDeleteRecordSetWithLineRequest::getZoneId, (req, v) -> {
                 req.setZoneId(v);
             }));
-        builder.<BatchDeleteRSetWithLineReq>withRequestField("body",
+        builder.<BatchDeleteRecordSetWithLineRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(BatchDeleteRSetWithLineReq.class),
+            TypeCasts.uncheckedConversion(BatchDeleteRecordSetWithLineRequestBody.class),
             f -> f.withMarshaller(BatchDeleteRecordSetWithLineRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -702,10 +702,10 @@ public class DnsMeta {
             f -> f.withMarshaller(CreateRecordSetRequest::getZoneId, (req, v) -> {
                 req.setZoneId(v);
             }));
-        builder.<CreateRecordSetReq>withRequestField("body",
+        builder.<CreateRecordSetRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateRecordSetReq.class),
+            TypeCasts.uncheckedConversion(CreateRecordSetRequestBody.class),
             f -> f.withMarshaller(CreateRecordSetRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -769,10 +769,10 @@ public class DnsMeta {
             f -> f.withMarshaller(CreateRecordSetWithLineRequest::getZoneId, (req, v) -> {
                 req.setZoneId(v);
             }));
-        builder.<CreateRecordSetWithLineReq>withRequestField("body",
+        builder.<CreateRecordSetWithLineRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateRecordSetWithLineReq.class),
+            TypeCasts.uncheckedConversion(CreateRecordSetWithLineRequestBody.class),
             f -> f.withMarshaller(CreateRecordSetWithLineRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -904,6 +904,13 @@ public class DnsMeta {
             f -> f.withMarshaller(ListRecordSetsRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
             }));
+        builder.<String>withRequestField("search_mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRecordSetsRequest::getSearchMode, (req, v) -> {
+                req.setSearchMode(v);
+            }));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -998,6 +1005,13 @@ public class DnsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRecordSetsByZoneRequest::getZoneId, (req, v) -> {
                 req.setZoneId(v);
+            }));
+        builder.<String>withRequestField("search_mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRecordSetsByZoneRequest::getSearchMode, (req, v) -> {
+                req.setSearchMode(v);
             }));
         builder.<String>withRequestField("marker",
             LocationType.Query,
@@ -1702,10 +1716,10 @@ public class DnsMeta {
             f -> f.withMarshaller(AssociateRouterRequest::getZoneId, (req, v) -> {
                 req.setZoneId(v);
             }));
-        builder.<AssociateRouterReq>withRequestField("body",
+        builder.<AssociateRouterRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(AssociateRouterReq.class),
+            TypeCasts.uncheckedConversion(AssociateRouterRequestBody.class),
             f -> f.withMarshaller(AssociateRouterRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -1834,10 +1848,10 @@ public class DnsMeta {
             f -> f.withMarshaller(DisassociateRouterRequest::getZoneId, (req, v) -> {
                 req.setZoneId(v);
             }));
-        builder.<DisassociaterouterReq>withRequestField("body",
+        builder.<DisassociaterouterRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(DisassociaterouterReq.class),
+            TypeCasts.uncheckedConversion(DisassociaterouterRequestBody.class),
             f -> f.withMarshaller(DisassociateRouterRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -1907,6 +1921,13 @@ public class DnsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPrivateZonesRequest::getStatus, (req, v) -> {
                 req.setStatus(v);
+            }));
+        builder.<String>withRequestField("search_mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPrivateZonesRequest::getSearchMode, (req, v) -> {
+                req.setSearchMode(v);
             }));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
@@ -1981,6 +2002,13 @@ public class DnsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPublicZonesRequest::getStatus, (req, v) -> {
                 req.setStatus(v);
+            }));
+        builder.<String>withRequestField("search_mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPublicZonesRequest::getSearchMode, (req, v) -> {
+                req.setSearchMode(v);
             }));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
@@ -2182,10 +2210,10 @@ public class DnsMeta {
             f -> f.withMarshaller(UpdatePublicZoneStatusRequest::getZoneId, (req, v) -> {
                 req.setZoneId(v);
             }));
-        builder.<UpdatePublicZoneStatus>withRequestField("body",
+        builder.<UpdatePublicZoneStatusRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UpdatePublicZoneStatus.class),
+            TypeCasts.uncheckedConversion(UpdatePublicZoneStatusRequestBody.class),
             f -> f.withMarshaller(UpdatePublicZoneStatusRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));

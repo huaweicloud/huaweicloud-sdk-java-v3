@@ -162,7 +162,7 @@ public class NvlCostAnalysedBillDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "past_months_amortized_amount")
 
-    private Double pastMonthsAmortizedAmount;
+    private BigDecimal pastMonthsAmortizedAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "current_month_amortized_amount")
@@ -177,7 +177,7 @@ public class NvlCostAnalysedBillDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "amortized_cash_amount")
 
-    private Double amortizedCashAmount;
+    private BigDecimal amortizedCashAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "amortized_credit_amount")
@@ -737,7 +737,7 @@ public class NvlCostAnalysedBillDetail {
         this.consumeAmount = consumeAmount;
     }
 
-    public NvlCostAnalysedBillDetail withPastMonthsAmortizedAmount(Double pastMonthsAmortizedAmount) {
+    public NvlCostAnalysedBillDetail withPastMonthsAmortizedAmount(BigDecimal pastMonthsAmortizedAmount) {
         this.pastMonthsAmortizedAmount = pastMonthsAmortizedAmount;
         return this;
     }
@@ -746,11 +746,11 @@ public class NvlCostAnalysedBillDetail {
      * 期初已分摊金额。  说明： 包周期和预留实例预付时有效；计费类型为按需，预留实例为按时计费时该值为0。
      * @return pastMonthsAmortizedAmount
      */
-    public Double getPastMonthsAmortizedAmount() {
+    public BigDecimal getPastMonthsAmortizedAmount() {
         return pastMonthsAmortizedAmount;
     }
 
-    public void setPastMonthsAmortizedAmount(Double pastMonthsAmortizedAmount) {
+    public void setPastMonthsAmortizedAmount(BigDecimal pastMonthsAmortizedAmount) {
         this.pastMonthsAmortizedAmount = pastMonthsAmortizedAmount;
     }
 
@@ -788,7 +788,7 @@ public class NvlCostAnalysedBillDetail {
         this.futureMonthsAmortizedAmount = futureMonthsAmortizedAmount;
     }
 
-    public NvlCostAnalysedBillDetail withAmortizedCashAmount(Double amortizedCashAmount) {
+    public NvlCostAnalysedBillDetail withAmortizedCashAmount(BigDecimal amortizedCashAmount) {
         this.amortizedCashAmount = amortizedCashAmount;
         return this;
     }
@@ -797,11 +797,11 @@ public class NvlCostAnalysedBillDetail {
      * 月度成本分摊时，当月已分摊金额中包含的现金金额。
      * @return amortizedCashAmount
      */
-    public Double getAmortizedCashAmount() {
+    public BigDecimal getAmortizedCashAmount() {
         return amortizedCashAmount;
     }
 
-    public void setAmortizedCashAmount(Double amortizedCashAmount) {
+    public void setAmortizedCashAmount(BigDecimal amortizedCashAmount) {
         this.amortizedCashAmount = amortizedCashAmount;
     }
 

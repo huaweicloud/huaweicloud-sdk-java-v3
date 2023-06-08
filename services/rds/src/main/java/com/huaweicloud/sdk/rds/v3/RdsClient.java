@@ -962,6 +962,36 @@ public class RdsClient {
     }
 
     /**
+     * 查询实例标签
+     *
+     * 查询实例标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListInstanceTagsRequest 请求对象
+     * @return ListInstanceTagsResponse
+     */
+    public ListInstanceTagsResponse listInstanceTags(ListInstanceTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listInstanceTags);
+    }
+
+    /**
+     * 查询实例标签
+     *
+     * 查询实例标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListInstanceTagsRequest 请求对象
+     * @return SyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse>
+     */
+    public SyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse> listInstanceTagsInvoker(
+        ListInstanceTagsRequest request) {
+        return new SyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse>(request, RdsMeta.listInstanceTags,
+            hcClient);
+    }
+
+    /**
      * 查询数据库实例列表
      *
      * 查询数据库实例列表。

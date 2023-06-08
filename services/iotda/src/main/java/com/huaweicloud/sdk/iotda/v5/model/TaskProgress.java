@@ -45,6 +45,11 @@ public class TaskProgress {
 
     private Integer stopped;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "removed")
+
+    private Integer removed;
+
     public TaskProgress withTotal(Integer total) {
         this.total = total;
         return this;
@@ -164,6 +169,23 @@ public class TaskProgress {
         this.stopped = stopped;
     }
 
+    public TaskProgress withRemoved(Integer removed) {
+        this.removed = removed;
+        return this;
+    }
+
+    /**
+     * 移除的子任务个数。
+     * @return removed
+     */
+    public Integer getRemoved() {
+        return removed;
+    }
+
+    public void setRemoved(Integer removed) {
+        this.removed = removed;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -178,12 +200,12 @@ public class TaskProgress {
             && Objects.equals(this.success, taskProgress.success) && Objects.equals(this.fail, taskProgress.fail)
             && Objects.equals(this.waitting, taskProgress.waitting)
             && Objects.equals(this.failWaitRetry, taskProgress.failWaitRetry)
-            && Objects.equals(this.stopped, taskProgress.stopped);
+            && Objects.equals(this.stopped, taskProgress.stopped) && Objects.equals(this.removed, taskProgress.removed);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(total, processing, success, fail, waitting, failWaitRetry, stopped);
+        return Objects.hash(total, processing, success, fail, waitting, failWaitRetry, stopped, removed);
     }
 
     @Override
@@ -197,6 +219,7 @@ public class TaskProgress {
         sb.append("    waitting: ").append(toIndentedString(waitting)).append("\n");
         sb.append("    failWaitRetry: ").append(toIndentedString(failWaitRetry)).append("\n");
         sb.append("    stopped: ").append(toIndentedString(stopped)).append("\n");
+        sb.append("    removed: ").append(toIndentedString(removed)).append("\n");
         sb.append("}");
         return sb.toString();
     }

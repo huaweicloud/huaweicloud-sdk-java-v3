@@ -200,7 +200,7 @@ public class ShowRecordSetByZoneRequest {
     }
 
     /**
-     * 待查询的Record Set的记录集类型。  取值范围：A、CNAME、MX、AAAA、TXT、SRV、NS、CAA
+     * 待查询的Record Set的记录集类型。  公网域名场景的记录类型: A、AAAA、MX、CNAME、TXT、NS、SRV、CAA。 内网域名场景的记录类型: A、AAAA、MX、CNAME、TXT、SRV。
      * @return type
      */
     public String getType() {
@@ -285,7 +285,7 @@ public class ShowRecordSetByZoneRequest {
     }
 
     /**
-     * 查询条件搜索模式。  取值范围：  like：模糊搜索 equal：精确搜索 默认值为like。
+     * 查询条件搜索模式。  取值范围：  like：模糊搜索 equal：精确搜索 默认值为equal。
      * @return searchMode
      */
     public String getSearchMode() {

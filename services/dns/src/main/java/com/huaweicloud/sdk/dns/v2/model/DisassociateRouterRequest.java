@@ -19,7 +19,7 @@ public class DisassociateRouterRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private DisassociaterouterReq body;
+    private DisassociaterouterRequestBody body;
 
     public DisassociateRouterRequest withZoneId(String zoneId) {
         this.zoneId = zoneId;
@@ -38,14 +38,14 @@ public class DisassociateRouterRequest {
         this.zoneId = zoneId;
     }
 
-    public DisassociateRouterRequest withBody(DisassociaterouterReq body) {
+    public DisassociateRouterRequest withBody(DisassociaterouterRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public DisassociateRouterRequest withBody(Consumer<DisassociaterouterReq> bodySetter) {
+    public DisassociateRouterRequest withBody(Consumer<DisassociaterouterRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new DisassociaterouterReq();
+            this.body = new DisassociaterouterRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class DisassociateRouterRequest {
      * Get body
      * @return body
      */
-    public DisassociaterouterReq getBody() {
+    public DisassociaterouterRequestBody getBody() {
         return body;
     }
 
-    public void setBody(DisassociaterouterReq body) {
+    public void setBody(DisassociaterouterRequestBody body) {
         this.body = body;
     }
 

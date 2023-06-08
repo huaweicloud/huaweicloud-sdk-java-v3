@@ -200,6 +200,11 @@ public class Pool {
 
     private String protectionReason;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "any_port_enable")
+
+    private Boolean anyPortEnable;
+
     public Pool withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -623,6 +628,23 @@ public class Pool {
         this.protectionReason = protectionReason;
     }
 
+    public Pool withAnyPortEnable(Boolean anyPortEnable) {
+        this.anyPortEnable = anyPortEnable;
+        return this;
+    }
+
+    /**
+     * 后端是否开启端口透传，开启后，后端服务器端口与前端监听器端口保持一致。取值：false不开启，true开启，默认false。 > 关闭端口透传后，请求会转发给后端服务器protocol_port字段指定端口。
+     * @return anyPortEnable
+     */
+    public Boolean getAnyPortEnable() {
+        return anyPortEnable;
+    }
+
+    public void setAnyPortEnable(Boolean anyPortEnable) {
+        this.anyPortEnable = anyPortEnable;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -645,7 +667,8 @@ public class Pool {
             && Objects.equals(this.createdAt, pool.createdAt) && Objects.equals(this.updatedAt, pool.updatedAt)
             && Objects.equals(this.vpcId, pool.vpcId) && Objects.equals(this.type, pool.type)
             && Objects.equals(this.protectionStatus, pool.protectionStatus)
-            && Objects.equals(this.protectionReason, pool.protectionReason);
+            && Objects.equals(this.protectionReason, pool.protectionReason)
+            && Objects.equals(this.anyPortEnable, pool.anyPortEnable);
     }
 
     @Override
@@ -670,7 +693,8 @@ public class Pool {
             vpcId,
             type,
             protectionStatus,
-            protectionReason);
+            protectionReason,
+            anyPortEnable);
     }
 
     @Override
@@ -700,6 +724,7 @@ public class Pool {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    protectionStatus: ").append(toIndentedString(protectionStatus)).append("\n");
         sb.append("    protectionReason: ").append(toIndentedString(protectionReason)).append("\n");
+        sb.append("    anyPortEnable: ").append(toIndentedString(anyPortEnable)).append("\n");
         sb.append("}");
         return sb.toString();
     }

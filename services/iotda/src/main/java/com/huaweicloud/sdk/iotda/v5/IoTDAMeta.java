@@ -507,6 +507,45 @@ public class IoTDAMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RetryBatchTaskRequest, RetryBatchTaskResponse> retryBatchTask =
+        genForretryBatchTask();
+
+    private static HttpRequestDef<RetryBatchTaskRequest, RetryBatchTaskResponse> genForretryBatchTask() {
+        // basic
+        HttpRequestDef.Builder<RetryBatchTaskRequest, RetryBatchTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RetryBatchTaskRequest.class, RetryBatchTaskResponse.class)
+                .withName("RetryBatchTask")
+                .withUri("/{project_id}/batchtasks/{task_id}/retry")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RetryBatchTaskRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RetryBatchTaskRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<BatchTargets>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(BatchTargets.class),
+            f -> f.withMarshaller(RetryBatchTaskRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowBatchTaskRequest, ShowBatchTaskResponse> showBatchTask =
         genForshowBatchTask();
 
@@ -525,6 +564,20 @@ public class IoTDAMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowBatchTaskRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
+            }));
+        builder.<String>withRequestField("task_detail_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBatchTaskRequest::getTaskDetailStatus, (req, v) -> {
+                req.setTaskDetailStatus(v);
+            }));
+        builder.<String>withRequestField("target",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBatchTaskRequest::getTarget, (req, v) -> {
+                req.setTarget(v);
             }));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
@@ -553,6 +606,45 @@ public class IoTDAMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowBatchTaskRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StopBatchTaskRequest, StopBatchTaskResponse> stopBatchTask =
+        genForstopBatchTask();
+
+    private static HttpRequestDef<StopBatchTaskRequest, StopBatchTaskResponse> genForstopBatchTask() {
+        // basic
+        HttpRequestDef.Builder<StopBatchTaskRequest, StopBatchTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, StopBatchTaskRequest.class, StopBatchTaskResponse.class)
+                .withName("StopBatchTask")
+                .withUri("/{project_id}/batchtasks/{task_id}/stop")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopBatchTaskRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopBatchTaskRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<BatchTargets>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(BatchTargets.class),
+            f -> f.withMarshaller(StopBatchTaskRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

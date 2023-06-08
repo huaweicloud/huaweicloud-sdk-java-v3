@@ -16,6 +16,16 @@ public class ShowBatchTaskRequest {
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "task_detail_status")
+
+    private String taskDetailStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "target")
+
+    private String target;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_id")
 
     private String taskId;
@@ -50,6 +60,40 @@ public class ShowBatchTaskRequest {
 
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
+    }
+
+    public ShowBatchTaskRequest withTaskDetailStatus(String taskDetailStatus) {
+        this.taskDetailStatus = taskDetailStatus;
+        return this;
+    }
+
+    /**
+     * **参数说明**：子任务的执行状态，可选参数。 **取值范围**： - Success: 成功。 - Fail: 失败。 - Processing: 执行中。 - FailWaitRetry: 失败重试。 - Stopped: 已停止。 - Waitting: 等待执行。 - Removed: 已移除
+     * @return taskDetailStatus
+     */
+    public String getTaskDetailStatus() {
+        return taskDetailStatus;
+    }
+
+    public void setTaskDetailStatus(String taskDetailStatus) {
+        this.taskDetailStatus = taskDetailStatus;
+    }
+
+    public ShowBatchTaskRequest withTarget(String target) {
+        this.target = target;
+        return this;
+    }
+
+    /**
+     * **参数说明**：执行批量任务的目标，当task_type为firmwareUpgrade，softwareUpgrade，deleteDevices，freezeDevices，unfreezeDevices，createCommands，createAsyncCommands，createMessages，updateDeviceShadows，此处填写device_id **取值范围**：长度不超过128，只允许字母、数字、下划线（_）、连接符（-）的组合。
+     * @return target
+     */
+    public String getTarget() {
+        return target;
+    }
+
+    public void setTarget(String target) {
+        this.target = target;
     }
 
     public ShowBatchTaskRequest withTaskId(String taskId) {
@@ -134,6 +178,8 @@ public class ShowBatchTaskRequest {
         }
         ShowBatchTaskRequest showBatchTaskRequest = (ShowBatchTaskRequest) o;
         return Objects.equals(this.instanceId, showBatchTaskRequest.instanceId)
+            && Objects.equals(this.taskDetailStatus, showBatchTaskRequest.taskDetailStatus)
+            && Objects.equals(this.target, showBatchTaskRequest.target)
             && Objects.equals(this.taskId, showBatchTaskRequest.taskId)
             && Objects.equals(this.limit, showBatchTaskRequest.limit)
             && Objects.equals(this.marker, showBatchTaskRequest.marker)
@@ -142,7 +188,7 @@ public class ShowBatchTaskRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, taskId, limit, marker, offset);
+        return Objects.hash(instanceId, taskDetailStatus, target, taskId, limit, marker, offset);
     }
 
     @Override
@@ -150,6 +196,8 @@ public class ShowBatchTaskRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowBatchTaskRequest {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    taskDetailStatus: ").append(toIndentedString(taskDetailStatus)).append("\n");
+        sb.append("    target: ").append(toIndentedString(target)).append("\n");
         sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");

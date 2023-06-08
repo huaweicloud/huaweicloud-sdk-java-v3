@@ -43,6 +43,11 @@ public class ListAddressGroupRequest {
 
     private List<String> description = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
     public ListAddressGroupRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -193,6 +198,23 @@ public class ListAddressGroupRequest {
         this.description = description;
     }
 
+    public ListAddressGroupRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 功能说明：企业项目ID。可以使用该字段过滤某个企业项目下的IP地址组。 取值范围：最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。若需要查询当前用户所有企业项目绑定的IP地址组，请传参all_granted_eps。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -207,12 +229,13 @@ public class ListAddressGroupRequest {
             && Objects.equals(this.id, listAddressGroupRequest.id)
             && Objects.equals(this.name, listAddressGroupRequest.name)
             && Objects.equals(this.ipVersion, listAddressGroupRequest.ipVersion)
-            && Objects.equals(this.description, listAddressGroupRequest.description);
+            && Objects.equals(this.description, listAddressGroupRequest.description)
+            && Objects.equals(this.enterpriseProjectId, listAddressGroupRequest.enterpriseProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(limit, marker, id, name, ipVersion, description);
+        return Objects.hash(limit, marker, id, name, ipVersion, description, enterpriseProjectId);
     }
 
     @Override
@@ -225,6 +248,7 @@ public class ListAddressGroupRequest {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    ipVersion: ").append(toIndentedString(ipVersion)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

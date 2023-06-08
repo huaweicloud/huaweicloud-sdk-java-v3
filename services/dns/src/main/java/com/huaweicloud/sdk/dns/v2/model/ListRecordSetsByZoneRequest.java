@@ -16,6 +16,11 @@ public class ListRecordSetsByZoneRequest {
     private String zoneId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "search_mode")
+
+    private String searchMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "marker")
 
     private String marker;
@@ -80,6 +85,23 @@ public class ListRecordSetsByZoneRequest {
 
     public void setZoneId(String zoneId) {
         this.zoneId = zoneId;
+    }
+
+    public ListRecordSetsByZoneRequest withSearchMode(String searchMode) {
+        this.searchMode = searchMode;
+        return this;
+    }
+
+    /**
+     * 查询条件搜索模式。  取值范围：  like：模糊搜索 equal：精确搜索 默认值为equal。
+     * @return searchMode
+     */
+    public String getSearchMode() {
+        return searchMode;
+    }
+
+    public void setSearchMode(String searchMode) {
+        this.searchMode = searchMode;
     }
 
     public ListRecordSetsByZoneRequest withMarker(String marker) {
@@ -262,6 +284,7 @@ public class ListRecordSetsByZoneRequest {
         }
         ListRecordSetsByZoneRequest listRecordSetsByZoneRequest = (ListRecordSetsByZoneRequest) o;
         return Objects.equals(this.zoneId, listRecordSetsByZoneRequest.zoneId)
+            && Objects.equals(this.searchMode, listRecordSetsByZoneRequest.searchMode)
             && Objects.equals(this.marker, listRecordSetsByZoneRequest.marker)
             && Objects.equals(this.limit, listRecordSetsByZoneRequest.limit)
             && Objects.equals(this.offset, listRecordSetsByZoneRequest.offset)
@@ -276,7 +299,7 @@ public class ListRecordSetsByZoneRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(zoneId, marker, limit, offset, tags, status, type, name, id, sortKey, sortDir);
+        return Objects.hash(zoneId, searchMode, marker, limit, offset, tags, status, type, name, id, sortKey, sortDir);
     }
 
     @Override
@@ -284,6 +307,7 @@ public class ListRecordSetsByZoneRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListRecordSetsByZoneRequest {\n");
         sb.append("    zoneId: ").append(toIndentedString(zoneId)).append("\n");
+        sb.append("    searchMode: ").append(toIndentedString(searchMode)).append("\n");
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");

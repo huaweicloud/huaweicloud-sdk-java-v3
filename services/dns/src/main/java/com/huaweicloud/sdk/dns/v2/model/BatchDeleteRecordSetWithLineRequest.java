@@ -19,7 +19,7 @@ public class BatchDeleteRecordSetWithLineRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private BatchDeleteRSetWithLineReq body;
+    private BatchDeleteRecordSetWithLineRequestBody body;
 
     public BatchDeleteRecordSetWithLineRequest withZoneId(String zoneId) {
         this.zoneId = zoneId;
@@ -38,14 +38,14 @@ public class BatchDeleteRecordSetWithLineRequest {
         this.zoneId = zoneId;
     }
 
-    public BatchDeleteRecordSetWithLineRequest withBody(BatchDeleteRSetWithLineReq body) {
+    public BatchDeleteRecordSetWithLineRequest withBody(BatchDeleteRecordSetWithLineRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public BatchDeleteRecordSetWithLineRequest withBody(Consumer<BatchDeleteRSetWithLineReq> bodySetter) {
+    public BatchDeleteRecordSetWithLineRequest withBody(Consumer<BatchDeleteRecordSetWithLineRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new BatchDeleteRSetWithLineReq();
+            this.body = new BatchDeleteRecordSetWithLineRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class BatchDeleteRecordSetWithLineRequest {
      * Get body
      * @return body
      */
-    public BatchDeleteRSetWithLineReq getBody() {
+    public BatchDeleteRecordSetWithLineRequestBody getBody() {
         return body;
     }
 
-    public void setBody(BatchDeleteRSetWithLineReq body) {
+    public void setBody(BatchDeleteRecordSetWithLineRequestBody body) {
         this.body = body;
     }
 

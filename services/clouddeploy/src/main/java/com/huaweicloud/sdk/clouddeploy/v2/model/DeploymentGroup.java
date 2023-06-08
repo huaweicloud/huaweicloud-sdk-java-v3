@@ -122,6 +122,11 @@ public class DeploymentGroup {
 
     private String description;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_proxy_mode")
+
+    private Integer isProxyMode;
+
     public DeploymentGroup withName(String name) {
         this.name = name;
         return this;
@@ -224,6 +229,23 @@ public class DeploymentGroup {
         this.description = description;
     }
 
+    public DeploymentGroup withIsProxyMode(Integer isProxyMode) {
+        this.isProxyMode = isProxyMode;
+        return this;
+    }
+
+    /**
+     * 主机组是否为代理机接入模式
+     * @return isProxyMode
+     */
+    public Integer getIsProxyMode() {
+        return isProxyMode;
+    }
+
+    public void setIsProxyMode(Integer isProxyMode) {
+        this.isProxyMode = isProxyMode;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -237,12 +259,13 @@ public class DeploymentGroup {
             && Objects.equals(this.regionName, deploymentGroup.regionName)
             && Objects.equals(this.projectId, deploymentGroup.projectId) && Objects.equals(this.os, deploymentGroup.os)
             && Objects.equals(this.slaveClusterId, deploymentGroup.slaveClusterId)
-            && Objects.equals(this.description, deploymentGroup.description);
+            && Objects.equals(this.description, deploymentGroup.description)
+            && Objects.equals(this.isProxyMode, deploymentGroup.isProxyMode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, regionName, projectId, os, slaveClusterId, description);
+        return Objects.hash(name, regionName, projectId, os, slaveClusterId, description, isProxyMode);
     }
 
     @Override
@@ -255,6 +278,7 @@ public class DeploymentGroup {
         sb.append("    os: ").append(toIndentedString(os)).append("\n");
         sb.append("    slaveClusterId: ").append(toIndentedString(slaveClusterId)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    isProxyMode: ").append(toIndentedString(isProxyMode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

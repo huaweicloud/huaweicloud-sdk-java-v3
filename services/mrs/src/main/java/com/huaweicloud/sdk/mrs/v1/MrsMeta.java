@@ -636,4 +636,38 @@ public class MrsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListAvailableZonesRequest, ListAvailableZonesResponse> listAvailableZones = genForlistAvailableZones();
+
+    private static HttpRequestDef<ListAvailableZonesRequest, ListAvailableZonesResponse> genForlistAvailableZones() {
+        // basic
+        HttpRequestDef.Builder<ListAvailableZonesRequest, ListAvailableZonesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAvailableZonesRequest.class, ListAvailableZonesResponse.class)
+                .withName("ListAvailableZones")
+                .withUri("/v1.1/{region_id}/available-zones")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("region_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAvailableZonesRequest::getRegionId, (req, v) -> {
+                req.setRegionId(v);
+            })
+        );
+        builder.<ListAvailableZonesRequest.ScopeEnum>withRequestField("scope",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListAvailableZonesRequest.ScopeEnum.class),
+            f -> f.withMarshaller(ListAvailableZonesRequest::getScope, (req, v) -> {
+                req.setScope(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
 }

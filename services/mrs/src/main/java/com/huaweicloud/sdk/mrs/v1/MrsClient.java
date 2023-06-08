@@ -597,4 +597,32 @@ public class MrsClient {
         return new SyncInvoker<UpdateClusterScalingRequest, UpdateClusterScalingResponse>(request, MrsMeta.updateClusterScaling, hcClient);
     }
 
+    /**
+     * 查询可用区信息
+     *
+     * 在创建集群时，需要配置实例所在的可用区ID，可通过该接口查询可用区的ID。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAvailableZonesRequest 请求对象
+     * @return ListAvailableZonesResponse
+     */
+    public ListAvailableZonesResponse listAvailableZones(ListAvailableZonesRequest request) {
+        return hcClient.syncInvokeHttp(request, MrsMeta.listAvailableZones);
+    }
+
+    /**
+     * 查询可用区信息
+     *
+     * 在创建集群时，需要配置实例所在的可用区ID，可通过该接口查询可用区的ID。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAvailableZonesRequest 请求对象
+     * @return SyncInvoker<ListAvailableZonesRequest, ListAvailableZonesResponse>
+     */
+    public SyncInvoker<ListAvailableZonesRequest, ListAvailableZonesResponse> listAvailableZonesInvoker(ListAvailableZonesRequest request) {
+        return new SyncInvoker<ListAvailableZonesRequest, ListAvailableZonesResponse>(request, MrsMeta.listAvailableZones, hcClient);
+    }
+
 }

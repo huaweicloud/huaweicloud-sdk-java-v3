@@ -1000,30 +1000,37 @@ public class RocketMQMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<SendRocketMqDlqMessageRequest, SendRocketMqDlqMessageResponse> sendRocketMqDlqMessage =
-        genForsendRocketMqDlqMessage();
+    public static final HttpRequestDef<SendDlqMessageRequest, SendDlqMessageResponse> sendDlqMessage =
+        genForsendDlqMessage();
 
-    private static HttpRequestDef<SendRocketMqDlqMessageRequest, SendRocketMqDlqMessageResponse> genForsendRocketMqDlqMessage() {
+    private static HttpRequestDef<SendDlqMessageRequest, SendDlqMessageResponse> genForsendDlqMessage() {
         // basic
-        HttpRequestDef.Builder<SendRocketMqDlqMessageRequest, SendRocketMqDlqMessageResponse> builder = HttpRequestDef
-            .builder(HttpMethod.POST, SendRocketMqDlqMessageRequest.class, SendRocketMqDlqMessageResponse.class)
-            .withName("SendRocketMqDlqMessage")
-            .withUri("/v2/reliability/{project_id}/instances/{instance_id}/messages/deadletter-resend")
-            .withContentType("application/json");
+        HttpRequestDef.Builder<SendDlqMessageRequest, SendDlqMessageResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SendDlqMessageRequest.class, SendDlqMessageResponse.class)
+                .withName("SendDlqMessage")
+                .withUri("/v2/{engine}/{project_id}/instances/{instance_id}/messages/deadletter-resend")
+                .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("engine",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SendDlqMessageRequest::getEngine, (req, v) -> {
+                req.setEngine(v);
+            }));
         builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SendRocketMqDlqMessageRequest::getInstanceId, (req, v) -> {
+            f -> f.withMarshaller(SendDlqMessageRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
         builder.<DeadletterResendReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeadletterResendReq.class),
-            f -> f.withMarshaller(SendRocketMqDlqMessageRequest::getBody, (req, v) -> {
+            f -> f.withMarshaller(SendDlqMessageRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -1379,33 +1386,37 @@ public class RocketMQMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ValidateRocketMqConsumedMessageRequest, ValidateRocketMqConsumedMessageResponse> validateRocketMqConsumedMessage =
-        genForvalidateRocketMqConsumedMessage();
+    public static final HttpRequestDef<ValidateConsumedMessageRequest, ValidateConsumedMessageResponse> validateConsumedMessage =
+        genForvalidateConsumedMessage();
 
-    private static HttpRequestDef<ValidateRocketMqConsumedMessageRequest, ValidateRocketMqConsumedMessageResponse> genForvalidateRocketMqConsumedMessage() {
+    private static HttpRequestDef<ValidateConsumedMessageRequest, ValidateConsumedMessageResponse> genForvalidateConsumedMessage() {
         // basic
-        HttpRequestDef.Builder<ValidateRocketMqConsumedMessageRequest, ValidateRocketMqConsumedMessageResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.POST,
-                    ValidateRocketMqConsumedMessageRequest.class,
-                    ValidateRocketMqConsumedMessageResponse.class)
-                .withName("ValidateRocketMqConsumedMessage")
-                .withUri("/v2/reliability/{project_id}/instances/{instance_id}/messages/resend")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<ValidateConsumedMessageRequest, ValidateConsumedMessageResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ValidateConsumedMessageRequest.class, ValidateConsumedMessageResponse.class)
+            .withName("ValidateConsumedMessage")
+            .withUri("/v2/{engine}/{project_id}/instances/{instance_id}/messages/resend")
+            .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("engine",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ValidateConsumedMessageRequest::getEngine, (req, v) -> {
+                req.setEngine(v);
+            }));
         builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ValidateRocketMqConsumedMessageRequest::getInstanceId, (req, v) -> {
+            f -> f.withMarshaller(ValidateConsumedMessageRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
         builder.<ResendReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResendReq.class),
-            f -> f.withMarshaller(ValidateRocketMqConsumedMessageRequest::getBody, (req, v) -> {
+            f -> f.withMarshaller(ValidateConsumedMessageRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

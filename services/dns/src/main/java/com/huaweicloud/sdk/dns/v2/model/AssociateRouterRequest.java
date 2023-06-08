@@ -19,7 +19,7 @@ public class AssociateRouterRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private AssociateRouterReq body;
+    private AssociateRouterRequestBody body;
 
     public AssociateRouterRequest withZoneId(String zoneId) {
         this.zoneId = zoneId;
@@ -38,14 +38,14 @@ public class AssociateRouterRequest {
         this.zoneId = zoneId;
     }
 
-    public AssociateRouterRequest withBody(AssociateRouterReq body) {
+    public AssociateRouterRequest withBody(AssociateRouterRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public AssociateRouterRequest withBody(Consumer<AssociateRouterReq> bodySetter) {
+    public AssociateRouterRequest withBody(Consumer<AssociateRouterRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new AssociateRouterReq();
+            this.body = new AssociateRouterRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class AssociateRouterRequest {
      * Get body
      * @return body
      */
-    public AssociateRouterReq getBody() {
+    public AssociateRouterRequestBody getBody() {
         return body;
     }
 
-    public void setBody(AssociateRouterReq body) {
+    public void setBody(AssociateRouterRequestBody body) {
         this.body = body;
     }
 

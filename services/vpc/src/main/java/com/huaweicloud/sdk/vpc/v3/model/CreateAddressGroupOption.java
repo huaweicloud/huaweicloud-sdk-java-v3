@@ -38,6 +38,11 @@ public class CreateAddressGroupOption {
 
     private Integer maxCapacity;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
     public CreateAddressGroupOption withName(String name) {
         this.name = name;
         return this;
@@ -139,6 +144,23 @@ public class CreateAddressGroupOption {
         this.maxCapacity = maxCapacity;
     }
 
+    public CreateAddressGroupOption withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 功能说明：企业项目ID。创建IP地址组时，给IP地址组绑定企业项目ID。 取值范围：最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -152,12 +174,13 @@ public class CreateAddressGroupOption {
             && Objects.equals(this.description, createAddressGroupOption.description)
             && Objects.equals(this.ipVersion, createAddressGroupOption.ipVersion)
             && Objects.equals(this.ipSet, createAddressGroupOption.ipSet)
-            && Objects.equals(this.maxCapacity, createAddressGroupOption.maxCapacity);
+            && Objects.equals(this.maxCapacity, createAddressGroupOption.maxCapacity)
+            && Objects.equals(this.enterpriseProjectId, createAddressGroupOption.enterpriseProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, ipVersion, ipSet, maxCapacity);
+        return Objects.hash(name, description, ipVersion, ipSet, maxCapacity, enterpriseProjectId);
     }
 
     @Override
@@ -169,6 +192,7 @@ public class CreateAddressGroupOption {
         sb.append("    ipVersion: ").append(toIndentedString(ipVersion)).append("\n");
         sb.append("    ipSet: ").append(toIndentedString(ipSet)).append("\n");
         sb.append("    maxCapacity: ").append(toIndentedString(maxCapacity)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

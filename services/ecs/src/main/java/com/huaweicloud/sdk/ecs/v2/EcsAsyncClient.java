@@ -440,6 +440,37 @@ public class EcsAsyncClient {
     }
 
     /**
+     * 更换云服务器计费模式
+     *
+     * 更换云服务器的计费模式
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ChangeServerChargeModeRequest 请求对象
+     * @return CompletableFuture<ChangeServerChargeModeResponse>
+     */
+    public CompletableFuture<ChangeServerChargeModeResponse> changeServerChargeModeAsync(
+        ChangeServerChargeModeRequest request) {
+        return hcClient.asyncInvokeHttp(request, EcsMeta.changeServerChargeMode);
+    }
+
+    /**
+     * 更换云服务器计费模式
+     *
+     * 更换云服务器的计费模式
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ChangeServerChargeModeRequest 请求对象
+     * @return AsyncInvoker<ChangeServerChargeModeRequest, ChangeServerChargeModeResponse>
+     */
+    public AsyncInvoker<ChangeServerChargeModeRequest, ChangeServerChargeModeResponse> changeServerChargeModeAsyncInvoker(
+        ChangeServerChargeModeRequest request) {
+        return new AsyncInvoker<ChangeServerChargeModeRequest, ChangeServerChargeModeResponse>(request,
+            EcsMeta.changeServerChargeMode, hcClient);
+    }
+
+    /**
      * 切换弹性云服务器操作系统(安装Cloud init)
      *
      * 切换弹性云服务器操作系统。支持弹性云服务器数据盘不变的情况下，使用新镜像重装系统盘。

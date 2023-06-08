@@ -475,6 +475,66 @@ public class BcsAsyncClient {
     }
 
     /**
+     * 查询服务实例告警信息
+     *
+     * 该接口用于查询BCS服务的事件、告警数据，可以指定查询时的过滤条件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListBcsEventsRequest 请求对象
+     * @return CompletableFuture<ListBcsEventsResponse>
+     */
+    public CompletableFuture<ListBcsEventsResponse> listBcsEventsAsync(ListBcsEventsRequest request) {
+        return hcClient.asyncInvokeHttp(request, BcsMeta.listBcsEvents);
+    }
+
+    /**
+     * 查询服务实例告警信息
+     *
+     * 该接口用于查询BCS服务的事件、告警数据，可以指定查询时的过滤条件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListBcsEventsRequest 请求对象
+     * @return AsyncInvoker<ListBcsEventsRequest, ListBcsEventsResponse>
+     */
+    public AsyncInvoker<ListBcsEventsRequest, ListBcsEventsResponse> listBcsEventsAsyncInvoker(
+        ListBcsEventsRequest request) {
+        return new AsyncInvoker<ListBcsEventsRequest, ListBcsEventsResponse>(request, BcsMeta.listBcsEvents, hcClient);
+    }
+
+    /**
+     * 查询服务实例告警统计接口
+     *
+     * 该接口用于查询BCS服务的分段事件、告警统计数据，可以指定查询时的过滤条件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListBcsEventsStatisticRequest 请求对象
+     * @return CompletableFuture<ListBcsEventsStatisticResponse>
+     */
+    public CompletableFuture<ListBcsEventsStatisticResponse> listBcsEventsStatisticAsync(
+        ListBcsEventsStatisticRequest request) {
+        return hcClient.asyncInvokeHttp(request, BcsMeta.listBcsEventsStatistic);
+    }
+
+    /**
+     * 查询服务实例告警统计接口
+     *
+     * 该接口用于查询BCS服务的分段事件、告警统计数据，可以指定查询时的过滤条件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListBcsEventsStatisticRequest 请求对象
+     * @return AsyncInvoker<ListBcsEventsStatisticRequest, ListBcsEventsStatisticResponse>
+     */
+    public AsyncInvoker<ListBcsEventsStatisticRequest, ListBcsEventsStatisticResponse> listBcsEventsStatisticAsyncInvoker(
+        ListBcsEventsStatisticRequest request) {
+        return new AsyncInvoker<ListBcsEventsStatisticRequest, ListBcsEventsStatisticResponse>(request,
+            BcsMeta.listBcsEventsStatistic, hcClient);
+    }
+
+    /**
      * 查询服务实例监控数据
      *
      * 该接口用于查询BCS服务的监控数据，可以指定相应的指标名称。

@@ -47,7 +47,7 @@ public class IssuedCouponQuota {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "balance")
 
-    private Double balance;
+    private BigDecimal balance;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "measure_id")
@@ -196,7 +196,7 @@ public class IssuedCouponQuota {
         this.quotaStatus = quotaStatus;
     }
 
-    public IssuedCouponQuota withBalance(Double balance) {
+    public IssuedCouponQuota withBalance(BigDecimal balance) {
         this.balance = balance;
         return this;
     }
@@ -205,11 +205,11 @@ public class IssuedCouponQuota {
      * 剩余的代金券额度，精确到小数点后2位。
      * @return balance
      */
-    public Double getBalance() {
+    public BigDecimal getBalance() {
         return balance;
     }
 
-    public void setBalance(Double balance) {
+    public void setBalance(BigDecimal balance) {
         this.balance = balance;
     }
 

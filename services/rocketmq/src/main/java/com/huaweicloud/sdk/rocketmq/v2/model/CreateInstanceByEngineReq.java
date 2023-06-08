@@ -206,9 +206,14 @@ public class CreateInstanceByEngineReq {
     private List<String> availableZones = null;
 
     /**
-    * RocketMQ实例规格。   - c6.4u8g.cluster：单个代理最大Topic数4000，单个代理最大消费组数4000   - c6.8u16g.cluster：单个代理最大Topic数8000，单个代理最大消费组数8000   - c6.12u24g.cluster：单个代理最大Topic数12000，单个代理最大消费组数12000   - c6.16u32g.cluster：单个代理最大Topic数16000，单个代理最大消费组数16000
+    * RocketMQ实例规格。   - c6.4u8g.cluster.small：单个代理最大Topic数2000，单个代理最大消费组数2000   - c6.4u8g.cluster：单个代理最大Topic数4000，单个代理最大消费组数4000   - c6.8u16g.cluster：单个代理最大Topic数8000，单个代理最大消费组数8000   - c6.12u24g.cluster：单个代理最大Topic数12000，单个代理最大消费组数12000   - c6.16u32g.cluster：单个代理最大Topic数16000，单个代理最大消费组数16000
     */
     public static final class ProductIdEnum {
+
+        /**
+         * Enum C6_4U8G_CLUSTER_SMALL for value: "c6.4u8g.cluster.small"
+         */
+        public static final ProductIdEnum C6_4U8G_CLUSTER_SMALL = new ProductIdEnum("c6.4u8g.cluster.small");
 
         /**
          * Enum C6_4U8G_CLUSTER for value: "c6.4u8g.cluster"
@@ -234,6 +239,7 @@ public class CreateInstanceByEngineReq {
 
         private static Map<String, ProductIdEnum> createStaticFields() {
             Map<String, ProductIdEnum> map = new HashMap<>();
+            map.put("c6.4u8g.cluster.small", C6_4U8G_CLUSTER_SMALL);
             map.put("c6.4u8g.cluster", C6_4U8G_CLUSTER);
             map.put("c6.8u16g.cluster", C6_8U16G_CLUSTER);
             map.put("c6.12u24g.cluster", C6_12U24G_CLUSTER);
@@ -598,7 +604,7 @@ public class CreateInstanceByEngineReq {
     }
 
     /**
-     * RocketMQ实例规格。   - c6.4u8g.cluster：单个代理最大Topic数4000，单个代理最大消费组数4000   - c6.8u16g.cluster：单个代理最大Topic数8000，单个代理最大消费组数8000   - c6.12u24g.cluster：单个代理最大Topic数12000，单个代理最大消费组数12000   - c6.16u32g.cluster：单个代理最大Topic数16000，单个代理最大消费组数16000
+     * RocketMQ实例规格。   - c6.4u8g.cluster.small：单个代理最大Topic数2000，单个代理最大消费组数2000   - c6.4u8g.cluster：单个代理最大Topic数4000，单个代理最大消费组数4000   - c6.8u16g.cluster：单个代理最大Topic数8000，单个代理最大消费组数8000   - c6.12u24g.cluster：单个代理最大Topic数12000，单个代理最大消费组数12000   - c6.16u32g.cluster：单个代理最大Topic数16000，单个代理最大消费组数16000
      * @return productId
      */
     public ProductIdEnum getProductId() {

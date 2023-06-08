@@ -94,9 +94,19 @@ public class ListIssueRequestV4 {
     private Boolean includeDeleted;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "created_time_interval")
+
+    private String createdTimeInterval;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_time_interval")
 
     private String updatedTimeInterval;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "closed_time_interval")
+
+    private String closedTimeInterval;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "custom_fields")
@@ -570,6 +580,23 @@ public class ListIssueRequestV4 {
         this.includeDeleted = includeDeleted;
     }
 
+    public ListIssueRequestV4 withCreatedTimeInterval(String createdTimeInterval) {
+        this.createdTimeInterval = createdTimeInterval;
+        return this;
+    }
+
+    /**
+     * 根据工作项的创建时间查询工作项，(查询的起始时间,查询的结束时间)
+     * @return createdTimeInterval
+     */
+    public String getCreatedTimeInterval() {
+        return createdTimeInterval;
+    }
+
+    public void setCreatedTimeInterval(String createdTimeInterval) {
+        this.createdTimeInterval = createdTimeInterval;
+    }
+
     public ListIssueRequestV4 withUpdatedTimeInterval(String updatedTimeInterval) {
         this.updatedTimeInterval = updatedTimeInterval;
         return this;
@@ -585,6 +612,23 @@ public class ListIssueRequestV4 {
 
     public void setUpdatedTimeInterval(String updatedTimeInterval) {
         this.updatedTimeInterval = updatedTimeInterval;
+    }
+
+    public ListIssueRequestV4 withClosedTimeInterval(String closedTimeInterval) {
+        this.closedTimeInterval = closedTimeInterval;
+        return this;
+    }
+
+    /**
+     * 根据工作项的结束时间查询工作项，(查询的起始时间,查询的结束时间)
+     * @return closedTimeInterval
+     */
+    public String getClosedTimeInterval() {
+        return closedTimeInterval;
+    }
+
+    public void setClosedTimeInterval(String closedTimeInterval) {
+        this.closedTimeInterval = closedTimeInterval;
     }
 
     public ListIssueRequestV4 withCustomFields(List<ListIssueRequestV4CustomFields> customFields) {
@@ -645,7 +689,9 @@ public class ListIssueRequestV4 {
             && Objects.equals(this.storyPointIds, listIssueRequestV4.storyPointIds)
             && Objects.equals(this.trackerIds, listIssueRequestV4.trackerIds)
             && Objects.equals(this.includeDeleted, listIssueRequestV4.includeDeleted)
+            && Objects.equals(this.createdTimeInterval, listIssueRequestV4.createdTimeInterval)
             && Objects.equals(this.updatedTimeInterval, listIssueRequestV4.updatedTimeInterval)
+            && Objects.equals(this.closedTimeInterval, listIssueRequestV4.closedTimeInterval)
             && Objects.equals(this.customFields, listIssueRequestV4.customFields);
     }
 
@@ -667,7 +713,9 @@ public class ListIssueRequestV4 {
             storyPointIds,
             trackerIds,
             includeDeleted,
+            createdTimeInterval,
             updatedTimeInterval,
+            closedTimeInterval,
             customFields);
     }
 
@@ -691,7 +739,9 @@ public class ListIssueRequestV4 {
         sb.append("    storyPointIds: ").append(toIndentedString(storyPointIds)).append("\n");
         sb.append("    trackerIds: ").append(toIndentedString(trackerIds)).append("\n");
         sb.append("    includeDeleted: ").append(toIndentedString(includeDeleted)).append("\n");
+        sb.append("    createdTimeInterval: ").append(toIndentedString(createdTimeInterval)).append("\n");
         sb.append("    updatedTimeInterval: ").append(toIndentedString(updatedTimeInterval)).append("\n");
+        sb.append("    closedTimeInterval: ").append(toIndentedString(closedTimeInterval)).append("\n");
         sb.append("    customFields: ").append(toIndentedString(customFields)).append("\n");
         sb.append("}");
         return sb.toString();

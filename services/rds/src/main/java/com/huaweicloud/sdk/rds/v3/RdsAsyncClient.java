@@ -972,6 +972,36 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 查询实例标签
+     *
+     * 查询实例标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListInstanceTagsRequest 请求对象
+     * @return CompletableFuture<ListInstanceTagsResponse>
+     */
+    public CompletableFuture<ListInstanceTagsResponse> listInstanceTagsAsync(ListInstanceTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listInstanceTags);
+    }
+
+    /**
+     * 查询实例标签
+     *
+     * 查询实例标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListInstanceTagsRequest 请求对象
+     * @return AsyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse>
+     */
+    public AsyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse> listInstanceTagsAsyncInvoker(
+        ListInstanceTagsRequest request) {
+        return new AsyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse>(request, RdsMeta.listInstanceTags,
+            hcClient);
+    }
+
+    /**
      * 查询数据库实例列表
      *
      * 查询数据库实例列表。
