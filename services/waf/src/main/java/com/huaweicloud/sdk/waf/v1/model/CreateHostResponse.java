@@ -197,6 +197,11 @@ public class CreateHostResponse extends SdkResponse {
 
     private Map<String, String> extend = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "forward_header_map")
+
+    private Map<String, String> forwardHeaderMap = null;
+
     public CreateHostResponse withId(String id) {
         this.id = id;
         return this;
@@ -570,6 +575,39 @@ public class CreateHostResponse extends SdkResponse {
         this.extend = extend;
     }
 
+    public CreateHostResponse withForwardHeaderMap(Map<String, String> forwardHeaderMap) {
+        this.forwardHeaderMap = forwardHeaderMap;
+        return this;
+    }
+
+    public CreateHostResponse putForwardHeaderMapItem(String key, String forwardHeaderMapItem) {
+        if (this.forwardHeaderMap == null) {
+            this.forwardHeaderMap = new HashMap<>();
+        }
+        this.forwardHeaderMap.put(key, forwardHeaderMapItem);
+        return this;
+    }
+
+    public CreateHostResponse withForwardHeaderMap(Consumer<Map<String, String>> forwardHeaderMapSetter) {
+        if (this.forwardHeaderMap == null) {
+            this.forwardHeaderMap = new HashMap<>();
+        }
+        forwardHeaderMapSetter.accept(this.forwardHeaderMap);
+        return this;
+    }
+
+    /**
+     * 字段转发配置，WAF会将添加的字段插到header中，转给源站；Key不能跟nginx原生字段重复。Value支持的值包括:   - $time_local   - $request_id   - $connection_requests   - $tenant_id   - $project_id   - $remote_addr   - $remote_port   - $scheme   - $request_method   - $http_host   -$origin_uri   - $request_length   - $ssl_server_name   - $ssl_protocol   - $ssl_curves   - $ssl_session_reused
+     * @return forwardHeaderMap
+     */
+    public Map<String, String> getForwardHeaderMap() {
+        return forwardHeaderMap;
+    }
+
+    public void setForwardHeaderMap(Map<String, String> forwardHeaderMap) {
+        this.forwardHeaderMap = forwardHeaderMap;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -597,7 +635,8 @@ public class CreateHostResponse extends SdkResponse {
             && Objects.equals(this.http2Enable, createHostResponse.http2Enable)
             && Objects.equals(this.blockPage, createHostResponse.blockPage)
             && Objects.equals(this.flag, createHostResponse.flag)
-            && Objects.equals(this.extend, createHostResponse.extend);
+            && Objects.equals(this.extend, createHostResponse.extend)
+            && Objects.equals(this.forwardHeaderMap, createHostResponse.forwardHeaderMap);
     }
 
     @Override
@@ -620,7 +659,8 @@ public class CreateHostResponse extends SdkResponse {
             http2Enable,
             blockPage,
             flag,
-            extend);
+            extend,
+            forwardHeaderMap);
     }
 
     @Override
@@ -646,6 +686,7 @@ public class CreateHostResponse extends SdkResponse {
         sb.append("    blockPage: ").append(toIndentedString(blockPage)).append("\n");
         sb.append("    flag: ").append(toIndentedString(flag)).append("\n");
         sb.append("    extend: ").append(toIndentedString(extend)).append("\n");
+        sb.append("    forwardHeaderMap: ").append(toIndentedString(forwardHeaderMap)).append("\n");
         sb.append("}");
         return sb.toString();
     }

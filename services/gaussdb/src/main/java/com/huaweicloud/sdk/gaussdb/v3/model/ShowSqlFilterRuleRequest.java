@@ -97,7 +97,7 @@ public class ShowSqlFilterRuleRequest  {
 
 
     /**
-     * 节点id。
+     * 节点ID。
      * @return nodeId
      */
     public String getNodeId() {

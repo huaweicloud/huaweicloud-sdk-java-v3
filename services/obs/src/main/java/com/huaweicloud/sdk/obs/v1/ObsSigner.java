@@ -63,6 +63,8 @@ public class ObsSigner {
 
     private static final String CONTENT_MD5 = "Content-MD5";
 
+    private static final String X_CONTEXT_ATTRIBUTES = "x-context-attributes";
+
     private static final String X_OBS_SECURITY_TOKEN = "x-obs-security-token";
 
     private static final String DATE = "date";
@@ -118,7 +120,8 @@ public class ObsSigner {
         Map<String, List<String>> headers = httpRequest.getHeaders().entrySet().stream().filter(
                 entry -> entry.getKey().startsWith(X_OBS_PREFIX)
                         || entry.getKey().equalsIgnoreCase(CONTENT_TYPE)
-                        || entry.getKey().equalsIgnoreCase(CONTENT_MD5)).collect(
+                        || entry.getKey().equalsIgnoreCase(CONTENT_MD5)
+                        || entry.getKey().equalsIgnoreCase(X_CONTEXT_ATTRIBUTES)).collect(
                 Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
 
         if (!httpRequest.haveHeader(X_OBS_DATE) && !httpRequest.haveHeader(DATE)) {

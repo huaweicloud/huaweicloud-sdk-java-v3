@@ -156,6 +156,11 @@ public class CreateHostRequestBody {
 
     private String description;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "forward_header_map")
+
+    private Map<String, String> forwardHeaderMap = null;
+
     public CreateHostRequestBody withHostname(String hostname) {
         this.hostname = hostname;
         return this;
@@ -359,6 +364,39 @@ public class CreateHostRequestBody {
         this.description = description;
     }
 
+    public CreateHostRequestBody withForwardHeaderMap(Map<String, String> forwardHeaderMap) {
+        this.forwardHeaderMap = forwardHeaderMap;
+        return this;
+    }
+
+    public CreateHostRequestBody putForwardHeaderMapItem(String key, String forwardHeaderMapItem) {
+        if (this.forwardHeaderMap == null) {
+            this.forwardHeaderMap = new HashMap<>();
+        }
+        this.forwardHeaderMap.put(key, forwardHeaderMapItem);
+        return this;
+    }
+
+    public CreateHostRequestBody withForwardHeaderMap(Consumer<Map<String, String>> forwardHeaderMapSetter) {
+        if (this.forwardHeaderMap == null) {
+            this.forwardHeaderMap = new HashMap<>();
+        }
+        forwardHeaderMapSetter.accept(this.forwardHeaderMap);
+        return this;
+    }
+
+    /**
+     * 字段转发配置，WAF会将添加的字段插到header中，转给源站；Key不能跟nginx原生字段重复。Value支持的值包括:   - $time_local   - $request_id   - $connection_requests   - $tenant_id   - $project_id   - $remote_addr   - $remote_port   - $scheme   - $request_method   - $http_host   -$origin_uri   - $request_length   - $ssl_server_name   - $ssl_protocol   - $ssl_curves   - $ssl_session_reused
+     * @return forwardHeaderMap
+     */
+    public Map<String, String> getForwardHeaderMap() {
+        return forwardHeaderMap;
+    }
+
+    public void setForwardHeaderMap(Map<String, String> forwardHeaderMap) {
+        this.forwardHeaderMap = forwardHeaderMap;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -378,7 +416,8 @@ public class CreateHostRequestBody {
             && Objects.equals(this.paidType, createHostRequestBody.paidType)
             && Objects.equals(this.proxy, createHostRequestBody.proxy)
             && Objects.equals(this.lbAlgorithm, createHostRequestBody.lbAlgorithm)
-            && Objects.equals(this.description, createHostRequestBody.description);
+            && Objects.equals(this.description, createHostRequestBody.description)
+            && Objects.equals(this.forwardHeaderMap, createHostRequestBody.forwardHeaderMap);
     }
 
     @Override
@@ -393,7 +432,8 @@ public class CreateHostRequestBody {
             paidType,
             proxy,
             lbAlgorithm,
-            description);
+            description,
+            forwardHeaderMap);
     }
 
     @Override
@@ -411,6 +451,7 @@ public class CreateHostRequestBody {
         sb.append("    proxy: ").append(toIndentedString(proxy)).append("\n");
         sb.append("    lbAlgorithm: ").append(toIndentedString(lbAlgorithm)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    forwardHeaderMap: ").append(toIndentedString(forwardHeaderMap)).append("\n");
         sb.append("}");
         return sb.toString();
     }

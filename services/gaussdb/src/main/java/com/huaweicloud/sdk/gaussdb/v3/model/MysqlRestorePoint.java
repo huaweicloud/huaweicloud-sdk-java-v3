@@ -72,7 +72,7 @@ public class MysqlRestorePoint  {
 
 
     /**
-     * 源实例id。
+     * 源实例ID。
      * @return sourceInstanceId
      */
     public String getSourceInstanceId() {
@@ -94,7 +94,7 @@ public class MysqlRestorePoint  {
 
 
     /**
-     * 备份文件id。
+     * 备份文件ID。
      * @return backupId
      */
     public String getBackupId() {

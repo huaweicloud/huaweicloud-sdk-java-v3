@@ -40,7 +40,7 @@ public class UpdateGaussMySqlQuotasRequest  {
 
 
     /**
-     * 语言
+     * 语言。
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

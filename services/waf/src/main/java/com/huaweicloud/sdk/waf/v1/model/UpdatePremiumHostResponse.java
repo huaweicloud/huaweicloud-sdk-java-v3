@@ -323,6 +323,11 @@ public class UpdatePremiumHostResponse extends SdkResponse {
     private TimeoutConfig timeoutConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "forward_header_map")
+
+    private Map<String, String> forwardHeaderMap = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_progress")
 
     private List<AccessProgress> accessProgress = null;
@@ -820,6 +825,39 @@ public class UpdatePremiumHostResponse extends SdkResponse {
         this.timeoutConfig = timeoutConfig;
     }
 
+    public UpdatePremiumHostResponse withForwardHeaderMap(Map<String, String> forwardHeaderMap) {
+        this.forwardHeaderMap = forwardHeaderMap;
+        return this;
+    }
+
+    public UpdatePremiumHostResponse putForwardHeaderMapItem(String key, String forwardHeaderMapItem) {
+        if (this.forwardHeaderMap == null) {
+            this.forwardHeaderMap = new HashMap<>();
+        }
+        this.forwardHeaderMap.put(key, forwardHeaderMapItem);
+        return this;
+    }
+
+    public UpdatePremiumHostResponse withForwardHeaderMap(Consumer<Map<String, String>> forwardHeaderMapSetter) {
+        if (this.forwardHeaderMap == null) {
+            this.forwardHeaderMap = new HashMap<>();
+        }
+        forwardHeaderMapSetter.accept(this.forwardHeaderMap);
+        return this;
+    }
+
+    /**
+     * 字段转发配置，WAF会将添加的字段插到header中，转给源站；Key不能跟nginx原生字段重复。Value支持的值包括:   - $time_local   - $request_id   - $connection_requests   - $tenant_id   - $project_id   - $remote_addr   - $remote_port   - $scheme   - $request_method   - $http_host   -$origin_uri   - $request_length   - $ssl_server_name   - $ssl_protocol   - $ssl_curves   - $ssl_session_reused
+     * @return forwardHeaderMap
+     */
+    public Map<String, String> getForwardHeaderMap() {
+        return forwardHeaderMap;
+    }
+
+    public void setForwardHeaderMap(Map<String, String> forwardHeaderMap) {
+        this.forwardHeaderMap = forwardHeaderMap;
+    }
+
     public UpdatePremiumHostResponse withAccessProgress(List<AccessProgress> accessProgress) {
         this.accessProgress = accessProgress;
         return this;
@@ -887,6 +925,7 @@ public class UpdatePremiumHostResponse extends SdkResponse {
             && Objects.equals(this.blockPage, updatePremiumHostResponse.blockPage)
             && Objects.equals(this.trafficMark, updatePremiumHostResponse.trafficMark)
             && Objects.equals(this.timeoutConfig, updatePremiumHostResponse.timeoutConfig)
+            && Objects.equals(this.forwardHeaderMap, updatePremiumHostResponse.forwardHeaderMap)
             && Objects.equals(this.accessProgress, updatePremiumHostResponse.accessProgress);
     }
 
@@ -917,6 +956,7 @@ public class UpdatePremiumHostResponse extends SdkResponse {
             blockPage,
             trafficMark,
             timeoutConfig,
+            forwardHeaderMap,
             accessProgress);
     }
 
@@ -949,6 +989,7 @@ public class UpdatePremiumHostResponse extends SdkResponse {
         sb.append("    blockPage: ").append(toIndentedString(blockPage)).append("\n");
         sb.append("    trafficMark: ").append(toIndentedString(trafficMark)).append("\n");
         sb.append("    timeoutConfig: ").append(toIndentedString(timeoutConfig)).append("\n");
+        sb.append("    forwardHeaderMap: ").append(toIndentedString(forwardHeaderMap)).append("\n");
         sb.append("    accessProgress: ").append(toIndentedString(accessProgress)).append("\n");
         sb.append("}");
         return sb.toString();

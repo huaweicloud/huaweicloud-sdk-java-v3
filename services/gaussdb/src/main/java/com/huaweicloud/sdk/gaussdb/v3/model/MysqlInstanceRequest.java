@@ -516,7 +516,7 @@ public class MysqlInstanceRequest  {
 
 
     /**
-     * 备节点个数。单次接口调用最多支持创建9个备节点。
+     * 只读节点个数。单次接口调用最多支持创建9个只读节点。
      * @return slaveCount
      */
     public Integer getSlaveCount() {

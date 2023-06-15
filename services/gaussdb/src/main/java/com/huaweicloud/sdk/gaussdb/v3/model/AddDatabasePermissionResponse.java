@@ -35,7 +35,7 @@ public class AddDatabasePermissionResponse extends SdkResponse {
 
 
     /**
-     * 授予用户权限的任务id。
+     * 授予用户权限的任务ID。
      * @return jobId
      */
     public String getJobId() {

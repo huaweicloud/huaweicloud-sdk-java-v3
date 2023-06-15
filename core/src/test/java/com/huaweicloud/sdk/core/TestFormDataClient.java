@@ -84,7 +84,6 @@ public class TestFormDataClient {
 
     @Test
     public void testUploadDownloadRequest() {
-
         ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(new byte[FILE_SIZE]);
         TestHttpRequestDef.TestFormDataRequest request = new TestHttpRequestDef.TestFormDataRequest();
         request.withBody(body -> {

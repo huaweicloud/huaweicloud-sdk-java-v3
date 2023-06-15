@@ -515,7 +515,7 @@ public class IoTDAMeta {
         HttpRequestDef.Builder<RetryBatchTaskRequest, RetryBatchTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RetryBatchTaskRequest.class, RetryBatchTaskResponse.class)
                 .withName("RetryBatchTask")
-                .withUri("/{project_id}/batchtasks/{task_id}/retry")
+                .withUri("/v5/iot/{project_id}/batchtasks/{task_id}/retry")
                 .withContentType("application/json");
 
         // requests
@@ -621,7 +621,7 @@ public class IoTDAMeta {
         HttpRequestDef.Builder<StopBatchTaskRequest, StopBatchTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StopBatchTaskRequest.class, StopBatchTaskResponse.class)
                 .withName("StopBatchTask")
-                .withUri("/{project_id}/batchtasks/{task_id}/stop")
+                .withUri("/v5/iot/{project_id}/batchtasks/{task_id}/stop")
                 .withContentType("application/json");
 
         // requests

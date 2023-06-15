@@ -44,14 +44,18 @@ public class DefaultHttpResponse implements HttpResponse {
 
     private String strBody;
 
+    private byte[] byteBody;
+
     private DefaultHttpResponse(Response response) {
         this.response = response;
-        if (shouldReadBody()) {
-            try {
+        try {
+            if (shouldReadBody()) {
                 strBody = response.body().string();
-            } catch (IOException e) {
-                logger.error("Read http response body error!", e);
+            } else if (shouldReadBodyAsByte()) {
+                byteBody = response.body().bytes();
             }
+        } catch (IOException e) {
+            logger.error("Read http response body error!", e);
         }
     }
 
@@ -64,6 +68,18 @@ public class DefaultHttpResponse implements HttpResponse {
             return false;
         } else {
             return HttpUtils.isTextBasedContentType(response.body().contentType().toString());
+        }
+    }
+
+    private boolean shouldReadBodyAsByte() {
+        if (Objects.isNull(response.body())) {
+            return false;
+        }
+
+        if (Objects.isNull(response.body().contentType()) && response.body().contentLength() <= 0) {
+            return false;
+        } else {
+            return HttpUtils.isBsonContentType(response.body().contentType().toString());
         }
     }
 
@@ -98,6 +114,11 @@ public class DefaultHttpResponse implements HttpResponse {
     @Override
     public String getBodyAsString() {
         return strBody;
+    }
+
+    @Override
+    public byte[] getBodyAsBytes() {
+        return byteBody;
     }
 
     @Override

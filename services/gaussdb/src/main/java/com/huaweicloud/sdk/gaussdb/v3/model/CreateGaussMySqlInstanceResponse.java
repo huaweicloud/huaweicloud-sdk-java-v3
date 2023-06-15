@@ -77,7 +77,7 @@ public class CreateGaussMySqlInstanceResponse extends SdkResponse {
 
 
     /**
-     * 实例创建的任务id。  仅创建按需实例时会返回该参数。
+     * 实例创建的任务ID。  仅创建按需实例时会返回该参数。
      * @return jobId
      */
     public String getJobId() {

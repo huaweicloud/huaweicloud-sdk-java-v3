@@ -35,7 +35,7 @@ public class UpdateGaussMySqlDatabaseUserCommentResponse extends SdkResponse {
 
 
     /**
-     * 修改数据库用户备注的任务id。
+     * 修改数据库用户备注的任务ID。
      * @return jobId
      */
     public String getJobId() {

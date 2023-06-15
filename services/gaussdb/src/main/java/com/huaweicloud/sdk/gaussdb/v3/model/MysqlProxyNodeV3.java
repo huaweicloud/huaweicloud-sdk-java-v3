@@ -64,7 +64,7 @@ public class MysqlProxyNodeV3  {
 
 
     /**
-     * 节点id。
+     * 节点ID。
      * @return id
      */
     public String getId() {
@@ -86,7 +86,7 @@ public class MysqlProxyNodeV3  {
 
 
     /**
-     * 实例id。
+     * 实例ID。
      * @return instanceId
      */
     public String getInstanceId() {

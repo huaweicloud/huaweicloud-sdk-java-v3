@@ -63,7 +63,7 @@ public class ShowInstanceMonitorExtendResponse extends SdkResponse {
 
 
     /**
-     * 采集周期，仅在monitor_switch为true时返回。 - 1：采集周期为1s。 - 5：采集周期为5s。
+     * 采集周期，仅在monitor_switch为true时返回。  - 1：采集周期为1s。 - 5：采集周期为5s。
      * @return period
      */
     public Integer getPeriod() {

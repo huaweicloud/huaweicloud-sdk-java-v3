@@ -24,7 +24,7 @@ public class DeleteAlarmSubResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable")
 
-    private String enable;
+    private Integer enable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_level")
@@ -100,7 +100,7 @@ public class DeleteAlarmSubResponse extends SdkResponse {
         this.name = name;
     }
 
-    public DeleteAlarmSubResponse withEnable(String enable) {
+    public DeleteAlarmSubResponse withEnable(Integer enable) {
         this.enable = enable;
         return this;
     }
@@ -109,11 +109,11 @@ public class DeleteAlarmSubResponse extends SdkResponse {
      * 是否开启订阅
      * @return enable
      */
-    public String getEnable() {
+    public Integer getEnable() {
         return enable;
     }
 
-    public void setEnable(String enable) {
+    public void setEnable(Integer enable) {
         this.enable = enable;
     }
 

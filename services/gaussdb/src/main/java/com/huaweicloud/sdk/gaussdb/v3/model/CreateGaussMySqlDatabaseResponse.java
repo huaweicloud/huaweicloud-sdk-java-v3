@@ -35,7 +35,7 @@ public class CreateGaussMySqlDatabaseResponse extends SdkResponse {
 
 
     /**
-     * 创建数据库的任务id。
+     * 创建数据库的任务ID。
      * @return jobId
      */
     public String getJobId() {

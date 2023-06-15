@@ -80,7 +80,7 @@ public class ListPremiumHostRequest {
     }
 
     /**
-     * 分页查询时，每页包含多少条结果。范围1-100，默认值为10，表示每页包含10条结果。
+     * 分页查询时，每页包含多少条结果。范围1-100，默认值为10，表示每页包含10条结果。如果需要一次查全部域名，该参数值填-1。
      * @return pagesize
      */
     public String getPagesize() {

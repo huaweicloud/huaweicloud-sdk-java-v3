@@ -35,7 +35,7 @@ public class UpdateInstanceMonitorResponse extends SdkResponse {
 
 
     /**
-     * 修改秒级监控的任务流id
+     * 修改秒级监控的任务流ID
      * @return jobId
      */
     public String getJobId() {

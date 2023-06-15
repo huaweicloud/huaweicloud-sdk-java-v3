@@ -259,7 +259,6 @@ public class TestHttpRequestDef {
     }
 
     public static class TestFormDataRequest {
-
         @JsonIgnore
         private TestFormDataBodyBody body;
 

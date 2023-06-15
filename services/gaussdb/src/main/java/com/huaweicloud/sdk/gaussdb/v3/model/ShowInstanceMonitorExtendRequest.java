@@ -39,7 +39,7 @@ public class ShowInstanceMonitorExtendRequest  {
 
 
     /**
-     * 语言
+     * 语言。
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,7 +63,7 @@ public class ShowInstanceMonitorExtendRequest  {
 
 
     /**
-     * 实例ID
+     * 实例ID。
      * @return instanceId
      */
     public String getInstanceId() {

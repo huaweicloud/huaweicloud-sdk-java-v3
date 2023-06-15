@@ -40,7 +40,7 @@ public class NodeSqlFilterRuleInfo  {
 
 
     /**
-     * 节点id
+     * 节点ID
      * @return nodeId
      */
     public String getNodeId() {

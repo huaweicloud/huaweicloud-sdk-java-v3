@@ -258,7 +258,7 @@ public class LtsLogSlowDetail  {
 
 
     /**
-     * 账号。
+     * 帐号。
      * @return users
      */
     public String getUsers() {

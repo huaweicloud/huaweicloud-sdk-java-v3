@@ -1,0 +1,106 @@
+package com.huaweicloud.sdk.ccm.v1.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/**
+ * Request Object
+ */
+public class BatchDeleteCertTagsRequest {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "certificate_id")
+
+    private String certificateId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "body")
+
+    private BatchOperateTagRequestBody body;
+
+    public BatchDeleteCertTagsRequest withCertificateId(String certificateId) {
+        this.certificateId = certificateId;
+        return this;
+    }
+
+    /**
+     * 所需要批量删除标签的证书ID。
+     * @return certificateId
+     */
+    public String getCertificateId() {
+        return certificateId;
+    }
+
+    public void setCertificateId(String certificateId) {
+        this.certificateId = certificateId;
+    }
+
+    public BatchDeleteCertTagsRequest withBody(BatchOperateTagRequestBody body) {
+        this.body = body;
+        return this;
+    }
+
+    public BatchDeleteCertTagsRequest withBody(Consumer<BatchOperateTagRequestBody> bodySetter) {
+        if (this.body == null) {
+            this.body = new BatchOperateTagRequestBody();
+            bodySetter.accept(this.body);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get body
+     * @return body
+     */
+    public BatchOperateTagRequestBody getBody() {
+        return body;
+    }
+
+    public void setBody(BatchOperateTagRequestBody body) {
+        this.body = body;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        BatchDeleteCertTagsRequest batchDeleteCertTagsRequest = (BatchDeleteCertTagsRequest) o;
+        return Objects.equals(this.certificateId, batchDeleteCertTagsRequest.certificateId)
+            && Objects.equals(this.body, batchDeleteCertTagsRequest.body);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(certificateId, body);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class BatchDeleteCertTagsRequest {\n");
+        sb.append("    certificateId: ").append(toIndentedString(certificateId)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

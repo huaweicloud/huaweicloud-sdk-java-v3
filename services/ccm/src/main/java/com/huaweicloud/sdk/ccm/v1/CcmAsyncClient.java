@@ -20,6 +20,245 @@ public class CcmAsyncClient {
     }
 
     /**
+     * 批量创建CA标签
+     *
+     * 批量创建CA标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchCreateCaTagsRequest 请求对象
+     * @return CompletableFuture<BatchCreateCaTagsResponse>
+     */
+    public CompletableFuture<BatchCreateCaTagsResponse> batchCreateCaTagsAsync(BatchCreateCaTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcmMeta.batchCreateCaTags);
+    }
+
+    /**
+     * 批量创建CA标签
+     *
+     * 批量创建CA标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchCreateCaTagsRequest 请求对象
+     * @return AsyncInvoker<BatchCreateCaTagsRequest, BatchCreateCaTagsResponse>
+     */
+    public AsyncInvoker<BatchCreateCaTagsRequest, BatchCreateCaTagsResponse> batchCreateCaTagsAsyncInvoker(
+        BatchCreateCaTagsRequest request) {
+        return new AsyncInvoker<BatchCreateCaTagsRequest, BatchCreateCaTagsResponse>(request, CcmMeta.batchCreateCaTags,
+            hcClient);
+    }
+
+    /**
+     * 批量创建证书标签
+     *
+     * 批量创建证书标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchCreateCertTagsRequest 请求对象
+     * @return CompletableFuture<BatchCreateCertTagsResponse>
+     */
+    public CompletableFuture<BatchCreateCertTagsResponse> batchCreateCertTagsAsync(BatchCreateCertTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcmMeta.batchCreateCertTags);
+    }
+
+    /**
+     * 批量创建证书标签
+     *
+     * 批量创建证书标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchCreateCertTagsRequest 请求对象
+     * @return AsyncInvoker<BatchCreateCertTagsRequest, BatchCreateCertTagsResponse>
+     */
+    public AsyncInvoker<BatchCreateCertTagsRequest, BatchCreateCertTagsResponse> batchCreateCertTagsAsyncInvoker(
+        BatchCreateCertTagsRequest request) {
+        return new AsyncInvoker<BatchCreateCertTagsRequest, BatchCreateCertTagsResponse>(request,
+            CcmMeta.batchCreateCertTags, hcClient);
+    }
+
+    /**
+     * 批量删除CA标签
+     *
+     * 批量删除CA标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteCaTagsRequest 请求对象
+     * @return CompletableFuture<BatchDeleteCaTagsResponse>
+     */
+    public CompletableFuture<BatchDeleteCaTagsResponse> batchDeleteCaTagsAsync(BatchDeleteCaTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcmMeta.batchDeleteCaTags);
+    }
+
+    /**
+     * 批量删除CA标签
+     *
+     * 批量删除CA标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteCaTagsRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteCaTagsRequest, BatchDeleteCaTagsResponse>
+     */
+    public AsyncInvoker<BatchDeleteCaTagsRequest, BatchDeleteCaTagsResponse> batchDeleteCaTagsAsyncInvoker(
+        BatchDeleteCaTagsRequest request) {
+        return new AsyncInvoker<BatchDeleteCaTagsRequest, BatchDeleteCaTagsResponse>(request, CcmMeta.batchDeleteCaTags,
+            hcClient);
+    }
+
+    /**
+     * 批量删除证书标签
+     *
+     * 批量删除证书标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteCertTagsRequest 请求对象
+     * @return CompletableFuture<BatchDeleteCertTagsResponse>
+     */
+    public CompletableFuture<BatchDeleteCertTagsResponse> batchDeleteCertTagsAsync(BatchDeleteCertTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcmMeta.batchDeleteCertTags);
+    }
+
+    /**
+     * 批量删除证书标签
+     *
+     * 批量删除证书标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteCertTagsRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteCertTagsRequest, BatchDeleteCertTagsResponse>
+     */
+    public AsyncInvoker<BatchDeleteCertTagsRequest, BatchDeleteCertTagsResponse> batchDeleteCertTagsAsyncInvoker(
+        BatchDeleteCertTagsRequest request) {
+        return new AsyncInvoker<BatchDeleteCertTagsRequest, BatchDeleteCertTagsResponse>(request,
+            CcmMeta.batchDeleteCertTags, hcClient);
+    }
+
+    /**
+     * 根据标签查询CA数量
+     *
+     * 根据标签查询CA数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CountCaResourceInstancesRequest 请求对象
+     * @return CompletableFuture<CountCaResourceInstancesResponse>
+     */
+    public CompletableFuture<CountCaResourceInstancesResponse> countCaResourceInstancesAsync(
+        CountCaResourceInstancesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcmMeta.countCaResourceInstances);
+    }
+
+    /**
+     * 根据标签查询CA数量
+     *
+     * 根据标签查询CA数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CountCaResourceInstancesRequest 请求对象
+     * @return AsyncInvoker<CountCaResourceInstancesRequest, CountCaResourceInstancesResponse>
+     */
+    public AsyncInvoker<CountCaResourceInstancesRequest, CountCaResourceInstancesResponse> countCaResourceInstancesAsyncInvoker(
+        CountCaResourceInstancesRequest request) {
+        return new AsyncInvoker<CountCaResourceInstancesRequest, CountCaResourceInstancesResponse>(request,
+            CcmMeta.countCaResourceInstances, hcClient);
+    }
+
+    /**
+     * 根据标签查询证书数量
+     *
+     * 根据标签查询证书数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CountCertResourceInstancesRequest 请求对象
+     * @return CompletableFuture<CountCertResourceInstancesResponse>
+     */
+    public CompletableFuture<CountCertResourceInstancesResponse> countCertResourceInstancesAsync(
+        CountCertResourceInstancesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcmMeta.countCertResourceInstances);
+    }
+
+    /**
+     * 根据标签查询证书数量
+     *
+     * 根据标签查询证书数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CountCertResourceInstancesRequest 请求对象
+     * @return AsyncInvoker<CountCertResourceInstancesRequest, CountCertResourceInstancesResponse>
+     */
+    public AsyncInvoker<CountCertResourceInstancesRequest, CountCertResourceInstancesResponse> countCertResourceInstancesAsyncInvoker(
+        CountCertResourceInstancesRequest request) {
+        return new AsyncInvoker<CountCertResourceInstancesRequest, CountCertResourceInstancesResponse>(request,
+            CcmMeta.countCertResourceInstances, hcClient);
+    }
+
+    /**
+     * 创建CA标签
+     *
+     * 创建CA标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateCaTagRequest 请求对象
+     * @return CompletableFuture<CreateCaTagResponse>
+     */
+    public CompletableFuture<CreateCaTagResponse> createCaTagAsync(CreateCaTagRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcmMeta.createCaTag);
+    }
+
+    /**
+     * 创建CA标签
+     *
+     * 创建CA标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateCaTagRequest 请求对象
+     * @return AsyncInvoker<CreateCaTagRequest, CreateCaTagResponse>
+     */
+    public AsyncInvoker<CreateCaTagRequest, CreateCaTagResponse> createCaTagAsyncInvoker(CreateCaTagRequest request) {
+        return new AsyncInvoker<CreateCaTagRequest, CreateCaTagResponse>(request, CcmMeta.createCaTag, hcClient);
+    }
+
+    /**
+     * 创建证书标签
+     *
+     * 创建证书标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateCertTagRequest 请求对象
+     * @return CompletableFuture<CreateCertTagResponse>
+     */
+    public CompletableFuture<CreateCertTagResponse> createCertTagAsync(CreateCertTagRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcmMeta.createCertTag);
+    }
+
+    /**
+     * 创建证书标签
+     *
+     * 创建证书标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateCertTagRequest 请求对象
+     * @return AsyncInvoker<CreateCertTagRequest, CreateCertTagResponse>
+     */
+    public AsyncInvoker<CreateCertTagRequest, CreateCertTagResponse> createCertTagAsyncInvoker(
+        CreateCertTagRequest request) {
+        return new AsyncInvoker<CreateCertTagRequest, CreateCertTagResponse>(request, CcmMeta.createCertTag, hcClient);
+    }
+
+    /**
      * 申请证书
      *
      * 申请证书。
@@ -420,6 +659,125 @@ public class CcmAsyncClient {
     }
 
     /**
+     * 根据标签查询CA列表
+     *
+     * 根据标签查询CA列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCaResourceInstancesRequest 请求对象
+     * @return CompletableFuture<ListCaResourceInstancesResponse>
+     */
+    public CompletableFuture<ListCaResourceInstancesResponse> listCaResourceInstancesAsync(
+        ListCaResourceInstancesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcmMeta.listCaResourceInstances);
+    }
+
+    /**
+     * 根据标签查询CA列表
+     *
+     * 根据标签查询CA列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCaResourceInstancesRequest 请求对象
+     * @return AsyncInvoker<ListCaResourceInstancesRequest, ListCaResourceInstancesResponse>
+     */
+    public AsyncInvoker<ListCaResourceInstancesRequest, ListCaResourceInstancesResponse> listCaResourceInstancesAsyncInvoker(
+        ListCaResourceInstancesRequest request) {
+        return new AsyncInvoker<ListCaResourceInstancesRequest, ListCaResourceInstancesResponse>(request,
+            CcmMeta.listCaResourceInstances, hcClient);
+    }
+
+    /**
+     * 根据CA查询标签列表
+     *
+     * 根据CA证书ID查询此CA的标签列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCaTagsRequest 请求对象
+     * @return CompletableFuture<ListCaTagsResponse>
+     */
+    public CompletableFuture<ListCaTagsResponse> listCaTagsAsync(ListCaTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcmMeta.listCaTags);
+    }
+
+    /**
+     * 根据CA查询标签列表
+     *
+     * 根据CA证书ID查询此CA的标签列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCaTagsRequest 请求对象
+     * @return AsyncInvoker<ListCaTagsRequest, ListCaTagsResponse>
+     */
+    public AsyncInvoker<ListCaTagsRequest, ListCaTagsResponse> listCaTagsAsyncInvoker(ListCaTagsRequest request) {
+        return new AsyncInvoker<ListCaTagsRequest, ListCaTagsResponse>(request, CcmMeta.listCaTags, hcClient);
+    }
+
+    /**
+     * 根据标签查询证书列表
+     *
+     * 根据标签查询证书列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCertResourceInstancesRequest 请求对象
+     * @return CompletableFuture<ListCertResourceInstancesResponse>
+     */
+    public CompletableFuture<ListCertResourceInstancesResponse> listCertResourceInstancesAsync(
+        ListCertResourceInstancesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcmMeta.listCertResourceInstances);
+    }
+
+    /**
+     * 根据标签查询证书列表
+     *
+     * 根据标签查询证书列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCertResourceInstancesRequest 请求对象
+     * @return AsyncInvoker<ListCertResourceInstancesRequest, ListCertResourceInstancesResponse>
+     */
+    public AsyncInvoker<ListCertResourceInstancesRequest, ListCertResourceInstancesResponse> listCertResourceInstancesAsyncInvoker(
+        ListCertResourceInstancesRequest request) {
+        return new AsyncInvoker<ListCertResourceInstancesRequest, ListCertResourceInstancesResponse>(request,
+            CcmMeta.listCertResourceInstances, hcClient);
+    }
+
+    /**
+     * 根据证书查询标签列表
+     *
+     * 根据证书ID查询此证书的标签列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCertTagsRequest 请求对象
+     * @return CompletableFuture<ListCertTagsResponse>
+     */
+    public CompletableFuture<ListCertTagsResponse> listCertTagsAsync(ListCertTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcmMeta.listCertTags);
+    }
+
+    /**
+     * 根据证书查询标签列表
+     *
+     * 根据证书ID查询此证书的标签列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCertTagsRequest 请求对象
+     * @return AsyncInvoker<ListCertTagsRequest, ListCertTagsResponse>
+     */
+    public AsyncInvoker<ListCertTagsRequest, ListCertTagsResponse> listCertTagsAsyncInvoker(
+        ListCertTagsRequest request) {
+        return new AsyncInvoker<ListCertTagsRequest, ListCertTagsResponse>(request, CcmMeta.listCertTags, hcClient);
+    }
+
+    /**
      * 查询私有证书列表
      *
      * 查询私有证书列表。
@@ -480,6 +838,66 @@ public class CcmAsyncClient {
         ListCertificateAuthorityObsBucketRequest request) {
         return new AsyncInvoker<ListCertificateAuthorityObsBucketRequest, ListCertificateAuthorityObsBucketResponse>(
             request, CcmMeta.listCertificateAuthorityObsBucket, hcClient);
+    }
+
+    /**
+     * 查询所有CA标签列表
+     *
+     * 查询所有CA标签列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDomainCaTagsRequest 请求对象
+     * @return CompletableFuture<ListDomainCaTagsResponse>
+     */
+    public CompletableFuture<ListDomainCaTagsResponse> listDomainCaTagsAsync(ListDomainCaTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcmMeta.listDomainCaTags);
+    }
+
+    /**
+     * 查询所有CA标签列表
+     *
+     * 查询所有CA标签列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDomainCaTagsRequest 请求对象
+     * @return AsyncInvoker<ListDomainCaTagsRequest, ListDomainCaTagsResponse>
+     */
+    public AsyncInvoker<ListDomainCaTagsRequest, ListDomainCaTagsResponse> listDomainCaTagsAsyncInvoker(
+        ListDomainCaTagsRequest request) {
+        return new AsyncInvoker<ListDomainCaTagsRequest, ListDomainCaTagsResponse>(request, CcmMeta.listDomainCaTags,
+            hcClient);
+    }
+
+    /**
+     * 查询所有证书标签列表
+     *
+     * 查询所有证书标签列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDomainCertTagsRequest 请求对象
+     * @return CompletableFuture<ListDomainCertTagsResponse>
+     */
+    public CompletableFuture<ListDomainCertTagsResponse> listDomainCertTagsAsync(ListDomainCertTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcmMeta.listDomainCertTags);
+    }
+
+    /**
+     * 查询所有证书标签列表
+     *
+     * 查询所有证书标签列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDomainCertTagsRequest 请求对象
+     * @return AsyncInvoker<ListDomainCertTagsRequest, ListDomainCertTagsResponse>
+     */
+    public AsyncInvoker<ListDomainCertTagsRequest, ListDomainCertTagsResponse> listDomainCertTagsAsyncInvoker(
+        ListDomainCertTagsRequest request) {
+        return new AsyncInvoker<ListDomainCertTagsRequest, ListDomainCertTagsResponse>(request,
+            CcmMeta.listDomainCertTags, hcClient);
     }
 
     /**

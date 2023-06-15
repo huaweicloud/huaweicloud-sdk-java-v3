@@ -430,6 +430,11 @@ public class UpdateHostResponse extends SdkResponse {
 
     private List<AccessProgress> accessProgress = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "forward_header_map")
+
+    private Map<String, String> forwardHeaderMap = null;
+
     public UpdateHostResponse withId(String id) {
         this.id = id;
         return this;
@@ -1033,6 +1038,39 @@ public class UpdateHostResponse extends SdkResponse {
         this.accessProgress = accessProgress;
     }
 
+    public UpdateHostResponse withForwardHeaderMap(Map<String, String> forwardHeaderMap) {
+        this.forwardHeaderMap = forwardHeaderMap;
+        return this;
+    }
+
+    public UpdateHostResponse putForwardHeaderMapItem(String key, String forwardHeaderMapItem) {
+        if (this.forwardHeaderMap == null) {
+            this.forwardHeaderMap = new HashMap<>();
+        }
+        this.forwardHeaderMap.put(key, forwardHeaderMapItem);
+        return this;
+    }
+
+    public UpdateHostResponse withForwardHeaderMap(Consumer<Map<String, String>> forwardHeaderMapSetter) {
+        if (this.forwardHeaderMap == null) {
+            this.forwardHeaderMap = new HashMap<>();
+        }
+        forwardHeaderMapSetter.accept(this.forwardHeaderMap);
+        return this;
+    }
+
+    /**
+     * 字段转发配置，WAF会将添加的字段插到header中，转给源站；Key不能跟nginx原生字段重复。Value支持的值包括:   - $time_local   - $request_id   - $connection_requests   - $tenant_id   - $project_id   - $remote_addr   - $remote_port   - $scheme   - $request_method   - $http_host   -$origin_uri   - $request_length   - $ssl_server_name   - $ssl_protocol   - $ssl_curves   - $ssl_session_reused
+     * @return forwardHeaderMap
+     */
+    public Map<String, String> getForwardHeaderMap() {
+        return forwardHeaderMap;
+    }
+
+    public void setForwardHeaderMap(Map<String, String> forwardHeaderMap) {
+        this.forwardHeaderMap = forwardHeaderMap;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1071,7 +1109,8 @@ public class UpdateHostResponse extends SdkResponse {
             && Objects.equals(this.description, updateHostResponse.description)
             && Objects.equals(this.http2Enable, updateHostResponse.http2Enable)
             && Objects.equals(this.exclusiveIp, updateHostResponse.exclusiveIp)
-            && Objects.equals(this.accessProgress, updateHostResponse.accessProgress);
+            && Objects.equals(this.accessProgress, updateHostResponse.accessProgress)
+            && Objects.equals(this.forwardHeaderMap, updateHostResponse.forwardHeaderMap);
     }
 
     @Override
@@ -1105,7 +1144,8 @@ public class UpdateHostResponse extends SdkResponse {
             description,
             http2Enable,
             exclusiveIp,
-            accessProgress);
+            accessProgress,
+            forwardHeaderMap);
     }
 
     @Override
@@ -1142,6 +1182,7 @@ public class UpdateHostResponse extends SdkResponse {
         sb.append("    http2Enable: ").append(toIndentedString(http2Enable)).append("\n");
         sb.append("    exclusiveIp: ").append(toIndentedString(exclusiveIp)).append("\n");
         sb.append("    accessProgress: ").append(toIndentedString(accessProgress)).append("\n");
+        sb.append("    forwardHeaderMap: ").append(toIndentedString(forwardHeaderMap)).append("\n");
         sb.append("}");
         return sb.toString();
     }

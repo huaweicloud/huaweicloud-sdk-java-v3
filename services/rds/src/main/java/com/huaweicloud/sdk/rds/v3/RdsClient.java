@@ -4563,6 +4563,36 @@ public class RdsClient {
     }
 
     /**
+     * 修改实例字符集
+     *
+     * 修改实例字符集。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ModifyCollationRequest 请求对象
+     * @return ModifyCollationResponse
+     */
+    public ModifyCollationResponse modifyCollation(ModifyCollationRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.modifyCollation);
+    }
+
+    /**
+     * 修改实例字符集
+     *
+     * 修改实例字符集。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ModifyCollationRequest 请求对象
+     * @return SyncInvoker<ModifyCollationRequest, ModifyCollationResponse>
+     */
+    public SyncInvoker<ModifyCollationRequest, ModifyCollationResponse> modifyCollationInvoker(
+        ModifyCollationRequest request) {
+        return new SyncInvoker<ModifyCollationRequest, ModifyCollationResponse>(request, RdsMeta.modifyCollation,
+            hcClient);
+    }
+
+    /**
      * 解除数据库帐号权限
      *
      * 解除数据库帐号权限。

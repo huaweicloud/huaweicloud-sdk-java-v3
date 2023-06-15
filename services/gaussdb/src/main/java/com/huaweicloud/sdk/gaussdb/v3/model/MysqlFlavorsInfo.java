@@ -120,7 +120,7 @@ public class MysqlFlavorsInfo  {
 
 
     /**
-     * 规格类型，取值为arm和x86。
+     * 规格类型，取值为arm、x86和generalX86。  - arm：独享型arm规格。 - x86：独享型x86规格。 - generalX86：通用型X86规格。
      * @return type
      */
     public String getType() {

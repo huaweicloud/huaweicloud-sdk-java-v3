@@ -509,7 +509,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 虚拟私有云ID。  获取方法如下： - 登录虚拟私有云服务的控制台界面，在虚拟私有云的详情页面查找VPC ID。
+     * 虚拟私有云ID。  获取方法如下：登录虚拟私有云服务的控制台界面，在虚拟私有云的详情页面查找VPC ID。
      * @return vpcId
      */
     public String getVpcId() {
@@ -526,7 +526,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 子网信息。  获取方法如下： - 登录虚拟私有云服务的控制台界面，单击VPC下的子网，进入子网详情页面，查找网络ID。
+     * 子网信息。  获取方法如下：登录虚拟私有云服务的控制台界面，单击VPC下的子网，进入子网详情页面，查找网络ID。
      * @return subnetId
      */
     public String getSubnetId() {
@@ -543,7 +543,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 指定实例所属的安全组。  获取方法如下： - 登录虚拟私有云服务的控制台界面，在安全组的详情页面查找安全组ID。
+     * 指定实例所属的安全组。  获取方法如下：登录虚拟私有云服务的控制台界面，在安全组的详情页面查找安全组ID。
      * @return securityGroupId
      */
     public String getSecurityGroupId() {
@@ -576,7 +576,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 创建节点到指定且有资源的可用区ID。该参数不能为空数组或者数组的值为空， 请注意查看该可用区是否有资源。  创建RocketMQ实例，支持节点部署在1个或3个及3个以上的可用区。在为节点指定可用区时，用逗号分隔开。
+     * 创建节点到指定且有资源的可用区ID。请参考[查询可用区信息](ListAvailableZones.xml)获取可用区ID。 该参数不能为空数组或者数组的值为空， 请注意查看该可用区是否有资源。  创建RocketMQ实例，支持节点部署在1个或3个及3个以上的可用区。在为节点指定可用区时，用逗号分隔开。
      * @return availableZones
      */
     public List<String> getAvailableZones() {

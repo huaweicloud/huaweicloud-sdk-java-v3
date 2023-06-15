@@ -44,4 +44,8 @@ public final class HttpUtils {
         return false;
     }
 
+    public static boolean isBsonContentType(String contentType) {
+        return Constants.MEDIATYPE.APPLICATION_BSON.equals(contentType);
+    }
+
 }

@@ -136,7 +136,7 @@ public class MysqlProxyV3  {
 
 
     /**
-     * Proxy实例id。
+     * Proxy实例ID。
      * @return poolId
      */
     public String getPoolId() {
@@ -502,7 +502,7 @@ public class MysqlProxyV3  {
 
 
     /**
-     * 连接池类型。  取值范围: - CLOSED 不使用连接池; - SESSION 使用会话级连接池。
+     * 连接池类型。  取值范围: - CLOSED: 关闭连接池。 - SESSION: 开启会话级连接池。
      * @return connectionPoolType
      */
     public String getConnectionPoolType() {
@@ -524,7 +524,7 @@ public class MysqlProxyV3  {
 
 
     /**
-     * 数据库代理版本是否支持会话级连接池。  取值范围: - true 支持; - false 不支持。
+     * 数据库代理版本是否支持会话级连接池。  取值范围: - true: 支持。 - false: 不支持。
      * @return switchConnectionPoolTypeEnabled
      */
     public Boolean getSwitchConnectionPoolTypeEnabled() {

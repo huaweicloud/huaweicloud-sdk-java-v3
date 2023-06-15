@@ -70,7 +70,7 @@ public class UpgradeGaussMySqlInstanceDatabaseRequest  {
 
 
     /**
-     * 租户在某一project下的实例ID
+     * 租户在某一project下的实例ID。
      * @return instanceId
      */
     public String getInstanceId() {

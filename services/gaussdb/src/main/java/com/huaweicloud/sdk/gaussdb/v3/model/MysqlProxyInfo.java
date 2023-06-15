@@ -44,7 +44,7 @@ public class MysqlProxyInfo  {
 
 
     /**
-     * Proxy实例id。
+     * Proxy实例ID。
      * @return poolId
      */
     public String getPoolId() {

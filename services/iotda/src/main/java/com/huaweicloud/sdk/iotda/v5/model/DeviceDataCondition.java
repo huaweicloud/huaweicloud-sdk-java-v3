@@ -84,7 +84,7 @@ public class DeviceDataCondition {
     }
 
     /**
-     * 数据过滤条件
+     * 数据过滤条件。
      * @return filters
      */
     public List<PropertyFilter> getFilters() {

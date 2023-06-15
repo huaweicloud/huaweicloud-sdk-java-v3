@@ -18,7 +18,7 @@ public class AlarmSubUpdateRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable")
 
-    private String enable;
+    private Integer enable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_level")
@@ -57,7 +57,7 @@ public class AlarmSubUpdateRequest {
         this.name = name;
     }
 
-    public AlarmSubUpdateRequest withEnable(String enable) {
+    public AlarmSubUpdateRequest withEnable(Integer enable) {
         this.enable = enable;
         return this;
     }
@@ -66,11 +66,11 @@ public class AlarmSubUpdateRequest {
      * 是否开启订阅
      * @return enable
      */
-    public String getEnable() {
+    public Integer getEnable() {
         return enable;
     }
 
-    public void setEnable(String enable) {
+    public void setEnable(Integer enable) {
         this.enable = enable;
     }
 

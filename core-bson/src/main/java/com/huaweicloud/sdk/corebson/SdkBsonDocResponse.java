@@ -14,6 +14,7 @@ import org.bson.codecs.pojo.PojoCodecProvider;
 
 import java.io.BufferedInputStream;
 import java.io.InputStream;
+import java.nio.ByteBuffer;
 
 import static com.mongodb.MongoClientSettings.getDefaultCodecRegistry;
 
@@ -28,6 +29,11 @@ public abstract class SdkBsonDocResponse extends SdkStreamResponse {
         return getBodyFromInputStream(input);
     }
 
+    @Override
+    public Object parseBody(byte[] buf) {
+        return getBodyFromBytes(buf);
+    }
+
     /**
      * getBodyFromInputStream
      *
@@ -35,8 +41,17 @@ public abstract class SdkBsonDocResponse extends SdkStreamResponse {
      * @return Object
      */
     public Object getBodyFromInputStream(InputStream input) {
-        InputStreamBsonInput bsonInput = new InputStreamBsonInput(new BufferedInputStream(input));
-        BsonReader reader = new BsonBinaryReader(bsonInput);
+        BsonReader reader = new BsonBinaryReader(new InputStreamBsonInput(new BufferedInputStream(input)));
+        CodecProvider pojoCodecProvider = PojoCodecProvider.builder().automatic(true).build();
+        CodecRegistry codecRegistry = CodecRegistries.fromRegistries(
+                getDefaultCodecRegistry(),
+                CodecRegistries.fromProviders(pojoCodecProvider)
+        );
+        return decodeBody(codecRegistry, reader);
+    }
+
+    public Object getBodyFromBytes(byte[] buf) {
+        BsonReader reader = new BsonBinaryReader(ByteBuffer.wrap(buf, 0, buf.length));
         CodecProvider pojoCodecProvider = PojoCodecProvider.builder().automatic(true).build();
         CodecRegistry codecRegistry = CodecRegistries.fromRegistries(
                 getDefaultCodecRegistry(),

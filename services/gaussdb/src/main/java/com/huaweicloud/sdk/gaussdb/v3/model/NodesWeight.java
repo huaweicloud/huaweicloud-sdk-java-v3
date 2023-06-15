@@ -38,7 +38,7 @@ public class NodesWeight  {
 
 
     /**
-     * 数据库节点id。
+     * 数据库节点ID。
      * @return id
      */
     public String getId() {

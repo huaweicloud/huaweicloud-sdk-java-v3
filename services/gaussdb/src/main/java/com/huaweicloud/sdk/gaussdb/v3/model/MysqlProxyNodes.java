@@ -62,7 +62,7 @@ public class MysqlProxyNodes  {
 
 
     /**
-     * Proxy节点id。
+     * Proxy节点ID。
      * @return id
      */
     public String getId() {

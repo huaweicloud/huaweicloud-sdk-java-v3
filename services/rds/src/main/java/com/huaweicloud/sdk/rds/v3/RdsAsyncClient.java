@@ -4632,6 +4632,36 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 修改实例字符集
+     *
+     * 修改实例字符集。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ModifyCollationRequest 请求对象
+     * @return CompletableFuture<ModifyCollationResponse>
+     */
+    public CompletableFuture<ModifyCollationResponse> modifyCollationAsync(ModifyCollationRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.modifyCollation);
+    }
+
+    /**
+     * 修改实例字符集
+     *
+     * 修改实例字符集。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ModifyCollationRequest 请求对象
+     * @return AsyncInvoker<ModifyCollationRequest, ModifyCollationResponse>
+     */
+    public AsyncInvoker<ModifyCollationRequest, ModifyCollationResponse> modifyCollationAsyncInvoker(
+        ModifyCollationRequest request) {
+        return new AsyncInvoker<ModifyCollationRequest, ModifyCollationResponse>(request, RdsMeta.modifyCollation,
+            hcClient);
+    }
+
+    /**
      * 解除数据库帐号权限
      *
      * 解除数据库帐号权限。

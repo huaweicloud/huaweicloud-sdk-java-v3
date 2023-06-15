@@ -98,7 +98,7 @@ public class UpdateProxySessionConsistenceRequest  {
 
 
     /**
-     * 租户在某一instance下的数据库代理id。
+     * 租户在某一instance下的数据库代理ID。
      * @return proxyId
      */
     public String getProxyId() {

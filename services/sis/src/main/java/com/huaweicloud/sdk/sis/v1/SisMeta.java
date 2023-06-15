@@ -302,6 +302,20 @@ public class SisMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowVocabulariesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowVocabulariesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
         builder.<ShowVocabulariesParams>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,

@@ -32,7 +32,7 @@ public class MysqlVolume  {
 
 
     /**
-     * 磁盘大小。默认值为40，单位GB。 取值范围：40~128000，必须为10的整数倍。
+     * 磁盘大小。默认值为10，单位GB。 取值范围：10~128000，必须为10的整数倍。
      * @return size
      */
     public String getSize() {

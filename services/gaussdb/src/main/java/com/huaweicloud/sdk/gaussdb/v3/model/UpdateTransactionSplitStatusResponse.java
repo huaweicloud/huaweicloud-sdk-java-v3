@@ -35,7 +35,7 @@ public class UpdateTransactionSplitStatusResponse extends SdkResponse {
 
 
     /**
-     * 工作流id
+     * 工作流ID
      * @return jobId
      */
     public String getJobId() {

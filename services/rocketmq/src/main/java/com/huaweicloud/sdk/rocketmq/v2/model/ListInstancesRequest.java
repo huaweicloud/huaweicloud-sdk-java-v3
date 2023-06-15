@@ -31,7 +31,7 @@ public class ListInstancesRequest {
     private String instanceId;
 
     /**
-     * 实例状态。
+     * 实例状态，详细状态说明请参考[实例状态说明](hrm-api-0010.xml)。
      */
     public static final class StatusEnum {
 
@@ -378,7 +378,7 @@ public class ListInstancesRequest {
     }
 
     /**
-     * 实例状态。
+     * 实例状态，详细状态说明请参考[实例状态说明](hrm-api-0010.xml)。
      * @return status
      */
     public StatusEnum getStatus() {

@@ -80,7 +80,7 @@ public class UpdateInstanceReq {
     }
 
     /**
-     * 安全组ID。
+     * 安全组ID。  获取方法如下：登录虚拟私有云服务的控制台界面，在安全组的详情页面查找安全组ID。
      * @return securityGroupId
      */
     public String getSecurityGroupId() {
@@ -131,7 +131,7 @@ public class UpdateInstanceReq {
     }
 
     /**
-     * 实例绑定的弹性IP地址的ID。 以英文逗号隔开多个弹性IP地址的ID。 如果开启了公网访问功能（即enable_publicip为true），该字段为必选。
+     * 实例绑定的弹性IP地址的ID。  以英文逗号隔开多个弹性IP地址的ID。  如果开启了公网访问功能（即enable_publicip为true），该字段为必选。
      * @return publicipId
      */
     public String getPublicipId() {

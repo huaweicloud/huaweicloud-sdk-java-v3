@@ -41,7 +41,7 @@ public class ChangeGaussMySqlInstanceSpecificationResponse extends SdkResponse {
 
 
     /**
-     * 规格变更的任务id，仅变更按需实例时会返回该参数
+     * 规格变更的任务ID，仅变更按需实例时会返回该参数
      * @return jobId
      */
     public String getJobId() {
@@ -63,7 +63,7 @@ public class ChangeGaussMySqlInstanceSpecificationResponse extends SdkResponse {
 
 
     /**
-     * 订单id，仅变更包周期实例时会返回该参数
+     * 订单ID，仅变更包周期实例时会返回该参数
      * @return orderId
      */
     public String getOrderId() {

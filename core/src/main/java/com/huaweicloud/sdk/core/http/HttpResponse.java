@@ -40,6 +40,8 @@ public interface HttpResponse {
 
     String getBodyAsString();
 
+    byte[] getBodyAsBytes();
+
     InputStream getBody();
 
     String getHeader(String name);

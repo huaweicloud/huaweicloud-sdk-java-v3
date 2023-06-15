@@ -35,7 +35,7 @@ public class ResetGaussMySqlDatabasePasswordResponse extends SdkResponse {
 
 
     /**
-     * 修改数据库用户密码的任务id。
+     * 修改数据库用户密码的任务ID。
      * @return jobId
      */
     public String getJobId() {

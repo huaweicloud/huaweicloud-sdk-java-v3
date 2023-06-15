@@ -128,7 +128,7 @@ public class MysqlProxyComputeFlavor  {
 
 
     /**
-     * Proxy规格id。
+     * Proxy规格ID。
      * @return id
      */
     public String getId() {

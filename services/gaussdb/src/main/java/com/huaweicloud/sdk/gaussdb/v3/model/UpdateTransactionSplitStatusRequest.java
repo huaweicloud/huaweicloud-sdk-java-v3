@@ -46,7 +46,7 @@ public class UpdateTransactionSplitStatusRequest  {
 
 
     /**
-     * 实例id
+     * 实例ID。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -68,7 +68,7 @@ public class UpdateTransactionSplitStatusRequest  {
 
 
     /**
-     * 语言
+     * 语言。
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

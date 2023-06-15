@@ -35,7 +35,7 @@ public class UpdateGaussMySqlInstanceNameResponse extends SdkResponse {
 
 
     /**
-     * 修改实例名称的任务id
+     * 修改实例名称的任务ID
      * @return jobId
      */
     public String getJobId() {

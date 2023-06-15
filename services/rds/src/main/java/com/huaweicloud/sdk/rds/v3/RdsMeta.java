@@ -6172,6 +6172,45 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ModifyCollationRequest, ModifyCollationResponse> modifyCollation =
+        genFormodifyCollation();
+
+    private static HttpRequestDef<ModifyCollationRequest, ModifyCollationResponse> genFormodifyCollation() {
+        // basic
+        HttpRequestDef.Builder<ModifyCollationRequest, ModifyCollationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ModifyCollationRequest.class, ModifyCollationResponse.class)
+                .withName("ModifyCollation")
+                .withUri("/v3/{project_id}/instances/{instance_id}/collations")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyCollationRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyCollationRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<ModifyCollationRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyCollationRequestBody.class),
+            f -> f.withMarshaller(ModifyCollationRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RevokeSqlserverDbUserPrivilegeRequest, RevokeSqlserverDbUserPrivilegeResponse> revokeSqlserverDbUserPrivilege =
         genForrevokeSqlserverDbUserPrivilege();
 

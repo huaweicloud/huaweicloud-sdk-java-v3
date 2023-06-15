@@ -108,7 +108,7 @@ public class CreateRocketMqMigrationTaskRequest {
     private String name;
 
     /**
-     * 迁移任务类型，分为自建RocketMQ上云(rocketmq)、自建RabbitMQ上云(rabbitToRocket)、自建Kafka上云(kafka)
+     * 迁移任务类型，分为自建RocketMQ上云(rocketmq)、自建RabbitMQ上云(rabbitToRocket)
      */
     public static final class TypeEnum {
 
@@ -122,18 +122,12 @@ public class CreateRocketMqMigrationTaskRequest {
          */
         public static final TypeEnum RABBITTOROCKET = new TypeEnum("rabbitToRocket");
 
-        /**
-         * Enum KAFKA for value: "kafka"
-         */
-        public static final TypeEnum KAFKA = new TypeEnum("kafka");
-
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
             Map<String, TypeEnum> map = new HashMap<>();
             map.put("rocketmq", ROCKETMQ);
             map.put("rabbitToRocket", RABBITTOROCKET);
-            map.put("kafka", KAFKA);
             return Collections.unmodifiableMap(map);
         }
 
@@ -257,7 +251,7 @@ public class CreateRocketMqMigrationTaskRequest {
     }
 
     /**
-     * 迁移任务类型，分为自建RocketMQ上云(rocketmq)、自建RabbitMQ上云(rabbitToRocket)、自建Kafka上云(kafka)
+     * 迁移任务类型，分为自建RocketMQ上云(rocketmq)、自建RabbitMQ上云(rabbitToRocket)
      * @return type
      */
     public TypeEnum getType() {

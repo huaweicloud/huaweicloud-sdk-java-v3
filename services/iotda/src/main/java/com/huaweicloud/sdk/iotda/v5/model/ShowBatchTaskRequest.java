@@ -16,6 +16,11 @@ public class ShowBatchTaskRequest {
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "task_id")
+
+    private String taskId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_detail_status")
 
     private String taskDetailStatus;
@@ -24,11 +29,6 @@ public class ShowBatchTaskRequest {
     @JsonProperty(value = "target")
 
     private String target;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "task_id")
-
-    private String taskId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
@@ -62,13 +62,30 @@ public class ShowBatchTaskRequest {
         this.instanceId = instanceId;
     }
 
+    public ShowBatchTaskRequest withTaskId(String taskId) {
+        this.taskId = taskId;
+        return this;
+    }
+
+    /**
+     * **参数说明**：批量任务ID，创建批量任务时由物联网平台分配获得。 **取值范围**：长度不超过24，只允许小写字母a到f、数字的组合。
+     * @return taskId
+     */
+    public String getTaskId() {
+        return taskId;
+    }
+
+    public void setTaskId(String taskId) {
+        this.taskId = taskId;
+    }
+
     public ShowBatchTaskRequest withTaskDetailStatus(String taskDetailStatus) {
         this.taskDetailStatus = taskDetailStatus;
         return this;
     }
 
     /**
-     * **参数说明**：子任务的执行状态，可选参数。 **取值范围**： - Success: 成功。 - Fail: 失败。 - Processing: 执行中。 - FailWaitRetry: 失败重试。 - Stopped: 已停止。 - Waitting: 等待执行。 - Removed: 已移除
+     * **参数说明**：子任务的执行状态，可选参数。 **取值范围**： - Success: 成功。 - Fail: 失败。 - Processing: 执行中。 - FailWaitRetry: 失败重试。 - Stopped: 已停止。 - Waitting: 等待执行。 - Removed: 已移除。
      * @return taskDetailStatus
      */
     public String getTaskDetailStatus() {
@@ -94,23 +111,6 @@ public class ShowBatchTaskRequest {
 
     public void setTarget(String target) {
         this.target = target;
-    }
-
-    public ShowBatchTaskRequest withTaskId(String taskId) {
-        this.taskId = taskId;
-        return this;
-    }
-
-    /**
-     * **参数说明**：批量任务ID，创建批量任务时由物联网平台分配获得。 **取值范围**：长度不超过24，只允许小写字母a到f、数字的组合。
-     * @return taskId
-     */
-    public String getTaskId() {
-        return taskId;
-    }
-
-    public void setTaskId(String taskId) {
-        this.taskId = taskId;
     }
 
     public ShowBatchTaskRequest withLimit(Integer limit) {
@@ -178,9 +178,9 @@ public class ShowBatchTaskRequest {
         }
         ShowBatchTaskRequest showBatchTaskRequest = (ShowBatchTaskRequest) o;
         return Objects.equals(this.instanceId, showBatchTaskRequest.instanceId)
+            && Objects.equals(this.taskId, showBatchTaskRequest.taskId)
             && Objects.equals(this.taskDetailStatus, showBatchTaskRequest.taskDetailStatus)
             && Objects.equals(this.target, showBatchTaskRequest.target)
-            && Objects.equals(this.taskId, showBatchTaskRequest.taskId)
             && Objects.equals(this.limit, showBatchTaskRequest.limit)
             && Objects.equals(this.marker, showBatchTaskRequest.marker)
             && Objects.equals(this.offset, showBatchTaskRequest.offset);
@@ -188,7 +188,7 @@ public class ShowBatchTaskRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, taskDetailStatus, target, taskId, limit, marker, offset);
+        return Objects.hash(instanceId, taskId, taskDetailStatus, target, limit, marker, offset);
     }
 
     @Override
@@ -196,9 +196,9 @@ public class ShowBatchTaskRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowBatchTaskRequest {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
         sb.append("    taskDetailStatus: ").append(toIndentedString(taskDetailStatus)).append("\n");
         sb.append("    target: ").append(toIndentedString(target)).append("\n");
-        sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");

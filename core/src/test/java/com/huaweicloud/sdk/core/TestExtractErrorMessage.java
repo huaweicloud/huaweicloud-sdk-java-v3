@@ -146,6 +146,11 @@ public class TestExtractErrorMessage {
         }
 
         @Override
+        public byte[] getBodyAsBytes() {
+            return new byte[0];
+        }
+
+        @Override
         public InputStream getBody() {
             return null;
         }

@@ -18,6 +18,242 @@ public class CcmClient {
     }
 
     /**
+     * 批量创建CA标签
+     *
+     * 批量创建CA标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchCreateCaTagsRequest 请求对象
+     * @return BatchCreateCaTagsResponse
+     */
+    public BatchCreateCaTagsResponse batchCreateCaTags(BatchCreateCaTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, CcmMeta.batchCreateCaTags);
+    }
+
+    /**
+     * 批量创建CA标签
+     *
+     * 批量创建CA标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchCreateCaTagsRequest 请求对象
+     * @return SyncInvoker<BatchCreateCaTagsRequest, BatchCreateCaTagsResponse>
+     */
+    public SyncInvoker<BatchCreateCaTagsRequest, BatchCreateCaTagsResponse> batchCreateCaTagsInvoker(
+        BatchCreateCaTagsRequest request) {
+        return new SyncInvoker<BatchCreateCaTagsRequest, BatchCreateCaTagsResponse>(request, CcmMeta.batchCreateCaTags,
+            hcClient);
+    }
+
+    /**
+     * 批量创建证书标签
+     *
+     * 批量创建证书标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchCreateCertTagsRequest 请求对象
+     * @return BatchCreateCertTagsResponse
+     */
+    public BatchCreateCertTagsResponse batchCreateCertTags(BatchCreateCertTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, CcmMeta.batchCreateCertTags);
+    }
+
+    /**
+     * 批量创建证书标签
+     *
+     * 批量创建证书标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchCreateCertTagsRequest 请求对象
+     * @return SyncInvoker<BatchCreateCertTagsRequest, BatchCreateCertTagsResponse>
+     */
+    public SyncInvoker<BatchCreateCertTagsRequest, BatchCreateCertTagsResponse> batchCreateCertTagsInvoker(
+        BatchCreateCertTagsRequest request) {
+        return new SyncInvoker<BatchCreateCertTagsRequest, BatchCreateCertTagsResponse>(request,
+            CcmMeta.batchCreateCertTags, hcClient);
+    }
+
+    /**
+     * 批量删除CA标签
+     *
+     * 批量删除CA标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteCaTagsRequest 请求对象
+     * @return BatchDeleteCaTagsResponse
+     */
+    public BatchDeleteCaTagsResponse batchDeleteCaTags(BatchDeleteCaTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, CcmMeta.batchDeleteCaTags);
+    }
+
+    /**
+     * 批量删除CA标签
+     *
+     * 批量删除CA标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteCaTagsRequest 请求对象
+     * @return SyncInvoker<BatchDeleteCaTagsRequest, BatchDeleteCaTagsResponse>
+     */
+    public SyncInvoker<BatchDeleteCaTagsRequest, BatchDeleteCaTagsResponse> batchDeleteCaTagsInvoker(
+        BatchDeleteCaTagsRequest request) {
+        return new SyncInvoker<BatchDeleteCaTagsRequest, BatchDeleteCaTagsResponse>(request, CcmMeta.batchDeleteCaTags,
+            hcClient);
+    }
+
+    /**
+     * 批量删除证书标签
+     *
+     * 批量删除证书标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteCertTagsRequest 请求对象
+     * @return BatchDeleteCertTagsResponse
+     */
+    public BatchDeleteCertTagsResponse batchDeleteCertTags(BatchDeleteCertTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, CcmMeta.batchDeleteCertTags);
+    }
+
+    /**
+     * 批量删除证书标签
+     *
+     * 批量删除证书标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteCertTagsRequest 请求对象
+     * @return SyncInvoker<BatchDeleteCertTagsRequest, BatchDeleteCertTagsResponse>
+     */
+    public SyncInvoker<BatchDeleteCertTagsRequest, BatchDeleteCertTagsResponse> batchDeleteCertTagsInvoker(
+        BatchDeleteCertTagsRequest request) {
+        return new SyncInvoker<BatchDeleteCertTagsRequest, BatchDeleteCertTagsResponse>(request,
+            CcmMeta.batchDeleteCertTags, hcClient);
+    }
+
+    /**
+     * 根据标签查询CA数量
+     *
+     * 根据标签查询CA数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CountCaResourceInstancesRequest 请求对象
+     * @return CountCaResourceInstancesResponse
+     */
+    public CountCaResourceInstancesResponse countCaResourceInstances(CountCaResourceInstancesRequest request) {
+        return hcClient.syncInvokeHttp(request, CcmMeta.countCaResourceInstances);
+    }
+
+    /**
+     * 根据标签查询CA数量
+     *
+     * 根据标签查询CA数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CountCaResourceInstancesRequest 请求对象
+     * @return SyncInvoker<CountCaResourceInstancesRequest, CountCaResourceInstancesResponse>
+     */
+    public SyncInvoker<CountCaResourceInstancesRequest, CountCaResourceInstancesResponse> countCaResourceInstancesInvoker(
+        CountCaResourceInstancesRequest request) {
+        return new SyncInvoker<CountCaResourceInstancesRequest, CountCaResourceInstancesResponse>(request,
+            CcmMeta.countCaResourceInstances, hcClient);
+    }
+
+    /**
+     * 根据标签查询证书数量
+     *
+     * 根据标签查询证书数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CountCertResourceInstancesRequest 请求对象
+     * @return CountCertResourceInstancesResponse
+     */
+    public CountCertResourceInstancesResponse countCertResourceInstances(CountCertResourceInstancesRequest request) {
+        return hcClient.syncInvokeHttp(request, CcmMeta.countCertResourceInstances);
+    }
+
+    /**
+     * 根据标签查询证书数量
+     *
+     * 根据标签查询证书数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CountCertResourceInstancesRequest 请求对象
+     * @return SyncInvoker<CountCertResourceInstancesRequest, CountCertResourceInstancesResponse>
+     */
+    public SyncInvoker<CountCertResourceInstancesRequest, CountCertResourceInstancesResponse> countCertResourceInstancesInvoker(
+        CountCertResourceInstancesRequest request) {
+        return new SyncInvoker<CountCertResourceInstancesRequest, CountCertResourceInstancesResponse>(request,
+            CcmMeta.countCertResourceInstances, hcClient);
+    }
+
+    /**
+     * 创建CA标签
+     *
+     * 创建CA标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateCaTagRequest 请求对象
+     * @return CreateCaTagResponse
+     */
+    public CreateCaTagResponse createCaTag(CreateCaTagRequest request) {
+        return hcClient.syncInvokeHttp(request, CcmMeta.createCaTag);
+    }
+
+    /**
+     * 创建CA标签
+     *
+     * 创建CA标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateCaTagRequest 请求对象
+     * @return SyncInvoker<CreateCaTagRequest, CreateCaTagResponse>
+     */
+    public SyncInvoker<CreateCaTagRequest, CreateCaTagResponse> createCaTagInvoker(CreateCaTagRequest request) {
+        return new SyncInvoker<CreateCaTagRequest, CreateCaTagResponse>(request, CcmMeta.createCaTag, hcClient);
+    }
+
+    /**
+     * 创建证书标签
+     *
+     * 创建证书标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateCertTagRequest 请求对象
+     * @return CreateCertTagResponse
+     */
+    public CreateCertTagResponse createCertTag(CreateCertTagRequest request) {
+        return hcClient.syncInvokeHttp(request, CcmMeta.createCertTag);
+    }
+
+    /**
+     * 创建证书标签
+     *
+     * 创建证书标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateCertTagRequest 请求对象
+     * @return SyncInvoker<CreateCertTagRequest, CreateCertTagResponse>
+     */
+    public SyncInvoker<CreateCertTagRequest, CreateCertTagResponse> createCertTagInvoker(CreateCertTagRequest request) {
+        return new SyncInvoker<CreateCertTagRequest, CreateCertTagResponse>(request, CcmMeta.createCertTag, hcClient);
+    }
+
+    /**
      * 申请证书
      *
      * 申请证书。
@@ -417,6 +653,122 @@ public class CcmClient {
     }
 
     /**
+     * 根据标签查询CA列表
+     *
+     * 根据标签查询CA列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCaResourceInstancesRequest 请求对象
+     * @return ListCaResourceInstancesResponse
+     */
+    public ListCaResourceInstancesResponse listCaResourceInstances(ListCaResourceInstancesRequest request) {
+        return hcClient.syncInvokeHttp(request, CcmMeta.listCaResourceInstances);
+    }
+
+    /**
+     * 根据标签查询CA列表
+     *
+     * 根据标签查询CA列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCaResourceInstancesRequest 请求对象
+     * @return SyncInvoker<ListCaResourceInstancesRequest, ListCaResourceInstancesResponse>
+     */
+    public SyncInvoker<ListCaResourceInstancesRequest, ListCaResourceInstancesResponse> listCaResourceInstancesInvoker(
+        ListCaResourceInstancesRequest request) {
+        return new SyncInvoker<ListCaResourceInstancesRequest, ListCaResourceInstancesResponse>(request,
+            CcmMeta.listCaResourceInstances, hcClient);
+    }
+
+    /**
+     * 根据CA查询标签列表
+     *
+     * 根据CA证书ID查询此CA的标签列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCaTagsRequest 请求对象
+     * @return ListCaTagsResponse
+     */
+    public ListCaTagsResponse listCaTags(ListCaTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, CcmMeta.listCaTags);
+    }
+
+    /**
+     * 根据CA查询标签列表
+     *
+     * 根据CA证书ID查询此CA的标签列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCaTagsRequest 请求对象
+     * @return SyncInvoker<ListCaTagsRequest, ListCaTagsResponse>
+     */
+    public SyncInvoker<ListCaTagsRequest, ListCaTagsResponse> listCaTagsInvoker(ListCaTagsRequest request) {
+        return new SyncInvoker<ListCaTagsRequest, ListCaTagsResponse>(request, CcmMeta.listCaTags, hcClient);
+    }
+
+    /**
+     * 根据标签查询证书列表
+     *
+     * 根据标签查询证书列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCertResourceInstancesRequest 请求对象
+     * @return ListCertResourceInstancesResponse
+     */
+    public ListCertResourceInstancesResponse listCertResourceInstances(ListCertResourceInstancesRequest request) {
+        return hcClient.syncInvokeHttp(request, CcmMeta.listCertResourceInstances);
+    }
+
+    /**
+     * 根据标签查询证书列表
+     *
+     * 根据标签查询证书列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCertResourceInstancesRequest 请求对象
+     * @return SyncInvoker<ListCertResourceInstancesRequest, ListCertResourceInstancesResponse>
+     */
+    public SyncInvoker<ListCertResourceInstancesRequest, ListCertResourceInstancesResponse> listCertResourceInstancesInvoker(
+        ListCertResourceInstancesRequest request) {
+        return new SyncInvoker<ListCertResourceInstancesRequest, ListCertResourceInstancesResponse>(request,
+            CcmMeta.listCertResourceInstances, hcClient);
+    }
+
+    /**
+     * 根据证书查询标签列表
+     *
+     * 根据证书ID查询此证书的标签列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCertTagsRequest 请求对象
+     * @return ListCertTagsResponse
+     */
+    public ListCertTagsResponse listCertTags(ListCertTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, CcmMeta.listCertTags);
+    }
+
+    /**
+     * 根据证书查询标签列表
+     *
+     * 根据证书ID查询此证书的标签列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCertTagsRequest 请求对象
+     * @return SyncInvoker<ListCertTagsRequest, ListCertTagsResponse>
+     */
+    public SyncInvoker<ListCertTagsRequest, ListCertTagsResponse> listCertTagsInvoker(ListCertTagsRequest request) {
+        return new SyncInvoker<ListCertTagsRequest, ListCertTagsResponse>(request, CcmMeta.listCertTags, hcClient);
+    }
+
+    /**
      * 查询私有证书列表
      *
      * 查询私有证书列表。
@@ -477,6 +829,66 @@ public class CcmClient {
         ListCertificateAuthorityObsBucketRequest request) {
         return new SyncInvoker<ListCertificateAuthorityObsBucketRequest, ListCertificateAuthorityObsBucketResponse>(
             request, CcmMeta.listCertificateAuthorityObsBucket, hcClient);
+    }
+
+    /**
+     * 查询所有CA标签列表
+     *
+     * 查询所有CA标签列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDomainCaTagsRequest 请求对象
+     * @return ListDomainCaTagsResponse
+     */
+    public ListDomainCaTagsResponse listDomainCaTags(ListDomainCaTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, CcmMeta.listDomainCaTags);
+    }
+
+    /**
+     * 查询所有CA标签列表
+     *
+     * 查询所有CA标签列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDomainCaTagsRequest 请求对象
+     * @return SyncInvoker<ListDomainCaTagsRequest, ListDomainCaTagsResponse>
+     */
+    public SyncInvoker<ListDomainCaTagsRequest, ListDomainCaTagsResponse> listDomainCaTagsInvoker(
+        ListDomainCaTagsRequest request) {
+        return new SyncInvoker<ListDomainCaTagsRequest, ListDomainCaTagsResponse>(request, CcmMeta.listDomainCaTags,
+            hcClient);
+    }
+
+    /**
+     * 查询所有证书标签列表
+     *
+     * 查询所有证书标签列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDomainCertTagsRequest 请求对象
+     * @return ListDomainCertTagsResponse
+     */
+    public ListDomainCertTagsResponse listDomainCertTags(ListDomainCertTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, CcmMeta.listDomainCertTags);
+    }
+
+    /**
+     * 查询所有证书标签列表
+     *
+     * 查询所有证书标签列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDomainCertTagsRequest 请求对象
+     * @return SyncInvoker<ListDomainCertTagsRequest, ListDomainCertTagsResponse>
+     */
+    public SyncInvoker<ListDomainCertTagsRequest, ListDomainCertTagsResponse> listDomainCertTagsInvoker(
+        ListDomainCertTagsRequest request) {
+        return new SyncInvoker<ListDomainCertTagsRequest, ListDomainCertTagsResponse>(request,
+            CcmMeta.listDomainCertTags, hcClient);
     }
 
     /**

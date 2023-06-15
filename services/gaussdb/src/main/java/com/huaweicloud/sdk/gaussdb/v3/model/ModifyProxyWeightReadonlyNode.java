@@ -38,7 +38,7 @@ public class ModifyProxyWeightReadonlyNode  {
 
 
     /**
-     * 只读节点id
+     * 只读节点ID
      * @return id
      */
     public String getId() {

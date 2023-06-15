@@ -35,7 +35,7 @@ public class DeleteGaussMySqlDatabaseResponse extends SdkResponse {
 
 
     /**
-     * 删除数据库的任务id。
+     * 删除数据库的任务ID。
      * @return jobId
      */
     public String getJobId() {

@@ -63,7 +63,7 @@ public class DeleteTaskRecordRequest  {
 
 
     /**
-     * 任务id。
+     * 任务ID。
      * @return jobId
      */
     public String getJobId() {

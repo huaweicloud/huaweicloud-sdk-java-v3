@@ -38,11 +38,24 @@ public class SdkStreamResponse extends SdkResponse {
 
     /**
      * 解析http响应body，用于content-type是application/bson或application/octet-stream的响应
+     *
      * @param inputStream http response body
      */
     public Object parseBody(InputStream inputStream) {
         this.body = inputStream;
         return this;
+    }
+
+    /**
+     * 解析http响应body到XXXResponse，XXXResponse是SdkBsonDocResponse的子类，
+     * 目前只有SdkBsonDocResponse的子类的解析会使用这个函数，即content-type是application/bson的响应。
+     * 把该函数放在SdkStreamResponse的目的是为了解除core模块对core-bson模块的依赖。
+     *
+     * @param buf http response body
+     * @return object deserialized from buf
+     */
+    public Object parseBody(byte[] buf) {
+        throw new SdkException("only used in application/bson response");
     }
 
     public void consumeDownloadStream(Consumer<InputStream> consumer) {

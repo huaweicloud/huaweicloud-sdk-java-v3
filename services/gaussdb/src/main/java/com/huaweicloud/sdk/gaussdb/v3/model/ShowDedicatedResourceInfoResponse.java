@@ -80,7 +80,7 @@ public class ShowDedicatedResourceInfoResponse extends SdkResponse {
 
 
     /**
-     * 专属资源池id。
+     * 专属资源池ID。
      * @return id
      */
     public String getId() {

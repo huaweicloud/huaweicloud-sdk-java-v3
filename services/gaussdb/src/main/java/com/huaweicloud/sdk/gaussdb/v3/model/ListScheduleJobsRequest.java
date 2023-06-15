@@ -99,7 +99,7 @@ public class ListScheduleJobsRequest  {
 
 
     /**
-     * 索引位置，偏移量。从第一条数据偏移offset条数据后开始查询，默认为0，必须为数字，不能为负数。
+     * 索引位置，偏移量。从第一条数据偏移offset条数据后开始查询，默认为1，必须为数字，不能为负数。
      * @return offset
      */
     public String getOffset() {

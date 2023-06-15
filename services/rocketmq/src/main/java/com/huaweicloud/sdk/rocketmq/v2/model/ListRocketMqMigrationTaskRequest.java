@@ -225,7 +225,7 @@ public class ListRocketMqMigrationTaskRequest {
     }
 
     /**
-     * 查询vhost列表时，该字段可为空，查询exchange列表时，该字段为exchange所属vhost名称，查询queue列表时，该字段为queue所属vhost-所属exchange，例vhost1-exchange1
+     * - 查询vhost列表时，该字段可为空。 - 查询exchange列表时，该字段为exchange所属vhost名称。 - 查询queue列表时，该字段为queue所属vhost-所属exchange，例vhost1-exchange1。
      * @return name
      */
     public String getName() {

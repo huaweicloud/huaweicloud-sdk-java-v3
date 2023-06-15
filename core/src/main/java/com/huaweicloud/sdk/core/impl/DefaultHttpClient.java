@@ -221,6 +221,14 @@ public class DefaultHttpClient implements HttpClient {
             public void writeTo(@NotNull BufferedSink bufferedSink) throws IOException {
                 bufferedSink.writeUtf8(httpRequest.getBodyAsString());
             }
+
+            @Override
+            public long contentLength() {
+                if (httpRequest.haveHeader(Constants.CONTENT_LENGTH)) {
+                    return Long.parseLong(httpRequest.getHeader(Constants.CONTENT_LENGTH));
+                }
+                return httpRequest.getBodyAsString().length();
+            }
         });
         return requestBuilder.build();
     }

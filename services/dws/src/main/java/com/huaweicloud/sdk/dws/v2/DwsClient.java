@@ -1587,6 +1587,36 @@ public class DwsClient {
     }
 
     /**
+     * 查询所有数据库用户/角色
+     *
+     * 查询所有数据库用户/角色
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDatabaseUsersRequest 请求对象
+     * @return ListDatabaseUsersResponse
+     */
+    public ListDatabaseUsersResponse listDatabaseUsers(ListDatabaseUsersRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.listDatabaseUsers);
+    }
+
+    /**
+     * 查询所有数据库用户/角色
+     *
+     * 查询所有数据库用户/角色
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDatabaseUsersRequest 请求对象
+     * @return SyncInvoker<ListDatabaseUsersRequest, ListDatabaseUsersResponse>
+     */
+    public SyncInvoker<ListDatabaseUsersRequest, ListDatabaseUsersResponse> listDatabaseUsersInvoker(
+        ListDatabaseUsersRequest request) {
+        return new SyncInvoker<ListDatabaseUsersRequest, ListDatabaseUsersResponse>(request, DwsMeta.listDatabaseUsers,
+            hcClient);
+    }
+
+    /**
      * 查询容灾列表
      *
      * 查询容灾列表
@@ -2373,6 +2403,66 @@ public class DwsClient {
     }
 
     /**
+     * 查询数据库对象权限
+     *
+     * 查询数据库对象权限
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDatabaseAuthorityRequest 请求对象
+     * @return ShowDatabaseAuthorityResponse
+     */
+    public ShowDatabaseAuthorityResponse showDatabaseAuthority(ShowDatabaseAuthorityRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.showDatabaseAuthority);
+    }
+
+    /**
+     * 查询数据库对象权限
+     *
+     * 查询数据库对象权限
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDatabaseAuthorityRequest 请求对象
+     * @return SyncInvoker<ShowDatabaseAuthorityRequest, ShowDatabaseAuthorityResponse>
+     */
+    public SyncInvoker<ShowDatabaseAuthorityRequest, ShowDatabaseAuthorityResponse> showDatabaseAuthorityInvoker(
+        ShowDatabaseAuthorityRequest request) {
+        return new SyncInvoker<ShowDatabaseAuthorityRequest, ShowDatabaseAuthorityResponse>(request,
+            DwsMeta.showDatabaseAuthority, hcClient);
+    }
+
+    /**
+     * 查询指定用户信息
+     *
+     * 查询指定用户信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDatabaseUserRequest 请求对象
+     * @return ShowDatabaseUserResponse
+     */
+    public ShowDatabaseUserResponse showDatabaseUser(ShowDatabaseUserRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.showDatabaseUser);
+    }
+
+    /**
+     * 查询指定用户信息
+     *
+     * 查询指定用户信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDatabaseUserRequest 请求对象
+     * @return SyncInvoker<ShowDatabaseUserRequest, ShowDatabaseUserResponse>
+     */
+    public SyncInvoker<ShowDatabaseUserRequest, ShowDatabaseUserResponse> showDatabaseUserInvoker(
+        ShowDatabaseUserRequest request) {
+        return new SyncInvoker<ShowDatabaseUserRequest, ShowDatabaseUserResponse>(request, DwsMeta.showDatabaseUser,
+            hcClient);
+    }
+
+    /**
      * 查询容灾详情
      *
      * 查询容灾详情。
@@ -2400,6 +2490,36 @@ public class DwsClient {
         ShowDisasterDetailRequest request) {
         return new SyncInvoker<ShowDisasterDetailRequest, ShowDisasterDetailResponse>(request,
             DwsMeta.showDisasterDetail, hcClient);
+    }
+
+    /**
+     * 容灾-查询容灾进度详情
+     *
+     * 容灾-查询容灾进度详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDisasterProgressRequest 请求对象
+     * @return ShowDisasterProgressResponse
+     */
+    public ShowDisasterProgressResponse showDisasterProgress(ShowDisasterProgressRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.showDisasterProgress);
+    }
+
+    /**
+     * 容灾-查询容灾进度详情
+     *
+     * 容灾-查询容灾进度详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDisasterProgressRequest 请求对象
+     * @return SyncInvoker<ShowDisasterProgressRequest, ShowDisasterProgressResponse>
+     */
+    public SyncInvoker<ShowDisasterProgressRequest, ShowDisasterProgressResponse> showDisasterProgressInvoker(
+        ShowDisasterProgressRequest request) {
+        return new SyncInvoker<ShowDisasterProgressRequest, ShowDisasterProgressResponse>(request,
+            DwsMeta.showDisasterProgress, hcClient);
     }
 
     /**
@@ -2555,6 +2675,34 @@ public class DwsClient {
     }
 
     /**
+     * 同步IAM用户到数据库
+     *
+     * 同步IAM用户到数据库
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SyncIamUsersRequest 请求对象
+     * @return SyncIamUsersResponse
+     */
+    public SyncIamUsersResponse syncIamUsers(SyncIamUsersRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.syncIamUsers);
+    }
+
+    /**
+     * 同步IAM用户到数据库
+     *
+     * 同步IAM用户到数据库
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SyncIamUsersRequest 请求对象
+     * @return SyncInvoker<SyncIamUsersRequest, SyncIamUsersResponse>
+     */
+    public SyncInvoker<SyncIamUsersRequest, SyncIamUsersResponse> syncIamUsersInvoker(SyncIamUsersRequest request) {
+        return new SyncInvoker<SyncIamUsersRequest, SyncIamUsersResponse>(request, DwsMeta.syncIamUsers, hcClient);
+    }
+
+    /**
      * 更新告警订阅
      *
      * 更新订阅的告警
@@ -2672,6 +2820,66 @@ public class DwsClient {
         UpdateDataSourceRequest request) {
         return new SyncInvoker<UpdateDataSourceRequest, UpdateDataSourceResponse>(request, DwsMeta.updateDataSource,
             hcClient);
+    }
+
+    /**
+     * 修改数据库对象权限
+     *
+     * 修改数据库对象权限
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateDatabaseAuthorityRequest 请求对象
+     * @return UpdateDatabaseAuthorityResponse
+     */
+    public UpdateDatabaseAuthorityResponse updateDatabaseAuthority(UpdateDatabaseAuthorityRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.updateDatabaseAuthority);
+    }
+
+    /**
+     * 修改数据库对象权限
+     *
+     * 修改数据库对象权限
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateDatabaseAuthorityRequest 请求对象
+     * @return SyncInvoker<UpdateDatabaseAuthorityRequest, UpdateDatabaseAuthorityResponse>
+     */
+    public SyncInvoker<UpdateDatabaseAuthorityRequest, UpdateDatabaseAuthorityResponse> updateDatabaseAuthorityInvoker(
+        UpdateDatabaseAuthorityRequest request) {
+        return new SyncInvoker<UpdateDatabaseAuthorityRequest, UpdateDatabaseAuthorityResponse>(request,
+            DwsMeta.updateDatabaseAuthority, hcClient);
+    }
+
+    /**
+     * 修改指定用户信息
+     *
+     * 修改指定用户信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateDatabaseUserInfoRequest 请求对象
+     * @return UpdateDatabaseUserInfoResponse
+     */
+    public UpdateDatabaseUserInfoResponse updateDatabaseUserInfo(UpdateDatabaseUserInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.updateDatabaseUserInfo);
+    }
+
+    /**
+     * 修改指定用户信息
+     *
+     * 修改指定用户信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateDatabaseUserInfoRequest 请求对象
+     * @return SyncInvoker<UpdateDatabaseUserInfoRequest, UpdateDatabaseUserInfoResponse>
+     */
+    public SyncInvoker<UpdateDatabaseUserInfoRequest, UpdateDatabaseUserInfoResponse> updateDatabaseUserInfoInvoker(
+        UpdateDatabaseUserInfoRequest request) {
+        return new SyncInvoker<UpdateDatabaseUserInfoRequest, UpdateDatabaseUserInfoResponse>(request,
+            DwsMeta.updateDatabaseUserInfo, hcClient);
     }
 
     /**

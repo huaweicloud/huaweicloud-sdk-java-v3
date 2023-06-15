@@ -1629,6 +1629,31 @@ public class DwsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListDatabaseUsersRequest, ListDatabaseUsersResponse> listDatabaseUsers =
+        genForlistDatabaseUsers();
+
+    private static HttpRequestDef<ListDatabaseUsersRequest, ListDatabaseUsersResponse> genForlistDatabaseUsers() {
+        // basic
+        HttpRequestDef.Builder<ListDatabaseUsersRequest, ListDatabaseUsersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDatabaseUsersRequest.class, ListDatabaseUsersResponse.class)
+                .withName("ListDatabaseUsers")
+                .withUri("/v1/{project_id}/clusters/{cluster_id}/db-manager/users")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatabaseUsersRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListDisasterRecoverRequest, ListDisasterRecoverResponse> listDisasterRecover =
         genForlistDisasterRecover();
 
@@ -2466,6 +2491,98 @@ public class DwsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowDatabaseAuthorityRequest, ShowDatabaseAuthorityResponse> showDatabaseAuthority =
+        genForshowDatabaseAuthority();
+
+    private static HttpRequestDef<ShowDatabaseAuthorityRequest, ShowDatabaseAuthorityResponse> genForshowDatabaseAuthority() {
+        // basic
+        HttpRequestDef.Builder<ShowDatabaseAuthorityRequest, ShowDatabaseAuthorityResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowDatabaseAuthorityRequest.class, ShowDatabaseAuthorityResponse.class)
+            .withName("ShowDatabaseAuthority")
+            .withUri("/v1/{project_id}/clusters/{cluster_id}/db-manager/authority")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDatabaseAuthorityRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDatabaseAuthorityRequest::getType, (req, v) -> {
+                req.setType(v);
+            }));
+        builder.<List<String>>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowDatabaseAuthorityRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<String>withRequestField("database",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDatabaseAuthorityRequest::getDatabase, (req, v) -> {
+                req.setDatabase(v);
+            }));
+        builder.<String>withRequestField("schema",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDatabaseAuthorityRequest::getSchema, (req, v) -> {
+                req.setSchema(v);
+            }));
+        builder.<String>withRequestField("table",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDatabaseAuthorityRequest::getTable, (req, v) -> {
+                req.setTable(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDatabaseUserRequest, ShowDatabaseUserResponse> showDatabaseUser =
+        genForshowDatabaseUser();
+
+    private static HttpRequestDef<ShowDatabaseUserRequest, ShowDatabaseUserResponse> genForshowDatabaseUser() {
+        // basic
+        HttpRequestDef.Builder<ShowDatabaseUserRequest, ShowDatabaseUserResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDatabaseUserRequest.class, ShowDatabaseUserResponse.class)
+                .withName("ShowDatabaseUser")
+                .withUri("/v1/{project_id}/clusters/{cluster_id}/db-manager/users/{name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDatabaseUserRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDatabaseUserRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowDisasterDetailRequest, ShowDisasterDetailResponse> showDisasterDetail =
         genForshowDisasterDetail();
 
@@ -2483,6 +2600,31 @@ public class DwsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDisasterDetailRequest::getDisasterRecoveryId, (req, v) -> {
+                req.setDisasterRecoveryId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDisasterProgressRequest, ShowDisasterProgressResponse> showDisasterProgress =
+        genForshowDisasterProgress();
+
+    private static HttpRequestDef<ShowDisasterProgressRequest, ShowDisasterProgressResponse> genForshowDisasterProgress() {
+        // basic
+        HttpRequestDef.Builder<ShowDisasterProgressRequest, ShowDisasterProgressResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowDisasterProgressRequest.class, ShowDisasterProgressResponse.class)
+            .withName("ShowDisasterProgress")
+            .withUri("/v1/{project_id}/disaster-recovery/{disaster_recovery_id}/show-progress")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("disaster_recovery_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDisasterProgressRequest::getDisasterRecoveryId, (req, v) -> {
                 req.setDisasterRecoveryId(v);
             }));
 
@@ -2619,6 +2761,30 @@ public class DwsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(SwitchoverDisasterRecoveryRequest::getDisasterRecoveryId, (req, v) -> {
                 req.setDisasterRecoveryId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SyncIamUsersRequest, SyncIamUsersResponse> syncIamUsers = genForsyncIamUsers();
+
+    private static HttpRequestDef<SyncIamUsersRequest, SyncIamUsersResponse> genForsyncIamUsers() {
+        // basic
+        HttpRequestDef.Builder<SyncIamUsersRequest, SyncIamUsersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SyncIamUsersRequest.class, SyncIamUsersResponse.class)
+                .withName("SyncIamUsers")
+                .withUri("/v1/{project_id}/clusters/{cluster_id}/db-manager/sync-iam-user")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SyncIamUsersRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
             }));
 
         // response
@@ -2764,6 +2930,84 @@ public class DwsMeta {
             }));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDatabaseAuthorityRequest, UpdateDatabaseAuthorityResponse> updateDatabaseAuthority =
+        genForupdateDatabaseAuthority();
+
+    private static HttpRequestDef<UpdateDatabaseAuthorityRequest, UpdateDatabaseAuthorityResponse> genForupdateDatabaseAuthority() {
+        // basic
+        HttpRequestDef.Builder<UpdateDatabaseAuthorityRequest, UpdateDatabaseAuthorityResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, UpdateDatabaseAuthorityRequest.class, UpdateDatabaseAuthorityResponse.class)
+            .withName("UpdateDatabaseAuthority")
+            .withUri("/v1/{project_id}/clusters/{cluster_id}/db-manager/authority")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDatabaseAuthorityRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<DatabasePermissionReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DatabasePermissionReq.class),
+            f -> f.withMarshaller(UpdateDatabaseAuthorityRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDatabaseUserInfoRequest, UpdateDatabaseUserInfoResponse> updateDatabaseUserInfo =
+        genForupdateDatabaseUserInfo();
+
+    private static HttpRequestDef<UpdateDatabaseUserInfoRequest, UpdateDatabaseUserInfoResponse> genForupdateDatabaseUserInfo() {
+        // basic
+        HttpRequestDef.Builder<UpdateDatabaseUserInfoRequest, UpdateDatabaseUserInfoResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, UpdateDatabaseUserInfoRequest.class, UpdateDatabaseUserInfoResponse.class)
+            .withName("UpdateDatabaseUserInfo")
+            .withUri("/v1/{project_id}/clusters/{cluster_id}/db-manager/users/{name}")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDatabaseUserInfoRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDatabaseUserInfoRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<DatabaseUserInfoReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DatabaseUserInfoReq.class),
+            f -> f.withMarshaller(UpdateDatabaseUserInfoRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateDatabaseUserInfoResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
 
         return builder.build();
     }

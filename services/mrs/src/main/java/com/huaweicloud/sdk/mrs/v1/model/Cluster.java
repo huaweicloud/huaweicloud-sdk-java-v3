@@ -408,6 +408,24 @@ public class Cluster  {
     
     private List<NodeGroupV10> taskNodeGroups = null;
     
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="eipId")
+    
+
+    private String eipId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="eipAddress")
+    
+
+    private String eipAddress;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="eipv6Address")
+    
+
+    private String eipv6Address;
+
     public Cluster withClusterId(String clusterId) {
         this.clusterId = clusterId;
         return this;
@@ -1894,6 +1912,72 @@ public class Cluster  {
 
     
 
+    public Cluster withEipId(String eipId) {
+        this.eipId = eipId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 集群弹性公网ip的唯一标识
+     * @return eipId
+     */
+    public String getEipId() {
+        return eipId;
+    }
+
+    public void setEipId(String eipId) {
+        this.eipId = eipId;
+    }
+
+    
+
+    public Cluster withEipAddress(String eipAddress) {
+        this.eipAddress = eipAddress;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 集群弹性公网ip的IPV4地址
+     * @return eipAddress
+     */
+    public String getEipAddress() {
+        return eipAddress;
+    }
+
+    public void setEipAddress(String eipAddress) {
+        this.eipAddress = eipAddress;
+    }
+
+    
+
+    public Cluster withEipv6Address(String eipv6Address) {
+        this.eipv6Address = eipv6Address;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 集群弹性公网ip的IPV6地址，IPv4时无此字段。
+     * @return eipv6Address
+     */
+    public String getEipv6Address() {
+        return eipv6Address;
+    }
+
+    public void setEipv6Address(String eipv6Address) {
+        this.eipv6Address = eipv6Address;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1967,11 +2051,14 @@ public class Cluster  {
             Objects.equals(this.periodType, cluster.periodType) &&
             Objects.equals(this.scale, cluster.scale) &&
             Objects.equals(this.nodeGroups, cluster.nodeGroups) &&
-            Objects.equals(this.taskNodeGroups, cluster.taskNodeGroups);
+            Objects.equals(this.taskNodeGroups, cluster.taskNodeGroups) &&
+            Objects.equals(this.eipId, cluster.eipId) &&
+            Objects.equals(this.eipAddress, cluster.eipAddress) &&
+            Objects.equals(this.eipv6Address, cluster.eipv6Address);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId, clusterName, totalNodeNum, clusterState, stageDesc, createAt, updateAt, chargingStartTime, billingType, dataCenter, vpc, vpcId, duration, fee, hadoopVersion, componentList, externalIp, externalAlternateIp, internalIp, deploymentId, remark, orderId, azId, azName, azCode, availabilityZoneId, instanceId, vnc, tenantId, volumeSize, volumeType, subnetId, subnetName, securityGroupsId, slaveSecurityGroupsId, bootstrapScripts, safeMode, clusterVersion, nodePublicCertName, masterNodeIp, privateIpFirst, errorInfo, tags, masterNodeNum, coreNodeNum, masterNodeSize, coreNodeSize, masterNodeProductId, masterNodeSpecId, coreNodeProductId, coreNodeSpecId, masterDataVolumeType, masterDataVolumeSize, masterDataVolumeCount, coreDataVolumeType, coreDataVolumeSize, coreDataVolumeCount, enterpriseProjectId, isMrsManagerFinish, clusterType, logCollection, periodType, scale, nodeGroups, taskNodeGroups);
+        return Objects.hash(clusterId, clusterName, totalNodeNum, clusterState, stageDesc, createAt, updateAt, chargingStartTime, billingType, dataCenter, vpc, vpcId, duration, fee, hadoopVersion, componentList, externalIp, externalAlternateIp, internalIp, deploymentId, remark, orderId, azId, azName, azCode, availabilityZoneId, instanceId, vnc, tenantId, volumeSize, volumeType, subnetId, subnetName, securityGroupsId, slaveSecurityGroupsId, bootstrapScripts, safeMode, clusterVersion, nodePublicCertName, masterNodeIp, privateIpFirst, errorInfo, tags, masterNodeNum, coreNodeNum, masterNodeSize, coreNodeSize, masterNodeProductId, masterNodeSpecId, coreNodeProductId, coreNodeSpecId, masterDataVolumeType, masterDataVolumeSize, masterDataVolumeCount, coreDataVolumeType, coreDataVolumeSize, coreDataVolumeCount, enterpriseProjectId, isMrsManagerFinish, clusterType, logCollection, periodType, scale, nodeGroups, taskNodeGroups, eipId, eipAddress, eipv6Address);
     }
     @Override
     public String toString() {
@@ -2042,6 +2129,9 @@ public class Cluster  {
         sb.append("    scale: ").append(toIndentedString(scale)).append("\n");
         sb.append("    nodeGroups: ").append(toIndentedString(nodeGroups)).append("\n");
         sb.append("    taskNodeGroups: ").append(toIndentedString(taskNodeGroups)).append("\n");
+        sb.append("    eipId: ").append(toIndentedString(eipId)).append("\n");
+        sb.append("    eipAddress: ").append(toIndentedString(eipAddress)).append("\n");
+        sb.append("    eipv6Address: ").append(toIndentedString(eipv6Address)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -35,7 +35,7 @@ public class DeleteDatabasePermissionResponse extends SdkResponse {
 
 
     /**
-     * 删除数据库用户的数据库权限任务id。
+     * 删除数据库用户的数据库权限任务ID。
      * @return jobId
      */
     public String getJobId() {

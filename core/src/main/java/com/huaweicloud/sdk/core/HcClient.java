@@ -443,6 +443,9 @@ public class HcClient implements CustomizationConfigure {
                 ((SdkStreamResponse) response).parseBody(new BufferedInputStream(
                         new ProgressInputStream(httpResponse.getBody(), progressManager),
                         Constants.DEFAULT_READ_BUFFER_STREAM));
+            } else if (Objects.nonNull(httpResponse.getContentType())
+                    && HttpUtils.isBsonContentType(httpResponse.getContentType())) {
+                response = CastUtils.cast(((SdkStreamResponse) response).parseBody(httpResponse.getBodyAsBytes()));
             } else {
                 response = CastUtils.cast(((SdkStreamResponse) response).parseBody(httpResponse.getBody()));
             }

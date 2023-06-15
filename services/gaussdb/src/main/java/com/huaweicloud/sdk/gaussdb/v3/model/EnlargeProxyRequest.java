@@ -60,7 +60,7 @@ public class EnlargeProxyRequest  {
 
 
     /**
-     * 数据库代理id。  如果实例只开启了一个代理，可不传该参数；如果实例开启了多个代理，则必须指定一个数据库代理，扩容新的代理节点。
+     * 数据库代理ID。  如果实例只开启了一个代理，可不传该参数；如果实例开启了多个代理，则必须指定一个数据库代理，扩容新的代理节点。
      * @return proxyId
      */
     public String getProxyId() {

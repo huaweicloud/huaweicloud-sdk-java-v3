@@ -26,7 +26,7 @@ public class AccessProgress {
     }
 
     /**
-     * 步骤   - 1: 指回源IP加白   - 2: 指本地验证   - 指修改DNS解析
+     * 步骤   - 1: 指回源IP加白   - 2: 指本地验证   - 3：指修改DNS解析
      * @return step
      */
     public Integer getStep() {

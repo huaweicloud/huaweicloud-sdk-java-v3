@@ -69,7 +69,7 @@ public class UpdateGaussMySqlBackupPolicyResponse extends SdkResponse {
 
 
     /**
-     * 实例ID
+     * 实例ID。
      * @return instanceId
      */
     public String getInstanceId() {

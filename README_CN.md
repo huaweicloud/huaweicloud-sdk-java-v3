@@ -76,7 +76,7 @@ Maven 项目的 `pom.xml` 文件加入相应的依赖项即可。
 
 常见冲突例如Jackson，okhttp3版本冲突等。
 
-**注意：**bundle包已经包含了core包和云服务集合包，不要再单独引入core包和服务包，根据maven依赖解析顺序，可能会导致bundle包不生效。
+**注意：** bundle包已经包含了core包和云服务集合包，不要再单独引入core包和服务包，根据maven依赖解析顺序，可能会导致bundle包不生效。
 
 以下为错误示例：
 
@@ -803,7 +803,7 @@ IamClient iamClient = IamClient.newBuilder()
 
 #### 3.3 自定义配置 [:top:](#用户手册-top)
 
-**注：**3.0.93版本起支持
+**注：** 3.0.93版本起支持
 
 ##### 3.3.1 IAM endpoint配置
 

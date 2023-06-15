@@ -49,14 +49,14 @@ public class MysqlInstanceListInfo  {
     private List<String> privateIps = null;
     
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="readonly_private_ips")
-    
-    private List<String> readonlyPrivateIps = null;
-    
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="proxy_ips")
     
     private List<String> proxyIps = null;
+    
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="readonly_private_ips")
+    
+    private List<String> readonlyPrivateIps = null;
     
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="public_ips")
@@ -278,42 +278,6 @@ public class MysqlInstanceListInfo  {
 
     
 
-    public MysqlInstanceListInfo withReadonlyPrivateIps(List<String> readonlyPrivateIps) {
-        this.readonlyPrivateIps = readonlyPrivateIps;
-        return this;
-    }
-
-    
-    public MysqlInstanceListInfo addReadonlyPrivateIpsItem(String readonlyPrivateIpsItem) {
-        if(this.readonlyPrivateIps == null) {
-            this.readonlyPrivateIps = new ArrayList<>();
-        }
-        this.readonlyPrivateIps.add(readonlyPrivateIpsItem);
-        return this;
-    }
-
-    public MysqlInstanceListInfo withReadonlyPrivateIps(Consumer<List<String>> readonlyPrivateIpsSetter) {
-        if(this.readonlyPrivateIps == null) {
-            this.readonlyPrivateIps = new ArrayList<>();
-        }
-        readonlyPrivateIpsSetter.accept(this.readonlyPrivateIps);
-        return this;
-    }
-
-    /**
-     * 实例读内网IP地址列表。弹性云服务器创建成功后该值存在，其他情况下为空列表。
-     * @return readonlyPrivateIps
-     */
-    public List<String> getReadonlyPrivateIps() {
-        return readonlyPrivateIps;
-    }
-
-    public void setReadonlyPrivateIps(List<String> readonlyPrivateIps) {
-        this.readonlyPrivateIps = readonlyPrivateIps;
-    }
-
-    
-
     public MysqlInstanceListInfo withProxyIps(List<String> proxyIps) {
         this.proxyIps = proxyIps;
         return this;
@@ -346,6 +310,42 @@ public class MysqlInstanceListInfo  {
 
     public void setProxyIps(List<String> proxyIps) {
         this.proxyIps = proxyIps;
+    }
+
+    
+
+    public MysqlInstanceListInfo withReadonlyPrivateIps(List<String> readonlyPrivateIps) {
+        this.readonlyPrivateIps = readonlyPrivateIps;
+        return this;
+    }
+
+    
+    public MysqlInstanceListInfo addReadonlyPrivateIpsItem(String readonlyPrivateIpsItem) {
+        if(this.readonlyPrivateIps == null) {
+            this.readonlyPrivateIps = new ArrayList<>();
+        }
+        this.readonlyPrivateIps.add(readonlyPrivateIpsItem);
+        return this;
+    }
+
+    public MysqlInstanceListInfo withReadonlyPrivateIps(Consumer<List<String>> readonlyPrivateIpsSetter) {
+        if(this.readonlyPrivateIps == null) {
+            this.readonlyPrivateIps = new ArrayList<>();
+        }
+        readonlyPrivateIpsSetter.accept(this.readonlyPrivateIps);
+        return this;
+    }
+
+    /**
+     * 实例读内网IP地址列表。弹性云服务器创建成功后该值存在，其他情况下为空列表。
+     * @return readonlyPrivateIps
+     */
+    public List<String> getReadonlyPrivateIps() {
+        return readonlyPrivateIps;
+    }
+
+    public void setReadonlyPrivateIps(List<String> readonlyPrivateIps) {
+        this.readonlyPrivateIps = readonlyPrivateIps;
     }
 
     
@@ -866,8 +866,8 @@ public class MysqlInstanceListInfo  {
             Objects.equals(this.name, mysqlInstanceListInfo.name) &&
             Objects.equals(this.status, mysqlInstanceListInfo.status) &&
             Objects.equals(this.privateIps, mysqlInstanceListInfo.privateIps) &&
-            Objects.equals(this.readonlyPrivateIps, mysqlInstanceListInfo.readonlyPrivateIps) &&
             Objects.equals(this.proxyIps, mysqlInstanceListInfo.proxyIps) &&
+            Objects.equals(this.readonlyPrivateIps, mysqlInstanceListInfo.readonlyPrivateIps) &&
             Objects.equals(this.publicIps, mysqlInstanceListInfo.publicIps) &&
             Objects.equals(this.port, mysqlInstanceListInfo.port) &&
             Objects.equals(this.type, mysqlInstanceListInfo.type) &&
@@ -891,7 +891,7 @@ public class MysqlInstanceListInfo  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, status, privateIps, readonlyPrivateIps, proxyIps, publicIps, port, type, region, datastore, created, updated, dbUserName, vpcId, subnetId, securityGroupId, flavorRef, flavorInfo, volume, backupStrategy, enterpriseProjectId, timeZone, chargeInfo, dedicatedResourceId, tags);
+        return Objects.hash(id, name, status, privateIps, proxyIps, readonlyPrivateIps, publicIps, port, type, region, datastore, created, updated, dbUserName, vpcId, subnetId, securityGroupId, flavorRef, flavorInfo, volume, backupStrategy, enterpriseProjectId, timeZone, chargeInfo, dedicatedResourceId, tags);
     }
     @Override
     public String toString() {
@@ -901,8 +901,8 @@ public class MysqlInstanceListInfo  {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    privateIps: ").append(toIndentedString(privateIps)).append("\n");
-        sb.append("    readonlyPrivateIps: ").append(toIndentedString(readonlyPrivateIps)).append("\n");
         sb.append("    proxyIps: ").append(toIndentedString(proxyIps)).append("\n");
+        sb.append("    readonlyPrivateIps: ").append(toIndentedString(readonlyPrivateIps)).append("\n");
         sb.append("    publicIps: ").append(toIndentedString(publicIps)).append("\n");
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");

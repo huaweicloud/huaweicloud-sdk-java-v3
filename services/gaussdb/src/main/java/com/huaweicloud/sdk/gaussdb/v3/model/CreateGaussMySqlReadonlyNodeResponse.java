@@ -112,7 +112,7 @@ public class CreateGaussMySqlReadonlyNodeResponse extends SdkResponse {
 
 
     /**
-     * 创建只读节点的任务id。  仅创建按需只读节点时会返回该参数。
+     * 创建只读节点的任务ID。  仅创建按需只读节点时会返回该参数。
      * @return jobId
      */
     public String getJobId() {

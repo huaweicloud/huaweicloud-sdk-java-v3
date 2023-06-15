@@ -10,6 +10,251 @@ import com.huaweicloud.sdk.core.http.LocationType;
 @SuppressWarnings("unchecked")
 public class CcmMeta {
 
+    public static final HttpRequestDef<BatchCreateCaTagsRequest, BatchCreateCaTagsResponse> batchCreateCaTags =
+        genForbatchCreateCaTags();
+
+    private static HttpRequestDef<BatchCreateCaTagsRequest, BatchCreateCaTagsResponse> genForbatchCreateCaTags() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateCaTagsRequest, BatchCreateCaTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchCreateCaTagsRequest.class, BatchCreateCaTagsResponse.class)
+                .withName("BatchCreateCaTags")
+                .withUri("/v1/private-certificate-authorities/{ca_id}/tags/create")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("ca_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateCaTagsRequest::getCaId, (req, v) -> {
+                req.setCaId(v);
+            }));
+        builder.<BatchOperateTagRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchOperateTagRequestBody.class),
+            f -> f.withMarshaller(BatchCreateCaTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchCreateCertTagsRequest, BatchCreateCertTagsResponse> batchCreateCertTags =
+        genForbatchCreateCertTags();
+
+    private static HttpRequestDef<BatchCreateCertTagsRequest, BatchCreateCertTagsResponse> genForbatchCreateCertTags() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateCertTagsRequest, BatchCreateCertTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchCreateCertTagsRequest.class, BatchCreateCertTagsResponse.class)
+                .withName("BatchCreateCertTags")
+                .withUri("/v1/private-certificates/{certificate_id}/tags/create")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("certificate_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateCertTagsRequest::getCertificateId, (req, v) -> {
+                req.setCertificateId(v);
+            }));
+        builder.<BatchOperateTagRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchOperateTagRequestBody.class),
+            f -> f.withMarshaller(BatchCreateCertTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteCaTagsRequest, BatchDeleteCaTagsResponse> batchDeleteCaTags =
+        genForbatchDeleteCaTags();
+
+    private static HttpRequestDef<BatchDeleteCaTagsRequest, BatchDeleteCaTagsResponse> genForbatchDeleteCaTags() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteCaTagsRequest, BatchDeleteCaTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, BatchDeleteCaTagsRequest.class, BatchDeleteCaTagsResponse.class)
+                .withName("BatchDeleteCaTags")
+                .withUri("/v1/private-certificate-authorities/{ca_id}/tags/delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("ca_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteCaTagsRequest::getCaId, (req, v) -> {
+                req.setCaId(v);
+            }));
+        builder.<BatchOperateTagRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchOperateTagRequestBody.class),
+            f -> f.withMarshaller(BatchDeleteCaTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteCertTagsRequest, BatchDeleteCertTagsResponse> batchDeleteCertTags =
+        genForbatchDeleteCertTags();
+
+    private static HttpRequestDef<BatchDeleteCertTagsRequest, BatchDeleteCertTagsResponse> genForbatchDeleteCertTags() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteCertTagsRequest, BatchDeleteCertTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, BatchDeleteCertTagsRequest.class, BatchDeleteCertTagsResponse.class)
+            .withName("BatchDeleteCertTags")
+            .withUri("/v1/private-certificates/{certificate_id}/tags/delete")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("certificate_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteCertTagsRequest::getCertificateId, (req, v) -> {
+                req.setCertificateId(v);
+            }));
+        builder.<BatchOperateTagRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchOperateTagRequestBody.class),
+            f -> f.withMarshaller(BatchDeleteCertTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CountCaResourceInstancesRequest, CountCaResourceInstancesResponse> countCaResourceInstances =
+        genForcountCaResourceInstances();
+
+    private static HttpRequestDef<CountCaResourceInstancesRequest, CountCaResourceInstancesResponse> genForcountCaResourceInstances() {
+        // basic
+        HttpRequestDef.Builder<CountCaResourceInstancesRequest, CountCaResourceInstancesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, CountCaResourceInstancesRequest.class, CountCaResourceInstancesResponse.class)
+                .withName("CountCaResourceInstances")
+                .withUri("/v1/private-certificate-authorities/resource-instances/count")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListResourceInstancesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListResourceInstancesRequestBody.class),
+            f -> f.withMarshaller(CountCaResourceInstancesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CountCertResourceInstancesRequest, CountCertResourceInstancesResponse> countCertResourceInstances =
+        genForcountCertResourceInstances();
+
+    private static HttpRequestDef<CountCertResourceInstancesRequest, CountCertResourceInstancesResponse> genForcountCertResourceInstances() {
+        // basic
+        HttpRequestDef.Builder<CountCertResourceInstancesRequest, CountCertResourceInstancesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CountCertResourceInstancesRequest.class,
+                    CountCertResourceInstancesResponse.class)
+                .withName("CountCertResourceInstances")
+                .withUri("/v1/private-certificates/resource-instances/count")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListResourceInstancesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListResourceInstancesRequestBody.class),
+            f -> f.withMarshaller(CountCertResourceInstancesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateCaTagRequest, CreateCaTagResponse> createCaTag = genForcreateCaTag();
+
+    private static HttpRequestDef<CreateCaTagRequest, CreateCaTagResponse> genForcreateCaTag() {
+        // basic
+        HttpRequestDef.Builder<CreateCaTagRequest, CreateCaTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateCaTagRequest.class, CreateCaTagResponse.class)
+                .withName("CreateCaTag")
+                .withUri("/v1/private-certificate-authorities/{ca_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("ca_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateCaTagRequest::getCaId, (req, v) -> {
+                req.setCaId(v);
+            }));
+        builder.<ResourceTagRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResourceTagRequestBody.class),
+            f -> f.withMarshaller(CreateCaTagRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateCertTagRequest, CreateCertTagResponse> createCertTag =
+        genForcreateCertTag();
+
+    private static HttpRequestDef<CreateCertTagRequest, CreateCertTagResponse> genForcreateCertTag() {
+        // basic
+        HttpRequestDef.Builder<CreateCertTagRequest, CreateCertTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateCertTagRequest.class, CreateCertTagResponse.class)
+                .withName("CreateCertTag")
+                .withUri("/v1/private-certificates/{certificate_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("certificate_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateCertTagRequest::getCertificateId, (req, v) -> {
+                req.setCertificateId(v);
+            }));
+        builder.<ResourceTagRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResourceTagRequestBody.class),
+            f -> f.withMarshaller(CreateCertTagRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateCertificateRequest, CreateCertificateResponse> createCertificate =
         genForcreateCertificate();
 
@@ -201,6 +446,107 @@ public class CcmMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListCaResourceInstancesRequest, ListCaResourceInstancesResponse> listCaResourceInstances =
+        genForlistCaResourceInstances();
+
+    private static HttpRequestDef<ListCaResourceInstancesRequest, ListCaResourceInstancesResponse> genForlistCaResourceInstances() {
+        // basic
+        HttpRequestDef.Builder<ListCaResourceInstancesRequest, ListCaResourceInstancesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ListCaResourceInstancesRequest.class, ListCaResourceInstancesResponse.class)
+            .withName("ListCaResourceInstances")
+            .withUri("/v1/private-certificate-authorities/resource-instances/filter")
+            .withContentType("application/json");
+
+        // requests
+        builder.<ListResourceInstancesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListResourceInstancesRequestBody.class),
+            f -> f.withMarshaller(ListCaResourceInstancesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListCaTagsRequest, ListCaTagsResponse> listCaTags = genForlistCaTags();
+
+    private static HttpRequestDef<ListCaTagsRequest, ListCaTagsResponse> genForlistCaTags() {
+        // basic
+        HttpRequestDef.Builder<ListCaTagsRequest, ListCaTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListCaTagsRequest.class, ListCaTagsResponse.class)
+                .withName("ListCaTags")
+                .withUri("/v1/private-certificate-authorities/{ca_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("ca_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCaTagsRequest::getCaId, (req, v) -> {
+                req.setCaId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListCertResourceInstancesRequest, ListCertResourceInstancesResponse> listCertResourceInstances =
+        genForlistCertResourceInstances();
+
+    private static HttpRequestDef<ListCertResourceInstancesRequest, ListCertResourceInstancesResponse> genForlistCertResourceInstances() {
+        // basic
+        HttpRequestDef.Builder<ListCertResourceInstancesRequest, ListCertResourceInstancesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ListCertResourceInstancesRequest.class,
+                    ListCertResourceInstancesResponse.class)
+                .withName("ListCertResourceInstances")
+                .withUri("/v1/private-certificates/resource-instances/filter")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListResourceInstancesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListResourceInstancesRequestBody.class),
+            f -> f.withMarshaller(ListCertResourceInstancesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListCertTagsRequest, ListCertTagsResponse> listCertTags = genForlistCertTags();
+
+    private static HttpRequestDef<ListCertTagsRequest, ListCertTagsResponse> genForlistCertTags() {
+        // basic
+        HttpRequestDef.Builder<ListCertTagsRequest, ListCertTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListCertTagsRequest.class, ListCertTagsResponse.class)
+                .withName("ListCertTags")
+                .withUri("/v1/private-certificates/{certificate_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("certificate_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCertTagsRequest::getCertificateId, (req, v) -> {
+                req.setCertificateId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListCertificateRequest, ListCertificateResponse> listCertificate =
         genForlistCertificate();
 
@@ -273,6 +619,42 @@ public class CcmMeta {
                     ListCertificateAuthorityObsBucketResponse.class)
                 .withName("ListCertificateAuthorityObsBucket")
                 .withUri("/v1/private-certificate-authorities/obs/buckets")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDomainCaTagsRequest, ListDomainCaTagsResponse> listDomainCaTags =
+        genForlistDomainCaTags();
+
+    private static HttpRequestDef<ListDomainCaTagsRequest, ListDomainCaTagsResponse> genForlistDomainCaTags() {
+        // basic
+        HttpRequestDef.Builder<ListDomainCaTagsRequest, ListDomainCaTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDomainCaTagsRequest.class, ListDomainCaTagsResponse.class)
+                .withName("ListDomainCaTags")
+                .withUri("/v1/private-certificate-authorities/tags")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDomainCertTagsRequest, ListDomainCertTagsResponse> listDomainCertTags =
+        genForlistDomainCertTags();
+
+    private static HttpRequestDef<ListDomainCertTagsRequest, ListDomainCertTagsResponse> genForlistDomainCertTags() {
+        // basic
+        HttpRequestDef.Builder<ListDomainCertTagsRequest, ListDomainCertTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDomainCertTagsRequest.class, ListDomainCertTagsResponse.class)
+                .withName("ListDomainCertTags")
+                .withUri("/v1/private-certificates/tags")
                 .withContentType("application/json");
 
         // requests

@@ -40,6 +40,11 @@ public class GeneralTextRequestBody {
 
     private String language;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "single_orientation_mode")
+
+    private Boolean singleOrientationMode;
+
     public GeneralTextRequestBody withImage(String image) {
         this.image = image;
         return this;
@@ -131,7 +136,7 @@ public class GeneralTextRequestBody {
     }
 
     /**
-     * 语种选择，可选值可参考表1中英文列。未传入该参数时默认为中英文识别模式。 **表1* 语种选择说明 | 英文 |     中文     | | :--: | :----------: | | auto | 自动语种分类 | |  ms  |    马来语    | |  uk  |   乌克兰语   | |  hi  |    印地语    | |  ru  |     俄语     | |  vi  |    越南语    | |  id  |    印尼语    | |  th  |     泰语     | |  zh  |    中英文    | |  ar  |   阿拉伯语   | 
+     * 语种选择，可选值可参考表1中英文列。未传入该参数时默认为中英文识别模式。 **表1* 语种选择说明 | 英文 |     中文     | | :--: | :----------: | | auto | 自动语种分类 | |  ms  |    马来语    | |  uk  |   乌克兰语   | |  hi  |    印地语    | |  ru  |     俄语     | |  vi  |    越南语    | |  id  |    印尼语    | |  th  |     泰语     | |  zh  |    中英文    | |  ar  |   阿拉伯语   | |  de  |     德语     | |  la  |    拉丁语    | |  fr  |     法语     | |  it  |   意大利语   | |  es  |   西班牙语   | |  pt  |   葡萄牙语   | |  ro  |  罗马尼亚语  | |  pl  |    波兰语    | |  am  |  阿姆哈拉语  | |  ja  |     日语     | |  ko  |     韩语     | 
      * @return language
      */
     public String getLanguage() {
@@ -140,6 +145,23 @@ public class GeneralTextRequestBody {
 
     public void setLanguage(String language) {
         this.language = language;
+    }
+
+    public GeneralTextRequestBody withSingleOrientationMode(Boolean singleOrientationMode) {
+        this.singleOrientationMode = singleOrientationMode;
+        return this;
+    }
+
+    /**
+     * 单朝向模式开关。可选值包括： - true：打开单朝向模式 - false：关闭单朝向模式  未传入该参数时默认为false，既默认图片中的字段为多朝向。 
+     * @return singleOrientationMode
+     */
+    public Boolean getSingleOrientationMode() {
+        return singleOrientationMode;
+    }
+
+    public void setSingleOrientationMode(Boolean singleOrientationMode) {
+        this.singleOrientationMode = singleOrientationMode;
     }
 
     @Override
@@ -156,12 +178,13 @@ public class GeneralTextRequestBody {
             && Objects.equals(this.detectDirection, generalTextRequestBody.detectDirection)
             && Objects.equals(this.quickMode, generalTextRequestBody.quickMode)
             && Objects.equals(this.characterMode, generalTextRequestBody.characterMode)
-            && Objects.equals(this.language, generalTextRequestBody.language);
+            && Objects.equals(this.language, generalTextRequestBody.language)
+            && Objects.equals(this.singleOrientationMode, generalTextRequestBody.singleOrientationMode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(image, url, detectDirection, quickMode, characterMode, language);
+        return Objects.hash(image, url, detectDirection, quickMode, characterMode, language, singleOrientationMode);
     }
 
     @Override
@@ -174,6 +197,7 @@ public class GeneralTextRequestBody {
         sb.append("    quickMode: ").append(toIndentedString(quickMode)).append("\n");
         sb.append("    characterMode: ").append(toIndentedString(characterMode)).append("\n");
         sb.append("    language: ").append(toIndentedString(language)).append("\n");
+        sb.append("    singleOrientationMode: ").append(toIndentedString(singleOrientationMode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -1012,10 +1012,10 @@ public class RocketMQMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("engine",
+        builder.<SendDlqMessageRequest.EngineEnum>withRequestField("engine",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(SendDlqMessageRequest.EngineEnum.class),
             f -> f.withMarshaller(SendDlqMessageRequest::getEngine, (req, v) -> {
                 req.setEngine(v);
             }));

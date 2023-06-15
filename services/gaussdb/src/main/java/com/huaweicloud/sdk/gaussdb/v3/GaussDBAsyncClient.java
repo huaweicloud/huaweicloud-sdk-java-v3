@@ -862,34 +862,6 @@ public class GaussDBAsyncClient {
     }
 
     /**
-     * 查询数据库错误日志
-     *
-     * 查询数据库错误日志。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListGaussMySqlErrorLogRequest 请求对象
-     * @return CompletableFuture<ListGaussMySqlErrorLogResponse>
-     */
-    public CompletableFuture<ListGaussMySqlErrorLogResponse> listGaussMySqlErrorLogAsync(ListGaussMySqlErrorLogRequest request) {
-        return hcClient.asyncInvokeHttp(request, GaussDBMeta.listGaussMySqlErrorLog);
-    }
-
-    /**
-     * 查询数据库错误日志
-     *
-     * 查询数据库错误日志。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListGaussMySqlErrorLogRequest 请求对象
-     * @return AsyncInvoker<ListGaussMySqlErrorLogRequest, ListGaussMySqlErrorLogResponse>
-     */
-    public AsyncInvoker<ListGaussMySqlErrorLogRequest, ListGaussMySqlErrorLogResponse> listGaussMySqlErrorLogAsyncInvoker(ListGaussMySqlErrorLogRequest request) {
-        return new AsyncInvoker<ListGaussMySqlErrorLogRequest, ListGaussMySqlErrorLogResponse>(request, GaussDBMeta.listGaussMySqlErrorLog, hcClient);
-    }
-
-    /**
      * 批量查询实例详情
      *
      * 批量查询实例详情。
@@ -943,34 +915,6 @@ public class GaussDBAsyncClient {
      */
     public AsyncInvoker<ListGaussMySqlInstancesRequest, ListGaussMySqlInstancesResponse> listGaussMySqlInstancesAsyncInvoker(ListGaussMySqlInstancesRequest request) {
         return new AsyncInvoker<ListGaussMySqlInstancesRequest, ListGaussMySqlInstancesResponse>(request, GaussDBMeta.listGaussMySqlInstances, hcClient);
-    }
-
-    /**
-     * 查询数据库慢日志
-     *
-     * 查询数据库慢日志。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListGaussMySqlSlowLogRequest 请求对象
-     * @return CompletableFuture<ListGaussMySqlSlowLogResponse>
-     */
-    public CompletableFuture<ListGaussMySqlSlowLogResponse> listGaussMySqlSlowLogAsync(ListGaussMySqlSlowLogRequest request) {
-        return hcClient.asyncInvokeHttp(request, GaussDBMeta.listGaussMySqlSlowLog);
-    }
-
-    /**
-     * 查询数据库慢日志
-     *
-     * 查询数据库慢日志。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListGaussMySqlSlowLogRequest 请求对象
-     * @return AsyncInvoker<ListGaussMySqlSlowLogRequest, ListGaussMySqlSlowLogResponse>
-     */
-    public AsyncInvoker<ListGaussMySqlSlowLogRequest, ListGaussMySqlSlowLogResponse> listGaussMySqlSlowLogAsyncInvoker(ListGaussMySqlSlowLogRequest request) {
-        return new AsyncInvoker<ListGaussMySqlSlowLogRequest, ListGaussMySqlSlowLogResponse>(request, GaussDBMeta.listGaussMySqlSlowLog, hcClient);
     }
 
     /**
@@ -1730,9 +1674,9 @@ public class GaussDBAsyncClient {
     }
 
     /**
-     * 查询实例秒级监控频率
+     * 查询实例秒级监控
      *
-     * 查询实例秒级监控频率。
+     * 查询实例秒级监控信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1744,9 +1688,9 @@ public class GaussDBAsyncClient {
     }
 
     /**
-     * 查询实例秒级监控频率
+     * 查询实例秒级监控
      *
-     * 查询实例秒级监控频率。
+     * 查询实例秒级监控信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2178,9 +2122,9 @@ public class GaussDBAsyncClient {
     }
 
     /**
-     * 修改实例秒级监控频率
+     * 设置实例秒级监控
      *
-     * 打开/关闭/修改实例秒级监控。
+     * 设置实例秒级监控，包括1秒监控和5秒监控。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2192,9 +2136,9 @@ public class GaussDBAsyncClient {
     }
 
     /**
-     * 修改实例秒级监控频率
+     * 设置实例秒级监控
      *
-     * 打开/关闭/修改实例秒级监控。
+     * 设置实例秒级监控，包括1秒监控和5秒监控。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

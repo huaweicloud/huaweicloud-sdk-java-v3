@@ -375,6 +375,11 @@ public class CreatePremiumHostResponse extends SdkResponse {
 
     private BlockPage blockPage;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "forward_header_map")
+
+    private Map<String, String> forwardHeaderMap = null;
+
     public CreatePremiumHostResponse withId(String id) {
         this.id = id;
         return this;
@@ -748,6 +753,39 @@ public class CreatePremiumHostResponse extends SdkResponse {
         this.blockPage = blockPage;
     }
 
+    public CreatePremiumHostResponse withForwardHeaderMap(Map<String, String> forwardHeaderMap) {
+        this.forwardHeaderMap = forwardHeaderMap;
+        return this;
+    }
+
+    public CreatePremiumHostResponse putForwardHeaderMapItem(String key, String forwardHeaderMapItem) {
+        if (this.forwardHeaderMap == null) {
+            this.forwardHeaderMap = new HashMap<>();
+        }
+        this.forwardHeaderMap.put(key, forwardHeaderMapItem);
+        return this;
+    }
+
+    public CreatePremiumHostResponse withForwardHeaderMap(Consumer<Map<String, String>> forwardHeaderMapSetter) {
+        if (this.forwardHeaderMap == null) {
+            this.forwardHeaderMap = new HashMap<>();
+        }
+        forwardHeaderMapSetter.accept(this.forwardHeaderMap);
+        return this;
+    }
+
+    /**
+     * 字段转发配置，WAF会将添加的字段插到header中，转给源站；Key不能跟nginx原生字段重复。Value支持的值包括:   - $time_local   - $request_id   - $connection_requests   - $tenant_id   - $project_id   - $remote_addr   - $remote_port   - $scheme   - $request_method   - $http_host   -$origin_uri   - $request_length   - $ssl_server_name   - $ssl_protocol   - $ssl_curves   - $ssl_session_reused
+     * @return forwardHeaderMap
+     */
+    public Map<String, String> getForwardHeaderMap() {
+        return forwardHeaderMap;
+    }
+
+    public void setForwardHeaderMap(Map<String, String> forwardHeaderMap) {
+        this.forwardHeaderMap = forwardHeaderMap;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -775,7 +813,8 @@ public class CreatePremiumHostResponse extends SdkResponse {
             && Objects.equals(this.enterpriseProjectId, createPremiumHostResponse.enterpriseProjectId)
             && Objects.equals(this.protectStatus, createPremiumHostResponse.protectStatus)
             && Objects.equals(this.accessStatus, createPremiumHostResponse.accessStatus)
-            && Objects.equals(this.blockPage, createPremiumHostResponse.blockPage);
+            && Objects.equals(this.blockPage, createPremiumHostResponse.blockPage)
+            && Objects.equals(this.forwardHeaderMap, createPremiumHostResponse.forwardHeaderMap);
     }
 
     @Override
@@ -798,7 +837,8 @@ public class CreatePremiumHostResponse extends SdkResponse {
             enterpriseProjectId,
             protectStatus,
             accessStatus,
-            blockPage);
+            blockPage,
+            forwardHeaderMap);
     }
 
     @Override
@@ -824,6 +864,7 @@ public class CreatePremiumHostResponse extends SdkResponse {
         sb.append("    protectStatus: ").append(toIndentedString(protectStatus)).append("\n");
         sb.append("    accessStatus: ").append(toIndentedString(accessStatus)).append("\n");
         sb.append("    blockPage: ").append(toIndentedString(blockPage)).append("\n");
+        sb.append("    forwardHeaderMap: ").append(toIndentedString(forwardHeaderMap)).append("\n");
         sb.append("}");
         return sb.toString();
     }

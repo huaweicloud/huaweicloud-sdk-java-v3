@@ -61,7 +61,7 @@ public class PropertyFilter {
     }
 
     /**
-     * **参数说明**：数据比较的操作符。 **取值范围**：当前支持的操作符有：>，<，>=，<=，=,in:表示在指定值中匹配和between:表示数值区间。
+     * **参数说明**：数据比较的操作符。 **取值范围**：当前支持的操作符有：>，<，>=，<=，=，in:表示在指定值中匹配和between:表示数值区间。
      * @return operator
      */
     public String getOperator() {

@@ -94,7 +94,7 @@ public class DeviceBroadcastRequest {
     /**
      * **参数说明**：广播消息在平台缓存的老化时间，时间单位是分钟，默认值为0；ttl参数数值必须是5的倍数，即以5分钟为粒度；指定为0时表示不缓存消息，最大缓存时间1440分钟，即缓存一天；ttl>0时，一个topic订阅设备数限制为10，如果一个topic订阅设备数超过10，则接口返回错误。
      * minimum: 0
-     * maximum: 1440
+     * maximum: 10080
      * @return ttl
      */
     public Integer getTtl() {
