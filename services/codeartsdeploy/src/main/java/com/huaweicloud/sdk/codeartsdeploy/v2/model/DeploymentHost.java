@@ -32,7 +32,7 @@ public class DeploymentHost {
     private Integer port;
 
     /**
-     * 操作系统：windows|linux，需要和主机组保持一致
+     * 操作系统：windows|linux，需要和主机集群保持一致
      */
     public static final class OsEnum {
 
@@ -190,7 +190,7 @@ public class DeploymentHost {
     }
 
     /**
-     * 操作系统：windows|linux，需要和主机组保持一致
+     * 操作系统：windows|linux，需要和主机集群保持一致
      * @return os
      */
     public OsEnum getOs() {

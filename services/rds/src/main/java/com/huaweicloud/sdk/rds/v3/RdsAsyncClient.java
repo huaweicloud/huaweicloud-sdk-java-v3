@@ -1183,6 +1183,36 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 
+     *
+     * 查询预定义标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPredefinedTagRequest 请求对象
+     * @return CompletableFuture<ListPredefinedTagResponse>
+     */
+    public CompletableFuture<ListPredefinedTagResponse> listPredefinedTagAsync(ListPredefinedTagRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listPredefinedTag);
+    }
+
+    /**
+     * 
+     *
+     * 查询预定义标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPredefinedTagRequest 请求对象
+     * @return AsyncInvoker<ListPredefinedTagRequest, ListPredefinedTagResponse>
+     */
+    public AsyncInvoker<ListPredefinedTagRequest, ListPredefinedTagResponse> listPredefinedTagAsyncInvoker(
+        ListPredefinedTagRequest request) {
+        return new AsyncInvoker<ListPredefinedTagRequest, ListPredefinedTagResponse>(request, RdsMeta.listPredefinedTag,
+            hcClient);
+    }
+
+    /**
      * 查询项目标签
      *
      * 查询项目标签。
@@ -1273,6 +1303,37 @@ public class RdsAsyncClient {
         ListRestoreTimesRequest request) {
         return new AsyncInvoker<ListRestoreTimesRequest, ListRestoreTimesResponse>(request, RdsMeta.listRestoreTimes,
             hcClient);
+    }
+
+    /**
+     * 
+     *
+     * 获取指定实例详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSimplifiedInstancesRequest 请求对象
+     * @return CompletableFuture<ListSimplifiedInstancesResponse>
+     */
+    public CompletableFuture<ListSimplifiedInstancesResponse> listSimplifiedInstancesAsync(
+        ListSimplifiedInstancesRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listSimplifiedInstances);
+    }
+
+    /**
+     * 
+     *
+     * 获取指定实例详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSimplifiedInstancesRequest 请求对象
+     * @return AsyncInvoker<ListSimplifiedInstancesRequest, ListSimplifiedInstancesResponse>
+     */
+    public AsyncInvoker<ListSimplifiedInstancesRequest, ListSimplifiedInstancesResponse> listSimplifiedInstancesAsyncInvoker(
+        ListSimplifiedInstancesRequest request) {
+        return new AsyncInvoker<ListSimplifiedInstancesRequest, ListSimplifiedInstancesResponse>(request,
+            RdsMeta.listSimplifiedInstances, hcClient);
     }
 
     /**

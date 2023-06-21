@@ -34,6 +34,11 @@ public class CreateAimPersonalTemplateRequestBody {
     private Integer useId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sub_type")
+
+    private Integer subType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sms_example")
 
     private String smsExample;
@@ -69,7 +74,7 @@ public class CreateAimPersonalTemplateRequestBody {
     }
 
     /**
-     * 布局类型。 - MultipleImageAndText：多图文类 - StandardImageAndText：图文类 - PureText：长文本类 - VideoImageAndText：视频图文类 - Video：视频类 - ECImageAndText：电商类 - RedPacket：红包类 - RedPacketPersonal：个性化红包类 - ImageTextAndVideo：图文视频类 - Notification1：一般通知类 - Notification2：增强通知类 - Carousel：横滑类1 - CarouselTitle：横滑类2 - CarouselSquareImage：图片轮播类（1:1） - CarouselImageSixteenToNine：图片轮播类（16:9） - CarouselVerticalImage：图片轮播类（48:65） - CardVoucher：单卡券 - CardVouchers：多卡券（最多支持四张卡券） 
+     * 布局类型。 - MultipleImageAndText：多图文类 - StandardImageAndText：图文类 - PureText：长文本类 - VideoImageAndText：视频图文类 - Video：视频类 - ECImageAndText：电商类 - RedPacket：红包类 - RedPacketPersonal：个性化红包类 - ImageTextAndVideo：图文视频类 - Notification1：一般通知类 - Notification2：增强通知类 - Carousel：横滑类1 - CarouselTitle：横滑类2 - CarouselSquareImage：图片轮播类（1:1） - CarouselImageSixteenToNine：图片轮播类（16:9） - CarouselVerticalImage：图片轮播类（48:65） - CardVoucher：单卡券 - CardVouchers：多卡券（最多支持四张卡券） - Ecommerce：电商多商品类 - Trip1：机票类 - Trip2：火车票类 - Trip3：汽车票类 - PlaneTrip：增强机票类 - SimplePoster：海报类 - NativePureText：超文本普通类 - NativeImageAndText：超文本增强类 - ShortVideo：短剧视频类  > 当送审厂商包含vivo时，各布局类型上传的图片最小像素要求如下： > - card_id为StandardImageAndText，宽高比为16:9时，图片的最小像素为1088px*612px。 > - card_id为MultipleImageAndText，宽高比为16:9时，图片的最小像素为1088px*612px。 > - card_id为MultipleImageAndText，宽高比为1:1时，图片的最小像素为320px*320px。 > - card_id为Video，宽高比为16:9时，视频封面图片的最小像素为1088px*612px。 > - card_id为RedPacket，宽高比为1:1时，图片的最小像素为320px*320px。 > - card_id为CarouselImageSixteenToNine，宽高比为16:9时，图片的最小像素为1088px*612px。 > - card_id为CarouselSquareImage，宽高比为1:1时，图片的最小像素为1088px*1088px。 > - card_id为CarouselVerticalImage，宽高比为48:65时，图片的最小像素为960px*1300px。 > - card_id为Notification1，宽高比为3:1时，图片的最小像素为576px*192px。 > - card_id为Notification2，宽高比为3:1时，图片的最小像素为576px*192px。 > - card_id为ECImageAndText，宽高比为1:1时，图片的最小像素为1088px*1088px。 
      * @return cardId
      */
     public String getCardId() {
@@ -129,6 +134,23 @@ public class CreateAimPersonalTemplateRequestBody {
 
     public void setUseId(Integer useId) {
         this.useId = useId;
+    }
+
+    public CreateAimPersonalTemplateRequestBody withSubType(Integer subType) {
+        this.subType = subType;
+        return this;
+    }
+
+    /**
+     * 版式子类型。 > - 当card_id为RedPacket和RedPacketPersonal时，sub_type用于设置按钮样式，1表示静态按钮，2表示动态按钮。 > - 当card_id为ECImageAndText时，sub_type用于设置左右按钮组合颜色，默认值为1，1表示左边按钮为橙色，右边按钮为红色；2表示左边按钮为绿色，右边按钮为黄色；3表示左边按钮为绿色，右边按钮为蓝色；4表示左边按钮为紫色，右边按钮为蓝色。仅华为厂商支持sub_type取值为2、3、4。
+     * @return subType
+     */
+    public Integer getSubType() {
+        return subType;
+    }
+
+    public void setSubType(Integer subType) {
+        this.subType = subType;
     }
 
     public CreateAimPersonalTemplateRequestBody withSmsExample(String smsExample) {
@@ -312,6 +334,7 @@ public class CreateAimPersonalTemplateRequestBody {
             && Objects.equals(this.tplName, createAimPersonalTemplateRequestBody.tplName)
             && Objects.equals(this.scene, createAimPersonalTemplateRequestBody.scene)
             && Objects.equals(this.useId, createAimPersonalTemplateRequestBody.useId)
+            && Objects.equals(this.subType, createAimPersonalTemplateRequestBody.subType)
             && Objects.equals(this.smsExample, createAimPersonalTemplateRequestBody.smsExample)
             && Objects.equals(this.smsSigns, createAimPersonalTemplateRequestBody.smsSigns)
             && Objects.equals(this.smsTemplate, createAimPersonalTemplateRequestBody.smsTemplate)
@@ -322,7 +345,8 @@ public class CreateAimPersonalTemplateRequestBody {
 
     @Override
     public int hashCode() {
-        return Objects.hash(cardId, tplName, scene, useId, smsExample, smsSigns, smsTemplate, pages, params, factorys);
+        return Objects
+            .hash(cardId, tplName, scene, useId, subType, smsExample, smsSigns, smsTemplate, pages, params, factorys);
     }
 
     @Override
@@ -333,6 +357,7 @@ public class CreateAimPersonalTemplateRequestBody {
         sb.append("    tplName: ").append(toIndentedString(tplName)).append("\n");
         sb.append("    scene: ").append(toIndentedString(scene)).append("\n");
         sb.append("    useId: ").append(toIndentedString(useId)).append("\n");
+        sb.append("    subType: ").append(toIndentedString(subType)).append("\n");
         sb.append("    smsExample: ").append(toIndentedString(smsExample)).append("\n");
         sb.append("    smsSigns: ").append(toIndentedString(smsSigns)).append("\n");
         sb.append("    smsTemplate: ").append(toIndentedString(smsTemplate)).append("\n");

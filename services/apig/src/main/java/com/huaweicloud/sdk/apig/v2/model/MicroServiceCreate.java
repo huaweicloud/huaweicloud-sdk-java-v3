@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class MicroServiceCreate {
 
     /**
-     * 微服务类型： - CSE：CSE微服务注册中心 - CCE：CCE云容器引擎
+     * 微服务类型： - CSE：CSE微服务注册中心 - CCE：CCE云容器引擎（工作负载） - CCE_SERVICE: CCE云容器引擎（Service）
      */
     public static final class ServiceTypeEnum {
 
@@ -31,12 +31,18 @@ public class MicroServiceCreate {
          */
         public static final ServiceTypeEnum CCE = new ServiceTypeEnum("CCE");
 
+        /**
+         * Enum CCE_SERVICE for value: "CCE_SERVICE"
+         */
+        public static final ServiceTypeEnum CCE_SERVICE = new ServiceTypeEnum("CCE_SERVICE");
+
         private static final Map<String, ServiceTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ServiceTypeEnum> createStaticFields() {
             Map<String, ServiceTypeEnum> map = new HashMap<>();
             map.put("CSE", CSE);
             map.put("CCE", CCE);
+            map.put("CCE_SERVICE", CCE_SERVICE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -108,13 +114,18 @@ public class MicroServiceCreate {
 
     private MicroServiceInfoCCEBase cceInfo;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cce_service_info")
+
+    private MicroServiceInfoCCEServiceBase cceServiceInfo;
+
     public MicroServiceCreate withServiceType(ServiceTypeEnum serviceType) {
         this.serviceType = serviceType;
         return this;
     }
 
     /**
-     * 微服务类型： - CSE：CSE微服务注册中心 - CCE：CCE云容器引擎
+     * 微服务类型： - CSE：CSE微服务注册中心 - CCE：CCE云容器引擎（工作负载） - CCE_SERVICE: CCE云容器引擎（Service）
      * @return serviceType
      */
     public ServiceTypeEnum getServiceType() {
@@ -177,6 +188,32 @@ public class MicroServiceCreate {
         this.cceInfo = cceInfo;
     }
 
+    public MicroServiceCreate withCceServiceInfo(MicroServiceInfoCCEServiceBase cceServiceInfo) {
+        this.cceServiceInfo = cceServiceInfo;
+        return this;
+    }
+
+    public MicroServiceCreate withCceServiceInfo(Consumer<MicroServiceInfoCCEServiceBase> cceServiceInfoSetter) {
+        if (this.cceServiceInfo == null) {
+            this.cceServiceInfo = new MicroServiceInfoCCEServiceBase();
+            cceServiceInfoSetter.accept(this.cceServiceInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get cceServiceInfo
+     * @return cceServiceInfo
+     */
+    public MicroServiceInfoCCEServiceBase getCceServiceInfo() {
+        return cceServiceInfo;
+    }
+
+    public void setCceServiceInfo(MicroServiceInfoCCEServiceBase cceServiceInfo) {
+        this.cceServiceInfo = cceServiceInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -188,12 +225,13 @@ public class MicroServiceCreate {
         MicroServiceCreate microServiceCreate = (MicroServiceCreate) o;
         return Objects.equals(this.serviceType, microServiceCreate.serviceType)
             && Objects.equals(this.cseInfo, microServiceCreate.cseInfo)
-            && Objects.equals(this.cceInfo, microServiceCreate.cceInfo);
+            && Objects.equals(this.cceInfo, microServiceCreate.cceInfo)
+            && Objects.equals(this.cceServiceInfo, microServiceCreate.cceServiceInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(serviceType, cseInfo, cceInfo);
+        return Objects.hash(serviceType, cseInfo, cceInfo, cceServiceInfo);
     }
 
     @Override
@@ -203,6 +241,7 @@ public class MicroServiceCreate {
         sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
         sb.append("    cseInfo: ").append(toIndentedString(cseInfo)).append("\n");
         sb.append("    cceInfo: ").append(toIndentedString(cceInfo)).append("\n");
+        sb.append("    cceServiceInfo: ").append(toIndentedString(cceServiceInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

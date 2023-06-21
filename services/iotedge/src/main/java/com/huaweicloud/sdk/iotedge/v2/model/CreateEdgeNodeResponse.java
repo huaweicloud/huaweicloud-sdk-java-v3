@@ -12,6 +12,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.iotedge.v2.model.BasePathDTO;
+import com.huaweicloud.sdk.iotedge.v2.model.DeviceDataRecord;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -104,6 +105,30 @@ public class CreateEdgeNodeResponse extends SdkResponse {
     
 
     private String hardwareModel;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="device_data_format")
+    
+
+    private String deviceDataFormat;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="automatic_upgrade")
+    
+
+    private String automaticUpgrade;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="device_data_record")
+    
+
+    private DeviceDataRecord deviceDataRecord;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="metric_report")
+    
+
+    private String metricReport;
 
     public CreateEdgeNodeResponse withEdgeNodeId(String edgeNodeId) {
         this.edgeNodeId = edgeNodeId;
@@ -448,6 +473,101 @@ public class CreateEdgeNodeResponse extends SdkResponse {
 
     
 
+    public CreateEdgeNodeResponse withDeviceDataFormat(String deviceDataFormat) {
+        this.deviceDataFormat = deviceDataFormat;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 节点使用的数据格式，默认为iotda物模型1.0格式，可以选择属性平铺数据格式flat_json
+     * @return deviceDataFormat
+     */
+    public String getDeviceDataFormat() {
+        return deviceDataFormat;
+    }
+
+    public void setDeviceDataFormat(String deviceDataFormat) {
+        this.deviceDataFormat = deviceDataFormat;
+    }
+
+    
+
+    public CreateEdgeNodeResponse withAutomaticUpgrade(String automaticUpgrade) {
+        this.automaticUpgrade = automaticUpgrade;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 自动升级系统应用的节点开关，默认为关闭：OFF，IMMEDIATE表示节点开关打开
+     * @return automaticUpgrade
+     */
+    public String getAutomaticUpgrade() {
+        return automaticUpgrade;
+    }
+
+    public void setAutomaticUpgrade(String automaticUpgrade) {
+        this.automaticUpgrade = automaticUpgrade;
+    }
+
+    
+
+    public CreateEdgeNodeResponse withDeviceDataRecord(DeviceDataRecord deviceDataRecord) {
+        this.deviceDataRecord = deviceDataRecord;
+        return this;
+    }
+
+    public CreateEdgeNodeResponse withDeviceDataRecord(Consumer<DeviceDataRecord> deviceDataRecordSetter) {
+        if(this.deviceDataRecord == null ){
+            this.deviceDataRecord = new DeviceDataRecord();
+            deviceDataRecordSetter.accept(this.deviceDataRecord);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get deviceDataRecord
+     * @return deviceDataRecord
+     */
+    public DeviceDataRecord getDeviceDataRecord() {
+        return deviceDataRecord;
+    }
+
+    public void setDeviceDataRecord(DeviceDataRecord deviceDataRecord) {
+        this.deviceDataRecord = deviceDataRecord;
+    }
+
+    
+
+    public CreateEdgeNodeResponse withMetricReport(String metricReport) {
+        this.metricReport = metricReport;
+        return this;
+    }
+
+    
+
+
+    /**
+     * omagent监控运维工具是否上报指标
+     * @return metricReport
+     */
+    public String getMetricReport() {
+        return metricReport;
+    }
+
+    public void setMetricReport(String metricReport) {
+        this.metricReport = metricReport;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -470,11 +590,15 @@ public class CreateEdgeNodeResponse extends SdkResponse {
             Objects.equals(this.resourceIds, createEdgeNodeResponse.resourceIds) &&
             Objects.equals(this.ips, createEdgeNodeResponse.ips) &&
             Objects.equals(this.createTime, createEdgeNodeResponse.createTime) &&
-            Objects.equals(this.hardwareModel, createEdgeNodeResponse.hardwareModel);
+            Objects.equals(this.hardwareModel, createEdgeNodeResponse.hardwareModel) &&
+            Objects.equals(this.deviceDataFormat, createEdgeNodeResponse.deviceDataFormat) &&
+            Objects.equals(this.automaticUpgrade, createEdgeNodeResponse.automaticUpgrade) &&
+            Objects.equals(this.deviceDataRecord, createEdgeNodeResponse.deviceDataRecord) &&
+            Objects.equals(this.metricReport, createEdgeNodeResponse.metricReport);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(edgeNodeId, name, instanceId, spaceId, productId, productName, state, type, installerVersion, basePath, resourceIds, ips, createTime, hardwareModel);
+        return Objects.hash(edgeNodeId, name, instanceId, spaceId, productId, productName, state, type, installerVersion, basePath, resourceIds, ips, createTime, hardwareModel, deviceDataFormat, automaticUpgrade, deviceDataRecord, metricReport);
     }
     @Override
     public String toString() {
@@ -494,6 +618,10 @@ public class CreateEdgeNodeResponse extends SdkResponse {
         sb.append("    ips: ").append(toIndentedString(ips)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    hardwareModel: ").append(toIndentedString(hardwareModel)).append("\n");
+        sb.append("    deviceDataFormat: ").append(toIndentedString(deviceDataFormat)).append("\n");
+        sb.append("    automaticUpgrade: ").append(toIndentedString(automaticUpgrade)).append("\n");
+        sb.append("    deviceDataRecord: ").append(toIndentedString(deviceDataRecord)).append("\n");
+        sb.append("    metricReport: ").append(toIndentedString(metricReport)).append("\n");
         sb.append("}");
         return sb.toString();
     }

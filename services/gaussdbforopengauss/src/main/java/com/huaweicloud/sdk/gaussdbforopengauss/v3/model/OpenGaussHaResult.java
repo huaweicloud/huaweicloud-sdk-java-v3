@@ -271,6 +271,12 @@ public class OpenGaussHaResult  {
 
     private ConsistencyEnum consistency;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="consistency_protocol")
+    
+
+    private String consistencyProtocol;
+
     public OpenGaussHaResult withMode(ModeEnum mode) {
         this.mode = mode;
         return this;
@@ -337,6 +343,28 @@ public class OpenGaussHaResult  {
 
     
 
+    public OpenGaussHaResult withConsistencyProtocol(String consistencyProtocol) {
+        this.consistencyProtocol = consistencyProtocol;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 指定副本一致性协议类型，取值范围：quorum | paxos。不填时，默认为quorum。
+     * @return consistencyProtocol
+     */
+    public String getConsistencyProtocol() {
+        return consistencyProtocol;
+    }
+
+    public void setConsistencyProtocol(String consistencyProtocol) {
+        this.consistencyProtocol = consistencyProtocol;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -348,11 +376,12 @@ public class OpenGaussHaResult  {
         OpenGaussHaResult openGaussHaResult = (OpenGaussHaResult) o;
         return Objects.equals(this.mode, openGaussHaResult.mode) &&
             Objects.equals(this.replicationMode, openGaussHaResult.replicationMode) &&
-            Objects.equals(this.consistency, openGaussHaResult.consistency);
+            Objects.equals(this.consistency, openGaussHaResult.consistency) &&
+            Objects.equals(this.consistencyProtocol, openGaussHaResult.consistencyProtocol);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(mode, replicationMode, consistency);
+        return Objects.hash(mode, replicationMode, consistency, consistencyProtocol);
     }
     @Override
     public String toString() {
@@ -361,6 +390,7 @@ public class OpenGaussHaResult  {
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
         sb.append("    replicationMode: ").append(toIndentedString(replicationMode)).append("\n");
         sb.append("    consistency: ").append(toIndentedString(consistency)).append("\n");
+        sb.append("    consistencyProtocol: ").append(toIndentedString(consistencyProtocol)).append("\n");
         sb.append("}");
         return sb.toString();
     }

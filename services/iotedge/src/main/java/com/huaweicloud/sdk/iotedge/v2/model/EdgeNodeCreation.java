@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.iotedge.v2.model.BasePathDTO;
 import com.huaweicloud.sdk.iotedge.v2.model.DeviceAuthInfoDTO;
+import com.huaweicloud.sdk.iotedge.v2.model.DeviceDataRecord;
 import com.huaweicloud.sdk.iotedge.v2.model.EdgeAppInstanceDTO;
 import com.huaweicloud.sdk.iotedge.v2.model.LogConfigDTO;
 import com.huaweicloud.sdk.iotedge.v2.model.OfflineCacheConfigsDTO;
@@ -108,6 +109,12 @@ public class EdgeNodeCreation  {
     private String aiCardType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="npu_library_path")
+    
+
+    private String npuLibraryPath;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="base_path")
     
 
@@ -146,6 +153,30 @@ public class EdgeNodeCreation  {
     
 
     private DeviceAuthInfoDTO deviceAuthInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="device_data_format")
+    
+
+    private String deviceDataFormat;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="automatic_upgrade")
+    
+
+    private String automaticUpgrade;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="device_data_record")
+    
+
+    private DeviceDataRecord deviceDataRecord;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="metric_report")
+    
+
+    private String metricReport;
 
     public EdgeNodeCreation withEdgeNodeId(String edgeNodeId) {
         this.edgeNodeId = edgeNodeId;
@@ -460,7 +491,7 @@ public class EdgeNodeCreation  {
 
 
     /**
-     * 华为AI加速卡类型，如NPU、GPU。
+     * AI加速卡类型，如华为昇腾AI加速卡NPU、图像处理加速卡GPU。
      * @return aiCardType
      */
     public String getAiCardType() {
@@ -469,6 +500,28 @@ public class EdgeNodeCreation  {
 
     public void setAiCardType(String aiCardType) {
         this.aiCardType = aiCardType;
+    }
+
+    
+
+    public EdgeNodeCreation withNpuLibraryPath(String npuLibraryPath) {
+        this.npuLibraryPath = npuLibraryPath;
+        return this;
+    }
+
+    
+
+
+    /**
+     * npu驱动动态库路径
+     * @return npuLibraryPath
+     */
+    public String getNpuLibraryPath() {
+        return npuLibraryPath;
+    }
+
+    public void setNpuLibraryPath(String npuLibraryPath) {
+        this.npuLibraryPath = npuLibraryPath;
     }
 
     
@@ -676,6 +729,101 @@ public class EdgeNodeCreation  {
 
     
 
+    public EdgeNodeCreation withDeviceDataFormat(String deviceDataFormat) {
+        this.deviceDataFormat = deviceDataFormat;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 节点使用的数据格式，默认为iotda物模型1.0格式，可以选择属性平铺数据格式flat_json
+     * @return deviceDataFormat
+     */
+    public String getDeviceDataFormat() {
+        return deviceDataFormat;
+    }
+
+    public void setDeviceDataFormat(String deviceDataFormat) {
+        this.deviceDataFormat = deviceDataFormat;
+    }
+
+    
+
+    public EdgeNodeCreation withAutomaticUpgrade(String automaticUpgrade) {
+        this.automaticUpgrade = automaticUpgrade;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 自动升级系统应用的节点开关，默认为关闭：OFF，IMMEDIATE表示节点开关打开
+     * @return automaticUpgrade
+     */
+    public String getAutomaticUpgrade() {
+        return automaticUpgrade;
+    }
+
+    public void setAutomaticUpgrade(String automaticUpgrade) {
+        this.automaticUpgrade = automaticUpgrade;
+    }
+
+    
+
+    public EdgeNodeCreation withDeviceDataRecord(DeviceDataRecord deviceDataRecord) {
+        this.deviceDataRecord = deviceDataRecord;
+        return this;
+    }
+
+    public EdgeNodeCreation withDeviceDataRecord(Consumer<DeviceDataRecord> deviceDataRecordSetter) {
+        if(this.deviceDataRecord == null ){
+            this.deviceDataRecord = new DeviceDataRecord();
+            deviceDataRecordSetter.accept(this.deviceDataRecord);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get deviceDataRecord
+     * @return deviceDataRecord
+     */
+    public DeviceDataRecord getDeviceDataRecord() {
+        return deviceDataRecord;
+    }
+
+    public void setDeviceDataRecord(DeviceDataRecord deviceDataRecord) {
+        this.deviceDataRecord = deviceDataRecord;
+    }
+
+    
+
+    public EdgeNodeCreation withMetricReport(String metricReport) {
+        this.metricReport = metricReport;
+        return this;
+    }
+
+    
+
+
+    /**
+     * omagent监控运维工具是否上报指标
+     * @return metricReport
+     */
+    public String getMetricReport() {
+        return metricReport;
+    }
+
+    public void setMetricReport(String metricReport) {
+        this.metricReport = metricReport;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -699,17 +847,22 @@ public class EdgeNodeCreation  {
             Objects.equals(this.reliabilityLevel, edgeNodeCreation.reliabilityLevel) &&
             Objects.equals(this.storagePeriod, edgeNodeCreation.storagePeriod) &&
             Objects.equals(this.aiCardType, edgeNodeCreation.aiCardType) &&
+            Objects.equals(this.npuLibraryPath, edgeNodeCreation.npuLibraryPath) &&
             Objects.equals(this.basePath, edgeNodeCreation.basePath) &&
             Objects.equals(this.logConfigs, edgeNodeCreation.logConfigs) &&
             Objects.equals(this.apps, edgeNodeCreation.apps) &&
             Objects.equals(this.networkAccessPoint, edgeNodeCreation.networkAccessPoint) &&
             Objects.equals(this.hardwareModel, edgeNodeCreation.hardwareModel) &&
             Objects.equals(this.offlineCacheConfigs, edgeNodeCreation.offlineCacheConfigs) &&
-            Objects.equals(this.deviceAuthInfo, edgeNodeCreation.deviceAuthInfo);
+            Objects.equals(this.deviceAuthInfo, edgeNodeCreation.deviceAuthInfo) &&
+            Objects.equals(this.deviceDataFormat, edgeNodeCreation.deviceDataFormat) &&
+            Objects.equals(this.automaticUpgrade, edgeNodeCreation.automaticUpgrade) &&
+            Objects.equals(this.deviceDataRecord, edgeNodeCreation.deviceDataRecord) &&
+            Objects.equals(this.metricReport, edgeNodeCreation.metricReport);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(edgeNodeId, name, type, verifyCode, timeOut, arch, osType, instanceId, spaceId, resourceIds, securityLevel, reliabilityLevel, storagePeriod, aiCardType, basePath, logConfigs, apps, networkAccessPoint, hardwareModel, offlineCacheConfigs, deviceAuthInfo);
+        return Objects.hash(edgeNodeId, name, type, verifyCode, timeOut, arch, osType, instanceId, spaceId, resourceIds, securityLevel, reliabilityLevel, storagePeriod, aiCardType, npuLibraryPath, basePath, logConfigs, apps, networkAccessPoint, hardwareModel, offlineCacheConfigs, deviceAuthInfo, deviceDataFormat, automaticUpgrade, deviceDataRecord, metricReport);
     }
     @Override
     public String toString() {
@@ -729,6 +882,7 @@ public class EdgeNodeCreation  {
         sb.append("    reliabilityLevel: ").append(toIndentedString(reliabilityLevel)).append("\n");
         sb.append("    storagePeriod: ").append(toIndentedString(storagePeriod)).append("\n");
         sb.append("    aiCardType: ").append(toIndentedString(aiCardType)).append("\n");
+        sb.append("    npuLibraryPath: ").append(toIndentedString(npuLibraryPath)).append("\n");
         sb.append("    basePath: ").append(toIndentedString(basePath)).append("\n");
         sb.append("    logConfigs: ").append(toIndentedString(logConfigs)).append("\n");
         sb.append("    apps: ").append(toIndentedString(apps)).append("\n");
@@ -736,6 +890,10 @@ public class EdgeNodeCreation  {
         sb.append("    hardwareModel: ").append(toIndentedString(hardwareModel)).append("\n");
         sb.append("    offlineCacheConfigs: ").append(toIndentedString(offlineCacheConfigs)).append("\n");
         sb.append("    deviceAuthInfo: ").append(toIndentedString(deviceAuthInfo)).append("\n");
+        sb.append("    deviceDataFormat: ").append(toIndentedString(deviceDataFormat)).append("\n");
+        sb.append("    automaticUpgrade: ").append(toIndentedString(automaticUpgrade)).append("\n");
+        sb.append("    deviceDataRecord: ").append(toIndentedString(deviceDataRecord)).append("\n");
+        sb.append("    metricReport: ").append(toIndentedString(metricReport)).append("\n");
         sb.append("}");
         return sb.toString();
     }

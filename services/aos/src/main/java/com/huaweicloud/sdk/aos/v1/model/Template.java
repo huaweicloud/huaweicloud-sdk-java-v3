@@ -201,7 +201,7 @@ public class Template  {
 
 
     /**
-     * 模板中最新模板版本的版本描述
+     * -> 模板中最新模板版本的版本描述
      * @return latestVersionDescription
      */
     public String getLatestVersionDescription() {

@@ -185,7 +185,7 @@ public class DeploymentHostRequest {
     }
 
     /**
-     * 是否将当前主机的密码信息同步到同一项目下其他主机组中具有相同IP、用户名、端口的主机。
+     * 是否将当前主机的密码信息同步到同一项目下其他主机集群中具有相同IP、用户名、端口的主机。
      * @return sync
      */
     public Boolean getSync() {

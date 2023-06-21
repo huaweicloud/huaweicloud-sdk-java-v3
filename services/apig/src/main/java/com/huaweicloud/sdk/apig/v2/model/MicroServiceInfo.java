@@ -28,7 +28,7 @@ public class MicroServiceInfo {
     private String instanceId;
 
     /**
-     * 微服务类型： - CSE：CSE微服务注册中心 - CCE：CCE云容器引擎
+     * 微服务类型： - CSE：CSE微服务注册中心 - CCE：CCE云容器引擎（工作负载） - CCE_SERVICE: CCE云容器引擎（Service）
      */
     public static final class ServiceTypeEnum {
 
@@ -42,12 +42,18 @@ public class MicroServiceInfo {
          */
         public static final ServiceTypeEnum CCE = new ServiceTypeEnum("CCE");
 
+        /**
+         * Enum CCE_SERVICE for value: "CCE_SERVICE"
+         */
+        public static final ServiceTypeEnum CCE_SERVICE = new ServiceTypeEnum("CCE_SERVICE");
+
         private static final Map<String, ServiceTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ServiceTypeEnum> createStaticFields() {
             Map<String, ServiceTypeEnum> map = new HashMap<>();
             map.put("CSE", CSE);
             map.put("CCE", CCE);
+            map.put("CCE_SERVICE", CCE_SERVICE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -120,6 +126,11 @@ public class MicroServiceInfo {
     private MicroServiceInfoCCE cceInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cce_service_info")
+
+    private MicroServiceInfoCCEService cceServiceInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
 
     private OffsetDateTime updateTime;
@@ -169,7 +180,7 @@ public class MicroServiceInfo {
     }
 
     /**
-     * 微服务类型： - CSE：CSE微服务注册中心 - CCE：CCE云容器引擎
+     * 微服务类型： - CSE：CSE微服务注册中心 - CCE：CCE云容器引擎（工作负载） - CCE_SERVICE: CCE云容器引擎（Service）
      * @return serviceType
      */
     public ServiceTypeEnum getServiceType() {
@@ -232,6 +243,32 @@ public class MicroServiceInfo {
         this.cceInfo = cceInfo;
     }
 
+    public MicroServiceInfo withCceServiceInfo(MicroServiceInfoCCEService cceServiceInfo) {
+        this.cceServiceInfo = cceServiceInfo;
+        return this;
+    }
+
+    public MicroServiceInfo withCceServiceInfo(Consumer<MicroServiceInfoCCEService> cceServiceInfoSetter) {
+        if (this.cceServiceInfo == null) {
+            this.cceServiceInfo = new MicroServiceInfoCCEService();
+            cceServiceInfoSetter.accept(this.cceServiceInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get cceServiceInfo
+     * @return cceServiceInfo
+     */
+    public MicroServiceInfoCCEService getCceServiceInfo() {
+        return cceServiceInfo;
+    }
+
+    public void setCceServiceInfo(MicroServiceInfoCCEService cceServiceInfo) {
+        this.cceServiceInfo = cceServiceInfo;
+    }
+
     public MicroServiceInfo withUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -280,13 +317,14 @@ public class MicroServiceInfo {
             && Objects.equals(this.serviceType, microServiceInfo.serviceType)
             && Objects.equals(this.cseInfo, microServiceInfo.cseInfo)
             && Objects.equals(this.cceInfo, microServiceInfo.cceInfo)
+            && Objects.equals(this.cceServiceInfo, microServiceInfo.cceServiceInfo)
             && Objects.equals(this.updateTime, microServiceInfo.updateTime)
             && Objects.equals(this.createTime, microServiceInfo.createTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, instanceId, serviceType, cseInfo, cceInfo, updateTime, createTime);
+        return Objects.hash(id, instanceId, serviceType, cseInfo, cceInfo, cceServiceInfo, updateTime, createTime);
     }
 
     @Override
@@ -298,6 +336,7 @@ public class MicroServiceInfo {
         sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
         sb.append("    cseInfo: ").append(toIndentedString(cseInfo)).append("\n");
         sb.append("    cceInfo: ").append(toIndentedString(cceInfo)).append("\n");
+        sb.append("    cceServiceInfo: ").append(toIndentedString(cceServiceInfo)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("}");

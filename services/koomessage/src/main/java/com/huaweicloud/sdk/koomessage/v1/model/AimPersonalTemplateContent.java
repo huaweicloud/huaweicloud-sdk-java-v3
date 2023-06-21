@@ -22,6 +22,11 @@ public class AimPersonalTemplateContent {
     private String content;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "content_child")
+
+    private String contentChild;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "src_type")
 
     private Integer srcType;
@@ -72,6 +77,11 @@ public class AimPersonalTemplateContent {
     private String vivoBackground;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ratio")
+
+    private String ratio;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action")
 
     private AimPersonalTemplateContentAction action;
@@ -82,7 +92,7 @@ public class AimPersonalTemplateContent {
     }
 
     /**
-     * 模板资源类型。 - text：表示文本 - image：表示图片 - video：表示视频 - button：表示按钮 - followPub：表示华为服务号，暂不支持 
+     * 模板资源类型。 - text：表示文本 - image：表示图片 - video：表示视频 - button：表示按钮 - followPub：表示华为服务号，暂不支持  > 图片轮播类模板最多可以放5张图片，即card_id为CarouselSquareImage、CarouselImageSixteenToNine、CarouselVerticalImage时，type为image的资源最多有5个。 
      * @return type
      */
     public String getType() {
@@ -99,7 +109,7 @@ public class AimPersonalTemplateContent {
     }
 
     /**
-     * 资源类型为Text或Button时，为必填。文本长度限制请按智能短信模板版式格式标准。
+     * 资源类型为Text或Button时，为必填。文本长度限制请按智能短信模板版式格式标准。  > 智能信息模板标准版式要求可登录KooMessage控制台，在创建智能信息模板中查看。 
      * @return content
      */
     public String getContent() {
@@ -108,6 +118,23 @@ public class AimPersonalTemplateContent {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public AimPersonalTemplateContent withContentChild(String contentChild) {
+        this.contentChild = contentChild;
+        return this;
+    }
+
+    /**
+     * 子内容。非必填，文本长度限制请参考智能信息模板标准版式要求。  > 智能信息模板标准版式要求可登录KooMessage控制台，在创建智能信息模板中查看。 
+     * @return contentChild
+     */
+    public String getContentChild() {
+        return contentChild;
+    }
+
+    public void setContentChild(String contentChild) {
+        this.contentChild = contentChild;
     }
 
     public AimPersonalTemplateContent withSrcType(Integer srcType) {
@@ -220,7 +247,7 @@ public class AimPersonalTemplateContent {
     }
 
     /**
-     * 组件是否可见。 - 0：隐藏（某些组件可设置隐藏） - 1：可见 
+     * 组件是否可见。 - 0：隐藏（某些组件可设置隐藏） - 1：可见  > 目前仅针对电商多商品（Ecommerce）、多卡券（CardVouchers）、增强机票类（PlaneTrip）这三种版式起效。 
      * @return visible
      */
     public Integer getVisible() {
@@ -282,6 +309,23 @@ public class AimPersonalTemplateContent {
         this.vivoBackground = vivoBackground;
     }
 
+    public AimPersonalTemplateContent withRatio(String ratio) {
+        this.ratio = ratio;
+        return this;
+    }
+
+    /**
+     * 表示短剧视频模板视频和封面的宽高比。即card_id为ShortVideo时，此项有值。 - threeToFour: 宽高比为3:4 - oneToOne: 宽高比为1:1 
+     * @return ratio
+     */
+    public String getRatio() {
+        return ratio;
+    }
+
+    public void setRatio(String ratio) {
+        this.ratio = ratio;
+    }
+
     public AimPersonalTemplateContent withAction(AimPersonalTemplateContentAction action) {
         this.action = action;
         return this;
@@ -319,6 +363,7 @@ public class AimPersonalTemplateContent {
         AimPersonalTemplateContent aimPersonalTemplateContent = (AimPersonalTemplateContent) o;
         return Objects.equals(this.type, aimPersonalTemplateContent.type)
             && Objects.equals(this.content, aimPersonalTemplateContent.content)
+            && Objects.equals(this.contentChild, aimPersonalTemplateContent.contentChild)
             && Objects.equals(this.srcType, aimPersonalTemplateContent.srcType)
             && Objects.equals(this.src, aimPersonalTemplateContent.src)
             && Objects.equals(this.cover, aimPersonalTemplateContent.cover)
@@ -329,6 +374,7 @@ public class AimPersonalTemplateContent {
             && Objects.equals(this.currencyDisplay, aimPersonalTemplateContent.currencyDisplay)
             && Objects.equals(this.oppoBackground, aimPersonalTemplateContent.oppoBackground)
             && Objects.equals(this.vivoBackground, aimPersonalTemplateContent.vivoBackground)
+            && Objects.equals(this.ratio, aimPersonalTemplateContent.ratio)
             && Objects.equals(this.action, aimPersonalTemplateContent.action);
     }
 
@@ -336,6 +382,7 @@ public class AimPersonalTemplateContent {
     public int hashCode() {
         return Objects.hash(type,
             content,
+            contentChild,
             srcType,
             src,
             cover,
@@ -346,6 +393,7 @@ public class AimPersonalTemplateContent {
             currencyDisplay,
             oppoBackground,
             vivoBackground,
+            ratio,
             action);
     }
 
@@ -355,6 +403,7 @@ public class AimPersonalTemplateContent {
         sb.append("class AimPersonalTemplateContent {\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    content: ").append(toIndentedString(content)).append("\n");
+        sb.append("    contentChild: ").append(toIndentedString(contentChild)).append("\n");
         sb.append("    srcType: ").append(toIndentedString(srcType)).append("\n");
         sb.append("    src: ").append(toIndentedString(src)).append("\n");
         sb.append("    cover: ").append(toIndentedString(cover)).append("\n");
@@ -365,6 +414,7 @@ public class AimPersonalTemplateContent {
         sb.append("    currencyDisplay: ").append(toIndentedString(currencyDisplay)).append("\n");
         sb.append("    oppoBackground: ").append(toIndentedString(oppoBackground)).append("\n");
         sb.append("    vivoBackground: ").append(toIndentedString(vivoBackground)).append("\n");
+        sb.append("    ratio: ").append(toIndentedString(ratio)).append("\n");
         sb.append("    action: ").append(toIndentedString(action)).append("\n");
         sb.append("}");
         return sb.toString();

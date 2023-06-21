@@ -13,6 +13,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.iotedge.v2.model.BasePathDTO;
 import com.huaweicloud.sdk.iotedge.v2.model.DeviceAuthInfoDisplayDTO;
+import com.huaweicloud.sdk.iotedge.v2.model.DeviceDataRecord;
 import com.huaweicloud.sdk.iotedge.v2.model.HaConfigDTO;
 import com.huaweicloud.sdk.iotedge.v2.model.LogConfigDTO;
 import com.huaweicloud.sdk.iotedge.v2.model.Nic;
@@ -150,6 +151,12 @@ public class ShowEdgeNodeResponse extends SdkResponse {
     private String aiCardType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="npu_library_path")
+    
+
+    private String npuLibraryPath;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="container_version")
     
 
@@ -202,6 +209,30 @@ public class ShowEdgeNodeResponse extends SdkResponse {
     
 
     private DeviceAuthInfoDisplayDTO deviceAuthInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="device_data_format")
+    
+
+    private String deviceDataFormat;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="automatic_upgrade")
+    
+
+    private String automaticUpgrade;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="device_data_record")
+    
+
+    private DeviceDataRecord deviceDataRecord;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="metric_report")
+    
+
+    private String metricReport;
 
     public ShowEdgeNodeResponse withLogConfigs(List<LogConfigDTO> logConfigs) {
         this.logConfigs = logConfigs;
@@ -729,7 +760,7 @@ public class ShowEdgeNodeResponse extends SdkResponse {
 
 
     /**
-     * 华为AI加速卡类型，如NPU、GPU、unEquipped
+     * AI加速卡类型，如华为昇腾AI加速卡NPU、图像处理加速卡GPU。
      * @return aiCardType
      */
     public String getAiCardType() {
@@ -738,6 +769,28 @@ public class ShowEdgeNodeResponse extends SdkResponse {
 
     public void setAiCardType(String aiCardType) {
         this.aiCardType = aiCardType;
+    }
+
+    
+
+    public ShowEdgeNodeResponse withNpuLibraryPath(String npuLibraryPath) {
+        this.npuLibraryPath = npuLibraryPath;
+        return this;
+    }
+
+    
+
+
+    /**
+     * npu驱动动态库路径
+     * @return npuLibraryPath
+     */
+    public String getNpuLibraryPath() {
+        return npuLibraryPath;
+    }
+
+    public void setNpuLibraryPath(String npuLibraryPath) {
+        this.npuLibraryPath = npuLibraryPath;
     }
 
     
@@ -963,6 +1016,101 @@ public class ShowEdgeNodeResponse extends SdkResponse {
 
     
 
+    public ShowEdgeNodeResponse withDeviceDataFormat(String deviceDataFormat) {
+        this.deviceDataFormat = deviceDataFormat;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 节点使用的数据格式，默认为iotda物模型1.0格式，可以选择属性平铺数据格式flat_json
+     * @return deviceDataFormat
+     */
+    public String getDeviceDataFormat() {
+        return deviceDataFormat;
+    }
+
+    public void setDeviceDataFormat(String deviceDataFormat) {
+        this.deviceDataFormat = deviceDataFormat;
+    }
+
+    
+
+    public ShowEdgeNodeResponse withAutomaticUpgrade(String automaticUpgrade) {
+        this.automaticUpgrade = automaticUpgrade;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 自动升级系统应用的节点开关，默认为关闭：OFF，IMMEDIATE表示节点开关打开
+     * @return automaticUpgrade
+     */
+    public String getAutomaticUpgrade() {
+        return automaticUpgrade;
+    }
+
+    public void setAutomaticUpgrade(String automaticUpgrade) {
+        this.automaticUpgrade = automaticUpgrade;
+    }
+
+    
+
+    public ShowEdgeNodeResponse withDeviceDataRecord(DeviceDataRecord deviceDataRecord) {
+        this.deviceDataRecord = deviceDataRecord;
+        return this;
+    }
+
+    public ShowEdgeNodeResponse withDeviceDataRecord(Consumer<DeviceDataRecord> deviceDataRecordSetter) {
+        if(this.deviceDataRecord == null ){
+            this.deviceDataRecord = new DeviceDataRecord();
+            deviceDataRecordSetter.accept(this.deviceDataRecord);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get deviceDataRecord
+     * @return deviceDataRecord
+     */
+    public DeviceDataRecord getDeviceDataRecord() {
+        return deviceDataRecord;
+    }
+
+    public void setDeviceDataRecord(DeviceDataRecord deviceDataRecord) {
+        this.deviceDataRecord = deviceDataRecord;
+    }
+
+    
+
+    public ShowEdgeNodeResponse withMetricReport(String metricReport) {
+        this.metricReport = metricReport;
+        return this;
+    }
+
+    
+
+
+    /**
+     * omagent监控运维工具是否上报指标
+     * @return metricReport
+     */
+    public String getMetricReport() {
+        return metricReport;
+    }
+
+    public void setMetricReport(String metricReport) {
+        this.metricReport = metricReport;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -993,6 +1141,7 @@ public class ShowEdgeNodeResponse extends SdkResponse {
             Objects.equals(this.nics, showEdgeNodeResponse.nics) &&
             Objects.equals(this.specification, showEdgeNodeResponse.specification) &&
             Objects.equals(this.aiCardType, showEdgeNodeResponse.aiCardType) &&
+            Objects.equals(this.npuLibraryPath, showEdgeNodeResponse.npuLibraryPath) &&
             Objects.equals(this.containerVersion, showEdgeNodeResponse.containerVersion) &&
             Objects.equals(this.type, showEdgeNodeResponse.type) &&
             Objects.equals(this.securityLevel, showEdgeNodeResponse.securityLevel) &&
@@ -1001,11 +1150,15 @@ public class ShowEdgeNodeResponse extends SdkResponse {
             Objects.equals(this.basePath, showEdgeNodeResponse.basePath) &&
             Objects.equals(this.hardwareModel, showEdgeNodeResponse.hardwareModel) &&
             Objects.equals(this.offlineCacheConfigs, showEdgeNodeResponse.offlineCacheConfigs) &&
-            Objects.equals(this.deviceAuthInfo, showEdgeNodeResponse.deviceAuthInfo);
+            Objects.equals(this.deviceAuthInfo, showEdgeNodeResponse.deviceAuthInfo) &&
+            Objects.equals(this.deviceDataFormat, showEdgeNodeResponse.deviceDataFormat) &&
+            Objects.equals(this.automaticUpgrade, showEdgeNodeResponse.automaticUpgrade) &&
+            Objects.equals(this.deviceDataRecord, showEdgeNodeResponse.deviceDataRecord) &&
+            Objects.equals(this.metricReport, showEdgeNodeResponse.metricReport);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(logConfigs, haConfig, edgeNodeId, instanceId, productId, productName, spaceId, resourceSpecTypes, resourceIds, ips, name, state, softwareVersion, createTime, updateTime, osName, arch, hostName, nics, specification, aiCardType, containerVersion, type, securityLevel, reliabilityLevel, storagePeriod, basePath, hardwareModel, offlineCacheConfigs, deviceAuthInfo);
+        return Objects.hash(logConfigs, haConfig, edgeNodeId, instanceId, productId, productName, spaceId, resourceSpecTypes, resourceIds, ips, name, state, softwareVersion, createTime, updateTime, osName, arch, hostName, nics, specification, aiCardType, npuLibraryPath, containerVersion, type, securityLevel, reliabilityLevel, storagePeriod, basePath, hardwareModel, offlineCacheConfigs, deviceAuthInfo, deviceDataFormat, automaticUpgrade, deviceDataRecord, metricReport);
     }
     @Override
     public String toString() {
@@ -1032,6 +1185,7 @@ public class ShowEdgeNodeResponse extends SdkResponse {
         sb.append("    nics: ").append(toIndentedString(nics)).append("\n");
         sb.append("    specification: ").append(toIndentedString(specification)).append("\n");
         sb.append("    aiCardType: ").append(toIndentedString(aiCardType)).append("\n");
+        sb.append("    npuLibraryPath: ").append(toIndentedString(npuLibraryPath)).append("\n");
         sb.append("    containerVersion: ").append(toIndentedString(containerVersion)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    securityLevel: ").append(toIndentedString(securityLevel)).append("\n");
@@ -1041,6 +1195,10 @@ public class ShowEdgeNodeResponse extends SdkResponse {
         sb.append("    hardwareModel: ").append(toIndentedString(hardwareModel)).append("\n");
         sb.append("    offlineCacheConfigs: ").append(toIndentedString(offlineCacheConfigs)).append("\n");
         sb.append("    deviceAuthInfo: ").append(toIndentedString(deviceAuthInfo)).append("\n");
+        sb.append("    deviceDataFormat: ").append(toIndentedString(deviceDataFormat)).append("\n");
+        sb.append("    automaticUpgrade: ").append(toIndentedString(automaticUpgrade)).append("\n");
+        sb.append("    deviceDataRecord: ").append(toIndentedString(deviceDataRecord)).append("\n");
+        sb.append("    metricReport: ").append(toIndentedString(metricReport)).append("\n");
         sb.append("}");
         return sb.toString();
     }

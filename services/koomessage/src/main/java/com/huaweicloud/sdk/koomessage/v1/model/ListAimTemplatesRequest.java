@@ -49,6 +49,11 @@ public class ListAimTemplatesRequest {
     private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_only_status")
+
+    private Boolean isOnlyStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
     private Integer offset;
@@ -193,6 +198,23 @@ public class ListAimTemplatesRequest {
         this.endTime = endTime;
     }
 
+    public ListAimTemplatesRequest withIsOnlyStatus(Boolean isOnlyStatus) {
+        this.isOnlyStatus = isOnlyStatus;
+        return this;
+    }
+
+    /**
+     * 响应里只返回状态信息，不返回pages和params。  - false：默认值，返回全量信息 - true：只返回状态信息 
+     * @return isOnlyStatus
+     */
+    public Boolean getIsOnlyStatus() {
+        return isOnlyStatus;
+    }
+
+    public void setIsOnlyStatus(Boolean isOnlyStatus) {
+        this.isOnlyStatus = isOnlyStatus;
+    }
+
     public ListAimTemplatesRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -247,13 +269,15 @@ public class ListAimTemplatesRequest {
             && Objects.equals(this.hasParam, listAimTemplatesRequest.hasParam)
             && Objects.equals(this.beginTime, listAimTemplatesRequest.beginTime)
             && Objects.equals(this.endTime, listAimTemplatesRequest.endTime)
+            && Objects.equals(this.isOnlyStatus, listAimTemplatesRequest.isOnlyStatus)
             && Objects.equals(this.offset, listAimTemplatesRequest.offset)
             && Objects.equals(this.limit, listAimTemplatesRequest.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tplId, tplName, tplType, factoryType, hasParam, beginTime, endTime, offset, limit);
+        return Objects
+            .hash(tplId, tplName, tplType, factoryType, hasParam, beginTime, endTime, isOnlyStatus, offset, limit);
     }
 
     @Override
@@ -267,6 +291,7 @@ public class ListAimTemplatesRequest {
         sb.append("    hasParam: ").append(toIndentedString(hasParam)).append("\n");
         sb.append("    beginTime: ").append(toIndentedString(beginTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+        sb.append("    isOnlyStatus: ").append(toIndentedString(isOnlyStatus)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");

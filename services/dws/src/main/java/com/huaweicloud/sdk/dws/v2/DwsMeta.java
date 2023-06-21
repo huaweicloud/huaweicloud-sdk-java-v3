@@ -1276,7 +1276,7 @@ public class DwsMeta {
         // requests
         builder.<String>withRequestField("primary_cluster_id",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAvailableDisasterClustersRequest::getPrimaryClusterId, (req, v) -> {
                 req.setPrimaryClusterId(v);
@@ -1311,7 +1311,7 @@ public class DwsMeta {
             }));
         builder.<String>withRequestField("standby_az_code",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAvailableDisasterClustersRequest::getStandbyAzCode, (req, v) -> {
                 req.setStandbyAzCode(v);

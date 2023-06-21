@@ -103,6 +103,11 @@ public class QueryRecordSetWithLineResp {
 
     private AliasTarget aliasTarget;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bundle")
+
+    private String bundle;
+
     public QueryRecordSetWithLineResp withId(String id) {
         this.id = id;
         return this;
@@ -443,6 +448,23 @@ public class QueryRecordSetWithLineResp {
         this.aliasTarget = aliasTarget;
     }
 
+    public QueryRecordSetWithLineResp withBundle(String bundle) {
+        this.bundle = bundle;
+        return this;
+    }
+
+    /**
+     * 规格，默认规格，保留字段。
+     * @return bundle
+     */
+    public String getBundle() {
+        return bundle;
+    }
+
+    public void setBundle(String bundle) {
+        this.bundle = bundle;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -469,7 +491,8 @@ public class QueryRecordSetWithLineResp {
             && Objects.equals(this.line, queryRecordSetWithLineResp.line)
             && Objects.equals(this.weight, queryRecordSetWithLineResp.weight)
             && Objects.equals(this.healthCheckId, queryRecordSetWithLineResp.healthCheckId)
-            && Objects.equals(this.aliasTarget, queryRecordSetWithLineResp.aliasTarget);
+            && Objects.equals(this.aliasTarget, queryRecordSetWithLineResp.aliasTarget)
+            && Objects.equals(this.bundle, queryRecordSetWithLineResp.bundle);
     }
 
     @Override
@@ -491,7 +514,8 @@ public class QueryRecordSetWithLineResp {
             line,
             weight,
             healthCheckId,
-            aliasTarget);
+            aliasTarget,
+            bundle);
     }
 
     @Override
@@ -516,6 +540,7 @@ public class QueryRecordSetWithLineResp {
         sb.append("    weight: ").append(toIndentedString(weight)).append("\n");
         sb.append("    healthCheckId: ").append(toIndentedString(healthCheckId)).append("\n");
         sb.append("    aliasTarget: ").append(toIndentedString(aliasTarget)).append("\n");
+        sb.append("    bundle: ").append(toIndentedString(bundle)).append("\n");
         sb.append("}");
         return sb.toString();
     }

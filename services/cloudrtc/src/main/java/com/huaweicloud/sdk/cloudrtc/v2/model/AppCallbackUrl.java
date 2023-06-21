@@ -174,7 +174,7 @@ public class AppCallbackUrl {
     }
 
     /**
-     * 订阅云端录制通知消息。  取值如下：  - RECORD_NEW_FILE_START：录制模块开始创建新的录制文件。  - RECORD_FILE_COMPLETE：录制模块已经生成录制文件。 
+     * 订阅云端录制通知消息。  取值如下：  - RECORD_NEW_FILE_START：开始创建新的录制文件。  - RECORD_FILE_COMPLETE：录制文件生成完成。 
      * @return notifyEventSubscription
      */
     public List<NotifyEventSubscriptionEnum> getNotifyEventSubscription() {

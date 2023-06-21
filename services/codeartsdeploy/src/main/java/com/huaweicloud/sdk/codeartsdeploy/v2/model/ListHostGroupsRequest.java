@@ -303,7 +303,7 @@ public class ListHostGroupsRequest {
     }
 
     /**
-     * 主机组名
+     * 主机集群名
      * @return name
      */
     public String getName() {

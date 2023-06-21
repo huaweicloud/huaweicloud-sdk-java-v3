@@ -39,6 +39,11 @@ public class CreateVmsSendTaskRequestBody {
     private List<ContentParam> dyncParams = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "individual_params")
+
+    private List<IndividualParam> individualParams = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "exdata")
 
     private String exdata;
@@ -118,7 +123,7 @@ public class CreateVmsSendTaskRequestBody {
     }
 
     /**
-     * 号码列表，最多支持5000个号码。
+     * 群发手机号码列表，最多支持5000个号码。  > 长度指的是单个号码的长度。 > mobiles和individual_params字段只能二选一。 
      * @return mobiles
      */
     public List<String> getMobiles() {
@@ -151,7 +156,7 @@ public class CreateVmsSendTaskRequestBody {
     }
 
     /**
-     * 动态参数数组。  > 参数顺序按照模板创建时参数占位符的顺序传入，例如创建模板时设置动参有#p_1#、#p_2#、#p_3#，则传入的参数数组顺序第一个元素为#p_1#，第二个元素是#p_2#，第三个元素为#p_3#。 
+     * 群发动态参数数组。 - 参数顺序按照模板创建时参数占位符的顺序传入，例如创建模板时设置动参有#p_1#、#p_2#、#p_3#，则传入的参数数组顺序第一个元素为#p_1#，第二个元素是#p_2#，第三个元素为#p_3#。 - mobiles不填时，此字段被忽略。 
      * @return dyncParams
      */
     public List<ContentParam> getDyncParams() {
@@ -160,6 +165,39 @@ public class CreateVmsSendTaskRequestBody {
 
     public void setDyncParams(List<ContentParam> dyncParams) {
         this.dyncParams = dyncParams;
+    }
+
+    public CreateVmsSendTaskRequestBody withIndividualParams(List<IndividualParam> individualParams) {
+        this.individualParams = individualParams;
+        return this;
+    }
+
+    public CreateVmsSendTaskRequestBody addIndividualParamsItem(IndividualParam individualParamsItem) {
+        if (this.individualParams == null) {
+            this.individualParams = new ArrayList<>();
+        }
+        this.individualParams.add(individualParamsItem);
+        return this;
+    }
+
+    public CreateVmsSendTaskRequestBody withIndividualParams(Consumer<List<IndividualParam>> individualParamsSetter) {
+        if (this.individualParams == null) {
+            this.individualParams = new ArrayList<>();
+        }
+        individualParamsSetter.accept(this.individualParams);
+        return this;
+    }
+
+    /**
+     * 个性化手机号码及动态参数数组。  mobiles和individual_params字段只能二选一。 
+     * @return individualParams
+     */
+    public List<IndividualParam> getIndividualParams() {
+        return individualParams;
+    }
+
+    public void setIndividualParams(List<IndividualParam> individualParams) {
+        this.individualParams = individualParams;
     }
 
     public CreateVmsSendTaskRequestBody withExdata(String exdata) {
@@ -193,12 +231,13 @@ public class CreateVmsSendTaskRequestBody {
             && Objects.equals(this.expirationTime, createVmsSendTaskRequestBody.expirationTime)
             && Objects.equals(this.mobiles, createVmsSendTaskRequestBody.mobiles)
             && Objects.equals(this.dyncParams, createVmsSendTaskRequestBody.dyncParams)
+            && Objects.equals(this.individualParams, createVmsSendTaskRequestBody.individualParams)
             && Objects.equals(this.exdata, createVmsSendTaskRequestBody.exdata);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(taskName, tplId, expirationTime, mobiles, dyncParams, exdata);
+        return Objects.hash(taskName, tplId, expirationTime, mobiles, dyncParams, individualParams, exdata);
     }
 
     @Override
@@ -210,6 +249,7 @@ public class CreateVmsSendTaskRequestBody {
         sb.append("    expirationTime: ").append(toIndentedString(expirationTime)).append("\n");
         sb.append("    mobiles: ").append(toIndentedString(mobiles)).append("\n");
         sb.append("    dyncParams: ").append(toIndentedString(dyncParams)).append("\n");
+        sb.append("    individualParams: ").append(toIndentedString(individualParams)).append("\n");
         sb.append("    exdata: ").append(toIndentedString(exdata)).append("\n");
         sb.append("}");
         return sb.toString();

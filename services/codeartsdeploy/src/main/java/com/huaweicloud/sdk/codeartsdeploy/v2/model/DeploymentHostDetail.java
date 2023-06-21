@@ -37,7 +37,7 @@ public class DeploymentHostDetail {
     private Integer port;
 
     /**
-     * 操作系统：windows|linux，需要和主机组保持一致
+     * 操作系统：windows|linux，需要和主机集群保持一致
      */
     public static final class OsEnum {
 
@@ -224,7 +224,7 @@ public class DeploymentHostDetail {
     }
 
     /**
-     * 主机组id
+     * 主机集群id
      * @return groupId
      */
     public String getGroupId() {
@@ -292,7 +292,7 @@ public class DeploymentHostDetail {
     }
 
     /**
-     * 操作系统：windows|linux，需要和主机组保持一致
+     * 操作系统：windows|linux，需要和主机集群保持一致
      * @return os
      */
     public OsEnum getOs() {
@@ -429,7 +429,7 @@ public class DeploymentHostDetail {
     }
 
     /**
-     * 主机组名
+     * 主机集群名
      * @return groupName
      */
     public String getGroupName() {

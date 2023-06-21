@@ -780,7 +780,7 @@ public class CloudRTCAsyncClient {
     }
 
     /**
-     * RTC增值（录制）事件回调配置
+     * 配置RTC增值（录制）事件回调
      *
      * 调用此接口配置增值（录制）事件上报回调。
      * 
@@ -799,7 +799,7 @@ public class CloudRTCAsyncClient {
     }
 
     /**
-     * RTC增值（录制）事件回调配置
+     * 配置RTC增值（录制）事件回调
      *
      * 调用此接口配置增值（录制）事件上报回调。
      * 

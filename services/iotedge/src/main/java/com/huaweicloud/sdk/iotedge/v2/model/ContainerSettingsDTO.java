@@ -3,6 +3,10 @@ package com.huaweicloud.sdk.iotedge.v2.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -13,7 +17,9 @@ import com.huaweicloud.sdk.iotedge.v2.model.ExtDevice;
 import com.huaweicloud.sdk.iotedge.v2.model.ResourceDTO;
 import com.huaweicloud.sdk.iotedge.v2.model.VolumeDTO;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -45,7 +51,217 @@ public class ContainerSettingsDTO  {
     @JsonProperty(value="volumes")
     
     private List<VolumeDTO> volumes = null;
+        /**
+     * NPU类型, D310:昇腾310推理卡，D910:昇腾910训练卡;D310P：昇腾710或者310P加速卡
+     */
+    public static final class NpuTypeEnum {
+
+        
+        /**
+         * Enum D310 for value: "D310"
+         */
+        public static final NpuTypeEnum D310 = new NpuTypeEnum("D310");
+        
+        /**
+         * Enum D910 for value: "D910"
+         */
+        public static final NpuTypeEnum D910 = new NpuTypeEnum("D910");
+        
+        /**
+         * Enum D310P for value: "D310P"
+         */
+        public static final NpuTypeEnum D310P = new NpuTypeEnum("D310P");
+        
+
+        private static final Map<String, NpuTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, NpuTypeEnum> createStaticFields() {
+            Map<String, NpuTypeEnum> map = new HashMap<>();
+            map.put("D310", D310);
+            map.put("D910", D910);
+            map.put("D310P", D310P);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        NpuTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static NpuTypeEnum fromValue(String value) {
+            if( value == null ){
+                return null;
+            }
+            NpuTypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new NpuTypeEnum(value);
+            }
+            return result;
+        }
+
+        public static NpuTypeEnum valueOf(String value) {
+            if( value == null ){
+                return null;
+            }
+            NpuTypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof NpuTypeEnum) {
+                return this.value.equals(((NpuTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="npu_type")
     
+
+    private NpuTypeEnum npuType;
+    /**
+     * NPU算力切分模板,昇腾D310Pro，支持：vir01、vir02、vir02_1c、vir04、vir04_4c_dvpp、vir04_3c、vir04_3c_ndvpp 昇腾D910芯片支持:vir01|vir02|vir04|vir08 可在对应芯片的机器上通过npu-smi info -t template-info命令查询其详细信息
+     */
+    public static final class VnpuTemplateEnum {
+
+        
+        /**
+         * Enum VIR01 for value: "vir01"
+         */
+        public static final VnpuTemplateEnum VIR01 = new VnpuTemplateEnum("vir01");
+        
+        /**
+         * Enum VIR02 for value: "vir02"
+         */
+        public static final VnpuTemplateEnum VIR02 = new VnpuTemplateEnum("vir02");
+        
+        /**
+         * Enum VIR04 for value: "vir04"
+         */
+        public static final VnpuTemplateEnum VIR04 = new VnpuTemplateEnum("vir04");
+        
+        /**
+         * Enum VIR08 for value: "vir08"
+         */
+        public static final VnpuTemplateEnum VIR08 = new VnpuTemplateEnum("vir08");
+        
+        /**
+         * Enum VIR02_1C for value: "vir02_1c"
+         */
+        public static final VnpuTemplateEnum VIR02_1C = new VnpuTemplateEnum("vir02_1c");
+        
+        /**
+         * Enum VIR04_3C for value: "vir04_3c"
+         */
+        public static final VnpuTemplateEnum VIR04_3C = new VnpuTemplateEnum("vir04_3c");
+        
+        /**
+         * Enum VIR04_3C_NDVPP for value: "vir04_3c_ndvpp"
+         */
+        public static final VnpuTemplateEnum VIR04_3C_NDVPP = new VnpuTemplateEnum("vir04_3c_ndvpp");
+        
+        /**
+         * Enum VIR04_4C_DVPP for value: "vir04_4c_dvpp"
+         */
+        public static final VnpuTemplateEnum VIR04_4C_DVPP = new VnpuTemplateEnum("vir04_4c_dvpp");
+        
+
+        private static final Map<String, VnpuTemplateEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, VnpuTemplateEnum> createStaticFields() {
+            Map<String, VnpuTemplateEnum> map = new HashMap<>();
+            map.put("vir01", VIR01);
+            map.put("vir02", VIR02);
+            map.put("vir04", VIR04);
+            map.put("vir08", VIR08);
+            map.put("vir02_1c", VIR02_1C);
+            map.put("vir04_3c", VIR04_3C);
+            map.put("vir04_3c_ndvpp", VIR04_3C_NDVPP);
+            map.put("vir04_4c_dvpp", VIR04_4C_DVPP);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        VnpuTemplateEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static VnpuTemplateEnum fromValue(String value) {
+            if( value == null ){
+                return null;
+            }
+            VnpuTemplateEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new VnpuTemplateEnum(value);
+            }
+            return result;
+        }
+
+        public static VnpuTemplateEnum valueOf(String value) {
+            if( value == null ){
+                return null;
+            }
+            VnpuTemplateEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof VnpuTemplateEnum) {
+                return this.value.equals(((VnpuTemplateEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="vnpu_template")
+    
+
+    private VnpuTemplateEnum vnpuTemplate;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resources")
     
@@ -166,6 +382,50 @@ public class ContainerSettingsDTO  {
 
     
 
+    public ContainerSettingsDTO withNpuType(NpuTypeEnum npuType) {
+        this.npuType = npuType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * NPU类型, D310:昇腾310推理卡，D910:昇腾910训练卡;D310P：昇腾710或者310P加速卡
+     * @return npuType
+     */
+    public NpuTypeEnum getNpuType() {
+        return npuType;
+    }
+
+    public void setNpuType(NpuTypeEnum npuType) {
+        this.npuType = npuType;
+    }
+
+    
+
+    public ContainerSettingsDTO withVnpuTemplate(VnpuTemplateEnum vnpuTemplate) {
+        this.vnpuTemplate = vnpuTemplate;
+        return this;
+    }
+
+    
+
+
+    /**
+     * NPU算力切分模板,昇腾D310Pro，支持：vir01、vir02、vir02_1c、vir04、vir04_4c_dvpp、vir04_3c、vir04_3c_ndvpp 昇腾D910芯片支持:vir01|vir02|vir04|vir08 可在对应芯片的机器上通过npu-smi info -t template-info命令查询其详细信息
+     * @return vnpuTemplate
+     */
+    public VnpuTemplateEnum getVnpuTemplate() {
+        return vnpuTemplate;
+    }
+
+    public void setVnpuTemplate(VnpuTemplateEnum vnpuTemplate) {
+        this.vnpuTemplate = vnpuTemplate;
+    }
+
+    
+
     public ContainerSettingsDTO withResources(ResourceDTO resources) {
         this.resources = resources;
         return this;
@@ -244,12 +504,14 @@ public class ContainerSettingsDTO  {
             Objects.equals(this.imageUrl, containerSettingsDTO.imageUrl) &&
             Objects.equals(this.envs, containerSettingsDTO.envs) &&
             Objects.equals(this.volumes, containerSettingsDTO.volumes) &&
+            Objects.equals(this.npuType, containerSettingsDTO.npuType) &&
+            Objects.equals(this.vnpuTemplate, containerSettingsDTO.vnpuTemplate) &&
             Objects.equals(this.resources, containerSettingsDTO.resources) &&
             Objects.equals(this.extDevices, containerSettingsDTO.extDevices);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(configs, imageUrl, envs, volumes, resources, extDevices);
+        return Objects.hash(configs, imageUrl, envs, volumes, npuType, vnpuTemplate, resources, extDevices);
     }
     @Override
     public String toString() {
@@ -259,6 +521,8 @@ public class ContainerSettingsDTO  {
         sb.append("    imageUrl: ").append(toIndentedString(imageUrl)).append("\n");
         sb.append("    envs: ").append(toIndentedString(envs)).append("\n");
         sb.append("    volumes: ").append(toIndentedString(volumes)).append("\n");
+        sb.append("    npuType: ").append(toIndentedString(npuType)).append("\n");
+        sb.append("    vnpuTemplate: ").append(toIndentedString(vnpuTemplate)).append("\n");
         sb.append("    resources: ").append(toIndentedString(resources)).append("\n");
         sb.append("    extDevices: ").append(toIndentedString(extDevices)).append("\n");
         sb.append("}");

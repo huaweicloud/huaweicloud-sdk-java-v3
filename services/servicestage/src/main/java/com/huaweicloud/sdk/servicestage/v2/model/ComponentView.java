@@ -3,8 +3,6 @@ package com.huaweicloud.sdk.servicestage.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -32,11 +30,6 @@ public class ComponentView {
     @JsonProperty(value = "project_id")
 
     private String projectId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "pipeline_ids")
-
-    private List<String> pipelineIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "runtime")
@@ -154,39 +147,6 @@ public class ComponentView {
 
     public void setProjectId(String projectId) {
         this.projectId = projectId;
-    }
-
-    public ComponentView withPipelineIds(List<String> pipelineIds) {
-        this.pipelineIds = pipelineIds;
-        return this;
-    }
-
-    public ComponentView addPipelineIdsItem(String pipelineIdsItem) {
-        if (this.pipelineIds == null) {
-            this.pipelineIds = new ArrayList<>();
-        }
-        this.pipelineIds.add(pipelineIdsItem);
-        return this;
-    }
-
-    public ComponentView withPipelineIds(Consumer<List<String>> pipelineIdsSetter) {
-        if (this.pipelineIds == null) {
-            this.pipelineIds = new ArrayList<>();
-        }
-        pipelineIdsSetter.accept(this.pipelineIds);
-        return this;
-    }
-
-    /**
-     * 流水线Id列表，最多10个。
-     * @return pipelineIds
-     */
-    public List<String> getPipelineIds() {
-        return pipelineIds;
-    }
-
-    public void setPipelineIds(List<String> pipelineIds) {
-        this.pipelineIds = pipelineIds;
     }
 
     public ComponentView withRuntime(RuntimeType runtime) {
@@ -389,7 +349,6 @@ public class ComponentView {
         return Objects.equals(this.id, componentView.id)
             && Objects.equals(this.applicationId, componentView.applicationId)
             && Objects.equals(this.name, componentView.name) && Objects.equals(this.projectId, componentView.projectId)
-            && Objects.equals(this.pipelineIds, componentView.pipelineIds)
             && Objects.equals(this.runtime, componentView.runtime)
             && Objects.equals(this.category, componentView.category)
             && Objects.equals(this.subCategory, componentView.subCategory)
@@ -406,7 +365,6 @@ public class ComponentView {
             applicationId,
             name,
             projectId,
-            pipelineIds,
             runtime,
             category,
             subCategory,
@@ -427,7 +385,6 @@ public class ComponentView {
         sb.append("    applicationId: ").append(toIndentedString(applicationId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
-        sb.append("    pipelineIds: ").append(toIndentedString(pipelineIds)).append("\n");
         sb.append("    runtime: ").append(toIndentedString(runtime)).append("\n");
         sb.append("    category: ").append(toIndentedString(category)).append("\n");
         sb.append("    subCategory: ").append(toIndentedString(subCategory)).append("\n");

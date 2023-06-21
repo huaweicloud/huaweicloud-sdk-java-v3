@@ -92,6 +92,66 @@ public class CloudTableClient {
     }
 
     /**
+     * 开启opentsdb组件
+     *
+     * 开启opentsdb组件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param EnableComponentRequest 请求对象
+     * @return EnableComponentResponse
+     */
+    public EnableComponentResponse enableComponent(EnableComponentRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudTableMeta.enableComponent);
+    }
+
+    /**
+     * 开启opentsdb组件
+     *
+     * 开启opentsdb组件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param EnableComponentRequest 请求对象
+     * @return SyncInvoker<EnableComponentRequest, EnableComponentResponse>
+     */
+    public SyncInvoker<EnableComponentRequest, EnableComponentResponse> enableComponentInvoker(
+        EnableComponentRequest request) {
+        return new SyncInvoker<EnableComponentRequest, EnableComponentResponse>(request, CloudTableMeta.enableComponent,
+            hcClient);
+    }
+
+    /**
+     * 扩容组件
+     *
+     * 扩容指定类型的集群节点
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExpandClusterComponentRequest 请求对象
+     * @return ExpandClusterComponentResponse
+     */
+    public ExpandClusterComponentResponse expandClusterComponent(ExpandClusterComponentRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudTableMeta.expandClusterComponent);
+    }
+
+    /**
+     * 扩容组件
+     *
+     * 扩容指定类型的集群节点
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExpandClusterComponentRequest 请求对象
+     * @return SyncInvoker<ExpandClusterComponentRequest, ExpandClusterComponentResponse>
+     */
+    public SyncInvoker<ExpandClusterComponentRequest, ExpandClusterComponentResponse> expandClusterComponentInvoker(
+        ExpandClusterComponentRequest request) {
+        return new SyncInvoker<ExpandClusterComponentRequest, ExpandClusterComponentResponse>(request,
+            CloudTableMeta.expandClusterComponent, hcClient);
+    }
+
+    /**
      * 查询CloudTable集群列表
      *
      * 查看用户创建的集群列表信息。
@@ -118,6 +178,36 @@ public class CloudTableClient {
     public SyncInvoker<ListClustersRequest, ListClustersResponse> listClustersInvoker(ListClustersRequest request) {
         return new SyncInvoker<ListClustersRequest, ListClustersResponse>(request, CloudTableMeta.listClusters,
             hcClient);
+    }
+
+    /**
+     * 重启集群的api入口
+     *
+     * 重启集群的api入口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RebootCloudTableClusterRequest 请求对象
+     * @return RebootCloudTableClusterResponse
+     */
+    public RebootCloudTableClusterResponse rebootCloudTableCluster(RebootCloudTableClusterRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudTableMeta.rebootCloudTableCluster);
+    }
+
+    /**
+     * 重启集群的api入口
+     *
+     * 重启集群的api入口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RebootCloudTableClusterRequest 请求对象
+     * @return SyncInvoker<RebootCloudTableClusterRequest, RebootCloudTableClusterResponse>
+     */
+    public SyncInvoker<RebootCloudTableClusterRequest, RebootCloudTableClusterResponse> rebootCloudTableClusterInvoker(
+        RebootCloudTableClusterRequest request) {
+        return new SyncInvoker<RebootCloudTableClusterRequest, RebootCloudTableClusterResponse>(request,
+            CloudTableMeta.rebootCloudTableCluster, hcClient);
     }
 
     /**
@@ -148,6 +238,66 @@ public class CloudTableClient {
         ShowClusterDetailRequest request) {
         return new SyncInvoker<ShowClusterDetailRequest, ShowClusterDetailResponse>(request,
             CloudTableMeta.showClusterDetail, hcClient);
+    }
+
+    /**
+     * 查询集群配置
+     *
+     * 查询集群配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowClusterSettingRequest 请求对象
+     * @return ShowClusterSettingResponse
+     */
+    public ShowClusterSettingResponse showClusterSetting(ShowClusterSettingRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudTableMeta.showClusterSetting);
+    }
+
+    /**
+     * 查询集群配置
+     *
+     * 查询集群配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowClusterSettingRequest 请求对象
+     * @return SyncInvoker<ShowClusterSettingRequest, ShowClusterSettingResponse>
+     */
+    public SyncInvoker<ShowClusterSettingRequest, ShowClusterSettingResponse> showClusterSettingInvoker(
+        ShowClusterSettingRequest request) {
+        return new SyncInvoker<ShowClusterSettingRequest, ShowClusterSettingResponse>(request,
+            CloudTableMeta.showClusterSetting, hcClient);
+    }
+
+    /**
+     * 修改集群配置
+     *
+     * 修改集群配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateClusterSettingRequest 请求对象
+     * @return UpdateClusterSettingResponse
+     */
+    public UpdateClusterSettingResponse updateClusterSetting(UpdateClusterSettingRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudTableMeta.updateClusterSetting);
+    }
+
+    /**
+     * 修改集群配置
+     *
+     * 修改集群配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateClusterSettingRequest 请求对象
+     * @return SyncInvoker<UpdateClusterSettingRequest, UpdateClusterSettingResponse>
+     */
+    public SyncInvoker<UpdateClusterSettingRequest, UpdateClusterSettingResponse> updateClusterSettingInvoker(
+        UpdateClusterSettingRequest request) {
+        return new SyncInvoker<UpdateClusterSettingRequest, UpdateClusterSettingResponse>(request,
+            CloudTableMeta.updateClusterSetting, hcClient);
     }
 
 }

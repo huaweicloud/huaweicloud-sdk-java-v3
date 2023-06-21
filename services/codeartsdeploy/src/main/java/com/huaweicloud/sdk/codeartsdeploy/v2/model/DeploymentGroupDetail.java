@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 主机组详情响应体
+ * 主机集群详情响应体
  */
 public class DeploymentGroupDetail {
 
@@ -97,7 +97,7 @@ public class DeploymentGroupDetail {
     }
 
     /**
-     * 主机组id
+     * 主机集群id
      * @return groupId
      */
     public String getGroupId() {
@@ -148,7 +148,7 @@ public class DeploymentGroupDetail {
     }
 
     /**
-     * 组内主机数量，一个主机组内最多可添加200台主机
+     * 组内主机数量，一个主机集群内最多可添加200台主机
      * minimum: 0
      * maximum: 200
      * @return hostCount
@@ -184,7 +184,7 @@ public class DeploymentGroupDetail {
     }
 
     /**
-     * 主机组名
+     * 主机集群名
      * @return name
      */
     public String getName() {

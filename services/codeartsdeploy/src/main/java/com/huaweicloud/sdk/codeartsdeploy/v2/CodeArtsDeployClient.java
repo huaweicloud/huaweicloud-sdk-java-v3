@@ -200,7 +200,7 @@ public class CodeArtsDeployClient {
     /**
      * 新建主机
      *
-     * 在指定主机组下新建主机。
+     * 在指定主机集群下新建主机。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -214,7 +214,7 @@ public class CodeArtsDeployClient {
     /**
      * 新建主机
      *
-     * 在指定主机组下新建主机。
+     * 在指定主机集群下新建主机。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -260,7 +260,7 @@ public class CodeArtsDeployClient {
     /**
      * 查询主机列表
      *
-     * 根据主机组id查询指定主机组下的主机列表。
+     * 根据主机集群id查询指定主机集群下的主机列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -274,7 +274,7 @@ public class CodeArtsDeployClient {
     /**
      * 查询主机列表
      *
-     * 根据主机组id查询指定主机组下的主机列表。
+     * 根据主机集群id查询指定主机集群下的主机列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -346,9 +346,9 @@ public class CodeArtsDeployClient {
     }
 
     /**
-     * 新建主机组
+     * 新建主机集群
      *
-     * 在项目下新建主机组。
+     * 在项目下新建主机集群。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -360,9 +360,9 @@ public class CodeArtsDeployClient {
     }
 
     /**
-     * 新建主机组
+     * 新建主机集群
      *
-     * 在项目下新建主机组。
+     * 在项目下新建主机集群。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -376,9 +376,9 @@ public class CodeArtsDeployClient {
     }
 
     /**
-     * 删除主机组
+     * 删除主机集群
      *
-     * 根据主机组id删除主机组。
+     * 根据主机集群id删除主机集群。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -390,9 +390,9 @@ public class CodeArtsDeployClient {
     }
 
     /**
-     * 删除主机组
+     * 删除主机集群
      *
-     * 根据主机组id删除主机组。
+     * 根据主机集群id删除主机集群。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -406,9 +406,9 @@ public class CodeArtsDeployClient {
     }
 
     /**
-     * 查询主机组列表
+     * 查询主机集群列表
      *
-     * 按条件查询主机组列表。
+     * 按条件查询主机集群列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -420,9 +420,9 @@ public class CodeArtsDeployClient {
     }
 
     /**
-     * 查询主机组列表
+     * 查询主机集群列表
      *
-     * 按条件查询主机组列表。
+     * 按条件查询主机集群列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -436,9 +436,9 @@ public class CodeArtsDeployClient {
     }
 
     /**
-     * 查询主机组
+     * 查询主机集群
      *
-     * 根据主机组id查询主机组详情。
+     * 根据主机集群id查询主机集群详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -450,9 +450,9 @@ public class CodeArtsDeployClient {
     }
 
     /**
-     * 查询主机组
+     * 查询主机集群
      *
-     * 根据主机组id查询主机组详情。
+     * 根据主机集群id查询主机集群详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -466,9 +466,9 @@ public class CodeArtsDeployClient {
     }
 
     /**
-     * 修改主机组
+     * 修改主机集群
      *
-     * 根据主机组id修改主机组信息。
+     * 根据主机集群id修改主机集群信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -480,9 +480,9 @@ public class CodeArtsDeployClient {
     }
 
     /**
-     * 修改主机组
+     * 修改主机集群
      *
-     * 根据主机组id修改主机组信息。
+     * 根据主机集群id修改主机集群信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

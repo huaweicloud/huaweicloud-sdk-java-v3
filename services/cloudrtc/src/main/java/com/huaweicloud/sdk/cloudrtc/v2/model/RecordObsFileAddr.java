@@ -16,7 +16,7 @@ import java.util.Objects;
 public class RecordObsFileAddr {
 
     /**
-     * OBS Bucket所在RegionID
+     * OBS Bucket所在RegionID - cn-north-4
      */
     public static final class LocationEnum {
 
@@ -112,7 +112,7 @@ public class RecordObsFileAddr {
     }
 
     /**
-     * OBS Bucket所在RegionID
+     * OBS Bucket所在RegionID - cn-north-4
      * @return location
      */
     public LocationEnum getLocation() {

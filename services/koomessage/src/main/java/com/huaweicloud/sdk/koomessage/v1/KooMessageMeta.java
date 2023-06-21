@@ -1360,6 +1360,13 @@ public class KooMessageMeta {
             f -> f.withMarshaller(ListAimTemplatesRequest::getEndTime, (req, v) -> {
                 req.setEndTime(v);
             }));
+        builder.<Boolean>withRequestField("is_only_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListAimTemplatesRequest::getIsOnlyStatus, (req, v) -> {
+                req.setIsOnlyStatus(v);
+            }));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -1373,6 +1380,41 @@ public class KooMessageMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListAimTemplatesRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdatePersonalTemplateStateRequest, UpdatePersonalTemplateStateResponse> updatePersonalTemplateState =
+        genForupdatePersonalTemplateState();
+
+    private static HttpRequestDef<UpdatePersonalTemplateStateRequest, UpdatePersonalTemplateStateResponse> genForupdatePersonalTemplateState() {
+        // basic
+        HttpRequestDef.Builder<UpdatePersonalTemplateStateRequest, UpdatePersonalTemplateStateResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdatePersonalTemplateStateRequest.class,
+                    UpdatePersonalTemplateStateResponse.class)
+                .withName("UpdatePersonalTemplateState")
+                .withUri("/v1/aim/template-state/{tpl_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("tpl_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePersonalTemplateStateRequest::getTplId, (req, v) -> {
+                req.setTplId(v);
+            }));
+        builder.<UpdatePersonalTemplateStateDataRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdatePersonalTemplateStateDataRequest.class),
+            f -> f.withMarshaller(UpdatePersonalTemplateStateRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response
@@ -1642,6 +1684,20 @@ public class KooMessageMeta {
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListVmsTemplateStatusRequest::getHasParam, (req, v) -> {
                 req.setHasParam(v);
+            }));
+        builder.<String>withRequestField("begin_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVmsTemplateStatusRequest::getBeginTime, (req, v) -> {
+                req.setBeginTime(v);
+            }));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVmsTemplateStatusRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
             }));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,

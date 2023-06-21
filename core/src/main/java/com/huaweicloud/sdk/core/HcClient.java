@@ -23,6 +23,8 @@ package com.huaweicloud.sdk.core;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.huaweicloud.sdk.core.auth.ICredential;
+import com.huaweicloud.sdk.core.exception.DefaultExceptionHandler;
+import com.huaweicloud.sdk.core.exception.ExceptionHandler;
 import com.huaweicloud.sdk.core.exception.HostUnreachableException;
 import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.exception.ServerResponseException;
@@ -89,6 +91,8 @@ public class HcClient implements CustomizationConfigure {
 
     private final AtomicInteger endpointIndex = new AtomicInteger(0);
 
+    private ExceptionHandler exceptionHandler = new DefaultExceptionHandler();
+
     private List<String> endpoints;
 
     private ICredential credential;
@@ -97,11 +101,13 @@ public class HcClient implements CustomizationConfigure {
 
     private Map<String, String> extraHeader;
 
-    private HcClient(HttpConfig httpConfig, HttpClient httpClient, ICredential credential, List<String> endpoints) {
-        this.httpConfig = httpConfig;
-        this.httpClient = httpClient;
-        this.credential = credential;
-        this.endpoints = endpoints;
+    private HcClient(HcClient hcClient) {
+        this.extraHeader = hcClient.extraHeader;
+        this.httpClient = hcClient.httpClient;
+        this.endpoints = hcClient.endpoints;
+        this.credential = hcClient.credential;
+        this.httpConfig = hcClient.httpConfig;
+        this.exceptionHandler = hcClient.exceptionHandler;
     }
 
     HcClient(HttpConfig httpConfig, HttpClient httpClient) {
@@ -124,6 +130,11 @@ public class HcClient implements CustomizationConfigure {
         return this;
     }
 
+    protected HcClient withExceptionHandler(ExceptionHandler exceptionHandler) {
+        this.exceptionHandler = exceptionHandler;
+        return this;
+    }
+
     public ICredential getCredential() {
         return this.credential;
     }
@@ -133,16 +144,15 @@ public class HcClient implements CustomizationConfigure {
     }
 
     public HcClient overrideEndpoints(List<String> endpoints) {
-        return new HcClient(this.httpConfig, this.httpClient, this.credential, endpoints);
+        return new HcClient(this).withEndpoints(endpoints);
     }
 
     public HcClient overrideCredential(ICredential credential) {
-
-        return new HcClient(this.httpConfig, this.httpClient, credential, this.endpoints);
+        return new HcClient(this).withCredential(credential);
     }
 
     public HcClient preInvoke(Map<String, String> extraHeader) {
-        HcClient client = new HcClient(this.httpConfig, this.httpClient, this.credential, this.endpoints);
+        HcClient client = new HcClient(this);
         client.extraHeader = extraHeader;
         return client;
     }
@@ -189,7 +199,7 @@ public class HcClient implements CustomizationConfigure {
                 }
             }
             printAccessLog(httpRequest, httpResponse, exchange);
-            handleException(httpRequest, httpResponse);
+            exceptionHandler.handleException(httpRequest, httpResponse);
             return extractResponse(httpRequest, httpResponse, reqDef);
         } finally {
             SdkExchangeCache.removeExchange(exchangeId);
@@ -237,7 +247,7 @@ public class HcClient implements CustomizationConfigure {
 
             return httpClient.asyncInvokeHttp(validHttpRequest).thenApplyAsync(httpResponse -> {
                 printAccessLog(finalValidHttpRequest, httpResponse, exchange);
-                handleException(finalValidHttpRequest, httpResponse);
+                exceptionHandler.handleException(finalValidHttpRequest, httpResponse);
                 return extractResponse(finalValidHttpRequest, httpResponse, reqDef);
             }, httpConfig.getExecutorService()).whenCompleteAsync((r, e) ->
                     SdkExchangeCache.removeExchange(exchangeIdRef.get()), httpConfig.getExecutorService());

@@ -19,12 +19,12 @@ public class ConfigurationLifecycle {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "post-start")
 
-    private LifecycleEntrypoint postStart;
+    private LifecycleProcess postStart;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pre-stop")
 
-    private LifecycleEntrypoint preStop;
+    private LifecycleProcess preStop;
 
     public ConfigurationLifecycle withEntrypoint(LifecycleEntrypoint entrypoint) {
         this.entrypoint = entrypoint;
@@ -52,14 +52,14 @@ public class ConfigurationLifecycle {
         this.entrypoint = entrypoint;
     }
 
-    public ConfigurationLifecycle withPostStart(LifecycleEntrypoint postStart) {
+    public ConfigurationLifecycle withPostStart(LifecycleProcess postStart) {
         this.postStart = postStart;
         return this;
     }
 
-    public ConfigurationLifecycle withPostStart(Consumer<LifecycleEntrypoint> postStartSetter) {
+    public ConfigurationLifecycle withPostStart(Consumer<LifecycleProcess> postStartSetter) {
         if (this.postStart == null) {
-            this.postStart = new LifecycleEntrypoint();
+            this.postStart = new LifecycleProcess();
             postStartSetter.accept(this.postStart);
         }
 
@@ -70,22 +70,22 @@ public class ConfigurationLifecycle {
      * Get postStart
      * @return postStart
      */
-    public LifecycleEntrypoint getPostStart() {
+    public LifecycleProcess getPostStart() {
         return postStart;
     }
 
-    public void setPostStart(LifecycleEntrypoint postStart) {
+    public void setPostStart(LifecycleProcess postStart) {
         this.postStart = postStart;
     }
 
-    public ConfigurationLifecycle withPreStop(LifecycleEntrypoint preStop) {
+    public ConfigurationLifecycle withPreStop(LifecycleProcess preStop) {
         this.preStop = preStop;
         return this;
     }
 
-    public ConfigurationLifecycle withPreStop(Consumer<LifecycleEntrypoint> preStopSetter) {
+    public ConfigurationLifecycle withPreStop(Consumer<LifecycleProcess> preStopSetter) {
         if (this.preStop == null) {
-            this.preStop = new LifecycleEntrypoint();
+            this.preStop = new LifecycleProcess();
             preStopSetter.accept(this.preStop);
         }
 
@@ -96,11 +96,11 @@ public class ConfigurationLifecycle {
      * Get preStop
      * @return preStop
      */
-    public LifecycleEntrypoint getPreStop() {
+    public LifecycleProcess getPreStop() {
         return preStop;
     }
 
-    public void setPreStop(LifecycleEntrypoint preStop) {
+    public void setPreStop(LifecycleProcess preStop) {
         this.preStop = preStop;
     }
 

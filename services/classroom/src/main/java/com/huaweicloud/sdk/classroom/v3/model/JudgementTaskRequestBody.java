@@ -110,7 +110,7 @@ public class JudgementTaskRequestBody {
     private String description;
 
     /**
-     * 支持语言类型：java、c、cpp、python
+     * 支持语言类型：java、c、cpp、python、javaScript
      */
     public static final class RuntimeTypeEnum {
 
@@ -134,6 +134,11 @@ public class JudgementTaskRequestBody {
          */
         public static final RuntimeTypeEnum PYTHON = new RuntimeTypeEnum("python");
 
+        /**
+         * Enum JAVASCRIPT for value: "javaScript"
+         */
+        public static final RuntimeTypeEnum JAVASCRIPT = new RuntimeTypeEnum("javaScript");
+
         private static final Map<String, RuntimeTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, RuntimeTypeEnum> createStaticFields() {
@@ -142,6 +147,7 @@ public class JudgementTaskRequestBody {
             map.put("c", C);
             map.put("cpp", CPP);
             map.put("python", PYTHON);
+            map.put("javaScript", JAVASCRIPT);
             return Collections.unmodifiableMap(map);
         }
 
@@ -387,7 +393,7 @@ public class JudgementTaskRequestBody {
     }
 
     /**
-     * 支持语言类型：java、c、cpp、python
+     * 支持语言类型：java、c、cpp、python、javaScript
      * @return runtimeType
      */
     public RuntimeTypeEnum getRuntimeType() {

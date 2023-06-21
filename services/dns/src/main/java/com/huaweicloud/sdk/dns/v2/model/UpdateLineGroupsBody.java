@@ -84,7 +84,7 @@ public class UpdateLineGroupsBody {
     }
 
     /**
-     * 线路分组的描述信息。长度不超过255个字符。默认值为空。
+     * 线路列表。
      * @return lines
      */
     public List<String> getLines() {

@@ -85,6 +85,194 @@ public class ClassroomMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ExecuteExerciseRequest, ExecuteExerciseResponse> executeExercise =
+        genForexecuteExercise();
+
+    private static HttpRequestDef<ExecuteExerciseRequest, ExecuteExerciseResponse> genForexecuteExercise() {
+        // basic
+        HttpRequestDef.Builder<ExecuteExerciseRequest, ExecuteExerciseResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ExecuteExerciseRequest.class, ExecuteExerciseResponse.class)
+                .withName("ExecuteExercise")
+                .withUri("/v1/assemble/exercise/{exercise_id}/judge")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("exercise_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteExerciseRequest::getExerciseId, (req, v) -> {
+                req.setExerciseId(v);
+            }));
+        builder.<String>withRequestField("user-token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteExerciseRequest::getUserToken, (req, v) -> {
+                req.setUserToken(v);
+            }));
+        builder.<PackageExerciseJudgeRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PackageExerciseJudgeRequestBody.class),
+            f -> f.withMarshaller(ExecuteExerciseRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListExercisesRequest, ListExercisesResponse> listExercises =
+        genForlistExercises();
+
+    private static HttpRequestDef<ListExercisesRequest, ListExercisesResponse> genForlistExercises() {
+        // basic
+        HttpRequestDef.Builder<ListExercisesRequest, ListExercisesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListExercisesRequest.class, ListExercisesResponse.class)
+                .withName("ListExercises")
+                .withUri("/v1/assemble/package/{package_id}/exercise/list")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("package_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListExercisesRequest::getPackageId, (req, v) -> {
+                req.setPackageId(v);
+            }));
+        builder.<ExercisesListRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExercisesListRequestBody.class),
+            f -> f.withMarshaller(ListExercisesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPackagesRequest, ListPackagesResponse> listPackages = genForlistPackages();
+
+    private static HttpRequestDef<ListPackagesRequest, ListPackagesResponse> genForlistPackages() {
+        // basic
+        HttpRequestDef.Builder<ListPackagesRequest, ListPackagesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListPackagesRequest.class, ListPackagesResponse.class)
+                .withName("ListPackages")
+                .withUri("/v1/assemble/package/list")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<PackagesListRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PackagesListRequestBody.class),
+            f -> f.withMarshaller(ListPackagesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowExerciseDetailRequest, ShowExerciseDetailResponse> showExerciseDetail =
+        genForshowExerciseDetail();
+
+    private static HttpRequestDef<ShowExerciseDetailRequest, ShowExerciseDetailResponse> genForshowExerciseDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowExerciseDetailRequest, ShowExerciseDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowExerciseDetailRequest.class, ShowExerciseDetailResponse.class)
+                .withName("ShowExerciseDetail")
+                .withUri("/v1/assemble/exercise/{exercise_id}/detail")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("exercise_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowExerciseDetailRequest::getExerciseId, (req, v) -> {
+                req.setExerciseId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPackageDetailRequest, ShowPackageDetailResponse> showPackageDetail =
+        genForshowPackageDetail();
+
+    private static HttpRequestDef<ShowPackageDetailRequest, ShowPackageDetailResponse> genForshowPackageDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowPackageDetailRequest, ShowPackageDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowPackageDetailRequest.class, ShowPackageDetailResponse.class)
+                .withName("ShowPackageDetail")
+                .withUri("/v1/assemble/package/{package_id}/detail")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("package_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPackageDetailRequest::getPackageId, (req, v) -> {
+                req.setPackageId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAllDifficultsRequest, ListAllDifficultsResponse> listAllDifficults =
+        genForlistAllDifficults();
+
+    private static HttpRequestDef<ListAllDifficultsRequest, ListAllDifficultsResponse> genForlistAllDifficults() {
+        // basic
+        HttpRequestDef.Builder<ListAllDifficultsRequest, ListAllDifficultsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAllDifficultsRequest.class, ListAllDifficultsResponse.class)
+                .withName("ListAllDifficults")
+                .withUri("/v1/baseresource/extend-resource/difficult/all")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListMyKnowledgePointsRequest, ListMyKnowledgePointsResponse> listMyKnowledgePoints =
+        genForlistMyKnowledgePoints();
+
+    private static HttpRequestDef<ListMyKnowledgePointsRequest, ListMyKnowledgePointsResponse> genForlistMyKnowledgePoints() {
+        // basic
+        HttpRequestDef.Builder<ListMyKnowledgePointsRequest, ListMyKnowledgePointsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ListMyKnowledgePointsRequest.class, ListMyKnowledgePointsResponse.class)
+            .withName("ListMyKnowledgePoints")
+            .withUri("/v1/baseresource/extend-resource/knowledge-point/mine")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<KnowledgePointsListRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(KnowledgePointsListRequestBody.class),
+            f -> f.withMarshaller(ListMyKnowledgePointsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListClassroomMembersRequest, ListClassroomMembersResponse> listClassroomMembers =
         genForlistClassroomMembers();
 

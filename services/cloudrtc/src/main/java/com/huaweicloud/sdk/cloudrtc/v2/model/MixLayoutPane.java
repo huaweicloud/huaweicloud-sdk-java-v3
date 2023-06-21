@@ -412,7 +412,7 @@ public class MixLayoutPane {
     }
 
     /**
-     * 窗格宽，归一化百分比，小数取值范围在float内，自定义布局场景下填写本字段。
+     * 窗格高，归一化百分比，小数取值范围在float内，自定义布局场景下填写本字段。
      * minimum: 0
      * maximum: 1
      * @return height

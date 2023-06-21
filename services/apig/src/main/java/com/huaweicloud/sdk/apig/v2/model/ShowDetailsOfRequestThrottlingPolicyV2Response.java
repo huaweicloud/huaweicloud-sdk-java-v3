@@ -404,7 +404,7 @@ public class ShowDetailsOfRequestThrottlingPolicyV2Response extends SdkResponse 
     }
 
     /**
-     * API流量限制是指时长内一个API能够被访问的次数上限。该值不超过系统默认配额限制，系统默认配额为200tps，用户可根据实际情况修改该系统默认配额。输入的值不超过2147483647。正整数。 
+     * API流量限制是指时长内一个API能够被访问的次数上限。该值不超过系统默认配额限制，系统默认配额为200tps，用户可根据实际情况修改该系统默认配额。输入的值不超过2147483647。正整数。
      * @return apiCallLimits
      */
     public Integer getApiCallLimits() {

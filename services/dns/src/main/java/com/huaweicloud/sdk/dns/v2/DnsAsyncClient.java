@@ -288,6 +288,36 @@ public class DnsAsyncClient {
     }
 
     /**
+     * 查询租户配额
+     *
+     * 查询单租户在DNS服务下的资源配额，包括公网zone配额、内网zone配额、Record Set配额、PTR Record配额、入站终端节点配额、出站终端节点配额、自定义线路配额、线路分组配额等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDomainQuotaRequest 请求对象
+     * @return CompletableFuture<ShowDomainQuotaResponse>
+     */
+    public CompletableFuture<ShowDomainQuotaResponse> showDomainQuotaAsync(ShowDomainQuotaRequest request) {
+        return hcClient.asyncInvokeHttp(request, DnsMeta.showDomainQuota);
+    }
+
+    /**
+     * 查询租户配额
+     *
+     * 查询单租户在DNS服务下的资源配额，包括公网zone配额、内网zone配额、Record Set配额、PTR Record配额、入站终端节点配额、出站终端节点配额、自定义线路配额、线路分组配额等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDomainQuotaRequest 请求对象
+     * @return AsyncInvoker<ShowDomainQuotaRequest, ShowDomainQuotaResponse>
+     */
+    public AsyncInvoker<ShowDomainQuotaRequest, ShowDomainQuotaResponse> showDomainQuotaAsyncInvoker(
+        ShowDomainQuotaRequest request) {
+        return new AsyncInvoker<ShowDomainQuotaRequest, ShowDomainQuotaResponse>(request, DnsMeta.showDomainQuota,
+            hcClient);
+    }
+
+    /**
      * 查询线路分组
      *
      * 查询线路分组。

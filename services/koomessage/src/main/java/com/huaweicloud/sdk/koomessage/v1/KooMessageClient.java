@@ -1010,6 +1010,36 @@ public class KooMessageClient {
     }
 
     /**
+     * 启用或禁用模板实例
+     *
+     * 根据客户提供的模板ID，启用或禁用智能信息个人模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdatePersonalTemplateStateRequest 请求对象
+     * @return UpdatePersonalTemplateStateResponse
+     */
+    public UpdatePersonalTemplateStateResponse updatePersonalTemplateState(UpdatePersonalTemplateStateRequest request) {
+        return hcClient.syncInvokeHttp(request, KooMessageMeta.updatePersonalTemplateState);
+    }
+
+    /**
+     * 启用或禁用模板实例
+     *
+     * 根据客户提供的模板ID，启用或禁用智能信息个人模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdatePersonalTemplateStateRequest 请求对象
+     * @return SyncInvoker<UpdatePersonalTemplateStateRequest, UpdatePersonalTemplateStateResponse>
+     */
+    public SyncInvoker<UpdatePersonalTemplateStateRequest, UpdatePersonalTemplateStateResponse> updatePersonalTemplateStateInvoker(
+        UpdatePersonalTemplateStateRequest request) {
+        return new SyncInvoker<UpdatePersonalTemplateStateRequest, UpdatePersonalTemplateStateResponse>(request,
+            KooMessageMeta.updatePersonalTemplateState, hcClient);
+    }
+
+    /**
      * 上传智能信息模板素材
      *
      * 支持用户上传模板使用的图片或者视频。

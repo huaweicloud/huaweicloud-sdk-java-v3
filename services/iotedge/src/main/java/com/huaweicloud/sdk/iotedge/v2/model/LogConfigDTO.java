@@ -86,7 +86,7 @@ public class LogConfigDTO  {
 
 
     /**
-     * 应用日志级别，可选项：on/off，当type为LTS时有效
+     * 应用日志级别，可选项：on/off/trace/debug/info/warn/error/fatal，当type为LTS时有效。当选择非on/off的选项时，将只采集大于等于指定级别的日志。
      * @return level
      */
     public String getLevel() {

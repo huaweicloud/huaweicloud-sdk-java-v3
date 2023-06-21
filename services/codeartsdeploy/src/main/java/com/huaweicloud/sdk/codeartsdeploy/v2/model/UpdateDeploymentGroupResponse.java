@@ -22,7 +22,7 @@ public class UpdateDeploymentGroupResponse extends SdkResponse {
     }
 
     /**
-     * 主机组ID
+     * 主机集群ID
      * @return groupId
      */
     public String getGroupId() {

@@ -401,7 +401,7 @@ public class UpdateHealthCheckResponse extends SdkResponse {
 
     /**
      * 正常阈值。判定VPC通道中主机正常的依据为：连续检查x成功，x为您设置的正常阈值。
-     * minimum: 2
+     * minimum: 1
      * maximum: 10
      * @return thresholdNormal
      */
@@ -420,7 +420,7 @@ public class UpdateHealthCheckResponse extends SdkResponse {
 
     /**
      * 异常阈值。判定VPC通道中主机异常的依据为：连续检查x失败，x为您设置的异常阈值。
-     * minimum: 2
+     * minimum: 1
      * maximum: 10
      * @return thresholdAbnormal
      */
@@ -509,7 +509,7 @@ public class UpdateHealthCheckResponse extends SdkResponse {
 
     /**
      * 超时时间：检查期间，无响应的时间，单位为秒。必须小于time_interval字段取值。
-     * minimum: 2
+     * minimum: 1
      * maximum: 30
      * @return timeout
      */

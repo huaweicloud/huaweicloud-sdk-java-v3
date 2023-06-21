@@ -30,7 +30,7 @@ public class ListHostGroupsResponse extends SdkResponse {
     }
 
     /**
-     * 主机组个数
+     * 主机集群个数
      * minimum: 0
      * maximum: 1000
      * @return total
@@ -65,7 +65,7 @@ public class ListHostGroupsResponse extends SdkResponse {
     }
 
     /**
-     * 主机组详情响应体
+     * 主机集群详情响应体
      * @return hostGroups
      */
     public List<DeploymentGroupDetail> getHostGroups() {

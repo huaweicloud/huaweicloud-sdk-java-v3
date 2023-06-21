@@ -1669,6 +1669,31 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListPredefinedTagRequest, ListPredefinedTagResponse> listPredefinedTag =
+        genForlistPredefinedTag();
+
+    private static HttpRequestDef<ListPredefinedTagRequest, ListPredefinedTagResponse> genForlistPredefinedTag() {
+        // basic
+        HttpRequestDef.Builder<ListPredefinedTagRequest, ListPredefinedTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListPredefinedTagRequest.class, ListPredefinedTagResponse.class)
+                .withName("ListPredefinedTag")
+                .withUri("/v3/{project_id}/tags/predefined-tag")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListPredefinedTagRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListPredefinedTagRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListPredefinedTagRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTags =
         genForlistProjectTags();
 
@@ -1765,6 +1790,38 @@ public class RdsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRestoreTimesRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSimplifiedInstancesRequest, ListSimplifiedInstancesResponse> listSimplifiedInstances =
+        genForlistSimplifiedInstances();
+
+    private static HttpRequestDef<ListSimplifiedInstancesRequest, ListSimplifiedInstancesResponse> genForlistSimplifiedInstances() {
+        // basic
+        HttpRequestDef.Builder<ListSimplifiedInstancesRequest, ListSimplifiedInstancesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ListSimplifiedInstancesRequest.class, ListSimplifiedInstancesResponse.class)
+            .withName("ListSimplifiedInstances")
+            .withUri("/v3/{project_id}/simplified-instances")
+            .withContentType("application/json");
+
+        // requests
+        builder.<ListSimplifiedInstancesRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSimplifiedInstancesRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListSimplifiedInstancesRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<SimplifiedInstancesRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SimplifiedInstancesRequest.class),
+            f -> f.withMarshaller(ListSimplifiedInstancesRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

@@ -98,7 +98,7 @@ public class ShowDeploymentGroupDetailResponse extends SdkResponse {
     }
 
     /**
-     * 主机组id
+     * 主机集群id
      * @return groupId
      */
     public String getGroupId() {
@@ -149,7 +149,7 @@ public class ShowDeploymentGroupDetailResponse extends SdkResponse {
     }
 
     /**
-     * 组内主机数量，一个主机组内最多可添加200台主机
+     * 组内主机数量，一个主机集群内最多可添加200台主机
      * minimum: 0
      * maximum: 200
      * @return hostCount
@@ -185,7 +185,7 @@ public class ShowDeploymentGroupDetailResponse extends SdkResponse {
     }
 
     /**
-     * 主机组名
+     * 主机集群名
      * @return name
      */
     public String getName() {

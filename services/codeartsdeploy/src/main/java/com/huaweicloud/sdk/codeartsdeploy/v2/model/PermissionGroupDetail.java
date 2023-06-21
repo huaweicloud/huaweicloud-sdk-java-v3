@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 主机组相关权限详情类
+ * 主机集群相关权限详情类
  */
 public class PermissionGroupDetail {
 

@@ -24,7 +24,7 @@ public class MicroserviceImportReq {
     private MicroserviceGroup groupInfo;
 
     /**
-     * 微服务中心类型。 - CSE：CSE微服务注册中心 - CCE: CCE云容器引擎
+     * 微服务中心类型。 - CSE：CSE微服务注册中心 - CCE: CCE云容器引擎（工作负载） - CCE_SERVICE: CCE云容器引擎（Service）
      */
     public static final class ServiceTypeEnum {
 
@@ -38,12 +38,18 @@ public class MicroserviceImportReq {
          */
         public static final ServiceTypeEnum CCE = new ServiceTypeEnum("CCE");
 
+        /**
+         * Enum CCE_SERVICE for value: "CCE_SERVICE"
+         */
+        public static final ServiceTypeEnum CCE_SERVICE = new ServiceTypeEnum("CCE_SERVICE");
+
         private static final Map<String, ServiceTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ServiceTypeEnum> createStaticFields() {
             Map<String, ServiceTypeEnum> map = new HashMap<>();
             map.put("CSE", CSE);
             map.put("CCE", CCE);
+            map.put("CCE_SERVICE", CCE_SERVICE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -300,6 +306,11 @@ public class MicroserviceImportReq {
 
     private MicroServiceInfoCCECreate cceInfo;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cce_service_info")
+
+    private MicroServiceInfoCCEServiceCreate cceServiceInfo;
+
     public MicroserviceImportReq withGroupInfo(MicroserviceGroup groupInfo) {
         this.groupInfo = groupInfo;
         return this;
@@ -332,7 +343,7 @@ public class MicroserviceImportReq {
     }
 
     /**
-     * 微服务中心类型。 - CSE：CSE微服务注册中心 - CCE: CCE云容器引擎
+     * 微服务中心类型。 - CSE：CSE微服务注册中心 - CCE: CCE云容器引擎（工作负载） - CCE_SERVICE: CCE云容器引擎（Service）
      * @return serviceType
      */
     public ServiceTypeEnum getServiceType() {
@@ -497,6 +508,32 @@ public class MicroserviceImportReq {
         this.cceInfo = cceInfo;
     }
 
+    public MicroserviceImportReq withCceServiceInfo(MicroServiceInfoCCEServiceCreate cceServiceInfo) {
+        this.cceServiceInfo = cceServiceInfo;
+        return this;
+    }
+
+    public MicroserviceImportReq withCceServiceInfo(Consumer<MicroServiceInfoCCEServiceCreate> cceServiceInfoSetter) {
+        if (this.cceServiceInfo == null) {
+            this.cceServiceInfo = new MicroServiceInfoCCEServiceCreate();
+            cceServiceInfoSetter.accept(this.cceServiceInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get cceServiceInfo
+     * @return cceServiceInfo
+     */
+    public MicroServiceInfoCCEServiceCreate getCceServiceInfo() {
+        return cceServiceInfo;
+    }
+
+    public void setCceServiceInfo(MicroServiceInfoCCEServiceCreate cceServiceInfo) {
+        this.cceServiceInfo = cceServiceInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -514,12 +551,22 @@ public class MicroserviceImportReq {
             && Objects.equals(this.authType, microserviceImportReq.authType)
             && Objects.equals(this.cors, microserviceImportReq.cors)
             && Objects.equals(this.cseInfo, microserviceImportReq.cseInfo)
-            && Objects.equals(this.cceInfo, microserviceImportReq.cceInfo);
+            && Objects.equals(this.cceInfo, microserviceImportReq.cceInfo)
+            && Objects.equals(this.cceServiceInfo, microserviceImportReq.cceServiceInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(groupInfo, serviceType, protocol, apis, backendTimeout, authType, cors, cseInfo, cceInfo);
+        return Objects.hash(groupInfo,
+            serviceType,
+            protocol,
+            apis,
+            backendTimeout,
+            authType,
+            cors,
+            cseInfo,
+            cceInfo,
+            cceServiceInfo);
     }
 
     @Override
@@ -535,6 +582,7 @@ public class MicroserviceImportReq {
         sb.append("    cors: ").append(toIndentedString(cors)).append("\n");
         sb.append("    cseInfo: ").append(toIndentedString(cseInfo)).append("\n");
         sb.append("    cceInfo: ").append(toIndentedString(cceInfo)).append("\n");
+        sb.append("    cceServiceInfo: ").append(toIndentedString(cceServiceInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

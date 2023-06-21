@@ -124,7 +124,7 @@ public class AIMTemplateReport {
     }
 
     /**
-     * 消息曝光数，暂时不提供。 
+     * 消息曝光数。 
      * @return exposeUv
      */
     public Long getExposeUv() {
@@ -141,7 +141,7 @@ public class AIMTemplateReport {
     }
 
     /**
-     * 消息曝光次数，暂时不提供。 
+     * 消息曝光次数。 
      * @return exposePv
      */
     public Long getExposePv() {
@@ -158,7 +158,7 @@ public class AIMTemplateReport {
     }
 
     /**
-     * 消息点击数，暂时不提供。 
+     * 消息点击数。 
      * @return clickUv
      */
     public Long getClickUv() {
@@ -175,7 +175,7 @@ public class AIMTemplateReport {
     }
 
     /**
-     * 消息点击次数，暂时不提供。 
+     * 消息点击次数。 
      * @return clickPv
      */
     public Long getClickPv() {

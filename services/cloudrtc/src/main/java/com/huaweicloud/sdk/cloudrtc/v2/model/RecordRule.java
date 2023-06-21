@@ -217,7 +217,7 @@ public class RecordRule {
     }
 
     /**
-     * 录制格式：hls格式或者mp4格式
+     * 录制格式：HLS格式或者MP4格式
      * @return recordFormats
      */
     public List<RecordFormatsEnum> getRecordFormats() {

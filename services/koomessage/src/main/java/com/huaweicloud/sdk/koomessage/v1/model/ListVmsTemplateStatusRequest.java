@@ -31,6 +31,16 @@ public class ListVmsTemplateStatusRequest {
     private Boolean hasParam;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "begin_time")
+
+    private String beginTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "end_time")
+
+    private String endTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
     private Integer offset;
@@ -108,6 +118,40 @@ public class ListVmsTemplateStatusRequest {
         this.hasParam = hasParam;
     }
 
+    public ListVmsTemplateStatusRequest withBeginTime(String beginTime) {
+        this.beginTime = beginTime;
+        return this;
+    }
+
+    /**
+     * 智能信息基础版模板创建开始时间。 样例为：2019-10-12T07:20:50Z。  > begin_time和end_time必须全部为空或全部不为空，并且begin_time不能大于end_time。 
+     * @return beginTime
+     */
+    public String getBeginTime() {
+        return beginTime;
+    }
+
+    public void setBeginTime(String beginTime) {
+        this.beginTime = beginTime;
+    }
+
+    public ListVmsTemplateStatusRequest withEndTime(String endTime) {
+        this.endTime = endTime;
+        return this;
+    }
+
+    /**
+     * 智能信息基础版模板创建结束时间。 样例为：2019-10-12T07:20:50Z。  > begin_time和end_time必须全部为空或全部不为空，并且begin_time不能大于end_time。 
+     * @return endTime
+     */
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
+    }
+
     public ListVmsTemplateStatusRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -159,13 +203,15 @@ public class ListVmsTemplateStatusRequest {
             && Objects.equals(this.tplName, listVmsTemplateStatusRequest.tplName)
             && Objects.equals(this.tplType, listVmsTemplateStatusRequest.tplType)
             && Objects.equals(this.hasParam, listVmsTemplateStatusRequest.hasParam)
+            && Objects.equals(this.beginTime, listVmsTemplateStatusRequest.beginTime)
+            && Objects.equals(this.endTime, listVmsTemplateStatusRequest.endTime)
             && Objects.equals(this.offset, listVmsTemplateStatusRequest.offset)
             && Objects.equals(this.limit, listVmsTemplateStatusRequest.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tplId, tplName, tplType, hasParam, offset, limit);
+        return Objects.hash(tplId, tplName, tplType, hasParam, beginTime, endTime, offset, limit);
     }
 
     @Override
@@ -176,6 +222,8 @@ public class ListVmsTemplateStatusRequest {
         sb.append("    tplName: ").append(toIndentedString(tplName)).append("\n");
         sb.append("    tplType: ").append(toIndentedString(tplType)).append("\n");
         sb.append("    hasParam: ").append(toIndentedString(hasParam)).append("\n");
+        sb.append("    beginTime: ").append(toIndentedString(beginTime)).append("\n");
+        sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");

@@ -119,14 +119,9 @@ public class ComponentStorage {
     private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "name")
-
-    private String name;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parameters")
 
-    private ComponentStorage parameters;
+    private StorageParameter parameters;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mounts")
@@ -150,31 +145,14 @@ public class ComponentStorage {
         this.type = type;
     }
 
-    public ComponentStorage withName(String name) {
-        this.name = name;
-        return this;
-    }
-
-    /**
-     * 存储盘的名字
-     * @return name
-     */
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public ComponentStorage withParameters(ComponentStorage parameters) {
+    public ComponentStorage withParameters(StorageParameter parameters) {
         this.parameters = parameters;
         return this;
     }
 
-    public ComponentStorage withParameters(Consumer<ComponentStorage> parametersSetter) {
+    public ComponentStorage withParameters(Consumer<StorageParameter> parametersSetter) {
         if (this.parameters == null) {
-            this.parameters = new ComponentStorage();
+            this.parameters = new StorageParameter();
             parametersSetter.accept(this.parameters);
         }
 
@@ -185,11 +163,11 @@ public class ComponentStorage {
      * Get parameters
      * @return parameters
      */
-    public ComponentStorage getParameters() {
+    public StorageParameter getParameters() {
         return parameters;
     }
 
-    public void setParameters(ComponentStorage parameters) {
+    public void setParameters(StorageParameter parameters) {
         this.parameters = parameters;
     }
 
@@ -235,14 +213,14 @@ public class ComponentStorage {
             return false;
         }
         ComponentStorage componentStorage = (ComponentStorage) o;
-        return Objects.equals(this.type, componentStorage.type) && Objects.equals(this.name, componentStorage.name)
+        return Objects.equals(this.type, componentStorage.type)
             && Objects.equals(this.parameters, componentStorage.parameters)
             && Objects.equals(this.mounts, componentStorage.mounts);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, name, parameters, mounts);
+        return Objects.hash(type, parameters, mounts);
     }
 
     @Override
@@ -250,7 +228,6 @@ public class ComponentStorage {
         StringBuilder sb = new StringBuilder();
         sb.append("class ComponentStorage {\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    parameters: ").append(toIndentedString(parameters)).append("\n");
         sb.append("    mounts: ").append(toIndentedString(mounts)).append("\n");
         sb.append("}");

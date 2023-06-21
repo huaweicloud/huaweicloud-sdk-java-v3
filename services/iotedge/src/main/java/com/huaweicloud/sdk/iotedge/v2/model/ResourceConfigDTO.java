@@ -98,7 +98,7 @@ public class ResourceConfigDTO  {
 
 
     /**
-     * cpu个数
+     * gpu内存大小，单位为M
      * minimum: 0.01
      * maximum: 1.024E+6
      * @return gpu
@@ -122,7 +122,7 @@ public class ResourceConfigDTO  {
 
 
     /**
-     * cpu个数
+     * 使用npu加速卡个数
      * minimum: 0.01
      * maximum: 1E+3
      * @return npu

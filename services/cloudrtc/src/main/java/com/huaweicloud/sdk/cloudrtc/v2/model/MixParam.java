@@ -24,38 +24,92 @@ public class MixParam {
     private String roomId;
 
     /**
-     * 输出编码模板名称 - 1920x1080_30_4620：输出流是1080p，帧率30，码率4.62Mbps - 1920x1080_15_3460：输出流是1080p，帧率15，码率3.46Mbps - 1280x720_30_3420：输出流是720p，帧率30，码率3.42Mbps - 1280x720_15_2260：输出流是720p，帧率15，码率2.26Mbps 
+     * 输出编码模板名称 - 1920*1080_30_4620：输出流是1080p，帧率30，码率4.62Mbps - 1920*1080_30_3150：输出流是1080p，帧率30，码率3.15Mbps - 1920*1080_15_3460：输出流是1080p，帧率15，码率3.46Mbps - 1920*1080_15_2080：输出流是1080p，帧率15，码率2.08Mbps - 1280*720_30_3420：输出流是720p，帧率30，码率3.42Mbps - 1280*720_30_1710：输出流是720p，帧率30，码率1.71Mbps - 1280*720_15_2260：输出流是720p，帧率15，码率2.26Mbps - 1280*720_15_1130：输出流是720p，帧率15，码率1.13Mbps - 640*480_30_1500：输出流是480p，帧率30，码率1.50Mbps - 640*480_15_500：输出流是480p，帧率15，码率500Kbps - 640*480_30_1000 输出流是480p，帧率30，码率1000Kbps - 480*360_30_490：输出流是360p，帧率30，码率490Kbps - 480*360_15_320：输出流是360p，帧率15，码率320Kbps 
      */
     public static final class EncodeTemplateEnum {
 
         /**
-         * Enum _1920X1080_30_4620 for value: "1920x1080_30_4620"
+         * Enum _1920_1080_30_4620 for value: "1920*1080_30_4620"
          */
-        public static final EncodeTemplateEnum _1920X1080_30_4620 = new EncodeTemplateEnum("1920x1080_30_4620");
+        public static final EncodeTemplateEnum _1920_1080_30_4620 = new EncodeTemplateEnum("1920*1080_30_4620");
 
         /**
-         * Enum _1920X1080_15_3460 for value: "1920x1080_15_3460"
+         * Enum _1920_1080_30_3150 for value: "1920*1080_30_3150"
          */
-        public static final EncodeTemplateEnum _1920X1080_15_3460 = new EncodeTemplateEnum("1920x1080_15_3460");
+        public static final EncodeTemplateEnum _1920_1080_30_3150 = new EncodeTemplateEnum("1920*1080_30_3150");
 
         /**
-         * Enum _1280X720_30_3420 for value: "1280x720_30_3420"
+         * Enum _1920_1080_15_3460 for value: "1920*1080_15_3460"
          */
-        public static final EncodeTemplateEnum _1280X720_30_3420 = new EncodeTemplateEnum("1280x720_30_3420");
+        public static final EncodeTemplateEnum _1920_1080_15_3460 = new EncodeTemplateEnum("1920*1080_15_3460");
 
         /**
-         * Enum _1280X720_15_2260 for value: "1280x720_15_2260"
+         * Enum _1920_1080_15_2080 for value: "1920*1080_15_2080"
          */
-        public static final EncodeTemplateEnum _1280X720_15_2260 = new EncodeTemplateEnum("1280x720_15_2260");
+        public static final EncodeTemplateEnum _1920_1080_15_2080 = new EncodeTemplateEnum("1920*1080_15_2080");
+
+        /**
+         * Enum _1280_720_30_3420 for value: "1280*720_30_3420"
+         */
+        public static final EncodeTemplateEnum _1280_720_30_3420 = new EncodeTemplateEnum("1280*720_30_3420");
+
+        /**
+         * Enum _1280_720_30_1710 for value: "1280*720_30_1710"
+         */
+        public static final EncodeTemplateEnum _1280_720_30_1710 = new EncodeTemplateEnum("1280*720_30_1710");
+
+        /**
+         * Enum _1280_720_15_2260 for value: "1280*720_15_2260"
+         */
+        public static final EncodeTemplateEnum _1280_720_15_2260 = new EncodeTemplateEnum("1280*720_15_2260");
+
+        /**
+         * Enum _1280_720_15_1130 for value: "1280*720_15_1130"
+         */
+        public static final EncodeTemplateEnum _1280_720_15_1130 = new EncodeTemplateEnum("1280*720_15_1130");
+
+        /**
+         * Enum _640_480_30_1000 for value: "640*480_30_1000"
+         */
+        public static final EncodeTemplateEnum _640_480_30_1000 = new EncodeTemplateEnum("640*480_30_1000");
+
+        /**
+         * Enum _640_480_30_1500 for value: "640*480_30_1500"
+         */
+        public static final EncodeTemplateEnum _640_480_30_1500 = new EncodeTemplateEnum("640*480_30_1500");
+
+        /**
+         * Enum _640_480_15_500 for value: "640*480_15_500"
+         */
+        public static final EncodeTemplateEnum _640_480_15_500 = new EncodeTemplateEnum("640*480_15_500");
+
+        /**
+         * Enum _480_360_30_490 for value: "480*360_30_490"
+         */
+        public static final EncodeTemplateEnum _480_360_30_490 = new EncodeTemplateEnum("480*360_30_490");
+
+        /**
+         * Enum _480_360_15_320 for value: "480*360_15_320"
+         */
+        public static final EncodeTemplateEnum _480_360_15_320 = new EncodeTemplateEnum("480*360_15_320");
 
         private static final Map<String, EncodeTemplateEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, EncodeTemplateEnum> createStaticFields() {
             Map<String, EncodeTemplateEnum> map = new HashMap<>();
-            map.put("1920x1080_30_4620", _1920X1080_30_4620);
-            map.put("1920x1080_15_3460", _1920X1080_15_3460);
-            map.put("1280x720_30_3420", _1280X720_30_3420);
-            map.put("1280x720_15_2260", _1280X720_15_2260);
+            map.put("1920*1080_30_4620", _1920_1080_30_4620);
+            map.put("1920*1080_30_3150", _1920_1080_30_3150);
+            map.put("1920*1080_15_3460", _1920_1080_15_3460);
+            map.put("1920*1080_15_2080", _1920_1080_15_2080);
+            map.put("1280*720_30_3420", _1280_720_30_3420);
+            map.put("1280*720_30_1710", _1280_720_30_1710);
+            map.put("1280*720_15_2260", _1280_720_15_2260);
+            map.put("1280*720_15_1130", _1280_720_15_1130);
+            map.put("640*480_30_1000", _640_480_30_1000);
+            map.put("640*480_30_1500", _640_480_30_1500);
+            map.put("640*480_15_500", _640_480_15_500);
+            map.put("480*360_30_490", _480_360_30_490);
+            map.put("480*360_15_320", _480_360_15_320);
             return Collections.unmodifiableMap(map);
         }
 
@@ -175,7 +229,7 @@ public class MixParam {
     }
 
     /**
-     * 输出编码模板名称 - 1920x1080_30_4620：输出流是1080p，帧率30，码率4.62Mbps - 1920x1080_15_3460：输出流是1080p，帧率15，码率3.46Mbps - 1280x720_30_3420：输出流是720p，帧率30，码率3.42Mbps - 1280x720_15_2260：输出流是720p，帧率15，码率2.26Mbps 
+     * 输出编码模板名称 - 1920*1080_30_4620：输出流是1080p，帧率30，码率4.62Mbps - 1920*1080_30_3150：输出流是1080p，帧率30，码率3.15Mbps - 1920*1080_15_3460：输出流是1080p，帧率15，码率3.46Mbps - 1920*1080_15_2080：输出流是1080p，帧率15，码率2.08Mbps - 1280*720_30_3420：输出流是720p，帧率30，码率3.42Mbps - 1280*720_30_1710：输出流是720p，帧率30，码率1.71Mbps - 1280*720_15_2260：输出流是720p，帧率15，码率2.26Mbps - 1280*720_15_1130：输出流是720p，帧率15，码率1.13Mbps - 640*480_30_1500：输出流是480p，帧率30，码率1.50Mbps - 640*480_15_500：输出流是480p，帧率15，码率500Kbps - 640*480_30_1000 输出流是480p，帧率30，码率1000Kbps - 480*360_30_490：输出流是360p，帧率30，码率490Kbps - 480*360_15_320：输出流是360p，帧率15，码率320Kbps 
      * @return encodeTemplate
      */
     public EncodeTemplateEnum getEncodeTemplate() {

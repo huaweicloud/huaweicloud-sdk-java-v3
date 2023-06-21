@@ -66,6 +66,16 @@ public class ListPortInfosResponseModelData {
 
     private String province;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_bind")
+
+    private Integer isBind;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pub_list")
+
+    private List<PortSearchPubDetail> pubList = null;
+
     public ListPortInfosResponseModelData withId(String id) {
         this.id = id;
         return this;
@@ -269,6 +279,56 @@ public class ListPortInfosResponseModelData {
         this.province = province;
     }
 
+    public ListPortInfosResponseModelData withIsBind(Integer isBind) {
+        this.isBind = isBind;
+        return this;
+    }
+
+    /**
+     * 是否绑定。  - 0: 未绑定 - 1: 绑定 
+     * @return isBind
+     */
+    public Integer getIsBind() {
+        return isBind;
+    }
+
+    public void setIsBind(Integer isBind) {
+        this.isBind = isBind;
+    }
+
+    public ListPortInfosResponseModelData withPubList(List<PortSearchPubDetail> pubList) {
+        this.pubList = pubList;
+        return this;
+    }
+
+    public ListPortInfosResponseModelData addPubListItem(PortSearchPubDetail pubListItem) {
+        if (this.pubList == null) {
+            this.pubList = new ArrayList<>();
+        }
+        this.pubList.add(pubListItem);
+        return this;
+    }
+
+    public ListPortInfosResponseModelData withPubList(Consumer<List<PortSearchPubDetail>> pubListSetter) {
+        if (this.pubList == null) {
+            this.pubList = new ArrayList<>();
+        }
+        pubListSetter.accept(this.pubList);
+        return this;
+    }
+
+    /**
+     * 绑定的服务号列表。  > 以JSON列表返回，格式： > [{\"pub_name\":\"服务号名称\",\"pub_reference\":\"服务号备注\"}]。 
+     * @return pubList
+     */
+    public List<PortSearchPubDetail> getPubList() {
+        return pubList;
+    }
+
+    public void setPubList(List<PortSearchPubDetail> pubList) {
+        this.pubList = pubList;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -287,13 +347,25 @@ public class ListPortInfosResponseModelData {
             && Objects.equals(this.pubName, listPortInfosResponseModelData.pubName)
             && Objects.equals(this.portType, listPortInfosResponseModelData.portType)
             && Objects.equals(this.signCheck, listPortInfosResponseModelData.signCheck)
-            && Objects.equals(this.province, listPortInfosResponseModelData.province);
+            && Objects.equals(this.province, listPortInfosResponseModelData.province)
+            && Objects.equals(this.isBind, listPortInfosResponseModelData.isBind)
+            && Objects.equals(this.pubList, listPortInfosResponseModelData.pubList);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(id, createTime, pubId, port, sign, authorizationFiles, pubName, portType, signCheck, province);
+        return Objects.hash(id,
+            createTime,
+            pubId,
+            port,
+            sign,
+            authorizationFiles,
+            pubName,
+            portType,
+            signCheck,
+            province,
+            isBind,
+            pubList);
     }
 
     @Override
@@ -310,6 +382,8 @@ public class ListPortInfosResponseModelData {
         sb.append("    portType: ").append(toIndentedString(portType)).append("\n");
         sb.append("    signCheck: ").append(toIndentedString(signCheck)).append("\n");
         sb.append("    province: ").append(toIndentedString(province)).append("\n");
+        sb.append("    isBind: ").append(toIndentedString(isBind)).append("\n");
+        sb.append("    pubList: ").append(toIndentedString(pubList)).append("\n");
         sb.append("}");
         return sb.toString();
     }

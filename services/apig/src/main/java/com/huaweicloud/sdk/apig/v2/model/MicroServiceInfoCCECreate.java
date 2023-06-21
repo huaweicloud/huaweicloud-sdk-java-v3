@@ -14,7 +14,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * CCE云容器引擎详细信息，service_type为CCE时必填
+ * CCE云容器引擎工作负载信息，service_type为CCE时必填
  */
 public class MicroServiceInfoCCECreate {
 
@@ -122,6 +122,16 @@ public class MicroServiceInfoCCECreate {
     private String appName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "label_key")
+
+    private String labelKey;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "label_value")
+
+    private String labelValue;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
 
     private String version;
@@ -193,7 +203,7 @@ public class MicroServiceInfoCCECreate {
     }
 
     /**
-     * APP名称
+     * APP名称。支持汉字，英文，数字，点，中划线，下划线，且只能以英文和汉字开头，1-64字符。 > 中文字符必须为UTF-8或者unicode编码。
      * @return appName
      */
     public String getAppName() {
@@ -202,6 +212,40 @@ public class MicroServiceInfoCCECreate {
 
     public void setAppName(String appName) {
         this.appName = appName;
+    }
+
+    public MicroServiceInfoCCECreate withLabelKey(String labelKey) {
+        this.labelKey = labelKey;
+        return this;
+    }
+
+    /**
+     * 服务标识名。支持汉字、英文、数字、中划线、下划线、点、斜杠、中英文格式下的小括号和冒号，且只能以英文、汉字和数字开头，1-64个字符。 > 中文字符必须为UTF-8或者unicode编码。
+     * @return labelKey
+     */
+    public String getLabelKey() {
+        return labelKey;
+    }
+
+    public void setLabelKey(String labelKey) {
+        this.labelKey = labelKey;
+    }
+
+    public MicroServiceInfoCCECreate withLabelValue(String labelValue) {
+        this.labelValue = labelValue;
+        return this;
+    }
+
+    /**
+     * 服务标识值。支持汉字，英文，数字，点，中划线，下划线，且只能以英文和汉字开头，1-64字符。 > 中文字符必须为UTF-8或者unicode编码。
+     * @return labelValue
+     */
+    public String getLabelValue() {
+        return labelValue;
+    }
+
+    public void setLabelValue(String labelValue) {
+        this.labelValue = labelValue;
     }
 
     public MicroServiceInfoCCECreate withVersion(String version) {
@@ -286,6 +330,8 @@ public class MicroServiceInfoCCECreate {
             && Objects.equals(this.namespace, microServiceInfoCCECreate.namespace)
             && Objects.equals(this.workloadType, microServiceInfoCCECreate.workloadType)
             && Objects.equals(this.appName, microServiceInfoCCECreate.appName)
+            && Objects.equals(this.labelKey, microServiceInfoCCECreate.labelKey)
+            && Objects.equals(this.labelValue, microServiceInfoCCECreate.labelValue)
             && Objects.equals(this.version, microServiceInfoCCECreate.version)
             && Objects.equals(this.port, microServiceInfoCCECreate.port)
             && Objects.equals(this.labels, microServiceInfoCCECreate.labels);
@@ -293,7 +339,7 @@ public class MicroServiceInfoCCECreate {
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId, namespace, workloadType, appName, version, port, labels);
+        return Objects.hash(clusterId, namespace, workloadType, appName, labelKey, labelValue, version, port, labels);
     }
 
     @Override
@@ -304,6 +350,8 @@ public class MicroServiceInfoCCECreate {
         sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
         sb.append("    workloadType: ").append(toIndentedString(workloadType)).append("\n");
         sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
+        sb.append("    labelKey: ").append(toIndentedString(labelKey)).append("\n");
+        sb.append("    labelValue: ").append(toIndentedString(labelValue)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
         sb.append("    labels: ").append(toIndentedString(labels)).append("\n");

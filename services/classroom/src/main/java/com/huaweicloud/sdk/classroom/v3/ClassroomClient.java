@@ -108,6 +108,214 @@ public class ClassroomClient {
     }
 
     /**
+     * 习题判题
+     *
+     * 习题判题
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteExerciseRequest 请求对象
+     * @return ExecuteExerciseResponse
+     */
+    public ExecuteExerciseResponse executeExercise(ExecuteExerciseRequest request) {
+        return hcClient.syncInvokeHttp(request, ClassroomMeta.executeExercise);
+    }
+
+    /**
+     * 习题判题
+     *
+     * 习题判题
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteExerciseRequest 请求对象
+     * @return SyncInvoker<ExecuteExerciseRequest, ExecuteExerciseResponse>
+     */
+    public SyncInvoker<ExecuteExerciseRequest, ExecuteExerciseResponse> executeExerciseInvoker(
+        ExecuteExerciseRequest request) {
+        return new SyncInvoker<ExecuteExerciseRequest, ExecuteExerciseResponse>(request, ClassroomMeta.executeExercise,
+            hcClient);
+    }
+
+    /**
+     * 查询习题库下习题列表
+     *
+     * 查询习题库下习题列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListExercisesRequest 请求对象
+     * @return ListExercisesResponse
+     */
+    public ListExercisesResponse listExercises(ListExercisesRequest request) {
+        return hcClient.syncInvokeHttp(request, ClassroomMeta.listExercises);
+    }
+
+    /**
+     * 查询习题库下习题列表
+     *
+     * 查询习题库下习题列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListExercisesRequest 请求对象
+     * @return SyncInvoker<ListExercisesRequest, ListExercisesResponse>
+     */
+    public SyncInvoker<ListExercisesRequest, ListExercisesResponse> listExercisesInvoker(ListExercisesRequest request) {
+        return new SyncInvoker<ListExercisesRequest, ListExercisesResponse>(request, ClassroomMeta.listExercises,
+            hcClient);
+    }
+
+    /**
+     * 查询当前租户的习题库列表
+     *
+     * 查询当前租户的习题库列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPackagesRequest 请求对象
+     * @return ListPackagesResponse
+     */
+    public ListPackagesResponse listPackages(ListPackagesRequest request) {
+        return hcClient.syncInvokeHttp(request, ClassroomMeta.listPackages);
+    }
+
+    /**
+     * 查询当前租户的习题库列表
+     *
+     * 查询当前租户的习题库列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPackagesRequest 请求对象
+     * @return SyncInvoker<ListPackagesRequest, ListPackagesResponse>
+     */
+    public SyncInvoker<ListPackagesRequest, ListPackagesResponse> listPackagesInvoker(ListPackagesRequest request) {
+        return new SyncInvoker<ListPackagesRequest, ListPackagesResponse>(request, ClassroomMeta.listPackages,
+            hcClient);
+    }
+
+    /**
+     * 查询单个习题详情
+     *
+     * 查询单个习题详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowExerciseDetailRequest 请求对象
+     * @return ShowExerciseDetailResponse
+     */
+    public ShowExerciseDetailResponse showExerciseDetail(ShowExerciseDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, ClassroomMeta.showExerciseDetail);
+    }
+
+    /**
+     * 查询单个习题详情
+     *
+     * 查询单个习题详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowExerciseDetailRequest 请求对象
+     * @return SyncInvoker<ShowExerciseDetailRequest, ShowExerciseDetailResponse>
+     */
+    public SyncInvoker<ShowExerciseDetailRequest, ShowExerciseDetailResponse> showExerciseDetailInvoker(
+        ShowExerciseDetailRequest request) {
+        return new SyncInvoker<ShowExerciseDetailRequest, ShowExerciseDetailResponse>(request,
+            ClassroomMeta.showExerciseDetail, hcClient);
+    }
+
+    /**
+     * 查询单个习题库详情
+     *
+     * 查询单个习题库详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPackageDetailRequest 请求对象
+     * @return ShowPackageDetailResponse
+     */
+    public ShowPackageDetailResponse showPackageDetail(ShowPackageDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, ClassroomMeta.showPackageDetail);
+    }
+
+    /**
+     * 查询单个习题库详情
+     *
+     * 查询单个习题库详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPackageDetailRequest 请求对象
+     * @return SyncInvoker<ShowPackageDetailRequest, ShowPackageDetailResponse>
+     */
+    public SyncInvoker<ShowPackageDetailRequest, ShowPackageDetailResponse> showPackageDetailInvoker(
+        ShowPackageDetailRequest request) {
+        return new SyncInvoker<ShowPackageDetailRequest, ShowPackageDetailResponse>(request,
+            ClassroomMeta.showPackageDetail, hcClient);
+    }
+
+    /**
+     * 获取习题所有难度
+     *
+     * 获取习题所有难度
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAllDifficultsRequest 请求对象
+     * @return ListAllDifficultsResponse
+     */
+    public ListAllDifficultsResponse listAllDifficults(ListAllDifficultsRequest request) {
+        return hcClient.syncInvokeHttp(request, ClassroomMeta.listAllDifficults);
+    }
+
+    /**
+     * 获取习题所有难度
+     *
+     * 获取习题所有难度
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAllDifficultsRequest 请求对象
+     * @return SyncInvoker<ListAllDifficultsRequest, ListAllDifficultsResponse>
+     */
+    public SyncInvoker<ListAllDifficultsRequest, ListAllDifficultsResponse> listAllDifficultsInvoker(
+        ListAllDifficultsRequest request) {
+        return new SyncInvoker<ListAllDifficultsRequest, ListAllDifficultsResponse>(request,
+            ClassroomMeta.listAllDifficults, hcClient);
+    }
+
+    /**
+     * 获取自身习题知识点
+     *
+     * 获取自身习题知识点
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListMyKnowledgePointsRequest 请求对象
+     * @return ListMyKnowledgePointsResponse
+     */
+    public ListMyKnowledgePointsResponse listMyKnowledgePoints(ListMyKnowledgePointsRequest request) {
+        return hcClient.syncInvokeHttp(request, ClassroomMeta.listMyKnowledgePoints);
+    }
+
+    /**
+     * 获取自身习题知识点
+     *
+     * 获取自身习题知识点
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListMyKnowledgePointsRequest 请求对象
+     * @return SyncInvoker<ListMyKnowledgePointsRequest, ListMyKnowledgePointsResponse>
+     */
+    public SyncInvoker<ListMyKnowledgePointsRequest, ListMyKnowledgePointsResponse> listMyKnowledgePointsInvoker(
+        ListMyKnowledgePointsRequest request) {
+        return new SyncInvoker<ListMyKnowledgePointsRequest, ListMyKnowledgePointsResponse>(request,
+            ClassroomMeta.listMyKnowledgePoints, hcClient);
+    }
+
+    /**
      * 根据课堂ID获取指定课堂的课堂成员列表
      *
      * 根据课堂ID获取指定课堂的课堂成员列表，支持分页，搜索字段默认同时匹配姓名，学号，用户名，班级。

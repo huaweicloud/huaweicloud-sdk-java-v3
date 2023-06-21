@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 主机组详细信息
+ * 主机集群详细信息
  */
 public class DeploymentGroup {
 
@@ -133,7 +133,7 @@ public class DeploymentGroup {
     }
 
     /**
-     * 主机组名
+     * 主机集群名
      * @return name
      */
     public String getName() {
@@ -235,7 +235,7 @@ public class DeploymentGroup {
     }
 
     /**
-     * 主机组是否为代理类型
+     * 主机集群是否为代理类型
      * @return isProxyMode
      */
     public Integer getIsProxyMode() {

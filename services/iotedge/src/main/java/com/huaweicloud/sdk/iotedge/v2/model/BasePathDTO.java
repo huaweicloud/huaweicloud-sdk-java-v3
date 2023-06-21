@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.iotedge.v2.model.OfflineCacheConfigsDTO;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -34,6 +35,12 @@ public class BasePathDTO  {
     
 
     private String dbBasePath;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="offline_cache_configs")
+    
+
+    private OfflineCacheConfigsDTO offlineCacheConfigs;
 
     public BasePathDTO withLogBasePath(String logBasePath) {
         this.logBasePath = logBasePath;
@@ -101,6 +108,35 @@ public class BasePathDTO  {
 
     
 
+    public BasePathDTO withOfflineCacheConfigs(OfflineCacheConfigsDTO offlineCacheConfigs) {
+        this.offlineCacheConfigs = offlineCacheConfigs;
+        return this;
+    }
+
+    public BasePathDTO withOfflineCacheConfigs(Consumer<OfflineCacheConfigsDTO> offlineCacheConfigsSetter) {
+        if(this.offlineCacheConfigs == null ){
+            this.offlineCacheConfigs = new OfflineCacheConfigsDTO();
+            offlineCacheConfigsSetter.accept(this.offlineCacheConfigs);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get offlineCacheConfigs
+     * @return offlineCacheConfigs
+     */
+    public OfflineCacheConfigsDTO getOfflineCacheConfigs() {
+        return offlineCacheConfigs;
+    }
+
+    public void setOfflineCacheConfigs(OfflineCacheConfigsDTO offlineCacheConfigs) {
+        this.offlineCacheConfigs = offlineCacheConfigs;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -112,11 +148,12 @@ public class BasePathDTO  {
         BasePathDTO basePathDTO = (BasePathDTO) o;
         return Objects.equals(this.logBasePath, basePathDTO.logBasePath) &&
             Objects.equals(this.configBasePath, basePathDTO.configBasePath) &&
-            Objects.equals(this.dbBasePath, basePathDTO.dbBasePath);
+            Objects.equals(this.dbBasePath, basePathDTO.dbBasePath) &&
+            Objects.equals(this.offlineCacheConfigs, basePathDTO.offlineCacheConfigs);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(logBasePath, configBasePath, dbBasePath);
+        return Objects.hash(logBasePath, configBasePath, dbBasePath, offlineCacheConfigs);
     }
     @Override
     public String toString() {
@@ -125,6 +162,7 @@ public class BasePathDTO  {
         sb.append("    logBasePath: ").append(toIndentedString(logBasePath)).append("\n");
         sb.append("    configBasePath: ").append(toIndentedString(configBasePath)).append("\n");
         sb.append("    dbBasePath: ").append(toIndentedString(dbBasePath)).append("\n");
+        sb.append("    offlineCacheConfigs: ").append(toIndentedString(offlineCacheConfigs)).append("\n");
         sb.append("}");
         return sb.toString();
     }

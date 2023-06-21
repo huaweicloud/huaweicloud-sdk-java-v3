@@ -129,7 +129,7 @@ public class EdgeNodeDTO  {
 
 
     /**
-     * 边缘节点状态 UNINSTALLED|INSTALLED|OFFLINE|ONLINE|DELETING|FROZEN
+     * 边缘节点状态UNINSTALLED|INSTALLED|OFFLINE|ONLINE|DELETING|FROZEN
      * @return state
      */
     public String getState() {

@@ -338,7 +338,7 @@ public class ShowIndividualStreamJobResponse extends SdkResponse {
     private StateEnum state;
 
     /**
-     * 任务结束原因
+     * 任务结束原因 - TENANT_STOP - EXCEED_MAX_IDLE_TIME - INTERNAL_ERROR
      */
     public static final class StopReasonEnum {
 
@@ -683,7 +683,7 @@ public class ShowIndividualStreamJobResponse extends SdkResponse {
     }
 
     /**
-     * 任务结束原因
+     * 任务结束原因 - TENANT_STOP - EXCEED_MAX_IDLE_TIME - INTERNAL_ERROR
      * @return stopReason
      */
     public StopReasonEnum getStopReason() {

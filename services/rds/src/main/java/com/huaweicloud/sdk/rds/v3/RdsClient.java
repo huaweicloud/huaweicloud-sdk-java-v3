@@ -1170,6 +1170,36 @@ public class RdsClient {
     }
 
     /**
+     * 
+     *
+     * 查询预定义标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPredefinedTagRequest 请求对象
+     * @return ListPredefinedTagResponse
+     */
+    public ListPredefinedTagResponse listPredefinedTag(ListPredefinedTagRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listPredefinedTag);
+    }
+
+    /**
+     * 
+     *
+     * 查询预定义标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPredefinedTagRequest 请求对象
+     * @return SyncInvoker<ListPredefinedTagRequest, ListPredefinedTagResponse>
+     */
+    public SyncInvoker<ListPredefinedTagRequest, ListPredefinedTagResponse> listPredefinedTagInvoker(
+        ListPredefinedTagRequest request) {
+        return new SyncInvoker<ListPredefinedTagRequest, ListPredefinedTagResponse>(request, RdsMeta.listPredefinedTag,
+            hcClient);
+    }
+
+    /**
      * 查询项目标签
      *
      * 查询项目标签。
@@ -1259,6 +1289,36 @@ public class RdsClient {
         ListRestoreTimesRequest request) {
         return new SyncInvoker<ListRestoreTimesRequest, ListRestoreTimesResponse>(request, RdsMeta.listRestoreTimes,
             hcClient);
+    }
+
+    /**
+     * 
+     *
+     * 获取指定实例详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSimplifiedInstancesRequest 请求对象
+     * @return ListSimplifiedInstancesResponse
+     */
+    public ListSimplifiedInstancesResponse listSimplifiedInstances(ListSimplifiedInstancesRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listSimplifiedInstances);
+    }
+
+    /**
+     * 
+     *
+     * 获取指定实例详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSimplifiedInstancesRequest 请求对象
+     * @return SyncInvoker<ListSimplifiedInstancesRequest, ListSimplifiedInstancesResponse>
+     */
+    public SyncInvoker<ListSimplifiedInstancesRequest, ListSimplifiedInstancesResponse> listSimplifiedInstancesInvoker(
+        ListSimplifiedInstancesRequest request) {
+        return new SyncInvoker<ListSimplifiedInstancesRequest, ListSimplifiedInstancesResponse>(request,
+            RdsMeta.listSimplifiedInstances, hcClient);
     }
 
     /**

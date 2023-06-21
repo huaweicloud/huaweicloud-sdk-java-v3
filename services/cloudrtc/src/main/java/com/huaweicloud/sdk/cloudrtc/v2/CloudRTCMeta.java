@@ -18,7 +18,7 @@ public class CloudRTCMeta {
             HttpRequestDef.builder(HttpMethod.POST, CreateAppRequest.class, CreateAppResponse.class)
                 .withName("CreateApp")
                 .withUri("/v2/apps")
-                .withContentType("application/json");
+                .withContentType("application/json;charset=utf-8");
 
         // requests
         builder.<String>withRequestField("Authorization",
@@ -72,7 +72,7 @@ public class CloudRTCMeta {
                     CreateIndividualStreamJobResponse.class)
                 .withName("CreateIndividualStreamJob")
                 .withUri("/v2/apps/{app_id}/individual-stream-jobs")
-                .withContentType("application/json");
+                .withContentType("application/json;charset=utf-8");
 
         // requests
         builder.<String>withRequestField("app_id",
@@ -130,7 +130,7 @@ public class CloudRTCMeta {
             HttpRequestDef.builder(HttpMethod.POST, CreateMixJobRequest.class, CreateMixJobResponse.class)
                 .withName("CreateMixJob")
                 .withUri("/v2/apps/{app_id}/mix-stream-jobs")
-                .withContentType("application/json");
+                .withContentType("application/json;charset=utf-8");
 
         // requests
         builder.<String>withRequestField("app_id",
@@ -188,7 +188,7 @@ public class CloudRTCMeta {
             HttpRequestDef.builder(HttpMethod.POST, CreateRecordRuleRequest.class, CreateRecordRuleResponse.class)
                 .withName("CreateRecordRule")
                 .withUri("/v2/apps/{app_id}/record-rules")
-                .withContentType("application/json");
+                .withContentType("application/json;charset=utf-8");
 
         // requests
         builder.<String>withRequestField("app_id",
@@ -279,6 +279,11 @@ public class CloudRTCMeta {
 
         // response
 
+        builder.<String>withResponseField("X-request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteAppResponse::getXRequestId, DeleteAppResponse::setXRequestId));
         return builder.build();
     }
 
@@ -332,6 +337,11 @@ public class CloudRTCMeta {
 
         // response
 
+        builder.<String>withResponseField("X-request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteRecordRuleResponse::getXRequestId, DeleteRecordRuleResponse::setXRequestId));
         return builder.build();
     }
 
@@ -513,6 +523,11 @@ public class CloudRTCMeta {
 
         // response
 
+        builder.<String>withResponseField("X-request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RemoveRoomResponse::getXRequestId, RemoveRoomResponse::setXRequestId));
         return builder.build();
     }
 
@@ -524,7 +539,7 @@ public class CloudRTCMeta {
             HttpRequestDef.builder(HttpMethod.POST, RemoveUsersRequest.class, RemoveUsersResponse.class)
                 .withName("RemoveUsers")
                 .withUri("/v2/apps/{app_id}/rooms/{room_id}/batch-remove-users")
-                .withContentType("application/json");
+                .withContentType("application/json;charset=utf-8");
 
         // requests
         builder.<String>withRequestField("app_id",
@@ -572,6 +587,11 @@ public class CloudRTCMeta {
 
         // response
 
+        builder.<String>withResponseField("X-request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RemoveUsersResponse::getXRequestId, RemoveUsersResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1102,6 +1122,12 @@ public class CloudRTCMeta {
 
         // response
 
+        builder.<String>withResponseField("X-request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(StopIndividualStreamJobResponse::getXRequestId,
+                StopIndividualStreamJobResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1154,6 +1180,11 @@ public class CloudRTCMeta {
 
         // response
 
+        builder.<String>withResponseField("X-request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(StopMixJobResponse::getXRequestId, StopMixJobResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1166,7 +1197,7 @@ public class CloudRTCMeta {
             HttpRequestDef.builder(HttpMethod.PUT, UpdateAutoRecordRequest.class, UpdateAutoRecordResponse.class)
                 .withName("UpdateAutoRecord")
                 .withUri("/v2/apps/{app_id}/auto-record-mode")
-                .withContentType("application/json");
+                .withContentType("application/json;charset=utf-8");
 
         // requests
         builder.<String>withRequestField("app_id",
@@ -1227,7 +1258,7 @@ public class CloudRTCMeta {
                     UpdateIndividualStreamJobResponse.class)
                 .withName("UpdateIndividualStreamJob")
                 .withUri("/v2/apps/{app_id}/individual-stream-jobs/{job_id}")
-                .withContentType("application/json");
+                .withContentType("application/json;charset=utf-8");
 
         // requests
         builder.<String>withRequestField("app_id",
@@ -1292,7 +1323,7 @@ public class CloudRTCMeta {
             HttpRequestDef.builder(HttpMethod.PUT, UpdateMixJobRequest.class, UpdateMixJobResponse.class)
                 .withName("UpdateMixJob")
                 .withUri("/v2/apps/{app_id}/mix-stream-jobs/{job_id}")
-                .withContentType("application/json");
+                .withContentType("application/json;charset=utf-8");
 
         // requests
         builder.<String>withRequestField("app_id",
@@ -1357,7 +1388,7 @@ public class CloudRTCMeta {
             .builder(HttpMethod.PUT, UpdateRecordCallbackRequest.class, UpdateRecordCallbackResponse.class)
             .withName("UpdateRecordCallback")
             .withUri("/v2/apps/{app_id}/record-callback")
-            .withContentType("application/json");
+            .withContentType("application/json;charset=utf-8");
 
         // requests
         builder.<String>withRequestField("app_id",
@@ -1416,7 +1447,7 @@ public class CloudRTCMeta {
             HttpRequestDef.builder(HttpMethod.PUT, UpdateRecordRuleRequest.class, UpdateRecordRuleResponse.class)
                 .withName("UpdateRecordRule")
                 .withUri("/v2/apps/{app_id}/record-rules/{rule_id}")
-                .withContentType("application/json");
+                .withContentType("application/json;charset=utf-8");
 
         // requests
         builder.<String>withRequestField("app_id",

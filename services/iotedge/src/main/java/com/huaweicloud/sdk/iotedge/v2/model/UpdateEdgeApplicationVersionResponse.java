@@ -262,7 +262,7 @@ public class UpdateEdgeApplicationVersionResponse extends SdkResponse {
 
 
     /**
-     * 应用集成的边缘升得快版本
+     * 应用集成的边缘SDK版本
      * @return sdkVersion
      */
     public String getSdkVersion() {

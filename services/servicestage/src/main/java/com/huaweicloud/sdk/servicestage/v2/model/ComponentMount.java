@@ -16,12 +16,12 @@ public class ComponentMount {
     private String path;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "sub_path")
+    @JsonProperty(value = "subPath")
 
     private String subPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "read_only")
+    @JsonProperty(value = "readOnly")
 
     private Boolean readOnly;
 

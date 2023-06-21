@@ -7,6 +7,8 @@ import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 
+import java.util.List;
+
 @SuppressWarnings("unchecked")
 public class CloudTableMeta {
 
@@ -74,6 +76,105 @@ public class CloudTableMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<EnableComponentRequest, EnableComponentResponse> enableComponent =
+        genForenableComponent();
+
+    private static HttpRequestDef<EnableComponentRequest, EnableComponentResponse> genForenableComponent() {
+        // basic
+        HttpRequestDef.Builder<EnableComponentRequest, EnableComponentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, EnableComponentRequest.class, EnableComponentResponse.class)
+                .withName("EnableComponent")
+                .withUri("/v2/{projectId}/clusters/{clusterId}/components/{componentName}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("projectId",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(EnableComponentRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("clusterId",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(EnableComponentRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("componentName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(EnableComponentRequest::getComponentName, (req, v) -> {
+                req.setComponentName(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(EnableComponentRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<AddComponentReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddComponentReq.class),
+            f -> f.withMarshaller(EnableComponentRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExpandClusterComponentRequest, ExpandClusterComponentResponse> expandClusterComponent =
+        genForexpandClusterComponent();
+
+    private static HttpRequestDef<ExpandClusterComponentRequest, ExpandClusterComponentResponse> genForexpandClusterComponent() {
+        // basic
+        HttpRequestDef.Builder<ExpandClusterComponentRequest, ExpandClusterComponentResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ExpandClusterComponentRequest.class, ExpandClusterComponentResponse.class)
+            .withName("ExpandClusterComponent")
+            .withUri("/v2/{projectId}/clusters/{clusterId}/nodes")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("projectId",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExpandClusterComponentRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("clusterId",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExpandClusterComponentRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExpandClusterComponentRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<GrowNodeReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(GrowNodeReq.class),
+            f -> f.withMarshaller(ExpandClusterComponentRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListClustersRequest, ListClustersResponse> listClusters = genForlistClusters();
 
     private static HttpRequestDef<ListClustersRequest, ListClustersResponse> genForlistClusters() {
@@ -105,6 +206,59 @@ public class CloudTableMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RebootCloudTableClusterRequest, RebootCloudTableClusterResponse> rebootCloudTableCluster =
+        genForrebootCloudTableCluster();
+
+    private static HttpRequestDef<RebootCloudTableClusterRequest, RebootCloudTableClusterResponse> genForrebootCloudTableCluster() {
+        // basic
+        HttpRequestDef.Builder<RebootCloudTableClusterRequest, RebootCloudTableClusterResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, RebootCloudTableClusterRequest.class, RebootCloudTableClusterResponse.class)
+            .withName("RebootCloudTableCluster")
+            .withUri("/v2/{projectId}/clusters/{clusterId}/restart")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("projectId",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RebootCloudTableClusterRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("clusterId",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RebootCloudTableClusterRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RebootCloudTableClusterRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<HbaseClusterActionReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(HbaseClusterActionReq.class),
+            f -> f.withMarshaller(RebootCloudTableClusterRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+        builder.<List<RestartInstanceRsp>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(RebootCloudTableClusterResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }).withInnerContainerType(RestartInstanceRsp.class));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowClusterDetailRequest, ShowClusterDetailResponse> showClusterDetail =
         genForshowClusterDetail();
 
@@ -130,6 +284,91 @@ public class CloudTableMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowClusterDetailRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowClusterSettingRequest, ShowClusterSettingResponse> showClusterSetting =
+        genForshowClusterSetting();
+
+    private static HttpRequestDef<ShowClusterSettingRequest, ShowClusterSettingResponse> genForshowClusterSetting() {
+        // basic
+        HttpRequestDef.Builder<ShowClusterSettingRequest, ShowClusterSettingResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowClusterSettingRequest.class, ShowClusterSettingResponse.class)
+                .withName("ShowClusterSetting")
+                .withUri("/v2/{projectId}/clusters/{clusterId}/setting")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("projectId",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowClusterSettingRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("clusterId",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowClusterSettingRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowClusterSettingRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateClusterSettingRequest, UpdateClusterSettingResponse> updateClusterSetting =
+        genForupdateClusterSetting();
+
+    private static HttpRequestDef<UpdateClusterSettingRequest, UpdateClusterSettingResponse> genForupdateClusterSetting() {
+        // basic
+        HttpRequestDef.Builder<UpdateClusterSettingRequest, UpdateClusterSettingResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateClusterSettingRequest.class, UpdateClusterSettingResponse.class)
+            .withName("UpdateClusterSetting")
+            .withUri("/v2/{projectId}/clusters/{clusterId}/setting")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("projectId",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateClusterSettingRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("clusterId",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateClusterSettingRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateClusterSettingRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<HbaseModifySettingV2Req>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(HbaseModifySettingV2Req.class),
+            f -> f.withMarshaller(UpdateClusterSettingRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

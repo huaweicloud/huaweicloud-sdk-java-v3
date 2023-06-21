@@ -54,7 +54,7 @@ public class ListHostsResponse extends SdkResponse {
     }
 
     /**
-     * 主机组名称
+     * 主机集群名称
      * @return groupName
      */
     public String getGroupName() {

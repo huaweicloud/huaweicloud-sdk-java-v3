@@ -265,7 +265,7 @@ public class MicroserviceApiCreate {
     }
 
     /**
-     * 请求地址。可以包含请求参数，用{}标识，比如/getUserInfo/{userId}，支持 * % - _ . 等特殊字符，总长度不超过512，且满足URI规范。 /apic/health_check为APIG预置的健康检查路径，当req_method=GET时不支持req_uri=/apic/health_check。 > 需要服从URI规范。
+     * 请求地址。可以包含请求参数，用{}标识，比如/getUserInfo/{userId}，支持 * % - _ . 等特殊字符，总长度不超过512，且满足URI规范。  /apic/health_check为APIG预置的健康检查路径，当req_method=GET时不支持req_uri=/apic/health_check。  > 需要服从URI规范。
      * @return reqUri
      */
     public String getReqUri() {

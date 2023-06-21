@@ -198,7 +198,7 @@ public class AddDeviceRequestBody  {
 
 
     /**
-     * 父设备ID，用于标识设备所属的父设备。创建网关直连设备时，不携带该参数；在网关直连设备下创建子设备时，携带该参数，参数值为父设备ID。
+     * 父设备ID，用于标识设备所属的父设备。携带该参数时，表示在该父设备下创建一个子设备，这个子设备不与平台直连，此时必须保证这个父设备在平台已存在，创建成功后子设备的gateway_id等于该参数值；不携带该参数时，表示创建一个和平台直连的设备，创建成功后设备的device_id和gateway_id一致。
      * @return gatewayId
      */
     public String getGatewayId() {

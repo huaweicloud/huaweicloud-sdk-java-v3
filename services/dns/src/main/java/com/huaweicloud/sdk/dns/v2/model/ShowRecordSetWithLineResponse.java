@@ -104,6 +104,11 @@ public class ShowRecordSetWithLineResponse extends SdkResponse {
 
     private AliasTarget aliasTarget;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bundle")
+
+    private String bundle;
+
     public ShowRecordSetWithLineResponse withId(String id) {
         this.id = id;
         return this;
@@ -444,6 +449,23 @@ public class ShowRecordSetWithLineResponse extends SdkResponse {
         this.aliasTarget = aliasTarget;
     }
 
+    public ShowRecordSetWithLineResponse withBundle(String bundle) {
+        this.bundle = bundle;
+        return this;
+    }
+
+    /**
+     * 规格，默认规格，保留字段。
+     * @return bundle
+     */
+    public String getBundle() {
+        return bundle;
+    }
+
+    public void setBundle(String bundle) {
+        this.bundle = bundle;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -470,7 +492,8 @@ public class ShowRecordSetWithLineResponse extends SdkResponse {
             && Objects.equals(this.line, showRecordSetWithLineResponse.line)
             && Objects.equals(this.weight, showRecordSetWithLineResponse.weight)
             && Objects.equals(this.healthCheckId, showRecordSetWithLineResponse.healthCheckId)
-            && Objects.equals(this.aliasTarget, showRecordSetWithLineResponse.aliasTarget);
+            && Objects.equals(this.aliasTarget, showRecordSetWithLineResponse.aliasTarget)
+            && Objects.equals(this.bundle, showRecordSetWithLineResponse.bundle);
     }
 
     @Override
@@ -492,7 +515,8 @@ public class ShowRecordSetWithLineResponse extends SdkResponse {
             line,
             weight,
             healthCheckId,
-            aliasTarget);
+            aliasTarget,
+            bundle);
     }
 
     @Override
@@ -517,6 +541,7 @@ public class ShowRecordSetWithLineResponse extends SdkResponse {
         sb.append("    weight: ").append(toIndentedString(weight)).append("\n");
         sb.append("    healthCheckId: ").append(toIndentedString(healthCheckId)).append("\n");
         sb.append("    aliasTarget: ").append(toIndentedString(aliasTarget)).append("\n");
+        sb.append("    bundle: ").append(toIndentedString(bundle)).append("\n");
         sb.append("}");
         return sb.toString();
     }

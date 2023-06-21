@@ -135,7 +135,7 @@ public class VmsTemplateStatus {
     }
 
     /**
-     * 智能信息基础版模板的大小。  >  单位：字节，audit_status非0时tpl_size为0。 
+     * 智能信息基础版模板的大小。  >  单位：字节。 
      * @return tplSize
      */
     public Integer getTplSize() {

@@ -25,6 +25,7 @@ import com.huaweicloud.sdk.core.auth.AbstractCredentials;
 import com.huaweicloud.sdk.core.auth.BasicCredentials;
 import com.huaweicloud.sdk.core.auth.CredentialProviderChain;
 import com.huaweicloud.sdk.core.auth.ICredential;
+import com.huaweicloud.sdk.core.exception.ExceptionHandler;
 import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.http.HttpClient;
 import com.huaweicloud.sdk.core.http.HttpConfig;
@@ -52,6 +53,8 @@ public class ClientBuilder<T> {
     private Region region;
 
     private List<String> endpoints;
+
+    private ExceptionHandler exceptionHandler;
 
     private List<String> credentialType = new ArrayList<>(
             Collections.singletonList(BasicCredentials.class.getSimpleName()));
@@ -98,6 +101,11 @@ public class ClientBuilder<T> {
 
     public ClientBuilder<T> withEndpoints(List<String> endpoints) {
         this.endpoints = endpoints;
+        return this;
+    }
+
+    public ClientBuilder<T> withExceptionHandler(ExceptionHandler exceptionHandler) {
+        this.exceptionHandler = exceptionHandler;
         return this;
     }
 
@@ -148,6 +156,9 @@ public class ClientBuilder<T> {
                 ? endpoint : Constants.HTTPS_SCHEME + "://" + endpoint);
 
         hcClient.withEndpoints(endpoints).withCredential(credential);
+        if (Objects.nonNull(exceptionHandler)) {
+            hcClient.withExceptionHandler(exceptionHandler);
+        }
 
         T t = creator.apply(hcClient);
         ClientCustomization clientCustomization = loadClientCustomization(t);

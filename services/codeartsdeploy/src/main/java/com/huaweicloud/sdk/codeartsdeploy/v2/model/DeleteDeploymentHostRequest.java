@@ -26,7 +26,7 @@ public class DeleteDeploymentHostRequest {
     }
 
     /**
-     * 主机组id
+     * 主机集群id
      * @return groupId
      */
     public String getGroupId() {

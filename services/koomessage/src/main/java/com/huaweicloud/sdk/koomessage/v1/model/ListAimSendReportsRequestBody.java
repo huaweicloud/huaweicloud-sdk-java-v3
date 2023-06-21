@@ -51,7 +51,7 @@ public class ListAimSendReportsRequestBody {
     }
 
     /**
-     * 报表类型。  - 1：日报表 - 2：月报表 
+     * 报表类型。  - 1：日报表 - 2：月报表  > 若不填，默认是1，即查询日报表。 
      * @return reportType
      */
     public String getReportType() {
